@@ -1,0 +1,20 @@
+# private design notes
+IDEAS.md
+
+# generated artifacts
+archive/*
+!archive/.gitkeep
+
+# python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+build/
+dist/
+.pytest_cache/
+
+# native
+crazyai/_kernels*.so
+cpp/*.o
+assets/flowchart/pipeline.html

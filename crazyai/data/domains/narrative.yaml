@@ -1,0 +1,45 @@
+name: narrative
+description: The rules that make a story hang together; characters, knowledge, time and cause.
+glossary: [character, event, motive, knowledge, timeline, cause, consequence, setting, kinship, promise, secret, witness]
+concepts:
+  - name: knowledge
+    rules:
+      - id: nar.know.witness
+        statement: A character knows a fact only after witnessing it or being told it.
+        form: {kind: implication, antecedent: a character acts on a fact, consequent: the character witnessed the fact or was told it earlier}
+        weight: 8
+        supports: [nar.know.secret]
+      - id: nar.know.secret
+        statement: A secret known to exactly one character cannot be acted on by another character.
+        form: {kind: implication, antecedent: exactly one character knows a fact, consequent: no other character acts on it}
+        weight: 6
+        depends_on: [nar.know.witness]
+  - name: time
+    rules:
+      - id: nar.time.order
+        statement: A consequence appears after its cause in the story's timeline.
+        form: {kind: implication, antecedent: event A causes event B, consequent: A happens before B}
+        weight: 9
+        supports: [nar.know.witness]
+      - id: nar.time.single
+        statement: A character is in one place at one time.
+        form: {kind: universal, subject: character, predicate: occupies exactly one place at each moment}
+        weight: 7
+  - name: kinship
+    rules:
+      - id: nar.kin.persons
+        statement: Marriage is a bond between persons who can consent to it.
+        form: {kind: definition, term: marriage, definiens: a bond between persons who can consent}
+        weight: 6
+        supports: [nar.kin.family]
+      - id: nar.kin.family
+        statement: Family relations are inherited by descent or created by marriage, not chosen at will.
+        form: {kind: universal, subject: family relation, predicate: arises by descent or marriage}
+        weight: 5
+        depends_on: [nar.kin.persons]
+  - name: motive
+    rules:
+      - id: nar.motive.act
+        statement: A character's actions follow from what the character wants and believes.
+        form: {kind: implication, antecedent: a character acts, consequent: the action follows from the character's wants and beliefs}
+        weight: 8

@@ -1,0 +1,49 @@
+name: statistics
+description: Inference, estimation and the assumptions that make conclusions valid.
+glossary: [sample, population, estimator, bias, variance, confounder, p-value, effect, correlation, causation, model, residual]
+concepts:
+  - name: inference
+    rules:
+      - id: stat.corr_not_cause
+        statement: Correlation between two variables does not by itself establish that one causes the other.
+        form: {kind: implication, antecedent: X and Y are correlated, consequent: X may or may not cause Y}
+        weight: 9
+        supports: [stat.confounding]
+      - id: stat.confounding
+        statement: An unmeasured variable that affects both treatment and outcome biases the estimated effect.
+        form: {kind: implication, antecedent: an unmeasured variable affects both treatment and outcome, consequent: the estimated treatment effect is biased}
+        weight: 8
+        depends_on: [stat.corr_not_cause]
+      - id: stat.pvalue
+        statement: A p-value is the probability of data at least as extreme as observed given the null hypothesis, not the probability that the null is true.
+        form: {kind: definition, term: p-value, definiens: probability of data at least as extreme as observed under the null hypothesis}
+        weight: 7
+  - name: sampling
+    rules:
+      - id: stat.lln
+        statement: The sample mean of independent identically distributed draws converges to the population mean as the sample grows.
+        form: {kind: universal, subject: sequence of iid draws with finite mean, predicate: the sample mean converges to the population mean}
+        formal: "lim_{n->oo} mean(X_1..X_n) = mu"
+        weight: 9
+        supports: [stat.clt]
+      - id: stat.clt
+        statement: The standardised sample mean of iid draws with finite variance is approximately normal for large samples.
+        form: {kind: universal, subject: iid draws with finite variance, predicate: the standardised sample mean is approximately normal for large n}
+        weight: 9
+        depends_on: [stat.lln]
+      - id: stat.selection
+        statement: A sample selected on the outcome cannot be used to estimate the effect on that outcome without correction.
+        form: {kind: implication, antecedent: the sample is selected on the outcome, consequent: naive effect estimates are biased}
+        weight: 7
+  - name: regression
+    rules:
+      - id: stat.ols_unbiased
+        statement: Ordinary least squares is unbiased when the errors are mean-zero and uncorrelated with the regressors.
+        form: {kind: implication, antecedent: errors are mean-zero and uncorrelated with the regressors, consequent: OLS is unbiased}
+        formal: "E[beta_hat] = beta"
+        weight: 8
+        depends_on: [stat.confounding]
+      - id: stat.overfit
+        statement: A model with as many free parameters as data points can fit any data exactly and predicts nothing.
+        form: {kind: implication, antecedent: parameters >= observations, consequent: perfect in-sample fit with no predictive content}
+        weight: 6

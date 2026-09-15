@@ -1,0 +1,39 @@
+name: computation
+description: What programs can and cannot compute or predict.
+glossary: [algorithm, complexity, input, output, prediction, chaos, sensitivity, model, data, noise, horizon, bound]
+concepts:
+  - name: prediction
+    rules:
+      - id: comp.chaos.horizon
+        statement: In a chaotic system, prediction error grows exponentially with lead time, so there is a finite horizon beyond which forecasts are no better than climatology.
+        form: {kind: implication, antecedent: the system is chaotic, consequent: forecast skill decays to zero beyond a finite horizon}
+        formal: "err(t) ~ err0*exp(lambda*t)"
+        symbols: {err: "1", err0: "1", lambda: "1/s", t: "s"}
+        weight: 8
+        supports: [comp.weather.limit]
+      - id: comp.weather.limit
+        statement: Day-specific weather cannot be forecast with skill beyond roughly two weeks.
+        form: {kind: universal, subject: day-specific weather forecast, predicate: has no skill beyond about two weeks}
+        weight: 6
+        depends_on: [comp.chaos.horizon]
+      - id: comp.noise.floor
+        statement: A predictor cannot be more accurate than the noise in the data it is trained on allows.
+        form: {kind: implication, antecedent: the target has irreducible noise sigma, consequent: no predictor beats error sigma on average}
+        weight: 8
+  - name: complexity
+    rules:
+      - id: comp.halting
+        statement: No program decides for every program and input whether that program halts.
+        form: {kind: universal, subject: program, predicate: fails to decide halting on some input}
+        weight: 10
+      - id: comp.p_np
+        statement: No polynomial-time algorithm is known for any NP-complete problem (conjectured impossible).
+        form: {kind: universal, subject: NP-complete problem, predicate: no known polynomial-time algorithm}
+        weight: 5
+  - name: data
+    rules:
+      - id: comp.garbage
+        statement: A model trained on data that does not contain a signal cannot learn that signal.
+        form: {kind: implication, antecedent: the training data contains no signal for the target, consequent: the model cannot predict the target}
+        weight: 8
+        depends_on: [comp.noise.floor]

@@ -1,0 +1,53 @@
+name: number_theory
+description: Integers, primes, divisibility and the theorems that hang on them.
+glossary: [prime, divisor, factor, integer, residue, modulus, congruence, density, sieve, composite]
+concepts:
+  - name: primality
+    rules:
+      - id: nt.prime.def
+        statement: An integer greater than 1 is prime exactly when its only positive divisors are 1 and itself.
+        form: {kind: definition, term: prime, definiens: an integer greater than 1 whose only positive divisors are 1 and itself}
+        weight: 10
+        supports: [nt.ufd, nt.prime.infinite, nt.prime.density]
+      - id: nt.prime.infinite
+        statement: There are infinitely many primes.
+        form: {kind: universal, subject: bound N, predicate: some prime exceeds N}
+        weight: 7
+        depends_on: [nt.prime.def]
+      - id: nt.prime.density
+        statement: The number of primes up to x is asymptotically x divided by the natural log of x.
+        form: {kind: equation, lhs: "pi(x)", rhs: "x/log(x)"}
+        formal: "pi_x ~ x/log(x)"
+        weight: 6
+        depends_on: [nt.prime.def]
+  - name: factorisation
+    rules:
+      - id: nt.ufd
+        statement: Every integer greater than 1 factors into primes in exactly one way up to order.
+        form: {kind: universal, subject: integer greater than 1, predicate: has a unique prime factorisation up to order}
+        weight: 10
+        depends_on: [nt.prime.def]
+        supports: [nt.gcd.bezout]
+      - id: nt.gcd.bezout
+        statement: For integers a and b there exist integers x and y with a*x + b*y equal to gcd(a, b).
+        form: {kind: universal, subject: pair of integers a and b, predicate: some integers x and y satisfy a*x + b*y = gcd(a, b)}
+        formal: "a*x + b*y = g"
+        weight: 7
+        depends_on: [nt.ufd]
+  - name: parity
+    rules:
+      - id: nt.parity.closed
+        statement: The sum of two even integers is even and the sum of two odd integers is even.
+        form: {kind: universal, subject: pair of integers with the same parity, predicate: their sum is even}
+        weight: 5
+      - id: nt.goldbach
+        statement: Every even integer greater than 2 is the sum of two primes (conjectured; verified far beyond any practical bound).
+        form: {kind: universal, subject: even integer greater than 2, predicate: is the sum of two primes}
+        weight: 3
+        depends_on: [nt.prime.def]
+  - name: collatz
+    rules:
+      - id: nt.collatz
+        statement: Iterating n -> n/2 for even n and n -> 3n+1 for odd n reaches 1 from every positive integer (conjectured).
+        form: {kind: universal, subject: positive integer, predicate: its Collatz orbit reaches 1}
+        weight: 2

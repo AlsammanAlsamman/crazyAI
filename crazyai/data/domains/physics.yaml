@@ -1,0 +1,72 @@
+name: physics
+description: Classical and modern physics; rules are laws, conservation principles and definitions.
+glossary: [energy, momentum, force, mass, velocity, field, entropy, temperature, wave, particle, frame, light]
+concepts:
+  - name: energy conservation
+    rules:
+      - id: phys.energy.conserved
+        statement: The total energy of an isolated system is constant in time.
+        form: {kind: universal, subject: isolated system, predicate: total energy is constant in time}
+        formal: "dE/dt = 0"
+        symbols: {E: "kg*m**2/s**2", t: "s"}
+        weight: 10
+        supports: [phys.thermo.first, phys.mech.work_energy]
+      - id: phys.mech.work_energy
+        statement: The net work done on a body equals the change in its kinetic energy.
+        form: {kind: equation, lhs: W, rhs: "m*v2**2/2 - m*v1**2/2"}
+        formal: "W = m*v2**2/2 - m*v1**2/2"
+        symbols: {W: "kg*m**2/s**2", m: "kg", v1: "m/s", v2: "m/s"}
+        weight: 6
+        depends_on: [phys.energy.conserved]
+  - name: thermodynamics
+    rules:
+      - id: phys.thermo.first
+        statement: The change in internal energy of a system equals heat added minus work done by the system.
+        form: {kind: equation, lhs: dU, rhs: "Q - W"}
+        formal: "dU = Q - W"
+        symbols: {dU: "kg*m**2/s**2", Q: "kg*m**2/s**2", W: "kg*m**2/s**2"}
+        weight: 8
+        depends_on: [phys.energy.conserved]
+        supports: [phys.thermo.second]
+      - id: phys.thermo.second
+        statement: The entropy of an isolated system never decreases.
+        form: {kind: universal, subject: isolated system, predicate: entropy never decreases}
+        formal: "dS/dt >= 0"
+        symbols: {S: "kg*m**2/(s**2*K)", t: "s"}
+        weight: 9
+        depends_on: [phys.thermo.first]
+  - name: relativity
+    rules:
+      - id: phys.rel.light_speed
+        statement: No signal carrying information travels faster than light in vacuum.
+        form: {kind: universal, subject: signal carrying information, predicate: speed is at most c}
+        formal: "v <= c"
+        symbols: {v: "m/s", c: "m/s"}
+        weight: 9
+        supports: [phys.rel.causality]
+      - id: phys.rel.causality
+        statement: If event A causes event B, then A precedes B in every inertial frame.
+        form: {kind: implication, antecedent: event A causes event B, consequent: A precedes B in every inertial frame}
+        weight: 9
+        depends_on: [phys.rel.light_speed]
+      - id: phys.rel.mass_energy
+        statement: The rest energy of a body equals its mass times the speed of light squared.
+        form: {kind: equation, lhs: E, rhs: "m*c**2"}
+        formal: "E = m*c**2"
+        symbols: {E: "kg*m**2/s**2", m: "kg", c: "m/s"}
+        weight: 7
+  - name: mechanics
+    rules:
+      - id: phys.mech.newton2
+        statement: The net force on a body equals its mass times its acceleration.
+        form: {kind: equation, lhs: F, rhs: "m*a"}
+        formal: "F = m*a"
+        symbols: {F: "kg*m/s**2", m: "kg", a: "m/s**2"}
+        weight: 9
+        supports: [phys.mech.work_energy]
+      - id: phys.mech.momentum
+        statement: The total momentum of an isolated system is constant.
+        form: {kind: universal, subject: isolated system, predicate: total momentum is constant}
+        formal: "dp/dt = 0"
+        symbols: {p: "kg*m/s", t: "s"}
+        weight: 9
