@@ -89,30 +89,51 @@ Rules: measure tools are pure; invent tools draw only from the run's seeded RNG;
 
 ## Examples
 
-All in `examples/`. The first five run offline; their real output is shown.
+All in `examples/`. The first five run offline. The figures below are generated from the same computations (`make figures`, `assets/figures/make_figures.py`) — every number in them comes from a tool call, nothing is typed in.
 
-**01 — seed and mutate.** Seed 7 draws `stat.overfit`; all seven operators are applied; a fresh toolkit with seed 7 makes the same draw.
+### How the tool is used
 
-**02 — a world where primes are not quite prime.** 20 000 integers are labelled under three conditions (even+prime, "fake even", π-variation), a logistic predictor is fitted with real numbers, and the ground tools name what breaks:
+<p align="center"><a href="assets/figures/use_cases.svg"><img src="assets/figures/use_cases.png" alt="How crazyAI is used: profile a model, compare models or personas, surface candidates, teach and test" width="100%"></a></p>
+
+<sub>The radar, bars and ranking in this one figure are illustrative shapes, not measurements — a live Claude run fills them in.</sub>
+
+### 01 — seed and mutate
+
+Seed 7 draws `stat.overfit`; all seven operators are applied to it; a fresh toolkit with seed 7 makes the same draw. `python examples/01_seed_and_mutate.py`
+
+### 02 — a world where primes are not quite prime
+
+The mutated rule: primality is *partial* — an integer is prime to the degree that it is an even number plus a prime, a "fake even", or a variation of π. In such a world, how would you predict primality? 20 000 integers are labelled (sieve and Goldbach-style counts in C++), a logistic predictor is fitted with real accuracy numbers, the density is taken to the limit, and the ground tools name what breaks: unique factorisation and everything that rests on it.
+
+<p align="center"><a href="assets/figures/example_primes.svg"><img src="assets/figures/example_primes.png" alt="Example 2: density of partial primes vs ordinary primes, a fitted predictor, and the rules that collapse" width="100%"></a></p>
 
 ```
-backend: cpp   integers labelled: 19999
 partial-primality histogram (0..3): [0, 7520, 9885, 2594]
 logit predictor of full partial-primality: accuracy=0.888  base rate=0.1297
+same features on ordinary primality:        accuracy=0.887  base rate=0.1131
 density of ordinary primes as x -> oo: 0
-fraction of fully partial-prime integers up to 1k/5k/20k: [0.497, 0.262, 0.13]
-what must be true: ['nt.prime.def']
-collateral: ['nt.goldbach', 'nt.prime.density', 'nt.prime.infinite', 'nt.ufd', 'nt.gcd.bezout']
 cost of possibility: 25.33 (high) - most of what is known would have to go
 ```
 
-**03 — a watermelon investigates whether oranges can marry grapefruit.** A draft story is measured: the timeline tools find an effect before its cause and a clerk acting on a note nobody showed him; the world-rules are inconsistent (`changed -> maker_known`, `~maker_known`, `amended -> changed`, `amended`); word statistics are compared with reference prose and four of them are flagged to move.
+### 03 — a watermelon investigates whether oranges can marry grapefruit
 
-**04 — Collatz orbits as an image, as music, read backwards.** 64 orbits → structure → image spec → score → reversed → back. The un-reversed round trip is exact; the reversed one maps n to N+1−n — an encoding artefact, not an invariant, and the tools say so.
+Kinship law transposed into fruit. A draft story is measured rather than read: the timeline tools find an effect that precedes its cause and a clerk acting on a note nobody showed him; the world-rules, as propositions, are inconsistent and the tool names the minimal inconsistent subset; word statistics are compared with reference prose so the generator knows which four numbers to move before the story reads as ordinary fiction.
 
-**05 — the whole pipeline, offline.** Two mock runs produce complete run folders, a Markdown report and a radar SVG.
+<p align="center"><a href="assets/figures/example_story.svg"><img src="assets/figures/example_story.png" alt="Example 3: who-knows-what timeline with the two flaws, world-rules consistency, word statistics vs reference" width="100%"></a></p>
 
-**06 — the whole pipeline with Claude.** `python examples/06_full_pipeline_claude.py 1 formula` (needs credentials).
+### 04 — Collatz orbits as an image, as music, read backwards
+
+64 orbits → structure → image specification → score → reversed → back. The un-reversed round trip is exact; the reversed one maps n to N+1−n. `compare_structures` reports precisely that, so the "reversed reading reveals a property of the problem" claim is exposed as an encoding artefact — which is the kind of thing the fresh session is then asked to notice.
+
+<p align="center"><a href="assets/figures/example_collatz.svg"><img src="assets/figures/example_collatz.png" alt="Example 4: Collatz structure, score, reversed score, and what survived the round trip" width="100%"></a></p>
+
+### 05 — the whole pipeline, offline
+
+Two mock runs produce complete run folders, a Markdown report and a radar SVG. `python examples/05_full_pipeline_mock.py`
+
+### 06 — the whole pipeline with Claude
+
+`python examples/06_full_pipeline_claude.py 1 formula` (needs credentials).
 
 ## Layout
 
