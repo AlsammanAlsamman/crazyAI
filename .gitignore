@@ -19,4 +19,5 @@ dist/
 crazyai/_kernels*.so
 cpp/*.o
 assets/flowchart/pipeline.html
+assets/flowchart/invent_pipeline.html
 assets/figures/*.html

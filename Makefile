@@ -2,7 +2,7 @@ PY ?= .venv/bin/python
 CXX ?= g++
 CXXFLAGS ?= -O3 -std=c++17 -fPIC -shared
 
-.PHONY: all native test examples flowchart figures clean
+.PHONY: all native test examples flowchart invent-flowchart figures clean
 
 all: native
 
@@ -19,6 +19,9 @@ examples: native
 
 flowchart:
 	node assets/flowchart/flowchart.js
+
+invent-flowchart:
+	node assets/flowchart/invent_flowchart.js
 
 figures: native
 	$(PY) assets/figures/make_figures.py
