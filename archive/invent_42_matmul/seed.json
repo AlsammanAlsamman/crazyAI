@@ -1,0 +1,7 @@
+{
+  "seed": 42,
+  "target": "matmul",
+  "blend_model": "anneal",
+  "depth": 1,
+  "assumption_focus": "n^3 multiplications are needed"
+}

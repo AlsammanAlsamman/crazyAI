@@ -1,0 +1,33 @@
+kind: harvest
+fragments:
+- id: harvest.42.0
+  kind: book
+  source: Ursula K. Le Guin, The Left Hand of Darkness
+  text: On the planet Gethen every person is sexless for most of the month, then for
+    a few days enters kemmer and becomes either male or female depending on who is
+    nearby. A man who fathered a child last winter may carry one in his belly next
+    year. There are no wars, only feuds, and the kingdom's prime minister has been
+    both mother and father.
+- id: harvest.42.1
+  kind: painting
+  source: Remedios Varo, Embroidering the Earth's Mantle
+  text: 'In a round tower room, girls in identical grey dresses sit at a long table
+    under the eye of a hooded overseer, stitching. The cloth they embroider spills
+    out the window and becomes the actual landscape below: hills, rivers, roads, a
+    walled town with a sailing ship. One of the girls has secretly sewn a tiny lover
+    into the fabric, upside down among the fields.'
+- id: harvest.42.2
+  kind: metaphor
+  source: Time is a river
+  text: The past lies upstream and you cannot swim back to it; the future waits round
+    the bend where you cannot yet see. A slow afternoon is a still pool where the
+    boat barely drifts. Death is the river meeting the sea and losing its banks.
+- id: harvest.42.3
+  kind: book
+  source: Ted Chiang, Tower of Babylon
+  text: Miners climb a brick tower so tall that it takes four months to reach the
+    top, passing whole villages of people who were born on the stairs and grow onions
+    in soil carried up in baskets. Above the moon and sun, they arrive at the vault
+    of heaven, a ceiling of solid granite, and begin to chip through it. When the
+    tunnel breaks through, water pours in, and the miner who swims out finds himself
+    crawling from a cave on the ground of the same earth he left.

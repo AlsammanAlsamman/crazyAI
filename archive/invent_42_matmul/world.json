@@ -1,0 +1,67 @@
+{
+  "model": "anneal",
+  "text": "Love is a single. Each landscape years a coral looking another forest, and the capacitor eaten is one thieves soldier of staying tea one crankshaft solid. A bird-headed whatever and a woman stand among the coats as if the world had been rekindled and left to flow. A bird-headed wire and a cloud stand among the pipes as if the horizon had been dissolved and smoke to dry. It is grow, invested, saved, wasted, borrowed stand the older and seem by towers who never seem to twitter out of it. A woman in a machine longer seems on a rock with his world to us, flooding out over a fog of fog from which embers emerge like contains.",
+  "score": {
+    "score": 0.9631,
+    "imagination": 0.9631,
+    "readable": 1.0,
+    "surprise": 0.9091,
+    "mixing": 0.9828,
+    "originality": 1.0,
+    "readability": 1.0,
+    "coherence": 1.0,
+    "flesch": 68.8,
+    "words": 56,
+    "sentences": 6
+  },
+  "fragments": [
+    {
+      "id": "met.love_fire",
+      "kind": "metaphor",
+      "source": "love is fire"
+    },
+    {
+      "id": "art.friedrich_wanderer",
+      "kind": "painting",
+      "source": "Caspar David Friedrich, Wanderer above the Sea of Fog"
+    },
+    {
+      "id": "book.narnia_wardrobe",
+      "kind": "book",
+      "source": "C. S. Lewis, The Chronicles of Narnia"
+    },
+    {
+      "id": "met.time_money",
+      "kind": "metaphor",
+      "source": "time is money"
+    },
+    {
+      "id": "art.klee_twittering",
+      "kind": "painting",
+      "source": "Paul Klee, Twittering Machine"
+    },
+    {
+      "id": "book.arabian_nights",
+      "kind": "book",
+      "source": "One Thousand and One Nights"
+    },
+    {
+      "id": "met.electricity_water",
+      "kind": "metaphor",
+      "source": "electricity is water"
+    },
+    {
+      "id": "art.ernst_europe",
+      "kind": "painting",
+      "source": "Max Ernst, Europe After the Rain"
+    }
+  ],
+  "steps": 250,
+  "trace": [
+    0.5083,
+    0.6799,
+    0.924,
+    0.923,
+    0.943
+  ]
+}

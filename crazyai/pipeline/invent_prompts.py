@@ -57,11 +57,17 @@ BEND_SYSTEM = (
 
 
 def bend_prompt(ideas: str, target: Target, tools: list[str]) -> str:
+    contract = ""
+    if target.artifact == "kernel":
+        from crazyai.toolkit.measure.kernel import CONTRACT, EXAMPLE
+        contract = ("\nTHE FIXED CONTRACT (do not guess it, do not change the argument order):\n    " + CONTRACT +
+                    "\nMinimal correct example:\n```c\n" + EXAMPLE + "```\n"
+                    "Compiled with: gcc -O3 -march=native -fopenmp -lm. You may use OpenMP, immintrin.h and scratch memory.\n")
     return (
         "=== WHAT THE NATIVE SAID ===\n" + ideas.strip() + "\n=== END ===\n\n"
         f"TARGET PROBLEM: {target.problem}\n"
         f"The standard solution silently assumes:\n- " + "\n- ".join(target.assumptions) + "\n"
-        f"Known way: {target.known_way or 'the textbook method'}\n\n"
+        f"Known way: {target.known_way or 'the textbook method'}\n" + contract + "\n"
         "Steps:\n"
         "1. For each SEED, write the mapping world-object -> problem-object as a table. Say which silent assumption above the seed breaks.\n"
         "2. Pick the seed whose mapping is most literal and most different from the known way.\n"

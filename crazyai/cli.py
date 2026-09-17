@@ -29,6 +29,8 @@ def _provider(args):
 
     if args.provider == "mock":
         return get_provider("mock", detect=getattr(args, "mock_detect", False))
+    if args.provider == "claudecode":
+        return get_provider("claudecode", model=args.model if args.model != DEFAULT_MODEL else "", effort=args.effort)
     return get_provider("anthropic", model=args.model, effort=args.effort, fallbacks=not args.no_fallbacks)
 
 
@@ -186,7 +188,8 @@ def build_parser() -> argparse.ArgumentParser:
     sub = p.add_subparsers(dest="cmd", required=True)
 
     def add_provider(sp):
-        sp.add_argument("--provider", choices=["anthropic", "mock"], default="anthropic")
+        sp.add_argument("--provider", choices=["anthropic", "claudecode", "mock"], default="anthropic",
+                        help="anthropic = SDK + API key; claudecode = the `claude` CLI on your subscription; mock = offline")
         sp.add_argument("--model", default=DEFAULT_MODEL)
         sp.add_argument("--effort", default=DEFAULT_EFFORT, choices=["low", "medium", "high", "xhigh", "max"])
         sp.add_argument("--no-fallbacks", action="store_true", help="disable server-side refusal fallbacks")

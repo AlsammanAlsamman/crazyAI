@@ -68,3 +68,12 @@ def test_invent_pipeline_with_mock(tmp_path):
     # an unmeasured target still runs end to end
     p = Invent(seed=43, target="physics", blend="nest", archive_dir=tmp_path).execute(get_provider("mock"))
     assert p["status"] == "UNMEASURED" and p["value"] is None
+
+
+def test_bend_prompt_carries_the_kernel_contract():
+    # the engineer must never have to guess the signature (a real run once crashed on argument order)
+    from crazyai.pipeline.invent_prompts import bend_prompt
+    from crazyai.targets import get_target
+    p = bend_prompt("SEED: x", get_target("matmul"), [])
+    assert "void kernel(int n, const double *A, const double *B, double *C)" in p and "do not guess" in p
+    assert "kernel(" not in bend_prompt("SEED: x", get_target("physics"), [])

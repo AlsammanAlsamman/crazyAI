@@ -118,9 +118,36 @@ textbook loop and 60 % of OpenBLAS.
 crazyai blend --seed 42                          # compare the six blend models on one seed, offline
 crazyai blend --seed 42 --model graft            # one model, with its score breakdown
 crazyai invent --seed 42 --target matmul --provider mock            # whole loop, offline (mock native + engineer)
-crazyai invent --seed 1 --n 20 --target matmul --harvest 5          # with Claude: 20 seeds, corpus grows each run
+crazyai invent --seed 42 --target matmul --provider claudecode      # with Claude via the `claude` CLI - no API key, your subscription
+crazyai invent --seed 1 --n 20 --target matmul --harvest 5          # with Claude via the API (ANTHROPIC_API_KEY): 20 seeds
 crazyai invent-rank --target matmul             # ranked by discovery = value × (0.5 + 0.5 × imagination)
 ```
+
+### Providers
+
+`--provider anthropic` (default) uses the SDK and needs `ANTHROPIC_API_KEY`.
+`--provider claudecode` shells out to `claude -p` (Claude Code's headless
+mode) and runs on whatever Claude Code is logged in with - a claude.ai
+subscription is enough; no key. The model gets no toolkit tools in that mode;
+the pipeline compiles and measures the artifact itself. `--provider mock` is
+offline.
+
+### The first real run
+
+Seed 42, `anneal` world, `claudecode` provider, matmul target. The native
+described planting the first table as coral, hanging the second as coats along
+pipes, "a million polyps eat at once", the smoke of every product drifting
+along its pipe into one fog that "only gives up its embers when it has
+finished", and a woman on a rock who floods the fog to check it. The engineer
+mapped this to: pack A and B **once**, keep every accumulator open over the
+*full* shared index (no kc-blocking, zero partial-C traffic - the point where it
+differs from OpenBLAS), an 8×24 AVX-512 register tile, a per-row checksum
+verifier. Predicted 12× a cache-blocked loop; measured **exact, 121 GFLOP/s at
+n = 1024, 14.9×** - ahead of every hand-written kernel in the
+[matrixmultiply lab](https://github.com/AlsammanAlsamman/matrixmultiply)
+(best: 104) and ~80 % of OpenBLAS (150) on the same laptop. It is in
+`archive/invent_42_matmul/`. (The first measurement crashed because the model
+had guessed the argument order; the contract is now inlined in the prompt.)
 
 ### The food: three corpora
 
@@ -266,4 +293,4 @@ crazyAI is an evaluation and ideation tool. Every artifact is labelled as delibe
 
 ## Status
 
-v0.2.0 adds `crazyai invent`. The toolkit, pipeline, mock provider, examples and tests run offline. The Claude provider is implemented against the current Anthropic SDK (1.x) and has not yet been exercised against the live API from this machine.
+v0.2.1 adds `crazyai invent` and the `claudecode` provider. The toolkit, pipeline, mock provider, examples and tests run offline. The Claude provider is implemented against the current Anthropic SDK (1.x) and has not yet been exercised against the live API from this machine.

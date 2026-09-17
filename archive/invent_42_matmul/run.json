@@ -1,0 +1,35 @@
+{
+  "seed": 42,
+  "target": "matmul",
+  "blend_model": "anneal",
+  "depth": 1,
+  "assumption_focus": "n^3 multiplications are needed",
+  "provider": "claudecode",
+  "model": "",
+  "imagination_score": 0.9631,
+  "status": "exact",
+  "value": 11.446,
+  "prediction": 12.0,
+  "calibration": 0.954,
+  "discovery": 11.2348,
+  "fragments": [
+    "met.love_fire",
+    "art.friedrich_wanderer",
+    "book.narnia_wardrobe",
+    "met.time_money",
+    "art.klee_twittering",
+    "book.arabian_nights",
+    "met.electricity_water",
+    "art.ernst_europe"
+  ],
+  "rng_log": [],
+  "timing_s": {
+    "seed": 0.0,
+    "harvest": 0.002,
+    "world": 0.0,
+    "immerse": 0.0,
+    "bend": 0.0,
+    "measure": 2.215
+  },
+  "total_s": 2.218
+}
