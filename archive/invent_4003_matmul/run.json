@@ -1,0 +1,52 @@
+{
+  "seed": 4003,
+  "target": "matmul",
+  "blend_model": "cutup",
+  "depth": 1,
+  "assumption_focus": "the whole sum over the shared index is finished before the next cell is started",
+  "provider": "claudecode",
+  "model": "",
+  "imagination_score": 0.528,
+  "status": "exact",
+  "value": 7.632,
+  "prediction": 4.0,
+  "calibration": 0.524,
+  "discovery": 5.8308,
+  "fragments": [
+    "harvest.4.4",
+    "harvest.8.1",
+    "book.arabian_nights",
+    "poem.rumi_reed",
+    "harvest.6.1",
+    "harvest.10.4"
+  ],
+  "rng_log": [
+    {
+      "label": "invent.blend_model",
+      "value": "cutup"
+    },
+    {
+      "label": "invent.depth",
+      "value": 1
+    },
+    {
+      "label": "invent.assumption",
+      "value": "the whole sum over the shared index is finished before the next cell is started"
+    },
+    {
+      "label": "child:invent.world",
+      "value": 292478962
+    }
+  ],
+  "timing_s": {
+    "seed": 0.002,
+    "harvest": 0.0,
+    "world": 0.022,
+    "immerse": 34.854,
+    "bend": 240.132,
+    "measure": 2.502
+  },
+  "total_s": 277.518,
+  "prior_best_discovery": 15.9399,
+  "promoted": false
+}

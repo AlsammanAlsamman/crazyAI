@@ -1,0 +1,100 @@
+{
+  "model": "evolve",
+  "text": "Someone else, a bowl, will sleep that same object in the very swallowed just left fuel. The sea says no spring coat, only islands the autumn is already soaking. A split is a window. The trunk is the most left object a fire can own. He dies his single boasting in seam hotel the dark a makes suitcase frames useful, boasting of bowl to prove himself campsite of a traveler bed to another enemy.",
+  "score": {
+    "score": 0.9855,
+    "imagination": 0.9855,
+    "readable": 1.0,
+    "surprise": 0.973,
+    "mixing": 0.9837,
+    "originality": 1.0,
+    "readability": 1.0,
+    "coherence": 1.0,
+    "flesch": 72.9,
+    "words": 38,
+    "sentences": 5
+  },
+  "fragments": [
+    {
+      "id": "met.love_fire",
+      "kind": "metaphor",
+      "source": "love is fire"
+    },
+    {
+      "id": "harvest.3.1",
+      "kind": "painting",
+      "source": "Magritte, The Human Condition"
+    },
+    {
+      "id": "book.peter_pan",
+      "kind": "book",
+      "source": "J. M. Barrie, Peter Pan"
+    },
+    {
+      "id": "poem.antara_muallaqa",
+      "kind": "poem",
+      "source": "Antara ibn Shaddad, Mu'allaqa"
+    },
+    {
+      "id": "met.language_tree",
+      "kind": "metaphor",
+      "source": "language is a tree"
+    },
+    {
+      "id": "art.friedrich_wanderer",
+      "kind": "painting",
+      "source": "Caspar David Friedrich, Wanderer above the Sea of Fog"
+    },
+    {
+      "id": "book.hitchhiker",
+      "kind": "book",
+      "source": "Douglas Adams, The Hitchhiker's Guide to the Galaxy"
+    },
+    {
+      "id": "poem.amichai_hotel",
+      "kind": "poem",
+      "source": "Yehuda Amichai, metaphor of the hotel room"
+    }
+  ],
+  "generations": 12,
+  "history": [
+    0.9013,
+    0.9013,
+    0.9161,
+    0.9388,
+    0.9388,
+    0.962,
+    0.9729,
+    0.9757,
+    0.9757,
+    0.9757,
+    0.9757,
+    0.9855
+  ],
+  "compared": [
+    {
+      "model": "evolve",
+      "score": 0.9855
+    },
+    {
+      "model": "anneal",
+      "score": 0.9787
+    },
+    {
+      "model": "graft",
+      "score": 0.8491
+    },
+    {
+      "model": "nest",
+      "score": 0.7853
+    },
+    {
+      "model": "cutup",
+      "score": 0.5518
+    },
+    {
+      "model": "markov",
+      "score": 0.2661
+    }
+  ]
+}

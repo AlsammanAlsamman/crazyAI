@@ -1,0 +1,95 @@
+{
+  "model": "markov",
+  "text": "A pale mound trails a single black hair into the distance, and stitched pillows standing upright on thin stalks. You find the loose end, you follow the strand under and over, some are still pools where nothing seems to move. A planet whose languages have no nouns, only verbs and adjectives. A planet whose languages have no nouns, only verbs and adjectives. Prisoners sit chained facing a blank wall their whole lives, watching flickering shapes cast by a fire and by puppeteers walking behind them out of pebbles. Voltage is pressure, current is flow, resistance is a knot.",
+  "score": {
+    "score": 0.4794,
+    "imagination": 0.4794,
+    "readable": 1.0,
+    "surprise": 0.1509,
+    "mixing": 0.9297,
+    "originality": 0.7853,
+    "readability": 1.0,
+    "coherence": 1.0,
+    "flesch": 66.0,
+    "words": 54,
+    "sentences": 6
+  },
+  "fragments": [
+    {
+      "id": "met.river_time",
+      "kind": "metaphor",
+      "source": "time is a river"
+    },
+    {
+      "id": "art.hokusai_wave",
+      "kind": "painting",
+      "source": "Hokusai, The Great Wave"
+    },
+    {
+      "id": "book.gormenghast",
+      "kind": "book",
+      "source": "Mervyn Peake, Gormenghast"
+    },
+    {
+      "id": "poem.kabir_guest",
+      "kind": "poem",
+      "source": "Kabir, mystic doha"
+    },
+    {
+      "id": "met.electricity_water",
+      "kind": "metaphor",
+      "source": "electricity is water"
+    },
+    {
+      "id": "harvest.7.1",
+      "kind": "painting",
+      "source": "Yves Tanguy, Indefinite Divisibility"
+    },
+    {
+      "id": "harvest.2.4",
+      "kind": "book",
+      "source": "China Miéville, The City & The City"
+    },
+    {
+      "id": "poem.lorca_sonambulo",
+      "kind": "poem",
+      "source": "Federico García Lorca, \"Romance Sonámbulo\""
+    },
+    {
+      "id": "met.problem_knot",
+      "kind": "metaphor",
+      "source": "a problem is a knot"
+    },
+    {
+      "id": "harvest.10.4",
+      "kind": "painting",
+      "source": "Yves Tanguy, Mama, Papa Is Wounded!"
+    },
+    {
+      "id": "book.borges_tlon",
+      "kind": "book",
+      "source": "Borges, Tlön, Uqbar, Orbis Tertius"
+    },
+    {
+      "id": "poem.khansa_elegy",
+      "kind": "poem",
+      "source": "Al-Khansa, elegy for her brother Sakhr"
+    },
+    {
+      "id": "harvest.8.2",
+      "kind": "metaphor",
+      "source": "Plato's Cave"
+    },
+    {
+      "id": "art.bosch_delights",
+      "kind": "painting",
+      "source": "Bosch, The Garden of Earthly Delights"
+    },
+    {
+      "id": "harvest.7.0",
+      "kind": "book",
+      "source": "Ted Chiang, Story of Your Life"
+    }
+  ],
+  "order": 2
+}

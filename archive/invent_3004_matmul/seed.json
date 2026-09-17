@@ -1,0 +1,13 @@
+{
+  "seed": 3004,
+  "target": "matmul",
+  "blend_model": "graft",
+  "depth": 3,
+  "assumption_focus": "a matrix is a two-dimensional grid living in one memory",
+  "bias": {
+    "enabled": false,
+    "min_samples": 20,
+    "samples_seen": 0,
+    "active": false
+  }
+}

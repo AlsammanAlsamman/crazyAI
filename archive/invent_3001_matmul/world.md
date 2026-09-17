@@ -1,0 +1,28 @@
+# World (blend model: graft, imagination score 0.7099)
+
+When he goes unable down to tell the canvas, they behind the sunlight has ruined his eyes and real to leave their eyes. The mind is a way with gears that girl, a boiler that overheats, and a spring that can be wound too tight. The traveler goes that representation and world are the same thickness of next. Prisoners memory chained facing a creature find their grey lives, sharpening throwing shadows find by a clock against them and forgetting those shadows for the first somehow. An store-room stands before a window, and on its canvas is painted the exact men of mind and field the sky hours. A girl who listens so well that fire find their own frames insists out with a tortoise that can tell made an sunlight into the future. The saved square is not stored but smoked by the grey unable as frames motionless of dried cigars. The picture and the view align so precisely that the legible tower think the store-room between dried time and real hidden.
+
+## Built from
+- metaphor: the mind is a machine
+- painting: Giorgio de Chirico, The Nostalgia of the Infinite
+- book: Michael Ende, Momo
+- poem: Yoruba oriki (anonymous praise-poem tradition)
+- metaphor: Plato's Cave
+- painting: Magritte, The Human Condition
+
+## Score
+```
+{
+  "score": 0.7099,
+  "imagination": 0.8605,
+  "readable": 0.75,
+  "surprise": 0.6591,
+  "mixing": 0.9667,
+  "originality": 1.0,
+  "readability": 1.0,
+  "coherence": 0.75,
+  "flesch": 68.6,
+  "words": 89,
+  "sentences": 8
+}
+```

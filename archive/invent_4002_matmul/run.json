@@ -1,0 +1,54 @@
+{
+  "seed": 4002,
+  "target": "matmul",
+  "blend_model": "anneal",
+  "depth": 3,
+  "assumption_focus": "the output is produced one cell at a time, row by row",
+  "provider": "claudecode",
+  "model": "",
+  "imagination_score": 0.981,
+  "status": "exact",
+  "value": 10.431,
+  "prediction": 5.0,
+  "calibration": 0.479,
+  "discovery": 10.3319,
+  "fragments": [
+    "met.market_organism",
+    "harvest.6.4",
+    "book.borges_tlon",
+    "poem.rilke_torso",
+    "met.argument_war",
+    "art.bruegel_babel",
+    "book.gormenghast",
+    "poem.antara_muallaqa"
+  ],
+  "rng_log": [
+    {
+      "label": "invent.blend_model",
+      "value": "anneal"
+    },
+    {
+      "label": "invent.depth",
+      "value": 3
+    },
+    {
+      "label": "invent.assumption",
+      "value": "the output is produced one cell at a time, row by row"
+    },
+    {
+      "label": "child:invent.world",
+      "value": 984615922
+    }
+  ],
+  "timing_s": {
+    "seed": 0.0,
+    "harvest": 0.0,
+    "world": 0.108,
+    "immerse": 34.966,
+    "bend": 169.757,
+    "measure": 1.647
+  },
+  "total_s": 206.479,
+  "prior_best_discovery": 15.9399,
+  "promoted": false
+}

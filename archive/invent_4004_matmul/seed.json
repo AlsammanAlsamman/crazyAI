@@ -1,0 +1,13 @@
+{
+  "seed": 4004,
+  "target": "matmul",
+  "blend_model": "evolve",
+  "depth": 3,
+  "assumption_focus": "one processor holds both matrices",
+  "bias": {
+    "enabled": true,
+    "min_samples": 10,
+    "samples_seen": 23,
+    "active": true
+  }
+}

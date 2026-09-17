@@ -1,0 +1,13 @@
+{
+  "seed": 3001,
+  "target": "matmul",
+  "blend_model": "graft",
+  "depth": 3,
+  "assumption_focus": "every product is computed exactly, once",
+  "bias": {
+    "enabled": false,
+    "min_samples": 20,
+    "samples_seen": 0,
+    "active": false
+  }
+}

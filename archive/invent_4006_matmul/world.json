@@ -1,0 +1,65 @@
+{
+  "model": "nest",
+  "text": "Under a swerve, and the fire burns blue while someone is turning into a bird, and a acknowledgment is the only way out. Inside a voice, there is a open, and in a open forgets when its power is cut. But the two who wake up now insist they are the same couple who once said the vows; this is why a hair is built around a white.",
+  "score": {
+    "score": 0.406,
+    "imagination": 0.7613,
+    "readable": 0.3333,
+    "surprise": 0.4583,
+    "mixing": 0.9626,
+    "originality": 1.0,
+    "readability": 1.0,
+    "coherence": 0.3333,
+    "flesch": 78.1,
+    "words": 25,
+    "sentences": 3
+  },
+  "fragments": [
+    {
+      "id": "harvest.4.1",
+      "kind": "metaphor",
+      "source": "the Ship of Theseus as a marriage"
+    },
+    {
+      "id": "harvest.3.1",
+      "kind": "painting",
+      "source": "Magritte, The Human Condition"
+    },
+    {
+      "id": "harvest.2.3",
+      "kind": "book",
+      "source": "Terry Pratchett, Discworld"
+    },
+    {
+      "id": "poem.farrokhzad_birth",
+      "kind": "poem",
+      "source": "Forough Farrokhzad, \"Another Birth\""
+    },
+    {
+      "id": "harvest.4.4",
+      "kind": "metaphor",
+      "source": "the tightrope walker's pole as memory"
+    },
+    {
+      "id": "art.carrington_kitchen",
+      "kind": "painting",
+      "source": "Leonora Carrington, kitchens"
+    },
+    {
+      "id": "harvest.2.4",
+      "kind": "book",
+      "source": "China Miéville, The City & The City"
+    },
+    {
+      "id": "poem.sappho_31",
+      "kind": "poem",
+      "source": "Sappho, Fragment 31"
+    },
+    {
+      "id": "met.computer_brain",
+      "kind": "metaphor",
+      "source": "the computer is a brain"
+    }
+  ],
+  "depth": 3
+}

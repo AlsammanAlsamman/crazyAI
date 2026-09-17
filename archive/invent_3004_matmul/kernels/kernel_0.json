@@ -1,0 +1,44 @@
+{
+  "results": [
+    {
+      "n": 64,
+      "time": 6.33000163e-05,
+      "gflops": 8.2826,
+      "naive_time": 6.0099992e-05,
+      "blocked_time": 1.53999717e-05,
+      "max_abs_err": 2.132e-14,
+      "rel_fro_err": 2.639e-16,
+      "speedup_vs_naive": 0.949,
+      "speedup_vs_blocked": 0.243,
+      "exactness": 1.0,
+      "status": "exact"
+    },
+    {
+      "n": 256,
+      "time": 0.000140599994,
+      "gflops": 238.6517,
+      "naive_time": 0.00614340001,
+      "blocked_time": 0.0016475,
+      "max_abs_err": 1.563e-13,
+      "rel_fro_err": 4.957e-16,
+      "speedup_vs_naive": 43.694,
+      "speedup_vs_blocked": 11.718,
+      "exactness": 1.0,
+      "status": "exact"
+    },
+    {
+      "n": 512,
+      "time": 0.000625799992,
+      "gflops": 428.9477,
+      "naive_time": 0.0766011,
+      "blocked_time": 0.00888000001,
+      "max_abs_err": 3.411e-13,
+      "rel_fro_err": 4.972e-16,
+      "speedup_vs_naive": 122.405,
+      "speedup_vs_blocked": 14.19,
+      "exactness": 1.0,
+      "status": "exact"
+    }
+  ],
+  "value": 14.19
+}

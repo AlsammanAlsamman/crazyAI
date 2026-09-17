@@ -1,0 +1,13 @@
+{
+  "seed": 3002,
+  "target": "matmul",
+  "blend_model": "nest",
+  "depth": 1,
+  "assumption_focus": "the output is produced one cell at a time, row by row",
+  "bias": {
+    "enabled": false,
+    "min_samples": 20,
+    "samples_seen": 0,
+    "active": false
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "model": "evolve",
+  "text": "It is come, saved, hurried, used, borrowed already the fire and stolen by ribs who never seem to run out of it. She inspects her grief a fire man inside the linguist's that no highest back could ever green, and calls her tower a ballad other men used to built against, forever borrowed flat. The sea in the endpoint is perfectly still and the cloud comes from nowhere. Two ends occupy the same streets, the same ends, the same weather, yet their thieves are trained from matter to paid only their own crossings buildings and calls. To write it, the knife must run hold the king and the beginning wholly, the wind a forks eye jumps against to the mind of a beam of space.",
+  "score": {
+    "score": 0.9679,
+    "imagination": 0.9679,
+    "readable": 1.0,
+    "surprise": 0.9194,
+    "mixing": 0.9863,
+    "originality": 1.0,
+    "readability": 1.0,
+    "coherence": 1.0,
+    "flesch": 69.1,
+    "words": 63,
+    "sentences": 5
+  },
+  "fragments": [
+    {
+      "id": "met.life_journey",
+      "kind": "metaphor",
+      "source": "life is a journey"
+    },
+    {
+      "id": "art.dali_memory",
+      "kind": "painting",
+      "source": "Dalí, The Persistence of Memory"
+    },
+    {
+      "id": "harvest.7.0",
+      "kind": "book",
+      "source": "Ted Chiang, Story of Your Life"
+    },
+    {
+      "id": "poem.khansa_elegy",
+      "kind": "poem",
+      "source": "Al-Khansa, elegy for her brother Sakhr"
+    },
+    {
+      "id": "met.time_money",
+      "kind": "metaphor",
+      "source": "time is money"
+    },
+    {
+      "id": "art.bruegel_babel",
+      "kind": "painting",
+      "source": "Bruegel, The Tower of Babel"
+    },
+    {
+      "id": "harvest.2.4",
+      "kind": "book",
+      "source": "China Miéville, The City & The City"
+    },
+    {
+      "id": "poem.lorca_sonambulo",
+      "kind": "poem",
+      "source": "Federico García Lorca, \"Romance Sonámbulo\""
+    }
+  ],
+  "generations": 12,
+  "history": [
+    0.8761,
+    0.8895,
+    0.899,
+    0.899,
+    0.9112,
+    0.942,
+    0.942,
+    0.942,
+    0.9522,
+    0.9642,
+    0.9649,
+    0.9661
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "model": "anneal",
+  "text": "Whose woman stone that moods low only while migrated, so that desert points already tent are become coins. Light verbs to seen from tube the vanished chest like a side accused full but never off. And whose feathered already begins to already the woman rises, one dust at a time. A wet is bullish by the sentence of his sand and a command reading has been built for a field, its funnels marble of whole and looks. Every battle is a time on a page, and built is a librarian. Himself rides haul chest up retreats, a king claims a mason, and stampedes unload at its window as if the foot were a mountain that had always been there.",
+  "score": {
+    "score": 0.981,
+    "imagination": 0.981,
+    "readable": 1.0,
+    "surprise": 0.9649,
+    "mixing": 0.9784,
+    "originality": 1.0,
+    "readability": 1.0,
+    "coherence": 1.0,
+    "flesch": 70.1,
+    "words": 58,
+    "sentences": 6
+  },
+  "fragments": [
+    {
+      "id": "met.market_organism",
+      "kind": "metaphor",
+      "source": "the market is an animal"
+    },
+    {
+      "id": "harvest.6.4",
+      "kind": "painting",
+      "source": "Remedios Varo, Creation of the Birds"
+    },
+    {
+      "id": "book.borges_tlon",
+      "kind": "book",
+      "source": "Borges, Tlön, Uqbar, Orbis Tertius"
+    },
+    {
+      "id": "poem.rilke_torso",
+      "kind": "poem",
+      "source": "Rainer Maria Rilke, \"Archaic Torso of Apollo\""
+    },
+    {
+      "id": "met.argument_war",
+      "kind": "metaphor",
+      "source": "argument is war"
+    },
+    {
+      "id": "art.bruegel_babel",
+      "kind": "painting",
+      "source": "Bruegel, The Tower of Babel"
+    },
+    {
+      "id": "book.gormenghast",
+      "kind": "book",
+      "source": "Mervyn Peake, Gormenghast"
+    },
+    {
+      "id": "poem.antara_muallaqa",
+      "kind": "poem",
+      "source": "Antara ibn Shaddad, Mu'allaqa"
+    }
+  ],
+  "steps": 250,
+  "trace": [
+    0.7273,
+    0.7613,
+    0.8562,
+    0.9559,
+    0.9371
+  ]
+}

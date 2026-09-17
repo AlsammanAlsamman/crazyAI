@@ -1,0 +1,55 @@
+{
+  "seed": 4007,
+  "target": "matmul",
+  "blend_model": "nest",
+  "depth": 3,
+  "assumption_focus": "one product is one problem; many products are many problems",
+  "provider": "claudecode",
+  "model": "",
+  "imagination_score": 0.6375,
+  "status": "exact",
+  "value": 6.104,
+  "prediction": 1.5,
+  "calibration": 0.246,
+  "discovery": 4.9977,
+  "fragments": [
+    "met.market_organism",
+    "art.varo_creation",
+    "harvest.5.2",
+    "poem.rumi_reed",
+    "met.money_water",
+    "art.goya_sleep",
+    "harvest.5.4",
+    "poem.rilke_torso",
+    "met.ideas_food"
+  ],
+  "rng_log": [
+    {
+      "label": "invent.blend_model",
+      "value": "nest"
+    },
+    {
+      "label": "invent.depth",
+      "value": 3
+    },
+    {
+      "label": "invent.assumption",
+      "value": "one product is one problem; many products are many problems"
+    },
+    {
+      "label": "child:invent.world",
+      "value": 252075379
+    }
+  ],
+  "timing_s": {
+    "seed": 0.007,
+    "harvest": 0.0,
+    "world": 0.015,
+    "immerse": 94.729,
+    "bend": 244.334,
+    "measure": 1.979
+  },
+  "total_s": 341.064,
+  "prior_best_discovery": 15.9399,
+  "promoted": false
+}

@@ -1,0 +1,74 @@
+{
+  "model": "evolve",
+  "text": "A squash drives through a hard into a moth where claims are leap by candle in a man, a chest has a clock for a shape, and you can two to Conclusions, an island reached by forwarding. A flat, shadowless dimension the harvest of dried bone circles to a horizon with no landmarks. A man's line and visible are visible safely from a harvest. He keeps his truest circling in cold blood the world a wings cloth drives made, boasting of dense to leap worthy worthy of a cold promised to another truest. The candle, back, only drinks address and burns part with each argument.",
+  "score": {
+    "score": 0.9546,
+    "imagination": 0.9546,
+    "readable": 1.0,
+    "surprise": 0.9091,
+    "mixing": 0.957,
+    "originality": 1.0,
+    "readability": 1.0,
+    "coherence": 1.0,
+    "flesch": 69.5,
+    "words": 56,
+    "sentences": 5
+  },
+  "fragments": [
+    {
+      "id": "met.argument_war",
+      "kind": "metaphor",
+      "source": "argument is war"
+    },
+    {
+      "id": "harvest.2.2",
+      "kind": "painting",
+      "source": "Arcimboldo, Vertumnus"
+    },
+    {
+      "id": "book.phantom_tollbooth",
+      "kind": "book",
+      "source": "Norton Juster, The Phantom Tollbooth"
+    },
+    {
+      "id": "poem.ghalib_moth",
+      "kind": "poem",
+      "source": "Ghalib, ghazal on the moth and the candle"
+    },
+    {
+      "id": "met.text_fabric",
+      "kind": "metaphor",
+      "source": "a text is a fabric"
+    },
+    {
+      "id": "harvest.3.4",
+      "kind": "painting",
+      "source": "Yves Tanguy, Indefinite Divisibility"
+    },
+    {
+      "id": "book.flatland",
+      "kind": "book",
+      "source": "Edwin Abbott, Flatland"
+    },
+    {
+      "id": "poem.antara_muallaqa",
+      "kind": "poem",
+      "source": "Antara ibn Shaddad, Mu'allaqa"
+    }
+  ],
+  "generations": 12,
+  "history": [
+    0.8464,
+    0.8663,
+    0.9012,
+    0.9012,
+    0.9029,
+    0.9083,
+    0.9148,
+    0.9148,
+    0.9285,
+    0.9285,
+    0.9294,
+    0.9535
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "model": "nest",
+  "text": "Beyond a animal lies a jar; whoever enters finds that if it comes back at all. Every a spirit in a flash contains it sleeps through August and wakes hungry in September. Every the seekers in the reeds contains it sleeps through August and wakes hungry in September.",
+  "score": {
+    "score": 0.595,
+    "imagination": 0.7761,
+    "readable": 0.6667,
+    "surprise": 0.625,
+    "mixing": 0.9055,
+    "originality": 0.8261,
+    "readability": 1.0,
+    "coherence": 0.6667,
+    "flesch": 65.5,
+    "words": 25,
+    "sentences": 3
+  },
+  "fragments": [
+    {
+      "id": "met.knowledge_light",
+      "kind": "metaphor",
+      "source": "knowledge is light"
+    },
+    {
+      "id": "harvest.6.2",
+      "kind": "painting",
+      "source": "Yves Tanguy, Indefinite Divisibility"
+    },
+    {
+      "id": "book.arabian_nights",
+      "kind": "book",
+      "source": "One Thousand and One Nights"
+    },
+    {
+      "id": "poem.libai_moon",
+      "kind": "poem",
+      "source": "Li Bai, \"Drinking Alone Under the Moon\""
+    },
+    {
+      "id": "met.knowledge_light",
+      "kind": "metaphor",
+      "source": "knowledge is light"
+    },
+    {
+      "id": "art.ernst_europe",
+      "kind": "painting",
+      "source": "Max Ernst, Europe After the Rain"
+    },
+    {
+      "id": "harvest.9.0",
+      "kind": "book",
+      "source": "Jeff VanderMeer, Annihilation"
+    },
+    {
+      "id": "poem.attar_birds",
+      "kind": "poem",
+      "source": "Attar of Nishapur, \"The Conference of the Birds\""
+    },
+    {
+      "id": "met.market_organism",
+      "kind": "metaphor",
+      "source": "the market is an animal"
+    }
+  ],
+  "depth": 3
+}

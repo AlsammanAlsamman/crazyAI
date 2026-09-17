@@ -1,0 +1,50 @@
+{
+  "seed": 3004,
+  "target": "matmul",
+  "blend_model": "graft",
+  "depth": 3,
+  "assumption_focus": "a matrix is a two-dimensional grid living in one memory",
+  "provider": "claudecode",
+  "model": "",
+  "imagination_score": 0.7846,
+  "status": "exact",
+  "value": 14.19,
+  "prediction": 6.0,
+  "calibration": 0.423,
+  "discovery": 12.6617,
+  "fragments": [
+    "met.memory_palace",
+    "art.kandinsky_composition",
+    "book.flatland",
+    "poem.farrokhzad_birth",
+    "harvest.10.2",
+    "art.bosch_delights"
+  ],
+  "rng_log": [
+    {
+      "label": "invent.blend_model",
+      "value": "graft"
+    },
+    {
+      "label": "invent.depth",
+      "value": 3
+    },
+    {
+      "label": "invent.assumption",
+      "value": "a matrix is a two-dimensional grid living in one memory"
+    },
+    {
+      "label": "child:invent.world",
+      "value": 2128712364
+    }
+  ],
+  "timing_s": {
+    "seed": 0.0,
+    "harvest": 0.0,
+    "world": 0.018,
+    "immerse": 31.778,
+    "bend": 252.15,
+    "measure": 1.655
+  },
+  "total_s": 285.602
+}

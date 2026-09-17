@@ -214,6 +214,51 @@ source-built OpenBLAS or MKL would likely close or reverse it. The lesson:
 always re-derive the baseline on the machine you're actually measuring on
 before comparing GFLOP/s across sessions.
 
+### Third run: does the feedback loop actually help?
+
+The outcome feedback loop (`--bias-from-history`, `--evolve-corpus` - see
+below) needed a real answer, not just a mechanism check: does weighting
+future draws toward what scored well in the archive actually raise
+`discovery`? Ran it as a real control-vs-treatment pilot, `matmul`, both via
+`claudecode`, nothing else changed: 8 fresh seeds unbiased (`invent_3001..3008_matmul`)
+against 8 fresh seeds with both flags on (`invent_4001..4008_matmul`,
+`--bias-min-samples 10` so it would actually activate against the archive as
+it stood).
+
+| | control (unbiased) | treatment (biased + evolve-corpus) |
+|---|---|---|
+| mean discovery | 5.46 | 5.17 |
+| median discovery | 5.43 | 5.32 |
+| max discovery | **12.66** | 10.33 |
+| compile errors | 1/8 | 0/8 |
+
+**No clear improvement from biasing, at this sample size.** Mean and median
+are within noise of each other, and the single best run of the round came
+from the *unbiased* group, not the biased one. Bias did shift the draw
+distribution exactly as designed (favoured `anneal`, the historically
+stronger arm, 3 of 8 draws vs. a uniform ~1.1 expected) - the mechanism
+works as built, it just didn't translate into better outcomes here. Nothing
+promoted to the corpus either: neither batch's best beat the archive's
+existing record. Eight vs. eight is a small pilot; this is a directional
+result, not a verdict on the idea, and the honest thing to do with a null
+result is report it, not re-run until one side looks better.
+
+**The pilot did turn up a real find anyway, from the unbiased side:** seed
+3004 (`graft`, focus "a matrix is a two-dimensional grid living in one
+memory") reached **14.19** on the pipeline's own metric - second-best in the
+project, behind only seed 3's 16.0. Checked the honest way again - n = 1024,
+real OpenBLAS on this machine, five repeated pairs:
+
+| | run 1 | run 2 | run 3 | run 4 | run 5 | mean |
+|---|---|---|---|---|---|---|
+| seed 3004 kernel | 377 | 410 | 389 | 393 | 408 | **395** |
+| real OpenBLAS | 320 | 377 | 388 | 399 | 376 | **372** |
+
+About a 6 % edge on average, but the ranges overlap - one pair even had
+OpenBLAS ahead (399 vs. 393). **Competitive with OpenBLAS, not a clean win**
+like seed 42's consistent, non-overlapping ~25-30 % margin. A real,
+correct, second-best kernel; not a second "beats OpenBLAS" headline.
+
 ### The food: four corpora
 
 `crazyai/data/imagination/` holds ~100 bundled fragments in four worlds, each an
@@ -392,6 +437,8 @@ nor `--evolve-corpus` will activate on today's archive - both need more
 archived runs (`--bias-min-samples`, default 20) than currently exist. All 31
 tests pass with every new flag off, the mandatory regression gate; the
 mechanisms themselves are covered by dedicated tests
-(`tests/test_invent_pipeline.py`) using the offline mock provider - actually
-measuring whether biasing raises `discovery` needs a real-provider pilot
-batch, not yet run.
+(`tests/test_invent_pipeline.py`) using the offline mock provider. The
+real-provider pilot batch this needed to mean anything - see "Third run"
+above - found no clear improvement from biasing at 8-vs-8, though it did
+turn up the project's second-best kernel (seed 3004, from the unbiased
+side).

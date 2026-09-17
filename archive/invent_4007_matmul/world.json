@@ -1,0 +1,65 @@
+{
+  "model": "nest",
+  "text": "Missing its head and both arms; this is why a water is built around a line. Inside a inside, there is a owl, and in a owl it pools where the ground is low. Under a word, it sleeps through August and wakes hungry in September, and a theory is the only way out.",
+  "score": {
+    "score": 0.6375,
+    "imagination": 0.8315,
+    "readable": 0.6667,
+    "surprise": 0.6,
+    "mixing": 0.9582,
+    "originality": 1.0,
+    "readability": 1.0,
+    "coherence": 0.6667,
+    "flesch": 83.6,
+    "words": 21,
+    "sentences": 3
+  },
+  "fragments": [
+    {
+      "id": "met.market_organism",
+      "kind": "metaphor",
+      "source": "the market is an animal"
+    },
+    {
+      "id": "art.varo_creation",
+      "kind": "painting",
+      "source": "Remedios Varo, Creation of the Birds"
+    },
+    {
+      "id": "harvest.5.2",
+      "kind": "book",
+      "source": "Ursula K. Le Guin, The Left Hand of Darkness"
+    },
+    {
+      "id": "poem.rumi_reed",
+      "kind": "poem",
+      "source": "Rumi, \"Song of the Reed\" (opening of the Masnavi)"
+    },
+    {
+      "id": "met.money_water",
+      "kind": "metaphor",
+      "source": "money is water"
+    },
+    {
+      "id": "art.goya_sleep",
+      "kind": "painting",
+      "source": "Goya, The Sleep of Reason Produces Monsters"
+    },
+    {
+      "id": "harvest.5.4",
+      "kind": "book",
+      "source": "Mervyn Peake, Gormenghast"
+    },
+    {
+      "id": "poem.rilke_torso",
+      "kind": "poem",
+      "source": "Rainer Maria Rilke, \"Archaic Torso of Apollo\""
+    },
+    {
+      "id": "met.ideas_food",
+      "kind": "metaphor",
+      "source": "ideas are food"
+    }
+  ],
+  "depth": 3
+}

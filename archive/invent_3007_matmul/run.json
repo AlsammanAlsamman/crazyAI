@@ -1,0 +1,52 @@
+{
+  "seed": 3007,
+  "target": "matmul",
+  "blend_model": "evolve",
+  "depth": 2,
+  "assumption_focus": "the whole sum over the shared index is finished before the next cell is started",
+  "provider": "claudecode",
+  "model": "",
+  "imagination_score": 0.9817,
+  "status": "exact",
+  "value": 0.211,
+  "prediction": 3.0,
+  "calibration": 0.07,
+  "discovery": 0.2091,
+  "fragments": [
+    "met.computer_brain",
+    "art.debuffet_hourloupe",
+    "book.hitchhiker",
+    "poem.paz_sunstone",
+    "met.data_oil",
+    "art.goya_sleep",
+    "harvest.7.3",
+    "poem.libai_moon"
+  ],
+  "rng_log": [
+    {
+      "label": "invent.blend_model",
+      "value": "compare"
+    },
+    {
+      "label": "invent.depth",
+      "value": 2
+    },
+    {
+      "label": "invent.assumption",
+      "value": "the whole sum over the shared index is finished before the next cell is started"
+    },
+    {
+      "label": "child:invent.world",
+      "value": 2037877630
+    }
+  ],
+  "timing_s": {
+    "seed": 0.0,
+    "harvest": 0.0,
+    "world": 0.342,
+    "immerse": 33.745,
+    "bend": 152.242,
+    "measure": 2.448
+  },
+  "total_s": 188.777
+}

@@ -1,0 +1,13 @@
+{
+  "seed": 3005,
+  "target": "matmul",
+  "blend_model": "anneal",
+  "depth": 1,
+  "assumption_focus": "one product is one problem; many products are many problems",
+  "bias": {
+    "enabled": false,
+    "min_samples": 20,
+    "samples_seen": 0,
+    "active": false
+  }
+}

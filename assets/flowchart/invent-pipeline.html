@@ -67,6 +67,7 @@
   .card p.fix{margin-top:8px; color:var(--text-dim); font-size:.82rem}
   .card p.fix b{color:var(--harness); font-weight:600}
   .warn-dot{background:var(--warn)}
+  .ok-dot{background:var(--harness)}
 
   svg text{font-family:var(--font-ui); fill:currentColor}
   svg .mono{font-family:var(--font-mono)}
@@ -74,7 +75,9 @@
 
 <h1>How <code style="font-family:var(--font-mono)">crazyai invent</code> works</h1>
 <p class="sub">
-  Seven steps, corpus to archived result. Colour marks who does the work:
+  Seven steps, corpus to archived result, plus two opt-in loop-backs added since
+  the first two real batches (SEED reading history, ARCHIVE writing back to the
+  corpus — see below). Colour marks who does the work:
   <b style="color:var(--rng)">RNG / math</b> (deterministic, seeded, free),
   <b style="color:var(--claude)">Claude</b> (a model call, costs time and money),
   <b style="color:var(--harness)">harness</b> (compiled C, deterministic, the only step that touches ground truth).
@@ -86,10 +89,11 @@
   <span><span class="dot" style="background:var(--claude)"></span>Claude — one model call</span>
   <span><span class="dot" style="background:var(--harness)"></span>harness — compiles &amp; times real code</span>
   <span><span class="dot warn-dot"></span>known limitation</span>
+  <span><span class="dot ok-dot"></span>tested against a real pilot</span>
 </div>
 
-<div class="scroller" role="img" aria-label="Seven pipeline stages: seed, harvest, world, immerse, bend, measure, archive, connected left to right by the file each stage hands to the next.">
-<svg viewBox="0 0 2040 300" xmlns="http://www.w3.org/2000/svg">
+<div class="scroller" role="img" aria-label="Seven pipeline stages: seed, harvest, world, immerse, bend, measure, archive, connected left to right by the file each stage hands to the next. Two dashed opt-in loops run from archive back to world (evolve-corpus, promoting a new-best result into the corpus) and from archive back to seed (bias-from-history, weighting future draws by archived discovery).">
+<svg viewBox="0 0 2040 375" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
       <path d="M0,0 L10,5 L0,10 z" fill="currentColor"/>
@@ -110,6 +114,8 @@
     <text x="16" y="116" font-size="11.5">· immersion depth 1–3</text>
     <text x="16" y="132" font-size="11.5">· 1 of 8 matmul</text>
     <text x="16" y="148" font-size="11.5">  assumptions to bend</text>
+    <text x="16" y="166" font-size="10.5" fill="var(--harness)">⟲ --bias-from-history: weight</text>
+    <text x="16" y="178" font-size="10.5" fill="var(--harness)">  these by archived discovery</text>
     <text x="16" y="190" font-size="11" class="mono" fill="var(--text-dim)">→ seed.json</text>
   </g>
 
@@ -134,10 +140,12 @@
     <text x="16" y="34" font-size="12" fill="var(--rng)" class="mono">03 · RNG + math</text>
     <text x="16" y="58" font-size="16" font-weight="700">WORLD</text>
     <text x="16" y="82" font-size="11.5" fill="var(--text-dim)">the blend</text>
-    <text x="16" y="100" font-size="11.5">1 of 6 models (cutup, markov,</text>
-    <text x="16" y="116" font-size="11.5">graft, nest, anneal, evolve)</text>
+    <text x="16" y="100" font-size="11.5">1 of 6 models, over 4 kinds</text>
+    <text x="16" y="116" font-size="11.5">(+ remix via --blend, not drawn)</text>
     <text x="16" y="132" font-size="11.5">merges corpus + harvest,</text>
     <text x="16" y="148" font-size="11.5">scored on the imagination scale</text>
+    <text x="16" y="166" font-size="10.5" fill="var(--harness)">⟲ --evolve-corpus: also draws</text>
+    <text x="16" y="178" font-size="10.5" fill="var(--harness)">  promoted fragments (below)</text>
     <text x="16" y="190" font-size="11" class="mono" fill="var(--text-dim)">→ world.json / world.md</text>
   </g>
 
@@ -198,6 +206,8 @@
     <text x="16" y="116" font-size="11.5">one line to invent_index</text>
     <text x="16" y="132" font-size="11.5">.jsonl — later ranked by</text>
     <text x="16" y="148" font-size="11.5">invent-rank --target matmul</text>
+    <text x="16" y="166" font-size="10.5" fill="var(--harness)">⟲ --evolve-corpus: new best →</text>
+    <text x="16" y="178" font-size="10.5" fill="var(--harness)">  promotes world to the corpus</text>
     <text x="16" y="190" font-size="11" class="mono" fill="var(--text-dim)">→ run.json</text>
   </g>
 
@@ -210,9 +220,22 @@
     <line x1="1430" y1="155" x2="1498" y2="155" marker-end="url(#arrow)"/>
     <line x1="1730" y1="155" x2="1798" y2="155" marker-end="url(#arrow)"/>
   </g>
+
+  <!-- feedback loops, opt-in: ARCHIVE -> WORLD (promotion) and ARCHIVE -> SEED (bias) -->
+  <defs>
+    <marker id="arrowLoop" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="var(--harness)"/>
+    </marker>
+  </defs>
+  <g stroke="var(--harness)" stroke-width="1.5" fill="none" stroke-dasharray="5 4">
+    <polyline points="1915,260 1915,300 715,300 715,260" marker-end="url(#arrowLoop)"/>
+    <polyline points="1885,260 1885,335 115,335 115,260" marker-end="url(#arrowLoop)"/>
+  </g>
+  <text x="1300" y="296" font-size="10.5" fill="var(--harness)" text-anchor="middle" class="mono">--evolve-corpus: promotes a new-best world into the corpus</text>
+  <text x="1000" y="349" font-size="10.5" fill="var(--harness)" text-anchor="middle" class="mono">--bias-from-history: weights future draws by archived discovery</text>
 </svg>
 </div>
-<p class="scroller-hint">scrolls horizontally →</p>
+<p class="scroller-hint">scrolls horizontally → · dashed green = opt-in, off by default</p>
 
 <h2>The matmul-specific measure step, zoomed in</h2>
 <p class="section-note">
@@ -290,9 +313,14 @@
 </div>
 
 <h2>Where to improve it</h2>
-<p class="section-note">Five concrete openings, found running the first real 10-seed batch end to end.</p>
+<p class="section-note">Five concrete openings from the first real 10-seed batch, plus what a real control-vs-treatment pilot found once one of them (the feedback loop) was actually built.</p>
 
 <div class="cards">
+  <div class="card">
+    <span class="tag"><span class="dot ok-dot"></span>the feedback loop · <b>tested for real</b></span>
+    <p>An 8-vs-8 real pilot (unbiased vs <span class="mono" style="font-family:var(--font-mono)">--bias-from-history --evolve-corpus</span>) found <b>no clear improvement</b>: mean discovery 5.46 vs 5.17, and the single best run of the round came from the <i>unbiased</i> side. The mechanism shifts draws exactly as designed — it just didn't pay off yet.</p>
+    <p class="fix"><b>Read:</b> 8 vs 8 is small; this is directional, not a verdict — worth more data before trusting or discarding it.</p>
+  </div>
   <div class="card">
     <span class="tag"><span class="dot warn-dot"></span>step 06 · <b>MEASURE</b></span>
     <p>Default sizes are <span class="mono" style="font-family:var(--font-mono)">[64, 256, 512]</span>, hardcoded in <span class="mono" style="font-family:var(--font-mono)">step_measure</span> — every invent run is judged on matrix sizes well under the n&nbsp;=&nbsp;1024 this project's own comparisons use.</p>
@@ -315,7 +343,7 @@
   </div>
   <div class="card">
     <span class="tag"><span class="dot warn-dot"></span>step 05→06 · <b>BEND → MEASURE</b></span>
-    <p>3 of the batch's 10 seeds ended in <span class="mono" style="font-family:var(--font-mono)">COMPILE_ERROR</span> with no repair attempt, even though the bend prompt already tells the model to "measure and improve it up to four times."</p>
+    <p>3 of the first batch's 10 seeds ended in <span class="mono" style="font-family:var(--font-mono)">COMPILE_ERROR</span> with no repair attempt, even though the bend prompt already tells the model to "measure and improve it up to four times." Recurred in the pilot too (1 of 16 seeds).</p>
     <p class="fix"><b>Fix:</b> check whether that in-bend loop is actually firing on a compiler error, not just a bad speedup.</p>
   </div>
 </div>

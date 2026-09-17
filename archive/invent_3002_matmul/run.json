@@ -1,0 +1,53 @@
+{
+  "seed": 3002,
+  "target": "matmul",
+  "blend_model": "nest",
+  "depth": 1,
+  "assumption_focus": "the output is produced one cell at a time, row by row",
+  "provider": "claudecode",
+  "model": "",
+  "imagination_score": 0.595,
+  "status": "approx",
+  "value": 2.278,
+  "prediction": 3.5,
+  "calibration": 0.768,
+  "discovery": 1.8167,
+  "fragments": [
+    "met.knowledge_light",
+    "harvest.6.2",
+    "book.arabian_nights",
+    "poem.libai_moon",
+    "met.knowledge_light",
+    "art.ernst_europe",
+    "harvest.9.0",
+    "poem.attar_birds",
+    "met.market_organism"
+  ],
+  "rng_log": [
+    {
+      "label": "invent.blend_model",
+      "value": "nest"
+    },
+    {
+      "label": "invent.depth",
+      "value": 1
+    },
+    {
+      "label": "invent.assumption",
+      "value": "the output is produced one cell at a time, row by row"
+    },
+    {
+      "label": "child:invent.world",
+      "value": 1140943358
+    }
+  ],
+  "timing_s": {
+    "seed": 0.0,
+    "harvest": 0.0,
+    "world": 0.009,
+    "immerse": 22.142,
+    "bend": 241.83,
+    "measure": 1.56
+  },
+  "total_s": 265.541
+}

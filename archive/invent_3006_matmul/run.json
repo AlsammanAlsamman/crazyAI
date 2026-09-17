@@ -1,0 +1,59 @@
+{
+  "seed": 3006,
+  "target": "matmul",
+  "blend_model": "markov",
+  "depth": 1,
+  "assumption_focus": "the whole sum over the shared index is finished before the next cell is started",
+  "provider": "claudecode",
+  "model": "",
+  "imagination_score": 0.4794,
+  "status": "COMPILE_ERROR",
+  "value": 0.0,
+  "prediction": 5.0,
+  "calibration": null,
+  "discovery": 0.0,
+  "fragments": [
+    "met.river_time",
+    "art.hokusai_wave",
+    "book.gormenghast",
+    "poem.kabir_guest",
+    "met.electricity_water",
+    "harvest.7.1",
+    "harvest.2.4",
+    "poem.lorca_sonambulo",
+    "met.problem_knot",
+    "harvest.10.4",
+    "book.borges_tlon",
+    "poem.khansa_elegy",
+    "harvest.8.2",
+    "art.bosch_delights",
+    "harvest.7.0"
+  ],
+  "rng_log": [
+    {
+      "label": "invent.blend_model",
+      "value": "markov"
+    },
+    {
+      "label": "invent.depth",
+      "value": 1
+    },
+    {
+      "label": "invent.assumption",
+      "value": "the whole sum over the shared index is finished before the next cell is started"
+    },
+    {
+      "label": "child:invent.world",
+      "value": 639487871
+    }
+  ],
+  "timing_s": {
+    "seed": 0.0,
+    "harvest": 0.0,
+    "world": 0.03,
+    "immerse": 25.768,
+    "bend": 374.905,
+    "measure": 0.464
+  },
+  "total_s": 401.166
+}

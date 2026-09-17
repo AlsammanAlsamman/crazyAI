@@ -1,0 +1,54 @@
+{
+  "seed": 4005,
+  "target": "matmul",
+  "blend_model": "anneal",
+  "depth": 1,
+  "assumption_focus": "one processor holds both matrices",
+  "provider": "claudecode",
+  "model": "",
+  "imagination_score": 0.9759,
+  "status": "exact",
+  "value": 7.444,
+  "prediction": 5.0,
+  "calibration": 0.672,
+  "discovery": 7.3543,
+  "fragments": [
+    "harvest.6.1",
+    "harvest.5.3",
+    "harvest.8.0",
+    "poem.szymborska_cat",
+    "met.problem_knot",
+    "harvest.7.1",
+    "book.arabian_nights",
+    "poem.szymborska_cat"
+  ],
+  "rng_log": [
+    {
+      "label": "invent.blend_model",
+      "value": "compare"
+    },
+    {
+      "label": "invent.depth",
+      "value": 1
+    },
+    {
+      "label": "invent.assumption",
+      "value": "one processor holds both matrices"
+    },
+    {
+      "label": "child:invent.world",
+      "value": 291018522
+    }
+  ],
+  "timing_s": {
+    "seed": 0.0,
+    "harvest": 0.0,
+    "world": 0.274,
+    "immerse": 21.289,
+    "bend": 234.709,
+    "measure": 1.694
+  },
+  "total_s": 257.966,
+  "prior_best_discovery": 15.9399,
+  "promoted": false
+}

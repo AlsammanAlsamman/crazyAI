@@ -1,0 +1,13 @@
+{
+  "seed": 4006,
+  "target": "matmul",
+  "blend_model": "nest",
+  "depth": 3,
+  "assumption_focus": "every product is computed exactly, once",
+  "bias": {
+    "enabled": true,
+    "min_samples": 10,
+    "samples_seen": 25,
+    "active": true
+  }
+}

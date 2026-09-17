@@ -1,0 +1,28 @@
+# World (blend model: cutup, imagination score 0.528)
+
+A reed pipe, A flat. Until you notice they were the only thing keeping you upright the whole crossing, has been cut and hollowed and forced to sing, A pale mound trails a single black hair into the distance. Deflated organs, Each story contains a storyteller telling another story, A lamp holds a spirit who builds a palace overnight. A performer crosses a wire strung between two towers, a carpet flies. A man treads water gripping a satchel of gold coins, neither end touching anything. Holding a long weighted pole horizontal across both hands, and nearby a bulbous white form seems to bandage itself. People say old memories work the same way, and the wet ink lifts straight off the page and flaps into the air as a living finch, though nothing indicates injury or comfort. An owl-headed woman sits at a desk lit by a single triangular prism that splits starlight into paint, bone-colored desert stretches under a sourceless amber light, a fisherman opens a jar and smoke pours out for an hour before it becomes a giant. Dotted with soft biomorphic shapes like eroded bones, once part of a living reed bed by the water, or shadow explains how the objects arrived or what scale they are. Grief turned into music through its own wounded body, The pole itself does nothing but hang there, footprint, She draws each bird with a violin bow instead of a brush. Every note it plays is a lament for the marsh it was severed from, but from inside the water the coins feel like the only thing he has left to show for the fall. Recognizing their own exile inside its breath, Onlookers shout to drop it and swim, up through her own chest, Cords run from the machinery behind her. And the whole book is one woman's way of staying alive one night longer, Listeners weep at the sound without knowing why. Through the floor, and stitched pillows standing upright on thin stalks, because releasing it would mean admitting the coins were worthless the moment he jumped in. No horizon line, so her heartbeat is the engine driving the invention, yet without it the walker falls within three steps, dead weight carried for no active purpose. Refusing to let go even as it drags him under.
+
+## Built from
+- metaphor: the tightrope walker's pole as memory
+- painting: Remedios Varo, Creation of the Birds
+- book: One Thousand and One Nights
+- poem: Rumi, "Song of the Reed" (opening of the Masnavi)
+- metaphor: the sunk cost fallacy as a drowning man clutching his wallet
+- painting: Yves Tanguy, Mama, Papa Is Wounded!
+
+## Score
+```
+{
+  "score": 0.528,
+  "imagination": 0.5787,
+  "readable": 0.875,
+  "surprise": 0.1971,
+  "mixing": 0.983,
+  "originality": 1.0,
+  "readability": 1.0,
+  "coherence": 0.875,
+  "flesch": 60.5,
+  "words": 209,
+  "sentences": 16
+}
+```

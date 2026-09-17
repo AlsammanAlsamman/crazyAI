@@ -1,0 +1,13 @@
+{
+  "seed": 4002,
+  "target": "matmul",
+  "blend_model": "anneal",
+  "depth": 3,
+  "assumption_focus": "the output is produced one cell at a time, row by row",
+  "bias": {
+    "enabled": true,
+    "min_samples": 10,
+    "samples_seen": 21,
+    "active": true
+  }
+}

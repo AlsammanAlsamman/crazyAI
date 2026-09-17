@@ -1,0 +1,100 @@
+{
+  "model": "evolve",
+  "text": "Its verses are nerves and its poem is its moon. Data it is drawn and dirty. One desk cells a pen, liquid to instead 'table the dreamer blue. A computer that woman's a point built through every point in the towel at once turns reverses into a pen and a shadow of continuous. The third is one makes object in which no object is the returning it depicts.",
+  "score": {
+    "score": 0.9817,
+    "imagination": 0.9817,
+    "readable": 1.0,
+    "surprise": 1.0,
+    "mixing": 0.9462,
+    "originality": 1.0,
+    "readability": 1.0,
+    "coherence": 1.0,
+    "flesch": 76.1,
+    "words": 32,
+    "sentences": 5
+  },
+  "fragments": [
+    {
+      "id": "met.computer_brain",
+      "kind": "metaphor",
+      "source": "the computer is a brain"
+    },
+    {
+      "id": "art.debuffet_hourloupe",
+      "kind": "painting",
+      "source": "Dubuffet, Hourloupe"
+    },
+    {
+      "id": "book.hitchhiker",
+      "kind": "book",
+      "source": "Douglas Adams, The Hitchhiker's Guide to the Galaxy"
+    },
+    {
+      "id": "poem.paz_sunstone",
+      "kind": "poem",
+      "source": "Octavio Paz, \"Sunstone\""
+    },
+    {
+      "id": "met.data_oil",
+      "kind": "metaphor",
+      "source": "data is oil"
+    },
+    {
+      "id": "art.goya_sleep",
+      "kind": "painting",
+      "source": "Goya, The Sleep of Reason Produces Monsters"
+    },
+    {
+      "id": "harvest.7.3",
+      "kind": "book",
+      "source": "Jorge Amado, by way of Gabriel García Márquez, One Hundred Years of Solitude"
+    },
+    {
+      "id": "poem.libai_moon",
+      "kind": "poem",
+      "source": "Li Bai, \"Drinking Alone Under the Moon\""
+    }
+  ],
+  "generations": 12,
+  "history": [
+    0.897,
+    0.9051,
+    0.9588,
+    0.9588,
+    0.9599,
+    0.9599,
+    0.9599,
+    0.9611,
+    0.9681,
+    0.9817,
+    0.9817,
+    0.9817
+  ],
+  "compared": [
+    {
+      "model": "evolve",
+      "score": 0.9817
+    },
+    {
+      "model": "anneal",
+      "score": 0.9703
+    },
+    {
+      "model": "graft",
+      "score": 0.826
+    },
+    {
+      "model": "markov",
+      "score": 0.4434
+    },
+    {
+      "model": "cutup",
+      "score": 0.3894
+    },
+    {
+      "model": "nest",
+      "score": 0.2371
+    }
+  ]
+}

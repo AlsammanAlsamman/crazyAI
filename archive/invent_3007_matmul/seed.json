@@ -1,0 +1,13 @@
+{
+  "seed": 3007,
+  "target": "matmul",
+  "blend_model": "compare",
+  "depth": 2,
+  "assumption_focus": "the whole sum over the shared index is finished before the next cell is started",
+  "bias": {
+    "enabled": false,
+    "min_samples": 20,
+    "samples_seen": 0,
+    "active": false
+  }
+}
