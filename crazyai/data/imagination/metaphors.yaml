@@ -1,0 +1,79 @@
+# Human linguistic metaphors - the way people already think one thing through another.
+# Each fragment is a short original description of a metaphor, written to be cut up and recombined.
+kind: metaphor
+fragments:
+  - id: met.river_time
+    source: "time is a river"
+    text: "Time is a river: moments flow past, the past is downstream and cannot be swum back to, and everyone stands on the same bank watching the same water go by. Some events are rapids, some are still pools where nothing seems to move."
+  - id: met.argument_war
+    source: "argument is war"
+    text: "An argument is a war. Positions are defended, claims are attacked, weak points are targeted, and at the end one side retreats. Every sentence is a move on a field, and silence is a surrender."
+  - id: met.ideas_food
+    source: "ideas are food"
+    text: "Ideas are food. A thought can be raw or half-baked; you chew on a problem, digest a theory, and some notions are hard to swallow. A rich idea nourishes for years; a thin one leaves you hungry by evening."
+  - id: met.mind_machine
+    source: "the mind is a machine"
+    text: "The mind is a machine with gears that turn, a boiler that overheats, and a spring that can be wound too tight. Ideas are cranked out, memory is a store-room with shelves, and forgetting is rust."
+  - id: met.life_journey
+    source: "life is a journey"
+    text: "Life is a journey along a road with forks, milestones and dead ends. Some travellers carry too much luggage, some walk backwards, and everyone reaches the same last inn whether they hurried or dawdled."
+  - id: met.society_body
+    source: "society is a body"
+    text: "A society is a body: the roads are its veins, the markets its stomach, the courts its immune system, the archives its memory. When one organ sickens the others compensate until they cannot."
+  - id: met.theory_building
+    source: "theories are buildings"
+    text: "A theory is a building. It has foundations and load-bearing walls, some rooms are added later and never quite fit, and a single cracked pillar can bring the roof down on everyone inside."
+  - id: met.love_fire
+    source: "love is fire"
+    text: "Love is a fire: it is kindled, it flares, it needs fuel, it can be banked to embers and rekindled years later from a single glowing coal, or it can burn the house down."
+  - id: met.knowledge_light
+    source: "knowledge is light"
+    text: "Knowledge is light. An explanation illuminates, an insight is a flash, a dark age is one in which the lamps went out, and a brilliant mind casts long shadows in which lesser lights are lost."
+  - id: met.money_water
+    source: "money is water"
+    text: "Money is water: it flows, it pools where the ground is low, it evaporates, it is dammed and channelled, it floods a market and then drains away leaving mud. Liquidity is exactly what the word says."
+  - id: met.computer_brain
+    source: "the computer is a brain"
+    text: "A computer is a brain with memory, attention and fatigue. It sleeps, wakes, forgets when its power is cut, and can be taught. Its wires are nerves and its fan is its breath."
+  - id: met.words_weapons
+    source: "words are weapons"
+    text: "Words are weapons: sharp, blunt, poisoned, double-edged. A remark can cut, a speech can be a barrage, and a well-aimed question pierces armour that a thousand facts could not dent."
+  - id: met.market_organism
+    source: "the market is an animal"
+    text: "The market is an animal with moods. It is bullish, bearish, skittish, it panics and stampedes, it sleeps through August and wakes hungry in September. Nobody rides it; some cling on."
+  - id: met.language_tree
+    source: "language is a tree"
+    text: "A language is a tree: a trunk of ancient roots, branches that split into dialects, leaves that are words falling every autumn and new ones budding every spring, and a forest floor of dead words that feed the living ones."
+  - id: met.problem_knot
+    source: "a problem is a knot"
+    text: "A problem is a knot. You find the loose end, you follow the strand under and over, some knots must be cut and some fall open when you stop pulling. A hard problem is a knot tied by someone cleverer than you."
+  - id: met.memory_palace
+    source: "memory is a palace"
+    text: "Memory is a palace with rooms for every year, corridors that connect a smell to a face, locked doors, a cellar nobody visits, and windows that look out onto places that no longer exist."
+  - id: met.data_oil
+    source: "data is oil"
+    text: "Data is oil: drilled, refined, piped, hoarded, spilled. Raw it is useless and dirty; refined it drives everything; and whoever owns the wells owns the century."
+  - id: met.heart_engine
+    source: "the heart is a pump"
+    text: "The heart is a pump, the lungs are bellows, the blood is a fleet of ships carrying cargo through canals, and every cell is a port waiting for its delivery of oxygen and its removal of ash."
+  - id: met.city_machine
+    source: "the city is a machine"
+    text: "A city is a machine for living in: streets are conveyor belts, buildings are cylinders, traffic lights are valves, and at rush hour the pressure builds until something somewhere gives."
+  - id: met.electricity_water
+    source: "electricity is water"
+    text: "Electricity is water in pipes: voltage is pressure, current is flow, resistance is a narrow pipe, a capacitor is a tank, and a short circuit is a burst main flooding the basement."
+  - id: met.atom_solar
+    source: "the atom is a solar system"
+    text: "The atom is a tiny solar system, electrons orbiting a nucleus like planets around a sun, each on its own path, each with its own season, and chemistry is the gravity between neighbouring suns."
+  - id: met.evolution_ladder
+    source: "evolution is a ladder / a tree"
+    text: "Evolution is a tree, not a ladder: no rung is higher, every twig alive today is exactly as old as every other, and the trunk is not a destination but a crowd of dead ancestors holding the living up."
+  - id: met.internet_web
+    source: "the internet is a web"
+    text: "The internet is a web: strands cross strands, something plucked on one edge trembles at the centre, spiders wait at the nodes, and a fly that lands anywhere is felt everywhere."
+  - id: met.time_money
+    source: "time is money"
+    text: "Time is money: it is spent, saved, wasted, invested, borrowed against the future and stolen by thieves who never seem to run out of it. Nobody has ever been paid back an hour."
+  - id: met.text_fabric
+    source: "a text is a fabric"
+    text: "A text is a fabric, woven from threads of argument; a thin passage is threadbare, a dense one is tightly woven, a loose thread unravels a chapter, and the pattern is only visible from a distance."

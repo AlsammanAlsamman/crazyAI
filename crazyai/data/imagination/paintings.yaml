@@ -1,0 +1,76 @@
+# Descriptions of the most imaginative paintings - what is actually in the picture,
+# written as scenes. Original descriptions, not catalogue text.
+kind: painting
+fragments:
+  - id: art.bosch_delights
+    source: "Bosch, The Garden of Earthly Delights"
+    text: "Naked people ride giant birds and eat strawberries larger than their heads. A man grows out of a broken eggshell that is also a house, a knife walks between two enormous ears, and in the water a couple sits inside a transparent bubble that grows on a stalk."
+  - id: art.dali_memory
+    source: "Dalí, The Persistence of Memory"
+    text: "Pocket watches melt over the branch of a dead tree, over the edge of a table and over a sleeping face that is also a cliff. Ants swarm on the one watch that has not melted. The sea in the background is perfectly still and the light comes from nowhere."
+  - id: art.escher_relativity
+    source: "Escher, Relativity"
+    text: "Staircases climb in three different directions of gravity at once; a figure walking up one flight is upside down to the figure on the next. Doors open onto gardens that hang sideways. Nobody in the building finds any of it strange."
+  - id: art.magritte_castle
+    source: "Magritte, The Castle of the Pyrenees"
+    text: "A boulder the size of a hill floats above a calm sea, and on top of the boulder stands a stone castle. No ropes, no engines, no explanation; the waves break beneath it as if rock had always been lighter than air."
+  - id: art.magritte_golconda
+    source: "Magritte, Golconda"
+    text: "Men in bowler hats and dark coats hang in the air in front of ordinary houses, spaced as evenly as rain, all facing forward, neither falling nor rising, each casting no shadow on the red roofs."
+  - id: art.varo_tower
+    source: "Remedios Varo, Embroidering the Earth's Mantle"
+    text: "In a tower, girls with identical faces sit at a long table embroidering a cloth that spills out of the windows and becomes the landscape below: hills, seas, roofs, all stitched. A hooded figure reads the pattern aloud from a book."
+  - id: art.varo_creation
+    source: "Remedios Varo, Creation of the Birds"
+    text: "An owl-woman sits at a desk painting birds; light from a star passes through a magnifying lens she holds and the painted birds lift off the page and fly out of the window. A violin at her chest supplies the paint through a tube."
+  - id: art.klint_ten_largest
+    source: "Hilma af Klint, The Ten Largest"
+    text: "Huge sheets of pink and orange carry spirals, snail shells, letters, and flowers made of geometry. Nothing is a picture of anything; the shapes are the stages of a life drawn as if by a plant that could write."
+  - id: art.chagall_village
+    source: "Chagall, I and the Village"
+    text: "A green-faced man and a white cow look into each other's eyes across a circle; inside the cow's head a woman milks a smaller cow. A farmer walks with a scythe while an upside-down woman floats beside a row of houses, two of which are also upside down."
+  - id: art.miro_carnival
+    source: "Miró, Carnival of Harlequin"
+    text: "A room full of creatures made of lines and dots: a ladder with an ear, a cat with a red ball, fish flying, a musical note with legs. Through the window a single black triangle hangs in the sky like a fold in the air."
+  - id: art.kandinsky_composition
+    source: "Kandinsky, Composition VIII"
+    text: "Circles of every size collide with triangles and long diagonal lines on a pale ground; a black disc with a violet halo dominates the upper corner, and everything seems to be moving at a speed the eye cannot follow."
+  - id: art.bruegel_babel
+    source: "Bruegel, The Tower of Babel"
+    text: "A tower like a coiled shell rises above a harbour, its top already in cloud while its lower arches are still being built; tiny workers haul stone up ramps, a king inspects a mason, and ships unload at its foot as if the tower were a mountain that had always been there."
+  - id: art.ernst_europe
+    source: "Max Ernst, Europe After the Rain"
+    text: "A landscape of coral, bone and rust stretches to the horizon, eaten into towers and caves; a bird-headed soldier and a woman stand among the ruins as if the world had been dissolved and left to dry."
+  - id: art.rousseau_dream
+    source: "Henri Rousseau, The Dream"
+    text: "A naked woman reclines on a red sofa in the middle of a jungle; lions, birds and an elephant look out between enormous leaves and lotus flowers while a dark figure plays a flute. The moon is full and every leaf is painted separately."
+  - id: art.klee_twittering
+    source: "Paul Klee, Twittering Machine"
+    text: "Four wire birds stand on a crankshaft above a pit; turn the handle and they would twitter. The drawing is a blueprint for a machine that produces song and lures whatever comes to listen."
+  - id: art.delvaux_night
+    source: "Paul Delvaux, night trains"
+    text: "A railway station at night, lit by cold lamps; women in long dresses stand motionless on the platform while a skeleton sits on a bench reading. A train waits, nobody boards, and the moon is doubled in the windows."
+  - id: art.hokusai_wave
+    source: "Hokusai, The Great Wave"
+    text: "A wave the size of a mountain curls over three boats, its crest breaking into claws of foam; behind it, tiny and calm, Mount Fuji sits under a grey sky as if the wave were about to swallow the mountain too."
+  - id: art.tanning_birthday
+    source: "Dorothea Tanning, Birthday"
+    text: "A woman in a jacket of roots and a skirt of seaweed stands at a door that opens onto another door and another, an endless corridor of doors; at her feet crouches a winged creature with the body of a lemur."
+  - id: art.carrington_kitchen
+    source: "Leonora Carrington, kitchens"
+    text: "In a kitchen a white goose, a woman with hair to the floor and a creature that is half chair stir a pot; the tiles are inscribed with letters, vegetables float, and the fire burns blue while someone is turning into a bird."
+  - id: art.debuffet_hourloupe
+    source: "Dubuffet, Hourloupe"
+    text: "Everything - people, chairs, roads, sky - is drawn as jigsaw cells outlined in black and filled with red, blue and white hatching; the world is one continuous puzzle in which no piece is the thing it depicts."
+  - id: art.friedrich_wanderer
+    source: "Caspar David Friedrich, Wanderer above the Sea of Fog"
+    text: "A man in a dark coat stands on a rock with his back to us, looking out over a sea of fog from which mountaintops emerge like islands; the fog fills the valleys so completely that the world seems to be made of cloud with a few solid peaks."
+  - id: art.goya_sleep
+    source: "Goya, The Sleep of Reason Produces Monsters"
+    text: "A man sleeps face-down on his desk while owls and bats rise from behind him in a cloud; a lynx watches from the floor. One owl holds a pen, ready to write whatever the dreamer cannot."
+  - id: art.ocampo_fields
+    source: "Octavio Ocampo, metamorphic portraits"
+    text: "A face that, looked at again, is a crowd of birds, a woman, a doorway and a vase; every feature is another whole scene, and the picture changes depending on how far away you stand."
+  - id: art.kahlo_two
+    source: "Frida Kahlo, The Two Fridas"
+    text: "Two versions of the same woman sit hand in hand; their hearts are exposed and joined by a single artery that runs from one chest to the other, and one of them holds surgical scissors over the vein that drips onto her white dress."

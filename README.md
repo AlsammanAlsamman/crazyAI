@@ -31,8 +31,8 @@ Working on crazyAI itself, or want the tests/examples and the C++ kernel build?
 git clone https://github.com/AlsammanAlsamman/crazyAI && cd crazyAI
 python3 -m venv .venv && .venv/bin/pip install -e ".[dev]"
 make native          # optional: builds the C++ kernels (g++); Python fallbacks are used otherwise
-make test            # 21 tests, offline
-make examples        # the five offline examples
+make test            # offline test suite
+make examples        # the offline examples
 ```
 
 To run with Claude, set `ANTHROPIC_API_KEY` (or use `ant auth login`). Default model is `claude-opus-5` with adaptive thinking, streaming, and server-side refusal fallbacks enabled (`--no-fallbacks` to disable).
@@ -85,13 +85,102 @@ Steps are resumable: rerunning a seed reuses the files that exist (`--force` to 
 
 ## The toolkit
 
-55 tools, generated from typed Python functions (`crazyai tools`). Adding a tool is adding a function with `@tool(family, kind)`.
+68 tools, generated from typed Python functions (`crazyai tools`). Adding a tool is adding a function with `@tool(family, kind)`.
 
-**Invent** — `chaos` (draw_seed, draw_operator, draw_depth, draw_analogy_pair, perturb, shuffle) · `mutate` (apply_operator, list_operators) · `unconventional` (enumerate_assumptions, invert, extreme_case, transpose, what_if) · `transform` (structure ↔ image description ↔ music, reverse) · `disguise` (rephrase_to_corpus, bury, formalise_tone)
+**Invent** — `chaos` (draw_seed, draw_operator, draw_depth, draw_analogy_pair, perturb, shuffle) · `mutate` (apply_operator, list_operators) · `unconventional` (enumerate_assumptions, invert, extreme_case, transpose, what_if) · `transform` (structure ↔ image description ↔ music, reverse) · `disguise` (rephrase_to_corpus, bury, formalise_tone) · `blend` (cutup, markov, graft, nest, anneal, evolve, compare)
 
-**Measure** — `symbolic` (derive, check_dimensions, take_limit, series_expand, verify_identity, solve, define_predicate, primes_up_to, collatz_orbits, compare_structures) · `stats` (simulate_dgp, fit, fit_table, inject_confounder, bootstrap, power_analysis, monte_carlo, check_identifiability, describe) · `logic` (check_consistency, entails, extract_propositions, find_equivocation, trace_argument) · `narrative` (word_stats, readability_by_segment, build_timeline, knowledge_graph, check_timeline) · `ground` (what_must_be_true, cost_of_possibility, flaw_count) · `novelty` (search_archive) · `archive` (write_note, read_key)
+**Measure** — `symbolic` (derive, check_dimensions, take_limit, series_expand, verify_identity, solve, define_predicate, primes_up_to, collatz_orbits, compare_structures) · `stats` (simulate_dgp, fit, fit_table, inject_confounder, bootstrap, power_analysis, monte_carlo, check_identifiability, describe) · `logic` (check_consistency, entails, extract_propositions, find_equivocation, trace_argument) · `narrative` (word_stats, readability_by_segment, build_timeline, knowledge_graph, check_timeline) · `ground` (what_must_be_true, cost_of_possibility, flaw_count) · `novelty` (search_archive) · `archive` (write_note, read_key) · `imagination` (score, compare, world_words) · `kernel` (contract, bench)
 
 Rules: measure tools are pure; invent tools draw only from the run's seeded RNG; tools never call the model; every call and result is logged into the run folder.
+
+## `crazyai invent` — the possible, found by imagination
+
+The pipeline above manufactures *plausible impossibilities* and scores whether
+a reader detects the flaw. `invent` runs the other way: it makes the AI
+imagine far outside its defaults and keeps only what turns out to be
+**possible and measurably better**. It came out of a matrix-multiplication
+experiment where a plumbing metaphor ("write one matrix on the wall of a pipe
+and let the other flow past it") became a C kernel 100× faster than the
+textbook loop and 60 % of OpenBLAS.
+
+<p align="center"><b>corpus → blend (maths) → immerse (psychology) → bend (engineering) → measure (truth)</b></p>
+
+| step | what happens | writes |
+|---|---|---|
+| **1 seed** | seeded draws: which blend model, how deep, which silent assumption of the target to focus on | `seed.json` |
+| **2 harvest** | the AI feeds the corpus: fragments of the most imaginative books, paintings and human metaphors it knows (`--harvest N`) | `harvest.yaml`, `archive/imagination/` |
+| **3 blend** | a mathematical model merges, shuffles and recombines fragments from all three worlds so that their *structure* is lost and their *imagination* and *readable language* survive; the result is scored on the imagination scale | `world.md`, `world.json` |
+| **4 immerse** | the AI is not an assistant here: it is a **native of the blended world**, for whom its rules are ordinary, and it is asked how *its own people* meet the target's need — in first person, with only the materials, creatures and forces of that world; it ends with three `SEED:` lines | `ideas.md` |
+| **5 bend** | an engineer maps every world-object onto a problem-object as literally as possible, states which silent assumption the idea breaks, **predicts** the result, builds the artifact and measures it with the tools | `artifact.md`, `artifact.c` |
+| **6 measure** | the pipeline measures the final artifact itself (for `matmul`: compile, check against a reference, time against a cache-blocked loop) and scores the prediction's calibration | `measure.json`, `run.json`, `archive/invent_index.jsonl` |
+
+```bash
+crazyai blend --seed 42                          # compare the six blend models on one seed, offline
+crazyai blend --seed 42 --model graft            # one model, with its score breakdown
+crazyai invent --seed 42 --target matmul --provider mock            # whole loop, offline (mock native + engineer)
+crazyai invent --seed 1 --n 20 --target matmul --harvest 5          # with Claude: 20 seeds, corpus grows each run
+crazyai invent-rank --target matmul             # ranked by discovery = value × (0.5 + 0.5 × imagination)
+```
+
+### The food: three corpora
+
+`crazyai/data/imagination/` holds ~75 bundled fragments in three worlds, each an
+original 2–4 sentence description: **metaphors** people live by (time is a
+river, an argument is a war, electricity is water), **paintings** described as
+scenes (Bosch, Dalí, Escher, Magritte, Varo, af Klint, Carrington…), and the
+**rules of imagined worlds** from books (Narnia, Alice, Invisible Cities,
+Borges' Library, Earthsea, Flatland, Solaris, Discworld, Momo…). Harvest steps
+add what the AI supplies, so the corpus grows with use.
+
+### The maths: six blend models, one scale
+
+| model | what it does |
+|---|---|
+| `cutup` | Burroughs cut-up: clauses from all three worlds shuffled into new sentences |
+| `markov` | word n-gram chain trained on the mixed fragments |
+| `graft` | keeps a sentence's grammatical skeleton and transplants content words from other worlds into it, shape- and slot-matched (plural for plural, noun slot for noun slot) |
+| `nest` | worlds inside worlds: a clause from one world inside an object from another, to a depth |
+| `anneal` | simulated annealing over edits (regraft, swap, replace), Metropolis-accepted on the imagination score |
+| `evolve` | a genetic algorithm over passages: sentence crossover, word mutation, fitness = imagination score |
+
+The **imagination scale** (`imagination_score`) is computed, not judged:
+*surprise* (adjacent content words that never sit near each other in any single
+source or in reference prose), *mixing* (how evenly the words come from the
+three worlds and how many fragments), *originality* (no verbatim or repeated
+sentences, no repeated 3-grams), gated by *readability* (Flesch) and
+*coherence* (sentences that still look like prose: length, a prose-like share of
+function words, article agreement). `score = imagination × (0.3 + 0.7 × readable)` —
+pushed far, still understandable. `blend_compare` ranks the models on one seed;
+run it over many seeds to find the merging model that pushes furthest.
+
+A finding already: the two optimisers (`anneal`, `evolve`) reach 0.96–0.98 on the
+scale partly by *gaming* it — a hill-climber will find any hole in a proxy for
+"understandable". The holes found so far (duplicated sentences, "an move", word
+hammering) are closed; the next ones are yours to find. Read the top three, not
+the top one.
+
+### The psychology
+
+The immersion prompt does not ask for ideas. It tells the model it was born in
+the blended world, has never heard of computers or textbooks, is the most
+gifted maker its people have, and asks how *it* meets the need — what it uses,
+what moves, what stays still, what it throws away. Only afterwards does a
+separate engineer's prompt translate, insisting on the most literal mapping and
+on a prediction before measurement. Literal is the point: the pipe idea worked
+*because* "the wall does not move" was taken literally (B stays in cache) and
+"the drop finishes no cell until it leaves" was taken literally (accumulators
+stay in registers).
+
+### Targets
+
+| target | artifact | measured by |
+|---|---|---|
+| `matmul` | a C kernel with the fixed contract `void kernel(int n, const double *A, const double *B, double *C)` | `kernel_bench`: correctness vs a naive reference, GFLOP/s, speedup vs naive and vs a 64×64 blocked loop; value = speedup × exactness |
+| `physics` | a dimensionally checked relation with a numerical prediction | `symbolic_*` tools inside the bend step; no automatic value yet |
+| `mechanics` | a mechanism with units, loads and a first experiment | `symbolic_*`, `logic_*`; no automatic value yet |
+
+Adding a target is one `Target(...)` in `crazyai/targets.py`; adding a blend
+model is one `@tool("blend", "invent")` function; adding a corpus is one YAML file.
 
 ## Examples
 
@@ -141,21 +230,31 @@ Two mock runs produce complete run folders, a Markdown report and a radar SVG. `
 
 `python examples/06_full_pipeline_claude.py 1 formula` (needs credentials).
 
+### 07 — `invent`, offline
+
+Compares the six blend models on seed 42, then runs the whole invent loop with
+the mock provider on the matmul target: the mock native describes the pipe, the
+mock engineer writes the kernel, and the pipeline measures it — exact, ~3× a
+cache-blocked loop. `python examples/07_invent_offline.py`
+
 ## Layout
 
 ```
 crazyai/
   cli.py                 command line
   config.py  rng.py  domains.py
+  imagination.py         the imagination corpus (bundled + harvested fragments)
+  targets.py             what `invent` bends ideas to (matmul, physics, mechanics)
+  data/imagination/      metaphors.yaml  paintings.yaml  books.yaml
   data/domains/*.yaml    curated rules with formal forms, weights and dependencies
   data/reference_prose.txt
   generators/            step templates per artifact type
-  pipeline/              prompts.py  run.py  report.py
+  pipeline/              prompts.py  run.py  report.py  invent.py  invent_prompts.py
   providers/             anthropic.py (Claude)  mock.py (offline)
   toolkit/
     registry.py  native.py
-    invent/              chaos  mutate  unconventional  transform  disguise
-    measure/             symbolic  stats  logic  narrative  ground  novelty  archive
+    invent/              chaos  mutate  unconventional  transform  disguise  blend
+    measure/             symbolic  stats  logic  narrative  ground  novelty  archive  imagination  kernel
   worlds/                ready-made impossible universes (partial_primes)
 cpp/kernels.cpp          sieve, collatz, even+prime counts, Monte Carlo (ctypes, C ABI)
 examples/  tests/  assets/  archive/
@@ -167,4 +266,4 @@ crazyAI is an evaluation and ideation tool. Every artifact is labelled as delibe
 
 ## Status
 
-v0.1.0. The toolkit, pipeline, mock provider, examples and tests run offline. The Claude provider is implemented against the current Anthropic SDK (1.x) and has not yet been exercised against the live API from this machine.
+v0.2.0 adds `crazyai invent`. The toolkit, pipeline, mock provider, examples and tests run offline. The Claude provider is implemented against the current Anthropic SDK (1.x) and has not yet been exercised against the live API from this machine.

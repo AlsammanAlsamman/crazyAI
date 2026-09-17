@@ -1,0 +1,79 @@
+# The worlds of the most imaginative books - the rule of each world, described in a
+# few sentences. Original summaries of world-mechanics, not quotations.
+kind: book
+fragments:
+  - id: book.narnia_wardrobe
+    source: "C. S. Lewis, The Chronicles of Narnia"
+    text: "At the back of an ordinary wardrobe the coats give way to fir branches and snow. A lamp-post burns in the middle of a forest. A year in that country is an hour at home, so a child can grow up, reign as a queen and return before tea, no older than she left."
+  - id: book.narnia_creation
+    source: "C. S. Lewis, The Magician's Nephew"
+    text: "A world is sung into being: as the lion sings, stars appear on the notes, grass spreads with the melody, and animals push up out of the soil like plants. A lamp-post grows from an iron bar because everything planted in that soil, even iron, grows."
+  - id: book.alice_wonderland
+    source: "Lewis Carroll, Alice in Wonderland"
+    text: "Eating a cake makes you tall enough to hit the ceiling; a mushroom makes you small enough to drown in your own tears. A cat vanishes leaving its grin behind. At the tea party it is always six o'clock, so the tea can never be cleared away."
+  - id: book.alice_looking_glass
+    source: "Lewis Carroll, Through the Looking-Glass"
+    text: "Beyond the mirror you must run as fast as you can to stay in the same place, walk away from a hill to reach it, and remember things before they happen. The land is a chessboard and crossing it promotes a pawn to a queen."
+  - id: book.invisible_cities
+    source: "Italo Calvino, Invisible Cities"
+    text: "A city built on stilts over a void where the inhabitants never look down; a city of pipes and taps with no walls where women bathe in the open; a city that is rebuilt every day exactly as it was; a city whose sky is a mirror of the streets, so that anyone walking may look up to see themselves."
+  - id: book.borges_library
+    source: "Borges, The Library of Babel"
+    text: "A library of hexagonal rooms extends without end, holding every possible book of a fixed length: every truth, every lie, every mistyped version of both. Librarians spend their lives searching for the one book that catalogues the rest."
+  - id: book.borges_aleph
+    source: "Borges, The Aleph"
+    text: "Under a cellar stair is a point a few centimetres wide in which every place on earth is visible at once, from every angle, without overlapping: the sea, a house, a hand, the reader's own face, all at the same instant."
+  - id: book.earthsea_names
+    source: "Ursula K. Le Guin, Earthsea"
+    text: "Every thing has a true name in the old speech, and whoever knows the name commands the thing. To change a pebble into a diamond is easy; to change it and keep the world in balance is the whole of wisdom. Dragons speak only the true language and cannot lie in it."
+  - id: book.little_prince
+    source: "Saint-Exupéry, The Little Prince"
+    text: "A boy lives on an asteroid so small he can watch the sunset forty-four times a day by moving his chair. He weeds out baobab seedlings before they can split the planet, and he loves a single rose that believes she is the only one in the universe."
+  - id: book.neverending_story
+    source: "Michael Ende, The Neverending Story"
+    text: "A land is being eaten by the Nothing, which is not darkness but absence: where it passes there is not even emptiness left. The land has no borders because it is made of human wishes, and a reader inside a book can be called into the book by name."
+  - id: book.gulliver
+    source: "Swift, Gulliver's Travels"
+    text: "A man wakes tied down by people six inches tall, is later carried in a box by people sixty feet tall, visits an island that floats by magnetism and a country ruled by horses who find humans disgusting. Every society is exactly the visitor's own, seen at the wrong scale."
+  - id: book.flatland
+    source: "Edwin Abbott, Flatland"
+    text: "The inhabitants are polygons living on a plane; a woman is a straight line, a priest is a circle, and social rank is the number of sides. A sphere passing through their world appears as a circle that grows and shrinks, and the narrator, lifted into the third dimension, sees into every house at once."
+  - id: book.solaris
+    source: "Stanisław Lem, Solaris"
+    text: "A planet is covered by a single ocean that is one thinking organism. It builds mountains of foam in the shapes of geometry, and it sends the visitors on the station copies of the people they most regret, made from their memories, who do not know what they are."
+  - id: book.discworld
+    source: "Terry Pratchett, Discworld"
+    text: "A flat world rests on the backs of four elephants who stand on a turtle swimming through space. Light moves slowly there and pools in valleys in the morning. A god's power is exactly the number of people who believe in it, and Death speaks in capitals."
+  - id: book.phantom_tollbooth
+    source: "Norton Juster, The Phantom Tollbooth"
+    text: "A boy drives through a tollbooth into a kingdom where words are sold by weight in a market, a watchdog has a clock for a body, and you can leap to Conclusions, an island reached by jumping. The princesses Rhyme and Reason have been exiled and the numbers and letters are at war."
+  - id: book.arabian_nights
+    source: "One Thousand and One Nights"
+    text: "A lamp holds a spirit who builds a palace overnight; a carpet flies; a fisherman opens a jar and smoke pours out for an hour before it becomes a giant. Each story contains a storyteller telling another story, and the whole book is one woman's way of staying alive one night longer."
+  - id: book.wizard_oz
+    source: "L. Frank Baum, The Wizard of Oz"
+    text: "A house carried by a cyclone lands on a witch. The road is made of yellow brick, the city is green because everyone wears green spectacles, and the great wizard turns out to be an ordinary man working levers behind a curtain."
+  - id: book.peter_pan
+    source: "J. M. Barrie, Peter Pan"
+    text: "An island where children never grow up, reached by flying with a happy thought and a sprinkle of dust. A shadow can be detached and sewn back on. A crocodile ticks because it swallowed a clock, and a fairy dies every time a child says it does not believe."
+  - id: book.gormenghast
+    source: "Mervyn Peake, Gormenghast"
+    text: "A castle so large that its inhabitants have never seen its edges lives by rituals whose meaning nobody remembers; a librarian is chosen by the colour of his ink and a whole wing has been forgotten for a century, its rooms full of dust and owls."
+  - id: book.momo
+    source: "Michael Ende, Momo"
+    text: "Grey men in hats persuade people to save time in a Timesavings Bank; the saved time is not stored but smoked by the grey men as cigars made of dried hours. A girl who listens so well that people find their own answers sets out with a tortoise that can see half an hour into the future."
+  - id: book.hitchhiker
+    source: "Douglas Adams, The Hitchhiker's Guide to the Galaxy"
+    text: "A drive that makes a ship pass through every point in the universe at once turns missiles into a whale and a bowl of petunias; a planet is a computer built to find the question to the answer forty-two; the towel is the most useful object a traveller can own."
+  - id: book.calvino_baron
+    source: "Italo Calvino, The Baron in the Trees"
+    text: "A boy climbs into an oak at dinner and never comes down; he lives the rest of his life in the branches, hunting, reading, courting and fighting from tree to tree across a whole province of forest, and dies by catching a passing balloon."
+  - id: book.le_guin_lathe
+    source: "Ursula K. Le Guin, The Lathe of Heaven"
+    text: "A man's dreams rewrite reality retroactively: when he dreams that the population is smaller, a plague is discovered to have happened years ago, and everyone remembers it. His doctor tries to steer the dreams and each cure makes a stranger world."
+  - id: book.moomins
+    source: "Tove Jansson, Moomin books"
+    text: "A hat that turns whatever is put in it into something else: eggshells into clouds you can ride, a river of raspberry juice, a jungle in the living room. A comet approaches and the sea dries up, so the family crosses the seabed on stilts."
+  - id: book.borges_tlon
+    source: "Borges, Tlön, Uqbar, Orbis Tertius"
+    text: "A planet whose languages have no nouns, only verbs and adjectives; whose people believe that objects exist only while perceived, so that lost coins found later are new coins; and whose invented encyclopedia begins to replace the real world's, one article at a time."

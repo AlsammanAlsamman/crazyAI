@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "crazyai"
-version = "0.1.0"
+version = "0.2.0"
 description = "The impossible, disguised as possible and true - built and measured by Claude."
 readme = "README.md"
 requires-python = ">=3.10"
@@ -27,7 +27,7 @@ crazyai = "crazyai.cli:main"
 include = ["crazyai*"]
 
 [tool.setuptools.package-data]
-crazyai = ["data/domains/*.yaml", "data/*.txt"]
+crazyai = ["data/domains/*.yaml", "data/imagination/*.yaml", "data/*.txt"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

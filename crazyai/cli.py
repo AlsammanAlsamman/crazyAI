@@ -8,6 +8,10 @@
     crazyai rank [--by discovery_value] [--top 20]
     crazyai report [--out report.md] [--svg profile.svg]
     crazyai compare archive/run_1_formula archive/run_2_formula
+
+    crazyai blend --seed 42 [--model compare]          blend the imagination corpus, offline
+    crazyai invent --seed 42 --target matmul [--blend anneal] [--harvest 5] [--provider mock]
+    crazyai invent-rank [--target matmul] [--top 20]
 """
 
 from __future__ import annotations
@@ -123,6 +127,53 @@ def cmd_report(args) -> int:
     return 0
 
 
+def cmd_blend(args) -> int:
+    from crazyai.toolkit.invent.blend import MODELS
+    from crazyai.toolkit.registry import build_toolkit
+
+    tk = build_toolkit(args.seed)
+    if args.model == "compare":
+        r = tk.call("blend_compare", {})
+        for row in r["ranking"]:
+            print(f"{row['model']:8s} score={row['score']:.3f}  imagination={row['imagination']:.2f} readable={row['readable']:.2f}  "
+                  f"surprise={row['surprise']:.2f} mixing={row['mixing']:.2f} originality={row['originality']:.2f} coherence={row['coherence']:.2f}")
+        print(f"\n--- best: {r['best']} ---\n{r['texts'][r['best']]}")
+    else:
+        r = tk.call(f"blend_{args.model}", {})
+        print(json.dumps(r["score"], indent=2))
+        print("\n" + r["text"])
+        print("\nbuilt from: " + ", ".join(f"{f['kind']}:{f['source']}" for f in r["fragments"]))
+    return 0
+
+
+def cmd_invent(args) -> int:
+    from crazyai.pipeline.invent import Invent
+
+    provider = _provider(args)
+    for i in range(args.n):
+        run = Invent(seed=args.seed + i, target=args.target, blend=args.blend, harvest=args.harvest,
+                     force=args.force, archive_dir=Path(args.archive))
+        summary = run.execute(provider)
+        print(json.dumps({k: summary[k] for k in ("seed", "target", "blend_model", "imagination_score", "status",
+                                                   "value", "prediction", "calibration", "discovery")}, indent=2))
+    return 0
+
+
+def cmd_invent_rank(args) -> int:
+    from crazyai.pipeline.invent import load_invent_index
+
+    rows = [r for r in load_invent_index(args.archive) if not args.target or r["target"] == args.target]
+    rows.sort(key=lambda r: -(r.get("discovery") or 0))
+    for r in rows[: args.top]:
+        print(f"seed={r['seed']:<6} {r['target']:9s} blend={r['blend_model']:8s} imagination={r['imagination_score']:.2f} "
+              f"status={r['status']:9s} value={r['value'] if r['value'] is not None else '-':<8} "
+              f"pred={r['prediction'] if r['prediction'] is not None else '-':<6} calib={r['calibration'] if r['calibration'] is not None else '-':<6} "
+              f"discovery={r['discovery']:.3f}  focus='{r['assumption_focus']}'")
+    if not rows:
+        print("no invent runs archived")
+    return 0
+
+
 def cmd_compare(args) -> int:
     from crazyai.pipeline.report import compare
 
@@ -180,6 +231,26 @@ def build_parser() -> argparse.ArgumentParser:
     c.add_argument("a")
     c.add_argument("b")
     c.set_defaults(fn=cmd_compare)
+
+    from crazyai.targets import TARGETS
+    from crazyai.toolkit.invent.blend import MODELS
+    bl = sub.add_parser("blend", help="blend the imagination corpus with one model, or compare all")
+    bl.add_argument("--seed", type=int, required=True)
+    bl.add_argument("--model", default="compare", choices=MODELS + ["compare"])
+    bl.set_defaults(fn=cmd_blend)
+    iv = sub.add_parser("invent", help="corpus -> blend -> immerse -> bend -> measure")
+    iv.add_argument("--seed", type=int, required=True)
+    iv.add_argument("--n", type=int, default=1, help="number of consecutive seeds")
+    iv.add_argument("--target", default="matmul", choices=TARGETS)
+    iv.add_argument("--blend", default="", choices=MODELS + ["compare", ""], help="blend model (default: seeded draw)")
+    iv.add_argument("--harvest", type=int, default=0, help="fragments the AI adds to the corpus first")
+    add_provider(iv)
+    iv.set_defaults(fn=cmd_invent)
+    ir = sub.add_parser("invent-rank")
+    ir.add_argument("--target", default="")
+    ir.add_argument("--top", type=int, default=20)
+    ir.add_argument("--archive", default=str(ARCHIVE_DIR))
+    ir.set_defaults(fn=cmd_invent_rank)
     return p
 
 

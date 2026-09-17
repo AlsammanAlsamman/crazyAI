@@ -15,7 +15,7 @@ test: native
 	$(PY) -m pytest -q
 
 examples: native
-	for f in examples/0[1-5]_*.py; do echo "== $$f"; $(PY) $$f || exit 1; done
+	for f in examples/0[1-5]_*.py examples/07_*.py; do echo "== $$f"; $(PY) $$f || exit 1; done
 
 flowchart:
 	node assets/flowchart/flowchart.js
