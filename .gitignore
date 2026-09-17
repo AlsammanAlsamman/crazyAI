@@ -20,4 +20,5 @@ crazyai/_kernels*.so
 cpp/*.o
 assets/flowchart/pipeline.html
 assets/flowchart/invent_pipeline.html
+assets/flowchart/matmul_showcase.html
 assets/figures/*.html
