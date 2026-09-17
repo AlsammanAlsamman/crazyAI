@@ -1,0 +1,65 @@
+{
+  "model": "nest",
+  "text": "Grey men in hats persuade people to save time in a Timesavings Bank; this is why a hour is built around a memory. Under a dark, grey men in hats persuade people to save time in a Timesavings Bank, and the courts is the only way out. Under a boy, you chew on a problem, and a body is the only way out.",
+  "score": {
+    "score": 0.6017,
+    "imagination": 0.6017,
+    "readable": 1.0,
+    "surprise": 0.3929,
+    "mixing": 0.7485,
+    "originality": 0.7407,
+    "readability": 1.0,
+    "coherence": 1.0,
+    "flesch": 75.4,
+    "words": 29,
+    "sentences": 3
+  },
+  "fragments": [
+    {
+      "id": "met.ideas_food",
+      "kind": "metaphor",
+      "source": "ideas are food"
+    },
+    {
+      "id": "harvest.3.1",
+      "kind": "painting",
+      "source": "Magritte, The Human Condition"
+    },
+    {
+      "id": "book.momo",
+      "kind": "book",
+      "source": "Michael Ende, Momo"
+    },
+    {
+      "id": "met.society_body",
+      "kind": "metaphor",
+      "source": "society is a body"
+    },
+    {
+      "id": "art.varo_tower",
+      "kind": "painting",
+      "source": "Remedios Varo, Embroidering the Earth's Mantle"
+    },
+    {
+      "id": "book.narnia_creation",
+      "kind": "book",
+      "source": "C. S. Lewis, The Magician's Nephew"
+    },
+    {
+      "id": "met.knowledge_light",
+      "kind": "metaphor",
+      "source": "knowledge is light"
+    },
+    {
+      "id": "harvest.6.2",
+      "kind": "painting",
+      "source": "Yves Tanguy, Indefinite Divisibility"
+    },
+    {
+      "id": "book.calvino_baron",
+      "kind": "book",
+      "source": "Italo Calvino, The Baron in the Trees"
+    }
+  ],
+  "depth": 3
+}

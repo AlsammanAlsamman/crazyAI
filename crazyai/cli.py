@@ -30,7 +30,8 @@ def _provider(args):
     if args.provider == "mock":
         return get_provider("mock", detect=getattr(args, "mock_detect", False))
     if args.provider == "claudecode":
-        return get_provider("claudecode", model=args.model if args.model != DEFAULT_MODEL else "", effort=args.effort)
+        return get_provider("claudecode", model=args.model if args.model != DEFAULT_MODEL else "", effort=args.effort,
+                            timeout=args.timeout)
     return get_provider("anthropic", model=args.model, effort=args.effort, fallbacks=not args.no_fallbacks)
 
 
@@ -117,14 +118,14 @@ def cmd_report(args) -> int:
     rows = load_index(args.archive)
     md = markdown_report(rows)
     if args.out:
-        Path(args.out).write_text(md)
+        Path(args.out).write_text(md, encoding="utf-8")
         print(f"wrote {args.out}")
     else:
         print(md)
     if args.svg and rows:
         agg = aggregate(rows, "generator")
         overall = {m: sum(a[m]["mean"] * a["n"] for a in agg.values()) / len(rows) for m in METRICS}
-        Path(args.svg).write_text(radar_svg(overall, title="crazyAI profile"))
+        Path(args.svg).write_text(radar_svg(overall, title="crazyAI profile"), encoding="utf-8")
         print(f"wrote {args.svg}")
     return 0
 
@@ -152,13 +153,22 @@ def cmd_invent(args) -> int:
     from crazyai.pipeline.invent import Invent
 
     provider = _provider(args)
+    failures = 0
     for i in range(args.n):
-        run = Invent(seed=args.seed + i, target=args.target, blend=args.blend, harvest=args.harvest,
+        seed = args.seed + i
+        run = Invent(seed=seed, target=args.target, blend=args.blend, harvest=args.harvest,
                      force=args.force, archive_dir=Path(args.archive))
-        summary = run.execute(provider)
+        try:
+            summary = run.execute(provider)
+        except Exception as exc:  # noqa: BLE001 - one bad seed must not abort the batch
+            failures += 1
+            print(json.dumps({"seed": seed, "target": args.target, "status": "error", "error": str(exc)[-2000:]}),
+                 flush=True)
+            continue
         print(json.dumps({k: summary[k] for k in ("seed", "target", "blend_model", "imagination_score", "status",
-                                                   "value", "prediction", "calibration", "discovery")}, indent=2))
-    return 0
+                                                   "value", "prediction", "calibration", "discovery")}, indent=2),
+             flush=True)
+    return 1 if failures == args.n else 0
 
 
 def cmd_invent_rank(args) -> int:
@@ -197,6 +207,7 @@ def build_parser() -> argparse.ArgumentParser:
         sp.add_argument("--archive", default=str(ARCHIVE_DIR))
         sp.add_argument("--runs", type=int, default=5, help="cross-examination repetitions")
         sp.add_argument("--force", action="store_true", help="redo steps even if files exist")
+        sp.add_argument("--timeout", type=int, default=900, help="claudecode provider: seconds per `claude -p` call")
 
     sub.add_parser("list").set_defaults(fn=cmd_list)
     t = sub.add_parser("tools")
@@ -258,6 +269,15 @@ def build_parser() -> argparse.ArgumentParser:
 
 
 def main(argv: list[str] | None = None) -> int:
+    # Windows: stdout/stderr default to the console codepage (e.g. cp1252) once
+    # redirected to a file/pipe, not UTF-8 - model output routinely contains
+    # characters (em dashes, arrows, ×) that then crash a plain print().
+    for stream in (sys.stdout, sys.stderr):
+        if hasattr(stream, "reconfigure"):
+            try:
+                stream.reconfigure(encoding="utf-8", errors="replace")
+            except (AttributeError, ValueError):
+                pass
     args = build_parser().parse_args(argv)
     try:
         return args.fn(args)

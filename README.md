@@ -149,6 +149,69 @@ n = 1024, 14.9×** - ahead of every hand-written kernel in the
 `archive/invent_42_matmul/`. (The first measurement crashed because the model
 had guessed the argument order; the contract is now inlined in the prompt.)
 
+### Second run: a 10-seed batch, and what it actually proved
+
+`crazyai invent --seed 1 --n 10 --target matmul --harvest 5 --provider claudecode`,
+the batch queued at the end of the first session, had never completed - it was
+run on a different (Linux) machine and was still going when that session
+ended. Continuing it on a fresh Windows machine surfaced four real
+portability/reliability bugs, now fixed (v0.2.2):
+
+1. File reads/writes across the package used the platform-default encoding
+   instead of UTF-8, so the pipeline crashed the moment any file (a harvested
+   fragment, a blended world) contained a non-ASCII character on Windows.
+2. `--provider claudecode` shelled out to `claude`, which `subprocess.run`
+   cannot execute on Windows without a shell - `claude` on PATH there is an
+   npm-generated `claude.cmd` batch shim, not a PE binary. It now resolves and
+   calls the wrapped `claude.exe` directly (deliberately not `shell=True`,
+   which would let `&`, `|`, `%...%` in prompt text be reinterpreted by
+   `cmd.exe`).
+3. `print()` to a redirected log file used the Windows console codepage
+   (e.g. `cp1252`), not UTF-8 - real model output routinely contains
+   characters (em dashes, arrows, ×) that crashed it mid-batch. `main()` now
+   reconfigures `stdout`/`stderr` to UTF-8.
+4. `crazyai invent --n N` ran all N seeds in one uncaught loop - exactly what
+   killed the original batch (one seed's timeout took the other nine with
+   it). Each seed's `execute()` is now wrapped so a failure is logged and the
+   batch continues; `--timeout` is now a CLI flag instead of hardcoded.
+
+With those fixed, the batch ran clean: **7 of 10 seeds produced an exact,
+correct kernel**; 3 failed to compile (a normal yield for this pipeline, not
+an infrastructure failure). Ranked by the pipeline's own `value` metric,
+seed 3 (`evolve` world, focus "the whole sum over the shared index is
+finished before the next cell is started") topped the batch. All results are
+in `archive/invent_{1..10}_matmul/`; `crazyai invent-rank --target matmul`
+prints the table.
+
+**The batch found no new algorithm** - every kernel that compiled is the same
+family already in the lab (register-tiled AVX2/AVX-512 microkernel +
+OpenMP), which is what the first run already concluded about the pipe idea:
+the method surfaces real, working rediscoveries of known GEMM technique, not
+new ones.
+
+**A methodology trap worth naming, because this session nearly repeated it.**
+The pipeline's own `value`/`gflops` numbers are *not* comparable across
+machines or to the [matrixmultiply lab](https://github.com/AlsammanAlsamman/matrixmultiply)'s
+"150 GFLOP/s OpenBLAS" reference figure - that number is from the original
+4-core laptop; this run was on a 24-core/32-thread desktop, a completely
+different ceiling. Two more traps sit inside the `kernel` measure tool
+itself: it defaults to sizes `[64, 256, 512]`, well under the n = 1024 the
+lab's comparisons use, and its `blocked` reference implementation is
+single-threaded while an AI-written kernel is typically OpenMP-parallel, so
+`speedup_vs_blocked` conflates "uses more cores" with "is a better
+algorithm." Re-measured properly - n = 1024, against a real
+`pip install numpy` OpenBLAS build *on the same machine*, with thread counts
+pinned equal - seed 3 reached 280 GFLOP/s against that OpenBLAS's 370 (74 %,
+the expected rediscovery-tier result). The earlier seed 42 kernel, re-tested
+the same honest way, reproducibly reached ~470 GFLOP/s against the same
+370 GFLOP/s OpenBLAS - a real, repeatable ~25-30 % edge on this specific
+machine, but not evidence of a better algorithm: this OpenBLAS wheel
+dispatches an older "Haswell" AVX2 microkernel because its dynamic-dispatch
+table has no tuned kernel yet for this CPU's hybrid P+E-core design. A
+source-built OpenBLAS or MKL would likely close or reverse it. The lesson:
+always re-derive the baseline on the machine you're actually measuring on
+before comparing GFLOP/s across sessions.
+
 ### The food: three corpora
 
 `crazyai/data/imagination/` holds ~75 bundled fragments in three worlds, each an
@@ -294,3 +357,8 @@ crazyAI is an evaluation and ideation tool. Every artifact is labelled as delibe
 ## Status
 
 v0.2.1 adds `crazyai invent` and the `claudecode` provider. The toolkit, pipeline, mock provider, examples and tests run offline. The Claude provider is implemented against the current Anthropic SDK (1.x) and has not yet been exercised against the live API from this machine.
+
+v0.2.2 fixes the Windows portability/reliability bugs the second `invent` run
+surfaced (encoding, the `claude.cmd` subprocess issue, stdout codepage,
+per-seed batch isolation - see "Second run" above) and adds `--timeout` to
+the provider CLI flags. All 27 tests pass on Windows and Linux.

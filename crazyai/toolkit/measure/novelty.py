@@ -25,7 +25,7 @@ def search_archive(rule_id: str, operator: str = "", domain: str = "", limit: in
         return {"matches": [], "note": "archive is empty"}
     for mpath in root.glob("*/mutation.json"):
         try:
-            m = json.loads(mpath.read_text())
+            m = json.loads(mpath.read_text(encoding="utf-8"))
         except Exception:
             continue
         score = 0

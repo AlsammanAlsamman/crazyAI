@@ -1,0 +1,52 @@
+{
+  "seed": 10,
+  "target": "matmul",
+  "blend_model": "evolve",
+  "depth": 3,
+  "assumption_focus": "a matrix is a two-dimensional grid living in one memory",
+  "provider": "claudecode",
+  "model": "",
+  "imagination_score": 0.9998,
+  "status": "COMPILE_ERROR",
+  "value": 0.0,
+  "prediction": 4.5,
+  "calibration": null,
+  "discovery": 0.0,
+  "fragments": [
+    "met.ideas_food",
+    "harvest.8.4",
+    "book.narnia_creation",
+    "met.internet_web",
+    "art.klee_twittering",
+    "book.borges_library",
+    "met.data_oil",
+    "art.kahlo_two"
+  ],
+  "rng_log": [
+    {
+      "label": "invent.blend_model",
+      "value": "evolve"
+    },
+    {
+      "label": "invent.depth",
+      "value": 3
+    },
+    {
+      "label": "invent.assumption",
+      "value": "a matrix is a two-dimensional grid living in one memory"
+    },
+    {
+      "label": "child:invent.world",
+      "value": 445993291
+    }
+  ],
+  "timing_s": {
+    "seed": 0.0,
+    "harvest": 20.334,
+    "world": 0.055,
+    "immerse": 26.527,
+    "bend": 263.359,
+    "measure": 0.44
+  },
+  "total_s": 310.715
+}

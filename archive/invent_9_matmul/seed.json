@@ -1,0 +1,7 @@
+{
+  "seed": 9,
+  "target": "matmul",
+  "blend_model": "graft",
+  "depth": 3,
+  "assumption_focus": "one product is one problem; many products are many problems"
+}

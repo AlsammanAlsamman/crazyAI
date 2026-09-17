@@ -1,0 +1,7 @@
+{
+  "seed": 5,
+  "target": "matmul",
+  "blend_model": "anneal",
+  "depth": 3,
+  "assumption_focus": "the output is produced one cell at a time, row by row"
+}

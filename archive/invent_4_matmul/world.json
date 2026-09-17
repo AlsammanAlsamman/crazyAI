@@ -1,0 +1,74 @@
+{
+  "model": "evolve",
+  "text": "A traveling salesman leaves at next to understand his connect later giant, looked by a huge stand water away with thin walks depending exactly in the exception. The family leaves his breakfast tray temperature the door and starts speaking of him in the past water while he is still listening through the whole. Rivers, blood, and rain all obey the first crystal they coat. He can still find and absolute uselessly as before, but his smell ride comes out as a roof solid no one in the man room can hear. A thin seed peaks that makes water freeze meet at room giant, and every drop of scratchy water it touches locks into the same brown giant.",
+  "score": {
+    "score": 1.0,
+    "imagination": 1.0,
+    "readable": 1.0,
+    "surprise": 1.0,
+    "mixing": 1.0,
+    "originality": 1.0,
+    "readability": 1.0,
+    "coherence": 1.0,
+    "flesch": 62.3,
+    "words": 64,
+    "sentences": 5
+  },
+  "fragments": [
+    {
+      "id": "met.theory_building",
+      "kind": "metaphor",
+      "source": "theories are buildings"
+    },
+    {
+      "id": "art.friedrich_wanderer",
+      "kind": "painting",
+      "source": "Caspar David Friedrich, Wanderer above the Sea of Fog"
+    },
+    {
+      "id": "harvest.3.3",
+      "kind": "book",
+      "source": "Kurt Vonnegut, Cat's Cradle"
+    },
+    {
+      "id": "met.memory_palace",
+      "kind": "metaphor",
+      "source": "memory is a palace"
+    },
+    {
+      "id": "art.ocampo_fields",
+      "kind": "painting",
+      "source": "Octavio Ocampo, metamorphic portraits"
+    },
+    {
+      "id": "harvest.4.3",
+      "kind": "book",
+      "source": "Franz Kafka, The Metamorphosis"
+    },
+    {
+      "id": "met.data_oil",
+      "kind": "metaphor",
+      "source": "data is oil"
+    },
+    {
+      "id": "art.bosch_delights",
+      "kind": "painting",
+      "source": "Bosch, The Garden of Earthly Delights"
+    }
+  ],
+  "generations": 12,
+  "history": [
+    0.9814,
+    0.983,
+    0.9926,
+    0.9942,
+    0.9955,
+    0.9961,
+    0.9961,
+    0.9966,
+    0.9975,
+    0.999,
+    0.9996,
+    0.9996
+  ]
+}

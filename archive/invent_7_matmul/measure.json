@@ -1,0 +1,73 @@
+{
+  "target": "matmul",
+  "artifact": "kernel",
+  "imagination": {
+    "score": 0.9932,
+    "imagination": 0.9932,
+    "readable": 1.0,
+    "surprise": 0.9808,
+    "mixing": 0.999,
+    "originality": 1.0,
+    "readability": 1.0,
+    "coherence": 1.0,
+    "flesch": 68.3,
+    "words": 53,
+    "sentences": 5
+  },
+  "measurement": {
+    "results": [
+      {
+        "n": 64,
+        "time": 0.000309499999,
+        "gflops": 1.694,
+        "naive_time": 9.23999905e-05,
+        "blocked_time": 1.53999863e-05,
+        "max_abs_err": 2.487e-14,
+        "rel_fro_err": 2.714e-16,
+        "speedup_vs_naive": 0.299,
+        "speedup_vs_blocked": 0.05,
+        "exactness": 1.0,
+        "status": "exact"
+      },
+      {
+        "n": 256,
+        "time": 0.00137350001,
+        "gflops": 24.4299,
+        "naive_time": 0.0061807,
+        "blocked_time": 0.00173600001,
+        "max_abs_err": 1.279e-13,
+        "rel_fro_err": 4.382e-16,
+        "speedup_vs_naive": 4.5,
+        "speedup_vs_blocked": 1.264,
+        "exactness": 1.0,
+        "status": "exact"
+      },
+      {
+        "n": 512,
+        "time": 0.00485170001,
+        "gflops": 55.3281,
+        "naive_time": 0.0698705,
+        "blocked_time": 0.00881089999,
+        "max_abs_err": 3.411e-13,
+        "rel_fro_err": 5.896e-16,
+        "speedup_vs_naive": 14.401,
+        "speedup_vs_blocked": 1.816,
+        "exactness": 1.0,
+        "status": "exact"
+      }
+    ],
+    "largest_n": 512,
+    "gflops": 55.3281,
+    "rel_fro_err": 5.896e-16,
+    "status": "exact",
+    "speedup_vs_naive": 14.401,
+    "speedup_vs_blocked": 1.816,
+    "value": 1.816,
+    "reading": "value > 1 means faster than a cache-blocked loop and exact; > 3 beats a vectorised kernel; ~10 is OpenBLAS territory on one core"
+  },
+  "value": 1.816,
+  "status": "exact",
+  "calibration": 0.363,
+  "prediction": 5.0,
+  "discovery": 1.8098
+}

@@ -52,7 +52,7 @@ class Fragment:
 
 
 def _load_file(path: Path) -> list[Fragment]:
-    raw = yaml.safe_load(path.read_text()) or {}
+    raw = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
     kind = raw.get("kind", path.stem)
     return [Fragment(f["id"], f.get("kind", kind), f.get("source", ""), f["text"].strip())
             for f in raw.get("fragments", []) if f.get("text")]
@@ -107,7 +107,7 @@ def save_harvest(name: str, fragments: list[dict], archive_dir: Path | str | Non
             continue
         clean.append({"id": f.get("id") or f"{name}.{i}", "kind": f.get("kind", "book") if f.get("kind") in KINDS else "book",
                       "source": str(f.get("source", "")), "text": text})
-    path.write_text(yaml.safe_dump({"kind": "harvest", "fragments": clean}, allow_unicode=True, sort_keys=False))
+    path.write_text(yaml.safe_dump({"kind": "harvest", "fragments": clean}, allow_unicode=True, sort_keys=False), encoding="utf-8")
     return path
 
 

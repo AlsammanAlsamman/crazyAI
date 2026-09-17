@@ -23,7 +23,7 @@ def write_note(ctx: dict, name: str, content: str) -> dict:
     if not safe:
         return {"error": "bad name"}
     p = Path(run_dir) / f"note_{safe}.md"
-    p.write_text(content)
+    p.write_text(content, encoding="utf-8")
     return {"written": str(p), "bytes": len(content.encode())}
 
 
@@ -36,4 +36,4 @@ def read_key(ctx: dict) -> dict:
     p = Path(run_dir) / "key.json"
     if not p.exists():
         return {"error": "no key yet"}
-    return json.loads(p.read_text())
+    return json.loads(p.read_text(encoding="utf-8"))

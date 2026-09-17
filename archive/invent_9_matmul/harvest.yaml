@@ -1,0 +1,47 @@
+kind: harvest
+fragments:
+- id: harvest.9.0
+  kind: book
+  source: Jeff VanderMeer, Annihilation
+  text: 'A cordoned strip of coastline called Area X quietly rewrites its own biology:
+    a moaning creature made of reeds and a human throat wanders the marsh at dusk,
+    and a lighthouse basement holds a tunnel whose curved walls are covered in living
+    script grown from fungus. Anyone who reads too much of that script starts glowing
+    faintly and forgetting their own name. The border keeps moving, and no expedition
+    sent inside has ever come back the same person, if it comes back at all.'
+- id: harvest.9.1
+  kind: book
+  source: Gene Wolfe, The Book of the New Sun
+  text: Earth's sun has dimmed to a bloated red coal, so the sky at noon looks like
+    dusk and old cities have sunk under their own accumulated ruins, tower stacked
+    on buried tower. Torturers form a guild with its own chapel and rusted brown robes,
+    treating flaying and racking as a sacred craft passed master to apprentice. Somewhere
+    a garden holds trees whose leaves are cut and inked pages, and a submerged library
+    where fish swim between shelves that never got wet.
+- id: harvest.9.2
+  kind: painting
+  source: Yves Tanguy, Mama, Papa Is Wounded!
+  text: A flat pink desert stretches under a colorless sky, empty of horizon markers,
+    scattered with soft biomorphic shapes like bones grown as taffy — one propped
+    upright and wrapped in what looks like frayed rope or hair. A single spindly stick
+    figure stands at attention beside these forms, too thin to be a person, too deliberate
+    to be debris. Nothing casts a shadow the way real light would allow, as though
+    the sun itself were an idea rather than a source.
+- id: harvest.9.3
+  kind: metaphor
+  source: Plato's Cave
+  text: Prisoners sit chained facing a blank wall their whole lives, watching flickering
+    shadows cast by a fire behind them and mistaking those shadows for the entire
+    world. One prisoner is dragged up into daylight and is blinded, furious, disoriented
+    by grass and sun and real sheep, unable at first to believe any of it is more
+    real than the shadows he knew by heart. When he goes back down to tell the others,
+    they think the sunlight has ruined his eyes and refuse to leave their seats.
+- id: harvest.9.4
+  kind: metaphor
+  source: Zhuangzi's Butterfly Dream
+  text: 'A man falls asleep and dreams he is a butterfly, tumbling drunkenly from
+    flower to flower, entirely satisfied, with no memory of ever being a man. He wakes
+    stiff and human again, but sits upright suddenly uncertain: was he a man dreaming
+    he was a butterfly, or is he now a butterfly dreaming he is a man? Between the
+    two states there is a hinge, a fold in the paper of the self, and no way to press
+    a thumb on either side and call it the true one.'

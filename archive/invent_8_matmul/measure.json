@@ -1,0 +1,26 @@
+{
+  "target": "matmul",
+  "artifact": "kernel",
+  "imagination": {
+    "score": 1.0,
+    "imagination": 1.0,
+    "readable": 1.0,
+    "surprise": 1.0,
+    "mixing": 1.0,
+    "originality": 1.0,
+    "readability": 1.0,
+    "coherence": 1.0,
+    "flesch": 64.2,
+    "words": 46,
+    "sentences": 5
+  },
+  "measurement": {
+    "error": "compile failed",
+    "compiler_output": "C:\\Users\\ALSAMM~1\\AppData\\Local\\Temp\\crazyai_kernel_388txpwb\\kernel.c: In function 'kernel':\nC:\\Users\\ALSAMM~1\\AppData\\Local\\Temp\\crazyai_kernel_388txpwb\\kernel.c:10:27: error: implicit declaration of function 'aligned_alloc' [-Wimplicit-function-declaration]\n   10 |     double *Bt = (double*)aligned_alloc(64, bytes ? bytes : 64);\n      |                           ^~~~~~~~~~~~~\nC:\\Users\\ALSAMM~1\\AppData\\Local\\Temp\\crazyai_kernel_388txpwb\\kernel.c:4:1: note: include '<stdlib.h>' or provide a declaration of 'aligned_alloc'\n    3 | #include <omp.h>\n  +++ |+#include <stdlib.h>\n    4 | \nC:\\Users\\ALSAMM~1\\AppData\\Local\\Temp\\crazyai_kernel_388txpwb\\kernel.c:10:27: warning: incompatible implicit declaration of built-in function 'aligned_alloc' [-Wbuiltin-declaration-mismatch]\n   10 |     double *Bt = (double*)aligned_alloc(64, bytes ? bytes : 64);\n      |                           ^~~~~~~~~~~~~\nC:\\Users\\ALSAMM~1\\AppData\\Local\\Temp\\crazyai_kernel_388txpwb\\kernel.c:10:27: note: include '<stdlib.h>' or provide a declaration of 'aligned_alloc'\n",
+    "status": "COMPILE_ERROR"
+  },
+  "value": 0.0,
+  "status": "COMPILE_ERROR",
+  "prediction": 5.0,
+  "discovery": 0.0
+}

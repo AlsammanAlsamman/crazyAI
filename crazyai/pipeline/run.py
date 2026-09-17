@@ -32,11 +32,11 @@ from crazyai.toolkit.registry import Toolkit, build_toolkit
 
 
 def _dump(path: Path, obj: Any) -> None:
-    path.write_text(json.dumps(obj, indent=2, ensure_ascii=False, default=str))
+    path.write_text(json.dumps(obj, indent=2, ensure_ascii=False, default=str), encoding="utf-8")
 
 
 def _load(path: Path) -> Any:
-    return json.loads(path.read_text())
+    return json.loads(path.read_text(encoding="utf-8"))
 
 
 @dataclass
@@ -126,12 +126,12 @@ class Run:
     def step_generate(self, provider: Provider, seed: dict[str, Any], mutation: dict[str, Any],
                       attempt: int = 0) -> str:
         if self._have("artifact.md") and attempt == 0:
-            return (self.dir / "artifact.md").read_text()
+            return (self.dir / "artifact.md").read_text(encoding="utf-8")
         names = self._tools(self.gen.invent_families + self.gen.measure_families + ["archive"])
         res = provider.agent(P.GENERATOR_SYSTEM,
                              P.generate_prompt(self.gen, seed, mutation, mutation["depth"], names),
                              self.toolkit, names, self.max_tool_turns)
-        (self.dir / "artifact.md").write_text(res.text)
+        (self.dir / "artifact.md").write_text(res.text, encoding="utf-8")
         _dump(self.dir / "generate_calls.json", {"attempt": attempt, "turns": res.turns, "stop_reason": res.stop_reason,
                                                  "usage": res.usage, "calls": res.tool_calls})
         self._say(f"generate: {len(res.text)} chars, {len(res.tool_calls)} tool calls, stop={res.stop_reason}")
@@ -139,11 +139,11 @@ class Run:
 
     def step_formalise(self, provider: Provider, artifact: str, mutation: dict[str, Any], attempt: int = 0) -> str:
         if self._have("formal.md") and attempt == 0:
-            return (self.dir / "formal.md").read_text()
+            return (self.dir / "formal.md").read_text(encoding="utf-8")
         names = self._tools(self.gen.measure_families)
         res = provider.agent(P.GENERATOR_SYSTEM, P.formalise_prompt(self.gen, artifact, mutation),
                              self.toolkit, names, self.max_tool_turns)
-        (self.dir / "formal.md").write_text(res.text)
+        (self.dir / "formal.md").write_text(res.text, encoding="utf-8")
         _dump(self.dir / "formalise_calls.json", {"attempt": attempt, "turns": res.turns, "usage": res.usage,
                                                   "calls": res.tool_calls})
         self._say(f"formalise: {len(res.text)} chars, {len(res.tool_calls)} tool calls")
@@ -156,7 +156,7 @@ class Run:
         names = self._tools(self.gen.measure_families + ["ground", "novelty", "logic"])
         res = provider.agent(P.GENERATOR_SYSTEM, P.selfcheck_prompt(self.gen, artifact, formal, mutation),
                              self.toolkit, names, self.max_tool_turns)
-        (self.dir / "selfcheck.md").write_text(res.text)
+        (self.dir / "selfcheck.md").write_text(res.text, encoding="utf-8")
         _dump(self.dir / "selfcheck_calls.json", {"attempt": attempt, "turns": res.turns, "usage": res.usage,
                                                   "calls": res.tool_calls})
         key = provider.structured(P.GENERATOR_SYSTEM, P.key_extract_prompt(res.text), P.KEY_SCHEMA)
@@ -181,7 +181,7 @@ class Run:
             res = provider.agent(P.EXAMINER_SYSTEM,
                                  P.examine_prompt(self.gen, framing, artifact, formal, self.with_formal),
                                  examiner, names, self.max_tool_turns)
-            (self.dir / f"examine_{i}.md").write_text(res.text)
+            (self.dir / f"examine_{i}.md").write_text(res.text, encoding="utf-8")
             v = provider.structured(P.EXAMINER_SYSTEM, P.verdict_extract_prompt(res.text), P.VERDICT_SCHEMA)
             v.update({"run": i, "framing": framing, "review_file": f"examine_{i}.md",
                       "tool_calls": len(res.tool_calls), "stop_reason": res.stop_reason})
@@ -195,7 +195,7 @@ class Run:
             return _load(self.dir / "score.json")
         judged = []
         for v in verdicts:
-            review = (self.dir / v["review_file"]).read_text()
+            review = (self.dir / v["review_file"]).read_text(encoding="utf-8")
             j = provider.structured(P.JUDGE_SYSTEM, P.judge_prompt(key, review, v), P.JUDGE_SCHEMA)
             judged.append({**v, **j})
         score = compute_score(key, judged)

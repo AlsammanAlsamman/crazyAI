@@ -1,0 +1,52 @@
+{
+  "seed": 4,
+  "target": "matmul",
+  "blend_model": "evolve",
+  "depth": 3,
+  "assumption_focus": "one product is one problem; many products are many problems",
+  "provider": "claudecode",
+  "model": "",
+  "imagination_score": 1.0,
+  "status": "exact",
+  "value": 10.756,
+  "prediction": 6.0,
+  "calibration": 0.558,
+  "discovery": 10.756,
+  "fragments": [
+    "met.theory_building",
+    "art.friedrich_wanderer",
+    "harvest.3.3",
+    "met.memory_palace",
+    "art.ocampo_fields",
+    "harvest.4.3",
+    "met.data_oil",
+    "art.bosch_delights"
+  ],
+  "rng_log": [
+    {
+      "label": "invent.blend_model",
+      "value": "evolve"
+    },
+    {
+      "label": "invent.depth",
+      "value": 3
+    },
+    {
+      "label": "invent.assumption",
+      "value": "one product is one problem; many products are many problems"
+    },
+    {
+      "label": "child:invent.world",
+      "value": 1098067558
+    }
+  ],
+  "timing_s": {
+    "seed": 0.001,
+    "harvest": 15.962,
+    "world": 0.061,
+    "immerse": 29.732,
+    "bend": 149.837,
+    "measure": 1.559
+  },
+  "total_s": 197.152
+}

@@ -1,0 +1,45 @@
+kind: harvest
+fragments:
+- id: harvest.7.0
+  kind: book
+  source: Ted Chiang, Story of Your Life
+  text: The alien script is written in circular glyphs, each one a whole sentence
+    drawn all at once rather than built letter by letter in sequence. To write it,
+    the mind must already hold the ending and the beginning simultaneously, the way
+    a physicist's eye jumps straight to the endpoint of a beam of light. Learning
+    the language rearranges the linguist's sense of time until past and future feel
+    equally present, equally fixed.
+- id: harvest.7.1
+  kind: painting
+  source: Yves Tanguy, Indefinite Divisibility
+  text: A single bone-colored monolith stands on a horizonless beige plain, its surface
+    fused from smaller stone shapes like a spine grown out of pebbles. Tiny threadlike
+    wires and pin-shapes are scattered around its base, casting shadows with no clear
+    light source. The plain has no ground line, no sky line — only a gradient suggesting
+    infinite shallow distance in every direction.
+- id: harvest.7.2
+  kind: metaphor
+  source: The Ship of Theseus
+  text: Sailors replace one rotting plank of their ship each week in port, until after
+    years every board, nail, and mast has been swapped out. The ship sails on, same
+    shape, same name, same crew's hand on the same tiller position — yet not one atom
+    of the original vessel remains aboard. Somewhere in a warehouse, someone has quietly
+    reassembled all the discarded planks into a second ship, identical, and both now
+    ride at anchor claiming the same name.
+- id: harvest.7.3
+  kind: book
+  source: Jorge Amado, by way of Gabriel García Márquez, One Hundred Years of Solitude
+  text: 'An insomnia plague spreads through the village of Macondo, and with it comes
+    a stranger symptom: forgetting. Villagers pin labels to every object — ''cow,''
+    ''table,'' ''this is the tree'' — and eventually a sign at the town''s edge reads
+    ''God exists,'' because even that fact has begun sliding out of memory. Only the
+    arrival of a wandering gypsy with a memory-restoring liquid reverses the epidemic,
+    but a whole generation''s names for things had to be relearned first.'
+- id: harvest.7.4
+  kind: painting
+  source: Remedios Varo, Creation of the Birds
+  text: An owl-headed woman sits at a desk under a triangular prism that funnels starlight
+    down through her violin, out through a paintbrush held in her clawed hand. Each
+    stroke she paints becomes a living bird, feathers still wet, lifting off the paper
+    into the room's dim air. Beside her, a small chemical apparatus distills moonlight
+    into pigment, refilling her inkwell drop by drop.

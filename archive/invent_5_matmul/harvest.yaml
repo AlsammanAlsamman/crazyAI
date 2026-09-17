@@ -1,0 +1,45 @@
+kind: harvest
+fragments:
+- id: harvest.5.0
+  kind: metaphor
+  source: The Ship of Theseus
+  text: A wooden warship sits in harbor for centuries while sailors swap out one rotting
+    plank after another, then a mast, then an oar. By the time the last original timber
+    is gone, every board underfoot is new, yet the crew still calls it the same ship.
+    The old planks, hauled aside and slowly reassembled, form a second hull in the
+    mud nearby, identical down to the barnacles.
+- id: harvest.5.1
+  kind: painting
+  source: Yves Tanguy, Mama, Papa Is Wounded!
+  text: A flat pink-brown desert stretches to a horizon with no landmark, lit by a
+    glow that seems to rise out of the ground itself. Smooth bone-like shapes are
+    scattered across the sand, some standing like totems, some lying like discarded
+    tools, each casting a long precise shadow though no two shadows agree on where
+    the sun is. A single thread-thin string stretches taut between two of the objects,
+    tying nothing to nothing.
+- id: harvest.5.2
+  kind: book
+  source: Ursula K. Le Guin, The Left Hand of Darkness
+  text: On a planet locked in permanent winter, every person is neither man nor woman
+    for most of the month, sexless and androgynous, until a few days called kemmer
+    when the body chooses a sex — sometimes male, sometimes female, never the same
+    twice — in order to mate with whoever else is in kemmer nearby. A visitor from
+    a world of fixed genders spends years learning to stop asking whether someone
+    is he or she and start asking only when.
+- id: harvest.5.3
+  kind: painting
+  source: Magritte, Not to Be Reproduced
+  text: A man in a dark suit stands before a mantel mirror, and the glass shows only
+    the back of his head, the same brown hair, the same collar, doubled from behind.
+    On the mantel a single book lies reflected correctly, its title readable twice
+    over, while the man's face never once appears no matter which way the room is
+    turned in the mind.
+- id: harvest.5.4
+  kind: book
+  source: Mervyn Peake, Gormenghast
+  text: A castle so vast that whole clans of servants are born, live, and die inside
+    single wings without ever seeing the outer walls, every hour governed by a book
+    of ceremonies so old no one remembers why a certain door must be knocked on seven
+    times at dawn. A boy born into the line of earls is measured from infancy for
+    rituals he will not perform for decades, while ivy, stone, and forgotten stairways
+    multiply faster than any map of the place can be redrawn.

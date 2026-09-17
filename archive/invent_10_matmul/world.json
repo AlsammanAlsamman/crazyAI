@@ -1,0 +1,74 @@
+{
+  "model": "evolve",
+  "text": "Data marks and pebble-shapes cast tan thin strands around its base, each vein holding a slightly different ground as though tan by accretion stands at once. Every iron, every thought, every mistyped lit of both. Nothing marks a horizon. The book is a web. The melody simply owns to the same flat beneath as the thought, so the one handle seems to raw without ground beneath it.",
+  "score": {
+    "score": 0.9998,
+    "imagination": 0.9998,
+    "readable": 1.0,
+    "surprise": 1.0,
+    "mixing": 0.9993,
+    "originality": 1.0,
+    "readability": 1.0,
+    "coherence": 1.0,
+    "flesch": 72.3,
+    "words": 35,
+    "sentences": 5
+  },
+  "fragments": [
+    {
+      "id": "met.ideas_food",
+      "kind": "metaphor",
+      "source": "ideas are food"
+    },
+    {
+      "id": "harvest.8.4",
+      "kind": "painting",
+      "source": "Yves Tanguy, Indefinite Divisibility"
+    },
+    {
+      "id": "book.narnia_creation",
+      "kind": "book",
+      "source": "C. S. Lewis, The Magician's Nephew"
+    },
+    {
+      "id": "met.internet_web",
+      "kind": "metaphor",
+      "source": "the internet is a web"
+    },
+    {
+      "id": "art.klee_twittering",
+      "kind": "painting",
+      "source": "Paul Klee, Twittering Machine"
+    },
+    {
+      "id": "book.borges_library",
+      "kind": "book",
+      "source": "Borges, The Library of Babel"
+    },
+    {
+      "id": "met.data_oil",
+      "kind": "metaphor",
+      "source": "data is oil"
+    },
+    {
+      "id": "art.kahlo_two",
+      "kind": "painting",
+      "source": "Frida Kahlo, The Two Fridas"
+    }
+  ],
+  "generations": 12,
+  "history": [
+    0.9468,
+    0.9468,
+    0.9482,
+    0.9482,
+    0.9841,
+    0.9924,
+    0.9924,
+    0.9924,
+    0.9943,
+    0.9997,
+    0.9997,
+    0.9998
+  ]
+}

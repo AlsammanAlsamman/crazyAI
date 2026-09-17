@@ -11,33 +11,61 @@ lean on toolkit calls.
 from __future__ import annotations
 
 import json
+import os
 import re
 import shutil
 import subprocess
+import sys
 from typing import Any
 
 from crazyai.providers.base import AgentResult, Provider
 from crazyai.toolkit.registry import Toolkit
 
 
+def _resolve_claude() -> list[str]:
+    """The argv prefix that actually launches Claude Code.
+
+    `shutil.which("claude")` on Windows resolves to the npm-generated
+    `claude.cmd` shim, which `subprocess.run` cannot execute directly
+    (CreateProcess only runs PE binaries, not batch files, without
+    `shell=True`). The shim just wraps a real `claude.exe` a few
+    directories down; find that and call it directly so no shell is needed
+    (a shell would also re-interpret `&`, `|`, `%…%` etc. in prompt text).
+    """
+    path = shutil.which("claude")
+    if path is None:
+        raise RuntimeError("the `claude` CLI is not installed or not on PATH")
+    if sys.platform == "win32" and path.lower().endswith((".cmd", ".bat")):
+        try:
+            shim = open(path, encoding="utf-8", errors="ignore").read()
+            m = re.search(r'"([^"]*?\.exe)"', shim)
+            if m:
+                target = m.group(1).replace("%dp0%", os.path.dirname(path) + os.sep)
+                if os.path.exists(target):
+                    return [target]
+        except OSError:
+            pass
+    return [path]
+
+
 class ClaudeCodeProvider(Provider):
     name = "claudecode"
 
     def __init__(self, model: str = "", effort: str = "", timeout: int = 900, **_: Any):
-        if shutil.which("claude") is None:
-            raise RuntimeError("the `claude` CLI is not installed or not on PATH")
+        self.claude_cmd = _resolve_claude()
         self.model = model
         self.effort = effort
         self.timeout = timeout
 
     def _run(self, system: str, user: str) -> str:
-        cmd = ["claude", "-p", "--no-session-persistence", "--output-format", "text",
-               "--tools", "", "--system-prompt", system]
+        cmd = self.claude_cmd + ["-p", "--no-session-persistence", "--output-format", "text",
+                                 "--tools", "", "--system-prompt", system]
         if self.model:
             cmd += ["--model", self.model]
         if self.effort:
             cmd += ["--effort", self.effort]
-        res = subprocess.run(cmd, input=user, capture_output=True, text=True, timeout=self.timeout)
+        res = subprocess.run(cmd, input=user, capture_output=True, text=True, timeout=self.timeout,
+                             encoding="utf-8", errors="replace")
         if res.returncode != 0:
             raise RuntimeError(f"claude -p failed ({res.returncode}): {res.stderr.strip()[-2000:]}")
         return res.stdout.strip()

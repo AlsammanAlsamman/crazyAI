@@ -1,0 +1,26 @@
+{
+  "target": "matmul",
+  "artifact": "kernel",
+  "imagination": {
+    "score": 0.5299,
+    "imagination": 0.9936,
+    "readable": 0.3333,
+    "surprise": 1.0,
+    "mixing": 0.9955,
+    "originality": 0.9853,
+    "readability": 1.0,
+    "coherence": 0.3333,
+    "flesch": 74.9,
+    "words": 70,
+    "sentences": 9
+  },
+  "measurement": {
+    "error": "compile failed",
+    "compiler_output": "C:\\Users\\ALSAMM~1\\AppData\\Local\\Temp\\crazyai_kernel_xumm7qle\\kernel.c: In function 'kernel':\nC:\\Users\\ALSAMM~1\\AppData\\Local\\Temp\\crazyai_kernel_xumm7qle\\kernel.c:16:35: error: implicit declaration of function 'aligned_alloc' [-Wimplicit-function-declaration]\n   16 |         double *plane = (double *)aligned_alloc(32, (size_t)MC * NC * sizeof(double));\n      |                                   ^~~~~~~~~~~~~\nC:\\Users\\ALSAMM~1\\AppData\\Local\\Temp\\crazyai_kernel_xumm7qle\\kernel.c:5:1: note: include '<stdlib.h>' or provide a declaration of 'aligned_alloc'\n    4 | #include <immintrin.h>\n  +++ |+#include <stdlib.h>\n    5 | \nC:\\Users\\ALSAMM~1\\AppData\\Local\\Temp\\crazyai_kernel_xumm7qle\\kernel.c:16:35: warning: incompatible implicit declaration of built-in function 'aligned_alloc' [-Wbuiltin-declaration-mismatch]\n   16 |         double *plane = (double *)aligned_alloc(32, (size_t)MC * NC * sizeof(double));\n      |                                   ^~~~~~~~~~~~~\nC:\\Users\\ALSAMM~1\\AppData\\Local\\Temp\\crazyai_kernel_xumm7qle\\kernel.c:16:35: note: include '<stdlib.h>' or provide a declaration of 'aligned_alloc'\n",
+    "status": "COMPILE_ERROR"
+  },
+  "value": 0.0,
+  "status": "COMPILE_ERROR",
+  "prediction": 6.0,
+  "discovery": 0.0
+}

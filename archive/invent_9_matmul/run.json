@@ -1,0 +1,50 @@
+{
+  "seed": 9,
+  "target": "matmul",
+  "blend_model": "graft",
+  "depth": 3,
+  "assumption_focus": "one product is one problem; many products are many problems",
+  "provider": "claudecode",
+  "model": "",
+  "imagination_score": 0.5299,
+  "status": "COMPILE_ERROR",
+  "value": 0.0,
+  "prediction": 6.0,
+  "calibration": null,
+  "discovery": 0.0,
+  "fragments": [
+    "met.words_weapons",
+    "harvest.3.4",
+    "harvest.2.3",
+    "met.market_organism",
+    "art.ernst_europe",
+    "harvest.2.3"
+  ],
+  "rng_log": [
+    {
+      "label": "invent.blend_model",
+      "value": "graft"
+    },
+    {
+      "label": "invent.depth",
+      "value": 3
+    },
+    {
+      "label": "invent.assumption",
+      "value": "one product is one problem; many products are many problems"
+    },
+    {
+      "label": "child:invent.world",
+      "value": 615935266
+    }
+  ],
+  "timing_s": {
+    "seed": 0.001,
+    "harvest": 28.106,
+    "world": 0.016,
+    "immerse": 38.355,
+    "bend": 192.908,
+    "measure": 0.437
+  },
+  "total_s": 259.823
+}

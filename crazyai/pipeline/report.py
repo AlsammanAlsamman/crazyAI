@@ -20,7 +20,7 @@ def load_index(archive_dir: Path | str = ARCHIVE_DIR) -> list[dict[str, Any]]:
     if not p.exists():
         return []
     rows = []
-    for line in p.read_text().splitlines():
+    for line in p.read_text(encoding="utf-8").splitlines():
         if line.strip():
             rows.append(json.loads(line))
     # keep the latest row per (seed, generator)
@@ -101,8 +101,8 @@ def markdown_report(rows: list[dict[str, Any]]) -> str:
 
 
 def compare(run_a: Path, run_b: Path) -> dict[str, Any]:
-    a = json.loads((Path(run_a) / "run.json").read_text())
-    b = json.loads((Path(run_b) / "run.json").read_text())
+    a = json.loads((Path(run_a) / "run.json").read_text(encoding="utf-8"))
+    b = json.loads((Path(run_b) / "run.json").read_text(encoding="utf-8"))
     diff = {m: {"a": a["metrics"].get(m), "b": b["metrics"].get(m),
                 "delta": round(float(b["metrics"].get(m, 0)) - float(a["metrics"].get(m, 0)), 3)} for m in METRICS}
     return {"a": {k: a[k] for k in ("seed", "generator", "rule_id", "operator", "model")},

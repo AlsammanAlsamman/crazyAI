@@ -1,0 +1,65 @@
+{
+  "model": "nest",
+  "text": "Inside a bowler, there is a floor, and in a floor a society is a body. And whoever owns the wells owns the century; this is why a oxygen is built around a fleet. Inside a stomach, there is a owl, and in a owl so the tea can never be cleared away.",
+  "score": {
+    "score": 0.4615,
+    "imagination": 0.8653,
+    "readable": 0.3333,
+    "surprise": 0.65,
+    "mixing": 0.9969,
+    "originality": 1.0,
+    "readability": 1.0,
+    "coherence": 0.3333,
+    "flesch": 78.8,
+    "words": 21,
+    "sentences": 3
+  },
+  "fragments": [
+    {
+      "id": "met.data_oil",
+      "kind": "metaphor",
+      "source": "data is oil"
+    },
+    {
+      "id": "art.goya_sleep",
+      "kind": "painting",
+      "source": "Goya, The Sleep of Reason Produces Monsters"
+    },
+    {
+      "id": "book.wizard_oz",
+      "kind": "book",
+      "source": "L. Frank Baum, The Wizard of Oz"
+    },
+    {
+      "id": "met.society_body",
+      "kind": "metaphor",
+      "source": "society is a body"
+    },
+    {
+      "id": "art.escher_relativity",
+      "kind": "painting",
+      "source": "Escher, Relativity"
+    },
+    {
+      "id": "book.alice_wonderland",
+      "kind": "book",
+      "source": "Lewis Carroll, Alice in Wonderland"
+    },
+    {
+      "id": "met.heart_engine",
+      "kind": "metaphor",
+      "source": "the heart is a pump"
+    },
+    {
+      "id": "art.magritte_golconda",
+      "kind": "painting",
+      "source": "Magritte, Golconda"
+    },
+    {
+      "id": "book.invisible_cities",
+      "kind": "book",
+      "source": "Italo Calvino, Invisible Cities"
+    }
+  ],
+  "depth": 3
+}

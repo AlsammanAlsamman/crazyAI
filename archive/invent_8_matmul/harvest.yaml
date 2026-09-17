@@ -1,0 +1,49 @@
+kind: harvest
+fragments:
+- id: harvest.8.0
+  kind: book
+  source: Mervyn Peake, Gormenghast
+  text: A castle so vast that entire clans of servants are born, live, and die inside
+    single wings without ever seeing the outer walls. Ritual governs every hour down
+    to the minute — a bell rung, a goblet turned, a corridor swept — and no one alive
+    remembers why, only that the Earl himself is bound to perform them or the stones
+    themselves would somehow know. Ivy has grown through the library shelves, and
+    owls nest in rooms whose doors were sealed a hundred years before anyone now living
+    was born.
+- id: harvest.8.1
+  kind: painting
+  source: Remedios Varo, Creation of the Birds
+  text: An owl-headed woman sits at a desk lit by a single triangular prism that splits
+    starlight into paint. She draws each bird with a violin bow instead of a brush,
+    and the wet ink lifts straight off the page and flaps into the air as a living
+    finch. Cords run from the machinery behind her, through the floor, up through
+    her own chest, so her heartbeat is the engine driving the invention.
+- id: harvest.8.2
+  kind: metaphor
+  source: Plato's Cave
+  text: Prisoners sit chained facing a blank wall their whole lives, watching flickering
+    shapes cast by a fire and by puppeteers walking behind them out of sight. To the
+    prisoners the shadows are the entire world — solid, named, argued over — because
+    no other picture has ever reached their eyes. One is unchained and dragged up
+    a tunnel into daylight, where the sun is so violent he must look first at reflections
+    in water, then at shadows on the ground, before his eyes can bear the actual sky.
+- id: harvest.8.3
+  kind: book
+  source: Ursula K. Le Guin, The Left Hand of Darkness
+  text: On the ice-locked planet Gethen, every person spends most of each month with
+    no fixed sex at all, then enters a few days called kemmer when the body tips male
+    or female depending on hormonal cues from whoever they are with. A single person
+    may father one child in one kemmer and bear another the next year, so the words
+    'he' and 'she' apply to the same person at different seasons. A foreign envoy,
+    permanently and monotonously one sex by their standards, is regarded by the Gethenians
+    the way a person in perpetual rut would be regarded by us.
+- id: harvest.8.4
+  kind: painting
+  source: Yves Tanguy, Indefinite Divisibility
+  text: A single bone-colored form stands on an endless tan desert under a sourceless
+    amber light, its surface pitted and stacked like something grown by accretion
+    rather than built. Small stalks and pebble-shapes cast long thin shadows around
+    its base, each shadow pointing a slightly different direction as though lit by
+    several suns at once. Nothing marks a horizon; the plain simply fades to the same
+    flat color as the sky, so the one object seems to hover without ground beneath
+    it.

@@ -1,0 +1,44 @@
+kind: harvest
+fragments:
+- id: harvest.4.0
+  kind: book
+  source: China Miéville, Perdido Street Station
+  text: 'In this city a caste of beings called Remade carry punishments welded into
+    their bodies: a thief given brass crab legs instead of arms, a debtor fused waist-down
+    into a steam engine that never stops walking. The Remade drag themselves through
+    markets pulling the machinery that is now permanently their own flesh. Nobody
+    looks directly at them twice.'
+- id: harvest.4.1
+  kind: metaphor
+  source: the Ship of Theseus as a marriage
+  text: 'Every plank of the ship is replaced one by one over thirty years until no
+    original timber remains, yet sailors still call it by its first name and swear
+    it carried them through the same storm. People describe long marriages the same
+    way: not one cell, habit, or held belief from the wedding day survives, but the
+    two who wake up now insist they are the same couple who once said the vows. The
+    ship sails on, entirely rebuilt, still itself.'
+- id: harvest.4.2
+  kind: painting
+  source: Yves Tanguy, Indefinite Divisibility
+  text: A single bone-colored form stands alone on an endless tan plain that has no
+    horizon line, only a gradient fading to nothing in every direction. The object
+    bristles with small antler-like spurs and pierced holes, as if a machine part
+    had been left out to fossilize for a million years. Its shadow falls the wrong
+    way, toward a light source that isn't in the sky.
+- id: harvest.4.3
+  kind: book
+  source: Franz Kafka, The Metamorphosis
+  text: A traveling salesman wakes at dawn to find his human body gone, replaced by
+    a huge brown insect shell with thin legs waving uselessly in the air. He can still
+    hear and think exactly as before, but his voice now comes out as a scratchy chitter
+    no one in the next room can understand. The family leaves his breakfast tray outside
+    the door and starts speaking of him in the past tense while he is still listening
+    through the wall.
+- id: harvest.4.4
+  kind: metaphor
+  source: the tightrope walker's pole as memory
+  text: 'A performer crosses a wire strung between two towers, holding a long weighted
+    pole horizontal across both hands, neither end touching anything. The pole itself
+    does nothing but hang there, yet without it the walker falls within three steps.
+    People say old memories work the same way: dead weight carried for no active purpose,
+    until you notice they were the only thing keeping you upright the whole crossing.'

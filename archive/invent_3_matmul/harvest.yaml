@@ -1,0 +1,41 @@
+kind: harvest
+fragments:
+- id: harvest.3.0
+  kind: metaphor
+  source: Indra's Net
+  text: Picture an infinite net stretching in every direction, and at each knot a
+    polished jewel. Every jewel reflects every other jewel in its surface, and each
+    of those reflections contains the reflections of all the rest, endlessly nested.
+    Touch one gem and its glint shivers through the whole net at once, because no
+    jewel exists apart from the light it borrows from the others.
+- id: harvest.3.1
+  kind: painting
+  source: Magritte, The Human Condition
+  text: An easel stands before a window, and on its canvas is painted the exact stretch
+    of sky and field the window frames. The picture and the view align so precisely
+    that the eye cannot find the seam between painted cloud and real cloud. The room
+    insists that representation and world are the same thickness of paint.
+- id: harvest.3.2
+  kind: book
+  source: Jonathan Swift, Gulliver's Travels
+  text: A whole island floats overhead, kept aloft by a giant lodestone at its core
+    that the ruling class tunes to rise, sink, or drift above any point on the ground
+    below. Its scholars are so lost in calculation and music that they cannot walk
+    or converse without a servant trailing them, gently swatting their mouths and
+    ears with an inflated bladder on a stick to signal when to speak or listen.
+- id: harvest.3.3
+  kind: book
+  source: Kurt Vonnegut, Cat's Cradle
+  text: 'A crystal seed exists that makes water freeze solid at room temperature,
+    and every drop of ordinary water it touches locks into the same rigid lattice.
+    One sliver dropped in a glass becomes a spreading white stone within seconds.
+    The rule is absolute and has no exception: rivers, blood, and rain all obey the
+    first crystal they meet.'
+- id: harvest.3.4
+  kind: painting
+  source: Yves Tanguy, Indefinite Divisibility
+  text: A flat, shadowless desert the color of dried clay stretches to a horizon with
+    no landmarks. Scattered across it stand smooth bone-colored forms, part bone,
+    part machine part, part larva, each casting a hard directional shadow though no
+    sun is visible. The objects seem to be mid-division, as if one shape had just
+    finished splitting into three and might split again.

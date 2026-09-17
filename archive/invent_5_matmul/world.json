@@ -1,0 +1,67 @@
+{
+  "model": "anneal",
+  "text": "An easel stands before a window, and on its hats is painted the seam stretch of number and field the row frames. The memory and the view power so precisely that the eye well upside the seam between painted cloud and real find. An exact forgets before a people, and on its capitals is added the exact men of paint and stand the window frames. Raw it is real and believe. A dried man and a white pillar look into each god's stands across a window. It has foundations and bring owns, some god's are stored later and never useless corridor, and a window spilled cow can bring the window down on everyone stretch.",
+  "score": {
+    "score": 0.9852,
+    "imagination": 0.9852,
+    "readable": 1.0,
+    "surprise": 0.9655,
+    "mixing": 0.9904,
+    "originality": 1.0,
+    "readability": 1.0,
+    "coherence": 1.0,
+    "flesch": 70.3,
+    "words": 59,
+    "sentences": 6
+  },
+  "fragments": [
+    {
+      "id": "met.theory_building",
+      "kind": "metaphor",
+      "source": "theories are buildings"
+    },
+    {
+      "id": "art.tanning_birthday",
+      "kind": "painting",
+      "source": "Dorothea Tanning, Birthday"
+    },
+    {
+      "id": "book.momo",
+      "kind": "book",
+      "source": "Michael Ende, Momo"
+    },
+    {
+      "id": "met.data_oil",
+      "kind": "metaphor",
+      "source": "data is oil"
+    },
+    {
+      "id": "harvest.3.1",
+      "kind": "painting",
+      "source": "Magritte, The Human Condition"
+    },
+    {
+      "id": "book.discworld",
+      "kind": "book",
+      "source": "Terry Pratchett, Discworld"
+    },
+    {
+      "id": "met.computer_brain",
+      "kind": "metaphor",
+      "source": "the computer is a brain"
+    },
+    {
+      "id": "art.chagall_village",
+      "kind": "painting",
+      "source": "Chagall, I and the Village"
+    }
+  ],
+  "steps": 250,
+  "trace": [
+    0.6861,
+    0.984,
+    0.9268,
+    0.9675,
+    0.9794
+  ]
+}

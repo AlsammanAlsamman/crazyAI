@@ -34,11 +34,11 @@ from crazyai.toolkit.registry import Toolkit, build_toolkit
 
 
 def _dump(path: Path, obj: Any) -> None:
-    path.write_text(json.dumps(obj, indent=2, ensure_ascii=False, default=str))
+    path.write_text(json.dumps(obj, indent=2, ensure_ascii=False, default=str), encoding="utf-8")
 
 
 def _load(path: Path) -> Any:
-    return json.loads(path.read_text())
+    return json.loads(path.read_text(encoding="utf-8"))
 
 
 _CODE = re.compile(r"```c\s*\n(.*?)```", re.S)
@@ -55,7 +55,7 @@ class Invent:
     archive_dir: Path = field(default_factory=lambda: Path(ARCHIVE_DIR))
     force: bool = False
     max_tool_turns: int = DEFAULT_MAX_TOOL_TURNS
-    log: Any = print
+    log: Any = lambda msg: print(msg, flush=True)
 
     def __post_init__(self) -> None:
         self.tgt: Target = get_target(self.target)
@@ -96,7 +96,7 @@ class Invent:
         if self.harvest <= 0:
             return []
         if self._have("harvest.yaml"):
-            return yaml.safe_load((self.dir / "harvest.yaml").read_text()).get("fragments", [])
+            return yaml.safe_load((self.dir / "harvest.yaml").read_text(encoding="utf-8")).get("fragments", [])
         avoid = sorted({f.source for f in corpus()})
         res = provider.agent(P.HARVEST_SYSTEM, P.harvest_prompt(self.harvest, KINDS, avoid), self.toolkit, [], 2)
         frags: list[dict[str, Any]] = []
@@ -109,7 +109,7 @@ class Invent:
         for i, f in enumerate(frags):
             f.setdefault("id", f"harvest.{self.seed}.{i}")
         path = save_harvest(f"harvest_{self.seed}", frags, self.archive_dir)
-        (self.dir / "harvest.yaml").write_text(path.read_text())
+        (self.dir / "harvest.yaml").write_text(path.read_text(encoding="utf-8"), encoding="utf-8")
         self._say(f"harvest: {len(frags)} fragments -> {path}")
         return frags
 
@@ -130,16 +130,16 @@ class Invent:
         md = (f"# World (blend model: {world['model']}, imagination score {world['score']['score']})\n\n{world['text']}\n\n"
               "## Built from\n" + "\n".join(f"- {f['kind']}: {f['source']}" for f in world["fragments"]) +
               "\n\n## Score\n```\n" + json.dumps(world["score"], indent=2) + "\n```\n")
-        (self.dir / "world.md").write_text(md)
+        (self.dir / "world.md").write_text(md, encoding="utf-8")
         self._say(f"world: {world['model']} score={world['score']['score']} ({len(world['fragments'])} fragments)")
         return world
 
     # -- 4. immerse ----------------------------------------------------------------------
     def step_immerse(self, provider: Provider, world: dict[str, Any], seed: dict[str, Any]) -> str:
         if self._have("ideas.md"):
-            return (self.dir / "ideas.md").read_text()
+            return (self.dir / "ideas.md").read_text(encoding="utf-8")
         res = provider.agent(P.IMMERSE_SYSTEM, P.immerse_prompt(world["text"], self.tgt, seed["depth"]), self.toolkit, [], 1)
-        (self.dir / "ideas.md").write_text(res.text)
+        (self.dir / "ideas.md").write_text(res.text, encoding="utf-8")
         seeds = _SEED.findall(res.text)
         self._say(f"immerse: {len(res.text)} chars, {len(seeds)} seeds")
         return res.text
@@ -147,19 +147,19 @@ class Invent:
     # -- 5. bend -------------------------------------------------------------------------
     def step_bend(self, provider: Provider, ideas: str) -> dict[str, Any]:
         if self._have("artifact.md"):
-            art = (self.dir / "artifact.md").read_text()
+            art = (self.dir / "artifact.md").read_text(encoding="utf-8")
         else:
             names = self.toolkit.names(families=self.tgt.measure_families + ["unconventional", "symbolic"])
             res = provider.agent(P.BEND_SYSTEM, P.bend_prompt(ideas, self.tgt, names), self.toolkit, names, self.max_tool_turns)
             art = res.text
-            (self.dir / "artifact.md").write_text(art)
+            (self.dir / "artifact.md").write_text(art, encoding="utf-8")
             _dump(self.dir / "bend_calls.json", {"turns": res.turns, "stop_reason": res.stop_reason, "usage": res.usage, "calls": res.tool_calls})
         code = _CODE.findall(art)
         pred = _PRED.search(art)
         out = {"text": art, "code": code[-1] if code else None, "prediction": float(pred.group(1)) if pred else None,
                "seeds": _SEED.findall(art)}
         if out["code"] and self.tgt.artifact == "kernel":
-            (self.dir / "artifact.c").write_text(out["code"])
+            (self.dir / "artifact.c").write_text(out["code"], encoding="utf-8")
         self._say(f"bend: {len(art)} chars, code={'yes' if out['code'] else 'no'}, prediction={out['prediction']}")
         return out
 
@@ -223,7 +223,7 @@ def load_invent_index(archive_dir: Path | str = ARCHIVE_DIR) -> list[dict[str, A
     if not p.exists():
         return []
     latest: dict[tuple[int, str], dict[str, Any]] = {}
-    for line in p.read_text().splitlines():
+    for line in p.read_text(encoding="utf-8").splitlines():
         if line.strip():
             r = json.loads(line)
             latest[(r["seed"], r["target"])] = r

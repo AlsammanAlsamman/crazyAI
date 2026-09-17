@@ -1,0 +1,52 @@
+{
+  "seed": 7,
+  "target": "matmul",
+  "blend_model": "evolve",
+  "depth": 2,
+  "assumption_focus": "one processor holds both matrices",
+  "provider": "claudecode",
+  "model": "",
+  "imagination_score": 0.9932,
+  "status": "exact",
+  "value": 1.816,
+  "prediction": 5.0,
+  "calibration": 0.363,
+  "discovery": 1.8098,
+  "fragments": [
+    "met.heart_engine",
+    "art.escher_relativity",
+    "book.discworld",
+    "met.money_water",
+    "art.tanning_birthday",
+    "harvest.4.3",
+    "met.words_weapons",
+    "art.ocampo_fields"
+  ],
+  "rng_log": [
+    {
+      "label": "invent.blend_model",
+      "value": "compare"
+    },
+    {
+      "label": "invent.depth",
+      "value": 2
+    },
+    {
+      "label": "invent.assumption",
+      "value": "one processor holds both matrices"
+    },
+    {
+      "label": "child:invent.world",
+      "value": 1926751966
+    }
+  ],
+  "timing_s": {
+    "seed": 0.0,
+    "harvest": 16.406,
+    "world": 0.218,
+    "immerse": 26.608,
+    "bend": 203.309,
+    "measure": 1.944
+  },
+  "total_s": 248.485
+}

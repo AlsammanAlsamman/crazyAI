@@ -1,0 +1,53 @@
+{
+  "seed": 1,
+  "target": "matmul",
+  "blend_model": "nest",
+  "depth": 2,
+  "assumption_focus": "n^3 multiplications are needed",
+  "provider": "claudecode",
+  "model": "",
+  "imagination_score": 0.4615,
+  "status": "exact",
+  "value": 7.462,
+  "prediction": 2.0,
+  "calibration": 0.268,
+  "discovery": 5.4529,
+  "fragments": [
+    "met.data_oil",
+    "art.goya_sleep",
+    "book.wizard_oz",
+    "met.society_body",
+    "art.escher_relativity",
+    "book.alice_wonderland",
+    "met.heart_engine",
+    "art.magritte_golconda",
+    "book.invisible_cities"
+  ],
+  "rng_log": [
+    {
+      "label": "invent.blend_model",
+      "value": "nest"
+    },
+    {
+      "label": "invent.depth",
+      "value": 2
+    },
+    {
+      "label": "invent.assumption",
+      "value": "n^3 multiplications are needed"
+    },
+    {
+      "label": "child:invent.world",
+      "value": 2041105245
+    }
+  ],
+  "timing_s": {
+    "seed": 0.001,
+    "harvest": 32.398,
+    "world": 0.014,
+    "immerse": 28.307,
+    "bend": 209.271,
+    "measure": 1.651
+  },
+  "total_s": 271.641
+}

@@ -1,0 +1,53 @@
+{
+  "seed": 6,
+  "target": "matmul",
+  "blend_model": "nest",
+  "depth": 2,
+  "assumption_focus": "numbers are IEEE doubles and multiply is the primitive",
+  "provider": "claudecode",
+  "model": "",
+  "imagination_score": 0.6017,
+  "status": "exact",
+  "value": 1.949,
+  "prediction": 1.3,
+  "calibration": 0.667,
+  "discovery": 1.5609,
+  "fragments": [
+    "met.ideas_food",
+    "harvest.3.1",
+    "book.momo",
+    "met.society_body",
+    "art.varo_tower",
+    "book.narnia_creation",
+    "met.knowledge_light",
+    "harvest.6.2",
+    "book.calvino_baron"
+  ],
+  "rng_log": [
+    {
+      "label": "invent.blend_model",
+      "value": "nest"
+    },
+    {
+      "label": "invent.depth",
+      "value": 2
+    },
+    {
+      "label": "invent.assumption",
+      "value": "numbers are IEEE doubles and multiply is the primitive"
+    },
+    {
+      "label": "child:invent.world",
+      "value": 737168579
+    }
+  ],
+  "timing_s": {
+    "seed": 0.0,
+    "harvest": 17.255,
+    "world": 0.024,
+    "immerse": 33.298,
+    "bend": 216.686,
+    "measure": 2.089
+  },
+  "total_s": 269.351
+}

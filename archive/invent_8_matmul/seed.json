@@ -1,0 +1,7 @@
+{
+  "seed": 8,
+  "target": "matmul",
+  "blend_model": "evolve",
+  "depth": 1,
+  "assumption_focus": "the whole sum over the shared index is finished before the next cell is started"
+}

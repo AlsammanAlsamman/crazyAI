@@ -1,0 +1,40 @@
+kind: harvest
+fragments:
+- id: harvest.6.0
+  kind: book
+  source: China Miéville, The Scar
+  text: A city called Armada is built entirely from ships lashed hull to hull, its
+    avenues rope bridges swaying between decks, its districts drifting slowly across
+    open ocean pulled by chained sea-beasts. Streets rearrange themselves as the whole
+    flotilla turns, so a tavern's front door faces a different neighbor each season.
+- id: harvest.6.1
+  kind: metaphor
+  source: the sunk cost fallacy as a drowning man clutching his wallet
+  text: A man treads water gripping a satchel of gold coins, refusing to let go even
+    as it drags him under, because releasing it would mean admitting the coins were
+    worthless the moment he jumped in. Onlookers shout to drop it and swim, but from
+    inside the water the coins feel like the only thing he has left to show for the
+    fall.
+- id: harvest.6.2
+  kind: painting
+  source: Yves Tanguy, Indefinite Divisibility
+  text: A single bone-colored monolith stands on a flat pink desert under no sky,
+    its surface machined into a spine of ambiguous joints and sockets that could be
+    gears or vertebrae. Tiny threadlike shadows stretch from its base to a horizon
+    with no sun, as though the object generates its own impossible light source from
+    within.
+- id: harvest.6.3
+  kind: book
+  source: Michael Ende, The Neverending Story
+  text: A void called the Nothing spreads across the land of Fantastica by unmaking
+    things rather than destroying them, so that a forest or a city simply is not anymore,
+    leaving no rubble, no memory, no gap in the map. Every person who stops believing
+    in a story anywhere in the real world enlarges this erasure by exactly one silent
+    acre.
+- id: harvest.6.4
+  kind: painting
+  source: Remedios Varo, Creation of the Birds
+  text: An owl-headed woman sits at an easel wearing a triangular device on her chest
+    that funnels starlight down through a tube into her paintbrush. As she draws each
+    bird on the canvas, the wet ink lifts off the page and flies out the window, already
+    feathered and alive before the outline is finished.

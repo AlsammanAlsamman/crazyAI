@@ -98,8 +98,8 @@ def bench(source: str, sizes: list | None = None, budget: float = 0.3, ctx: dict
         return {"error": "sizes must be between 4 and 2048"}
     run_dir = Path((ctx or {}).get("run_dir", "")) if (ctx or {}).get("run_dir") else None
     work = Path(tempfile.mkdtemp(prefix="crazyai_kernel_"))
-    (work / "kernel.c").write_text(source)
-    (work / "harness.c").write_text(_HARNESS)
+    (work / "kernel.c").write_text(source, encoding="utf-8")
+    (work / "harness.c").write_text(_HARNESS, encoding="utf-8")
     exe = work / "bench"
     cc = subprocess.run(["gcc", "-O3", "-march=native", "-fopenmp", "-o", str(exe), str(work / "kernel.c"), str(work / "harness.c"), "-lm"],
                         capture_output=True, text=True, timeout=120)
@@ -125,8 +125,8 @@ def bench(source: str, sizes: list | None = None, budget: float = 0.3, ctx: dict
         kd = run_dir / "kernels"
         kd.mkdir(parents=True, exist_ok=True)
         i = len(list(kd.glob("*.c")))
-        (kd / f"kernel_{i}.c").write_text(source)
-        (kd / f"kernel_{i}.json").write_text(json.dumps({"results": rows, "value": value}, indent=2))
+        (kd / f"kernel_{i}.c").write_text(source, encoding="utf-8")
+        (kd / f"kernel_{i}.json").write_text(json.dumps({"results": rows, "value": value}, indent=2), encoding="utf-8")
     shutil.rmtree(work, ignore_errors=True)
     return {"results": rows, "largest_n": big["n"], "gflops": big["gflops"], "rel_fro_err": big["rel_fro_err"],
             "status": big["status"], "speedup_vs_naive": big["speedup_vs_naive"], "speedup_vs_blocked": big["speedup_vs_blocked"],

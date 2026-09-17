@@ -1,0 +1,44 @@
+kind: harvest
+fragments:
+- id: harvest.2.0
+  kind: metaphor
+  source: Plato's Cave
+  text: Prisoners sit chained since birth in a cave, facing a blank wall, unable to
+    turn their heads. Behind them a fire burns, and unseen figures carry puppets past
+    it, casting flickering shadows on the stone. The prisoners name the shadows, argue
+    over them, give them stories — never knowing a fire, a sun, or a world of solid
+    things exists at their backs.
+- id: harvest.2.1
+  kind: painting
+  source: Giorgio de Chirico, The Nostalgia of the Infinite
+  text: A brick tower with a clock frozen at no legible hour rises over an empty piazza,
+    its arcades throwing shadows far longer than the buildings that cast them. Two
+    small dark figures stand motionless in the vast tilted square, dwarfed by flagpoles
+    and a sky gone the color of old parchment. The perspective is wrong in a way that
+    feels correct — lines converge toward a vanishing point that never arrives.
+- id: harvest.2.2
+  kind: painting
+  source: Arcimboldo, Vertumnus
+  text: 'A man''s face and torso are built entirely from a harvest: cheeks made of
+    apples and peaches, a pear for a chin, grapes clustered into a beard, a squash
+    for a chest. Up close it is only fruit and vegetables and wheat, stacked and bruised
+    and ripening; step back and a human portrait assembles itself out of the produce.
+    The eyes are two blackberries, wet and watching.'
+- id: harvest.2.3
+  kind: book
+  source: Terry Pratchett, Discworld
+  text: The world is a flat disc resting on the backs of four enormous elephants,
+    who in turn stand on the shell of a star-sized turtle swimming slowly through
+    space. Waterfalls pour endlessly off the disc's rim into the void, held to the
+    world only by a thin, permanent edge of mist. Sailors who go far enough reach
+    the edge and can look straight down past the elephants' feet into open sky.
+- id: harvest.2.4
+  kind: book
+  source: China Miéville, The City & The City
+  text: Two cities occupy the same streets, the same crossings, the same weather,
+    yet their citizens are trained from childhood to see only their own city's buildings
+    and pedestrians. A person from one city can stand a foot from a person of the
+    other and must 'unsee' them — no glance, no swerve, no acknowledgment — or risk
+    being seized by an unmarked, unaccountable power that punishes the breach. Some
+    buildings belong wholly to one city, some are split down a wall, and the space
+    between the two is patrolled by nothing anyone can point to.

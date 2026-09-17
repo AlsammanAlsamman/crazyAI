@@ -1,0 +1,46 @@
+kind: harvest
+fragments:
+- id: harvest.10.0
+  kind: book
+  source: Ted Chiang, Story of Your Life
+  text: Alien visitors write in circular logograms, each ink-loop encoding a whole
+    sentence at once rather than word by word. Learning to read their script rewires
+    a human mind to perceive future and past simultaneously, the way one eye takes
+    in an entire circle rather than tracing its rim. A linguist finds herself remembering
+    her unborn daughter's death before the child is even conceived.
+- id: harvest.10.1
+  kind: painting
+  source: Magritte, The Human Condition
+  text: An easel stands before a window, its canvas showing the exact slice of meadow
+    and sky that the window itself frames, painted so precisely the two merge into
+    one surface. The viewer cannot tell where glass ends and paint begins, or whether
+    the true landscape is hidden behind the propped canvas. A cut fold-line in the
+    canvas's edge is the only clue that two different realities are stacked there.
+- id: harvest.10.2
+  kind: metaphor
+  source: Plato's Cave
+  text: Prisoners sit chained facing a rock wall their entire lives, watching flickering
+    shapes cast by a fire and puppeteers behind them, believing the shadows are the
+    whole of existence. One prisoner is dragged into daylight and is blinded by the
+    sun, at first seeing only reflections in water before he can look at real trees
+    and finally the sun itself. He returns underground to tell the others, but his
+    eyes no longer adjust to the dark and they think the journey has ruined him.
+- id: harvest.10.3
+  kind: book
+  source: Ursula K. Le Guin, The Left Hand of Darkness
+  text: On a glacial planet, every person is sexless and androgynous most of each
+    month, then enters kemmer, a fertile phase lasting a few days in which the body
+    becomes either male or female depending on the partner and circumstance, unpredictably,
+    without choice. A person who fathered a child in one kemmer cycle may bear a child
+    in the next, and no one is permanently gendered, so kingship, jealousy, and rape
+    all take different shapes than they do among a fixed-sex species. Snow falls constantly
+    over stone keeps where sworn hospitality can outweigh national loyalty.
+- id: harvest.10.4
+  kind: painting
+  source: Yves Tanguy, Mama, Papa Is Wounded!
+  text: A flat, bone-colored desert stretches under a sourceless amber light, dotted
+    with soft biomorphic shapes like eroded bones, deflated organs, and stitched pillows
+    standing upright on thin stalks. A pale mound trails a single black hair into
+    the distance, and nearby a bulbous white form seems to bandage itself, though
+    nothing indicates injury or comfort. No horizon line, footprint, or shadow explains
+    how the objects arrived or what scale they are.

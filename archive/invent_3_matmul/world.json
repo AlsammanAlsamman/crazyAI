@@ -1,0 +1,74 @@
+{
+  "model": "evolve",
+  "text": "A boy roofs into an oak at city and never comes down. A rich stop roots for roots. The theory seems the citizens so evenly that the ordinary seems to be stand of boy with a few risk streets. A boulder one leaves you air by spring. A whole from one city can swallow a space from a person of the other and must dark them — no glance, no swerve, no breach — or risk being seized by an unmarked, unaccountable power that leaves the person.",
+  "score": {
+    "score": 0.991,
+    "imagination": 0.991,
+    "readable": 1.0,
+    "surprise": 0.9737,
+    "mixing": 0.9994,
+    "originality": 1.0,
+    "readability": 1.0,
+    "coherence": 1.0,
+    "flesch": 76.1,
+    "words": 39,
+    "sentences": 5
+  },
+  "fragments": [
+    {
+      "id": "met.language_tree",
+      "kind": "metaphor",
+      "source": "language is a tree"
+    },
+    {
+      "id": "art.magritte_castle",
+      "kind": "painting",
+      "source": "Magritte, The Castle of the Pyrenees"
+    },
+    {
+      "id": "harvest.2.4",
+      "kind": "book",
+      "source": "China Miéville, The City & The City"
+    },
+    {
+      "id": "met.ideas_food",
+      "kind": "metaphor",
+      "source": "ideas are food"
+    },
+    {
+      "id": "art.magritte_golconda",
+      "kind": "painting",
+      "source": "Magritte, Golconda"
+    },
+    {
+      "id": "book.calvino_baron",
+      "kind": "book",
+      "source": "Italo Calvino, The Baron in the Trees"
+    },
+    {
+      "id": "met.problem_knot",
+      "kind": "metaphor",
+      "source": "a problem is a knot"
+    },
+    {
+      "id": "art.friedrich_wanderer",
+      "kind": "painting",
+      "source": "Caspar David Friedrich, Wanderer above the Sea of Fog"
+    }
+  ],
+  "generations": 12,
+  "history": [
+    0.9308,
+    0.9441,
+    0.9613,
+    0.9613,
+    0.9802,
+    0.9802,
+    0.982,
+    0.982,
+    0.982,
+    0.9825,
+    0.9905,
+    0.991
+  ]
+}

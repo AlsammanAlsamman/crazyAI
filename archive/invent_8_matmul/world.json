@@ -1,0 +1,74 @@
+{
+  "model": "evolve",
+  "text": "A rush the size of a paper curls over pressure figures, its cellar breaking into inhabitants of foam. Beside her, a pressure chemical grows boats sky into small, refilling her connect prism by paintbrush. Behind them a fire curls, and unseen figures carry puppets past it, flickering refilling shadows on the pigment. Prisoners hour chained since woman in a cave, passing a blank wall, drop to turn their heads. A world is wet into being.",
+  "score": {
+    "score": 1.0,
+    "imagination": 1.0,
+    "readable": 1.0,
+    "surprise": 1.0,
+    "mixing": 1.0,
+    "originality": 1.0,
+    "readability": 1.0,
+    "coherence": 1.0,
+    "flesch": 64.2,
+    "words": 46,
+    "sentences": 5
+  },
+  "fragments": [
+    {
+      "id": "met.memory_palace",
+      "kind": "metaphor",
+      "source": "memory is a palace"
+    },
+    {
+      "id": "harvest.7.4",
+      "kind": "painting",
+      "source": "Remedios Varo, Creation of the Birds"
+    },
+    {
+      "id": "book.narnia_creation",
+      "kind": "book",
+      "source": "C. S. Lewis, The Magician's Nephew"
+    },
+    {
+      "id": "met.city_machine",
+      "kind": "metaphor",
+      "source": "the city is a machine"
+    },
+    {
+      "id": "art.hokusai_wave",
+      "kind": "painting",
+      "source": "Hokusai, The Great Wave"
+    },
+    {
+      "id": "book.flatland",
+      "kind": "book",
+      "source": "Edwin Abbott, Flatland"
+    },
+    {
+      "id": "harvest.2.0",
+      "kind": "metaphor",
+      "source": "Plato's Cave"
+    },
+    {
+      "id": "harvest.7.4",
+      "kind": "painting",
+      "source": "Remedios Varo, Creation of the Birds"
+    }
+  ],
+  "generations": 12,
+  "history": [
+    0.9997,
+    0.9997,
+    0.9997,
+    0.9997,
+    0.9997,
+    0.9997,
+    0.9997,
+    0.9997,
+    0.9997,
+    1.0,
+    1.0,
+    1.0
+  ]
+}

@@ -65,7 +65,7 @@ def _knowledge(corpus_key: str) -> dict:
             word_frags.setdefault(w, set()).add(f.id)
         for s in _SENT.split(f.text):
             sentences.add(_norm_sentence(s))
-    ref = (DATA_DIR / "reference_prose.txt").read_text()
+    ref = (DATA_DIR / "reference_prose.txt").read_text(encoding="utf-8")
     pairs |= _near_pairs(_content_seq(ref))
     ref_words = set(_content_seq(ref))
     return {"pairs": pairs, "word_kinds": word_kinds, "word_frags": word_frags, "sentences": sentences, "ref_words": ref_words}

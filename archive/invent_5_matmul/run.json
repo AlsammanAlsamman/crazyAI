@@ -1,0 +1,52 @@
+{
+  "seed": 5,
+  "target": "matmul",
+  "blend_model": "anneal",
+  "depth": 3,
+  "assumption_focus": "the output is produced one cell at a time, row by row",
+  "provider": "claudecode",
+  "model": "",
+  "imagination_score": 0.9852,
+  "status": "exact",
+  "value": 6.606,
+  "prediction": 4.0,
+  "calibration": 0.606,
+  "discovery": 6.5571,
+  "fragments": [
+    "met.theory_building",
+    "art.tanning_birthday",
+    "book.momo",
+    "met.data_oil",
+    "harvest.3.1",
+    "book.discworld",
+    "met.computer_brain",
+    "art.chagall_village"
+  ],
+  "rng_log": [
+    {
+      "label": "invent.blend_model",
+      "value": "anneal"
+    },
+    {
+      "label": "invent.depth",
+      "value": 3
+    },
+    {
+      "label": "invent.assumption",
+      "value": "the output is produced one cell at a time, row by row"
+    },
+    {
+      "label": "child:invent.world",
+      "value": 1735039634
+    }
+  ],
+  "timing_s": {
+    "seed": 0.0,
+    "harvest": 37.094,
+    "world": 0.073,
+    "immerse": 30.607,
+    "bend": 168.637,
+    "measure": 1.816
+  },
+  "total_s": 238.226
+}

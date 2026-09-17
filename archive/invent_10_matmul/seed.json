@@ -1,0 +1,7 @@
+{
+  "seed": 10,
+  "target": "matmul",
+  "blend_model": "evolve",
+  "depth": 3,
+  "assumption_focus": "a matrix is a two-dimensional grid living in one memory"
+}

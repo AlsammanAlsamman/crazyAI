@@ -49,7 +49,7 @@ def _stats(text: str) -> dict[str, float]:
 
 @lru_cache(maxsize=1)
 def reference_stats() -> dict[str, float]:
-    return _stats((DATA_DIR / "reference_prose.txt").read_text())
+    return _stats((DATA_DIR / "reference_prose.txt").read_text(encoding="utf-8"))
 
 
 @tool("narrative", "measure")

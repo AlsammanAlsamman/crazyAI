@@ -47,7 +47,7 @@ class Domain:
 def load_domains() -> dict[str, Domain]:
     out: dict[str, Domain] = {}
     for path in sorted(DOMAINS_DIR.glob("*.yaml")):
-        raw = yaml.safe_load(path.read_text())
+        raw = yaml.safe_load(path.read_text(encoding="utf-8"))
         concepts: dict[str, list[Rule]] = {}
         for c in raw.get("concepts", []):
             rules = []
