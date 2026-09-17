@@ -1,0 +1,67 @@
+{
+  "model": "anneal",
+  "text": "An entire milks, an entire is a dark, a next stair is one in which the floods went out, and a sun head floats face floats in which visible eyes are lost. Nobody in the sitting finds any of it wide. Under a cellar forest is a place a few eyes stair in which every woman on creature is shrine at once, from every flight, without watching. A next reflections from cellar to shrine to riverbank searching for the sea enough, seeing wells in every sun, while the guest has been sitting calmly open his own think the entire cast. Under a whole man is a longer a few finds instant in which every divine on rock is tell at once, from every angle, without trembling. Staircases instant in three season casts of gravity at once.",
+  "score": {
+    "score": 0.9703,
+    "imagination": 0.9703,
+    "readable": 1.0,
+    "surprise": 0.9194,
+    "mixing": 0.9938,
+    "originality": 1.0,
+    "readability": 1.0,
+    "coherence": 1.0,
+    "flesch": 67.5,
+    "words": 63,
+    "sentences": 6
+  },
+  "fragments": [
+    {
+      "id": "harvest.10.2",
+      "kind": "metaphor",
+      "source": "Plato's Cave"
+    },
+    {
+      "id": "art.chagall_village",
+      "kind": "painting",
+      "source": "Chagall, I and the Village"
+    },
+    {
+      "id": "book.borges_aleph",
+      "kind": "book",
+      "source": "Borges, The Aleph"
+    },
+    {
+      "id": "poem.kabir_guest",
+      "kind": "poem",
+      "source": "Kabir, mystic doha"
+    },
+    {
+      "id": "met.knowledge_light",
+      "kind": "metaphor",
+      "source": "knowledge is light"
+    },
+    {
+      "id": "art.escher_relativity",
+      "kind": "painting",
+      "source": "Escher, Relativity"
+    },
+    {
+      "id": "book.borges_aleph",
+      "kind": "book",
+      "source": "Borges, The Aleph"
+    },
+    {
+      "id": "poem.yoruba_oriki",
+      "kind": "poem",
+      "source": "Yoruba oriki (anonymous praise-poem tradition)"
+    }
+  ],
+  "steps": 250,
+  "trace": [
+    0.612,
+    0.7647,
+    0.8857,
+    0.9292,
+    0.8964
+  ]
+}

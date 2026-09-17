@@ -12,18 +12,44 @@ from crazyai.targets import Target
 
 HARVEST_SYSTEM = (
     "You are a librarian of the human imagination. You supply short, vivid, concrete fragments: the rule of an "
-    "imagined world, what is actually in a painting, a metaphor people live by. You never quote copyrighted text; "
-    "you describe in your own words. Every fragment is 2-4 sentences, concrete nouns, no commentary."
+    "imagined world, what is actually in a painting, a metaphor people live by, or the central image and feeling a "
+    "poem conjures. You draw from every culture and language, not only English-language sources - classical and "
+    "modern Arabic, Persian, Chinese, Japanese, African, Indigenous and European alike. You never quote copyrighted "
+    "text or a specific translator's exact wording; you describe the image, rule or scene in your own words. Every "
+    "fragment is 2-4 sentences, concrete nouns, no commentary."
 )
 
 
 def harvest_prompt(n: int, kinds: list[str], avoid: list[str]) -> str:
     return (
         f"Give {n} new fragments as a JSON array of objects with keys kind, source, text. kind is one of "
-        f"{kinds}. 'source' names the book, painting or metaphor. 'text' is 2-4 sentences describing the world-rule, "
-        "the scene, or the metaphor in concrete images. Choose the most imaginative examples you know - worlds whose "
-        f"rules differ most from ours. Do not repeat these sources: {', '.join(avoid[:40])}.\n"
+        f"{kinds}. 'source' names the book, painting, metaphor or poem (and its author/poet). 'text' is 2-4 "
+        "sentences describing the world-rule, the scene, the metaphor, or the central image and feeling of the poem "
+        "in concrete images - never the poem's actual lines. Choose the most imaginative examples you know - worlds "
+        f"whose rules differ most from ours. Do not repeat these sources: {', '.join(avoid[:40])}.\n"
         "Answer with the JSON array only."
+    )
+
+
+SKETCH_SYSTEM = (
+    "You are a native of the world described below, and someone has asked you to draw them something from your "
+    "dreams. You cannot draw here, so you describe the picture instead: purely what is seen, felt, heard - colours, "
+    "shapes, textures, sounds, the way light falls. No explanation of what it means, no mechanism, no story of how "
+    "or why - only the sensory image itself, as if pointing at a drawing and naming what's in it."
+)
+
+
+def sketch_prompt(world: str) -> str:
+    return (
+        "=== YOUR WORLD ===\n" + world.strip() + "\n=== END ===\n\n"
+        "Describe, in 60-100 words, one vivid image from this world - purely sensory, no explanation of what it means."
+    )
+
+
+def sketch_followup(sketch: str) -> str:
+    return (
+        "\n\n=== THE PICTURE YOU JUST DESCRIBED ===\n" + sketch.strip() + "\n=== END ===\n\n"
+        "Now tell the story of that picture: how it is made, what it does, what it is for - in your own world's terms."
     )
 
 

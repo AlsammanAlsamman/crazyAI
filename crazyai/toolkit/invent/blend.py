@@ -24,12 +24,12 @@ _TOKEN = re.compile(r"[A-Za-z'-]+|[^\sA-Za-z'-]")
 
 
 # ---- shared helpers ---------------------------------------------------------------
-_ARCHIVE: dict[str, Any] = {"dir": None}   # set by the invent pipeline so harvested fragments join the pool
+_ARCHIVE: dict[str, Any] = {"dir": None, "include_promoted": False}   # set by the invent pipeline
 
 
 def _draw(rng: RunRNG, k: int, label: str) -> list[Fragment]:
-    """k fragments, spread as evenly as possible over the three worlds."""
-    pools = by_kind(corpus(archive_dir=_ARCHIVE["dir"]))
+    """k fragments, spread as evenly as possible over the four worlds."""
+    pools = by_kind(corpus(archive_dir=_ARCHIVE["dir"], include_promoted=_ARCHIVE.get("include_promoted", False)))
     out: list[Fragment] = []
     kinds = [kd for kd in KINDS if pools.get(kd)]
     for i in range(k):
@@ -302,8 +302,50 @@ def evolve(rng: RunRNG, k: int = 8, population: int = 12, generations: int = 12)
     return _result("evolve", _tidy(" ".join(best)), frags, generations=generations, history=history)
 
 
+# ---- 7. remix: anneal, but seeded from what has already worked ----------------------
+@tool("blend", "invent")
+def remix(rng: RunRNG, k: int = 8, steps: int = 250, t0: float = 0.08) -> dict:
+    """Simulated annealing like `anneal`, but its starting population is drawn preferentially from
+    promoted (outcome-selected) fragments when any exist, topped up from the full corpus otherwise -
+    the "multiply and modify what already worked" half of the outcome feedback loop
+    (see `--evolve-corpus`). Falls back to an ordinary anneal-style start when nothing has been
+    promoted yet. Not in the default seeded-draw pool (MODELS) - run it directly with `--blend remix`.
+
+    Args:
+        k: Fragments to draw from (promoted fragments preferred, topped up from the full corpus).
+        steps: Number of proposed edits.
+        t0: Starting temperature (score units).
+    """
+    from crazyai.imagination import promoted as _promoted
+
+    prom = _promoted(_ARCHIVE["dir"])
+    frags = list(prom)[:k]
+    seeded_from_promoted = len(frags)
+    if len(frags) < k:
+        frags += _draw(rng, k - len(frags), "remix")
+    bank = _content_bank(frags)
+    pool = [s for f in frags for s in f.sentences()]
+    cur = [_graft_sentence(rng, s, bank, 0.4, f"remix.init{i}") for i, s in enumerate(rng.shuffle("remix.init", pool)[:6])]
+    cur_s = score_text(" ".join(cur))["score"]
+    best, best_s = list(cur), cur_s
+    trace = []
+    for t in range(steps):
+        T = t0 * (1 - t / steps) + 1e-4
+        cand = _mutate(rng, cur, bank, pool, f"remix.{t}")
+        cs = score_text(" ".join(cand))["score"]
+        if cs >= cur_s or rng.uniform(f"remix.acc{t}", 0, 1) < math.exp((cs - cur_s) / T):
+            cur, cur_s = cand, cs
+            if cs > best_s:
+                best, best_s = list(cand), cs
+        if t % 50 == 0:
+            trace.append(round(cur_s, 4))
+    return _result("remix", _tidy(" ".join(best)), frags, steps=steps, trace=trace, seeded_from_promoted=seeded_from_promoted)
+
+
 # ---- dispatch + comparison ------------------------------------------------------------
-_DISPATCH = {"cutup": cutup, "markov": markov, "graft": graft, "nest": nest, "anneal": anneal, "evolve": evolve}
+_DISPATCH = {"cutup": cutup, "markov": markov, "graft": graft, "nest": nest, "anneal": anneal, "evolve": evolve,
+            "remix": remix}
+ALL_MODELS = MODELS + ["remix"]  # for CLI choice validation only - MODELS itself stays the unbiased seeded-draw pool
 
 
 def run_model(rng: RunRNG, model: str, **kw: Any) -> dict:

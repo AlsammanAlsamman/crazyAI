@@ -1,0 +1,321 @@
+<title>invent pipeline</title>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f4f5fb; --surface:#ffffff; --surface-2:#eceefa; --border:#d7dae8;
+    --text:#14151f; --text-dim:#565a78;
+    --rng:#3955c9; --rng-bg:#e8ebfb;
+    --claude:#a35d05; --claude-bg:#fbeed9;
+    --harness:#0f8f66; --harness-bg:#e2f6ee;
+    --warn:#b8302d; --warn-bg:#fbe6e5;
+    --font-ui:'Sora',system-ui,sans-serif;
+    --font-mono:'JetBrains Mono',ui-monospace,'SF Mono',monospace;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#0b0c14; --surface:#14151f; --surface-2:#1b1d2b; --border:#2a2c40;
+      --text:#eef0fb; --text-dim:#9296b8;
+      --rng:#8fa6ff; --rng-bg:#1a2140;
+      --claude:#ffb454; --claude-bg:#332411;
+      --harness:#5fdba8; --harness-bg:#0f2b22;
+      --warn:#ff7d7a; --warn-bg:#3a1616;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0b0c14; --surface:#14151f; --surface-2:#1b1d2b; --border:#2a2c40;
+    --text:#eef0fb; --text-dim:#9296b8;
+    --rng:#8fa6ff; --rng-bg:#1a2140;
+    --claude:#ffb454; --claude-bg:#332411;
+    --harness:#5fdba8; --harness-bg:#0f2b22;
+    --warn:#ff7d7a; --warn-bg:#3a1616;
+  }
+  *{box-sizing:border-box}
+  body{
+    background:var(--bg); color:var(--text); font-family:var(--font-ui);
+    padding-inline:20px; padding-block:32px 60px; max-width:1180px; margin:0 auto;
+  }
+  h1{font-size:1.7rem; margin:0 0 4px; letter-spacing:-0.01em; text-wrap:balance}
+  .sub{color:var(--text-dim); font-size:.95rem; max-width:70ch; line-height:1.5; margin:0 0 30px}
+  .sub code{font-family:var(--font-mono); font-size:.85em; background:var(--surface-2); padding:.1em .4em; border-radius:4px}
+
+  .legend{display:flex; gap:18px; flex-wrap:wrap; margin-bottom:22px; font-size:.82rem; color:var(--text-dim)}
+  .legend span{display:inline-flex; align-items:center; gap:6px}
+  .dot{width:10px; height:10px; border-radius:3px; flex:none}
+
+  .scroller{overflow-x:auto; margin:0 -20px 8px; padding:0 20px 4px}
+  .scroller svg{display:block; width:2040px; max-width:none; height:auto}
+  .scroller-hint{font-size:.75rem; color:var(--text-dim); margin:0 0 34px; text-align:right}
+
+  h2{font-size:1.15rem; margin:0 0 4px; letter-spacing:-0.005em}
+  .section-note{color:var(--text-dim); font-size:.88rem; margin:0 0 18px; max-width:68ch; line-height:1.5}
+
+  .detail-wrap{display:grid; grid-template-columns: minmax(0,1fr) minmax(280px,360px); gap:28px; align-items:start; margin-bottom:44px}
+  @media (max-width:760px){ .detail-wrap{grid-template-columns:1fr} }
+  .detail-wrap .scroller{margin:0}
+  .detail-wrap .scroller svg{width:640px}
+
+  .formulas{background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:16px 18px; font-size:.82rem}
+  .formulas dt{font-family:var(--font-mono); color:var(--harness); font-size:.78rem; margin-top:10px}
+  .formulas dt:first-child{margin-top:0}
+  .formulas dd{margin:2px 0 0; color:var(--text-dim); line-height:1.45}
+
+  .cards{display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:14px}
+  .card{background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:14px 16px}
+  .card .tag{display:inline-flex; align-items:center; gap:6px; font-family:var(--font-mono); font-size:.72rem; color:var(--text-dim); margin-bottom:8px}
+  .card .tag b{color:var(--text); font-family:var(--font-ui); font-weight:600}
+  .card p{margin:0; font-size:.87rem; line-height:1.5; color:var(--text)}
+  .card p.fix{margin-top:8px; color:var(--text-dim); font-size:.82rem}
+  .card p.fix b{color:var(--harness); font-weight:600}
+  .warn-dot{background:var(--warn)}
+
+  svg text{font-family:var(--font-ui); fill:currentColor}
+  svg .mono{font-family:var(--font-mono)}
+</style>
+
+<h1>How <code style="font-family:var(--font-mono)">crazyai invent</code> works</h1>
+<p class="sub">
+  Seven steps, corpus to archived result. Colour marks who does the work:
+  <b style="color:var(--rng)">RNG / math</b> (deterministic, seeded, free),
+  <b style="color:var(--claude)">Claude</b> (a model call, costs time and money),
+  <b style="color:var(--harness)">harness</b> (compiled C, deterministic, the only step that touches ground truth).
+  Traced for <code>--target matmul</code>, the target actually run so far.
+</p>
+
+<div class="legend">
+  <span><span class="dot" style="background:var(--rng)"></span>RNG / math — no model call</span>
+  <span><span class="dot" style="background:var(--claude)"></span>Claude — one model call</span>
+  <span><span class="dot" style="background:var(--harness)"></span>harness — compiles &amp; times real code</span>
+  <span><span class="dot warn-dot"></span>known limitation</span>
+</div>
+
+<div class="scroller" role="img" aria-label="Seven pipeline stages: seed, harvest, world, immerse, bend, measure, archive, connected left to right by the file each stage hands to the next.">
+<svg viewBox="0 0 2040 300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="currentColor"/>
+    </marker>
+  </defs>
+
+  <!-- step boxes -->
+  <!-- geometry: box 230x210 at y=50, gap 70 -->
+
+  <!-- 1 SEED -->
+  <g transform="translate(0,50)">
+    <rect width="230" height="210" rx="10" fill="var(--surface)" stroke="var(--border)"/>
+    <rect width="230" height="6" rx="3" fill="var(--rng)"/>
+    <text x="16" y="34" font-size="12" fill="var(--rng)" class="mono">01 · RNG</text>
+    <text x="16" y="58" font-size="16" font-weight="700">SEED</text>
+    <text x="16" y="82" font-size="11.5" fill="var(--text-dim)">draws, from the seed:</text>
+    <text x="16" y="100" font-size="11.5">· blend model (or "compare")</text>
+    <text x="16" y="116" font-size="11.5">· immersion depth 1–3</text>
+    <text x="16" y="132" font-size="11.5">· 1 of 8 matmul</text>
+    <text x="16" y="148" font-size="11.5">  assumptions to bend</text>
+    <text x="16" y="190" font-size="11" class="mono" fill="var(--text-dim)">→ seed.json</text>
+  </g>
+
+  <!-- 2 HARVEST -->
+  <g transform="translate(300,50)">
+    <rect width="230" height="210" rx="10" fill="var(--surface)" stroke="var(--border)"/>
+    <rect width="230" height="6" rx="3" fill="var(--claude)"/>
+    <text x="16" y="34" font-size="12" fill="var(--claude)" class="mono">02 · Claude</text>
+    <text x="16" y="58" font-size="16" font-weight="700">HARVEST</text>
+    <text x="16" y="82" font-size="11.5" fill="var(--text-dim)">optional (--harvest N)</text>
+    <text x="16" y="100" font-size="11.5">asks the model for N new</text>
+    <text x="16" y="116" font-size="11.5">metaphor / painting / book-</text>
+    <text x="16" y="132" font-size="11.5">world fragments, avoiding</text>
+    <text x="16" y="148" font-size="11.5">what's already in the corpus</text>
+    <text x="16" y="190" font-size="11" class="mono" fill="var(--text-dim)">→ harvest.yaml</text>
+  </g>
+
+  <!-- 3 WORLD -->
+  <g transform="translate(600,50)">
+    <rect width="230" height="210" rx="10" fill="var(--surface)" stroke="var(--border)"/>
+    <rect width="230" height="6" rx="3" fill="var(--rng)"/>
+    <text x="16" y="34" font-size="12" fill="var(--rng)" class="mono">03 · RNG + math</text>
+    <text x="16" y="58" font-size="16" font-weight="700">WORLD</text>
+    <text x="16" y="82" font-size="11.5" fill="var(--text-dim)">the blend</text>
+    <text x="16" y="100" font-size="11.5">1 of 6 models (cutup, markov,</text>
+    <text x="16" y="116" font-size="11.5">graft, nest, anneal, evolve)</text>
+    <text x="16" y="132" font-size="11.5">merges corpus + harvest,</text>
+    <text x="16" y="148" font-size="11.5">scored on the imagination scale</text>
+    <text x="16" y="190" font-size="11" class="mono" fill="var(--text-dim)">→ world.json / world.md</text>
+  </g>
+
+  <!-- 4 IMMERSE -->
+  <g transform="translate(900,50)">
+    <rect width="230" height="210" rx="10" fill="var(--surface)" stroke="var(--border)"/>
+    <rect width="230" height="6" rx="3" fill="var(--claude)"/>
+    <text x="16" y="34" font-size="12" fill="var(--claude)" class="mono">04 · Claude</text>
+    <text x="16" y="58" font-size="16" font-weight="700">IMMERSE</text>
+    <text x="16" y="82" font-size="11.5" fill="var(--text-dim)">the psychology</text>
+    <text x="16" y="100" font-size="11.5">model plays a native of the</text>
+    <text x="16" y="116" font-size="11.5">blended world, never told</text>
+    <text x="16" y="132" font-size="11.5">"computer" — answers the</text>
+    <text x="16" y="148" font-size="11.5">need in first person, no tools</text>
+    <text x="16" y="190" font-size="11" class="mono" fill="var(--text-dim)">→ ideas.md</text>
+  </g>
+
+  <!-- 5 BEND -->
+  <g transform="translate(1200,50)">
+    <rect width="230" height="210" rx="10" fill="var(--surface)" stroke="var(--border)"/>
+    <rect width="230" height="6" rx="3" fill="var(--claude)"/>
+    <text x="16" y="34" font-size="12" fill="var(--claude)" class="mono">05 · Claude + tools</text>
+    <text x="16" y="58" font-size="16" font-weight="700">BEND</text>
+    <text x="16" y="82" font-size="11.5" fill="var(--text-dim)">the engineering, ≤24 tool turns</text>
+    <text x="16" y="100" font-size="11.5">maps the in-world idea</text>
+    <text x="16" y="116" font-size="11.5">literally onto memory/flow/</text>
+    <text x="16" y="132" font-size="11.5">processor; writes the C kernel;</text>
+    <text x="16" y="148" font-size="11.5">predicts speedup before measuring</text>
+    <text x="16" y="190" font-size="11" class="mono" fill="var(--text-dim)">→ artifact.md / artifact.c</text>
+  </g>
+
+  <!-- 6 MEASURE -->
+  <g transform="translate(1500,50)">
+    <rect width="230" height="210" rx="10" fill="var(--surface)" stroke="var(--warn)" stroke-width="1.5"/>
+    <rect width="230" height="6" rx="3" fill="var(--harness)"/>
+    <text x="16" y="34" font-size="12" fill="var(--harness)" class="mono">06 · harness</text>
+    <text x="16" y="58" font-size="16" font-weight="700">MEASURE</text>
+    <text x="16" y="82" font-size="11.5" fill="var(--text-dim)">ground truth — see detail below</text>
+    <text x="16" y="100" font-size="11.5">gcc -O3 -march=native</text>
+    <text x="16" y="116" font-size="11.5">-fopenmp; checked, timed at</text>
+    <text x="16" y="132" font-size="11.5">n = 64, 256, 512 vs naive</text>
+    <text x="16" y="148" font-size="11.5">and a cache-blocked loop</text>
+    <text x="16" y="190" font-size="11" class="mono" fill="var(--text-dim)">→ measure.json</text>
+    <g transform="translate(196,14)">
+      <circle r="9" fill="var(--warn-bg)" stroke="var(--warn)"/>
+      <text x="0" y="4" font-size="12" font-weight="700" fill="var(--warn)" text-anchor="middle">!</text>
+    </g>
+  </g>
+
+  <!-- 7 ARCHIVE -->
+  <g transform="translate(1800,50)">
+    <rect width="230" height="210" rx="10" fill="var(--surface)" stroke="var(--border)"/>
+    <rect width="230" height="6" rx="3" fill="var(--rng)"/>
+    <text x="16" y="34" font-size="12" fill="var(--rng)" class="mono">07 · tool</text>
+    <text x="16" y="58" font-size="16" font-weight="700">ARCHIVE</text>
+    <text x="16" y="82" font-size="11.5" fill="var(--text-dim)">no model call</text>
+    <text x="16" y="100" font-size="11.5">writes run.json, appends</text>
+    <text x="16" y="116" font-size="11.5">one line to invent_index</text>
+    <text x="16" y="132" font-size="11.5">.jsonl — later ranked by</text>
+    <text x="16" y="148" font-size="11.5">invent-rank --target matmul</text>
+    <text x="16" y="190" font-size="11" class="mono" fill="var(--text-dim)">→ run.json</text>
+  </g>
+
+  <!-- arrows between boxes, with file label -->
+  <g stroke="currentColor" stroke-width="1.5" fill="none" color="var(--text-dim)">
+    <line x1="230" y1="155" x2="298" y2="155" marker-end="url(#arrow)"/>
+    <line x1="530" y1="155" x2="598" y2="155" marker-end="url(#arrow)"/>
+    <line x1="830" y1="155" x2="898" y2="155" marker-end="url(#arrow)"/>
+    <line x1="1130" y1="155" x2="1198" y2="155" marker-end="url(#arrow)"/>
+    <line x1="1430" y1="155" x2="1498" y2="155" marker-end="url(#arrow)"/>
+    <line x1="1730" y1="155" x2="1798" y2="155" marker-end="url(#arrow)"/>
+  </g>
+</svg>
+</div>
+<p class="scroller-hint">scrolls horizontally →</p>
+
+<h2>The matmul-specific measure step, zoomed in</h2>
+<p class="section-note">
+  This is the step worth understanding before changing anything — it's the only
+  place a "crazy" idea meets a compiler and a clock, and it's where the batch's
+  three compile errors and the cross-machine GFLOP/s trap both live.
+</p>
+
+<div class="detail-wrap">
+  <div class="scroller" role="img" aria-label="artifact.c compiled with gcc, run against a naive loop and a cache-blocked loop at three sizes, checked for correctness, producing GFLOP/s and three derived scores.">
+    <svg viewBox="0 0 640 460" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="arrow2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+          <path d="M0,0 L10,5 L0,10 z" fill="currentColor"/>
+        </marker>
+      </defs>
+
+      <rect x="20" y="10" width="220" height="46" rx="8" fill="var(--claude-bg)" stroke="var(--claude)"/>
+      <text x="130" y="30" font-size="12" text-anchor="middle" class="mono">artifact.c</text>
+      <text x="130" y="46" font-size="10.5" text-anchor="middle" fill="var(--text-dim)">kernel(n, A, B, C)</text>
+
+      <line x1="130" y1="56" x2="130" y2="92" stroke="currentColor" color="var(--text-dim)" marker-end="url(#arrow2)"/>
+      <text x="146" y="78" font-size="10.5" fill="var(--text-dim)">gcc -O3 -march=native -fopenmp</text>
+
+      <rect x="20" y="94" width="220" height="40" rx="8" fill="var(--harness-bg)" stroke="var(--harness)"/>
+      <text x="130" y="118" font-size="12" text-anchor="middle" class="mono">bench.exe</text>
+
+      <line x1="130" y1="134" x2="130" y2="168" stroke="currentColor" color="var(--text-dim)" marker-end="url(#arrow2)"/>
+      <text x="145" y="156" font-size="10.5" fill="var(--warn)">n = 64, 256, 512 only</text>
+
+      <rect x="20" y="170" width="600" height="80" rx="8" fill="var(--surface)" stroke="var(--border)"/>
+      <text x="320" y="188" font-size="11" text-anchor="middle" fill="var(--text-dim)">races, best-of-N, budget 0.3s each</text>
+
+      <rect x="34" y="198" width="170" height="38" rx="6" fill="var(--claude-bg)" stroke="var(--claude)"/>
+      <text x="119" y="221" font-size="11" text-anchor="middle" class="mono">kernel — the idea</text>
+
+      <rect x="235" y="198" width="170" height="38" rx="6" fill="var(--surface-2)" stroke="var(--border)"/>
+      <text x="320" y="215" font-size="11" text-anchor="middle" class="mono">naive</text>
+      <text x="320" y="229" font-size="9.5" text-anchor="middle" fill="var(--text-dim)">single-threaded</text>
+
+      <rect x="436" y="198" width="170" height="38" rx="6" fill="var(--surface-2)" stroke="var(--warn)">
+      </rect>
+      <text x="521" y="215" font-size="11" text-anchor="middle" class="mono">blocked</text>
+      <text x="521" y="229" font-size="9.5" text-anchor="middle" fill="var(--warn)">single-threaded too ⚠</text>
+
+      <line x1="320" y1="250" x2="320" y2="278" stroke="currentColor" color="var(--text-dim)" marker-end="url(#arrow2)"/>
+
+      <rect x="20" y="280" width="600" height="46" rx="8" fill="var(--surface)" stroke="var(--border)"/>
+      <text x="320" y="298" font-size="11" text-anchor="middle">exactness check vs a reference triple loop (relative Frobenius error)</text>
+      <text x="320" y="315" font-size="9.5" text-anchor="middle" fill="var(--text-dim)">wrong or NaN → status WRONG, value forced to 0</text>
+
+      <line x1="320" y1="326" x2="320" y2="354" stroke="currentColor" color="var(--text-dim)" marker-end="url(#arrow2)"/>
+
+      <rect x="20" y="356" width="600" height="94" rx="8" fill="var(--surface)" stroke="var(--border)"/>
+      <text x="320" y="376" font-size="11" text-anchor="middle" fill="var(--text-dim)">measure.json — three numbers the batch is ranked on</text>
+      <text x="40" y="400" font-size="11" class="mono">value</text>
+      <text x="320" y="400" font-size="10.5" text-anchor="middle">speedup vs blocked × exactness — but the AI kernel is</text>
+      <text x="320" y="414" font-size="10.5" text-anchor="middle" fill="var(--warn)">usually OpenMP-parallel and blocked never is</text>
+      <text x="40" y="436" font-size="11" class="mono">calibration</text>
+      <text x="410" y="436" font-size="10.5" text-anchor="middle">1 − |predicted − actual| ⁄ max(predicted, actual)</text>
+    </svg>
+  </div>
+
+  <div class="formulas">
+    <div style="font-size:.8rem; color:var(--text-dim); margin-bottom:6px">exact formulas, from <span class="mono">kernel.py</span> / <span class="mono">invent.py</span></div>
+    <dl>
+      <dt>value</dt>
+      <dd>speedup_vs_blocked × exactness, at the largest size measured (n = 512 by default — never 1024, the size the lab's own comparisons use)</dd>
+      <dt>calibration</dt>
+      <dd>1 − |prediction − value| ⁄ max(prediction, value) — how close the engineer's own guess was</dd>
+      <dt>discovery</dt>
+      <dd>value × (0.5 + 0.5 × imagination_score) — what invent-rank sorts by</dd>
+    </dl>
+  </div>
+</div>
+
+<h2>Where to improve it</h2>
+<p class="section-note">Five concrete openings, found running the first real 10-seed batch end to end.</p>
+
+<div class="cards">
+  <div class="card">
+    <span class="tag"><span class="dot warn-dot"></span>step 06 · <b>MEASURE</b></span>
+    <p>Default sizes are <span class="mono" style="font-family:var(--font-mono)">[64, 256, 512]</span>, hardcoded in <span class="mono" style="font-family:var(--font-mono)">step_measure</span> — every invent run is judged on matrix sizes well under the n&nbsp;=&nbsp;1024 this project's own comparisons use.</p>
+    <p class="fix"><b>Fix:</b> make sizes a CLI flag, default to include 1024.</p>
+  </div>
+  <div class="card">
+    <span class="tag"><span class="dot warn-dot"></span>step 06 · <b>MEASURE</b></span>
+    <p>The <span class="mono" style="font-family:var(--font-mono)">blocked</span> reference kernel is single-threaded C; AI-written kernels routinely add <span class="mono" style="font-family:var(--font-mono)">#pragma omp</span>. <span class="mono" style="font-family:var(--font-mono)">value</span> and <span class="mono" style="font-family:var(--font-mono)">discovery</span> then reward "used more cores," not "smarter algorithm."</p>
+    <p class="fix"><b>Fix:</b> parallelize the blocked baseline too, or report both a 1-thread and all-core ratio.</p>
+  </div>
+  <div class="card">
+    <span class="tag"><span class="dot warn-dot"></span>every step · <b>ranking</b></span>
+    <p>GFLOP/s and <span class="mono" style="font-family:var(--font-mono)">value</span> aren't portable across machines — this session nearly reported a 24-core desktop's numbers as if comparable to the original 4-core laptop's.</p>
+    <p class="fix"><b>Fix:</b> have <span class="mono" style="font-family:var(--font-mono)">step_archive</span> capture one real OpenBLAS number for the current machine once, store it alongside every run.</p>
+  </div>
+  <div class="card">
+    <span class="tag"><span class="dot warn-dot"></span>step 02 · <b>HARVEST</b></span>
+    <p>A parse failure (no <span class="mono" style="font-family:var(--font-mono)">[...]</span> match, bad JSON) silently becomes 0 fragments — happened on seed 1 of the batch with no error surfaced, only a low count in the log.</p>
+    <p class="fix"><b>Fix:</b> log the raw response on a parse miss instead of swallowing it.</p>
+  </div>
+  <div class="card">
+    <span class="tag"><span class="dot warn-dot"></span>step 05→06 · <b>BEND → MEASURE</b></span>
+    <p>3 of the batch's 10 seeds ended in <span class="mono" style="font-family:var(--font-mono)">COMPILE_ERROR</span> with no repair attempt, even though the bend prompt already tells the model to "measure and improve it up to four times."</p>
+    <p class="fix"><b>Fix:</b> check whether that in-bend loop is actually firing on a compiler error, not just a bad speedup.</p>
+  </div>
+</div>

@@ -1,0 +1,198 @@
+kind: poem
+fragments:
+- id: poem.rumi_reed
+  source: Rumi, "Song of the Reed" (opening of the Masnavi)
+  text: A reed pipe, once part of a living reed bed by the water, has been cut and
+    hollowed and forced to sing. Every note it plays is a lament for the marsh it
+    was severed from, grief turned into music through its own wounded body. Listeners
+    weep at the sound without knowing why, recognizing their own exile inside its
+    breath.
+- id: poem.hafez_tavern
+  source: Hafez, ghazal from the Divan
+  text: A tavern pours a wine that is not grape but pure longing, and the cupbearer's
+    glance intoxicates more than the cup itself. A nightingale sings itself to death
+    for love of a rose that will outlast it by many seasons, trading beauty for complaint
+    across a garden wall. Reason knocks at the door of this house and is gently, permanently
+    turned away.
+- id: poem.antara_muallaqa
+  source: Antara ibn Shaddad, Mu'allaqa
+  text: A warrior stands over the cold ashes of an abandoned campsite, reading the
+    shape of a vanished tent in sand where his beloved once lived. He describes his
+    lance soaking in enemy blood the way a dyer's cloth drinks color, boasting of
+    battle to prove himself worthy of a woman promised to another man. The desert
+    keeps no forwarding address, only tracks the wind is already erasing.
+- id: poem.khansa_elegy
+  source: Al-Khansa, elegy for her brother Sakhr
+  text: A woman climbs the highest dune each dawn only to scan an empty horizon for
+    a rider who will never come back. She names her grief a fire lit inside the ribs
+    that no nearby well could ever drown, and calls her brother a mountain other men
+    used to lean against, now toppled flat. Her eyes are two springs that refuse to
+    run dry no matter how many years draw from them.
+- id: poem.blake_auguries
+  source: William Blake, "Auguries of Innocence"
+  text: A single grain of sand, held up to the light, reveals an entire world folded
+    inside its tiny casing. A wildflower cupped in one palm contains the whole of
+    heaven the way a locked room contains the sky glimpsed through its one window.
+    Somewhere in this ledger of correspondences, a caged songbird's cry is enough
+    to unsettle the order of paradise itself.
+- id: poem.rilke_torso
+  source: Rainer Maria Rilke, "Archaic Torso of Apollo"
+  text: A broken marble statue, missing its head and both arms, stands in a museum
+    and somehow still looks back at the viewer from every curve at once, as though
+    eyes had migrated into its shoulders and thighs. Light seems to originate from
+    inside the ruined chest like a lamp turned low but never off. Standing before
+    it, a visitor feels accused, as if the statue's silence were a command to go home
+    and become someone else entirely.
+- id: poem.neruda_walking
+  source: Pablo Neruda, "Walking Around"
+  text: A man walks through a city feeling worn as an old glove, tired of his own
+    name and his own tailored suit, wishing to frighten a notary with a single lily
+    or knock a clerk flat with one blow. Barbershops smell faintly of weeping, and
+    the plumbing sobs quietly inside the walls around him. Entire courtyards of hanging
+    laundry feel closer to burial grounds than to homes, yet he keeps walking, shoes
+    and quiet fury both intact.
+- id: poem.dickinson_carriage
+  source: Emily Dickinson, "Because I could not stop for Death"
+  text: An unhurried, courteous carriage pulls up unannounced, and a woman climbs
+    in beside its driver, leaving her labor and her leisure behind without protest.
+    They pass slowly by a schoolyard of children at recess, fields of grain that seem
+    to gaze back at the sun, and a setting sun that eventually overtakes and passes
+    them instead. The carriage finally stops before a house that turns out to be only
+    a low mound of earth, its roof barely rising above the ground, while centuries
+    slide by afterward like a single afternoon.
+- id: poem.libai_moon
+  source: Li Bai, "Drinking Alone Under the Moon"
+  text: A man pours wine for himself beneath blossoming branches with no one else
+    in sight, so he invites the moon to drink with him and names his own shadow a
+    third companion. The three of them dance together clumsily on the ground, though
+    the moon only drifts overhead and the shadow only copies his movements. He promises
+    this borrowed friendship will outlast the wine itself, to be renewed each year
+    somewhere among the stars.
+- id: poem.basho_pond
+  source: Matsuo Bashō, the old pond haiku
+  text: An old, moss-rimmed pond sits in perfect stillness, holding nothing but its
+    own reflection and centuries of silence. A single frog leaps from the bank and
+    vanishes into the water with one small, precise sound. Afterward the pond looks
+    exactly as still as before, but the stillness itself has quietly changed.
+- id: poem.sappho_31
+  source: Sappho, Fragment 31
+  text: A woman watches another woman laughing softly with a man seated across from
+    her, and the sight undoes her completely. Her tongue locks in her mouth, a fine
+    fire runs just beneath her skin, her ears fill with a private roaring, and her
+    eyes go dark as if night had fallen only around her. In that instant she feels
+    closer to the grass underfoot, and to dying, than to anything she recognizes as
+    herself.
+- id: poem.lorca_sonambulo
+  source: Federico García Lorca, "Romance Sonámbulo"
+  text: Everything in this ballad is stained green — the wind, the branches, the woman's
+    flesh and hair and even her eyes — as though moonlight had dyed the whole scene
+    the color of drowned things. A gypsy woman leans forever on her balcony waiting,
+    while a wounded man arrives offering his horse, his saddle, even his knife, in
+    exchange for a bed and a mirror. Blood trails down from the mountain like a dark
+    ribbon, and by morning the balcony holds nothing but rain.
+- id: poem.tagore_gitanjali
+  source: Rabindranath Tagore, Gitanjali
+  text: The poet imagines himself a hollow flute carried everywhere by a divine musician,
+    silent and useless until breath is blown through him, becoming pure melody that
+    isn't his own. A small boat is pushed out at dusk toward a far shore whose name
+    no one can pronounce, guided only by trust that the crossing itself is the destination.
+    Each evening he sets a lamp on the threshold of his own heart, never certain which
+    guest is finally arriving.
+- id: poem.kabir_guest
+  source: Kabir, mystic doha
+  text: A man wanders from forest to shrine to riverbank searching for the divine
+    guest, digging wells in every direction, while the guest has been sitting quietly
+    inside his own house the entire time. It is like a musk deer racing across an
+    entire mountain chasing a fragrance that is coming from its own navel. The search
+    ends not with arrival somewhere else, but with sitting still long enough to notice
+    what was never actually missing.
+- id: poem.yoruba_oriki
+  source: Yoruba oriki (anonymous praise-poem tradition)
+  text: The praised one is called an elephant who strips the crown from one tree and
+    moves calmly to the next before the first has finished trembling, a creature too
+    vast to hide even in the deepest forest. He is named a river that floods every
+    dry season and yet somehow never runs empty, whose hidden source no traveler has
+    ever located. His enemies are warned they are like grass sharpening itself against
+    an iron blade that does not even notice the friction.
+- id: poem.attar_birds
+  source: Attar of Nishapur, "The Conference of the Birds"
+  text: Thousands of birds set out across seven deadly valleys searching for a legendary
+    king called the Simorgh who lives beyond the mountains. Storms, deserts, and despair
+    thin their number until only thirty exhausted birds reach the summit. There they
+    find no throne and no king, only their own thirty reflections gathered in a mirror-lake,
+    so that the sought-for king turns out to be the seekers themselves.
+- id: poem.mutanabbi_qasida
+  source: Al-Mutanabbi, heroic ode (qasida)
+  text: A lone rider crosses a scorched desert on a horse whose hooves outrun rumor
+    itself, sword and pen equally sharp in his hand. He boasts that mountains recognize
+    his name before armies do, and that ink drying on his verses will outlast the
+    empires he serves. Night, sword, desert, and paper all bow, in his telling, to
+    one restless man's pride.
+- id: poem.darwish_identity
+  source: Mahmoud Darwish, "Identity Card"
+  text: A man stands before an official and recites, almost as a challenge, his father's
+    plow, his grandfather's vineyard, and the stones of his home village. Every listed
+    possession becomes a small act of defiance against being erased from a register.
+    By the end the recitation itself, the mere insistence on a name and a lineage,
+    feels like the only weapon he owns.
+- id: poem.farrokhzad_birth
+  source: Forough Farrokhzad, "Another Birth"
+  text: A woman describes planting her own hands in the garden soil like seeds, certain
+    they will sprout green in the coming season. Her body becomes wind moving through
+    leaves, her voice a sparrow's flight carried out an open window. Out of her two
+    palms, she insists, a whole new life can grow again from nothing.
+- id: poem.rilke_panther
+  source: Rainer Maria Rilke, "The Panther"
+  text: A panther paces behind the bars of its cage in such tight, endless circles
+    that the bars themselves seem to dissolve into a single blurred curtain. Its powerful
+    stride shrinks with every turn until the whole vast world it once roamed has narrowed
+    to one small ring of pacing. Only rarely does an image slip past the numbed pupil,
+    travel down through the tensed limbs, and die at the heart.
+- id: poem.sappho_apple
+  source: Sappho, fragment on the unreached apple
+  text: An apple ripens on the very topmost branch of an orchard tree, redder and
+    sweeter than any other, simply because the pickers below never noticed it or could
+    not reach that high. It hangs there alone against the sky, admired precisely for
+    being unattainable. The image stands for a bride too lovely and too late for any
+    suitor who came looking.
+- id: poem.szymborska_cat
+  source: Wisława Szymborska, "Cat in an Empty Apartment"
+  text: A cat wanders room to room in an apartment where someone who used to feed
+    it no longer moves or answers. It sniffs at the edge of a bed, paws at a familiar
+    door, certain that patience alone will bring the vanished hand back to its bowl.
+    Every corner of the flat has been rearranged by absence into something the animal
+    must slowly relearn.
+- id: poem.kabir_thread
+  source: Kabir, doha on the hidden thread
+  text: 'A weaver sits at his loom singing that one invisible thread runs through
+    everything: sun, moon, earth, and every living creature strung on it like beads.
+    No scholar''s needle or priest''s shuttle can ever locate where that thread begins
+    or where it finally knots off. The whole universe, in his telling, is simply cloth
+    no one has ever seen being woven.'
+- id: poem.ghalib_moth
+  source: Ghalib, ghazal on the moth and the candle
+  text: A moth circles a burning candle again and again, fully aware that the flame
+    will eventually take its wings. It calls that doomed circling the truest proof
+    of devotion, more honest than any vow spoken safely from a distance. The candle,
+    meanwhile, only weeps wax and burns lower with each visit.
+- id: poem.paz_sunstone
+  source: Octavio Paz, "Sunstone"
+  text: The poem turns like the great carved stone calendar of the Aztecs, one continuous
+    ring of verses that ends by returning to its own opening line. A woman's body
+    keeps dissolving into rivers, into cities, into other women's bodies, as if desire
+    were a single hallway of connecting rooms. Time itself stops running forward and
+    instead coils back on its own tail like a snake calendar.
+- id: poem.okigbo_heavensgate
+  source: Christopher Okigbo, "Heavensgate"
+  text: A young man kneels barefoot at the mouth of a stream before a clay shrine
+    to a river goddess, incense and palm wine laid out at her feet. He feels his own
+    name, memory, and body thinning into the watery hush of the source, becoming ancestor
+    and water at once. The whole scene glows like a village altar remembered from
+    very far away.
+- id: poem.amichai_hotel
+  source: Yehuda Amichai, metaphor of the hotel room
+  text: A life is described as a rented hotel room that must be vacated by noon no
+    matter how much was lived inside it. The traveler stuffs loves, griefs, and half-finished
+    plans back into one small suitcase before the desk calls up demanding the key.
+    Someone else, a stranger, will sleep that same night in the very bed just left
+    warm.

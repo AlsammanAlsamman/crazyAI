@@ -121,6 +121,8 @@ crazyai invent --seed 42 --target matmul --provider mock            # whole loop
 crazyai invent --seed 42 --target matmul --provider claudecode      # with Claude via the `claude` CLI - no API key, your subscription
 crazyai invent --seed 1 --n 20 --target matmul --harvest 5          # with Claude via the API (ANTHROPIC_API_KEY): 20 seeds
 crazyai invent-rank --target matmul             # ranked by discovery = value × (0.5 + 0.5 × imagination)
+crazyai harvest-corpus --kind poem --n 20 --out crazyai/data/imagination/poems_candidates.yaml --provider claudecode
+crazyai invent --seed 1 --n 10 --target matmul --bias-from-history --evolve-corpus --provider claudecode  # opt-in feedback loop
 ```
 
 ### Providers
@@ -212,15 +214,27 @@ source-built OpenBLAS or MKL would likely close or reverse it. The lesson:
 always re-derive the baseline on the machine you're actually measuring on
 before comparing GFLOP/s across sessions.
 
-### The food: three corpora
+### The food: four corpora
 
-`crazyai/data/imagination/` holds ~75 bundled fragments in three worlds, each an
+`crazyai/data/imagination/` holds ~100 bundled fragments in four worlds, each an
 original 2–4 sentence description: **metaphors** people live by (time is a
 river, an argument is a war, electricity is water), **paintings** described as
-scenes (Bosch, Dalí, Escher, Magritte, Varo, af Klint, Carrington…), and the
+scenes (Bosch, Dalí, Escher, Magritte, Varo, af Klint, Carrington…), the
 **rules of imagined worlds** from books (Narnia, Alice, Invisible Cities,
-Borges' Library, Earthsea, Flatland, Solaris, Discworld, Momo…). Harvest steps
-add what the AI supplies, so the corpus grows with use.
+Borges' Library, Earthsea, Flatland, Solaris, Discworld, Momo…), and the
+**central image of a poem** from across cultures and eras (Rumi, Hafez, Antara
+ibn Shaddad, Al-Khansa, Blake, Rilke, Li Bai, Bashō, Sappho, Tagore, Darwish,
+Szymborska…). Harvest steps add what the AI supplies, so the corpus grows with
+use; `crazyai harvest-corpus` grows it at standing-corpus scale, batched and
+quality-filtered against the existing material, writing a candidates file for
+review rather than straight into the shipped `.yaml`. All fragments are
+original paraphrase, never quoted text — the harvest system prompt requires
+it, which is also what keeps this copyright-safe.
+
+The `poem` kind (added after the first two invent runs) changed the `mixing`
+term's entropy normalizer from 3 kinds to 4 — `imagination_score` computed
+after that change isn't directly comparable to the two archived runs
+(`invent_1..10_matmul`, `invent_42_matmul`) from before it.
 
 ### The maths: six blend models, one scale
 
@@ -361,4 +375,23 @@ v0.2.1 adds `crazyai invent` and the `claudecode` provider. The toolkit, pipelin
 v0.2.2 fixes the Windows portability/reliability bugs the second `invent` run
 surfaced (encoding, the `claude.cmd` subprocess issue, stdout codepage,
 per-seed batch isolation - see "Second run" above) and adds `--timeout` to
-the provider CLI flags. All 27 tests pass on Windows and Linux.
+the provider CLI flags.
+
+v0.2.3 adds a fourth corpus kind (`poem`, see "The food" above),
+`crazyai harvest-corpus` for growing any corpus at standing scale, and an
+outcome feedback loop for `invent` - all opt-in, off by default:
+`--bias-from-history` weights future `blend_model`/`depth`/`assumption_focus`
+draws toward what scored well in archived runs (a small Bayesian-shrinkage
+bandit over `archive/invent_index.jsonl`, not a neural net - there isn't
+remotely enough archived data for one yet); `--evolve-corpus` promotes a
+new-best run's blended world back into the corpus for later runs to build on
+(`archive/imagination_promoted/`); `--blend remix` seeds simulated annealing
+from promoted fragments when any exist; `--immerse-mode twopass` adds a
+purely sensory "sketch" call before immersion. Neither `--bias-from-history`
+nor `--evolve-corpus` will activate on today's archive - both need more
+archived runs (`--bias-min-samples`, default 20) than currently exist. All 31
+tests pass with every new flag off, the mandatory regression gate; the
+mechanisms themselves are covered by dedicated tests
+(`tests/test_invent_pipeline.py`) using the offline mock provider - actually
+measuring whether biasing raises `discovery` needs a real-provider pilot
+batch, not yet run.

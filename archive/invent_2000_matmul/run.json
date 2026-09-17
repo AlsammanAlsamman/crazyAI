@@ -1,0 +1,54 @@
+{
+  "seed": 2000,
+  "target": "matmul",
+  "blend_model": "anneal",
+  "depth": 2,
+  "assumption_focus": "the output is produced one cell at a time, row by row",
+  "provider": "claudecode",
+  "model": "",
+  "imagination_score": 0.9703,
+  "status": "exact",
+  "value": 4.391,
+  "prediction": 6.0,
+  "calibration": 0.732,
+  "discovery": 4.3258,
+  "fragments": [
+    "harvest.10.2",
+    "art.chagall_village",
+    "book.borges_aleph",
+    "poem.kabir_guest",
+    "met.knowledge_light",
+    "art.escher_relativity",
+    "book.borges_aleph",
+    "poem.yoruba_oriki"
+  ],
+  "rng_log": [
+    {
+      "label": "invent.blend_model",
+      "value": "anneal"
+    },
+    {
+      "label": "invent.depth",
+      "value": 2
+    },
+    {
+      "label": "invent.assumption",
+      "value": "the output is produced one cell at a time, row by row"
+    },
+    {
+      "label": "child:invent.world",
+      "value": 1009146653
+    }
+  ],
+  "timing_s": {
+    "seed": 0.001,
+    "harvest": 0.0,
+    "world": 0.151,
+    "immerse": 65.507,
+    "bend": 294.529,
+    "measure": 1.689
+  },
+  "total_s": 361.88,
+  "prior_best_discovery": 15.9399,
+  "promoted": false
+}

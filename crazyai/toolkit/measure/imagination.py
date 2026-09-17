@@ -23,7 +23,7 @@ from collections import Counter
 from functools import lru_cache
 
 from crazyai.config import DATA_DIR
-from crazyai.imagination import Fragment, corpus, is_content
+from crazyai.imagination import KINDS, Fragment, corpus, is_content
 from crazyai.toolkit.measure.narrative import _stats
 from crazyai.toolkit.registry import tool
 
@@ -100,7 +100,7 @@ def score_text(text: str) -> dict:
         if w in K["word_kinds"]:
             kinds[K["word_kinds"][w].most_common(1)[0][0]] += 1
             frags |= K["word_frags"][w]
-    kind_h = _entropy(kinds) / math.log(3) if kinds else 0.0
+    kind_h = _entropy(kinds) / math.log(len(KINDS)) if kinds else 0.0
     mixing = 0.5 * min(1.0, kind_h) + 0.5 * min(1.0, len(frags) / 8)
     # originality: sentences that are neither verbatim source sentences nor repeats of each other,
     # and content 3-grams that are not repeated within the text

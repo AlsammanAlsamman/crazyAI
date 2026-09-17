@@ -18,7 +18,8 @@ from crazyai.config import ARCHIVE_DIR, DATA_DIR
 
 IMAGINATION_DIR = DATA_DIR / "imagination"
 HARVEST_DIR = ARCHIVE_DIR / "imagination"
-KINDS = ["metaphor", "painting", "book"]
+PROMOTED_DIR = ARCHIVE_DIR / "imagination_promoted"
+KINDS = ["metaphor", "painting", "book", "poem"]
 
 _SENT = re.compile(r"(?<=[.!?;:])\s+")
 _WORD = re.compile(r"[A-Za-z'-]+")
@@ -80,11 +81,52 @@ def harvested(archive_dir: Path | str | None = None) -> list[Fragment]:
     return out
 
 
-def corpus(include_harvest: bool = True, archive_dir: Path | str | None = None) -> list[Fragment]:
+def promoted_dir(archive_dir: Path | str | None = None) -> Path:
+    return Path(archive_dir) / "imagination_promoted" if archive_dir else PROMOTED_DIR
+
+
+def promoted(archive_dir: Path | str | None = None) -> list[Fragment]:
+    """Fragments promoted from a run whose `discovery` beat every prior archived run for its target.
+
+    Separate from `harvested()` deliberately - `corpus()` merges harvest fragments
+    unconditionally, but promoted fragments must stay opt-in (`include_promoted`),
+    or `--evolve-corpus` would silently affect every other run too.
+    """
+    d = promoted_dir(archive_dir)
+    if not d.exists():
+        return []
+    out: list[Fragment] = []
+    for p in sorted(d.glob("*.yaml")):
+        out.extend(_load_file(p))
+    return out
+
+
+def save_promoted(name: str, fragments: list[dict], archive_dir: Path | str | None = None) -> Path:
+    """Write a promoted (outcome-selected) fragment into <archive>/imagination_promoted/. Mirrors save_harvest."""
+    d = promoted_dir(archive_dir)
+    d.mkdir(parents=True, exist_ok=True)
+    path = d / f"{name}.yaml"
+    clean = []
+    for i, f in enumerate(fragments):
+        text = str(f.get("text", "")).strip()
+        if len(_WORD.findall(text)) < 8:
+            continue
+        clean.append({"id": f.get("id") or f"{name}.{i}", "kind": f.get("kind", "book") if f.get("kind") in KINDS else "book",
+                      "source": str(f.get("source", "")), "text": text})
+    path.write_text(yaml.safe_dump({"kind": "promoted", "fragments": clean}, allow_unicode=True, sort_keys=False),
+                    encoding="utf-8")
+    return path
+
+
+def corpus(include_harvest: bool = True, archive_dir: Path | str | None = None,
+          include_promoted: bool = False) -> list[Fragment]:
     frags = list(bundled())
     if include_harvest:
         seen = {f.id for f in frags}
         frags += [f for f in harvested(archive_dir) if f.id not in seen]
+    if include_promoted:
+        seen = {f.id for f in frags}
+        frags += [f for f in promoted(archive_dir) if f.id not in seen]
     return frags
 
 

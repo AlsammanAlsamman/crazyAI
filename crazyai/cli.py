@@ -12,6 +12,7 @@
     crazyai blend --seed 42 [--model compare]          blend the imagination corpus, offline
     crazyai invent --seed 42 --target matmul [--blend anneal] [--harvest 5] [--provider mock]
     crazyai invent-rank [--target matmul] [--top 20]
+    crazyai harvest-corpus --kind poem --n 20 --out crazyai/data/imagination/poems_candidates.yaml [--provider claudecode]
 """
 
 from __future__ import annotations
@@ -149,6 +150,20 @@ def cmd_blend(args) -> int:
     return 0
 
 
+def cmd_harvest_corpus(args) -> int:
+    from pathlib import Path as _Path
+
+    from crazyai.pipeline.harvest_corpus import build_corpus, save_candidates
+
+    provider = _provider(args)
+    fragments = build_corpus(provider, args.kind, args.n, batch_size=args.batch, min_surprise=args.min_surprise)
+    out = _Path(args.out)
+    save_candidates(fragments, args.kind, out)
+    print(f"harvest-corpus: {len(fragments)}/{args.n} fragments accepted -> {out}")
+    print("Review before merging into crazyai/data/imagination/ - this is a candidates file, not a shipped corpus.")
+    return 0
+
+
 def cmd_invent(args) -> int:
     from crazyai.pipeline.invent import Invent
 
@@ -157,7 +172,9 @@ def cmd_invent(args) -> int:
     for i in range(args.n):
         seed = args.seed + i
         run = Invent(seed=seed, target=args.target, blend=args.blend, harvest=args.harvest,
-                     force=args.force, archive_dir=Path(args.archive))
+                     force=args.force, archive_dir=Path(args.archive), immerse_mode=args.immerse_mode,
+                     bias_from_history=args.bias_from_history, bias_min_samples=args.bias_min_samples,
+                     evolve_corpus=args.evolve_corpus)
         try:
             summary = run.execute(provider)
         except Exception as exc:  # noqa: BLE001 - one bad seed must not abort the batch
@@ -247,19 +264,38 @@ def build_parser() -> argparse.ArgumentParser:
     c.set_defaults(fn=cmd_compare)
 
     from crazyai.targets import TARGETS
-    from crazyai.toolkit.invent.blend import MODELS
+    from crazyai.toolkit.invent.blend import ALL_MODELS
     bl = sub.add_parser("blend", help="blend the imagination corpus with one model, or compare all")
     bl.add_argument("--seed", type=int, required=True)
-    bl.add_argument("--model", default="compare", choices=MODELS + ["compare"])
+    bl.add_argument("--model", default="compare", choices=ALL_MODELS + ["compare"])
     bl.set_defaults(fn=cmd_blend)
     iv = sub.add_parser("invent", help="corpus -> blend -> immerse -> bend -> measure")
     iv.add_argument("--seed", type=int, required=True)
     iv.add_argument("--n", type=int, default=1, help="number of consecutive seeds")
     iv.add_argument("--target", default="matmul", choices=TARGETS)
-    iv.add_argument("--blend", default="", choices=MODELS + ["compare", ""], help="blend model (default: seeded draw)")
+    iv.add_argument("--blend", default="", choices=ALL_MODELS + ["compare", ""], help="blend model (default: seeded draw)")
     iv.add_argument("--harvest", type=int, default=0, help="fragments the AI adds to the corpus first")
+    iv.add_argument("--immerse-mode", default="direct", choices=["direct", "twopass"],
+                    help="twopass: a sensory 'sketch' call before immersion (one extra model call)")
+    iv.add_argument("--bias-from-history", action="store_true",
+                    help="bias blend_model/depth/assumption_focus draws toward what scored well in archived runs "
+                         "for this target (off by default; needs --bias-min-samples archived runs first, and "
+                         "changes the depth draw's RNG method - a biased run is only reproducible against another "
+                         "biased run at the same seed)")
+    iv.add_argument("--bias-min-samples", type=int, default=20, help="archived runs needed before bias activates")
+    iv.add_argument("--evolve-corpus", action="store_true",
+                    help="promote a new-best run's blended world back into the corpus for future runs to draw on "
+                         "(off by default)")
     add_provider(iv)
     iv.set_defaults(fn=cmd_invent)
+    hc = sub.add_parser("harvest-corpus", help="grow a bundled imagination corpus (writes a candidates file for review)")
+    hc.add_argument("--kind", required=True, help="e.g. metaphor, painting, book, poem")
+    hc.add_argument("--n", type=int, default=20, help="fragments to collect")
+    hc.add_argument("--batch", type=int, default=15, help="fragments requested per model call")
+    hc.add_argument("--min-surprise", type=float, default=0.5, help="reject fragments scoring below this on the existing surprise term")
+    hc.add_argument("--out", required=True, help="candidates file to write, e.g. crazyai/data/imagination/poems_candidates.yaml")
+    add_provider(hc)
+    hc.set_defaults(fn=cmd_harvest_corpus)
     ir = sub.add_parser("invent-rank")
     ir.add_argument("--target", default="")
     ir.add_argument("--top", type=int, default=20)

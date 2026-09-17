@@ -17,6 +17,7 @@ from __future__ import annotations
 import json
 import re
 import time
+from collections import Counter
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any
@@ -24,8 +25,10 @@ from typing import Any
 import yaml
 
 from crazyai.config import ARCHIVE_DIR, DEFAULT_MAX_TOOL_TURNS
-from crazyai.imagination import KINDS, corpus, save_harvest
+from crazyai.imagination import KINDS, corpus, save_harvest, save_promoted
 from crazyai.pipeline import invent_prompts as P
+from crazyai.pipeline.harvest_corpus import parse_fragments
+from crazyai.pipeline.invent_bias import arm_weights
 from crazyai.providers.base import Provider
 from crazyai.targets import Target, get_target
 from crazyai.toolkit.invent import blend as B
@@ -56,6 +59,10 @@ class Invent:
     force: bool = False
     max_tool_turns: int = DEFAULT_MAX_TOOL_TURNS
     log: Any = lambda msg: print(msg, flush=True)
+    immerse_mode: str = "direct"       # direct|twopass (twopass: a sensory sketch call before immersion)
+    bias_from_history: bool = False    # weight blend_model/depth/assumption_focus draws by archived discovery
+    bias_min_samples: int = 20         # archived runs needed (for this target) before bias activates
+    evolve_corpus: bool = False        # promote a new-best run's world back into the corpus for later runs
 
     def __post_init__(self) -> None:
         self.tgt: Target = get_target(self.target)
@@ -83,12 +90,27 @@ class Invent:
         if self._have("seed.json"):
             return _load(self.dir / "seed.json")
         rng = self.toolkit.rng
-        model = self.blend or rng.choice("invent.blend_model", B.MODELS + ["compare"])
-        depth = rng.integer("invent.depth", 1, 3)
+        blend_arms = B.MODELS + ["compare"]
+        depth_arms = [1, 2, 3]
+        assumption_arms = self.tgt.assumptions
+        w_blend = w_depth = w_assumption = None
+        samples_seen = 0
+        if self.bias_from_history:
+            rows = [r for r in load_invent_index(self.archive_dir) if r.get("target") == self.target]
+            samples_seen = len(rows)
+            w_blend = arm_weights(rows, "blend_model", blend_arms, self.bias_min_samples)
+            w_depth = arm_weights(rows, "depth", depth_arms, self.bias_min_samples)
+            w_assumption = arm_weights(rows, "assumption_focus", assumption_arms, self.bias_min_samples)
+        model = self.blend or rng.choice("invent.blend_model", blend_arms, weights=w_blend)
+        depth = (rng.choice("invent.depth", depth_arms, weights=w_depth) if w_depth is not None
+                else rng.integer("invent.depth", 1, 3))
+        assumption = rng.choice("invent.assumption", assumption_arms, weights=w_assumption)
+        bias = {"enabled": self.bias_from_history, "min_samples": self.bias_min_samples, "samples_seen": samples_seen,
+               "active": any(w is not None for w in (w_blend, w_depth, w_assumption))}
         s = {"seed": self.seed, "target": self.target, "blend_model": model, "depth": depth,
-             "assumption_focus": rng.choice("invent.assumption", self.tgt.assumptions)}
+             "assumption_focus": assumption, "bias": bias}
         _dump(self.dir / "seed.json", s)
-        self._say(f"seed: blend={model} depth={depth} focus='{s['assumption_focus']}'")
+        self._say(f"seed: blend={model} depth={depth} focus='{s['assumption_focus']}'" + (" [biased]" if bias["active"] else ""))
         return s
 
     # -- 2. harvest (the AI feeds the corpus) ------------------------------------------
@@ -99,13 +121,7 @@ class Invent:
             return yaml.safe_load((self.dir / "harvest.yaml").read_text(encoding="utf-8")).get("fragments", [])
         avoid = sorted({f.source for f in corpus()})
         res = provider.agent(P.HARVEST_SYSTEM, P.harvest_prompt(self.harvest, KINDS, avoid), self.toolkit, [], 2)
-        frags: list[dict[str, Any]] = []
-        m = re.search(r"\[.*\]", res.text, re.S)
-        if m:
-            try:
-                frags = [f for f in json.loads(m.group(0)) if isinstance(f, dict) and f.get("text")]
-            except json.JSONDecodeError:
-                frags = []
+        frags = parse_fragments(res.text)
         for i, f in enumerate(frags):
             f.setdefault("id", f"harvest.{self.seed}.{i}")
         path = save_harvest(f"harvest_{self.seed}", frags, self.archive_dir)
@@ -119,6 +135,7 @@ class Invent:
             return _load(self.dir / "world.json")
         rng = self.toolkit.rng.child("invent.world")
         B._ARCHIVE["dir"] = self.archive_dir
+        B._ARCHIVE["include_promoted"] = self.evolve_corpus
         if seed["blend_model"] == "compare":
             results = [B.run_model(rng, m) for m in B.MODELS]
             results.sort(key=lambda r: -r["score"]["score"])
@@ -138,11 +155,18 @@ class Invent:
     def step_immerse(self, provider: Provider, world: dict[str, Any], seed: dict[str, Any]) -> str:
         if self._have("ideas.md"):
             return (self.dir / "ideas.md").read_text(encoding="utf-8")
-        res = provider.agent(P.IMMERSE_SYSTEM, P.immerse_prompt(world["text"], self.tgt, seed["depth"]), self.toolkit, [], 1)
-        (self.dir / "ideas.md").write_text(res.text, encoding="utf-8")
-        seeds = _SEED.findall(res.text)
-        self._say(f"immerse: {len(res.text)} chars, {len(seeds)} seeds")
-        return res.text
+        if self.immerse_mode == "twopass":
+            sketch = provider.agent(P.SKETCH_SYSTEM, P.sketch_prompt(world["text"]), self.toolkit, [], 1)
+            prompt = P.immerse_prompt(world["text"], self.tgt, seed["depth"]) + P.sketch_followup(sketch.text)
+            res = provider.agent(P.IMMERSE_SYSTEM, prompt, self.toolkit, [], 1)
+            text = f"## SKETCH\n\n{sketch.text.strip()}\n\n## TELLING\n\n{res.text.strip()}\n"
+        else:
+            res = provider.agent(P.IMMERSE_SYSTEM, P.immerse_prompt(world["text"], self.tgt, seed["depth"]), self.toolkit, [], 1)
+            text = res.text
+        (self.dir / "ideas.md").write_text(text, encoding="utf-8")
+        seeds = _SEED.findall(text)
+        self._say(f"immerse: {len(text)} chars, {len(seeds)} seeds" + (" [twopass]" if self.immerse_mode == "twopass" else ""))
+        return text
 
     # -- 5. bend -------------------------------------------------------------------------
     def step_bend(self, provider: Provider, ideas: str) -> dict[str, Any]:
@@ -192,6 +216,11 @@ class Invent:
         return m
 
     def step_archive(self, provider: Provider, seed: dict[str, Any], world: dict[str, Any], measure: dict[str, Any]) -> dict[str, Any]:
+        prior_best = 0.0
+        if self.evolve_corpus:
+            prior_rows = [r for r in load_invent_index(self.archive_dir)
+                         if r.get("target") == self.target and r.get("discovery") is not None]
+            prior_best = max((r["discovery"] for r in prior_rows), default=0.0)
         summary = {
             "seed": self.seed, "target": self.target, "blend_model": world["model"], "depth": seed["depth"],
             "assumption_focus": seed["assumption_focus"], "provider": provider.name, "model": getattr(provider, "model", ""),
@@ -200,12 +229,26 @@ class Invent:
             "fragments": [f["id"] for f in world["fragments"]], "rng_log": self.toolkit.rng.log,
             "timing_s": self._timing, "total_s": round(time.time() - self._t0, 3),
         }
+        promoted_flag = False
+        if self.evolve_corpus:
+            summary["prior_best_discovery"] = prior_best
+            if measure["discovery"] and measure["discovery"] > prior_best:
+                kind_counts = Counter(f["kind"] for f in world["fragments"])
+                majority_kind = kind_counts.most_common(1)[0][0] if kind_counts else "book"
+                save_promoted(f"promoted_{self.target}_{self.seed}", [{
+                    "id": f"promoted.{self.target}.{self.seed}",
+                    "kind": majority_kind,
+                    "source": f"promoted from invent seed={self.seed} blend={world['model']} discovery={measure['discovery']}",
+                    "text": world["text"],
+                }], self.archive_dir)
+                promoted_flag = True
+            summary["promoted"] = promoted_flag
         _dump(self.dir / "run.json", summary)
-        with (Path(self.archive_dir) / "invent_index.jsonl").open("a") as fh:
+        with (Path(self.archive_dir) / "invent_index.jsonl").open("a", encoding="utf-8") as fh:
             fh.write(json.dumps({k: summary[k] for k in ("seed", "target", "blend_model", "depth", "assumption_focus",
                                                           "imagination_score", "status", "value", "prediction", "calibration",
                                                           "discovery", "model")}) + "\n")
-        self._say(f"archived -> {self.dir}")
+        self._say(f"archived -> {self.dir}" + (" [promoted]" if promoted_flag else ""))
         return summary
 
     def execute(self, provider: Provider) -> dict[str, Any]:
