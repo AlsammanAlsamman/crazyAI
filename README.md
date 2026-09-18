@@ -645,6 +645,39 @@ stay in registers).
 Adding a target is one `Target(...)` in `crazyai/targets.py`; adding a blend
 model is one `@tool("blend", "invent")` function; adding a corpus is one YAML file.
 
+### Validation record - every real `invent` round run so far
+
+Each row is one batch of real seeds run against `--provider claudecode` (not
+mocked), archived under `archive/invent_<seed>_<target>/` with a full
+`measure.json` per seed. **Failed** = anything short of an exact match to the
+reference (compile error, wrong output, or only `approx`). **Succeeded** =
+`exact`, matching the reference output exactly. **Real validated win** =
+`exact` *and* meaningfully faster than the target's known reference
+technique (cache-blocked loop for matmul, Needleman-Wunsch DP for alignment,
+FNV-1a for hashing, Bouton's rule for Nim) - a real margin, not just noise
+over 1.0x.
+
+| Round | Trials | Failed | Succeeded | Real validated win |
+|---|---|---|---|---|
+| Matmul - original batch (seeds 1-10, 42) | 11 | 3 | 8 | **8** |
+| Matmul - byte/bit-level exploration (pinned assumption, 6001-6008) | 8 | 3 | 5 | 1 |
+| Matmul - feedback-loop pilot: control, no bias (3001-3008) | 8 | 2 | 6 | 5 |
+| Matmul - feedback-loop pilot: treatment, bias-from-history (2000, 4001-4008) | 9 | 1 | 8 | **8** |
+| Bioinformatics - sequence alignment (original, 7001-7005) | 5 | 3 | 2 | 0 |
+| Nim - game strategy (7101-7105) | 5 | 0 | 5 | 0 |
+| Hashing (7201-7204) | 4 | 0 | 4 | 3 |
+| Bioinformatics - sequence alignment (retry, three new imagination hints, 7011-7015) | 5 | 1 | 4 | 1 |
+| **Total** | **55** | **13** | **42** | **26** |
+
+Two results stand out enough to be worth naming plainly: the feedback-loop
+treatment round (win rate 8/9) is the strongest result of any round run so
+far; the alignment retry's paper-fold-hinted seed (`archive/invent_7011_alignment/`)
+independently rediscovered antidiagonal/wavefront dynamic programming - a
+real, known technique - by taking a literal paper-folding metaphor at face
+value. Nim's 0 wins is not a weakness of the pipeline: its reference
+(Bouton's XOR rule) is already asymptotically optimal, so no correct
+alternative can ever beat it on speed.
+
 ## Examples
 
 All in `examples/`. The first five run offline. The figures below are generated from the same computations (`make figures`, `assets/figures/make_figures.py`) — every number in them comes from a tool call, nothing is typed in.
