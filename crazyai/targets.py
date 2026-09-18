@@ -170,6 +170,31 @@ _NIM = Target(
     measure_tool="nim_bench",
     examine_question="Does this kernel find a winning move whenever Bouton's theorem says one exists, and is the reported speed credible?",
     known_way="Bouton's theorem (1901): XOR every pile size; if nonzero, some pile can be reduced to make the XOR zero - O(number of piles), no search.",
+    assumption_hints={
+        "each heap must be considered on its own before the others": (
+            "This time, imagine every heap's sticks thrown into the air together, arranging themselves into a "
+            "pyramid - the sticks of one heap crossing the sticks of every other heap at once, laid out in shared "
+            "rows. A single row holds a sliver from every heap at once, not one heap at a time, and whatever is "
+            "true of that shared row is true across every heap simultaneously. Could you learn something about "
+            "all the heaps together, row by shared row, rather than by finishing one heap's story before starting "
+            "the next?"
+        ),
+        "a winning move can only be found by looking ahead through the game's possible futures": (
+            "This time, imagine each heap as a child holding out as many hands as it has sticks - but every real "
+            "child has exactly two hands, so a heap with an odd number of sticks always leaves one hand unpaired, "
+            "awkward, alone. An unpaired hand is trouble: the child slaps it away to the next child, who either "
+            "finds their own hands paired again or becomes unpaired themselves and must pass the trouble further "
+            "on. Could you find the winning move just by settling every child's hands into pairs, right now, "
+            "without ever imagining a single future turn?"
+        ),
+        "the value of a position is unknown until every reachable position from it has been examined": (
+            "This time, imagine the heaps as flocks of ducks crossing the sky in triangular formations, and a "
+            "hunter below who wants to take the most ducks while every duck wants only to live. Somewhere in each "
+            "triangle flies a leader duck, and you cannot tell which one it is just by looking - it may even be "
+            "hiding among the others. Could you know whether the hunter wins, and find the leader, without first "
+            "tracing out where every possible shot and every possible flight path would lead?"
+        ),
+    },
 )
 
 _HASH = Target(

@@ -218,6 +218,23 @@ def test_alignment_has_the_three_new_assumption_hints():
         assert hint in immerse_prompt("world text", tgt, 2, hint)
 
 
+def test_nim_has_the_three_new_assumption_hints():
+    from crazyai.pipeline.invent_prompts import immerse_prompt
+    from crazyai.targets import get_target
+    tgt = get_target("nim")
+    pinned = [
+        "each heap must be considered on its own before the others",
+        "a winning move can only be found by looking ahead through the game's possible futures",
+        "the value of a position is unknown until every reachable position from it has been examined",
+    ]
+    assert set(pinned) <= set(tgt.assumption_hints)
+    unhinted = immerse_prompt("world text", tgt, 2)
+    for assumption in pinned:
+        hint = tgt.assumption_hints[assumption]
+        assert hint not in unhinted
+        assert hint in immerse_prompt("world text", tgt, 2, hint)
+
+
 def test_game_kind_is_registered_and_populated():
     from crazyai import imagination as im
     assert "game" in im.KINDS
