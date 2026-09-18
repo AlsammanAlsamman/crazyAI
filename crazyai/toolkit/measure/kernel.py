@@ -130,5 +130,6 @@ def bench(source: str, sizes: list | None = None, budget: float = 0.3, ctx: dict
     shutil.rmtree(work, ignore_errors=True)
     return {"results": rows, "largest_n": big["n"], "gflops": big["gflops"], "rel_fro_err": big["rel_fro_err"],
             "status": big["status"], "speedup_vs_naive": big["speedup_vs_naive"], "speedup_vs_blocked": big["speedup_vs_blocked"],
-            "value": value, "reading": ("value > 1 means faster than a cache-blocked loop and exact; "
-                                        "> 3 beats a vectorised kernel; ~10 is OpenBLAS territory on one core")}
+            "value": value, "prediction_target": big["speedup_vs_blocked"],
+            "reading": ("value > 1 means faster than a cache-blocked loop and exact; "
+                       "> 3 beats a vectorised kernel; ~10 is OpenBLAS territory on one core")}

@@ -1,0 +1,100 @@
+{
+  "model": "evolve",
+  "text": "A tube that canvas whatever is sweeter in it into something else. It is visible, bearish, late, it panics and windows, it sits through August and windows part in August. As she draws each smell on the dyer's, the shape part dries off the house and wakes out the sand, part locked and visible before the cold is noticed. Visits into clouds you can visible, a hat of raspberry stand, a jungle in the living bone. The moods seem to be sweeter, as if one shape had just promised looking into three and might split again.",
+  "score": {
+    "score": 0.9736,
+    "imagination": 0.9736,
+    "readable": 1.0,
+    "surprise": 0.9318,
+    "mixing": 0.9905,
+    "originality": 1.0,
+    "readability": 1.0,
+    "coherence": 1.0,
+    "flesch": 71.0,
+    "words": 45,
+    "sentences": 5
+  },
+  "fragments": [
+    {
+      "id": "met.memory_palace",
+      "kind": "metaphor",
+      "source": "memory is a palace"
+    },
+    {
+      "id": "harvest.3.4",
+      "kind": "painting",
+      "source": "Yves Tanguy, Indefinite Divisibility"
+    },
+    {
+      "id": "book.moomins",
+      "kind": "book",
+      "source": "Tove Jansson, Moomin books"
+    },
+    {
+      "id": "poem.antara_muallaqa",
+      "kind": "poem",
+      "source": "Antara ibn Shaddad, Mu'allaqa"
+    },
+    {
+      "id": "met.market_organism",
+      "kind": "metaphor",
+      "source": "the market is an animal"
+    },
+    {
+      "id": "harvest.6.4",
+      "kind": "painting",
+      "source": "Remedios Varo, Creation of the Birds"
+    },
+    {
+      "id": "book.borges_aleph",
+      "kind": "book",
+      "source": "Borges, The Aleph"
+    },
+    {
+      "id": "poem.sappho_apple",
+      "kind": "poem",
+      "source": "Sappho, fragment on the unreached apple"
+    }
+  ],
+  "generations": 12,
+  "history": [
+    0.8662,
+    0.8981,
+    0.8981,
+    0.9088,
+    0.9268,
+    0.9268,
+    0.9268,
+    0.9499,
+    0.9589,
+    0.9643,
+    0.9736,
+    0.9736
+  ],
+  "compared": [
+    {
+      "model": "evolve",
+      "score": 0.9736
+    },
+    {
+      "model": "anneal",
+      "score": 0.9655
+    },
+    {
+      "model": "graft",
+      "score": 0.7134
+    },
+    {
+      "model": "cutup",
+      "score": 0.5813
+    },
+    {
+      "model": "nest",
+      "score": 0.5789
+    },
+    {
+      "model": "markov",
+      "score": 0.2472
+    }
+  ]
+}

@@ -97,7 +97,120 @@ _MECHANICS = Target(
     examine_question="Would this mechanism work as described? Which physical constraint, if any, does it violate?",
 )
 
-_ALL = {t.name: t for t in (_MATMUL, _PHYSICS, _MECHANICS)}
+_ALIGNMENT = Target(
+    name="alignment",
+    title="Score how well two DNA sequences agree, faster",
+    problem="Score the similarity of two equal-length DNA sequences the way a global alignment does (match +1, "
+           "mismatch -1, gap -2), exactly matching a reference dynamic-programming aligner, as fast as possible.",
+    in_world_need=("Two strings of symbols from a small alphabet must be laid one against the other and a single "
+                   "number produced that says how well they agree, allowing for one to slip out of step with the "
+                   "other partway through."),
+    assumptions=[
+        "every cell of the comparison depends on the ones above, to the left, and diagonally above-left, computed in that order",
+        "one pair of positions is judged at a time",
+        "the whole grid of every position against every other must be filled in",
+        "a slip (gap) can only be discovered by having already compared the position before it",
+        "both strings are read start to end in the same direction",
+    ],
+    artifact="kernel",
+    bend_instructions=(
+        "Map every object of the world onto a computational object: what is memory, what flows, what stays still, "
+        "what is a processor, what is time. Keep the mapping literal - the more literal, the more likely something new "
+        "falls out. Then write the kernel in C against alignment_contract, predict its speed, measure it with "
+        "alignment_bench, and improve it at most four times. The final answer MUST contain one ```c code block with the "
+        "complete kernel and one line 'PREDICTION: speedup_vs_dp = <number>' written BEFORE the first measurement."),
+    measure_families=["alignment"],
+    measure_tool="alignment_bench",
+    examine_question="Does this kernel compute the exact same alignment score as the reference, and is the reported speedup credible? Which assumption of the standard method did it change?",
+    known_way="Needleman-Wunsch: O(n^2) DP table, or a banded/SIMD variant (SSW, KSW2) exploiting a bounded score range.",
+)
+
+_NIM = Target(
+    name="nim",
+    title="Always find a winning Nim move",
+    problem="Given several piles of objects, choose a move (remove some objects from one pile) that wins - matching "
+           "Bouton's theorem: a position is winning iff the XOR of all pile sizes is nonzero, and the winning move "
+           "makes it zero.",
+    in_world_need=("Several heaps stand before you. Two take turns removing as much as they like from exactly one "
+                   "heap; whoever takes the last object wins. You must always find a move that keeps you winning, "
+                   "when one exists."),
+    assumptions=[
+        "a winning move can only be found by looking ahead through the game's possible futures",
+        "each heap must be considered on its own before the others",
+        "the value of a position is unknown until every reachable position from it has been examined",
+        "a move only affects the one heap it touches",
+        "the game must be played out to know who wins",
+    ],
+    artifact="kernel",
+    bend_instructions=(
+        "Map every object of the world onto a computational object: what is a heap, what is a move, what is knowing. "
+        "Keep the mapping literal. Then write the kernel in C against nim_contract, predict its accuracy, measure it "
+        "with nim_bench, and improve it at most four times. The final answer MUST contain one ```c code block with "
+        "the complete kernel and one line 'PREDICTION: speedup_vs_dp = <number>' written BEFORE the first measurement "
+        "(here 'speedup' still means time; accuracy is reported separately by the tool)."),
+    measure_families=["nim"],
+    measure_tool="nim_bench",
+    examine_question="Does this kernel find a winning move whenever Bouton's theorem says one exists, and is the reported speed credible?",
+    known_way="Bouton's theorem (1901): XOR every pile size; if nonzero, some pile can be reduced to make the XOR zero - O(number of piles), no search.",
+)
+
+_HASH = Target(
+    name="hash",
+    title="Mix bytes into a well-distributed hash, fast",
+    problem="Design a hash function over a byte buffer that mixes every input bit into the output well (avalanche: "
+           "flipping one input bit should flip about half the output bits) and runs fast.",
+    in_world_need=("A pile of marks, in order, must be folded down into one small token such that no two different "
+                   "piles ever fold to the same token by accident, and changing even one mark anywhere changes the "
+                   "token almost entirely."),
+    assumptions=[
+        "each byte must be mixed into the running state before the next byte is read",
+        "the state is a single accumulator updated in place, one value",
+        "mixing one byte requires a multiplication",
+        "the whole buffer must be read once, start to end, in order",
+        "more mixing rounds always means better mixing",
+    ],
+    artifact="kernel",
+    bend_instructions=(
+        "Map every object of the world onto a computational object: what is a byte, what is the state, what is "
+        "mixing. Keep the mapping literal. Then write the kernel in C against hash_contract, predict its quality, "
+        "measure it with hash_bench, and improve it at most four times. The final answer MUST contain one ```c code "
+        "block with the complete kernel and one line 'PREDICTION: speedup_vs_dp = <number>' written BEFORE the first "
+        "measurement (here the tool reports throughput and an avalanche score, not a correctness check - there is no "
+        "single 'right' hash)."),
+    measure_families=["hash"],
+    measure_tool="hash_bench",
+    examine_question="Does this hash mix well (avalanche near 0.5) and is the reported throughput credible?",
+    known_way="FNV-1a / xxHash: multiply-xor-shift mixing rounds folding the whole buffer through one accumulator.",
+)
+
+_FFT = Target(
+    name="fft",
+    title="Transform a signal into its frequencies, faster",
+    problem="Compute the discrete Fourier transform of a length-n (power of two) complex sequence, matching a naive "
+           "O(n^2) reference, faster.",
+    in_world_need=("A shape that changes over time must be re-told as a list of steady, unchanging pure notes, each "
+                   "with its own strength, such that all the notes played together reconstruct the original shape."),
+    assumptions=[
+        "every output depends on every input, computed as one pass",
+        "there is no way to reuse work between different output frequencies",
+        "the transform must be computed for the whole sequence before any output is known",
+        "each output is one independent sum",
+        "the input order cannot be rearranged",
+    ],
+    artifact="kernel",
+    bend_instructions=(
+        "Map every object of the world onto a computational object: what is a note, what is time, what stays still. "
+        "Keep the mapping literal. Then write the kernel in C against fft_contract, predict its speed, measure it "
+        "with fft_bench, and improve it at most four times. The final answer MUST contain one ```c code block with "
+        "the complete kernel and one line 'PREDICTION: speedup_vs_dp = <number>' written BEFORE the first "
+        "measurement."),
+    measure_families=["fft"],
+    measure_tool="fft_bench",
+    examine_question="Does this kernel compute the same transform as the naive DFT reference (within tolerance), and is the reported speedup credible?",
+    known_way="FFTW / Cooley-Tukey: recursive radix-2 butterfly network with precomputed twiddle factors and bit-reversal reordering.",
+)
+
+_ALL = {t.name: t for t in (_MATMUL, _PHYSICS, _MECHANICS, _ALIGNMENT, _NIM, _HASH, _FFT)}
 TARGETS = list(_ALL)
 
 

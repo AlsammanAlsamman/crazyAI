@@ -87,9 +87,13 @@ BEND_SYSTEM = (
 def bend_prompt(ideas: str, target: Target, tools: list[str], assumption_focus: str = "") -> str:
     contract = ""
     if target.artifact == "kernel":
-        from crazyai.toolkit.measure.kernel import CONTRACT, EXAMPLE
-        contract = ("\nTHE FIXED CONTRACT (do not guess it, do not change the argument order):\n    " + CONTRACT +
-                    "\nMinimal correct example:\n```c\n" + EXAMPLE + "```\n"
+        # the contract lives in the measure module named after the target's own measure family
+        # (crazyai.toolkit.measure.kernel for matmul, .alignment for alignment, etc.) - never hardcoded to one
+        # target, or every other kernel-artifact target would be told the wrong C signature to implement.
+        import importlib
+        mod = importlib.import_module(f"crazyai.toolkit.measure.{target.measure_families[0]}")
+        contract = ("\nTHE FIXED CONTRACT (do not guess it, do not change the argument order):\n    " + mod.CONTRACT +
+                    "\nMinimal correct example:\n```c\n" + mod.EXAMPLE + "```\n"
                     "Compiled with: gcc -O3 -march=native -fopenmp -lm. You may use OpenMP, immintrin.h and scratch memory.\n")
     if assumption_focus:
         step2 = (f"2. Pick the seed whose mapping is most literal and most different from the known way, preferring one "

@@ -1,0 +1,59 @@
+{
+  "seed": 7003,
+  "target": "alignment",
+  "blend_model": "markov",
+  "depth": 2,
+  "assumption_focus": "a slip (gap) can only be discovered by having already compared the position before it",
+  "provider": "claudecode",
+  "model": "",
+  "imagination_score": 0.476,
+  "status": "exact",
+  "value": 0.001,
+  "prediction": 5.0,
+  "calibration": 0.0,
+  "discovery": 0.0007,
+  "fragments": [
+    "harvest.6.1",
+    "art.goya_sleep",
+    "harvest.8.0",
+    "poem.rilke_panther",
+    "met.market_organism",
+    "harvest.7.1",
+    "harvest.9.0",
+    "poem.basho_pond",
+    "met.love_fire",
+    "harvest.10.4",
+    "book.arabian_nights",
+    "poem.sappho_31",
+    "harvest.7.2",
+    "harvest.10.1",
+    "harvest.9.1"
+  ],
+  "rng_log": [
+    {
+      "label": "invent.blend_model",
+      "value": "markov"
+    },
+    {
+      "label": "invent.depth",
+      "value": 2
+    },
+    {
+      "label": "invent.assumption",
+      "value": "a slip (gap) can only be discovered by having already compared the position before it"
+    },
+    {
+      "label": "child:invent.world",
+      "value": 335761043
+    }
+  ],
+  "timing_s": {
+    "seed": 0.025,
+    "harvest": 0.0,
+    "world": 0.024,
+    "immerse": 37.127,
+    "bend": 557.821,
+    "measure": 3.578
+  },
+  "total_s": 598.574
+}

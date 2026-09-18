@@ -1,0 +1,95 @@
+{
+  "model": "markov",
+  "text": "A boy climbs into an oak at dinner and never comes down. He lives the rest of his life in the branches, hunting, reading, courting and fighting from tree to tree across a whole province of forest, and flowers made of apples and peaches, a dense one is tightly woven, a pear for a chest. A boy climbs into an oak at dinner and never comes down. Huge sheets of pink and orange carry spirals, snail shells, letters, and rain all obey the first crystal they meet. A single frog leaps from the bank and vanishes into the water with one small, precise sound.",
+  "score": {
+    "score": 0.4387,
+    "imagination": 0.4387,
+    "readable": 1.0,
+    "surprise": 0.1481,
+    "mixing": 0.9439,
+    "originality": 0.6038,
+    "readability": 1.0,
+    "coherence": 1.0,
+    "flesch": 72.7,
+    "words": 55,
+    "sentences": 5
+  },
+  "fragments": [
+    {
+      "id": "met.river_time",
+      "kind": "metaphor",
+      "source": "time is a river"
+    },
+    {
+      "id": "art.tanning_birthday",
+      "kind": "painting",
+      "source": "Dorothea Tanning, Birthday"
+    },
+    {
+      "id": "book.narnia_creation",
+      "kind": "book",
+      "source": "C. S. Lewis, The Magician's Nephew"
+    },
+    {
+      "id": "poem.basho_pond",
+      "kind": "poem",
+      "source": "Matsuo Bashō, the old pond haiku"
+    },
+    {
+      "id": "met.text_fabric",
+      "kind": "metaphor",
+      "source": "a text is a fabric"
+    },
+    {
+      "id": "art.kandinsky_composition",
+      "kind": "painting",
+      "source": "Kandinsky, Composition VIII"
+    },
+    {
+      "id": "book.calvino_baron",
+      "kind": "book",
+      "source": "Italo Calvino, The Baron in the Trees"
+    },
+    {
+      "id": "poem.sappho_apple",
+      "kind": "poem",
+      "source": "Sappho, fragment on the unreached apple"
+    },
+    {
+      "id": "met.internet_web",
+      "kind": "metaphor",
+      "source": "the internet is a web"
+    },
+    {
+      "id": "harvest.2.2",
+      "kind": "painting",
+      "source": "Arcimboldo, Vertumnus"
+    },
+    {
+      "id": "harvest.3.3",
+      "kind": "book",
+      "source": "Kurt Vonnegut, Cat's Cradle"
+    },
+    {
+      "id": "poem.kabir_guest",
+      "kind": "poem",
+      "source": "Kabir, mystic doha"
+    },
+    {
+      "id": "met.river_time",
+      "kind": "metaphor",
+      "source": "time is a river"
+    },
+    {
+      "id": "art.klint_ten_largest",
+      "kind": "painting",
+      "source": "Hilma af Klint, The Ten Largest"
+    },
+    {
+      "id": "book.calvino_baron",
+      "kind": "book",
+      "source": "Italo Calvino, The Baron in the Trees"
+    }
+  ],
+  "order": 2
+}

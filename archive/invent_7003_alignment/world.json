@@ -1,0 +1,95 @@
+{
+  "model": "markov",
+  "text": "The market is an animal with moods. No horizon line, no sky line — only a gradient suggesting infinite shallow distance in every direction. Afterward the pond looks exactly as still as before, but from inside the water with one small, precise sound. A flat, bone-colored desert stretches under a sourceless amber light, dotted with soft biomorphic shapes like eroded bones, deflated organs, and the whole book is one woman's way of staying alive one night longer. Her tongue locks in her mouth, a fine fire runs just beneath her skin, her ears fill with a man seated across from her, and both now ride at anchor claiming the same person, if it comes back at all.",
+  "score": {
+    "score": 0.476,
+    "imagination": 0.4797,
+    "readable": 0.9888,
+    "surprise": 0.1429,
+    "mixing": 0.9661,
+    "originality": 0.8,
+    "readability": 0.9888,
+    "coherence": 1.0,
+    "flesch": 59.4,
+    "words": 64,
+    "sentences": 5
+  },
+  "fragments": [
+    {
+      "id": "harvest.6.1",
+      "kind": "metaphor",
+      "source": "the sunk cost fallacy as a drowning man clutching his wallet"
+    },
+    {
+      "id": "art.goya_sleep",
+      "kind": "painting",
+      "source": "Goya, The Sleep of Reason Produces Monsters"
+    },
+    {
+      "id": "harvest.8.0",
+      "kind": "book",
+      "source": "Mervyn Peake, Gormenghast"
+    },
+    {
+      "id": "poem.rilke_panther",
+      "kind": "poem",
+      "source": "Rainer Maria Rilke, \"The Panther\""
+    },
+    {
+      "id": "met.market_organism",
+      "kind": "metaphor",
+      "source": "the market is an animal"
+    },
+    {
+      "id": "harvest.7.1",
+      "kind": "painting",
+      "source": "Yves Tanguy, Indefinite Divisibility"
+    },
+    {
+      "id": "harvest.9.0",
+      "kind": "book",
+      "source": "Jeff VanderMeer, Annihilation"
+    },
+    {
+      "id": "poem.basho_pond",
+      "kind": "poem",
+      "source": "Matsuo Bashō, the old pond haiku"
+    },
+    {
+      "id": "met.love_fire",
+      "kind": "metaphor",
+      "source": "love is fire"
+    },
+    {
+      "id": "harvest.10.4",
+      "kind": "painting",
+      "source": "Yves Tanguy, Mama, Papa Is Wounded!"
+    },
+    {
+      "id": "book.arabian_nights",
+      "kind": "book",
+      "source": "One Thousand and One Nights"
+    },
+    {
+      "id": "poem.sappho_31",
+      "kind": "poem",
+      "source": "Sappho, Fragment 31"
+    },
+    {
+      "id": "harvest.7.2",
+      "kind": "metaphor",
+      "source": "The Ship of Theseus"
+    },
+    {
+      "id": "harvest.10.1",
+      "kind": "painting",
+      "source": "Magritte, The Human Condition"
+    },
+    {
+      "id": "harvest.9.1",
+      "kind": "book",
+      "source": "Gene Wolfe, The Book of the New Sun"
+    }
+  ],
+  "order": 2
+}

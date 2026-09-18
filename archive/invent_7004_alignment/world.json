@@ -1,0 +1,50 @@
+{
+  "model": "cutup",
+  "text": "One continuous ring of verses that ends by returning to its own opening line, Time itself stops running forward and instead coils back on its own tail like a snake calendar. Part machine part, and a spring that can be wound too tight, shadowless desert the color of dried clay stretches to a horizon with no landmarks. Every sentence is a move on a field, claims are attacked. A man sleeps face-down on his desk while owls and bats rise from behind him in a cloud, memory is a store-room with shelves. A watchdog has a clock for a body, weak points are targeted, A flat, ready to write whatever the dreamer cannot. A lynx watches from the floor, into other women's bodies, as if one shape had just finished splitting into three and might split again, Ideas are cranked out. The princesses Rhyme and Reason have been exiled and the numbers and letters are at war, An argument is a war. The mind is a machine with gears that turn, The poem turns like the great carved stone calendar of the Aztecs, part bone, and silence is a surrender. As if desire were a single hallway of connecting rooms, A woman's body keeps dissolving into rivers, One owl holds a pen, into cities. Scattered across it stand smooth bone-colored forms, and you can leap to Conclusions. Part larva, A boy drives through a tollbooth into a kingdom where words are sold by weight in a market. A boiler that overheats, and at the end one side retreats, each casting a hard directional shadow though no sun is visible. An island reached by jumping, The objects seem to be mid-division, Positions are defended. And forgetting is rust.",
+  "score": {
+    "score": 0.6228,
+    "imagination": 0.6228,
+    "readable": 1.0,
+    "surprise": 0.2432,
+    "mixing": 0.9929,
+    "originality": 1.0,
+    "readability": 1.0,
+    "coherence": 1.0,
+    "flesch": 66.5,
+    "words": 149,
+    "sentences": 14
+  },
+  "fragments": [
+    {
+      "id": "met.argument_war",
+      "kind": "metaphor",
+      "source": "argument is war"
+    },
+    {
+      "id": "harvest.3.4",
+      "kind": "painting",
+      "source": "Yves Tanguy, Indefinite Divisibility"
+    },
+    {
+      "id": "book.phantom_tollbooth",
+      "kind": "book",
+      "source": "Norton Juster, The Phantom Tollbooth"
+    },
+    {
+      "id": "poem.paz_sunstone",
+      "kind": "poem",
+      "source": "Octavio Paz, \"Sunstone\""
+    },
+    {
+      "id": "met.mind_machine",
+      "kind": "metaphor",
+      "source": "the mind is a machine"
+    },
+    {
+      "id": "art.goya_sleep",
+      "kind": "painting",
+      "source": "Goya, The Sleep of Reason Produces Monsters"
+    }
+  ],
+  "grain": "clause"
+}

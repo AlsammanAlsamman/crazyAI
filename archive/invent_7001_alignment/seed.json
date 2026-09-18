@@ -1,0 +1,13 @@
+{
+  "seed": 7001,
+  "target": "alignment",
+  "blend_model": "compare",
+  "depth": 3,
+  "assumption_focus": "a slip (gap) can only be discovered by having already compared the position before it",
+  "bias": {
+    "enabled": false,
+    "min_samples": 20,
+    "samples_seen": 0,
+    "active": false
+  }
+}

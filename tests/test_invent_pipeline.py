@@ -171,3 +171,41 @@ def test_remix_is_selectable_but_not_in_the_default_pool():
     assert "remix" in ALL_MODELS and "remix" not in MODELS
     r = build_toolkit(1).call("blend_remix", {"k": 4, "steps": 5})
     assert r["model"] == "remix" and r["text"]
+
+
+def test_new_targets_are_registered():
+    from crazyai.targets import TARGETS
+    for name in ("alignment", "nim", "hash", "fft", "mechanics"):
+        assert name in TARGETS
+
+
+def test_new_measure_tools_self_check():
+    if shutil.which("gcc") is None:
+        pytest.skip("no C compiler")
+    from crazyai.toolkit.measure.alignment import EXAMPLE as ALIGN_EXAMPLE
+    from crazyai.toolkit.measure.nim import EXAMPLE as NIM_EXAMPLE
+    from crazyai.toolkit.measure.hash import EXAMPLE as HASH_EXAMPLE
+    from crazyai.toolkit.measure.fft import EXAMPLE as FFT_EXAMPLE
+    tk = build_toolkit(0)
+
+    a = tk.call("alignment_bench", {"source": ALIGN_EXAMPLE, "sizes": [32, 64], "budget": 0.1})
+    assert a["status"] == "exact" and all(r["correct"] for r in a["results"])
+
+    n = tk.call("nim_bench", {"source": NIM_EXAMPLE, "sizes": [3, 5], "budget": 0.1})
+    assert n["status"] == "exact" and n["frac_correct"] == 1.0
+
+    h = tk.call("hash_bench", {"source": HASH_EXAMPLE, "sizes": [16, 256], "budget": 0.1})
+    assert h["avalanche_score"] > 0.7  # FNV-1a against itself: good but not perfect mixing
+
+    f = tk.call("fft_bench", {"source": FFT_EXAMPLE, "sizes": [64, 256], "budget": 0.1})
+    assert f["status"] == "exact" and f["rel_err"] < 1e-9
+
+
+def test_bend_prompt_contract_matches_the_target_not_always_matmul():
+    # the contract used to be hardcoded to crazyai.toolkit.measure.kernel regardless of target -
+    # every other kernel-artifact target would have been told the wrong C signature.
+    from crazyai.pipeline.invent_prompts import bend_prompt
+    from crazyai.targets import get_target
+    p = bend_prompt("SEED: x", get_target("alignment"), [])
+    assert "int kernel(int n, const char *a, const char *b)" in p
+    assert "const double *A" not in p  # matmul's contract must not leak in

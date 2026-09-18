@@ -45,7 +45,7 @@ def _load(path: Path) -> Any:
 
 
 _CODE = re.compile(r"```c\s*\n(.*?)```", re.S)
-_PRED = re.compile(r"PREDICTION:\s*(?:speedup_vs_blocked\s*=\s*)?([0-9]+(?:\.[0-9]+)?)", re.I)
+_PRED = re.compile(r"PREDICTION:\s*(?:[a-zA-Z_]+\s*=\s*)?([0-9]+(?:\.[0-9]+)?)", re.I)
 _SEED = re.compile(r"^\s*SEED:\s*(.+)$", re.M)
 
 
@@ -208,14 +208,14 @@ class Invent:
         if self._have("measure.json"):
             return _load(self.dir / "measure.json")
         m: dict[str, Any] = {"target": self.target, "artifact": self.tgt.artifact, "imagination": world["score"]}
-        if self.tgt.measure_tool == "kernel_bench":
+        if self.tgt.measure_tool:
             if bent["code"]:
-                r = self.toolkit.call("kernel_bench", {"source": bent["code"], "sizes": [64, 256, 512], "budget": 0.3})
+                r = self.toolkit.call(self.tgt.measure_tool, {"source": bent["code"], "budget": 0.3})
                 m["measurement"] = r
                 m["value"] = r.get("value", 0.0)
                 m["status"] = r.get("status", "ERROR")
-                if bent["prediction"] and r.get("speedup_vs_blocked"):
-                    p, a = bent["prediction"], r["speedup_vs_blocked"]
+                if bent["prediction"] and r.get("prediction_target"):
+                    p, a = bent["prediction"], r["prediction_target"]
                     m["calibration"] = round(1 - abs(p - a) / max(p, a), 3)
             else:
                 m["measurement"] = {"error": "no ```c block in the artifact"}
