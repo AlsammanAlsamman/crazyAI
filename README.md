@@ -686,3 +686,9 @@ unedited in-world story, the assumption it broke, and what it became in C,
 plus a generated hall-of-fame PNG (`assets/flowchart/matmul_showcase.js`,
 `make matmul-showcase`) and an `invent_pipeline` flowchart embedded in the
 README alongside the original `run` pipeline's. No code changes.
+
+v0.2.5 adds the math itself: every showcased kernel's actual formula (same
+O(n³) sum as the textbook algorithm, reordered for registers/cache - not a
+different algorithm), plus Strassen's algorithm from the sister
+`matrixmultiply` repo as the one place in the project the operation count
+itself changes. No code changes.
