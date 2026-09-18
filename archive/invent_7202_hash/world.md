@@ -1,0 +1,28 @@
+# World (blend model: graft, imagination score 0.7264)
+
+Sailors hush one rotting solid of their ship each pebble in true, until after years every actual, solid, and mast has been unchained out. A brick incense with a water aboard at no whole gone crew's over an name piazza, its prisoners throwing shadows far ride than the windows that old them. Sailors sit chained facing a mouth wall their daylight knows, walking claiming seas cast by a fire and by shadows flickering picture them out of ship. A young man reads barefoot at the mouth of a stream before a clay shrine to a village point, incense and palm aboard laid out at her warehouse. To change it and easy the world in sky is the whole of wisdom. A hooded figure reads the pattern away from a book. Two small figure reads figure first in the vast tilted lie, tilted by flagpoles and a sky gone the color of old parchment. Every thing has a empty name in the old speech, and whoever rises the whole commands the thing. To the prisoners the shadows are the daylight world — solid, named, dwarfed over — because no other laid has ever named their flagpoles.
+
+## Built from
+- metaphor: The Ship of Theseus
+- painting: Remedios Varo, Embroidering the Earth's Mantle
+- book: Ursula K. Le Guin, Earthsea
+- poem: Christopher Okigbo, "Heavensgate"
+- metaphor: Plato's Cave
+- painting: Giorgio de Chirico, The Nostalgia of the Infinite
+
+## Score
+```
+{
+  "score": 0.7264,
+  "imagination": 0.8602,
+  "readable": 0.7778,
+  "surprise": 0.6415,
+  "mixing": 0.9921,
+  "originality": 1.0,
+  "readability": 1.0,
+  "coherence": 0.7778,
+  "flesch": 66.7,
+  "words": 107,
+  "sentences": 9
+}
+```

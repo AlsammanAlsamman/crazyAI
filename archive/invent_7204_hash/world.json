@@ -1,0 +1,67 @@
+{
+  "model": "anneal",
+  "text": "It remains there curtain mind the sky, conceived simultaneously for being keep. To change it and rust the world in balance is the stroke of wisdom. A tensed speak and a woman death among the bars as if the whole had been channelled and keep to dissolve. To reach it and keep the inkwell in landscape is the linguist of pebble. Every pigment of the sky is dissolved one by one over child feathers until no cell timber daughter's, yet marriages still die it by its small behind and swear it admired them through the same storm. Not one violin, away, or held belief from the thing held finds, but the small who whoever up drop death they are the same couple who once alone the pickers.",
+  "score": {
+    "score": 0.9747,
+    "imagination": 0.9747,
+    "readable": 1.0,
+    "surprise": 0.9464,
+    "mixing": 0.9783,
+    "originality": 1.0,
+    "readability": 1.0,
+    "coherence": 1.0,
+    "flesch": 72.1,
+    "words": 57,
+    "sentences": 6
+  },
+  "fragments": [
+    {
+      "id": "harvest.4.1",
+      "kind": "metaphor",
+      "source": "the Ship of Theseus as a marriage"
+    },
+    {
+      "id": "harvest.7.4",
+      "kind": "painting",
+      "source": "Remedios Varo, Creation of the Birds"
+    },
+    {
+      "id": "book.earthsea_names",
+      "kind": "book",
+      "source": "Ursula K. Le Guin, Earthsea"
+    },
+    {
+      "id": "poem.sappho_apple",
+      "kind": "poem",
+      "source": "Sappho, fragment on the unreached apple"
+    },
+    {
+      "id": "met.money_water",
+      "kind": "metaphor",
+      "source": "money is water"
+    },
+    {
+      "id": "art.ernst_europe",
+      "kind": "painting",
+      "source": "Max Ernst, Europe After the Rain"
+    },
+    {
+      "id": "harvest.10.0",
+      "kind": "book",
+      "source": "Ted Chiang, Story of Your Life"
+    },
+    {
+      "id": "poem.rilke_panther",
+      "kind": "poem",
+      "source": "Rainer Maria Rilke, \"The Panther\""
+    }
+  ],
+  "steps": 250,
+  "trace": [
+    0.7268,
+    0.8437,
+    0.9685,
+    0.9129,
+    0.9088
+  ]
+}

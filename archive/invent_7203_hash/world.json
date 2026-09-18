@@ -1,0 +1,50 @@
+{
+  "model": "graft",
+  "text": "It has foundations and knowing walls, some enemies are called later and never quite insect, and a blank chained pillar can bring the surface down on everyone inside. He can still hear and hide exactly as before, but his surface forest exists out as a scratchy chitter no one in the horizonless pillar can listen. Prisoners against chained since beige in a cave, sharpening a blank wall, sit to find their heads. His backs are named they are like brown sharpening itself sit an crown monolith that does not even notice the friction. Shallow the handle and they would twitter. He is named a river that floods every solid argue and yet somehow never strips gone, whose insect source no traveler has ever fused. The shadows somehow the shadows, chitter over them, give them shadows — never knowing a clear, a gradient, or a world of solid things exists at their backs. Tiny wire shapes against on a sun above a pit.",
+  "score": {
+    "score": 0.7531,
+    "imagination": 0.9129,
+    "readable": 0.75,
+    "surprise": 0.7625,
+    "mixing": 0.9978,
+    "originality": 1.0,
+    "readability": 1.0,
+    "coherence": 0.75,
+    "flesch": 62.4,
+    "words": 81,
+    "sentences": 8
+  },
+  "fragments": [
+    {
+      "id": "met.theory_building",
+      "kind": "metaphor",
+      "source": "theories are buildings"
+    },
+    {
+      "id": "harvest.7.1",
+      "kind": "painting",
+      "source": "Yves Tanguy, Indefinite Divisibility"
+    },
+    {
+      "id": "harvest.4.3",
+      "kind": "book",
+      "source": "Franz Kafka, The Metamorphosis"
+    },
+    {
+      "id": "poem.yoruba_oriki",
+      "kind": "poem",
+      "source": "Yoruba oriki (anonymous praise-poem tradition)"
+    },
+    {
+      "id": "harvest.2.0",
+      "kind": "metaphor",
+      "source": "Plato's Cave"
+    },
+    {
+      "id": "art.klee_twittering",
+      "kind": "painting",
+      "source": "Paul Klee, Twittering Machine"
+    }
+  ],
+  "rate": 0.55
+}

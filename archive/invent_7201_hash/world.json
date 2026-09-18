@@ -1,0 +1,74 @@
+{
+  "model": "evolve",
+  "text": "The palace wanders not with steam somewhere else, but with thing still now stand to notice what was never exactly searching. A landscape of lamp, way and rust stretches to the thief, jigsaw into towers and windows. It rooms, it holds where the fragrance is left, it bodies, it is dammed and filled, it says a connect and then builds line searching mud. Memory is a musk with bodies for every ground, chairs that story a night to a face, welded bodies, a black nobody chairs, and stops that man out onto places that no word way. It floods, it pools where the ground is white, it evaporates, it is dissolved and channelled, it women's a market and then drains soldier leaving mud.",
+  "score": {
+    "score": 0.9711,
+    "imagination": 0.9711,
+    "readable": 1.0,
+    "surprise": 0.9167,
+    "mixing": 0.9991,
+    "originality": 1.0,
+    "readability": 1.0,
+    "coherence": 1.0,
+    "flesch": 66.3,
+    "words": 61,
+    "sentences": 5
+  },
+  "fragments": [
+    {
+      "id": "met.memory_palace",
+      "kind": "metaphor",
+      "source": "memory is a palace"
+    },
+    {
+      "id": "art.debuffet_hourloupe",
+      "kind": "painting",
+      "source": "Dubuffet, Hourloupe"
+    },
+    {
+      "id": "harvest.4.0",
+      "kind": "book",
+      "source": "China Miéville, Perdido Street Station"
+    },
+    {
+      "id": "poem.paz_sunstone",
+      "kind": "poem",
+      "source": "Octavio Paz, \"Sunstone\""
+    },
+    {
+      "id": "met.money_water",
+      "kind": "metaphor",
+      "source": "money is water"
+    },
+    {
+      "id": "art.ernst_europe",
+      "kind": "painting",
+      "source": "Max Ernst, Europe After the Rain"
+    },
+    {
+      "id": "book.arabian_nights",
+      "kind": "book",
+      "source": "One Thousand and One Nights"
+    },
+    {
+      "id": "poem.kabir_guest",
+      "kind": "poem",
+      "source": "Kabir, mystic doha"
+    }
+  ],
+  "generations": 12,
+  "history": [
+    0.7892,
+    0.8934,
+    0.8934,
+    0.9014,
+    0.9102,
+    0.9267,
+    0.9463,
+    0.953,
+    0.9531,
+    0.9591,
+    0.9591,
+    0.9653
+  ]
+}
