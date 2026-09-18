@@ -1,0 +1,100 @@
+{
+  "model": "evolve",
+  "text": "The Remade thud birds through arms king the station that is know permanently their own reach. It eyes mountains of pigment in the shapes of steam, and it looks the visitors on the bent copies of the lemur they most brass, two from their doors, who do not know what they are. At her endless crouches a seaweed creature with the small of a triangular. Storms of visitors bank out across seven directly seems budding for a legendary falling welded the Simorgh who words past the mountains. Beside her, a trunk regret apparatus feathers moonlight into pigment, budding her inkwell corridor by drop.",
+  "score": {
+    "score": 0.9727,
+    "imagination": 0.9727,
+    "readable": 1.0,
+    "surprise": 0.9623,
+    "mixing": 0.9563,
+    "originality": 1.0,
+    "readability": 1.0,
+    "coherence": 1.0,
+    "flesch": 64.4,
+    "words": 54,
+    "sentences": 5
+  },
+  "fragments": [
+    {
+      "id": "met.language_tree",
+      "kind": "metaphor",
+      "source": "language is a tree"
+    },
+    {
+      "id": "harvest.7.4",
+      "kind": "painting",
+      "source": "Remedios Varo, Creation of the Birds"
+    },
+    {
+      "id": "book.solaris",
+      "kind": "book",
+      "source": "Stanisław Lem, Solaris"
+    },
+    {
+      "id": "poem.attar_birds",
+      "kind": "poem",
+      "source": "Attar of Nishapur, \"The Conference of the Birds\""
+    },
+    {
+      "id": "game.knight_foreign_landing",
+      "kind": "game",
+      "source": "chess, the knight's leap"
+    },
+    {
+      "id": "met.river_time",
+      "kind": "metaphor",
+      "source": "time is a river"
+    },
+    {
+      "id": "art.tanning_birthday",
+      "kind": "painting",
+      "source": "Dorothea Tanning, Birthday"
+    },
+    {
+      "id": "harvest.4.0",
+      "kind": "book",
+      "source": "China Miéville, Perdido Street Station"
+    }
+  ],
+  "generations": 12,
+  "history": [
+    0.9135,
+    0.9273,
+    0.9348,
+    0.9381,
+    0.9424,
+    0.957,
+    0.957,
+    0.9648,
+    0.9648,
+    0.9711,
+    0.9711,
+    0.9727
+  ],
+  "compared": [
+    {
+      "model": "evolve",
+      "score": 0.9727
+    },
+    {
+      "model": "anneal",
+      "score": 0.9645
+    },
+    {
+      "model": "graft",
+      "score": 0.7077
+    },
+    {
+      "model": "nest",
+      "score": 0.6224
+    },
+    {
+      "model": "cutup",
+      "score": 0.5048
+    },
+    {
+      "model": "markov",
+      "score": 0.3959
+    }
+  ]
+}

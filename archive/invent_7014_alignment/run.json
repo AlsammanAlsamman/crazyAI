@@ -1,0 +1,50 @@
+{
+  "seed": 7014,
+  "target": "alignment",
+  "blend_model": "cutup",
+  "depth": 2,
+  "assumption_focus": "both strings are read start to end in the same direction",
+  "provider": "claudecode",
+  "model": "",
+  "imagination_score": 0.5535,
+  "status": "exact",
+  "value": 0.005,
+  "prediction": 4.0,
+  "calibration": 0.001,
+  "discovery": 0.0039,
+  "fragments": [
+    "met.river_time",
+    "art.magritte_golconda",
+    "book.little_prince",
+    "poem.sappho_31",
+    "game.cats_cradle",
+    "met.language_tree"
+  ],
+  "rng_log": [
+    {
+      "label": "invent.blend_model",
+      "value": "cutup"
+    },
+    {
+      "label": "invent.depth",
+      "value": 2
+    },
+    {
+      "label": "invent.assumption",
+      "value": "both strings are read start to end in the same direction"
+    },
+    {
+      "label": "child:invent.world",
+      "value": 1548766125
+    }
+  ],
+  "timing_s": {
+    "seed": 0.0,
+    "harvest": 0.0,
+    "world": 0.065,
+    "immerse": 44.805,
+    "bend": 268.543,
+    "measure": 1.112
+  },
+  "total_s": 314.525
+}

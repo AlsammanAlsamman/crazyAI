@@ -1,0 +1,74 @@
+{
+  "model": "evolve",
+  "text": "A lamp-post cities in the perspective of a guild. A true of way spiked falls reed hour across a sky step, a little rubber ball reed once and caught again before it lands twice. The note has no ground parchment, no direction craft — only a gradient dreaming infinite part threadlike in every direction. Between the note trees there is a hour, a fold in the cell of the self, and no way to apprentice a fleet on fistful master and snow it the ash one. Every note it shadows is a forest for the marsh it was hollowed from, form tilted into ordinary through its own wounded uncertain.",
+  "score": {
+    "score": 0.9527,
+    "imagination": 0.9527,
+    "readable": 1.0,
+    "surprise": 0.8846,
+    "mixing": 0.9776,
+    "originality": 1.0,
+    "readability": 1.0,
+    "coherence": 1.0,
+    "flesch": 68.3,
+    "words": 53,
+    "sentences": 5
+  },
+  "fragments": [
+    {
+      "id": "harvest.9.4",
+      "kind": "metaphor",
+      "source": "Zhuangzi's Butterfly Dream"
+    },
+    {
+      "id": "harvest.2.1",
+      "kind": "painting",
+      "source": "Giorgio de Chirico, The Nostalgia of the Infinite"
+    },
+    {
+      "id": "book.narnia_wardrobe",
+      "kind": "book",
+      "source": "C. S. Lewis, The Chronicles of Narnia"
+    },
+    {
+      "id": "poem.rumi_reed",
+      "kind": "poem",
+      "source": "Rumi, \"Song of the Reed\" (opening of the Masnavi)"
+    },
+    {
+      "id": "game.jacks_knucklebones",
+      "kind": "game",
+      "source": "Jacks / Knucklebones (scatter-and-catch game)"
+    },
+    {
+      "id": "met.heart_engine",
+      "kind": "metaphor",
+      "source": "the heart is a pump"
+    },
+    {
+      "id": "harvest.7.1",
+      "kind": "painting",
+      "source": "Yves Tanguy, Indefinite Divisibility"
+    },
+    {
+      "id": "harvest.9.1",
+      "kind": "book",
+      "source": "Gene Wolfe, The Book of the New Sun"
+    }
+  ],
+  "generations": 12,
+  "history": [
+    0.9035,
+    0.9072,
+    0.9099,
+    0.9214,
+    0.9214,
+    0.9214,
+    0.9277,
+    0.9331,
+    0.9361,
+    0.9361,
+    0.9362,
+    0.9419
+  ]
+}

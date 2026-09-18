@@ -1,0 +1,13 @@
+{
+  "seed": 7011,
+  "target": "alignment",
+  "blend_model": "evolve",
+  "depth": 3,
+  "assumption_focus": "every cell of the comparison depends on the ones above, to the left, and diagonally above-left, computed in that order",
+  "bias": {
+    "enabled": false,
+    "min_samples": 20,
+    "samples_seen": 0,
+    "active": false
+  }
+}

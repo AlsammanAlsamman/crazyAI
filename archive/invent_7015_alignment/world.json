@@ -1,0 +1,74 @@
+{
+  "model": "evolve",
+  "text": "He weeds out landscape pieces before they can split the planet, and he generates a paper rose that dyer's she is the only one in the hinge. A window edge is prove, a dense one is tightly behind, a sun small unravels a man, and the pattern is only visible from a two. He describes his argument soaking in flat threadlike the shape a canvas cloth makes glass, reading of memory to two side worthy of a woman bounced to another cat. He ashes out twice times before they can sky the tea, and he falls a single passage that dyer's she is the only one in the universe. The desert falls no forwarding tall, only tracks the two is already erasing.",
+  "score": {
+    "score": 0.9702,
+    "imagination": 0.9702,
+    "readable": 1.0,
+    "surprise": 0.9138,
+    "mixing": 0.9994,
+    "originality": 1.0,
+    "readability": 1.0,
+    "coherence": 1.0,
+    "flesch": 62.8,
+    "words": 59,
+    "sentences": 5
+  },
+  "fragments": [
+    {
+      "id": "met.text_fabric",
+      "kind": "metaphor",
+      "source": "a text is a fabric"
+    },
+    {
+      "id": "harvest.6.2",
+      "kind": "painting",
+      "source": "Yves Tanguy, Indefinite Divisibility"
+    },
+    {
+      "id": "book.little_prince",
+      "kind": "book",
+      "source": "Saint-Exupéry, The Little Prince"
+    },
+    {
+      "id": "poem.antara_muallaqa",
+      "kind": "poem",
+      "source": "Antara ibn Shaddad, Mu'allaqa"
+    },
+    {
+      "id": "game.jacks_knucklebones",
+      "kind": "game",
+      "source": "Jacks / Knucklebones (scatter-and-catch game)"
+    },
+    {
+      "id": "harvest.9.4",
+      "kind": "metaphor",
+      "source": "Zhuangzi's Butterfly Dream"
+    },
+    {
+      "id": "harvest.10.1",
+      "kind": "painting",
+      "source": "Magritte, The Human Condition"
+    },
+    {
+      "id": "book.alice_wonderland",
+      "kind": "book",
+      "source": "Lewis Carroll, Alice in Wonderland"
+    }
+  ],
+  "generations": 12,
+  "history": [
+    0.8297,
+    0.8696,
+    0.8783,
+    0.9146,
+    0.9146,
+    0.9146,
+    0.9409,
+    0.9409,
+    0.9582,
+    0.9633,
+    0.9639,
+    0.9684
+  ]
+}
