@@ -1,0 +1,77 @@
+kind: game
+fragments:
+  - id: game.hopscotch_chalk
+    source: Hopscotch (traditional street game, many cultures)
+    text: "Chalk lines scratched across pavement into a ladder of numbered squares, a flat stone tossed underhand to land inside one without touching a line. A single leg hops through, arms flung wide for balance, skirt hem swinging with each landing."
+  - id: game.hopscotch_pavement
+    source: Hopscotch, chalk pavement game (global)
+    text: "A grid of numbered squares is scratched onto pavement in white chalk dust. A flat stone lands skidding inside one square, and a child hops through on one leg, arms flung wide for balance, skirt or trouser cuff flapping. Chalk powder clings to bare heels, and the stone waits pale in its square for the next throw."
+  - id: game.cats_cradle
+    source: Cat's Cradle (string figure game, global tradition)
+    text: "A loop of string strung taut between two pairs of open hands, one figure lifted away to reveal another underneath. A diamond becomes a pair of scissors, then a fish's open mouth, fingers hooking threads by feel without looking down."
+  - id: game.oware_seeds
+    source: Oware / Mancala (West African seed-sowing game)
+    text: "A carved wooden board of two long rows of shallow pits, a palmful of small seeds dropped one at a time, hollow click of wood against wood. Hands move down the row with the unhurried rhythm of someone scattering grain by hand."
+  - id: game.oware_ayo
+    source: Oware / Ayo, West African mancala
+    text: "Twelve wooden hollows sit in two rows, each holding a small clutch of seeds or cowrie shells. A hand scoops them all from one hollow and sows them one by one around the board, the way a farmer walks a furrow dropping grain. The last seed falls with a small dry click, and a hollow across the board suddenly grows heavy and full."
+  - id: game.go_stones_click
+    source: Go / Weiqi (board of stones, East Asia)
+    text: "Black and white stones set down one by one on the crossing lines of a wide grid, a soft click of shell or slate against wood. A curling boundary of one color slowly closes around a patch of empty board, quiet as a tide line drawn in sand."
+  - id: game.go_raindrops
+    source: Go / Weiqi, board game of black and white stones
+    text: "Black and white stones sit scattered across a grid of pale wood like frozen raindrops on a windowpane. A hand hovers a long moment before setting one stone down with a soft, final click. The empty crossings between stones hold as much quiet weight as the ones already filled."
+  - id: game.knight_bends_air
+    source: The knight's move (chess piece, imagery only)
+    text: "A carved horse's head lifts off its square and does not slide like the others - it rises, bends the air into an L, two squares one way and one aside, and lands facing a direction none of the straight pieces could ever reach."
+  - id: game.knight_foreign_landing
+    source: chess, the knight's leap
+    text: "The piece is carved as a small horse's head, mane frozen mid-toss, eyes blank wood. It rises off its square and travels in a bent path, two steps forward and one sideways, like a bird that changes its mind about direction in midair. It lands with a soft felt-bottomed thud among pieces that only ever crept straight or slid diagonal, foreign among them."
+  - id: game.xiangqi_cannon
+    source: The cannon piece (Xiangqi, Chinese chess)
+    text: "A round wooden disc etched with a single character sits behind a line of foot soldiers, patient as a garrison. It fires clean over another piece's head in a straight line, landing far beyond it without ever touching what it leapt across."
+  - id: game.senet_sticks
+    source: Senet (ancient Egyptian board game)
+    text: "A painted limestone board of thirty squares set in three rows, flat throwing-sticks tumbling end over end to show a light face or a dark one. Carved pawns shaped like cones and spools slide house to house, painted small on a tomb wall beside the dead."
+  - id: game.hnefatafl_king
+    source: Hnefatafl (Viking king's-table board game)
+    text: "A carved king piece stands alone at the center of a cross-marked board, ringed close by a handful of his own pale guard. A wider circle of dark pieces tightens from every edge at once, closing in like slow amber weather."
+  - id: game.kabaddi_breath
+    source: Kabaddi (South Asian breath-and-tag game)
+    text: "A bare-chested runner crosses the chalked centerline into enemy ground, chanting one held word over and over on a single unbroken breath. Hands snatch at an ankle, a wrist, a collar, and then he is sprinting back across the dust toward his own half before the breath runs out."
+  - id: game.kabaddi_chant
+    source: Kabaddi, South Asian field game
+    text: "A lone raider crosses a painted line into the other team's dust, holding one long breath, murmuring the game's own name over and over under his tongue like a chant. Many hands close on his wrists and ankles at once, dragging him down into red earth. His chant breaks into a gasp the instant breath runs out, and the whole field freezes at the sound."
+  - id: game.gilli_danda
+    source: Gilli-Danda (Indian street stick game)
+    text: "A short wooden stick lies balanced across a stone with one tip raised, and a longer stick swings down to strike it, flipping it spinning into the air. A second swing meets it mid-flight and sends it skittering far down the dirt road."
+  - id: game.jianzi_shuttlecock
+    source: Jianzi (feathered shuttlecock kicking game)
+    text: "A weighted disc trailing a fan of goose feathers hangs and drops, kicked up again by the outside edge of a bare foot. A loose circle of players keeps it afloat with heel, knee, and shoulder, feathers rustling, hands never once allowed to touch it."
+  - id: game.mesoamerican_ballgame
+    source: The Mesoamerican ballgame (Ulama / Tlachtli)
+    text: "A solid rubber ball thuds off a padded hip inside a long stone court walled with carved serpents. It ricochets low between the sloped sides, players dropping to one knee to meet it, aimed always toward a narrow stone ring set high overhead."
+  - id: game.jacks_knucklebones
+    source: Jacks / Knucklebones (scatter-and-catch game)
+    text: "A handful of small spiked pieces scattered loose across a stone step, a little rubber ball bounced once and caught again before it lands twice. Fingers spider out wider each round, sweeping up one piece, then two, then a fistful, without missing the falling ball."
+  - id: game.chinese_jump_rope
+    source: Chinese Jump Rope (elastic rope game)
+    text: "A loop of elastic stretched ankle-high between two children standing still as posts, a third hopping in and out in a stitched pattern of crosses and diamonds. The band climbs to the knee, then the hip, then the waist, the jumping rhyme speeding up with every rise."
+  - id: game.kite_fighting_glass
+    source: Kite Fighting (Afghan and South Asian tradition)
+    text: "Two paper kites tilt and dive against each other high over a rooftop skyline, their strings coated stiff with ground glass and glue. One line saws sideways in a sudden jerk, and the other kite tips loose, drifting riderless and slow over the city below."
+  - id: game.kite_fighting_chase
+    source: kite fighting (gudiparan bazi), Afghan and South Asian tradition
+    text: "The sky fills with paper diamonds tugging on threads coated in ground glass and glue. A wrist flicks and saws, the line singing taut, sawing against another kite's string far overhead. One kite goes suddenly slack and spirals loose into the wind, and a pack of children below breaks into a run through narrow alleys, necks craned upward, chasing where it will fall."
+  - id: game.marbles_ringer
+    source: Marbles, ringer game (street game, global)
+    text: "A circle is scratched into bare dirt, and a cluster of marbles sits at its center like tiny planets caught in orbit. A shooter marble rests curled against a bent forefinger, thumb cocked behind it. It snaps forward, rolls glinting through dust, and knocks another marble spinning out past the ring's chalky edge."
+  - id: game.blind_mans_buff
+    source: Blind man's buff (Colin-maillard, European and global tradition)
+    text: "A blindfolded child is spun three times in the middle of a ring until the world tilts. Arms stretch out into a darkness full of other people's breathing and stifled laughter. Fingertips brush a sleeve, close on empty air, brush cloth again - the whole ring shifting silently just out of reach."
+  - id: game.yut_nori
+    source: Yut Nori, Korean New Year board game
+    text: "Four short wooden sticks, flat on one face and rounded on the other, are tossed up together and land clattering on a woven mat. Their pattern of flat-side-up and round-side-up decides how far small wooden tokens travel around a cross-shaped path marked on cloth. Tokens gather at the corners like travelers pausing at a crossroads before setting off again."
+  - id: game.nine_mens_morris
+    source: Nine Men's Morris, medieval board game
+    text: "Three concentric squares are carved into a stone step or a tabletop, joined by straight connecting lines like a small walled town seen from above. Black and white pegs stand at the crossroads, upright as tiny sentries at a gate. A hand lifts one, sets it down at a new junction, and the whole quiet geometry of the board shifts by one small measure."

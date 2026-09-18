@@ -55,6 +55,16 @@ _KIND_HINTS = {
         "Western poets (Blake, Rilke, Neruda, Dickinson) - whichever are the most imaginative you know, in any "
         "language, described in your own words rather than any translator's exact lines."
     ),
+    "game": (
+        " Draw on traditional and children's games from across cultures - tag, hopscotch, jump-rope, marbles, "
+        "mancala/oware, jacks, cat's cradle, hide-and-seek variants, paper and street games - and describe the "
+        "physical feel and rule of the game as a scene, the way you would describe a painting, not as instructions. "
+        "You may also draw on chess and other strategy games, but ONLY as imagery: the shape and motion of a piece "
+        "(a knight's hop, a pawn's slow advance, a king's single cautious step), the geometry of the board, the "
+        "feeling of a position - NEVER a strategy, a rule for winning, an algorithm, notation, or what 'the best "
+        "move' is. A fragment that reads as advice on how to win, at any game, is wrong for this kind - reject the "
+        "impulse to explain and describe only what is seen or felt."
+    ),
 }
 
 

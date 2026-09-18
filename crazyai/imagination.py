@@ -19,7 +19,7 @@ from crazyai.config import ARCHIVE_DIR, DATA_DIR
 IMAGINATION_DIR = DATA_DIR / "imagination"
 HARVEST_DIR = ARCHIVE_DIR / "imagination"
 PROMOTED_DIR = ARCHIVE_DIR / "imagination_promoted"
-KINDS = ["metaphor", "painting", "book", "poem"]
+KINDS = ["metaphor", "painting", "book", "poem", "game"]
 
 _SENT = re.compile(r"(?<=[.!?;:])\s+")
 _WORD = re.compile(r"[A-Za-z'-]+")

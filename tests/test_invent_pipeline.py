@@ -201,6 +201,30 @@ def test_new_measure_tools_self_check():
     assert f["status"] == "exact" and f["rel_err"] < 1e-9
 
 
+def test_alignment_has_the_three_new_assumption_hints():
+    from crazyai.pipeline.invent_prompts import immerse_prompt
+    from crazyai.targets import get_target
+    tgt = get_target("alignment")
+    pinned = [
+        "every cell of the comparison depends on the ones above, to the left, and diagonally above-left, computed in that order",
+        "one pair of positions is judged at a time",
+        "the whole grid of every position against every other must be filled in",
+    ]
+    assert set(pinned) <= set(tgt.assumption_hints)
+    unhinted = immerse_prompt("world text", tgt, 2)
+    for assumption in pinned:
+        hint = tgt.assumption_hints[assumption]
+        assert hint not in unhinted
+        assert hint in immerse_prompt("world text", tgt, 2, hint)
+
+
+def test_game_kind_is_registered_and_populated():
+    from crazyai import imagination as im
+    assert "game" in im.KINDS
+    kinds = im.by_kind(im.corpus(include_harvest=False))
+    assert len(kinds["game"]) >= 20
+
+
 def test_bend_prompt_contract_matches_the_target_not_always_matmul():
     # the contract used to be hardcoded to crazyai.toolkit.measure.kernel regardless of target -
     # every other kernel-artifact target would have been told the wrong C signature.

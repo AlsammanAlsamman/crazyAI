@@ -123,6 +123,24 @@ _ALIGNMENT = Target(
     measure_tool="alignment_bench",
     examine_question="Does this kernel compute the exact same alignment score as the reference, and is the reported speedup credible? Which assumption of the standard method did it change?",
     known_way="Needleman-Wunsch: O(n^2) DP table, or a banded/SIMD variant (SSW, KSW2) exploiting a bounded score range.",
+    assumption_hints={
+        "every cell of the comparison depends on the ones above, to the left, and diagonally above-left, computed in that order": (
+            "This time, imagine the whole grid as a single sheet, and ask what happens if you fold it - along its "
+            "slanting middle, once or twice more - so that a cell far from another is suddenly pressed flush "
+            "against it. At the crease, could you read two or three layers at once, cell for cell, bit for bit, "
+            "instead of walking the sheet flat one square after the next?"
+        ),
+        "one pair of positions is judged at a time": (
+            "This time, picture a single short body, one cell wide, laid across the grid, free to point any of "
+            "eight ways and to curl back on itself - and ask what it could learn about the whole board in one "
+            "continuous crawl, rather than by comparing one pair of squares, then the next, then the next."
+        ),
+        "the whole grid of every position against every other must be filled in": (
+            "This time, imagine the grid as a maze holding a few true treasures and much empty corridor, and a "
+            "creature in it that only wants to have stood on every treasure once - not to have walked every "
+            "corridor. Could knowing where the treasures are excuse you from ever filling in the rest of the grid?"
+        ),
+    },
 )
 
 _NIM = Target(
