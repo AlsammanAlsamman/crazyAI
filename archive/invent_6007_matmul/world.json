@@ -1,0 +1,95 @@
+{
+  "model": "markov",
+  "text": "Reason knocks at the door of this house and is gently, permanently and monotonously one sex by their standards, is regarded by the grey men as cigars made of dried hours. He is named a river that floods every dry season and yet somehow never runs empty, whose hidden source no traveler has ever located. A person who fathered a child in the next, and on its own season, and rape all take different shapes than they do among a fixed-sex species. One is unchained and dragged up a tunnel into daylight, where the sun is so violent he must look first at reflections in water, then enters a few days in which the body becomes either male or female depending on hormonal cues from whoever they are with.",
+  "score": {
+    "score": 0.3094,
+    "imagination": 0.4326,
+    "readable": 0.5932,
+    "surprise": 0.1186,
+    "mixing": 0.9096,
+    "originality": 0.75,
+    "readability": 0.791,
+    "coherence": 0.75,
+    "flesch": 49.5,
+    "words": 60,
+    "sentences": 4
+  },
+  "fragments": [
+    {
+      "id": "met.river_time",
+      "kind": "metaphor",
+      "source": "time is a river"
+    },
+    {
+      "id": "art.escher_relativity",
+      "kind": "painting",
+      "source": "Escher, Relativity"
+    },
+    {
+      "id": "harvest.10.3",
+      "kind": "book",
+      "source": "Ursula K. Le Guin, The Left Hand of Darkness"
+    },
+    {
+      "id": "poem.hafez_tavern",
+      "kind": "poem",
+      "source": "Hafez, ghazal from the Divan"
+    },
+    {
+      "id": "met.electricity_water",
+      "kind": "metaphor",
+      "source": "electricity is water"
+    },
+    {
+      "id": "harvest.10.1",
+      "kind": "painting",
+      "source": "Magritte, The Human Condition"
+    },
+    {
+      "id": "harvest.3.2",
+      "kind": "book",
+      "source": "Jonathan Swift, Gulliver's Travels"
+    },
+    {
+      "id": "poem.paz_sunstone",
+      "kind": "poem",
+      "source": "Octavio Paz, \"Sunstone\""
+    },
+    {
+      "id": "met.atom_solar",
+      "kind": "metaphor",
+      "source": "the atom is a solar system"
+    },
+    {
+      "id": "harvest.7.1",
+      "kind": "painting",
+      "source": "Yves Tanguy, Indefinite Divisibility"
+    },
+    {
+      "id": "harvest.8.3",
+      "kind": "book",
+      "source": "Ursula K. Le Guin, The Left Hand of Darkness"
+    },
+    {
+      "id": "poem.yoruba_oriki",
+      "kind": "poem",
+      "source": "Yoruba oriki (anonymous praise-poem tradition)"
+    },
+    {
+      "id": "harvest.8.2",
+      "kind": "metaphor",
+      "source": "Plato's Cave"
+    },
+    {
+      "id": "harvest.3.1",
+      "kind": "painting",
+      "source": "Magritte, The Human Condition"
+    },
+    {
+      "id": "book.momo",
+      "kind": "book",
+      "source": "Michael Ende, Momo"
+    }
+  ],
+  "order": 2
+}

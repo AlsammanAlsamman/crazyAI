@@ -1,0 +1,55 @@
+{
+  "seed": 6007,
+  "target": "matmul",
+  "blend_model": "markov",
+  "depth": 3,
+  "assumption_focus": "numbers are IEEE doubles and multiply is the primitive",
+  "provider": "claudecode",
+  "model": "",
+  "imagination_score": 0.3094,
+  "status": "approx",
+  "value": 0.0358,
+  "prediction": 0.08,
+  "calibration": 0.223,
+  "discovery": 0.0234,
+  "fragments": [
+    "met.river_time",
+    "art.escher_relativity",
+    "harvest.10.3",
+    "poem.hafez_tavern",
+    "met.electricity_water",
+    "harvest.10.1",
+    "harvest.3.2",
+    "poem.paz_sunstone",
+    "met.atom_solar",
+    "harvest.7.1",
+    "harvest.8.3",
+    "poem.yoruba_oriki",
+    "harvest.8.2",
+    "harvest.3.1",
+    "book.momo"
+  ],
+  "rng_log": [
+    {
+      "label": "invent.blend_model",
+      "value": "markov"
+    },
+    {
+      "label": "invent.depth",
+      "value": 3
+    },
+    {
+      "label": "child:invent.world",
+      "value": 77490543
+    }
+  ],
+  "timing_s": {
+    "seed": 0.0,
+    "harvest": 0.0,
+    "world": 0.033,
+    "immerse": 33.924,
+    "bend": 299.131,
+    "measure": 2.472
+  },
+  "total_s": 335.56
+}

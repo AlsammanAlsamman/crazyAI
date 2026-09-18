@@ -1,0 +1,55 @@
+{
+  "seed": 6008,
+  "target": "matmul",
+  "blend_model": "markov",
+  "depth": 2,
+  "assumption_focus": "numbers are IEEE doubles and multiply is the primitive",
+  "provider": "claudecode",
+  "model": "",
+  "imagination_score": 0.2841,
+  "status": "exact",
+  "value": 2.568,
+  "prediction": 1.8,
+  "calibration": 0.701,
+  "discovery": 1.6488,
+  "fragments": [
+    "met.market_organism",
+    "art.ernst_europe",
+    "book.borges_library",
+    "poem.paz_sunstone",
+    "met.computer_brain",
+    "harvest.3.4",
+    "book.moomins",
+    "poem.dickinson_carriage",
+    "met.problem_knot",
+    "art.ocampo_fields",
+    "harvest.6.0",
+    "poem.hafez_tavern",
+    "met.money_water",
+    "harvest.6.2",
+    "book.calvino_baron"
+  ],
+  "rng_log": [
+    {
+      "label": "invent.blend_model",
+      "value": "markov"
+    },
+    {
+      "label": "invent.depth",
+      "value": 2
+    },
+    {
+      "label": "child:invent.world",
+      "value": 1487569944
+    }
+  ],
+  "timing_s": {
+    "seed": 0.005,
+    "harvest": 0.0,
+    "world": 0.02,
+    "immerse": 41.51,
+    "bend": 442.64,
+    "measure": 1.793
+  },
+  "total_s": 485.968
+}

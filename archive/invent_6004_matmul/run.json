@@ -1,0 +1,48 @@
+{
+  "seed": 6004,
+  "target": "matmul",
+  "blend_model": "anneal",
+  "depth": 1,
+  "assumption_focus": "numbers are IEEE doubles and multiply is the primitive",
+  "provider": "claudecode",
+  "model": "",
+  "imagination_score": 0.9693,
+  "status": "approx",
+  "value": 3.097,
+  "prediction": 3.0,
+  "calibration": 0.484,
+  "discovery": 3.0495,
+  "fragments": [
+    "harvest.10.2",
+    "art.debuffet_hourloupe",
+    "book.calvino_baron",
+    "poem.kabir_guest",
+    "harvest.4.1",
+    "art.rousseau_dream",
+    "book.discworld",
+    "poem.basho_pond"
+  ],
+  "rng_log": [
+    {
+      "label": "invent.blend_model",
+      "value": "compare"
+    },
+    {
+      "label": "invent.depth",
+      "value": 1
+    },
+    {
+      "label": "child:invent.world",
+      "value": 2046206570
+    }
+  ],
+  "timing_s": {
+    "seed": 0.0,
+    "harvest": 0.0,
+    "world": 0.261,
+    "immerse": 33.604,
+    "bend": 300.972,
+    "measure": 1.559
+  },
+  "total_s": 336.397
+}

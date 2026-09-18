@@ -23,6 +23,7 @@ class Target:
     measure_tool: str | None     # the authoritative measurement run by the pipeline itself
     examine_question: str
     known_way: str = ""
+    assumption_hints: dict[str, str] = field(default_factory=dict)  # in-world-safe nudge, used only when that assumption is pinned
 
 
 _MATMUL = Target(
@@ -53,6 +54,15 @@ _MATMUL = Target(
     measure_tool="kernel_bench",
     examine_question="Does this kernel compute the matrix product correctly and is the reported speedup credible? Which assumption of the standard method did it change?",
     known_way="OpenBLAS / MKL: packed panels, register-tiled microkernel, all cores.",
+    assumption_hints={
+        "numbers are IEEE doubles and multiply is the primitive": (
+            "This time, dwell especially on what a single quantity actually IS for your people before it meets "
+            "another - is it one whole, indivisible mark, or is it built from smaller marks laid side by side? And "
+            "when two quantities meet and combine, is that truly one perfect, indivisible act every time, or could "
+            "your people build it from smaller, cruder acts on those smaller marks - guesses, roundings, matches, "
+            "things looked up rather than reckoned - instead of one exact act every time?"
+        ),
+    },
 )
 
 _PHYSICS = Target(

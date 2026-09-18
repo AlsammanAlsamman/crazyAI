@@ -1,0 +1,93 @@
+{
+  "model": "anneal",
+  "text": "The machine, a machine, a breath, the verses own desert, all at the same inside. No mountains, no engines, no lone. A basement is a straight castle, a cellar is a turn, and water recognize is the blueprint of mountains. Four, sea, resistance, and social all bow, in his drawing, to one narrator birds beneath. Electricity is rust in waves. The hill, a basement, a sound, the sides own dimension, all at the same body.",
+  "score": {
+    "score": 0.9988,
+    "imagination": 0.9988,
+    "readable": 1.0,
+    "surprise": 1.0,
+    "mixing": 0.9965,
+    "originality": 1.0,
+    "readability": 1.0,
+    "coherence": 1.0,
+    "flesch": 70.1,
+    "words": 36,
+    "sentences": 6
+  },
+  "fragments": [
+    {
+      "id": "met.mind_machine",
+      "kind": "metaphor",
+      "source": "the mind is a machine"
+    },
+    {
+      "id": "art.klee_twittering",
+      "kind": "painting",
+      "source": "Paul Klee, Twittering Machine"
+    },
+    {
+      "id": "book.flatland",
+      "kind": "book",
+      "source": "Edwin Abbott, Flatland"
+    },
+    {
+      "id": "poem.mutanabbi_qasida",
+      "kind": "poem",
+      "source": "Al-Mutanabbi, heroic ode (qasida)"
+    },
+    {
+      "id": "met.electricity_water",
+      "kind": "metaphor",
+      "source": "electricity is water"
+    },
+    {
+      "id": "art.magritte_castle",
+      "kind": "painting",
+      "source": "Magritte, The Castle of the Pyrenees"
+    },
+    {
+      "id": "book.borges_aleph",
+      "kind": "book",
+      "source": "Borges, The Aleph"
+    },
+    {
+      "id": "poem.rumi_reed",
+      "kind": "poem",
+      "source": "Rumi, \"Song of the Reed\" (opening of the Masnavi)"
+    }
+  ],
+  "steps": 250,
+  "trace": [
+    0.6873,
+    0.8144,
+    0.883,
+    0.9331,
+    0.9826
+  ],
+  "compared": [
+    {
+      "model": "anneal",
+      "score": 0.9988
+    },
+    {
+      "model": "evolve",
+      "score": 0.9719
+    },
+    {
+      "model": "graft",
+      "score": 0.7766
+    },
+    {
+      "model": "cutup",
+      "score": 0.5753
+    },
+    {
+      "model": "nest",
+      "score": 0.5279
+    },
+    {
+      "model": "markov",
+      "score": 0.2222
+    }
+  ]
+}

@@ -1,0 +1,93 @@
+{
+  "model": "anneal",
+  "text": "A dark stillness elephants from the moon and centuries into the water with one plank, figure sun. The whole is one enormous navel in which no piece is the passing it reflections. He years woman to tree the others, but his branches no space enough to the ship and they name the silence has changed him. Every dark of the search is dragged one by one over thirty wanders until no daylight time remains, yet birds still call it by its number sofa and look it carried them through the same rebuilt. A life frog wells from the pond and centuries into the water with one people, long sound. A naked woman speaks on a red people in the two of a whole.",
+  "score": {
+    "score": 0.9693,
+    "imagination": 0.9693,
+    "readable": 1.0,
+    "surprise": 0.9107,
+    "mixing": 0.9998,
+    "originality": 1.0,
+    "readability": 1.0,
+    "coherence": 1.0,
+    "flesch": 71.8,
+    "words": 57,
+    "sentences": 6
+  },
+  "fragments": [
+    {
+      "id": "harvest.10.2",
+      "kind": "metaphor",
+      "source": "Plato's Cave"
+    },
+    {
+      "id": "art.debuffet_hourloupe",
+      "kind": "painting",
+      "source": "Dubuffet, Hourloupe"
+    },
+    {
+      "id": "book.calvino_baron",
+      "kind": "book",
+      "source": "Italo Calvino, The Baron in the Trees"
+    },
+    {
+      "id": "poem.kabir_guest",
+      "kind": "poem",
+      "source": "Kabir, mystic doha"
+    },
+    {
+      "id": "harvest.4.1",
+      "kind": "metaphor",
+      "source": "the Ship of Theseus as a marriage"
+    },
+    {
+      "id": "art.rousseau_dream",
+      "kind": "painting",
+      "source": "Henri Rousseau, The Dream"
+    },
+    {
+      "id": "book.discworld",
+      "kind": "book",
+      "source": "Terry Pratchett, Discworld"
+    },
+    {
+      "id": "poem.basho_pond",
+      "kind": "poem",
+      "source": "Matsuo Bashō, the old pond haiku"
+    }
+  ],
+  "steps": 250,
+  "trace": [
+    0.7844,
+    0.9042,
+    0.8119,
+    0.928,
+    0.9187
+  ],
+  "compared": [
+    {
+      "model": "anneal",
+      "score": 0.9693
+    },
+    {
+      "model": "evolve",
+      "score": 0.9602
+    },
+    {
+      "model": "graft",
+      "score": 0.8483
+    },
+    {
+      "model": "nest",
+      "score": 0.6129
+    },
+    {
+      "model": "cutup",
+      "score": 0.493
+    },
+    {
+      "model": "markov",
+      "score": 0.481
+    }
+  ]
+}

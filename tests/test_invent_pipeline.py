@@ -80,6 +80,42 @@ def test_bend_prompt_carries_the_kernel_contract():
     assert "kernel(" not in bend_prompt("SEED: x", get_target("physics"), [])
 
 
+_BYTE_ASSUMPTION = "numbers are IEEE doubles and multiply is the primitive"
+
+
+def test_assumption_steering_is_exact_and_opt_in():
+    from crazyai.pipeline.invent_prompts import bend_prompt, immerse_prompt
+    from crazyai.targets import get_target
+    tgt = get_target("matmul")
+    hint = tgt.assumption_hints[_BYTE_ASSUMPTION]
+
+    unhinted = immerse_prompt("world text", tgt, 2)
+    hinted = immerse_prompt("world text", tgt, 2, hint)
+    assert hint not in unhinted and hint in hinted
+
+    unfocused = bend_prompt("SEED: x", tgt, [])
+    focused = bend_prompt("SEED: x", tgt, [], _BYTE_ASSUMPTION)
+    assert "preferring one that breaks this assumption" not in unfocused
+    assert "preferring one that breaks this assumption" in focused and _BYTE_ASSUMPTION in focused
+
+
+def test_assumption_pin_resolves_and_rejects(tmp_path):
+    exact = Invent(seed=1, target="matmul", assumption=_BYTE_ASSUMPTION, archive_dir=tmp_path, force=True, log=None)
+    by_index = Invent(seed=2, target="matmul", assumption="4", archive_dir=tmp_path, force=True, log=None)
+    unset = Invent(seed=3, target="matmul", archive_dir=tmp_path, force=True, log=None)
+    assert exact._pinned_assumption == _BYTE_ASSUMPTION
+    assert by_index._pinned_assumption == _BYTE_ASSUMPTION
+    assert unset._pinned_assumption == ""
+    with pytest.raises(ValueError):
+        Invent(seed=4, target="matmul", assumption="not one of the eight", archive_dir=tmp_path, force=True, log=None)
+
+
+def test_assumption_pin_reaches_seed_json_deterministically(tmp_path):
+    for seed in (10, 11, 12):
+        s = Invent(seed=seed, target="matmul", assumption=4, archive_dir=tmp_path, force=True, log=None).step_seed()
+        assert s["assumption_focus"] == _BYTE_ASSUMPTION
+
+
 def _row(seed, blend_model, discovery, target="matmul"):
     return {"seed": seed, "target": target, "blend_model": blend_model, "depth": 2,
            "assumption_focus": "n^3 multiplications are needed", "discovery": discovery}

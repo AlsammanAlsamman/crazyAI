@@ -1,0 +1,48 @@
+{
+  "seed": 6006,
+  "target": "matmul",
+  "blend_model": "anneal",
+  "depth": 3,
+  "assumption_focus": "numbers are IEEE doubles and multiply is the primitive",
+  "provider": "claudecode",
+  "model": "",
+  "imagination_score": 0.9988,
+  "status": "approx",
+  "value": 0.3965,
+  "prediction": 0.03,
+  "calibration": 0.038,
+  "discovery": 0.3963,
+  "fragments": [
+    "met.mind_machine",
+    "art.klee_twittering",
+    "book.flatland",
+    "poem.mutanabbi_qasida",
+    "met.electricity_water",
+    "art.magritte_castle",
+    "book.borges_aleph",
+    "poem.rumi_reed"
+  ],
+  "rng_log": [
+    {
+      "label": "invent.blend_model",
+      "value": "compare"
+    },
+    {
+      "label": "invent.depth",
+      "value": 3
+    },
+    {
+      "label": "child:invent.world",
+      "value": 422039605
+    }
+  ],
+  "timing_s": {
+    "seed": 0.0,
+    "harvest": 0.0,
+    "world": 0.252,
+    "immerse": 53.389,
+    "bend": 361.742,
+    "measure": 2.038
+  },
+  "total_s": 417.421
+}

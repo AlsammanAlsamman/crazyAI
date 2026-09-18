@@ -171,7 +171,7 @@ def cmd_invent(args) -> int:
     failures = 0
     for i in range(args.n):
         seed = args.seed + i
-        run = Invent(seed=seed, target=args.target, blend=args.blend, harvest=args.harvest,
+        run = Invent(seed=seed, target=args.target, blend=args.blend, assumption=args.assumption, harvest=args.harvest,
                      force=args.force, archive_dir=Path(args.archive), immerse_mode=args.immerse_mode,
                      bias_from_history=args.bias_from_history, bias_min_samples=args.bias_min_samples,
                      evolve_corpus=args.evolve_corpus)
@@ -274,6 +274,9 @@ def build_parser() -> argparse.ArgumentParser:
     iv.add_argument("--n", type=int, default=1, help="number of consecutive seeds")
     iv.add_argument("--target", default="matmul", choices=TARGETS)
     iv.add_argument("--blend", default="", choices=ALL_MODELS + ["compare", ""], help="blend model (default: seeded draw)")
+    iv.add_argument("--assumption", default="", help="pin assumption_focus for the batch: exact text from the target's "
+                    "assumptions, or its 0-based index (default: seeded draw, optionally biased); e.g. --assumption 4 "
+                    "for matmul's 'numbers are IEEE doubles and multiply is the primitive'")
     iv.add_argument("--harvest", type=int, default=0, help="fragments the AI adds to the corpus first")
     iv.add_argument("--immerse-mode", default="direct", choices=["direct", "twopass"],
                     help="twopass: a sensory 'sketch' call before immersion (one extra model call)")

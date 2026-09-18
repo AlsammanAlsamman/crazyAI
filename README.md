@@ -265,6 +265,83 @@ OpenBLAS ahead (399 vs. 393). **Competitive with OpenBLAS, not a clean win**
 like seed 42's consistent, non-overlapping ~25-30 % margin. A real,
 correct, second-best kernel; not a second "beats OpenBLAS" headline.
 
+### Fourth run: pushing to the byte level
+
+Every earlier run left `assumption_focus` to a seeded draw across all 8 of
+matmul's silent assumptions. One of them -
+*"numbers are IEEE doubles and multiply is the primitive"* - is exactly
+the byte/bit-level angle, but nothing let a batch actually target it, and
+even when a run drew it by chance, neither Claude call that mattered
+(`immerse`, `bend`) received it strongly enough to steer toward it
+specifically. Fixed both: `--assumption` (exact text or an index, e.g.
+`--assumption 4`) pins it for a batch; the immersion prompt gets an
+in-world-safe nudge toward that assumption when pinned, and the engineer's
+seed-choice step is told to prefer whichever of the three `SEED:`s
+actually breaks it. Both are opt-in - unpinned runs render byte-identical
+prompts to before, confirmed by test and by every archived run before this
+one still reproducing unchanged.
+
+**The fair baseline first.** Of this lab's three existing low-precision
+kernels, only one - `approx_int16_madd` (int16 fixed-point quantization) -
+actually solves the same problem crazyai's harness tests (general random
+doubles in `[0,1)`). The other two, read directly:
+`crazy_kronecker_int` assumes integer entries 0-15 (`(int)A[...]` would
+truncate every real double to 0), `crazy_bitpack_binary` assumes 0/1
+matrices (every entry of a real double is nonzero, so it'd compute a
+constant) - both solve a different, easier problem, not a fair comparison
+here. Ported `approx_int16_madd` into `kernel_bench`'s own contract
+(`examples/08_baseline_approx_int16.py`) and re-measured it on this
+machine, not quoted from the old laptop: **value = 1.15** (69.8 GFLOP/s at
+n = 512, `approx`, 9-bit quantization error).
+
+**The pilot**: `crazyai invent --seed 6001 --n 8 --target matmul --assumption 4 --provider claudecode`.
+
+| seed | status | value | the idea |
+|---|---|---|---|
+| 6001 | exact | 0.003 | double → 14 base-16 "knots" (full 53-bit mantissa), every knot-pair from a carved lookup table, explicit carries |
+| 6002 | exact | 0.033 | 4× 16-bit mantissa-limb lookups (quarter-square integer multiplication) |
+| 6003 | exact | 0.006 | 7 base-256 limbs, 49 lookups into a 64 KiB table, explicit carry cascade |
+| **6004** | **approx** | **3.10** | double → two float32 "splinters" (hi + residual lo); `a·b ≈ ah·bh + ah·bl + al·bh`, `al·bl` dropped |
+| 6005 | exact | 0.027 | 7 base-256 limbs, 256×256 lookup table, 128-bit integer accumulator |
+| 6006 | approx | 0.40 | 2-byte (hi, lo) fixed-point digits, 256×256 lookup table, smallest cross-term dropped |
+| 6007 | approx | 0.036 | 8 leading mantissa bits → one 256×256-entry array read (~16 bits retained significance) |
+| **6008** | **exact** | **2.57** | double → two float32 splinters, Karatsuba-style `ahi·bhi + ahi·blo + alo·bhi` |
+
+**Steering worked completely**: all 8 of 8 seeds' engineers named assumption
+4 as `ASSUMPTION BROKEN`, not a random mix of the other 7 - the wiring fix
+did what it was supposed to. **Two of eight beat the baseline** (seeds
+6004 and 6008, re-verified over 3 repeated measurements each: consistently
+~3.0-3.5 and ~2.4-2.6). Both were re-checked at n = 1024 too: 6004 held
+~223-235 GFLOP/s (error ~3×10⁻⁷, `approx`), 6008 held ~85-88 GFLOP/s at
+essentially machine-epsilon error (~2×10⁻¹⁶, correctly scored `exact` -
+the dropped `alo·blo` term really is negligible at that split point).
+
+**The honest pattern**: every kernel that took "byte-level" the most
+*literally* - decomposing a double into small integer limbs and looking up
+products in a precomputed table - was dramatically **slower** than the
+blocked baseline (2.5× to 333× slower), not faster. Lookup-table dispatch
+plus explicit carry logic costs more per element than a single hardware
+FMA, even though the "operation count" framing sounds cheaper. The two
+that actually won took a **milder** reading of the same assumption -
+splitting a double into two float32 "splinters" instead of many small
+integer limbs, computing in float32 (2× the SIMD width of a double) and
+reassembling - which is structurally close to a known numerical technique
+(Dekker/TwoSum-style compensated splitting for extended precision from
+lower-precision hardware), arrived at here independently through a
+"tiered splinters" / "bead-string" metaphor rather than by naming it. Seed
+6004's own code comment states the mechanism plainly: *"the multiply
+'meeting' happens splinter-to-splinter (float32 × float32), not
+double-to-double... the al·bl term (~2⁻⁴⁸ relative) is dropped - a
+stated, not exact, result."*
+
+**In proportion**: 85-235 GFLOP/s is well below this project's best
+double-precision kernels (seed 3 at ~280, seed 42 at ~395-470) and below
+real OpenBLAS (~370) - this run wasn't competing on that axis. The
+question asked was narrower and answered directly: pinning and steering
+toward the byte/precision-level assumption works, and two of eight tries
+beat the one existing hand-built low-precision kernel that's actually
+comparable, using an idea nobody asked for by name.
+
 ### Matrix multiplication: the best kernels found so far
 
 ~29 real seeds in, across three batches. These are the top three by
@@ -692,3 +769,13 @@ O(n³) sum as the textbook algorithm, reordered for registers/cache - not a
 different algorithm), plus Strassen's algorithm from the sister
 `matrixmultiply` repo as the one place in the project the operation count
 itself changes. No code changes.
+
+v0.2.6 adds `--assumption` (pin `assumption_focus` for a batch instead of a
+seeded draw across all 8 of matmul's silent assumptions) and wires it into
+both `immerse_prompt` and `bend_prompt` - previously drawn but barely
+used downstream, so pinning alone wouldn't have steered anything. Both
+opt-in, byte-identical prompts when unset. Used it to steer a real batch
+toward the byte/precision-level assumption - see "Fourth run" above:
+steering worked 8/8, and 2/8 beat the one existing low-precision kernel
+that's actually comparable, via a compensated float32-splitting idea
+nobody named going in.

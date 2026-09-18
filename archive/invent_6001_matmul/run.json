@@ -1,0 +1,48 @@
+{
+  "seed": 6001,
+  "target": "matmul",
+  "blend_model": "evolve",
+  "depth": 3,
+  "assumption_focus": "numbers are IEEE doubles and multiply is the primitive",
+  "provider": "claudecode",
+  "model": "",
+  "imagination_score": 0.9864,
+  "status": "exact",
+  "value": 0.003,
+  "prediction": 0.003,
+  "calibration": 1.0,
+  "discovery": 0.003,
+  "fragments": [
+    "harvest.4.1",
+    "art.goya_sleep",
+    "harvest.6.0",
+    "poem.rilke_panther",
+    "met.argument_war",
+    "harvest.3.1",
+    "harvest.8.0",
+    "poem.okigbo_heavensgate"
+  ],
+  "rng_log": [
+    {
+      "label": "invent.blend_model",
+      "value": "compare"
+    },
+    {
+      "label": "invent.depth",
+      "value": 3
+    },
+    {
+      "label": "child:invent.world",
+      "value": 767163394
+    }
+  ],
+  "timing_s": {
+    "seed": 0.0,
+    "harvest": 0.0,
+    "world": 0.265,
+    "immerse": 38.033,
+    "bend": 245.92,
+    "measure": 16.154
+  },
+  "total_s": 300.371
+}

@@ -1,0 +1,13 @@
+{
+  "seed": 6002,
+  "target": "matmul",
+  "blend_model": "anneal",
+  "depth": 2,
+  "assumption_focus": "numbers are IEEE doubles and multiply is the primitive",
+  "bias": {
+    "enabled": false,
+    "min_samples": 20,
+    "samples_seen": 0,
+    "active": false
+  }
+}

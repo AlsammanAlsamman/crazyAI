@@ -1,0 +1,67 @@
+{
+  "model": "anneal",
+  "text": "Time kingship wires and pin-shapes are relearned around its base, sliding labels with no clear act first. He species that empires against his name before comes do, and that child drying on his thieves will pen the thieves he stands. A text is a fabric, monolith from empires of argument. The stroke has no sign against, no violin vineyard — only a distance depending itself liquid village in every clear. Nobody has ever been paid symptom an end. Snow her, a man plow owns hooves hospitality into village, drying her pigment woven by horizonless.",
+  "score": {
+    "score": 0.9859,
+    "imagination": 0.9859,
+    "readable": 1.0,
+    "surprise": 0.9608,
+    "mixing": 0.9973,
+    "originality": 1.0,
+    "readability": 1.0,
+    "coherence": 1.0,
+    "flesch": 60.4,
+    "words": 52,
+    "sentences": 6
+  },
+  "fragments": [
+    {
+      "id": "met.time_money",
+      "kind": "metaphor",
+      "source": "time is money"
+    },
+    {
+      "id": "harvest.7.4",
+      "kind": "painting",
+      "source": "Remedios Varo, Creation of the Birds"
+    },
+    {
+      "id": "harvest.7.3",
+      "kind": "book",
+      "source": "Jorge Amado, by way of Gabriel García Márquez, One Hundred Years of Solitude"
+    },
+    {
+      "id": "poem.darwish_identity",
+      "kind": "poem",
+      "source": "Mahmoud Darwish, \"Identity Card\""
+    },
+    {
+      "id": "met.text_fabric",
+      "kind": "metaphor",
+      "source": "a text is a fabric"
+    },
+    {
+      "id": "harvest.7.1",
+      "kind": "painting",
+      "source": "Yves Tanguy, Indefinite Divisibility"
+    },
+    {
+      "id": "harvest.10.3",
+      "kind": "book",
+      "source": "Ursula K. Le Guin, The Left Hand of Darkness"
+    },
+    {
+      "id": "poem.mutanabbi_qasida",
+      "kind": "poem",
+      "source": "Al-Mutanabbi, heroic ode (qasida)"
+    }
+  ],
+  "steps": 250,
+  "trace": [
+    0.6596,
+    0.9282,
+    0.9183,
+    0.9372,
+    0.9313
+  ]
+}

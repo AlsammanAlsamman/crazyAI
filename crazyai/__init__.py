@@ -11,7 +11,7 @@ from crazyai.rng import RunRNG
 from crazyai.toolkit.registry import Toolkit, build_toolkit
 
 __all__ = ["RunRNG", "Toolkit", "build_toolkit", "Run"]
-__version__ = "0.2.5"
+__version__ = "0.2.6"
 
 
 def __getattr__(name):  # lazy: the pipeline pulls in providers, which are heavier

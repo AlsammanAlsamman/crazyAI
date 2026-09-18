@@ -1,0 +1,95 @@
+{
+  "model": "markov",
+  "text": "In this city a caste of beings called Remade carry punishments welded into their bodies. Out of her two palms, she insists, a cat with a red ball, fish flying, a debtor fused waist-down into a steam engine that never stops walking. A thief given brass crab legs instead of arms, a cat with a red ball, fish flying, a cat with a red ball, fish flying, a musical note with legs. Memory is a palace overnight. A single bone-colored monolith stands on a flat pink desert under no sky, its top already in cloud while its lower arches are still being built.",
+  "score": {
+    "score": 0.473,
+    "imagination": 0.473,
+    "readable": 1.0,
+    "surprise": 0.1333,
+    "mixing": 0.8835,
+    "originality": 0.8983,
+    "readability": 1.0,
+    "coherence": 1.0,
+    "flesch": 71.1,
+    "words": 61,
+    "sentences": 5
+  },
+  "fragments": [
+    {
+      "id": "met.city_machine",
+      "kind": "metaphor",
+      "source": "the city is a machine"
+    },
+    {
+      "id": "art.miro_carnival",
+      "kind": "painting",
+      "source": "Miró, Carnival of Harlequin"
+    },
+    {
+      "id": "harvest.4.0",
+      "kind": "book",
+      "source": "China Miéville, Perdido Street Station"
+    },
+    {
+      "id": "poem.ghalib_moth",
+      "kind": "poem",
+      "source": "Ghalib, ghazal on the moth and the candle"
+    },
+    {
+      "id": "met.memory_palace",
+      "kind": "metaphor",
+      "source": "memory is a palace"
+    },
+    {
+      "id": "harvest.6.2",
+      "kind": "painting",
+      "source": "Yves Tanguy, Indefinite Divisibility"
+    },
+    {
+      "id": "harvest.9.0",
+      "kind": "book",
+      "source": "Jeff VanderMeer, Annihilation"
+    },
+    {
+      "id": "poem.libai_moon",
+      "kind": "poem",
+      "source": "Li Bai, \"Drinking Alone Under the Moon\""
+    },
+    {
+      "id": "met.data_oil",
+      "kind": "metaphor",
+      "source": "data is oil"
+    },
+    {
+      "id": "art.ernst_europe",
+      "kind": "painting",
+      "source": "Max Ernst, Europe After the Rain"
+    },
+    {
+      "id": "book.arabian_nights",
+      "kind": "book",
+      "source": "One Thousand and One Nights"
+    },
+    {
+      "id": "poem.farrokhzad_birth",
+      "kind": "poem",
+      "source": "Forough Farrokhzad, \"Another Birth\""
+    },
+    {
+      "id": "met.love_fire",
+      "kind": "metaphor",
+      "source": "love is fire"
+    },
+    {
+      "id": "art.bruegel_babel",
+      "kind": "painting",
+      "source": "Bruegel, The Tower of Babel"
+    },
+    {
+      "id": "book.calvino_baron",
+      "kind": "book",
+      "source": "Italo Calvino, The Baron in the Trees"
+    }
+  ],
+  "order": 2
+}

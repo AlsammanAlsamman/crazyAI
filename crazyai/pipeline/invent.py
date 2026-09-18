@@ -54,6 +54,7 @@ class Invent:
     seed: int
     target: str = "matmul"
     blend: str = ""                    # cutup|markov|graft|nest|anneal|evolve|compare|"" (seeded draw)
+    assumption: str = ""               # pin assumption_focus: exact text or 0-based index into target.assumptions ("" = seeded draw)
     harvest: int = 0                   # fragments to ask the AI for before blending (0 = bundled corpus only)
     archive_dir: Path = field(default_factory=lambda: Path(ARCHIVE_DIR))
     force: bool = False
@@ -66,11 +67,24 @@ class Invent:
 
     def __post_init__(self) -> None:
         self.tgt: Target = get_target(self.target)
+        self._pinned_assumption = self._resolve_assumption(self.assumption)
         self.dir = Path(self.archive_dir) / f"invent_{self.seed}_{self.target}"
         self.dir.mkdir(parents=True, exist_ok=True)
         self.toolkit: Toolkit = build_toolkit(self.seed, ctx={"run_dir": str(self.dir), "seed": self.seed})
         self._t0 = time.time()
         self._timing: dict[str, float] = {}
+
+    def _resolve_assumption(self, raw: str) -> str:
+        raw = str(raw).strip() if raw not in (None, "") else ""
+        if not raw:
+            return ""
+        assumptions = self.tgt.assumptions
+        if raw in assumptions:
+            return raw
+        if raw.lstrip("-").isdigit() and 0 <= int(raw) < len(assumptions):
+            return assumptions[int(raw)]
+        raise ValueError(f"--assumption {raw!r} matches none of target {self.target!r}'s assumptions:\n" +
+                         "\n".join(f"  {i}: {a}" for i, a in enumerate(assumptions)))
 
     def _have(self, name: str) -> bool:
         return (self.dir / name).exists() and not self.force
@@ -104,7 +118,7 @@ class Invent:
         model = self.blend or rng.choice("invent.blend_model", blend_arms, weights=w_blend)
         depth = (rng.choice("invent.depth", depth_arms, weights=w_depth) if w_depth is not None
                 else rng.integer("invent.depth", 1, 3))
-        assumption = rng.choice("invent.assumption", assumption_arms, weights=w_assumption)
+        assumption = self._pinned_assumption or rng.choice("invent.assumption", assumption_arms, weights=w_assumption)
         bias = {"enabled": self.bias_from_history, "min_samples": self.bias_min_samples, "samples_seen": samples_seen,
                "active": any(w is not None for w in (w_blend, w_depth, w_assumption))}
         s = {"seed": self.seed, "target": self.target, "blend_model": model, "depth": depth,
@@ -155,13 +169,14 @@ class Invent:
     def step_immerse(self, provider: Provider, world: dict[str, Any], seed: dict[str, Any]) -> str:
         if self._have("ideas.md"):
             return (self.dir / "ideas.md").read_text(encoding="utf-8")
+        hint = self.tgt.assumption_hints.get(seed["assumption_focus"], "") if self._pinned_assumption else ""
         if self.immerse_mode == "twopass":
             sketch = provider.agent(P.SKETCH_SYSTEM, P.sketch_prompt(world["text"]), self.toolkit, [], 1)
-            prompt = P.immerse_prompt(world["text"], self.tgt, seed["depth"]) + P.sketch_followup(sketch.text)
+            prompt = P.immerse_prompt(world["text"], self.tgt, seed["depth"], hint) + P.sketch_followup(sketch.text)
             res = provider.agent(P.IMMERSE_SYSTEM, prompt, self.toolkit, [], 1)
             text = f"## SKETCH\n\n{sketch.text.strip()}\n\n## TELLING\n\n{res.text.strip()}\n"
         else:
-            res = provider.agent(P.IMMERSE_SYSTEM, P.immerse_prompt(world["text"], self.tgt, seed["depth"]), self.toolkit, [], 1)
+            res = provider.agent(P.IMMERSE_SYSTEM, P.immerse_prompt(world["text"], self.tgt, seed["depth"], hint), self.toolkit, [], 1)
             text = res.text
         (self.dir / "ideas.md").write_text(text, encoding="utf-8")
         seeds = _SEED.findall(text)
@@ -169,12 +184,13 @@ class Invent:
         return text
 
     # -- 5. bend -------------------------------------------------------------------------
-    def step_bend(self, provider: Provider, ideas: str) -> dict[str, Any]:
+    def step_bend(self, provider: Provider, ideas: str, seed: dict[str, Any]) -> dict[str, Any]:
         if self._have("artifact.md"):
             art = (self.dir / "artifact.md").read_text(encoding="utf-8")
         else:
             names = self.toolkit.names(families=self.tgt.measure_families + ["unconventional", "symbolic"])
-            res = provider.agent(P.BEND_SYSTEM, P.bend_prompt(ideas, self.tgt, names), self.toolkit, names, self.max_tool_turns)
+            focus = seed["assumption_focus"] if self._pinned_assumption else ""
+            res = provider.agent(P.BEND_SYSTEM, P.bend_prompt(ideas, self.tgt, names, focus), self.toolkit, names, self.max_tool_turns)
             art = res.text
             (self.dir / "artifact.md").write_text(art, encoding="utf-8")
             _dump(self.dir / "bend_calls.json", {"turns": res.turns, "stop_reason": res.stop_reason, "usage": res.usage, "calls": res.tool_calls})
@@ -256,7 +272,7 @@ class Invent:
         self._timed("harvest", self.step_harvest, provider)
         world = self._timed("world", self.step_world, seed)
         ideas = self._timed("immerse", self.step_immerse, provider, world, seed)
-        bent = self._timed("bend", self.step_bend, provider, ideas)
+        bent = self._timed("bend", self.step_bend, provider, ideas, seed)
         measure = self._timed("measure", self.step_measure, bent, world)
         return self._timed("archive", self.step_archive, provider, seed, world, measure)
 
