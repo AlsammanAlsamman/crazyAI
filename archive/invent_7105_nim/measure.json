@@ -1,0 +1,66 @@
+{
+  "target": "nim",
+  "artifact": "kernel",
+  "imagination": {
+    "score": 0.6151,
+    "imagination": 0.6151,
+    "readable": 1.0,
+    "surprise": 0.2329,
+    "mixing": 0.9991,
+    "originality": 1.0,
+    "readability": 1.0,
+    "coherence": 1.0,
+    "flesch": 62.0,
+    "words": 147,
+    "sentences": 14
+  },
+  "measurement": {
+    "results": [
+      {
+        "n": 3,
+        "time": 4.2197e-08,
+        "ref_time": 1.0564999e-09,
+        "trials": 300,
+        "n_positions": 289,
+        "frac_correct": 1.0,
+        "frac_legal": 1.0,
+        "speedup_vs_dp": 0.025,
+        "status": "exact"
+      },
+      {
+        "n": 5,
+        "time": 5.0512e-08,
+        "ref_time": 1.31100009e-09,
+        "trials": 300,
+        "n_positions": 296,
+        "frac_correct": 1.0,
+        "frac_legal": 1.0,
+        "speedup_vs_dp": 0.026,
+        "status": "exact"
+      },
+      {
+        "n": 8,
+        "time": 4.35275001e-08,
+        "ref_time": 1.05500003e-09,
+        "trials": 300,
+        "n_positions": 288,
+        "frac_correct": 1.0,
+        "frac_legal": 1.0,
+        "speedup_vs_dp": 0.024,
+        "status": "exact"
+      }
+    ],
+    "largest_n": 8,
+    "status": "exact",
+    "frac_correct": 1.0,
+    "speedup_vs_dp": 0.024,
+    "value": 0.024,
+    "prediction_target": 0.024,
+    "reading": "value = speedup vs. the XOR-rule reference x fraction of winnable positions where a winning move was found - 1.0 fraction is Bouton-optimal, not just legal."
+  },
+  "value": 0.024,
+  "status": "exact",
+  "calibration": 0.2,
+  "prediction": 0.12,
+  "discovery": 0.0194
+}

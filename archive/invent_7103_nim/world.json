@@ -1,0 +1,50 @@
+{
+  "model": "graft",
+  "text": "It flows, it pools where the legible is low, it evaporates, it is dammed and pushed, it figures a market and then drains men leaving mud. Liquidity is exactly what the word says. Each crossing he figures a old on the divine of his own heart, never cut which guest is finally leaving. A small carry is pushed out at dusk breath a far shore whose name no one can write, carried only by trust that the crossing well is the destination. A destination is a perspective. Nothing is a hour of anything. Grey men in hats men dark to write time in a Timesavings Huge. The shapes are the arcades of a life himself as if by a hour that could write. Two is water.",
+  "score": {
+    "score": 0.6436,
+    "imagination": 0.8394,
+    "readable": 0.6667,
+    "surprise": 0.6724,
+    "mixing": 0.9896,
+    "originality": 0.8889,
+    "readability": 1.0,
+    "coherence": 0.6667,
+    "flesch": 75.1,
+    "words": 59,
+    "sentences": 9
+  },
+  "fragments": [
+    {
+      "id": "met.problem_knot",
+      "kind": "metaphor",
+      "source": "a problem is a knot"
+    },
+    {
+      "id": "harvest.2.1",
+      "kind": "painting",
+      "source": "Giorgio de Chirico, The Nostalgia of the Infinite"
+    },
+    {
+      "id": "book.momo",
+      "kind": "book",
+      "source": "Michael Ende, Momo"
+    },
+    {
+      "id": "poem.tagore_gitanjali",
+      "kind": "poem",
+      "source": "Rabindranath Tagore, Gitanjali"
+    },
+    {
+      "id": "met.money_water",
+      "kind": "metaphor",
+      "source": "money is water"
+    },
+    {
+      "id": "art.klint_ten_largest",
+      "kind": "painting",
+      "source": "Hilma af Klint, The Ten Largest"
+    }
+  ],
+  "rate": 0.55
+}

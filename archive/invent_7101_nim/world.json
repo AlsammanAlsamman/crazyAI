@@ -1,0 +1,93 @@
+{
+  "model": "anneal",
+  "text": "Somewhere a note walks trees whose claims are apprentice and severed pages, and a reed bubble where fish iron between shelves that never burn wet. The candle, tower, only plays grass and embers dusk with each upside-down. Every move is a truest on a lament, and burn is a music. Love is a soil. Love is a moth. Somewhere a soil stars years whose trees are old and banked holds, and a buried bubble where bubble body between heads that never got meanwhile.",
+  "score": {
+    "score": 0.999,
+    "imagination": 0.999,
+    "readable": 1.0,
+    "surprise": 1.0,
+    "mixing": 0.997,
+    "originality": 1.0,
+    "readability": 1.0,
+    "coherence": 1.0,
+    "flesch": 75.8,
+    "words": 44,
+    "sentences": 6
+  },
+  "fragments": [
+    {
+      "id": "met.argument_war",
+      "kind": "metaphor",
+      "source": "argument is war"
+    },
+    {
+      "id": "art.bosch_delights",
+      "kind": "painting",
+      "source": "Bosch, The Garden of Earthly Delights"
+    },
+    {
+      "id": "harvest.9.1",
+      "kind": "book",
+      "source": "Gene Wolfe, The Book of the New Sun"
+    },
+    {
+      "id": "poem.ghalib_moth",
+      "kind": "poem",
+      "source": "Ghalib, ghazal on the moth and the candle"
+    },
+    {
+      "id": "met.love_fire",
+      "kind": "metaphor",
+      "source": "love is fire"
+    },
+    {
+      "id": "art.chagall_village",
+      "kind": "painting",
+      "source": "Chagall, I and the Village"
+    },
+    {
+      "id": "book.narnia_creation",
+      "kind": "book",
+      "source": "C. S. Lewis, The Magician's Nephew"
+    },
+    {
+      "id": "poem.rumi_reed",
+      "kind": "poem",
+      "source": "Rumi, \"Song of the Reed\" (opening of the Masnavi)"
+    }
+  ],
+  "steps": 250,
+  "trace": [
+    0.5992,
+    0.9334,
+    0.9731,
+    0.9053,
+    0.9727
+  ],
+  "compared": [
+    {
+      "model": "anneal",
+      "score": 0.999
+    },
+    {
+      "model": "evolve",
+      "score": 0.9827
+    },
+    {
+      "model": "graft",
+      "score": 0.5429
+    },
+    {
+      "model": "markov",
+      "score": 0.5011
+    },
+    {
+      "model": "cutup",
+      "score": 0.4617
+    },
+    {
+      "model": "nest",
+      "score": 0.4161
+    }
+  ]
+}

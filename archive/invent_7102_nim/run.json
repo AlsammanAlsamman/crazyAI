@@ -1,0 +1,50 @@
+{
+  "seed": 7102,
+  "target": "nim",
+  "blend_model": "cutup",
+  "depth": 1,
+  "assumption_focus": "the game must be played out to know who wins",
+  "provider": "claudecode",
+  "model": "",
+  "imagination_score": 0.5257,
+  "status": "exact",
+  "value": 0.025,
+  "prediction": 1000.0,
+  "calibration": 0.0,
+  "discovery": 0.0191,
+  "fragments": [
+    "met.data_oil",
+    "art.delvaux_night",
+    "harvest.7.0",
+    "poem.libai_moon",
+    "met.life_journey",
+    "art.kahlo_two"
+  ],
+  "rng_log": [
+    {
+      "label": "invent.blend_model",
+      "value": "cutup"
+    },
+    {
+      "label": "invent.depth",
+      "value": 1
+    },
+    {
+      "label": "invent.assumption",
+      "value": "the game must be played out to know who wins"
+    },
+    {
+      "label": "child:invent.world",
+      "value": 758653545
+    }
+  ],
+  "timing_s": {
+    "seed": 0.002,
+    "harvest": 0.0,
+    "world": 0.01,
+    "immerse": 25.36,
+    "bend": 121.074,
+    "measure": 0.579
+  },
+  "total_s": 147.025
+}

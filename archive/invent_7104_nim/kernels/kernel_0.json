@@ -1,0 +1,38 @@
+{
+  "results": [
+    {
+      "n": 3,
+      "time": 4.19230001e-08,
+      "ref_time": 1.0564999e-09,
+      "trials": 300,
+      "n_positions": 289,
+      "frac_correct": 1.0,
+      "frac_legal": 1.0,
+      "speedup_vs_dp": 0.025,
+      "status": "exact"
+    },
+    {
+      "n": 5,
+      "time": 4.67465e-08,
+      "ref_time": 1.30300003e-09,
+      "trials": 300,
+      "n_positions": 296,
+      "frac_correct": 1.0,
+      "frac_legal": 1.0,
+      "speedup_vs_dp": 0.028,
+      "status": "exact"
+    },
+    {
+      "n": 8,
+      "time": 4.4859e-08,
+      "ref_time": 1.0564999e-09,
+      "trials": 300,
+      "n_positions": 288,
+      "frac_correct": 1.0,
+      "frac_legal": 1.0,
+      "speedup_vs_dp": 0.024,
+      "status": "exact"
+    }
+  ],
+  "value": 0.024
+}

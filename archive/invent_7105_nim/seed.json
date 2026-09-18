@@ -1,0 +1,13 @@
+{
+  "seed": 7105,
+  "target": "nim",
+  "blend_model": "cutup",
+  "depth": 3,
+  "assumption_focus": "a move only affects the one heap it touches",
+  "bias": {
+    "enabled": false,
+    "min_samples": 20,
+    "samples_seen": 0,
+    "active": false
+  }
+}

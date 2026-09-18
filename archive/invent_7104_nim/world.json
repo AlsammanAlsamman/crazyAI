@@ -1,0 +1,95 @@
+{
+  "model": "markov",
+  "text": "The eyes are two blackberries, wet and watching. Two cities occupy the same woman sit hand in hand. Up close it is only fruit and vegetables and wheat, stacked and bruised and ripening. The image stands for a bride too lovely and too late for any suitor who came looking. Their hearts are exposed and joined by a single artery that runs from one chest to the same streets, the same crossings, the same weather, yet their citizens are trained from childhood to see only their own thirty reflections gathered in a mirror-lake, so that the sought-for king turns out to be the seekers themselves.",
+  "score": {
+    "score": 0.3524,
+    "imagination": 0.4097,
+    "readable": 0.8,
+    "surprise": 0.1224,
+    "mixing": 0.9362,
+    "originality": 0.6,
+    "readability": 1.0,
+    "coherence": 0.8,
+    "flesch": 66.5,
+    "words": 50,
+    "sentences": 5
+  },
+  "fragments": [
+    {
+      "id": "harvest.8.2",
+      "kind": "metaphor",
+      "source": "Plato's Cave"
+    },
+    {
+      "id": "art.debuffet_hourloupe",
+      "kind": "painting",
+      "source": "Dubuffet, Hourloupe"
+    },
+    {
+      "id": "book.neverending_story",
+      "kind": "book",
+      "source": "Michael Ende, The Neverending Story"
+    },
+    {
+      "id": "poem.attar_birds",
+      "kind": "poem",
+      "source": "Attar of Nishapur, \"The Conference of the Birds\""
+    },
+    {
+      "id": "met.problem_knot",
+      "kind": "metaphor",
+      "source": "a problem is a knot"
+    },
+    {
+      "id": "harvest.2.2",
+      "kind": "painting",
+      "source": "Arcimboldo, Vertumnus"
+    },
+    {
+      "id": "book.peter_pan",
+      "kind": "book",
+      "source": "J. M. Barrie, Peter Pan"
+    },
+    {
+      "id": "poem.kabir_thread",
+      "kind": "poem",
+      "source": "Kabir, doha on the hidden thread"
+    },
+    {
+      "id": "met.evolution_ladder",
+      "kind": "metaphor",
+      "source": "evolution is a ladder / a tree"
+    },
+    {
+      "id": "harvest.8.4",
+      "kind": "painting",
+      "source": "Yves Tanguy, Indefinite Divisibility"
+    },
+    {
+      "id": "harvest.2.4",
+      "kind": "book",
+      "source": "China Miéville, The City & The City"
+    },
+    {
+      "id": "poem.sappho_apple",
+      "kind": "poem",
+      "source": "Sappho, fragment on the unreached apple"
+    },
+    {
+      "id": "met.text_fabric",
+      "kind": "metaphor",
+      "source": "a text is a fabric"
+    },
+    {
+      "id": "art.kahlo_two",
+      "kind": "painting",
+      "source": "Frida Kahlo, The Two Fridas"
+    },
+    {
+      "id": "book.moomins",
+      "kind": "book",
+      "source": "Tove Jansson, Moomin books"
+    }
+  ],
+  "order": 2
+}
