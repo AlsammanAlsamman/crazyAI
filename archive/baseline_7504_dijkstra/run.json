@@ -1,0 +1,16 @@
+{
+  "seed": 7504,
+  "target": "dijkstra",
+  "condition": "baseline",
+  "provider": "claudecode",
+  "model": "",
+  "status": "exact",
+  "value": 1.057,
+  "prediction": 1.3,
+  "calibration": 0.813,
+  "timing_s": {
+    "bend": 87.363,
+    "measure": 0.574
+  },
+  "total_s": 87.937
+}
