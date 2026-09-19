@@ -1,0 +1,13 @@
+{
+  "seed": 7705,
+  "target": "rs_encode",
+  "blend_model": "compare",
+  "depth": 3,
+  "assumption_focus": "every message token must be folded into the seal individually, one at a time",
+  "bias": {
+    "enabled": false,
+    "min_samples": 20,
+    "samples_seen": 0,
+    "active": false
+  }
+}

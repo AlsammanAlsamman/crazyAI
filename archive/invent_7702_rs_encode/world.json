@@ -1,0 +1,50 @@
+{
+  "model": "graft",
+  "text": "A cities birth inspects casting into rivers, into woman's, into other women's bodies, as if calendar were a mason hallway of returning keeps. A wider circle of snake pieces tightens from every edge at once, closing in like today name tiny. Snow sworn stops running take and outweigh rises name on its own tail like a person circle. The solid turns like the great carved loyalty shell of the Aztecs, one backs depending of verses that rivers by king to its own lasting male. The prisoners birth the shadows, already over them, back them bodies — never knowing a fire, a sun, or a person of trunk keeps exists at their prisoners. A carved flickering line keeps alone at the center of a cross-marked board, carved loyalty by a tower of his own give guard. No glacial is higher, every twig alive today is exactly as old as every other, and the snake is not a fixed-sex but a crowd of stone ancestors closing the living up.",
+  "score": {
+    "score": 0.8769,
+    "imagination": 0.901,
+    "readable": 0.9618,
+    "surprise": 0.75,
+    "mixing": 0.9753,
+    "originality": 1.0,
+    "readability": 0.9618,
+    "coherence": 1.0,
+    "flesch": 58.1,
+    "words": 89,
+    "sentences": 7
+  },
+  "fragments": [
+    {
+      "id": "harvest.2.0",
+      "kind": "metaphor",
+      "source": "Plato's Cave"
+    },
+    {
+      "id": "art.bruegel_babel",
+      "kind": "painting",
+      "source": "Bruegel, The Tower of Babel"
+    },
+    {
+      "id": "harvest.10.3",
+      "kind": "book",
+      "source": "Ursula K. Le Guin, The Left Hand of Darkness"
+    },
+    {
+      "id": "poem.paz_sunstone",
+      "kind": "poem",
+      "source": "Octavio Paz, \"Sunstone\""
+    },
+    {
+      "id": "game.hnefatafl_king",
+      "kind": "game",
+      "source": "Hnefatafl (Viking king's-table board game)"
+    },
+    {
+      "id": "met.evolution_ladder",
+      "kind": "metaphor",
+      "source": "evolution is a ladder / a tree"
+    }
+  ],
+  "rate": 0.55
+}

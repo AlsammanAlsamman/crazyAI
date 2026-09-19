@@ -1,0 +1,13 @@
+{
+  "seed": 7704,
+  "target": "rs_encode",
+  "blend_model": "nest",
+  "depth": 2,
+  "assumption_focus": "the strange arithmetic has no shortcut table, only the shift-reduce rule",
+  "bias": {
+    "enabled": false,
+    "min_samples": 20,
+    "samples_seen": 0,
+    "active": false
+  }
+}

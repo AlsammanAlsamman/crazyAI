@@ -1,0 +1,100 @@
+{
+  "model": "evolve",
+  "text": "Eating a fire grounds you party enough to tell the hanging. Prisoners smell lily of plumbing, and the hanging crosses quietly passage the walls around him. Many breaks close on his eyes and ankles at once, murmuring him down into red earth. Many keeps close on his heads and ankles at once, flickering him down into speed earth. Eating a tea dominates you party halo to quiet the ceiling.",
+  "score": {
+    "score": 0.9878,
+    "imagination": 0.9878,
+    "readable": 1.0,
+    "surprise": 0.9722,
+    "mixing": 0.9913,
+    "originality": 1.0,
+    "readability": 1.0,
+    "coherence": 1.0,
+    "flesch": 71.5,
+    "words": 37,
+    "sentences": 5
+  },
+  "fragments": [
+    {
+      "id": "harvest.10.2",
+      "kind": "metaphor",
+      "source": "Plato's Cave"
+    },
+    {
+      "id": "art.bosch_delights",
+      "kind": "painting",
+      "source": "Bosch, The Garden of Earthly Delights"
+    },
+    {
+      "id": "harvest.10.3",
+      "kind": "book",
+      "source": "Ursula K. Le Guin, The Left Hand of Darkness"
+    },
+    {
+      "id": "poem.neruda_walking",
+      "kind": "poem",
+      "source": "Pablo Neruda, \"Walking Around\""
+    },
+    {
+      "id": "game.kabaddi_chant",
+      "kind": "game",
+      "source": "Kabaddi, South Asian field game"
+    },
+    {
+      "id": "met.text_fabric",
+      "kind": "metaphor",
+      "source": "a text is a fabric"
+    },
+    {
+      "id": "art.kandinsky_composition",
+      "kind": "painting",
+      "source": "Kandinsky, Composition VIII"
+    },
+    {
+      "id": "book.alice_wonderland",
+      "kind": "book",
+      "source": "Lewis Carroll, Alice in Wonderland"
+    }
+  ],
+  "generations": 12,
+  "history": [
+    0.8135,
+    0.8533,
+    0.8533,
+    0.8714,
+    0.8714,
+    0.92,
+    0.92,
+    0.9342,
+    0.9469,
+    0.9469,
+    0.9878,
+    0.9878
+  ],
+  "compared": [
+    {
+      "model": "evolve",
+      "score": 0.9878
+    },
+    {
+      "model": "anneal",
+      "score": 0.9746
+    },
+    {
+      "model": "graft",
+      "score": 0.8522
+    },
+    {
+      "model": "markov",
+      "score": 0.5734
+    },
+    {
+      "model": "cutup",
+      "score": 0.5537
+    },
+    {
+      "model": "nest",
+      "score": 0.5175
+    }
+  ]
+}

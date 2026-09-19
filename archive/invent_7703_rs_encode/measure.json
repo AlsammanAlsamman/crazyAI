@@ -1,0 +1,62 @@
+{
+  "target": "rs_encode",
+  "artifact": "kernel",
+  "imagination": {
+    "score": 0.9794,
+    "imagination": 0.9794,
+    "readable": 1.0,
+    "surprise": 0.9508,
+    "mixing": 0.9879,
+    "originality": 1.0,
+    "readability": 1.0,
+    "coherence": 1.0,
+    "flesch": 65.7,
+    "words": 62,
+    "sentences": 6
+  },
+  "measurement": {
+    "results": [
+      {
+        "k": 1024,
+        "n": 1040,
+        "time": 5.99946361e-07,
+        "ref_time": 4.12000227e-05,
+        "mismatches": 16,
+        "correct": false,
+        "speedup_vs_naive": 68.673,
+        "status": "WRONG"
+      },
+      {
+        "k": 8192,
+        "n": 8208,
+        "time": 5.09998063e-06,
+        "ref_time": 0.000332899974,
+        "mismatches": 16,
+        "correct": false,
+        "speedup_vs_naive": 65.275,
+        "status": "WRONG"
+      },
+      {
+        "k": 65536,
+        "n": 65552,
+        "time": 0.000171800028,
+        "ref_time": 0.00254860002,
+        "mismatches": 16,
+        "correct": false,
+        "speedup_vs_naive": 14.835,
+        "status": "WRONG"
+      }
+    ],
+    "largest_n": 65536,
+    "status": "WRONG",
+    "speedup_vs_naive": 14.835,
+    "value": 0.0,
+    "prediction_target": 14.835,
+    "reading": "value = speedup vs. a reference naive shift-and-reduce LFSR encoder, 0 if the parity bytes don't match exactly."
+  },
+  "value": 0.0,
+  "status": "WRONG",
+  "calibration": 0.371,
+  "prediction": 40.0,
+  "discovery": 0.0
+}

@@ -1,0 +1,53 @@
+{
+  "seed": 7704,
+  "target": "rs_encode",
+  "blend_model": "nest",
+  "depth": 2,
+  "assumption_focus": "the strange arithmetic has no shortcut table, only the shift-reduce rule",
+  "provider": "claudecode",
+  "model": "",
+  "imagination_score": 0.7179,
+  "status": "exact",
+  "value": 11.086,
+  "prediction": 20.0,
+  "calibration": 0.554,
+  "discovery": 9.5223,
+  "fragments": [
+    "met.mind_machine",
+    "art.rousseau_dream",
+    "book.phantom_tollbooth",
+    "poem.rumi_reed",
+    "game.kabaddi_chant",
+    "met.atom_solar",
+    "art.debuffet_hourloupe",
+    "book.borges_library",
+    "poem.hafez_tavern"
+  ],
+  "rng_log": [
+    {
+      "label": "invent.blend_model",
+      "value": "nest"
+    },
+    {
+      "label": "invent.depth",
+      "value": 2
+    },
+    {
+      "label": "invent.assumption",
+      "value": "the strange arithmetic has no shortcut table, only the shift-reduce rule"
+    },
+    {
+      "label": "child:invent.world",
+      "value": 246798737
+    }
+  ],
+  "timing_s": {
+    "seed": 0.001,
+    "harvest": 0.0,
+    "world": 0.009,
+    "immerse": 70.122,
+    "bend": 199.092,
+    "measure": 0.952
+  },
+  "total_s": 270.174
+}

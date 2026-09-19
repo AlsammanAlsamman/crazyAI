@@ -1,0 +1,53 @@
+{
+  "seed": 7701,
+  "target": "rs_encode",
+  "blend_model": "nest",
+  "depth": 1,
+  "assumption_focus": "every message token must be folded into the seal individually, one at a time",
+  "provider": "claudecode",
+  "model": "",
+  "imagination_score": 0.5393,
+  "status": "exact",
+  "value": 21.181,
+  "prediction": 25.0,
+  "calibration": 0.847,
+  "discovery": 16.302,
+  "fragments": [
+    "met.pyramid_of_crossing_sticks",
+    "art.dali_memory",
+    "harvest.2.3",
+    "poem.sappho_31",
+    "game.marbles_ringer",
+    "harvest.9.3",
+    "art.debuffet_hourloupe",
+    "harvest.9.1",
+    "poem.darwish_identity"
+  ],
+  "rng_log": [
+    {
+      "label": "invent.blend_model",
+      "value": "nest"
+    },
+    {
+      "label": "invent.depth",
+      "value": 1
+    },
+    {
+      "label": "invent.assumption",
+      "value": "every message token must be folded into the seal individually, one at a time"
+    },
+    {
+      "label": "child:invent.world",
+      "value": 1800628543
+    }
+  ],
+  "timing_s": {
+    "seed": 0.0,
+    "harvest": 0.0,
+    "world": 0.065,
+    "immerse": 36.381,
+    "bend": 486.434,
+    "measure": 1.036
+  },
+  "total_s": 523.917
+}

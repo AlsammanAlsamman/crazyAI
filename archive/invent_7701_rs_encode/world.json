@@ -1,0 +1,65 @@
+{
+  "model": "nest",
+  "text": "Inside a next, there is a black, and in a black sky - is drawn as jigsaw cells outlined in black and filled with red. Every a dust in a grass contains waterfalls pour endlessly off the disc's rim into the void. Under a tongue, the world is one continuous puzzle in which no piece is the thing it depicts, and a garden is the only way out.",
+  "score": {
+    "score": 0.5393,
+    "imagination": 0.7035,
+    "readable": 0.6667,
+    "surprise": 0.3793,
+    "mixing": 0.9178,
+    "originality": 1.0,
+    "readability": 1.0,
+    "coherence": 0.6667,
+    "flesch": 74.3,
+    "words": 30,
+    "sentences": 3
+  },
+  "fragments": [
+    {
+      "id": "met.pyramid_of_crossing_sticks",
+      "kind": "metaphor",
+      "source": "devised for crazyAI's Nim target (crossing-sticks framing), 2026"
+    },
+    {
+      "id": "art.dali_memory",
+      "kind": "painting",
+      "source": "Dalí, The Persistence of Memory"
+    },
+    {
+      "id": "harvest.2.3",
+      "kind": "book",
+      "source": "Terry Pratchett, Discworld"
+    },
+    {
+      "id": "poem.sappho_31",
+      "kind": "poem",
+      "source": "Sappho, Fragment 31"
+    },
+    {
+      "id": "game.marbles_ringer",
+      "kind": "game",
+      "source": "Marbles, ringer game (street game, global)"
+    },
+    {
+      "id": "harvest.9.3",
+      "kind": "metaphor",
+      "source": "Plato's Cave"
+    },
+    {
+      "id": "art.debuffet_hourloupe",
+      "kind": "painting",
+      "source": "Dubuffet, Hourloupe"
+    },
+    {
+      "id": "harvest.9.1",
+      "kind": "book",
+      "source": "Gene Wolfe, The Book of the New Sun"
+    },
+    {
+      "id": "poem.darwish_identity",
+      "kind": "poem",
+      "source": "Mahmoud Darwish, \"Identity Card\""
+    }
+  ],
+  "depth": 3
+}

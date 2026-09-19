@@ -1,0 +1,13 @@
+{
+  "seed": 7703,
+  "target": "rs_encode",
+  "blend_model": "compare",
+  "depth": 3,
+  "assumption_focus": "each token combination must be computed from scratch by shifting and reducing",
+  "bias": {
+    "enabled": false,
+    "min_samples": 20,
+    "samples_seen": 0,
+    "active": false
+  }
+}
