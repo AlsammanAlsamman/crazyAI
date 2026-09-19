@@ -1,0 +1,16 @@
+{
+  "seed": 7701,
+  "target": "rs_encode",
+  "condition": "baseline",
+  "provider": "claudecode",
+  "model": "",
+  "status": "exact",
+  "value": 17.09,
+  "prediction": 8.0,
+  "calibration": 0.468,
+  "timing_s": {
+    "bend": 250.852,
+    "measure": 0.973
+  },
+  "total_s": 251.826
+}

@@ -1,0 +1,49 @@
+{
+  "target": "rs_encode",
+  "artifact": "kernel",
+  "condition": "baseline",
+  "measurement": {
+    "results": [
+      {
+        "k": 1024,
+        "n": 1040,
+        "time": 1.80001371e-06,
+        "ref_time": 4.15999675e-05,
+        "mismatches": 0,
+        "correct": true,
+        "speedup_vs_naive": 23.111,
+        "status": "exact"
+      },
+      {
+        "k": 8192,
+        "n": 8208,
+        "time": 1.42999925e-05,
+        "ref_time": 0.000331900024,
+        "mismatches": 0,
+        "correct": true,
+        "speedup_vs_naive": 23.21,
+        "status": "exact"
+      },
+      {
+        "k": 65536,
+        "n": 65552,
+        "time": 0.000116500014,
+        "ref_time": 0.0025309,
+        "mismatches": 0,
+        "correct": true,
+        "speedup_vs_naive": 21.724,
+        "status": "exact"
+      }
+    ],
+    "largest_n": 65536,
+    "status": "exact",
+    "speedup_vs_naive": 21.724,
+    "value": 21.724,
+    "prediction_target": 21.724,
+    "reading": "value = speedup vs. a reference naive shift-and-reduce LFSR encoder, 0 if the parity bytes don't match exactly."
+  },
+  "value": 21.724,
+  "status": "exact",
+  "calibration": 0.368,
+  "prediction": 8.0
+}

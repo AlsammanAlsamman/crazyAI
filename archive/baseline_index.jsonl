@@ -33,3 +33,8 @@
 {"seed": 7603, "target": "wht", "condition": "baseline", "status": "exact", "value": 2396.275, "prediction": 2000.0, "calibration": 0.835, "model": ""}
 {"seed": 7604, "target": "wht", "condition": "baseline", "status": "exact", "value": 2867.722, "prediction": 1.4, "calibration": 0.0, "model": ""}
 {"seed": 7605, "target": "wht", "condition": "baseline", "status": "exact", "value": 172.498, "prediction": 2.5, "calibration": 0.014, "model": ""}
+{"seed": 7701, "target": "rs_encode", "condition": "baseline", "status": "exact", "value": 17.09, "prediction": 8.0, "calibration": 0.468, "model": ""}
+{"seed": 7702, "target": "rs_encode", "condition": "baseline", "status": "exact", "value": 10.328, "prediction": 4.0, "calibration": 0.387, "model": ""}
+{"seed": 7703, "target": "rs_encode", "condition": "baseline", "status": "exact", "value": 20.807, "prediction": 5.0, "calibration": 0.24, "model": ""}
+{"seed": 7704, "target": "rs_encode", "condition": "baseline", "status": "exact", "value": 19.372, "prediction": 10.0, "calibration": 0.516, "model": ""}
+{"seed": 7705, "target": "rs_encode", "condition": "baseline", "status": "exact", "value": 21.724, "prediction": 8.0, "calibration": 0.368, "model": ""}
