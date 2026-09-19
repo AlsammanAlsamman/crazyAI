@@ -1,0 +1,16 @@
+{
+  "seed": 7604,
+  "target": "wht",
+  "condition": "baseline",
+  "provider": "claudecode",
+  "model": "",
+  "status": "exact",
+  "value": 2867.722,
+  "prediction": 1.4,
+  "calibration": 0.0,
+  "timing_s": {
+    "bend": 119.332,
+    "measure": 0.794
+  },
+  "total_s": 120.126
+}

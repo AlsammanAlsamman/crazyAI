@@ -1,0 +1,47 @@
+{
+  "target": "wht",
+  "artifact": "kernel",
+  "condition": "baseline",
+  "measurement": {
+    "results": [
+      {
+        "n": 64,
+        "time": 1.38999894e-05,
+        "ref_time": 1.06999651e-05,
+        "rel_err": 3.199e-16,
+        "speedup_vs_naive": 0.77,
+        "exactness": 1.0,
+        "status": "exact"
+      },
+      {
+        "n": 256,
+        "time": 1.70999556e-05,
+        "ref_time": 0.000195099972,
+        "rel_err": 5.535e-16,
+        "speedup_vs_naive": 11.409,
+        "exactness": 1.0,
+        "status": "exact"
+      },
+      {
+        "n": 1024,
+        "time": 2.18999921e-05,
+        "ref_time": 0.00377770001,
+        "rel_err": 1.067e-15,
+        "speedup_vs_naive": 172.498,
+        "exactness": 1.0,
+        "status": "exact"
+      }
+    ],
+    "largest_n": 1024,
+    "rel_err": 1.067e-15,
+    "status": "exact",
+    "speedup_vs_naive": 172.498,
+    "value": 172.498,
+    "prediction_target": 172.498,
+    "reading": "value = speedup vs. the naive O(n^2) direct-matrix WHT x exactness (1.0 relative error < 1e-9)."
+  },
+  "value": 172.498,
+  "status": "exact",
+  "calibration": 0.014,
+  "prediction": 2.5
+}
