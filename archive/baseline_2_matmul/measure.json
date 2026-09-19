@@ -1,0 +1,13 @@
+{
+  "target": "matmul",
+  "artifact": "kernel",
+  "condition": "baseline",
+  "measurement": {
+    "error": "compile failed",
+    "compiler_output": "C:\\Users\\ALSAMM~1\\AppData\\Local\\Temp\\crazyai_kernel_ybz4_svr\\kernel.c: In function 'kernel':\nC:\\Users\\ALSAMM~1\\AppData\\Local\\Temp\\crazyai_kernel_ybz4_svr\\kernel.c:77:31: error: implicit declaration of function 'aligned_alloc' [-Wimplicit-function-declaration]\n   77 |         Apacks[t] = (double *)aligned_alloc(64, (size_t)mc_pad_max * KC * sizeof(double));\n      |                               ^~~~~~~~~~~~~\nC:\\Users\\ALSAMM~1\\AppData\\Local\\Temp\\crazyai_kernel_ybz4_svr\\kernel.c:5:1: note: include '<stdlib.h>' or provide a declaration of 'aligned_alloc'\n    4 | #include <omp.h>\n  +++ |+#include <stdlib.h>\n    5 | \nC:\\Users\\ALSAMM~1\\AppData\\Local\\Temp\\crazyai_kernel_ybz4_svr\\kernel.c:77:31: warning: incompatible implicit declaration of built-in function 'aligned_alloc' [-Wbuiltin-declaration-mismatch]\n   77 |         Apacks[t] = (double *)aligned_alloc(64, (size_t)mc_pad_max * KC * sizeof(double));\n      |                               ^~~~~~~~~~~~~\nC:\\Users\\ALSAMM~1\\AppData\\Local\\Temp\\crazyai_kernel_ybz4_svr\\kernel.c:77:31: note: include '<stdlib.h>' or provide a declaration of 'aligned_alloc'\nC:\\Users\\ALSAMM~1\\AppData\\Local\\Temp\\crazyai_kernel_ybz4_svr\\kernel.c:80:31: warning: incompatible implicit declaration of built-in function 'aligned_alloc' [-Wbuiltin-declaration-mismatch]\n   80 |     double *Bpack = (double *)aligned_alloc(64, (size_t)KC * nc_pad_max * sizeof(double));\n      |                               ^~~~~~~~~~~~~\nC:\\Users\\ALSAMM~1\\AppData\\Local\\Temp\\crazyai_kernel_ybz4_svr\\kernel.c:80:31: note: include '<stdlib.h>' or provide a declaration of 'aligned_alloc'\n",
+    "status": "COMPILE_ERROR"
+  },
+  "value": 0.0,
+  "status": "COMPILE_ERROR",
+  "prediction": 60.0
+}

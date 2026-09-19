@@ -1,0 +1,16 @@
+{
+  "seed": 2,
+  "target": "matmul",
+  "condition": "baseline",
+  "provider": "claudecode",
+  "model": "",
+  "status": "COMPILE_ERROR",
+  "value": 0.0,
+  "prediction": 60.0,
+  "calibration": null,
+  "timing_s": {
+    "bend": 126.649,
+    "measure": 0.445
+  },
+  "total_s": 127.095
+}

@@ -1,0 +1,16 @@
+{
+  "seed": 5,
+  "target": "matmul",
+  "condition": "baseline",
+  "provider": "claudecode",
+  "model": "",
+  "status": "exact",
+  "value": 5.666,
+  "prediction": 7.0,
+  "calibration": 0.809,
+  "timing_s": {
+    "bend": 89.635,
+    "measure": 1.741
+  },
+  "total_s": 91.376
+}

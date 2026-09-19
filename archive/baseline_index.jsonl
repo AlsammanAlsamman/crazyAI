@@ -1,0 +1,5 @@
+{"seed": 1, "target": "matmul", "condition": "baseline", "status": "exact", "value": 4.074, "prediction": 12.0, "calibration": 0.34, "model": ""}
+{"seed": 2, "target": "matmul", "condition": "baseline", "status": "COMPILE_ERROR", "value": 0.0, "prediction": 60.0, "calibration": null, "model": ""}
+{"seed": 3, "target": "matmul", "condition": "baseline", "status": "exact", "value": 3.856, "prediction": 50.0, "calibration": 0.077, "model": ""}
+{"seed": 4, "target": "matmul", "condition": "baseline", "status": "exact", "value": 7.924, "prediction": 12.0, "calibration": 0.66, "model": ""}
+{"seed": 5, "target": "matmul", "condition": "baseline", "status": "exact", "value": 5.666, "prediction": 7.0, "calibration": 0.809, "model": ""}
