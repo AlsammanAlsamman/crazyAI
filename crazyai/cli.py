@@ -11,6 +11,7 @@
 
     crazyai blend --seed 42 [--model compare]          blend the imagination corpus, offline
     crazyai invent --seed 42 --target matmul [--blend anneal] [--harvest 5] [--provider mock]
+    crazyai invent-baseline --seed 42 --target matmul [--provider mock]   direct-prompt condition, no narrative
     crazyai invent-rank [--target matmul] [--top 20]
     crazyai harvest-corpus --kind poem --n 20 --out crazyai/data/imagination/poems_candidates.yaml [--provider claudecode]
 """
@@ -188,6 +189,26 @@ def cmd_invent(args) -> int:
     return 1 if failures == args.n else 0
 
 
+def cmd_invent_baseline(args) -> int:
+    from crazyai.pipeline.baseline import Baseline
+
+    provider = _provider(args)
+    failures = 0
+    for i in range(args.n):
+        seed = args.seed + i
+        run = Baseline(seed=seed, target=args.target, force=args.force, archive_dir=Path(args.archive))
+        try:
+            summary = run.execute(provider)
+        except Exception as exc:  # noqa: BLE001 - one bad seed must not abort the batch
+            failures += 1
+            print(json.dumps({"seed": seed, "target": args.target, "status": "error", "error": str(exc)[-2000:]}),
+                 flush=True)
+            continue
+        print(json.dumps({k: summary[k] for k in ("seed", "target", "status", "value", "prediction", "calibration")},
+                         indent=2), flush=True)
+    return 1 if failures == args.n else 0
+
+
 def cmd_invent_rank(args) -> int:
     from crazyai.pipeline.invent import load_invent_index
 
@@ -291,6 +312,12 @@ def build_parser() -> argparse.ArgumentParser:
                          "(off by default)")
     add_provider(iv)
     iv.set_defaults(fn=cmd_invent)
+    ivb = sub.add_parser("invent-baseline", help="direct-prompt baseline: no narrative/world/immerse, same contract and measurement as invent")
+    ivb.add_argument("--seed", type=int, required=True)
+    ivb.add_argument("--n", type=int, default=1, help="number of consecutive seeds")
+    ivb.add_argument("--target", default="matmul", choices=TARGETS)
+    add_provider(ivb)
+    ivb.set_defaults(fn=cmd_invent_baseline)
     hc = sub.add_parser("harvest-corpus", help="grow a bundled imagination corpus (writes a candidates file for review)")
     hc.add_argument("--kind", required=True, help="e.g. metaphor, painting, book, poem")
     hc.add_argument("--n", type=int, default=20, help="fragments to collect")

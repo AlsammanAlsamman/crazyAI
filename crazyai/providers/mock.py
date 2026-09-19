@@ -138,4 +138,18 @@ class MockProvider(Provider):
                 "PREDICTION: speedup_vs_blocked = 1.5\n\nMEASUREMENT\nSee measure.json (the pipeline measures the final kernel itself).\n\n"
                 "VERDICT\nExact; the segment keeps 8 rows of B hot while a row of C streams through.\n"
             )
+        if "rigorous performance engineer" in system:
+            return (
+                "APPROACH\nBlock the k-loop by 8 so 8 rows of B stay resident while a row of C accumulates.\n\n"
+                "ARTIFACT\n```c\n#include <string.h>\n#define W 8\nvoid kernel(int n, const double *A, const double *B, double *C) {\n"
+                "    memset(C, 0, (size_t)n * n * sizeof(double));\n    int kk = 0;\n"
+                "    for (; kk + W <= n; kk += W)\n        for (int i = 0; i < n; i++) {\n"
+                "            const double *a = A + (size_t)i * n + kk;\n            double *c = C + (size_t)i * n;\n"
+                "            for (int j = 0; j < n; j++) {\n                double s = c[j];\n"
+                "                for (int w = 0; w < W; w++) s += a[w] * B[(size_t)(kk + w) * n + j];\n                c[j] = s;\n            }\n        }\n"
+                "    for (; kk < n; kk++)\n        for (int i = 0; i < n; i++) {\n            double a = A[(size_t)i * n + kk];\n"
+                "            for (int j = 0; j < n; j++) C[(size_t)i * n + j] += a * B[(size_t)kk * n + j];\n        }\n}\n```\n\n"
+                "PREDICTION: speedup_vs_blocked = 1.5\n\nMEASUREMENT\nSee measure.json (the pipeline measures the final kernel itself).\n\n"
+                "VERDICT\nExact; the block keeps 8 rows of B hot while a row of C streams through.\n"
+            )
         return None

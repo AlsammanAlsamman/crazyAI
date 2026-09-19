@@ -84,17 +84,26 @@ BEND_SYSTEM = (
 )
 
 
+def _contract_block(target: Target) -> str:
+    """The fixed C contract block injected into any prompt asking for a kernel artifact.
+
+    Looked up from the measure module named after the target's own measure family
+    (crazyai.toolkit.measure.kernel for matmul, .alignment for alignment, etc.) - never hardcoded to one
+    target, or every other kernel-artifact target would be told the wrong C signature to implement.
+    Shared by bend_prompt (narrative) and direct_prompt (baseline) so both conditions are told the
+    identical contract - the only thing that should differ between them is the narrative scaffolding.
+    """
+    if target.artifact != "kernel":
+        return ""
+    import importlib
+    mod = importlib.import_module(f"crazyai.toolkit.measure.{target.measure_families[0]}")
+    return ("\nTHE FIXED CONTRACT (do not guess it, do not change the argument order):\n    " + mod.CONTRACT +
+           "\nMinimal correct example:\n```c\n" + mod.EXAMPLE + "```\n"
+           "Compiled with: gcc -O3 -march=native -fopenmp -lm. You may use OpenMP, immintrin.h and scratch memory.\n")
+
+
 def bend_prompt(ideas: str, target: Target, tools: list[str], assumption_focus: str = "") -> str:
-    contract = ""
-    if target.artifact == "kernel":
-        # the contract lives in the measure module named after the target's own measure family
-        # (crazyai.toolkit.measure.kernel for matmul, .alignment for alignment, etc.) - never hardcoded to one
-        # target, or every other kernel-artifact target would be told the wrong C signature to implement.
-        import importlib
-        mod = importlib.import_module(f"crazyai.toolkit.measure.{target.measure_families[0]}")
-        contract = ("\nTHE FIXED CONTRACT (do not guess it, do not change the argument order):\n    " + mod.CONTRACT +
-                    "\nMinimal correct example:\n```c\n" + mod.EXAMPLE + "```\n"
-                    "Compiled with: gcc -O3 -march=native -fopenmp -lm. You may use OpenMP, immintrin.h and scratch memory.\n")
+    contract = _contract_block(target)
     if assumption_focus:
         step2 = (f"2. Pick the seed whose mapping is most literal and most different from the known way, preferring one "
                 f"that breaks this assumption if any of the three do: \"{assumption_focus}\" - if none breaks it, say so "
@@ -112,4 +121,29 @@ def bend_prompt(ideas: str, target: Target, tools: list[str], assumption_focus: 
         f"3. {target.bend_instructions}\n"
         f"Tools available: {', '.join(tools)}.\n"
         "Write the final answer with sections: MAPPING, CHOSEN SEED, ASSUMPTION BROKEN, ARTIFACT, PREDICTION, MEASUREMENT, VERDICT."
+    )
+
+
+DIRECT_SYSTEM = (
+    "You are a rigorous performance engineer. You are given a problem, its known standard solution, and a fixed "
+    "C contract. Write the fastest correct implementation you can that obeys the contract exactly. You state a "
+    "prediction before measuring and you report failure as plainly as success."
+)
+
+
+def direct_prompt(target: Target, tools: list[str]) -> str:
+    """The baseline condition's prompt: no narrative, no world, no metaphor - just the problem, its known way,
+    and the fixed contract, so the only variable that differs from bend_prompt is the narrative scaffolding
+    itself. Shares _contract_block with bend_prompt so both conditions see the identical contract text."""
+    contract = _contract_block(target)
+    return (
+        f"TARGET PROBLEM: {target.problem}\n"
+        f"The standard solution silently assumes:\n- " + "\n- ".join(target.assumptions) + "\n"
+        f"Known way: {target.known_way or 'the textbook method'}\n" + contract + "\n"
+        "Write a correct implementation that obeys the contract exactly and is faster than the known way if at "
+        "all possible, then measure it and improve it at most four times. The final answer MUST contain one "
+        "```c code block with the complete kernel and exactly one line 'PREDICTION: <number>' (a single number, "
+        "not a range or prose) written BEFORE the first measurement.\n"
+        f"Tools available: {', '.join(tools)}.\n"
+        "Write the final answer with sections: APPROACH, ARTIFACT, PREDICTION, MEASUREMENT, VERDICT."
     )

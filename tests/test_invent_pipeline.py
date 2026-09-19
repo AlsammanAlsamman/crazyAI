@@ -270,3 +270,26 @@ def test_bend_prompt_contract_matches_the_target_not_always_matmul():
     p = bend_prompt("SEED: x", get_target("alignment"), [])
     assert "int kernel(int n, const char *a, const char *b)" in p
     assert "const double *A" not in p  # matmul's contract must not leak in
+
+
+def test_direct_prompt_contract_matches_the_target_and_has_no_narrative_scaffolding():
+    from crazyai.pipeline.invent_prompts import direct_prompt
+    from crazyai.targets import get_target
+    p = direct_prompt(get_target("alignment"), [])
+    assert "int kernel(int n, const char *a, const char *b)" in p
+    assert "const double *A" not in p  # matmul's contract must not leak in
+    assert "SEED" not in p and "MAPPING" not in p and "WHAT THE NATIVE SAID" not in p
+
+
+def test_baseline_pipeline_with_mock(tmp_path):
+    if shutil.which("gcc") is None:
+        pytest.skip("no C compiler")
+    from crazyai.pipeline.baseline import Baseline, load_baseline_index
+    run = Baseline(seed=1, target="matmul", archive_dir=tmp_path)
+    s = run.execute(get_provider("mock"))
+    for f in ("artifact.md", "artifact.c", "measure.json", "run.json"):
+        assert (run.dir / f).exists(), f
+    assert s["status"] in ("exact", "approx", "WRONG", "COMPILE_ERROR", "NO_ARTIFACT")
+    assert len(load_baseline_index(tmp_path)) == 1
+    # never touches the narrative pipeline's own index
+    assert not (tmp_path / "invent_index.jsonl").exists()
