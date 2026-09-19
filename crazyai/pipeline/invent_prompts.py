@@ -119,6 +119,15 @@ def bend_prompt(ideas: str, target: Target, tools: list[str], assumption_focus: 
         "1. For each SEED, write the mapping world-object -> problem-object as a table. Say which silent assumption above the seed breaks.\n"
         + step2 +
         f"3. {target.bend_instructions}\n"
+        "4. Before finalizing: if a well-known, validated real-world technique already satisfies the assumption "
+        "you're breaking, let your mechanism arrive at that technique rather than inventing a new one just "
+        "because you can - a validated known technique beats a novel untested one. If your own VERDICT names a "
+        "specific condition where your mechanism could be worse than the known way (e.g. 'only helps if the "
+        "problem is large', 'overhead if small'), you must either guard it with a size/condition check and a "
+        "fallback to the simpler path, or drop the risky part - never ship a mechanism whose own stated risk you "
+        "don't address. Default to vectorization hints (SIMD, restrict, cache layout) before thread-level "
+        "parallelism; only add thread parallelism if the metaphor's own units of work are large enough at the "
+        "actual benchmark sizes to be worth it, guarded by a size check with a fallback.\n"
         f"Tools available: {', '.join(tools)}.\n"
         "Write the final answer with sections: MAPPING, CHOSEN SEED, ASSUMPTION BROKEN, ARTIFACT, PREDICTION, MEASUREMENT, VERDICT."
     )
