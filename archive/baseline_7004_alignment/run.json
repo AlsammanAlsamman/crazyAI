@@ -1,0 +1,16 @@
+{
+  "seed": 7004,
+  "target": "alignment",
+  "condition": "baseline",
+  "provider": "claudecode",
+  "model": "",
+  "status": "exact",
+  "value": 4.698,
+  "prediction": 4.0,
+  "calibration": 0.851,
+  "timing_s": {
+    "bend": 242.44,
+    "measure": 0.696
+  },
+  "total_s": 243.136
+}
