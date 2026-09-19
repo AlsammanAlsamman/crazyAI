@@ -1,0 +1,65 @@
+{
+  "model": "nest",
+  "text": "Reign as a queen and return before tea; this is why a woven is built around a geometry. Inside a road, there is a face, and in a face are tossed up together and land clattering on a woven mat. Every a market in a edge contains and flowers made of geometry.",
+  "score": {
+    "score": 0.5895,
+    "imagination": 0.769,
+    "readable": 0.6667,
+    "surprise": 0.5,
+    "mixing": 0.9094,
+    "originality": 1.0,
+    "readability": 1.0,
+    "coherence": 0.6667,
+    "flesch": 72.1,
+    "words": 23,
+    "sentences": 3
+  },
+  "fragments": [
+    {
+      "id": "met.money_water",
+      "kind": "metaphor",
+      "source": "money is water"
+    },
+    {
+      "id": "art.klint_ten_largest",
+      "kind": "painting",
+      "source": "Hilma af Klint, The Ten Largest"
+    },
+    {
+      "id": "book.narnia_wardrobe",
+      "kind": "book",
+      "source": "C. S. Lewis, The Chronicles of Narnia"
+    },
+    {
+      "id": "poem.szymborska_cat",
+      "kind": "poem",
+      "source": "Wisława Szymborska, \"Cat in an Empty Apartment\""
+    },
+    {
+      "id": "game.yut_nori",
+      "kind": "game",
+      "source": "Yut Nori, Korean New Year board game"
+    },
+    {
+      "id": "met.life_journey",
+      "kind": "metaphor",
+      "source": "life is a journey"
+    },
+    {
+      "id": "art.bosch_delights",
+      "kind": "painting",
+      "source": "Bosch, The Garden of Earthly Delights"
+    },
+    {
+      "id": "harvest.4.0",
+      "kind": "book",
+      "source": "China Miéville, Perdido Street Station"
+    },
+    {
+      "id": "poem.ghalib_moth",
+      "kind": "poem",
+      "source": "Ghalib, ghazal on the moth and the candle"
+    }
+  ],
+  "depth": 3
+}

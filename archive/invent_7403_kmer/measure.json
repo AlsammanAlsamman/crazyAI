@@ -1,0 +1,65 @@
+{
+  "target": "kmer",
+  "artifact": "kernel",
+  "imagination": {
+    "score": 0.5895,
+    "imagination": 0.769,
+    "readable": 0.6667,
+    "surprise": 0.5,
+    "mixing": 0.9094,
+    "originality": 1.0,
+    "readability": 1.0,
+    "coherence": 0.6667,
+    "flesch": 72.1,
+    "words": 23,
+    "sentences": 3
+  },
+  "measurement": {
+    "results": [
+      {
+        "n": 4096,
+        "k": 8,
+        "time": 2.69996235e-06,
+        "ref_time": 9.89995897e-06,
+        "mismatches": 0,
+        "max_diff": 0,
+        "correct": true,
+        "speedup_vs_naive": 3.667,
+        "status": "exact"
+      },
+      {
+        "n": 65536,
+        "k": 8,
+        "time": 4.24999744e-05,
+        "ref_time": 0.000228399993,
+        "mismatches": 0,
+        "max_diff": 0,
+        "correct": true,
+        "speedup_vs_naive": 5.374,
+        "status": "exact"
+      },
+      {
+        "n": 262144,
+        "k": 8,
+        "time": 0.000161499949,
+        "ref_time": 0.000876399979,
+        "mismatches": 0,
+        "max_diff": 0,
+        "correct": true,
+        "speedup_vs_naive": 5.427,
+        "status": "exact"
+      }
+    ],
+    "largest_n": 262144,
+    "status": "exact",
+    "speedup_vs_naive": 5.427,
+    "value": 5.427,
+    "prediction_target": 5.427,
+    "reading": "value = speedup vs. the naive re-encode-every-window O(n*k) reference, 0 if the count table doesn't match exactly."
+  },
+  "value": 5.427,
+  "status": "exact",
+  "calibration": 0.904,
+  "prediction": 6.0,
+  "discovery": 4.3131
+}

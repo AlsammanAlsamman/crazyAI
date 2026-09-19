@@ -1,0 +1,13 @@
+{
+  "seed": 7401,
+  "target": "kmer",
+  "blend_model": "graft",
+  "depth": 2,
+  "assumption_focus": "the count table can only be updated one position's result at a time",
+  "bias": {
+    "enabled": false,
+    "min_samples": 20,
+    "samples_seen": 0,
+    "active": false
+  }
+}

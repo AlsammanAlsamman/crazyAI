@@ -1,0 +1,74 @@
+{
+  "model": "evolve",
+  "text": "A wildflower seed in one entire sits the object of shape the single a dried clay walls the sky dropped through its one roof. Rivers, shadow, and lesser all symptom the first solid they meet. Stretches, lattice, and rain all clay the three behind they meet. A crest is a casting. A flat, solid desert the color of locked part exists to a horizon with no makes.",
+  "score": {
+    "score": 0.9708,
+    "imagination": 0.9708,
+    "readable": 1.0,
+    "surprise": 0.9459,
+    "mixing": 0.9672,
+    "originality": 1.0,
+    "readability": 1.0,
+    "coherence": 1.0,
+    "flesch": 79.6,
+    "words": 38,
+    "sentences": 5
+  },
+  "fragments": [
+    {
+      "id": "met.theory_building",
+      "kind": "metaphor",
+      "source": "theories are buildings"
+    },
+    {
+      "id": "harvest.3.4",
+      "kind": "painting",
+      "source": "Yves Tanguy, Indefinite Divisibility"
+    },
+    {
+      "id": "harvest.3.3",
+      "kind": "book",
+      "source": "Kurt Vonnegut, Cat's Cradle"
+    },
+    {
+      "id": "poem.blake_auguries",
+      "kind": "poem",
+      "source": "William Blake, \"Auguries of Innocence\""
+    },
+    {
+      "id": "game.kite_fighting_glass",
+      "kind": "game",
+      "source": "Kite Fighting (Afghan and South Asian tradition)"
+    },
+    {
+      "id": "met.knowledge_light",
+      "kind": "metaphor",
+      "source": "knowledge is light"
+    },
+    {
+      "id": "art.hokusai_wave",
+      "kind": "painting",
+      "source": "Hokusai, The Great Wave"
+    },
+    {
+      "id": "harvest.7.3",
+      "kind": "book",
+      "source": "Jorge Amado, by way of Gabriel García Márquez, One Hundred Years of Solitude"
+    }
+  ],
+  "generations": 12,
+  "history": [
+    0.8878,
+    0.895,
+    0.9078,
+    0.9078,
+    0.9214,
+    0.9539,
+    0.9591,
+    0.9591,
+    0.9591,
+    0.9698,
+    0.9698,
+    0.9708
+  ]
+}

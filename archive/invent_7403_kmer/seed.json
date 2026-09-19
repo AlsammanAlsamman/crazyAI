@@ -1,0 +1,13 @@
+{
+  "seed": 7403,
+  "target": "kmer",
+  "blend_model": "nest",
+  "depth": 1,
+  "assumption_focus": "the whole sequence must be read once, start to end, in order",
+  "bias": {
+    "enabled": false,
+    "min_samples": 20,
+    "samples_seen": 0,
+    "active": false
+  }
+}

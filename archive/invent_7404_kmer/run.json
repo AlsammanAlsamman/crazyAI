@@ -1,0 +1,59 @@
+{
+  "seed": 7404,
+  "target": "kmer",
+  "blend_model": "markov",
+  "depth": 2,
+  "assumption_focus": "the count table can only be updated one position's result at a time",
+  "provider": "claudecode",
+  "model": "",
+  "imagination_score": 0.3165,
+  "status": "exact",
+  "value": 5.404,
+  "prediction": 8.0,
+  "calibration": 0.675,
+  "discovery": 3.5572,
+  "fragments": [
+    "met.internet_web",
+    "art.escher_relativity",
+    "book.borges_aleph",
+    "poem.libai_moon",
+    "game.mesoamerican_ballgame",
+    "harvest.4.1",
+    "art.varo_creation",
+    "book.gormenghast",
+    "poem.dickinson_carriage",
+    "game.mesoamerican_ballgame",
+    "met.knowledge_light",
+    "harvest.2.1",
+    "book.little_prince",
+    "poem.basho_pond",
+    "game.hopscotch_pavement"
+  ],
+  "rng_log": [
+    {
+      "label": "invent.blend_model",
+      "value": "markov"
+    },
+    {
+      "label": "invent.depth",
+      "value": 2
+    },
+    {
+      "label": "invent.assumption",
+      "value": "the count table can only be updated one position's result at a time"
+    },
+    {
+      "label": "child:invent.world",
+      "value": 1229315999
+    }
+  ],
+  "timing_s": {
+    "seed": 0.0,
+    "harvest": 0.0,
+    "world": 0.016,
+    "immerse": 24.89,
+    "bend": 119.968,
+    "measure": 0.712
+  },
+  "total_s": 145.586
+}

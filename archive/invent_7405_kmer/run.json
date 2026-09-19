@@ -1,0 +1,52 @@
+{
+  "seed": 7405,
+  "target": "kmer",
+  "blend_model": "evolve",
+  "depth": 3,
+  "assumption_focus": "one window is examined, then discarded, before the next begins",
+  "provider": "claudecode",
+  "model": "",
+  "imagination_score": 0.9708,
+  "status": "exact",
+  "value": 0.199,
+  "prediction": 10.0,
+  "calibration": 0.02,
+  "discovery": 0.1961,
+  "fragments": [
+    "met.theory_building",
+    "harvest.3.4",
+    "harvest.3.3",
+    "poem.blake_auguries",
+    "game.kite_fighting_glass",
+    "met.knowledge_light",
+    "art.hokusai_wave",
+    "harvest.7.3"
+  ],
+  "rng_log": [
+    {
+      "label": "invent.blend_model",
+      "value": "evolve"
+    },
+    {
+      "label": "invent.depth",
+      "value": 3
+    },
+    {
+      "label": "invent.assumption",
+      "value": "one window is examined, then discarded, before the next begins"
+    },
+    {
+      "label": "child:invent.world",
+      "value": 947630615
+    }
+  ],
+  "timing_s": {
+    "seed": 0.002,
+    "harvest": 0.0,
+    "world": 0.046,
+    "immerse": 38.979,
+    "bend": 159.337,
+    "measure": 1.173
+  },
+  "total_s": 199.537
+}

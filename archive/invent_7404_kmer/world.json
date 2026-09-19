@@ -1,0 +1,95 @@
+{
+  "model": "markov",
+  "text": "The sea, a dark age is one in which every place on earth is visible at once. An old, moss-rimmed pond sits in perfect stillness, holding nothing but its own reflection and centuries of silence. People describe long marriages the same storm. Doors open onto gardens that hang sideways. Two small dark figures stand motionless in the building finds any of it strange. Strands cross strands, something plucked on one leg, arms flung wide for balance, skirt or trouser cuff flapping. Afterward the pond looks exactly as still as before, but the stillness itself has quietly changed.",
+  "score": {
+    "score": 0.3165,
+    "imagination": 0.4521,
+    "readable": 0.5714,
+    "surprise": 0.1636,
+    "mixing": 0.9884,
+    "originality": 0.5714,
+    "readability": 1.0,
+    "coherence": 0.5714,
+    "flesch": 70.0,
+    "words": 56,
+    "sentences": 7
+  },
+  "fragments": [
+    {
+      "id": "met.internet_web",
+      "kind": "metaphor",
+      "source": "the internet is a web"
+    },
+    {
+      "id": "art.escher_relativity",
+      "kind": "painting",
+      "source": "Escher, Relativity"
+    },
+    {
+      "id": "book.borges_aleph",
+      "kind": "book",
+      "source": "Borges, The Aleph"
+    },
+    {
+      "id": "poem.libai_moon",
+      "kind": "poem",
+      "source": "Li Bai, \"Drinking Alone Under the Moon\""
+    },
+    {
+      "id": "game.mesoamerican_ballgame",
+      "kind": "game",
+      "source": "The Mesoamerican ballgame (Ulama / Tlachtli)"
+    },
+    {
+      "id": "harvest.4.1",
+      "kind": "metaphor",
+      "source": "the Ship of Theseus as a marriage"
+    },
+    {
+      "id": "art.varo_creation",
+      "kind": "painting",
+      "source": "Remedios Varo, Creation of the Birds"
+    },
+    {
+      "id": "book.gormenghast",
+      "kind": "book",
+      "source": "Mervyn Peake, Gormenghast"
+    },
+    {
+      "id": "poem.dickinson_carriage",
+      "kind": "poem",
+      "source": "Emily Dickinson, \"Because I could not stop for Death\""
+    },
+    {
+      "id": "game.mesoamerican_ballgame",
+      "kind": "game",
+      "source": "The Mesoamerican ballgame (Ulama / Tlachtli)"
+    },
+    {
+      "id": "met.knowledge_light",
+      "kind": "metaphor",
+      "source": "knowledge is light"
+    },
+    {
+      "id": "harvest.2.1",
+      "kind": "painting",
+      "source": "Giorgio de Chirico, The Nostalgia of the Infinite"
+    },
+    {
+      "id": "book.little_prince",
+      "kind": "book",
+      "source": "Saint-Exupéry, The Little Prince"
+    },
+    {
+      "id": "poem.basho_pond",
+      "kind": "poem",
+      "source": "Matsuo Bashō, the old pond haiku"
+    },
+    {
+      "id": "game.hopscotch_pavement",
+      "kind": "game",
+      "source": "Hopscotch, chalk pavement game (global)"
+    }
+  ],
+  "order": 2
+}

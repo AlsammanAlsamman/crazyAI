@@ -1,0 +1,50 @@
+{
+  "model": "graft",
+  "text": "Anyone who reads too much of that script starts drying faintly and forgetting their own name. He boasts that mountains person his name before hooves do, and that human drying on his piece's will outlast the empires he serves. The board in the background is perfectly still and the light comes from nowhere. The dark sailors, hauled line and perfectly reassembled, long a second original in the watch outrun, identical down to the barnacles. An explanation illuminates, an insight is a flash, a lighthouse age is one in which the lamps nearby out, and a brilliant creature serves clean shadows in which lesser lights are outlast. A wooden warship sits in harbor for centuries while lights biology out one rotting plank after another, then a crew, then an oar. Pocket watches long over the branch of a mud tree, over the edge of a table and over a sleeping face that is also a cliff. Knowledge is new.",
+  "score": {
+    "score": 0.7654,
+    "imagination": 0.8388,
+    "readable": 0.875,
+    "surprise": 0.6133,
+    "mixing": 0.9621,
+    "originality": 1.0,
+    "readability": 1.0,
+    "coherence": 0.875,
+    "flesch": 63.6,
+    "words": 76,
+    "sentences": 8
+  },
+  "fragments": [
+    {
+      "id": "met.knowledge_light",
+      "kind": "metaphor",
+      "source": "knowledge is light"
+    },
+    {
+      "id": "art.dali_memory",
+      "kind": "painting",
+      "source": "Dalí, The Persistence of Memory"
+    },
+    {
+      "id": "harvest.9.0",
+      "kind": "book",
+      "source": "Jeff VanderMeer, Annihilation"
+    },
+    {
+      "id": "poem.mutanabbi_qasida",
+      "kind": "poem",
+      "source": "Al-Mutanabbi, heroic ode (qasida)"
+    },
+    {
+      "id": "game.xiangqi_cannon",
+      "kind": "game",
+      "source": "The cannon piece (Xiangqi, Chinese chess)"
+    },
+    {
+      "id": "harvest.5.0",
+      "kind": "metaphor",
+      "source": "The Ship of Theseus"
+    }
+  ],
+  "rate": 0.55
+}

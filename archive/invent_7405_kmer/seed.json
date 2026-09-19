@@ -1,0 +1,13 @@
+{
+  "seed": 7405,
+  "target": "kmer",
+  "blend_model": "evolve",
+  "depth": 3,
+  "assumption_focus": "one window is examined, then discarded, before the next begins",
+  "bias": {
+    "enabled": false,
+    "min_samples": 20,
+    "samples_seen": 0,
+    "active": false
+  }
+}

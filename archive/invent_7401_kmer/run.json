@@ -1,0 +1,50 @@
+{
+  "seed": 7401,
+  "target": "kmer",
+  "blend_model": "graft",
+  "depth": 2,
+  "assumption_focus": "the count table can only be updated one position's result at a time",
+  "provider": "claudecode",
+  "model": "",
+  "imagination_score": 0.7654,
+  "status": "exact",
+  "value": 0.199,
+  "prediction": 12.0,
+  "calibration": 0.017,
+  "discovery": 0.1757,
+  "fragments": [
+    "met.knowledge_light",
+    "art.dali_memory",
+    "harvest.9.0",
+    "poem.mutanabbi_qasida",
+    "game.xiangqi_cannon",
+    "harvest.5.0"
+  ],
+  "rng_log": [
+    {
+      "label": "invent.blend_model",
+      "value": "graft"
+    },
+    {
+      "label": "invent.depth",
+      "value": 2
+    },
+    {
+      "label": "invent.assumption",
+      "value": "the count table can only be updated one position's result at a time"
+    },
+    {
+      "label": "child:invent.world",
+      "value": 88373855
+    }
+  ],
+  "timing_s": {
+    "seed": 0.0,
+    "harvest": 0.0,
+    "world": 0.074,
+    "immerse": 28.097,
+    "bend": 162.517,
+    "measure": 1.164
+  },
+  "total_s": 191.852
+}
