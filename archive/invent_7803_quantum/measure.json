@@ -1,0 +1,60 @@
+{
+  "target": "quantum",
+  "artifact": "kernel",
+  "imagination": {
+    "score": 0.5093,
+    "imagination": 0.5837,
+    "readable": 0.8178,
+    "surprise": 0.2037,
+    "mixing": 0.9765,
+    "originality": 1.0,
+    "readability": 0.8178,
+    "coherence": 1.0,
+    "flesch": 50.9,
+    "words": 55,
+    "sentences": 4
+  },
+  "measurement": {
+    "results": [
+      {
+        "n_qubits": 8,
+        "time": 2.15999899e-05,
+        "ref_time": 0.000284800015,
+        "rel_err": 3.649e-15,
+        "speedup_vs_naive": 13.185,
+        "exactness": 1.0,
+        "status": "exact"
+      },
+      {
+        "n_qubits": 12,
+        "time": 6.50999718e-05,
+        "ref_time": 0.00535709999,
+        "rel_err": 3.34e-15,
+        "speedup_vs_naive": 82.29,
+        "exactness": 1.0,
+        "status": "exact"
+      },
+      {
+        "n_qubits": 16,
+        "time": 0.00120639999,
+        "ref_time": 0.0976792,
+        "rel_err": 2.178e-15,
+        "speedup_vs_naive": 80.968,
+        "exactness": 1.0,
+        "status": "exact"
+      }
+    ],
+    "largest_n": 16,
+    "rel_err": 2.178e-15,
+    "status": "exact",
+    "speedup_vs_naive": 80.968,
+    "value": 80.968,
+    "prediction_target": 80.968,
+    "reading": "value = speedup vs. a reference gate-by-gate statevector simulator x exactness (1.0 relative error < 1e-9)."
+  },
+  "value": 80.968,
+  "status": "exact",
+  "calibration": 0.062,
+  "prediction": 5.0,
+  "discovery": 61.1025
+}

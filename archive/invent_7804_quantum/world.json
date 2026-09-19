@@ -1,0 +1,95 @@
+{
+  "model": "markov",
+  "text": "Reason knocks at the door of this house and is gently, permanently turned away. A single grain of sand, some lying like discarded tools, each casting a long precise shadow though no two shadows agree on where the sun is. A man treads water gripping a satchel of gold coins, refusing to let go even as it drags him under, because releasing it would mean admitting the coins feel like the others just by looking - it may even be hiding among its own flock, discoverable without first tracing every shot and every duck wants only to live.",
+  "score": {
+    "score": 0.2598,
+    "imagination": 0.3759,
+    "readable": 0.5588,
+    "surprise": 0.0851,
+    "mixing": 0.9359,
+    "originality": 0.6667,
+    "readability": 0.8382,
+    "coherence": 0.6667,
+    "flesch": 51.9,
+    "words": 48,
+    "sentences": 3
+  },
+  "fragments": [
+    {
+      "id": "met.mind_machine",
+      "kind": "metaphor",
+      "source": "the mind is a machine"
+    },
+    {
+      "id": "harvest.5.1",
+      "kind": "painting",
+      "source": "Yves Tanguy, Mama, Papa Is Wounded!"
+    },
+    {
+      "id": "book.narnia_wardrobe",
+      "kind": "book",
+      "source": "C. S. Lewis, The Chronicles of Narnia"
+    },
+    {
+      "id": "poem.darwish_identity",
+      "kind": "poem",
+      "source": "Mahmoud Darwish, \"Identity Card\""
+    },
+    {
+      "id": "game.jianzi_shuttlecock",
+      "kind": "game",
+      "source": "Jianzi (feathered shuttlecock kicking game)"
+    },
+    {
+      "id": "met.hidden_leader_duck",
+      "kind": "metaphor",
+      "source": "devised for crazyAI's Nim target (hidden-leader-duck framing), 2026"
+    },
+    {
+      "id": "harvest.10.1",
+      "kind": "painting",
+      "source": "Magritte, The Human Condition"
+    },
+    {
+      "id": "harvest.5.4",
+      "kind": "book",
+      "source": "Mervyn Peake, Gormenghast"
+    },
+    {
+      "id": "poem.blake_auguries",
+      "kind": "poem",
+      "source": "William Blake, \"Auguries of Innocence\""
+    },
+    {
+      "id": "game.knight_bends_air",
+      "kind": "game",
+      "source": "The knight's move (chess piece, imagery only)"
+    },
+    {
+      "id": "harvest.6.1",
+      "kind": "metaphor",
+      "source": "the sunk cost fallacy as a drowning man clutching his wallet"
+    },
+    {
+      "id": "harvest.4.2",
+      "kind": "painting",
+      "source": "Yves Tanguy, Indefinite Divisibility"
+    },
+    {
+      "id": "book.borges_library",
+      "kind": "book",
+      "source": "Borges, The Library of Babel"
+    },
+    {
+      "id": "poem.hafez_tavern",
+      "kind": "poem",
+      "source": "Hafez, ghazal from the Divan"
+    },
+    {
+      "id": "game.cats_cradle",
+      "kind": "game",
+      "source": "Cat's Cradle (string figure game, global tradition)"
+    }
+  ],
+  "order": 2
+}

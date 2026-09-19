@@ -1,0 +1,59 @@
+{
+  "seed": 7801,
+  "target": "quantum",
+  "blend_model": "markov",
+  "depth": 3,
+  "assumption_focus": "a gate must be fully applied to the whole state before the next gate starts",
+  "provider": "claudecode",
+  "model": "",
+  "imagination_score": 0.4521,
+  "status": "exact",
+  "value": 79.694,
+  "prediction": 60.0,
+  "calibration": 0.753,
+  "discovery": 57.8618,
+  "fragments": [
+    "harvest.5.0",
+    "harvest.6.2",
+    "harvest.6.0",
+    "poem.rilke_panther",
+    "game.chinese_jump_rope",
+    "met.memory_palace",
+    "harvest.3.4",
+    "book.discworld",
+    "poem.okigbo_heavensgate",
+    "game.blind_mans_buff",
+    "met.words_weapons",
+    "art.friedrich_wanderer",
+    "book.narnia_wardrobe",
+    "poem.mutanabbi_qasida",
+    "game.senet_sticks"
+  ],
+  "rng_log": [
+    {
+      "label": "invent.blend_model",
+      "value": "markov"
+    },
+    {
+      "label": "invent.depth",
+      "value": 3
+    },
+    {
+      "label": "invent.assumption",
+      "value": "a gate must be fully applied to the whole state before the next gate starts"
+    },
+    {
+      "label": "child:invent.world",
+      "value": 272021937
+    }
+  ],
+  "timing_s": {
+    "seed": 0.0,
+    "harvest": 0.0,
+    "world": 0.067,
+    "immerse": 52.397,
+    "bend": 256.288,
+    "measure": 1.211
+  },
+  "total_s": 309.964
+}

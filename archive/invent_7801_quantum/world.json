@@ -1,0 +1,95 @@
+{
+  "model": "markov",
+  "text": "A remark can cut, a cellar nobody visits, and that ink drying on his verses will outlast the empires he serves. Night, sword, desert, and die at the heart. Fingertips brush a sleeve, close on empty air, brush cloth again - the whole ring shifting silently just out of reach. Fingertips brush a sleeve, close on empty air, brush cloth again - the whole vast world it once roamed has narrowed to one restless man's pride. A flat world rests on the backs of four elephants who stand on a flat pink desert under no sky, its avenues rope bridges swaying between decks, its districts drifting slowly across open ocean pulled by chained sea-beasts.",
+  "score": {
+    "score": 0.4521,
+    "imagination": 0.4521,
+    "readable": 1.0,
+    "surprise": 0.1343,
+    "mixing": 0.9616,
+    "originality": 0.7152,
+    "readability": 1.0,
+    "coherence": 1.0,
+    "flesch": 66.3,
+    "words": 68,
+    "sentences": 5
+  },
+  "fragments": [
+    {
+      "id": "harvest.5.0",
+      "kind": "metaphor",
+      "source": "The Ship of Theseus"
+    },
+    {
+      "id": "harvest.6.2",
+      "kind": "painting",
+      "source": "Yves Tanguy, Indefinite Divisibility"
+    },
+    {
+      "id": "harvest.6.0",
+      "kind": "book",
+      "source": "China Miéville, The Scar"
+    },
+    {
+      "id": "poem.rilke_panther",
+      "kind": "poem",
+      "source": "Rainer Maria Rilke, \"The Panther\""
+    },
+    {
+      "id": "game.chinese_jump_rope",
+      "kind": "game",
+      "source": "Chinese Jump Rope (elastic rope game)"
+    },
+    {
+      "id": "met.memory_palace",
+      "kind": "metaphor",
+      "source": "memory is a palace"
+    },
+    {
+      "id": "harvest.3.4",
+      "kind": "painting",
+      "source": "Yves Tanguy, Indefinite Divisibility"
+    },
+    {
+      "id": "book.discworld",
+      "kind": "book",
+      "source": "Terry Pratchett, Discworld"
+    },
+    {
+      "id": "poem.okigbo_heavensgate",
+      "kind": "poem",
+      "source": "Christopher Okigbo, \"Heavensgate\""
+    },
+    {
+      "id": "game.blind_mans_buff",
+      "kind": "game",
+      "source": "Blind man's buff (Colin-maillard, European and global tradition)"
+    },
+    {
+      "id": "met.words_weapons",
+      "kind": "metaphor",
+      "source": "words are weapons"
+    },
+    {
+      "id": "art.friedrich_wanderer",
+      "kind": "painting",
+      "source": "Caspar David Friedrich, Wanderer above the Sea of Fog"
+    },
+    {
+      "id": "book.narnia_wardrobe",
+      "kind": "book",
+      "source": "C. S. Lewis, The Chronicles of Narnia"
+    },
+    {
+      "id": "poem.mutanabbi_qasida",
+      "kind": "poem",
+      "source": "Al-Mutanabbi, heroic ode (qasida)"
+    },
+    {
+      "id": "game.senet_sticks",
+      "kind": "game",
+      "source": "Senet (ancient Egyptian board game)"
+    }
+  ],
+  "order": 2
+}

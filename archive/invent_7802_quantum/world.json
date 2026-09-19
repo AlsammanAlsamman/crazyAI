@@ -1,0 +1,74 @@
+{
+  "model": "evolve",
+  "text": "Its poet bristles the wrong woman, musician a chest melody that line in the machinery. The memory bristles with caste plain seeds and exposed legs, as if a hand himself had been left out to alone for a million years. One grass is dragged up into trouble and is pushed, furious, disoriented by odd and pass and left sheep, behind at first to now any of it is more real than the arms he grain by heart. When he things plague down to pronounce the town's, they symptom the heart has carried his eyes and refuse to refuse their drips. Their hearts are pushed and joined by a line himself that runs from one stranger to the other, and one of them generation's antler-like rows over the odd that arms onto her white dress.",
+  "score": {
+    "score": 0.977,
+    "imagination": 0.977,
+    "readable": 1.0,
+    "surprise": 0.9365,
+    "mixing": 0.9958,
+    "originality": 1.0,
+    "readability": 1.0,
+    "coherence": 1.0,
+    "flesch": 67.9,
+    "words": 64,
+    "sentences": 5
+  },
+  "fragments": [
+    {
+      "id": "harvest.9.3",
+      "kind": "metaphor",
+      "source": "Plato's Cave"
+    },
+    {
+      "id": "art.kahlo_two",
+      "kind": "painting",
+      "source": "Frida Kahlo, The Two Fridas"
+    },
+    {
+      "id": "harvest.4.0",
+      "kind": "book",
+      "source": "China Miéville, Perdido Street Station"
+    },
+    {
+      "id": "poem.tagore_gitanjali",
+      "kind": "poem",
+      "source": "Rabindranath Tagore, Gitanjali"
+    },
+    {
+      "id": "game.oware_seeds",
+      "kind": "game",
+      "source": "Oware / Mancala (West African seed-sowing game)"
+    },
+    {
+      "id": "met.unpaired_hand_passed_on",
+      "kind": "metaphor",
+      "source": "devised for crazyAI's Nim target (kids'-hands framing), 2026"
+    },
+    {
+      "id": "harvest.4.2",
+      "kind": "painting",
+      "source": "Yves Tanguy, Indefinite Divisibility"
+    },
+    {
+      "id": "harvest.7.3",
+      "kind": "book",
+      "source": "Jorge Amado, by way of Gabriel García Márquez, One Hundred Years of Solitude"
+    }
+  ],
+  "generations": 12,
+  "history": [
+    0.8882,
+    0.9088,
+    0.9155,
+    0.9191,
+    0.922,
+    0.9447,
+    0.9447,
+    0.9574,
+    0.9574,
+    0.9579,
+    0.9647,
+    0.9769
+  ]
+}

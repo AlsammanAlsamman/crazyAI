@@ -1,0 +1,60 @@
+{
+  "target": "quantum",
+  "artifact": "kernel",
+  "imagination": {
+    "score": 0.9288,
+    "imagination": 0.9288,
+    "readable": 1.0,
+    "surprise": 0.806,
+    "mixing": 0.994,
+    "originality": 1.0,
+    "readability": 1.0,
+    "coherence": 1.0,
+    "flesch": 66.7,
+    "words": 68,
+    "sentences": 6
+  },
+  "measurement": {
+    "results": [
+      {
+        "n_qubits": 8,
+        "time": 1.4499994e-05,
+        "ref_time": 0.000284700014,
+        "rel_err": 1.414,
+        "speedup_vs_naive": 19.634,
+        "exactness": 0.0,
+        "status": "WRONG"
+      },
+      {
+        "n_qubits": 12,
+        "time": 0.000173900044,
+        "ref_time": 0.00563199999,
+        "rel_err": 1.488,
+        "speedup_vs_naive": 32.386,
+        "exactness": 0.0,
+        "status": "WRONG"
+      },
+      {
+        "n_qubits": 16,
+        "time": 0.00111979997,
+        "ref_time": 0.099047,
+        "rel_err": 1.251,
+        "speedup_vs_naive": 88.451,
+        "exactness": 0.0,
+        "status": "WRONG"
+      }
+    ],
+    "largest_n": 16,
+    "rel_err": 1.251,
+    "status": "WRONG",
+    "speedup_vs_naive": 88.451,
+    "value": 0.0,
+    "prediction_target": 88.451,
+    "reading": "value = speedup vs. a reference gate-by-gate statevector simulator x exactness (1.0 relative error < 1e-9)."
+  },
+  "value": 0.0,
+  "status": "WRONG",
+  "calibration": 0.007,
+  "prediction": 0.6,
+  "discovery": 0.0
+}

@@ -1,0 +1,50 @@
+{
+  "seed": 7805,
+  "target": "quantum",
+  "blend_model": "graft",
+  "depth": 1,
+  "assumption_focus": "every amplitude must be visited in the same order for every gate",
+  "provider": "claudecode",
+  "model": "",
+  "imagination_score": 0.9288,
+  "status": "WRONG",
+  "value": 0.0,
+  "prediction": 0.6,
+  "calibration": 0.007,
+  "discovery": 0.0,
+  "fragments": [
+    "met.heart_engine",
+    "harvest.7.1",
+    "book.borges_aleph",
+    "poem.tagore_gitanjali",
+    "game.senet_sticks",
+    "met.life_journey"
+  ],
+  "rng_log": [
+    {
+      "label": "invent.blend_model",
+      "value": "graft"
+    },
+    {
+      "label": "invent.depth",
+      "value": 1
+    },
+    {
+      "label": "invent.assumption",
+      "value": "every amplitude must be visited in the same order for every gate"
+    },
+    {
+      "label": "child:invent.world",
+      "value": 84702542
+    }
+  ],
+  "timing_s": {
+    "seed": 0.0,
+    "harvest": 0.0,
+    "world": 0.014,
+    "immerse": 34.464,
+    "bend": 255.356,
+    "measure": 1.344
+  },
+  "total_s": 291.178
+}

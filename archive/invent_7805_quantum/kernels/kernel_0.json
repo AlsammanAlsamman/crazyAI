@@ -1,0 +1,32 @@
+{
+  "results": [
+    {
+      "n_qubits": 8,
+      "time": 1.4499994e-05,
+      "ref_time": 0.000284700014,
+      "rel_err": 1.414,
+      "speedup_vs_naive": 19.634,
+      "exactness": 0.0,
+      "status": "WRONG"
+    },
+    {
+      "n_qubits": 12,
+      "time": 0.000173900044,
+      "ref_time": 0.00563199999,
+      "rel_err": 1.488,
+      "speedup_vs_naive": 32.386,
+      "exactness": 0.0,
+      "status": "WRONG"
+    },
+    {
+      "n_qubits": 16,
+      "time": 0.00111979997,
+      "ref_time": 0.099047,
+      "rel_err": 1.251,
+      "speedup_vs_naive": 88.451,
+      "exactness": 0.0,
+      "status": "WRONG"
+    }
+  ],
+  "value": 0.0
+}

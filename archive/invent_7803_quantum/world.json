@@ -1,0 +1,95 @@
+{
+  "model": "markov",
+  "text": "Cords run from the machinery behind her, through the floor, up through her own chest, so her heartbeat is the gravity between neighbouring suns. It fires clean over another piece's head in a museum and somehow still looks back at the same instant. A handful of small spiked pieces scattered loose across a stone step, a little rubber ball bounced once and caught again before it, a house, a visitor feels accused, as if the statue's silence were a command to go home and become someone else entirely. Waterfalls pour endlessly off the page and flaps into the air as a challenge, his grandfather's vineyard, and chemistry is the engine driving the invention.",
+  "score": {
+    "score": 0.5093,
+    "imagination": 0.5837,
+    "readable": 0.8178,
+    "surprise": 0.2037,
+    "mixing": 0.9765,
+    "originality": 1.0,
+    "readability": 0.8178,
+    "coherence": 1.0,
+    "flesch": 50.9,
+    "words": 55,
+    "sentences": 4
+  },
+  "fragments": [
+    {
+      "id": "met.heart_engine",
+      "kind": "metaphor",
+      "source": "the heart is a pump"
+    },
+    {
+      "id": "harvest.8.1",
+      "kind": "painting",
+      "source": "Remedios Varo, Creation of the Birds"
+    },
+    {
+      "id": "book.borges_aleph",
+      "kind": "book",
+      "source": "Borges, The Aleph"
+    },
+    {
+      "id": "poem.kabir_guest",
+      "kind": "poem",
+      "source": "Kabir, mystic doha"
+    },
+    {
+      "id": "game.chinese_jump_rope",
+      "kind": "game",
+      "source": "Chinese Jump Rope (elastic rope game)"
+    },
+    {
+      "id": "met.atom_solar",
+      "kind": "metaphor",
+      "source": "the atom is a solar system"
+    },
+    {
+      "id": "harvest.5.1",
+      "kind": "painting",
+      "source": "Yves Tanguy, Mama, Papa Is Wounded!"
+    },
+    {
+      "id": "harvest.6.0",
+      "kind": "book",
+      "source": "China Miéville, The Scar"
+    },
+    {
+      "id": "poem.darwish_identity",
+      "kind": "poem",
+      "source": "Mahmoud Darwish, \"Identity Card\""
+    },
+    {
+      "id": "game.jacks_knucklebones",
+      "kind": "game",
+      "source": "Jacks / Knucklebones (scatter-and-catch game)"
+    },
+    {
+      "id": "met.electricity_water",
+      "kind": "metaphor",
+      "source": "electricity is water"
+    },
+    {
+      "id": "art.kandinsky_composition",
+      "kind": "painting",
+      "source": "Kandinsky, Composition VIII"
+    },
+    {
+      "id": "harvest.2.3",
+      "kind": "book",
+      "source": "Terry Pratchett, Discworld"
+    },
+    {
+      "id": "poem.rilke_torso",
+      "kind": "poem",
+      "source": "Rainer Maria Rilke, \"Archaic Torso of Apollo\""
+    },
+    {
+      "id": "game.xiangqi_cannon",
+      "kind": "game",
+      "source": "The cannon piece (Xiangqi, Chinese chess)"
+    }
+  ],
+  "order": 2
+}
