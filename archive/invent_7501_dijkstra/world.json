@@ -1,0 +1,74 @@
+{
+  "model": "evolve",
+  "text": "No ropes, no room's, no short. Eggshells into piece's you can reach, a house of raspberry place, a jungle in the living snake. The land is a memory and crossing it pulls a pawn to a calm. Was he a thumb touching he was a butterfly, or is he board a butterfly dreaming he is a boulder? An unhurried, needs hand pulls up etched, and a time sits in board its paper, tumbling her place and her leisure sun without protest.",
+  "score": {
+    "score": 0.9768,
+    "imagination": 0.9768,
+    "readable": 1.0,
+    "surprise": 0.9474,
+    "mixing": 0.9839,
+    "originality": 1.0,
+    "readability": 1.0,
+    "coherence": 1.0,
+    "flesch": 78.6,
+    "words": 39,
+    "sentences": 5
+  },
+  "fragments": [
+    {
+      "id": "harvest.9.4",
+      "kind": "metaphor",
+      "source": "Zhuangzi's Butterfly Dream"
+    },
+    {
+      "id": "harvest.7.4",
+      "kind": "painting",
+      "source": "Remedios Varo, Creation of the Birds"
+    },
+    {
+      "id": "book.alice_looking_glass",
+      "kind": "book",
+      "source": "Lewis Carroll, Through the Looking-Glass"
+    },
+    {
+      "id": "poem.dickinson_carriage",
+      "kind": "poem",
+      "source": "Emily Dickinson, \"Because I could not stop for Death\""
+    },
+    {
+      "id": "game.xiangqi_cannon",
+      "kind": "game",
+      "source": "The cannon piece (Xiangqi, Chinese chess)"
+    },
+    {
+      "id": "met.spinning_snake_cover",
+      "kind": "metaphor",
+      "source": "devised for crazyAI's alignment target (covering-snake framing), 2026"
+    },
+    {
+      "id": "art.magritte_castle",
+      "kind": "painting",
+      "source": "Magritte, The Castle of the Pyrenees"
+    },
+    {
+      "id": "book.moomins",
+      "kind": "book",
+      "source": "Tove Jansson, Moomin books"
+    }
+  ],
+  "generations": 12,
+  "history": [
+    0.9418,
+    0.9418,
+    0.9418,
+    0.9508,
+    0.9508,
+    0.9553,
+    0.9553,
+    0.9625,
+    0.9625,
+    0.9631,
+    0.9751,
+    0.9763
+  ]
+}

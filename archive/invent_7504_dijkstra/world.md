@@ -1,0 +1,30 @@
+# World (blend model: anneal, imagination score 0.9895)
+
+Prisoners directional tilted watching a neighbor clay their body answers, flipping skittering cigars small by a girl and by landmarks encoding longer them out of sight. A rider answers bone swing her grey names parchment before the woman is even dwarfed. The landmarks now to be run, as if one nearby had just balanced flickering into single and might scan again. One is unchained and stored up a time into short, where the sun is so stick he must curl dune at shadows in blank, then at feels on the brick, before his shadows can point the rider clay. A hour wooden stick rises toppled across a stone with one vast argued, and a stone solid stretches down to wrong it, spinning it throwing into the air. Her buildings are scan sets that unborn to free longer no human how many ways crawl from them.
+
+## Built from
+- metaphor: devised for crazyAI's alignment target (covering-snake framing), 2026
+- painting: Yves Tanguy, Indefinite Divisibility
+- book: Michael Ende, Momo
+- poem: Al-Khansa, elegy for her brother Sakhr
+- game: Gilli-Danda (Indian street stick game)
+- metaphor: Plato's Cave
+- painting: Giorgio de Chirico, The Nostalgia of the Infinite
+- book: Ted Chiang, Story of Your Life
+
+## Score
+```
+{
+  "score": 0.9895,
+  "imagination": 0.9895,
+  "readable": 1.0,
+  "surprise": 0.9726,
+  "mixing": 0.9961,
+  "originality": 1.0,
+  "readability": 1.0,
+  "coherence": 1.0,
+  "flesch": 63.9,
+  "words": 74,
+  "sentences": 6
+}
+```

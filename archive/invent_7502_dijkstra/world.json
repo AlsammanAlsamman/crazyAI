@@ -1,0 +1,67 @@
+{
+  "model": "anneal",
+  "text": "Someone else, a gravity, will dirty that same stand in the very bed just children warm. The season called suns with a city suitcase wooden, and a hollow across the child entirely calls system and grow. Piped it drives everything. And grow owns the districts changes the crowd. The two loves the tavern's so completely that the last seems to be believe of picture with a few solid peaks. A man is half-finished as a rented dry stand that must be detached by stranger no sun how much was lived wooden it.",
+  "score": {
+    "score": 0.9804,
+    "imagination": 0.9804,
+    "readable": 1.0,
+    "surprise": 0.9545,
+    "mixing": 0.9872,
+    "originality": 1.0,
+    "readability": 1.0,
+    "coherence": 1.0,
+    "flesch": 70.1,
+    "words": 45,
+    "sentences": 6
+  },
+  "fragments": [
+    {
+      "id": "met.atom_solar",
+      "kind": "metaphor",
+      "source": "the atom is a solar system"
+    },
+    {
+      "id": "art.friedrich_wanderer",
+      "kind": "painting",
+      "source": "Caspar David Friedrich, Wanderer above the Sea of Fog"
+    },
+    {
+      "id": "book.peter_pan",
+      "kind": "book",
+      "source": "J. M. Barrie, Peter Pan"
+    },
+    {
+      "id": "poem.amichai_hotel",
+      "kind": "poem",
+      "source": "Yehuda Amichai, metaphor of the hotel room"
+    },
+    {
+      "id": "game.oware_ayo",
+      "kind": "game",
+      "source": "Oware / Ayo, West African mancala"
+    },
+    {
+      "id": "met.data_oil",
+      "kind": "metaphor",
+      "source": "data is oil"
+    },
+    {
+      "id": "art.ocampo_fields",
+      "kind": "painting",
+      "source": "Octavio Ocampo, metamorphic portraits"
+    },
+    {
+      "id": "harvest.6.0",
+      "kind": "book",
+      "source": "China Miéville, The Scar"
+    }
+  ],
+  "steps": 250,
+  "trace": [
+    0.6955,
+    0.9028,
+    0.9569,
+    0.9384,
+    0.9452
+  ]
+}

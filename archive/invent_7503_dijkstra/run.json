@@ -1,0 +1,50 @@
+{
+  "seed": 7503,
+  "target": "dijkstra",
+  "blend_model": "cutup",
+  "depth": 2,
+  "assumption_focus": "a road can only be considered once its starting place is fully settled",
+  "provider": "claudecode",
+  "model": "",
+  "imagination_score": 0.6041,
+  "status": "exact",
+  "value": 0.029,
+  "prediction": 1.8,
+  "calibration": 0.016,
+  "discovery": 0.0233,
+  "fragments": [
+    "met.market_organism",
+    "art.carrington_kitchen",
+    "harvest.8.0",
+    "poem.szymborska_cat",
+    "game.oware_seeds",
+    "harvest.7.2"
+  ],
+  "rng_log": [
+    {
+      "label": "invent.blend_model",
+      "value": "cutup"
+    },
+    {
+      "label": "invent.depth",
+      "value": 2
+    },
+    {
+      "label": "invent.assumption",
+      "value": "a road can only be considered once its starting place is fully settled"
+    },
+    {
+      "label": "child:invent.world",
+      "value": 1816229563
+    }
+  ],
+  "timing_s": {
+    "seed": 0.0,
+    "harvest": 0.0,
+    "world": 0.019,
+    "immerse": 30.754,
+    "bend": 113.012,
+    "measure": 0.974
+  },
+  "total_s": 144.759
+}

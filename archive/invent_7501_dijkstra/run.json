@@ -1,0 +1,52 @@
+{
+  "seed": 7501,
+  "target": "dijkstra",
+  "blend_model": "evolve",
+  "depth": 1,
+  "assumption_focus": "the next place to finalize is found by comparing against every remaining place",
+  "provider": "claudecode",
+  "model": "",
+  "imagination_score": 0.9768,
+  "status": "exact",
+  "value": 0.031,
+  "prediction": 1.3,
+  "calibration": 0.024,
+  "discovery": 0.0306,
+  "fragments": [
+    "harvest.9.4",
+    "harvest.7.4",
+    "book.alice_looking_glass",
+    "poem.dickinson_carriage",
+    "game.xiangqi_cannon",
+    "met.spinning_snake_cover",
+    "art.magritte_castle",
+    "book.moomins"
+  ],
+  "rng_log": [
+    {
+      "label": "invent.blend_model",
+      "value": "evolve"
+    },
+    {
+      "label": "invent.depth",
+      "value": 1
+    },
+    {
+      "label": "invent.assumption",
+      "value": "the next place to finalize is found by comparing against every remaining place"
+    },
+    {
+      "label": "child:invent.world",
+      "value": 2083437954
+    }
+  ],
+  "timing_s": {
+    "seed": 0.003,
+    "harvest": 0.0,
+    "world": 0.105,
+    "immerse": 26.041,
+    "bend": 114.363,
+    "measure": 0.946
+  },
+  "total_s": 141.458
+}
