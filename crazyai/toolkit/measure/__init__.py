@@ -2,4 +2,4 @@
 
 from crazyai.toolkit.measure import symbolic, stats, logic, narrative, ground, novelty, archive, imagination, kernel  # noqa: F401
 from crazyai.toolkit.measure import alignment, nim, hash, fft  # noqa: F401
-from crazyai.toolkit.measure import kmer, dijkstra, wht, rs_encode  # noqa: F401
+from crazyai.toolkit.measure import kmer, dijkstra, wht, rs_encode, quantum  # noqa: F401

@@ -372,7 +372,36 @@ _RS_ENCODE = Target(
     known_way="Carry-less shift-and-reduce multiplication in GF(2^8), one bit at a time, inside a standard LFSR encoder - real headroom via precomputed log/antilog tables, turning every field multiply into two lookups and a mod-255 add.",
 )
 
-_ALL = {t.name: t for t in (_MATMUL, _PHYSICS, _MECHANICS, _ALIGNMENT, _NIM, _HASH, _FFT, _KMER, _DIJKSTRA, _WHT, _RS_ENCODE)}
+_QUANTUM = Target(
+    name="quantum",
+    title="Simulate a quantum circuit's statevector, faster",
+    problem="Apply a sequence of single-qubit gates to an n-qubit statevector (2^n complex amplitudes), matching "
+           "a reference gate-by-gate simulation within tolerance, as fast as possible.",
+    in_world_need=("A great many tiny lanterns stand in a row, each holding two numbers at once - a bright-lit "
+                   "strength and a shadow-strength, positive or negative - and a rule visits some of them in "
+                   "pairs, changing both at once; where a bright strength and a shadow strength meet in a pair, "
+                   "they may add, or they may cancel each other away entirely."),
+    assumptions=[
+        "an amplitude is touched independently of the others except through its one paired amplitude",
+        "a gate must be fully applied to the whole state before the next gate starts",
+        "the positive and negative parts of an amplitude are separate quantities, never merged",
+        "every amplitude must be visited in the same order for every gate",
+        "the state must be a dense array; every amplitude is stored explicitly",
+    ],
+    artifact="kernel",
+    bend_instructions=(
+        "Map every object of the world onto a computational object: what is a lantern, what is a pair, what is "
+        "cancelling. Keep the mapping literal. Then write the kernel in C against quantum_contract, predict its "
+        "speed, measure it with quantum_bench, and improve it at most four times. The final answer MUST contain "
+        "one ```c code block with the complete kernel and one line 'PREDICTION: speedup_vs_naive = <number>' "
+        "written BEFORE the first measurement."),
+    measure_families=["quantum"],
+    measure_tool="quantum_bench",
+    examine_question="Does this kernel's final statevector match the reference within tolerance, and is the reported speedup credible?",
+    known_way="Touch only the O(2^n) amplitude pairs each gate affects, one gate fully applied before the next begins - real headroom via gate fusion (combine consecutive same-qubit gates into one matrix, one sweep instead of several) and SIMD-vectorized amplitude updates.",
+)
+
+_ALL = {t.name: t for t in (_MATMUL, _PHYSICS, _MECHANICS, _ALIGNMENT, _NIM, _HASH, _FFT, _KMER, _DIJKSTRA, _WHT, _RS_ENCODE, _QUANTUM)}
 TARGETS = list(_ALL)
 
 
