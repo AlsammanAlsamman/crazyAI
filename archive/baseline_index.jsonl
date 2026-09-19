@@ -18,3 +18,8 @@
 {"seed": 7203, "target": "hash", "condition": "baseline", "status": "exact", "value": 9.7704, "prediction": 4.5, "calibration": 0.46, "model": ""}
 {"seed": 7204, "target": "hash", "condition": "baseline", "status": "exact", "value": 15.5835, "prediction": 4.0, "calibration": 0.256, "model": ""}
 {"seed": 7205, "target": "hash", "condition": "baseline", "status": "exact", "value": 15.831, "prediction": 4.5, "calibration": 0.284, "model": ""}
+{"seed": 7401, "target": "kmer", "condition": "baseline", "status": "exact", "value": 0.234, "prediction": 10.0, "calibration": 0.023, "model": ""}
+{"seed": 7402, "target": "kmer", "condition": "baseline", "status": "exact", "value": 0.358, "prediction": 8.0, "calibration": 0.045, "model": ""}
+{"seed": 7403, "target": "kmer", "condition": "baseline", "status": "exact", "value": 0.405, "prediction": 10.0, "calibration": 0.04, "model": ""}
+{"seed": 7404, "target": "kmer", "condition": "baseline", "status": "exact", "value": 0.77, "prediction": 12.0, "calibration": 0.064, "model": ""}
+{"seed": 7405, "target": "kmer", "condition": "baseline", "status": "exact", "value": 0.25, "prediction": 10.0, "calibration": 0.025, "model": ""}

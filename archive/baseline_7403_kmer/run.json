@@ -1,0 +1,16 @@
+{
+  "seed": 7403,
+  "target": "kmer",
+  "condition": "baseline",
+  "provider": "claudecode",
+  "model": "",
+  "status": "exact",
+  "value": 0.405,
+  "prediction": 10.0,
+  "calibration": 0.04,
+  "timing_s": {
+    "bend": 56.067,
+    "measure": 0.664
+  },
+  "total_s": 56.731
+}
