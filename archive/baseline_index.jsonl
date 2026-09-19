@@ -13,3 +13,8 @@
 {"seed": 7103, "target": "nim", "condition": "baseline", "status": "exact", "value": 0.366, "prediction": 1.4, "calibration": 0.261, "model": ""}
 {"seed": 7104, "target": "nim", "condition": "baseline", "status": "exact", "value": 0.407, "prediction": 1.4, "calibration": 0.291, "model": ""}
 {"seed": 7105, "target": "nim", "condition": "baseline", "status": "exact", "value": 0.462, "prediction": 2.2, "calibration": 0.21, "model": ""}
+{"seed": 7201, "target": "hash", "condition": "baseline", "status": "exact", "value": 15.6593, "prediction": 4.5, "calibration": 0.287, "model": ""}
+{"seed": 7202, "target": "hash", "condition": "baseline", "status": "exact", "value": 15.6723, "prediction": 4.5, "calibration": 0.287, "model": ""}
+{"seed": 7203, "target": "hash", "condition": "baseline", "status": "exact", "value": 9.7704, "prediction": 4.5, "calibration": 0.46, "model": ""}
+{"seed": 7204, "target": "hash", "condition": "baseline", "status": "exact", "value": 15.5835, "prediction": 4.0, "calibration": 0.256, "model": ""}
+{"seed": 7205, "target": "hash", "condition": "baseline", "status": "exact", "value": 15.831, "prediction": 4.5, "calibration": 0.284, "model": ""}

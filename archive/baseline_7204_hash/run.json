@@ -1,0 +1,16 @@
+{
+  "seed": 7204,
+  "target": "hash",
+  "condition": "baseline",
+  "provider": "claudecode",
+  "model": "",
+  "status": "exact",
+  "value": 15.5835,
+  "prediction": 4.0,
+  "calibration": 0.256,
+  "timing_s": {
+    "bend": 109.782,
+    "measure": 0.549
+  },
+  "total_s": 110.331
+}
