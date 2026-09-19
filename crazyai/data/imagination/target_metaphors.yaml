@@ -1,0 +1,25 @@
+# Metaphors devised for this project's own `invent` targets, not harvested from external
+# culture - each one written to break a specific silent assumption of a specific target
+# (see crazyai/targets.py's assumption_hints for where they're pinned via --assumption).
+# Kept here, in the general `metaphor` pool, so they can also surface on an ordinary,
+# unpinned draw for any target, not only the one each was first written for.
+kind: metaphor
+fragments:
+  - id: met.rat_treasure_maze
+    source: "devised for crazyAI's alignment target (rat-in-maze framing), 2026"
+    text: "A maze holds a rat and a scatter of a few true treasures lost among long empty corridors. The rat does not care to walk every corridor or visit every dead end - it only wants to have stood on each treasure once, and picks its path by chasing what's good and leaving the rest untouched. Most of the maze goes forever unvisited, and the rat is not troubled by that at all."
+  - id: met.folded_sheet_creases
+    source: "devised for crazyAI's alignment target (paper-folding framing), 2026"
+    text: "A wide sheet, marked all over with a grid, is folded along its slanting middle - once, then again, then once more - until far corners are pressed flat against each other. At every crease two or three layers of the sheet lie stacked exactly atop one another, so that reading through the crease reads all of them together, cell for cell, at once, rather than walking the sheet flat from one edge to the other."
+  - id: met.spinning_snake_cover
+    source: "devised for crazyAI's alignment target (covering-snake framing), 2026"
+    text: "A short snake, its body exactly one cell thick, lies across a wide board and wants to cover it entirely as fast as it possibly can. It is free to point any of eight ways at once and to curl sharply back on itself, spinning in place when it needs to - so its single continuous crawl learns the board one long stretch at a time, never by comparing just one square to its neighbor and stopping there."
+  - id: met.pyramid_of_crossing_sticks
+    source: "devised for crazyAI's Nim target (crossing-sticks framing), 2026"
+    text: "Every heap's sticks are thrown into the air together and settle into a pyramid, the sticks of one heap crossing the sticks of every other heap at once. A single row of the pyramid holds one sliver from every heap at the same time, not one heap's story finished before the next begins - and whatever a shared row shows is true of every heap simultaneously, read across, not down."
+  - id: met.unpaired_hand_passed_on
+    source: "devised for crazyAI's Nim target (kids'-hands framing), 2026"
+    text: "Each heap is a child holding out as many hands as it has sticks, but every real child has exactly two hands - so a heap with an odd count always leaves one hand unpaired and alone. An unpaired hand is trouble: the child slaps it away to the next child, who either finds their own hands settling back into pairs, or becomes unpaired in turn and must pass the trouble further down the line."
+  - id: met.hidden_leader_duck
+    source: "devised for crazyAI's Nim target (hidden-leader-duck framing), 2026"
+    text: "Flocks of ducks cross the sky in tight triangular formations while a hunter below wants to take the most of them, and every duck wants only to live. Somewhere inside each triangle flies a leader duck, and it cannot be told apart from the others just by looking - it may even be hiding among its own flock, discoverable without first tracing every shot and every possible flight path to its end."
