@@ -343,7 +343,36 @@ _WHT = Target(
     known_way="Fast Walsh-Hadamard transform: a recursive butterfly of only additions and subtractions, O(n log n) - same shape as an FFT but built on XOR instead of frequency.",
 )
 
-_ALL = {t.name: t for t in (_MATMUL, _PHYSICS, _MECHANICS, _ALIGNMENT, _NIM, _HASH, _FFT, _KMER, _DIJKSTRA, _WHT)}
+_RS_ENCODE = Target(
+    name="rs_encode",
+    title="Compute error-correcting parity bytes, faster",
+    problem="Given k message bytes, compute n-k Reed-Solomon parity bytes over GF(2^8), matching a reference "
+           "systematic encoder exactly, as fast as possible.",
+    in_world_need=("A message of small tokens must be given a short trailing seal made of the same kind of token, "
+                   "built so that if a few tokens of the message are later damaged, the seal alone can help "
+                   "recover what they were - every token combines with every other by a strange arithmetic where "
+                   "adding a thing to itself always erases it."),
+    assumptions=[
+        "each token combination must be computed from scratch by shifting and reducing",
+        "the seal's tokens must be produced strictly in order, most significant first",
+        "a combination's answer cannot be known without performing the shift-reduce steps",
+        "every message token must be folded into the seal individually, one at a time",
+        "the strange arithmetic has no shortcut table, only the shift-reduce rule",
+    ],
+    artifact="kernel",
+    bend_instructions=(
+        "Map every object of the world onto a computational object: what is a token, what is the seal, what is "
+        "the strange arithmetic. Keep the mapping literal. Then write the kernel in C against rs_encode_contract, "
+        "predict its speed, measure it with rs_encode_bench, and improve it at most four times. The final answer "
+        "MUST contain one ```c code block with the complete kernel and one line "
+        "'PREDICTION: speedup_vs_naive = <number>' written BEFORE the first measurement."),
+    measure_families=["rs_encode"],
+    measure_tool="rs_encode_bench",
+    examine_question="Does this kernel's parity bytes match the reference exactly, and is the reported speedup credible?",
+    known_way="Carry-less shift-and-reduce multiplication in GF(2^8), one bit at a time, inside a standard LFSR encoder - real headroom via precomputed log/antilog tables, turning every field multiply into two lookups and a mod-255 add.",
+)
+
+_ALL = {t.name: t for t in (_MATMUL, _PHYSICS, _MECHANICS, _ALIGNMENT, _NIM, _HASH, _FFT, _KMER, _DIJKSTRA, _WHT, _RS_ENCODE)}
 TARGETS = list(_ALL)
 
 
