@@ -1,0 +1,13 @@
+{
+  "seed": 7111,
+  "target": "nim",
+  "blend_model": "markov",
+  "depth": 1,
+  "assumption_focus": "each heap must be considered on its own before the others",
+  "bias": {
+    "enabled": false,
+    "min_samples": 20,
+    "samples_seen": 0,
+    "active": false
+  }
+}

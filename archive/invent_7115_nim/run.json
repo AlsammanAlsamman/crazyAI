@@ -1,0 +1,52 @@
+{
+  "seed": 7115,
+  "target": "nim",
+  "blend_model": "evolve",
+  "depth": 1,
+  "assumption_focus": "the value of a position is unknown until every reachable position from it has been examined",
+  "provider": "claudecode",
+  "model": "",
+  "imagination_score": 0.9667,
+  "status": "exact",
+  "value": 0.013,
+  "prediction": 500.0,
+  "calibration": 0.0,
+  "discovery": 0.0128,
+  "fragments": [
+    "met.data_oil",
+    "art.hokusai_wave",
+    "harvest.5.4",
+    "poem.szymborska_cat",
+    "game.kite_fighting_chase",
+    "met.text_fabric",
+    "art.varo_creation",
+    "harvest.4.0"
+  ],
+  "rng_log": [
+    {
+      "label": "invent.blend_model",
+      "value": "evolve"
+    },
+    {
+      "label": "invent.depth",
+      "value": 1
+    },
+    {
+      "label": "invent.assumption",
+      "value": "the value of a position is unknown until every reachable position from it has been examined"
+    },
+    {
+      "label": "child:invent.world",
+      "value": 978840748
+    }
+  ],
+  "timing_s": {
+    "seed": 0.016,
+    "harvest": 0.0,
+    "world": 0.06,
+    "immerse": 24.957,
+    "bend": 177.858,
+    "measure": 0.591
+  },
+  "total_s": 203.481
+}

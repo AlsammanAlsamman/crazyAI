@@ -1,0 +1,13 @@
+{
+  "seed": 7112,
+  "target": "nim",
+  "blend_model": "markov",
+  "depth": 1,
+  "assumption_focus": "a winning move can only be found by looking ahead through the game's possible futures",
+  "bias": {
+    "enabled": false,
+    "min_samples": 20,
+    "samples_seen": 0,
+    "active": false
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "model": "markov",
+  "text": "One line saws sideways in a sudden jerk, and a forest floor of dead words that feed the living ones. A planet whose languages have no nouns, only verbs and adjectives. An easel stands before a window, its canvas showing the exact slice of meadow and sky that the window itself frames, painted so precisely the two merge into one surface. In a kitchen a white goose, a house, a house, a woman with hair to the floor and a cluster of marbles sits at its center like tiny planets caught in orbit. A boy lives on an asteroid so small he can watch the sunset forty-four times a day by moving his chair.",
+  "score": {
+    "score": 0.4168,
+    "imagination": 0.4168,
+    "readable": 1.0,
+    "surprise": 0.1356,
+    "mixing": 0.8899,
+    "originality": 0.6,
+    "readability": 1.0,
+    "coherence": 1.0,
+    "flesch": 66.5,
+    "words": 60,
+    "sentences": 5
+  },
+  "fragments": [
+    {
+      "id": "met.ideas_food",
+      "kind": "metaphor",
+      "source": "ideas are food"
+    },
+    {
+      "id": "harvest.7.1",
+      "kind": "painting",
+      "source": "Yves Tanguy, Indefinite Divisibility"
+    },
+    {
+      "id": "book.borges_tlon",
+      "kind": "book",
+      "source": "Borges, Tlön, Uqbar, Orbis Tertius"
+    },
+    {
+      "id": "poem.paz_sunstone",
+      "kind": "poem",
+      "source": "Octavio Paz, \"Sunstone\""
+    },
+    {
+      "id": "game.hopscotch_pavement",
+      "kind": "game",
+      "source": "Hopscotch, chalk pavement game (global)"
+    },
+    {
+      "id": "met.language_tree",
+      "kind": "metaphor",
+      "source": "language is a tree"
+    },
+    {
+      "id": "art.carrington_kitchen",
+      "kind": "painting",
+      "source": "Leonora Carrington, kitchens"
+    },
+    {
+      "id": "book.borges_aleph",
+      "kind": "book",
+      "source": "Borges, The Aleph"
+    },
+    {
+      "id": "poem.rumi_reed",
+      "kind": "poem",
+      "source": "Rumi, \"Song of the Reed\" (opening of the Masnavi)"
+    },
+    {
+      "id": "game.marbles_ringer",
+      "kind": "game",
+      "source": "Marbles, ringer game (street game, global)"
+    },
+    {
+      "id": "met.money_water",
+      "kind": "metaphor",
+      "source": "money is water"
+    },
+    {
+      "id": "harvest.10.1",
+      "kind": "painting",
+      "source": "Magritte, The Human Condition"
+    },
+    {
+      "id": "book.little_prince",
+      "kind": "book",
+      "source": "Saint-Exupéry, The Little Prince"
+    },
+    {
+      "id": "poem.dickinson_carriage",
+      "kind": "poem",
+      "source": "Emily Dickinson, \"Because I could not stop for Death\""
+    },
+    {
+      "id": "game.kite_fighting_glass",
+      "kind": "game",
+      "source": "Kite Fighting (Afghan and South Asian tradition)"
+    }
+  ],
+  "order": 2
+}

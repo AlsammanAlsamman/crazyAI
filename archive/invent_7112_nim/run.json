@@ -1,0 +1,55 @@
+{
+  "seed": 7112,
+  "target": "nim",
+  "blend_model": "markov",
+  "depth": 1,
+  "assumption_focus": "a winning move can only be found by looking ahead through the game's possible futures",
+  "provider": "claudecode",
+  "model": "",
+  "imagination_score": 0.4168,
+  "status": "exact",
+  "value": 0.048,
+  "prediction": 0.05,
+  "calibration": 0.96,
+  "discovery": 0.034,
+  "fragments": [
+    "met.ideas_food",
+    "harvest.7.1",
+    "book.borges_tlon",
+    "poem.paz_sunstone",
+    "game.hopscotch_pavement",
+    "met.language_tree",
+    "art.carrington_kitchen",
+    "book.borges_aleph",
+    "poem.rumi_reed",
+    "game.marbles_ringer",
+    "met.money_water",
+    "harvest.10.1",
+    "book.little_prince",
+    "poem.dickinson_carriage",
+    "game.kite_fighting_glass"
+  ],
+  "rng_log": [
+    {
+      "label": "invent.blend_model",
+      "value": "markov"
+    },
+    {
+      "label": "invent.depth",
+      "value": 1
+    },
+    {
+      "label": "child:invent.world",
+      "value": 268875609
+    }
+  ],
+  "timing_s": {
+    "seed": 0.002,
+    "harvest": 0.0,
+    "world": 0.066,
+    "immerse": 46.805,
+    "bend": 135.432,
+    "measure": 0.541
+  },
+  "total_s": 182.846
+}

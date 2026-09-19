@@ -1,0 +1,13 @@
+{
+  "seed": 7113,
+  "target": "nim",
+  "blend_model": "graft",
+  "depth": 1,
+  "assumption_focus": "the value of a position is unknown until every reachable position from it has been examined",
+  "bias": {
+    "enabled": false,
+    "min_samples": 20,
+    "samples_seen": 0,
+    "active": false
+  }
+}

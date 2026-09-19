@@ -1,0 +1,74 @@
+{
+  "model": "evolve",
+  "text": "A foam against into the place of servants is measured from loose for punishments he will not perform for wings, while overhead, taut, and calm rituals permanently alone than any tube of the single can be whoever. The corner fills with kite answers sawing on threads hoarded in familiar alone and calm. Data it, tiny and glue, Remade Fuji answers under a kite sky as if the tube were about to fall the mountain too. Nobody lens suddenly at them behind. And perform owns the wells sits the century.",
+  "score": {
+    "score": 0.9667,
+    "imagination": 0.9667,
+    "readable": 1.0,
+    "surprise": 0.9348,
+    "mixing": 0.9663,
+    "originality": 1.0,
+    "readability": 1.0,
+    "coherence": 1.0,
+    "flesch": 64.2,
+    "words": 47,
+    "sentences": 5
+  },
+  "fragments": [
+    {
+      "id": "met.data_oil",
+      "kind": "metaphor",
+      "source": "data is oil"
+    },
+    {
+      "id": "art.hokusai_wave",
+      "kind": "painting",
+      "source": "Hokusai, The Great Wave"
+    },
+    {
+      "id": "harvest.5.4",
+      "kind": "book",
+      "source": "Mervyn Peake, Gormenghast"
+    },
+    {
+      "id": "poem.szymborska_cat",
+      "kind": "poem",
+      "source": "Wisława Szymborska, \"Cat in an Empty Apartment\""
+    },
+    {
+      "id": "game.kite_fighting_chase",
+      "kind": "game",
+      "source": "kite fighting (gudiparan bazi), Afghan and South Asian tradition"
+    },
+    {
+      "id": "met.text_fabric",
+      "kind": "metaphor",
+      "source": "a text is a fabric"
+    },
+    {
+      "id": "art.varo_creation",
+      "kind": "painting",
+      "source": "Remedios Varo, Creation of the Birds"
+    },
+    {
+      "id": "harvest.4.0",
+      "kind": "book",
+      "source": "China Miéville, Perdido Street Station"
+    }
+  ],
+  "generations": 12,
+  "history": [
+    0.8988,
+    0.9053,
+    0.9053,
+    0.9201,
+    0.9201,
+    0.9201,
+    0.9201,
+    0.9409,
+    0.9483,
+    0.9568,
+    0.9581,
+    0.9581
+  ]
+}

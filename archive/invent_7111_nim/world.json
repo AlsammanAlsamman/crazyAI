@@ -1,0 +1,95 @@
+{
+  "model": "markov",
+  "text": "Their hearts are exposed and joined by a single character sits behind a line of foot soldiers, patient as a rented hotel room that must be vacated by noon no matter how much was lived inside it. In a tower, girls with identical faces sit at a long table embroidering a cloth that spills out of the original vessel remains aboard. The atom is a tiny solar system, electrons orbiting a nucleus like planets around a patch of empty board, quiet as a rented hotel room that must be vacated by noon no matter how much was lived inside it.",
+  "score": {
+    "score": 0.3496,
+    "imagination": 0.434,
+    "readable": 0.722,
+    "surprise": 0.0962,
+    "mixing": 0.9637,
+    "originality": 0.8824,
+    "readability": 0.722,
+    "coherence": 1.0,
+    "flesch": 46.1,
+    "words": 53,
+    "sentences": 3
+  },
+  "fragments": [
+    {
+      "id": "harvest.7.2",
+      "kind": "metaphor",
+      "source": "The Ship of Theseus"
+    },
+    {
+      "id": "art.varo_tower",
+      "kind": "painting",
+      "source": "Remedios Varo, Embroidering the Earth's Mantle"
+    },
+    {
+      "id": "harvest.4.3",
+      "kind": "book",
+      "source": "Franz Kafka, The Metamorphosis"
+    },
+    {
+      "id": "poem.amichai_hotel",
+      "kind": "poem",
+      "source": "Yehuda Amichai, metaphor of the hotel room"
+    },
+    {
+      "id": "game.xiangqi_cannon",
+      "kind": "game",
+      "source": "The cannon piece (Xiangqi, Chinese chess)"
+    },
+    {
+      "id": "harvest.4.4",
+      "kind": "metaphor",
+      "source": "the tightrope walker's pole as memory"
+    },
+    {
+      "id": "art.kahlo_two",
+      "kind": "painting",
+      "source": "Frida Kahlo, The Two Fridas"
+    },
+    {
+      "id": "book.peter_pan",
+      "kind": "book",
+      "source": "J. M. Barrie, Peter Pan"
+    },
+    {
+      "id": "poem.sappho_apple",
+      "kind": "poem",
+      "source": "Sappho, fragment on the unreached apple"
+    },
+    {
+      "id": "game.kabaddi_breath",
+      "kind": "game",
+      "source": "Kabaddi (South Asian breath-and-tag game)"
+    },
+    {
+      "id": "met.atom_solar",
+      "kind": "metaphor",
+      "source": "the atom is a solar system"
+    },
+    {
+      "id": "art.kahlo_two",
+      "kind": "painting",
+      "source": "Frida Kahlo, The Two Fridas"
+    },
+    {
+      "id": "harvest.3.2",
+      "kind": "book",
+      "source": "Jonathan Swift, Gulliver's Travels"
+    },
+    {
+      "id": "poem.amichai_hotel",
+      "kind": "poem",
+      "source": "Yehuda Amichai, metaphor of the hotel room"
+    },
+    {
+      "id": "game.go_stones_click",
+      "kind": "game",
+      "source": "Go / Weiqi (board of stones, East Asia)"
+    }
+  ],
+  "order": 2
+}

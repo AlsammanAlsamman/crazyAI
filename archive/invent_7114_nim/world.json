@@ -1,0 +1,65 @@
+{
+  "model": "nest",
+  "text": "A painted limestone board of thirty squares set in three rows; this is why a light is built around a landscape. The archives its memory; this is why a three is built around a body. Beyond a dark lies a library; whoever enters finds that dwarfed by flagpoles and a sky gone the color of old parchment.",
+  "score": {
+    "score": 0.7727,
+    "imagination": 0.7727,
+    "readable": 1.0,
+    "surprise": 0.5172,
+    "mixing": 0.8921,
+    "originality": 1.0,
+    "readability": 1.0,
+    "coherence": 1.0,
+    "flesch": 70.3,
+    "words": 30,
+    "sentences": 3
+  },
+  "fragments": [
+    {
+      "id": "met.ideas_food",
+      "kind": "metaphor",
+      "source": "ideas are food"
+    },
+    {
+      "id": "art.varo_tower",
+      "kind": "painting",
+      "source": "Remedios Varo, Embroidering the Earth's Mantle"
+    },
+    {
+      "id": "book.borges_library",
+      "kind": "book",
+      "source": "Borges, The Library of Babel"
+    },
+    {
+      "id": "poem.okigbo_heavensgate",
+      "kind": "poem",
+      "source": "Christopher Okigbo, \"Heavensgate\""
+    },
+    {
+      "id": "game.senet_sticks",
+      "kind": "game",
+      "source": "Senet (ancient Egyptian board game)"
+    },
+    {
+      "id": "met.society_body",
+      "kind": "metaphor",
+      "source": "society is a body"
+    },
+    {
+      "id": "harvest.2.1",
+      "kind": "painting",
+      "source": "Giorgio de Chirico, The Nostalgia of the Infinite"
+    },
+    {
+      "id": "book.hitchhiker",
+      "kind": "book",
+      "source": "Douglas Adams, The Hitchhiker's Guide to the Galaxy"
+    },
+    {
+      "id": "poem.blake_auguries",
+      "kind": "poem",
+      "source": "William Blake, \"Auguries of Innocence\""
+    }
+  ],
+  "depth": 3
+}
