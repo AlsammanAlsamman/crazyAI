@@ -288,7 +288,34 @@ _KMER = Target(
     },
 )
 
-_ALL = {t.name: t for t in (_MATMUL, _PHYSICS, _MECHANICS, _ALIGNMENT, _NIM, _HASH, _FFT, _KMER)}
+_DIJKSTRA = Target(
+    name="dijkstra",
+    title="Find shortest paths through a graph, faster",
+    problem="Compute single-source shortest distances on a weighted directed graph with non-negative weights, "
+           "matching a reference exactly (within tolerance), as fast as possible.",
+    in_world_need=("A traveler stands at one place among many, joined by roads of differing length, and needs to "
+                   "know the shortest way to reach every other place - some roads may lead nowhere useful at all."),
+    assumptions=[
+        "each place's distance must be finalized before its neighbors are explored",
+        "a priority structure must be consulted before every relaxation",
+        "the next place to finalize is found by comparing against every remaining place",
+        "a road can only be considered once its starting place is fully settled",
+        "the whole graph must be explored to know any single distance",
+    ],
+    artifact="kernel",
+    bend_instructions=(
+        "Map every object of the world onto a computational object: what is a place, what is a road, what is "
+        "settling. Keep the mapping literal. Then write the kernel in C against dijkstra_contract, predict its "
+        "speed, measure it with dijkstra_bench, and improve it at most four times. The final answer MUST contain "
+        "one ```c code block with the complete kernel and one line 'PREDICTION: speedup_vs_heap = <number>' "
+        "written BEFORE the first measurement."),
+    measure_families=["dijkstra"],
+    measure_tool="dijkstra_bench",
+    examine_question="Do this kernel's distances match the reference (reachability and value), and is the reported speedup credible?",
+    known_way="Binary-heap Dijkstra, O((n+m) log n) - though for dense or small graphs a plain O(n^2) array scan, with no heap at all, is a real, well-known practical win.",
+)
+
+_ALL = {t.name: t for t in (_MATMUL, _PHYSICS, _MECHANICS, _ALIGNMENT, _NIM, _HASH, _FFT, _KMER, _DIJKSTRA)}
 TARGETS = list(_ALL)
 
 

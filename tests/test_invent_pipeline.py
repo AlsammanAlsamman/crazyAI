@@ -175,7 +175,7 @@ def test_remix_is_selectable_but_not_in_the_default_pool():
 
 def test_new_targets_are_registered():
     from crazyai.targets import TARGETS
-    for name in ("alignment", "nim", "hash", "fft", "mechanics", "kmer"):
+    for name in ("alignment", "nim", "hash", "fft", "mechanics", "kmer", "dijkstra"):
         assert name in TARGETS
 
 
@@ -187,6 +187,7 @@ def test_new_measure_tools_self_check():
     from crazyai.toolkit.measure.hash import EXAMPLE as HASH_EXAMPLE
     from crazyai.toolkit.measure.fft import EXAMPLE as FFT_EXAMPLE
     from crazyai.toolkit.measure.kmer import EXAMPLE as KMER_EXAMPLE
+    from crazyai.toolkit.measure.dijkstra import EXAMPLE as DIJKSTRA_EXAMPLE
     tk = build_toolkit(0)
 
     a = tk.call("alignment_bench", {"source": ALIGN_EXAMPLE, "sizes": [32, 64], "budget": 0.1})
@@ -203,6 +204,9 @@ def test_new_measure_tools_self_check():
 
     k = tk.call("kmer_bench", {"source": KMER_EXAMPLE, "sizes": [1000, 5000], "budget": 0.1})
     assert k["status"] == "exact" and all(r["mismatches"] == 0 for r in k["results"])
+
+    d = tk.call("dijkstra_bench", {"source": DIJKSTRA_EXAMPLE, "sizes": [50, 200], "budget": 0.1})
+    assert d["status"] == "exact" and all(r["reach_mismatch"] == 0 for r in d["results"])
 
 
 def test_alignment_has_the_three_new_assumption_hints():
