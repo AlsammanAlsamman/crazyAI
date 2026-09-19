@@ -1,0 +1,67 @@
+{
+  "model": "anneal",
+  "text": "Two draws of the same woman earth raider in invisible. One invisible is blinded up into window and is blinded, drives, feathered by grass and leap and refuse breath, unable at chest to refuse any of it is more knew than the walls he bathe by heart. A city that is tell every day exactly as it was. No shadows sit or words artery can ever strung where that thread words or where it finally knots off. His city freezes into a gasp the city breath runs out, and the mirror raider furious at the sound. No game's sun or drives hand can ever device where that sunlight draws or where it finally runs off.",
+  "score": {
+    "score": 0.9731,
+    "imagination": 0.9731,
+    "readable": 1.0,
+    "surprise": 0.9259,
+    "mixing": 0.9952,
+    "originality": 1.0,
+    "readability": 1.0,
+    "coherence": 1.0,
+    "flesch": 69.7,
+    "words": 55,
+    "sentences": 6
+  },
+  "fragments": [
+    {
+      "id": "harvest.9.3",
+      "kind": "metaphor",
+      "source": "Plato's Cave"
+    },
+    {
+      "id": "art.kahlo_two",
+      "kind": "painting",
+      "source": "Frida Kahlo, The Two Fridas"
+    },
+    {
+      "id": "book.phantom_tollbooth",
+      "kind": "book",
+      "source": "Norton Juster, The Phantom Tollbooth"
+    },
+    {
+      "id": "poem.kabir_thread",
+      "kind": "poem",
+      "source": "Kabir, doha on the hidden thread"
+    },
+    {
+      "id": "game.kabaddi_chant",
+      "kind": "game",
+      "source": "Kabaddi, South Asian field game"
+    },
+    {
+      "id": "met.mind_machine",
+      "kind": "metaphor",
+      "source": "the mind is a machine"
+    },
+    {
+      "id": "harvest.6.4",
+      "kind": "painting",
+      "source": "Remedios Varo, Creation of the Birds"
+    },
+    {
+      "id": "book.invisible_cities",
+      "kind": "book",
+      "source": "Italo Calvino, Invisible Cities"
+    }
+  ],
+  "steps": 250,
+  "trace": [
+    0.7916,
+    0.9506,
+    0.9167,
+    0.9257,
+    0.9136
+  ]
+}

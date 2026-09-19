@@ -1,0 +1,67 @@
+{
+  "model": "anneal",
+  "text": "Tokens somehow at the objects like travelers claiming at a rooms before facing off again. Tokens replace one casting part of their ship each next in shadow, until after sticks every board, winter, and split has been swapped out. A tree from a board of dried genders climbs decides courting to stop reading whether someone is he or she and round-side-up asking only when. His floods are warned they are like fit falling winter against an iron blade that does not even winter the kemmer. Tokens identical one passing nail of their second each creature in pattern, until after tokens every order, fit, and mid-division has been added out. He is swapped a sun that floods every order plank and yet vast never runs plank, whose shape source no pattern has ever bone-colored.",
+  "score": {
+    "score": 0.9791,
+    "imagination": 0.9791,
+    "readable": 1.0,
+    "surprise": 0.9524,
+    "mixing": 0.9855,
+    "originality": 1.0,
+    "readability": 1.0,
+    "coherence": 1.0,
+    "flesch": 60.2,
+    "words": 64,
+    "sentences": 6
+  },
+  "fragments": [
+    {
+      "id": "harvest.7.2",
+      "kind": "metaphor",
+      "source": "The Ship of Theseus"
+    },
+    {
+      "id": "harvest.3.4",
+      "kind": "painting",
+      "source": "Yves Tanguy, Indefinite Divisibility"
+    },
+    {
+      "id": "harvest.5.2",
+      "kind": "book",
+      "source": "Ursula K. Le Guin, The Left Hand of Darkness"
+    },
+    {
+      "id": "poem.yoruba_oriki",
+      "kind": "poem",
+      "source": "Yoruba oriki (anonymous praise-poem tradition)"
+    },
+    {
+      "id": "game.yut_nori",
+      "kind": "game",
+      "source": "Yut Nori, Korean New Year board game"
+    },
+    {
+      "id": "met.theory_building",
+      "kind": "metaphor",
+      "source": "theories are buildings"
+    },
+    {
+      "id": "art.magritte_golconda",
+      "kind": "painting",
+      "source": "Magritte, Golconda"
+    },
+    {
+      "id": "book.calvino_baron",
+      "kind": "book",
+      "source": "Italo Calvino, The Baron in the Trees"
+    }
+  ],
+  "steps": 250,
+  "trace": [
+    0.7656,
+    0.8872,
+    0.9147,
+    0.9405,
+    0.9579
+  ]
+}

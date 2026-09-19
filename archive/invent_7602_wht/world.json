@@ -1,0 +1,65 @@
+{
+  "model": "nest",
+  "text": "Under a straight, the moon is full and every leaf is painted separately, and a black is the only way out. Inside a gold, there is the ribs, and in the ribs birds and an elephant look out between enormous leaves and lotus flowers while a dark figure plays a flute. Inside a garden, there is a straight, and in a straight because no jewel exists apart from the light it borrows from the others.",
+  "score": {
+    "score": 0.7201,
+    "imagination": 0.7201,
+    "readable": 1.0,
+    "surprise": 0.4062,
+    "mixing": 0.9193,
+    "originality": 1.0,
+    "readability": 1.0,
+    "coherence": 1.0,
+    "flesch": 65.3,
+    "words": 33,
+    "sentences": 3
+  },
+  "fragments": [
+    {
+      "id": "harvest.6.1",
+      "kind": "metaphor",
+      "source": "the sunk cost fallacy as a drowning man clutching his wallet"
+    },
+    {
+      "id": "art.kandinsky_composition",
+      "kind": "painting",
+      "source": "Kandinsky, Composition VIII"
+    },
+    {
+      "id": "book.invisible_cities",
+      "kind": "book",
+      "source": "Italo Calvino, Invisible Cities"
+    },
+    {
+      "id": "poem.khansa_elegy",
+      "kind": "poem",
+      "source": "Al-Khansa, elegy for her brother Sakhr"
+    },
+    {
+      "id": "game.nine_mens_morris",
+      "kind": "game",
+      "source": "Nine Men's Morris, medieval board game"
+    },
+    {
+      "id": "harvest.3.0",
+      "kind": "metaphor",
+      "source": "Indra's Net"
+    },
+    {
+      "id": "art.rousseau_dream",
+      "kind": "painting",
+      "source": "Henri Rousseau, The Dream"
+    },
+    {
+      "id": "harvest.4.3",
+      "kind": "book",
+      "source": "Franz Kafka, The Metamorphosis"
+    },
+    {
+      "id": "poem.hafez_tavern",
+      "kind": "poem",
+      "source": "Hafez, ghazal from the Divan"
+    }
+  ],
+  "depth": 3
+}

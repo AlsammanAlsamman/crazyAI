@@ -1,0 +1,13 @@
+{
+  "seed": 7604,
+  "target": "wht",
+  "blend_model": "cutup",
+  "depth": 1,
+  "assumption_focus": "the input order cannot be rearranged",
+  "bias": {
+    "enabled": false,
+    "min_samples": 20,
+    "samples_seen": 0,
+    "active": false
+  }
+}

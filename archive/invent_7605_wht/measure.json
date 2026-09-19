@@ -1,0 +1,60 @@
+{
+  "target": "wht",
+  "artifact": "kernel",
+  "imagination": {
+    "score": 0.9791,
+    "imagination": 0.9791,
+    "readable": 1.0,
+    "surprise": 0.9524,
+    "mixing": 0.9855,
+    "originality": 1.0,
+    "readability": 1.0,
+    "coherence": 1.0,
+    "flesch": 60.2,
+    "words": 64,
+    "sentences": 6
+  },
+  "measurement": {
+    "results": [
+      {
+        "n": 64,
+        "time": 6.61999802e-05,
+        "ref_time": 1.06999651e-05,
+        "rel_err": 3.124e-16,
+        "speedup_vs_naive": 0.162,
+        "exactness": 1.0,
+        "status": "exact"
+      },
+      {
+        "n": 256,
+        "time": 6.13000011e-05,
+        "ref_time": 0.000188799982,
+        "rel_err": 6.327e-16,
+        "speedup_vs_naive": 3.08,
+        "exactness": 1.0,
+        "status": "exact"
+      },
+      {
+        "n": 1024,
+        "time": 0.000117999967,
+        "ref_time": 0.00349709997,
+        "rel_err": 1.194e-15,
+        "speedup_vs_naive": 29.636,
+        "exactness": 1.0,
+        "status": "exact"
+      }
+    ],
+    "largest_n": 1024,
+    "rel_err": 1.194e-15,
+    "status": "exact",
+    "speedup_vs_naive": 29.636,
+    "value": 29.636,
+    "prediction_target": 29.636,
+    "reading": "value = speedup vs. the naive O(n^2) direct-matrix WHT x exactness (1.0 relative error < 1e-9)."
+  },
+  "value": 29.636,
+  "status": "exact",
+  "calibration": 0.405,
+  "prediction": 12.0,
+  "discovery": 29.3263
+}

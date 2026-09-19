@@ -1,0 +1,13 @@
+{
+  "seed": 7601,
+  "target": "wht",
+  "blend_model": "anneal",
+  "depth": 1,
+  "assumption_focus": "every output depends on every input, computed as one pass",
+  "bias": {
+    "enabled": false,
+    "min_samples": 20,
+    "samples_seen": 0,
+    "active": false
+  }
+}

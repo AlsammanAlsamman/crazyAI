@@ -1,0 +1,52 @@
+{
+  "seed": 7601,
+  "target": "wht",
+  "blend_model": "anneal",
+  "depth": 1,
+  "assumption_focus": "every output depends on every input, computed as one pass",
+  "provider": "claudecode",
+  "model": "",
+  "imagination_score": 0.9731,
+  "status": "exact",
+  "value": 164.53,
+  "prediction": 500.0,
+  "calibration": 0.329,
+  "discovery": 162.3171,
+  "fragments": [
+    "harvest.9.3",
+    "art.kahlo_two",
+    "book.phantom_tollbooth",
+    "poem.kabir_thread",
+    "game.kabaddi_chant",
+    "met.mind_machine",
+    "harvest.6.4",
+    "book.invisible_cities"
+  ],
+  "rng_log": [
+    {
+      "label": "invent.blend_model",
+      "value": "anneal"
+    },
+    {
+      "label": "invent.depth",
+      "value": 1
+    },
+    {
+      "label": "invent.assumption",
+      "value": "every output depends on every input, computed as one pass"
+    },
+    {
+      "label": "child:invent.world",
+      "value": 636884376
+    }
+  ],
+  "timing_s": {
+    "seed": 0.0,
+    "harvest": 0.0,
+    "world": 0.143,
+    "immerse": 26.829,
+    "bend": 168.772,
+    "measure": 0.681
+  },
+  "total_s": 196.425
+}

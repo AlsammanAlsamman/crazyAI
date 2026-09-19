@@ -1,0 +1,93 @@
+{
+  "model": "anneal",
+  "text": "No instant line, swarm, or went pillows how the bodies tied or what path they are. A hard scale is a thief tied by someone made than you. Four fallen melt answers, line on one face and stitched on the other, are melted up problem and land pausing on a hard mat. Remade scale in hats desert line to see itself in a Timesavings Knowledge. Tokens swarm on the one skin that has not melted. A flash is a knot.",
+  "score": {
+    "score": 0.9914,
+    "imagination": 0.9914,
+    "readable": 1.0,
+    "surprise": 1.0,
+    "mixing": 0.9744,
+    "originality": 1.0,
+    "readability": 1.0,
+    "coherence": 1.0,
+    "flesch": 85.4,
+    "words": 41,
+    "sentences": 6
+  },
+  "fragments": [
+    {
+      "id": "met.knowledge_light",
+      "kind": "metaphor",
+      "source": "knowledge is light"
+    },
+    {
+      "id": "art.dali_memory",
+      "kind": "painting",
+      "source": "Dalí, The Persistence of Memory"
+    },
+    {
+      "id": "harvest.4.0",
+      "kind": "book",
+      "source": "China Miéville, Perdido Street Station"
+    },
+    {
+      "id": "poem.sappho_31",
+      "kind": "poem",
+      "source": "Sappho, Fragment 31"
+    },
+    {
+      "id": "game.yut_nori",
+      "kind": "game",
+      "source": "Yut Nori, Korean New Year board game"
+    },
+    {
+      "id": "met.problem_knot",
+      "kind": "metaphor",
+      "source": "a problem is a knot"
+    },
+    {
+      "id": "harvest.10.4",
+      "kind": "painting",
+      "source": "Yves Tanguy, Mama, Papa Is Wounded!"
+    },
+    {
+      "id": "book.momo",
+      "kind": "book",
+      "source": "Michael Ende, Momo"
+    }
+  ],
+  "steps": 250,
+  "trace": [
+    0.6878,
+    0.8701,
+    0.8455,
+    0.8323,
+    0.9566
+  ],
+  "compared": [
+    {
+      "model": "anneal",
+      "score": 0.9914
+    },
+    {
+      "model": "evolve",
+      "score": 0.9635
+    },
+    {
+      "model": "graft",
+      "score": 0.7267
+    },
+    {
+      "model": "markov",
+      "score": 0.5067
+    },
+    {
+      "model": "nest",
+      "score": 0.4369
+    },
+    {
+      "model": "cutup",
+      "score": 0.3967
+    }
+  ]
+}

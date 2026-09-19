@@ -1,0 +1,50 @@
+{
+  "model": "cutup",
+  "text": "Like a bird that changes its mind about direction in midair, whose hidden source no traveler has ever located, a small chemical apparatus distills moonlight into pigment, It lands with a soft felt-bottomed thud among pieces that only ever crept straight or slid diagonal. Refined, two steps forward and one sideways, It rises off its square and travels in a bent path, out through a paintbrush held in her clawed hand. Lifting off the paper into the room's dim air, His enemies are warned they are like grass sharpening itself against an iron blade that does not even notice the friction, believing the shadows are the whole of existence. Data is oil, watching flickering shapes cast by a fire and puppeteers behind them. Spilled, The praised one is called an elephant who strips the crown from one tree and moves calmly to the next before the first has finished trembling, Its scholars are so lost in calculation and music that they cannot walk or converse without a servant trailing them. Kept aloft by a giant lodestone at its core that the ruling class tunes to rise, piped, mane frozen mid-toss, feathers still wet. An owl-headed woman sits at a desk under a triangular prism that funnels starlight down through her violin, foreign among them, gently swatting their mouths and ears with an inflated bladder on a stick to signal when to speak or listen. Refined it drives everything, and whoever owns the wells owns the century, He returns underground to tell the others. Drilled, hoarded, He is named a river that floods every dry season and yet somehow never runs empty, The piece is carved as a small horse's head. Eyes blank wood, but his eyes no longer adjust to the dark and they think the journey has ruined him, One prisoner is dragged into daylight and is blinded by the sun, sink. Or drift above any point on the ground below, Beside her. Each stroke she paints becomes a living bird, Raw it is useless and dirty. A creature too vast to hide even in the deepest forest, at first seeing only reflections in water before he can look at real trees and finally the sun itself, Prisoners sit chained facing a rock wall their entire lives. Refilling her inkwell drop by drop, A whole island floats overhead.",
+  "score": {
+    "score": 0.4695,
+    "imagination": 0.5627,
+    "readable": 0.7635,
+    "surprise": 0.1787,
+    "mixing": 0.9966,
+    "originality": 1.0,
+    "readability": 0.8908,
+    "coherence": 0.8571,
+    "flesch": 54.5,
+    "words": 208,
+    "sentences": 14
+  },
+  "fragments": [
+    {
+      "id": "met.data_oil",
+      "kind": "metaphor",
+      "source": "data is oil"
+    },
+    {
+      "id": "harvest.7.4",
+      "kind": "painting",
+      "source": "Remedios Varo, Creation of the Birds"
+    },
+    {
+      "id": "harvest.3.2",
+      "kind": "book",
+      "source": "Jonathan Swift, Gulliver's Travels"
+    },
+    {
+      "id": "poem.yoruba_oriki",
+      "kind": "poem",
+      "source": "Yoruba oriki (anonymous praise-poem tradition)"
+    },
+    {
+      "id": "game.knight_foreign_landing",
+      "kind": "game",
+      "source": "chess, the knight's leap"
+    },
+    {
+      "id": "harvest.10.2",
+      "kind": "metaphor",
+      "source": "Plato's Cave"
+    }
+  ],
+  "grain": "clause"
+}

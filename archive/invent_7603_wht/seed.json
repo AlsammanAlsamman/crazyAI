@@ -1,0 +1,13 @@
+{
+  "seed": 7603,
+  "target": "wht",
+  "blend_model": "compare",
+  "depth": 3,
+  "assumption_focus": "each output is one independent sum",
+  "bias": {
+    "enabled": false,
+    "min_samples": 20,
+    "samples_seen": 0,
+    "active": false
+  }
+}

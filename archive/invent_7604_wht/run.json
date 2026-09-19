@@ -1,0 +1,33 @@
+{
+  "seed": 7604,
+  "target": "wht",
+  "blend_model": "cutup",
+  "depth": 1,
+  "assumption_focus": "the input order cannot be rearranged",
+  "provider": "claudecode",
+  "model": "",
+  "imagination_score": 0.4695,
+  "status": "exact",
+  "value": 5.44,
+  "prediction": 200.0,
+  "calibration": 0.027,
+  "discovery": 3.997,
+  "fragments": [
+    "met.data_oil",
+    "harvest.7.4",
+    "harvest.3.2",
+    "poem.yoruba_oriki",
+    "game.knight_foreign_landing",
+    "harvest.10.2"
+  ],
+  "rng_log": [],
+  "timing_s": {
+    "seed": 0.0,
+    "harvest": 0.0,
+    "world": 0.0,
+    "immerse": 23.098,
+    "bend": 197.468,
+    "measure": 0.764
+  },
+  "total_s": 221.33
+}
