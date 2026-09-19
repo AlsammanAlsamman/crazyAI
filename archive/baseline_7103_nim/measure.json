@@ -1,0 +1,53 @@
+{
+  "target": "nim",
+  "artifact": "kernel",
+  "condition": "baseline",
+  "measurement": {
+    "results": [
+      {
+        "n": 3,
+        "time": 2.91300006e-09,
+        "ref_time": 1.40749995e-09,
+        "trials": 300,
+        "n_positions": 289,
+        "frac_correct": 1.0,
+        "frac_legal": 1.0,
+        "speedup_vs_dp": 0.483,
+        "status": "exact"
+      },
+      {
+        "n": 5,
+        "time": 2.905e-09,
+        "ref_time": 1.29749998e-09,
+        "trials": 300,
+        "n_positions": 296,
+        "frac_correct": 1.0,
+        "frac_legal": 1.0,
+        "speedup_vs_dp": 0.447,
+        "status": "exact"
+      },
+      {
+        "n": 8,
+        "time": 2.88500014e-09,
+        "ref_time": 1.05599989e-09,
+        "trials": 300,
+        "n_positions": 288,
+        "frac_correct": 1.0,
+        "frac_legal": 1.0,
+        "speedup_vs_dp": 0.366,
+        "status": "exact"
+      }
+    ],
+    "largest_n": 8,
+    "status": "exact",
+    "frac_correct": 1.0,
+    "speedup_vs_dp": 0.366,
+    "value": 0.366,
+    "prediction_target": 0.366,
+    "reading": "value = speedup vs. the XOR-rule reference x fraction of winnable positions where a winning move was found - 1.0 fraction is Bouton-optimal, not just legal."
+  },
+  "value": 0.366,
+  "status": "exact",
+  "calibration": 0.261,
+  "prediction": 1.4
+}

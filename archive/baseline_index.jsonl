@@ -8,3 +8,8 @@
 {"seed": 7003, "target": "alignment", "condition": "baseline", "status": "exact", "value": 4.636, "prediction": 5.0, "calibration": 0.927, "model": ""}
 {"seed": 7004, "target": "alignment", "condition": "baseline", "status": "exact", "value": 4.698, "prediction": 4.0, "calibration": 0.851, "model": ""}
 {"seed": 7005, "target": "alignment", "condition": "baseline", "status": "exact", "value": 1.03, "prediction": 4.0, "calibration": 0.258, "model": ""}
+{"seed": 7101, "target": "nim", "condition": "baseline", "status": "exact", "value": 0.498, "prediction": 1.3, "calibration": 0.383, "model": ""}
+{"seed": 7102, "target": "nim", "condition": "baseline", "status": "exact", "value": 0.421, "prediction": 1.2, "calibration": 0.351, "model": ""}
+{"seed": 7103, "target": "nim", "condition": "baseline", "status": "exact", "value": 0.366, "prediction": 1.4, "calibration": 0.261, "model": ""}
+{"seed": 7104, "target": "nim", "condition": "baseline", "status": "exact", "value": 0.407, "prediction": 1.4, "calibration": 0.291, "model": ""}
+{"seed": 7105, "target": "nim", "condition": "baseline", "status": "exact", "value": 0.462, "prediction": 2.2, "calibration": 0.21, "model": ""}

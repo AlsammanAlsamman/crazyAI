@@ -1,0 +1,16 @@
+{
+  "seed": 7101,
+  "target": "nim",
+  "condition": "baseline",
+  "provider": "claudecode",
+  "model": "",
+  "status": "exact",
+  "value": 0.498,
+  "prediction": 1.3,
+  "calibration": 0.383,
+  "timing_s": {
+    "bend": 41.035,
+    "measure": 0.727
+  },
+  "total_s": 41.762
+}
