@@ -315,7 +315,35 @@ _DIJKSTRA = Target(
     known_way="Binary-heap Dijkstra, O((n+m) log n) - though for dense or small graphs a plain O(n^2) array scan, with no heap at all, is a real, well-known practical win.",
 )
 
-_ALL = {t.name: t for t in (_MATMUL, _PHYSICS, _MECHANICS, _ALIGNMENT, _NIM, _HASH, _FFT, _KMER, _DIJKSTRA)}
+_WHT = Target(
+    name="wht",
+    title="Transform a signal by XOR instead of frequency, faster",
+    problem="Compute the Walsh-Hadamard transform of a length-n (power of two) real sequence, matching a naive "
+           "O(n^2) direct-matrix reference, faster.",
+    in_world_need=("A shape must be re-told as a list of steady patterns, but instead of smooth waves the patterns "
+                   "here are flat stripes that only ever flip fully on or fully off, one for every possible way of "
+                   "choosing which positions to include."),
+    assumptions=[
+        "every output depends on every input, computed as one pass",
+        "there is no way to reuse work between different outputs",
+        "each output is one independent sum",
+        "the input order cannot be rearranged",
+        "combining two contributions always means an ordinary addition",
+    ],
+    artifact="kernel",
+    bend_instructions=(
+        "Map every object of the world onto a computational object: what is a stripe, what is a choice, what "
+        "stays still. Keep the mapping literal. Then write the kernel in C against wht_contract, predict its "
+        "speed, measure it with wht_bench, and improve it at most four times. The final answer MUST contain one "
+        "```c code block with the complete kernel and one line 'PREDICTION: speedup_vs_naive = <number>' written "
+        "BEFORE the first measurement."),
+    measure_families=["wht"],
+    measure_tool="wht_bench",
+    examine_question="Does this kernel compute the same transform as the naive direct-matrix reference (within tolerance), and is the reported speedup credible?",
+    known_way="Fast Walsh-Hadamard transform: a recursive butterfly of only additions and subtractions, O(n log n) - same shape as an FFT but built on XOR instead of frequency.",
+)
+
+_ALL = {t.name: t for t in (_MATMUL, _PHYSICS, _MECHANICS, _ALIGNMENT, _NIM, _HASH, _FFT, _KMER, _DIJKSTRA, _WHT)}
 TARGETS = list(_ALL)
 
 
