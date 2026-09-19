@@ -1,0 +1,47 @@
+{
+  "target": "quantum",
+  "artifact": "kernel",
+  "condition": "baseline",
+  "measurement": {
+    "results": [
+      {
+        "n_qubits": 8,
+        "time": 1.78999617e-05,
+        "ref_time": 0.000284700014,
+        "rel_err": 6.857e-16,
+        "speedup_vs_naive": 15.905,
+        "exactness": 1.0,
+        "status": "exact"
+      },
+      {
+        "n_qubits": 12,
+        "time": 3.08000017e-05,
+        "ref_time": 0.00534629996,
+        "rel_err": 1.02e-15,
+        "speedup_vs_naive": 173.581,
+        "exactness": 1.0,
+        "status": "exact"
+      },
+      {
+        "n_qubits": 16,
+        "time": 0.000172699976,
+        "ref_time": 0.0965479,
+        "rel_err": 6.45e-16,
+        "speedup_vs_naive": 559.05,
+        "exactness": 1.0,
+        "status": "exact"
+      }
+    ],
+    "largest_n": 16,
+    "rel_err": 6.45e-16,
+    "status": "exact",
+    "speedup_vs_naive": 559.05,
+    "value": 559.05,
+    "prediction_target": 559.05,
+    "reading": "value = speedup vs. a reference gate-by-gate statevector simulator x exactness (1.0 relative error < 1e-9)."
+  },
+  "value": 559.05,
+  "status": "exact",
+  "calibration": 0.179,
+  "prediction": 100.0
+}
