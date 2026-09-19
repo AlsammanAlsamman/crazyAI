@@ -253,7 +253,42 @@ _FFT = Target(
     known_way="FFTW / Cooley-Tukey: recursive radix-2 butterfly network with precomputed twiddle factors and bit-reversal reordering.",
 )
 
-_ALL = {t.name: t for t in (_MATMUL, _PHYSICS, _MECHANICS, _ALIGNMENT, _NIM, _HASH, _FFT)}
+_KMER = Target(
+    name="kmer",
+    title="Count every k-mer in a DNA sequence, faster",
+    problem="Count every length-k substring (\"k-mer\") of a DNA sequence over {A,C,G,T} into an exact reference "
+           "count table, as fast as possible.",
+    in_world_need=("A long strand of four kinds of beads passes before you, and for every short stretch of k beads "
+                   "in a row, a running tally of that exact pattern must be kept - so that by the end, every "
+                   "pattern's total count is known exactly."),
+    assumptions=[
+        "each k-mer's code must be built fully from scratch, one base at a time, before it can be counted",
+        "one window is examined, then discarded, before the next begins",
+        "the count table can only be updated one position's result at a time",
+        "every base contributes independently to the window it starts",
+        "the whole sequence must be read once, start to end, in order",
+    ],
+    artifact="kernel",
+    bend_instructions=(
+        "Map every object of the world onto a computational object: what is a bead, what is a window, what is a "
+        "tally. Keep the mapping literal. Then write the kernel in C against kmer_contract, predict its speed, "
+        "measure it with kmer_bench, and improve it at most four times. The final answer MUST contain one ```c "
+        "code block with the complete kernel and one line 'PREDICTION: speedup_vs_naive = <number>' written "
+        "BEFORE the first measurement."),
+    measure_families=["kmer"],
+    measure_tool="kmer_bench",
+    examine_question="Does this kernel's count table match the reference exactly, and is the reported speedup credible?",
+    known_way="Naive O(n*k): re-encode the whole k-length window from scratch at every position.",
+    assumption_hints={
+        "each k-mer's code must be built fully from scratch, one base at a time, before it can be counted": (
+            "This time, notice that one window and the next overlap in all but one bead: the one at the back falls "
+            "away, and only one new bead joins at the front. Could the tally for a new window be built by adjusting "
+            "the previous window's already-known code, rather than reading all k beads over again from nothing?"
+        ),
+    },
+)
+
+_ALL = {t.name: t for t in (_MATMUL, _PHYSICS, _MECHANICS, _ALIGNMENT, _NIM, _HASH, _FFT, _KMER)}
 TARGETS = list(_ALL)
 
 
