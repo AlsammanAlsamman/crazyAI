@@ -1,0 +1,13 @@
+{
+  "seed": 7235,
+  "target": "hash",
+  "blend_model": "cutup",
+  "depth": 3,
+  "assumption_focus": "more mixing rounds always means better mixing",
+  "bias": {
+    "enabled": false,
+    "min_samples": 20,
+    "samples_seen": 0,
+    "active": false
+  }
+}

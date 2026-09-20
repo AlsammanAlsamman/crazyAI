@@ -1,0 +1,47 @@
+{
+  "seed": 7231,
+  "target": "hash",
+  "blend_model": "evolve",
+  "depth": 1,
+  "assumption_focus": "each byte must be mixed into the running state before the next byte is read",
+  "provider": "claudecode",
+  "model": "",
+  "imagination_score": 0.9779,
+  "status": "exact",
+  "value": 5.3972,
+  "prediction": 6.0,
+  "calibration": 0.905,
+  "discovery": 5.3376,
+  "fragments": [
+    "met.words_weapons",
+    "harvest.6.4",
+    "book.neverending_story",
+    "poem.amichai_hotel",
+    "game.yut_nori",
+    "met.money_water",
+    "art.miro_carnival",
+    "harvest.4.3"
+  ],
+  "rng_log": [
+    {
+      "label": "invent.blend_model",
+      "value": "evolve"
+    },
+    {
+      "label": "invent.depth",
+      "value": 1
+    },
+    {
+      "label": "child:invent.world",
+      "value": 822720326
+    }
+  ],
+  "timing_s": {
+    "seed": 0.001,
+    "harvest": 0.0,
+    "world": 0.119,
+    "continuous": 62.06,
+    "measure": 0.536
+  },
+  "total_s": 62.716
+}

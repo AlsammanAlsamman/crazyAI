@@ -1,0 +1,28 @@
+# World (blend model: cutup, imagination score 0.5431)
+
+And a reader inside a book can be called into the book by name, A moth circles a burning candle again and again, skirt or trouser cuff flapping. With no memory of ever being a man, meanwhile. Blunt, Chalk powder clings to bare heels. And no way to press a thumb on either side and call it the true one, Doors open onto gardens that hang sideways, arms flung wide for balance, The land has no borders because it is made of human wishes. Was he a man dreaming he was a butterfly, Nobody in the building finds any of it strange, only weeps wax and burns lower with each visit. Or is he now a butterfly dreaming he is a man?, entirely satisfied, A grid of numbered squares is scratched onto pavement in white chalk dust, It calls that doomed circling the truest proof of devotion. More honest than any vow spoken safely from a distance, sharp, A land is being eaten by the Nothing, double-edged. A figure walking up one flight is upside down to the figure on the next, a fold in the paper of the self, Staircases climb in three different directions of gravity at once. A flat stone lands skidding inside one square, tumbling drunkenly from flower to flower. The candle, fully aware that the flame will eventually take its wings, but sits upright suddenly uncertain, and a well-aimed question pierces armour that a thousand facts could not dent. And the stone waits pale in its square for the next throw, a speech can be a barrage, Words are weapons, poisoned. A remark can cut, which is not darkness but absence. And a child hops through on one leg, He wakes stiff and human again, Between the two states there is a hinge, A man falls asleep and dreams he is a butterfly. Where it passes there is not even emptiness left.
+
+## Built from
+- metaphor: Zhuangzi's Butterfly Dream
+- painting: Escher, Relativity
+- book: Michael Ende, The Neverending Story
+- poem: Ghalib, ghazal on the moth and the candle
+- game: Hopscotch, chalk pavement game (global)
+- metaphor: words are weapons
+
+## Score
+```
+{
+  "score": 0.5431,
+  "imagination": 0.6034,
+  "readable": 0.8571,
+  "surprise": 0.2215,
+  "mixing": 0.992,
+  "originality": 1.0,
+  "readability": 1.0,
+  "coherence": 0.8571,
+  "flesch": 66.5,
+  "words": 159,
+  "sentences": 14
+}
+```

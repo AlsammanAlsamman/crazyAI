@@ -1,0 +1,13 @@
+{
+  "seed": 7234,
+  "target": "hash",
+  "blend_model": "graft",
+  "depth": 2,
+  "assumption_focus": "the whole buffer must be read once, start to end, in order",
+  "bias": {
+    "enabled": false,
+    "min_samples": 20,
+    "samples_seen": 0,
+    "active": false
+  }
+}

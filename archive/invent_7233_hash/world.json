@@ -1,0 +1,50 @@
+{
+  "model": "graft",
+  "text": "A sky ticks because it curled a clock, and a whole lines every way a child says it does not grow. Electricity forefinger dark figures stand back in the center narrowed stand, poisoned by bars and a sky thumb the color of old parchment. It snaps forward, rests glinting through dust, and knocks another marble spinning out past the arcades armour behind. A thousand is scratched into image dirt, and a speech of bars rests at its panther like forefinger circles curtain in tank. An island where curtain never dissolve up, reached by pacing with a shooter slip and a sprinkle of brick. Electricity is cut in pipes. Tiny, blunt, tilted, double-edged. Only rarely does an image slip thumb the well-aimed against, parchment down through the tensed limbs, and wrong at the heart.",
+  "score": {
+    "score": 0.842,
+    "imagination": 0.9227,
+    "readable": 0.875,
+    "surprise": 0.7895,
+    "mixing": 0.9951,
+    "originality": 1.0,
+    "readability": 1.0,
+    "coherence": 0.875,
+    "flesch": 63.1,
+    "words": 77,
+    "sentences": 8
+  },
+  "fragments": [
+    {
+      "id": "met.electricity_water",
+      "kind": "metaphor",
+      "source": "electricity is water"
+    },
+    {
+      "id": "harvest.2.1",
+      "kind": "painting",
+      "source": "Giorgio de Chirico, The Nostalgia of the Infinite"
+    },
+    {
+      "id": "book.peter_pan",
+      "kind": "book",
+      "source": "J. M. Barrie, Peter Pan"
+    },
+    {
+      "id": "poem.rilke_panther",
+      "kind": "poem",
+      "source": "Rainer Maria Rilke, \"The Panther\""
+    },
+    {
+      "id": "game.marbles_ringer",
+      "kind": "game",
+      "source": "Marbles, ringer game (street game, global)"
+    },
+    {
+      "id": "met.words_weapons",
+      "kind": "metaphor",
+      "source": "words are weapons"
+    }
+  ],
+  "rate": 0.55
+}
