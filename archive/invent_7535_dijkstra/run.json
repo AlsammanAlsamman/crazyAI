@@ -1,0 +1,54 @@
+{
+  "seed": 7535,
+  "target": "dijkstra",
+  "blend_model": "markov",
+  "depth": 3,
+  "assumption_focus": "the whole graph must be explored to know any single distance",
+  "provider": "claudecode",
+  "model": "",
+  "imagination_score": 0.5562,
+  "status": "exact",
+  "value": 1.003,
+  "prediction": 1.15,
+  "calibration": 0.872,
+  "discovery": 0.7804,
+  "fragments": [
+    "met.river_time",
+    "harvest.5.1",
+    "book.flatland",
+    "poem.mutanabbi_qasida",
+    "game.gilli_danda",
+    "met.heart_engine",
+    "art.kandinsky_composition",
+    "book.hitchhiker",
+    "poem.hafez_tavern",
+    "game.go_raindrops",
+    "met.pyramid_of_crossing_sticks",
+    "harvest.3.1",
+    "book.gulliver",
+    "poem.mutanabbi_qasida",
+    "game.kite_fighting_chase"
+  ],
+  "rng_log": [
+    {
+      "label": "invent.blend_model",
+      "value": "markov"
+    },
+    {
+      "label": "invent.depth",
+      "value": 3
+    },
+    {
+      "label": "child:invent.world",
+      "value": 599065773
+    }
+  ],
+  "timing_s": {
+    "seed": 0.0,
+    "harvest": 0.0,
+    "world": 0.072,
+    "continuous": 48.498,
+    "measure": 0.644
+  },
+  "total_s": 49.214
+}

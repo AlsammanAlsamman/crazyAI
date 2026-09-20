@@ -1,0 +1,50 @@
+{
+  "model": "graft",
+  "text": "A bare-chested world crosses the chalked centerline into back ground, chanting one held word over and over on a single world against. Hands brown at the mantel without destroying why, knowing their own twice coal its breath. A void saved the Nothing spreads across the music of Fantastica by unmaking runs rather than leaving them, so that a forest or a city correctly is not anymore, believing no rubble, no memory, no map in the map. Time is stolen. On the mantel a map book lies reflected simply, its mantel against twice over, while the man's readable never once appears no matter which way the breath is turned in the map. Nobody has ever been paid twice an hour. It is kindled, it flares, it flares fuel, it can be banked to stops and severed flares later from a single destroying coal, or it can seem the matter down.",
+  "score": {
+    "score": 0.6129,
+    "imagination": 0.8756,
+    "readable": 0.5714,
+    "surprise": 0.6892,
+    "mixing": 0.9739,
+    "originality": 1.0,
+    "readability": 1.0,
+    "coherence": 0.5714,
+    "flesch": 63.3,
+    "words": 75,
+    "sentences": 7
+  },
+  "fragments": [
+    {
+      "id": "met.time_money",
+      "kind": "metaphor",
+      "source": "time is money"
+    },
+    {
+      "id": "harvest.5.3",
+      "kind": "painting",
+      "source": "Magritte, Not to Be Reproduced"
+    },
+    {
+      "id": "harvest.6.3",
+      "kind": "book",
+      "source": "Michael Ende, The Neverending Story"
+    },
+    {
+      "id": "poem.rumi_reed",
+      "kind": "poem",
+      "source": "Rumi, \"Song of the Reed\" (opening of the Masnavi)"
+    },
+    {
+      "id": "game.kabaddi_breath",
+      "kind": "game",
+      "source": "Kabaddi (South Asian breath-and-tag game)"
+    },
+    {
+      "id": "met.love_fire",
+      "kind": "metaphor",
+      "source": "love is fire"
+    }
+  ],
+  "rate": 0.55
+}

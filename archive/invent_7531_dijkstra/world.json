@@ -1,0 +1,95 @@
+{
+  "model": "markov",
+  "text": "A grid of numbered squares is scratched onto pavement in white chalk dust. A lamp holds a spirit who builds a palace overnight. Every sentence is a body. A carved king piece stands alone at the center of a table and over a sleeping face that is also a cliff. Not one cell, habit, or whether the true landscape is hidden behind the propped canvas. An easel stands before a window, its canvas showing the exact slice of meadow and sky that the sought-for king turns out to be the seekers themselves. Storms, deserts, and the picture changes depending on how far away you stand.",
+  "score": {
+    "score": 0.5324,
+    "imagination": 0.5324,
+    "readable": 1.0,
+    "surprise": 0.1852,
+    "mixing": 0.9509,
+    "originality": 0.8571,
+    "readability": 1.0,
+    "coherence": 1.0,
+    "flesch": 71.0,
+    "words": 55,
+    "sentences": 7
+  },
+  "fragments": [
+    {
+      "id": "met.society_body",
+      "kind": "metaphor",
+      "source": "society is a body"
+    },
+    {
+      "id": "harvest.10.1",
+      "kind": "painting",
+      "source": "Magritte, The Human Condition"
+    },
+    {
+      "id": "book.arabian_nights",
+      "kind": "book",
+      "source": "One Thousand and One Nights"
+    },
+    {
+      "id": "poem.attar_birds",
+      "kind": "poem",
+      "source": "Attar of Nishapur, \"The Conference of the Birds\""
+    },
+    {
+      "id": "game.hnefatafl_king",
+      "kind": "game",
+      "source": "Hnefatafl (Viking king's-table board game)"
+    },
+    {
+      "id": "met.argument_war",
+      "kind": "metaphor",
+      "source": "argument is war"
+    },
+    {
+      "id": "art.dali_memory",
+      "kind": "painting",
+      "source": "Dalí, The Persistence of Memory"
+    },
+    {
+      "id": "book.momo",
+      "kind": "book",
+      "source": "Michael Ende, Momo"
+    },
+    {
+      "id": "poem.neruda_walking",
+      "kind": "poem",
+      "source": "Pablo Neruda, \"Walking Around\""
+    },
+    {
+      "id": "game.oware_ayo",
+      "kind": "game",
+      "source": "Oware / Ayo, West African mancala"
+    },
+    {
+      "id": "harvest.4.1",
+      "kind": "metaphor",
+      "source": "the Ship of Theseus as a marriage"
+    },
+    {
+      "id": "art.ocampo_fields",
+      "kind": "painting",
+      "source": "Octavio Ocampo, metamorphic portraits"
+    },
+    {
+      "id": "harvest.5.2",
+      "kind": "book",
+      "source": "Ursula K. Le Guin, The Left Hand of Darkness"
+    },
+    {
+      "id": "poem.sappho_31",
+      "kind": "poem",
+      "source": "Sappho, Fragment 31"
+    },
+    {
+      "id": "game.hopscotch_pavement",
+      "kind": "game",
+      "source": "Hopscotch, chalk pavement game (global)"
+    }
+  ],
+  "order": 2
+}

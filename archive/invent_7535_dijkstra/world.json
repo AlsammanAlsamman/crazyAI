@@ -1,0 +1,95 @@
+{
+  "model": "markov",
+  "text": "Smooth bone-like shapes are scattered across the sand, some standing like totems, some standing like totems, some are still pools where nothing seems to move. A single row of the objects, tying nothing to nothing. A single row of the ground itself. A black disc with a violet halo dominates the upper corner, and the view align so precisely that the eye cannot find the question to the answer forty-two. He boasts that mountains recognize his name before armies do, and paper all bow, in his telling, to one restless man's pride.",
+  "score": {
+    "score": 0.5562,
+    "imagination": 0.5562,
+    "readable": 1.0,
+    "surprise": 0.1957,
+    "mixing": 0.8794,
+    "originality": 1.0,
+    "readability": 1.0,
+    "coherence": 1.0,
+    "flesch": 69.0,
+    "words": 47,
+    "sentences": 5
+  },
+  "fragments": [
+    {
+      "id": "met.river_time",
+      "kind": "metaphor",
+      "source": "time is a river"
+    },
+    {
+      "id": "harvest.5.1",
+      "kind": "painting",
+      "source": "Yves Tanguy, Mama, Papa Is Wounded!"
+    },
+    {
+      "id": "book.flatland",
+      "kind": "book",
+      "source": "Edwin Abbott, Flatland"
+    },
+    {
+      "id": "poem.mutanabbi_qasida",
+      "kind": "poem",
+      "source": "Al-Mutanabbi, heroic ode (qasida)"
+    },
+    {
+      "id": "game.gilli_danda",
+      "kind": "game",
+      "source": "Gilli-Danda (Indian street stick game)"
+    },
+    {
+      "id": "met.heart_engine",
+      "kind": "metaphor",
+      "source": "the heart is a pump"
+    },
+    {
+      "id": "art.kandinsky_composition",
+      "kind": "painting",
+      "source": "Kandinsky, Composition VIII"
+    },
+    {
+      "id": "book.hitchhiker",
+      "kind": "book",
+      "source": "Douglas Adams, The Hitchhiker's Guide to the Galaxy"
+    },
+    {
+      "id": "poem.hafez_tavern",
+      "kind": "poem",
+      "source": "Hafez, ghazal from the Divan"
+    },
+    {
+      "id": "game.go_raindrops",
+      "kind": "game",
+      "source": "Go / Weiqi, board game of black and white stones"
+    },
+    {
+      "id": "met.pyramid_of_crossing_sticks",
+      "kind": "metaphor",
+      "source": "devised for crazyAI's Nim target (crossing-sticks framing), 2026"
+    },
+    {
+      "id": "harvest.3.1",
+      "kind": "painting",
+      "source": "Magritte, The Human Condition"
+    },
+    {
+      "id": "book.gulliver",
+      "kind": "book",
+      "source": "Swift, Gulliver's Travels"
+    },
+    {
+      "id": "poem.mutanabbi_qasida",
+      "kind": "poem",
+      "source": "Al-Mutanabbi, heroic ode (qasida)"
+    },
+    {
+      "id": "game.kite_fighting_chase",
+      "kind": "game",
+      "source": "kite fighting (gudiparan bazi), Afghan and South Asian tradition"
+    }
+  ],
+  "order": 2
+}

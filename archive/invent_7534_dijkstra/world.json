@@ -1,0 +1,65 @@
+{
+  "model": "nest",
+  "text": "Every a legendary in a marsh contains under a cellar stair is a point a few centimetres wide in which every place on earth is visible at once. Beyond a maze lies a palace; whoever enters finds that under a cellar stair is a point a few centimetres wide in which every place on earth is visible at once. Inside the seekers, there is a cellar, and in a cellar all at the same instant.",
+  "score": {
+    "score": 0.7042,
+    "imagination": 0.7042,
+    "readable": 1.0,
+    "surprise": 0.5333,
+    "mixing": 0.8256,
+    "originality": 0.7931,
+    "readability": 1.0,
+    "coherence": 1.0,
+    "flesch": 60.8,
+    "words": 31,
+    "sentences": 3
+  },
+  "fragments": [
+    {
+      "id": "met.rat_treasure_maze",
+      "kind": "metaphor",
+      "source": "devised for crazyAI's alignment target (rat-in-maze framing), 2026"
+    },
+    {
+      "id": "art.miro_carnival",
+      "kind": "painting",
+      "source": "Miró, Carnival of Harlequin"
+    },
+    {
+      "id": "harvest.9.0",
+      "kind": "book",
+      "source": "Jeff VanderMeer, Annihilation"
+    },
+    {
+      "id": "poem.attar_birds",
+      "kind": "poem",
+      "source": "Attar of Nishapur, \"The Conference of the Birds\""
+    },
+    {
+      "id": "game.senet_sticks",
+      "kind": "game",
+      "source": "Senet (ancient Egyptian board game)"
+    },
+    {
+      "id": "met.memory_palace",
+      "kind": "metaphor",
+      "source": "memory is a palace"
+    },
+    {
+      "id": "art.magritte_golconda",
+      "kind": "painting",
+      "source": "Magritte, Golconda"
+    },
+    {
+      "id": "book.borges_aleph",
+      "kind": "book",
+      "source": "Borges, The Aleph"
+    },
+    {
+      "id": "poem.lorca_sonambulo",
+      "kind": "poem",
+      "source": "Federico García Lorca, \"Romance Sonámbulo\""
+    }
+  ],
+  "depth": 3
+}

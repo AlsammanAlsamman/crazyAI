@@ -1,0 +1,47 @@
+{
+  "seed": 7533,
+  "target": "dijkstra",
+  "blend_model": "evolve",
+  "depth": 2,
+  "assumption_focus": "the next place to finalize is found by comparing against every remaining place",
+  "provider": "claudecode",
+  "model": "",
+  "imagination_score": 0.9463,
+  "status": "exact",
+  "value": 0.972,
+  "prediction": 3.5,
+  "calibration": 0.278,
+  "discovery": 0.9459,
+  "fragments": [
+    "met.mind_machine",
+    "art.ocampo_fields",
+    "book.momo",
+    "poem.yoruba_oriki",
+    "game.xiangqi_cannon",
+    "harvest.7.2",
+    "harvest.8.1",
+    "book.peter_pan"
+  ],
+  "rng_log": [
+    {
+      "label": "invent.blend_model",
+      "value": "evolve"
+    },
+    {
+      "label": "invent.depth",
+      "value": 2
+    },
+    {
+      "label": "child:invent.world",
+      "value": 242976588
+    }
+  ],
+  "timing_s": {
+    "seed": 0.0,
+    "harvest": 0.0,
+    "world": 0.111,
+    "continuous": 36.827,
+    "measure": 0.622
+  },
+  "total_s": 37.56
+}

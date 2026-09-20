@@ -1,0 +1,13 @@
+{
+  "seed": 7535,
+  "target": "dijkstra",
+  "blend_model": "markov",
+  "depth": 3,
+  "assumption_focus": "the whole graph must be explored to know any single distance",
+  "bias": {
+    "enabled": false,
+    "min_samples": 20,
+    "samples_seen": 0,
+    "active": false
+  }
+}
