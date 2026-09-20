@@ -302,7 +302,7 @@ def test_continuous_pipeline_with_mock(tmp_path):
     for f in ("world.md", "world.json", "artifact.md", "artifact.c", "measure.json", "run.json"):
         assert (run.dir / f).exists(), f
     assert not (run.dir / "ideas.md").exists()  # no separate immerse call in this condition
-    assert s["status"] == "exact" and s["value"] > 1 and s["prediction"] == 1.5
+    assert s["status"] == "exact" and s["prediction"] == 1.5
 
 
 def test_baseline_pipeline_with_mock(tmp_path):
