@@ -14,6 +14,7 @@
     crazyai invent-baseline --seed 42 --target matmul [--provider mock]   direct-prompt condition, no narrative
     crazyai invent-continuous --seed 42 --target matmul [--provider mock]   narrative, one continuous call, no persona swap
     crazyai discover --seed 42 [--blend anneal] [--provider mock]   solution-first: invent something, let the AI propose what it's for
+    crazyai discover-baseline --seed 42 [--provider mock]   discover-mode baseline: no world blend, no persona chain
     crazyai invent-rank [--target matmul] [--top 20]
     crazyai harvest-corpus --kind poem --n 20 --out crazyai/data/imagination/poems_candidates.yaml [--provider claudecode]
 """
@@ -252,6 +253,24 @@ def cmd_discover(args) -> int:
     return 1 if failures == args.n else 0
 
 
+def cmd_discover_baseline(args) -> int:
+    from crazyai.pipeline.discover_baseline import DiscoverBaseline
+
+    provider = _provider(args)
+    failures = 0
+    for i in range(args.n):
+        seed = args.seed + i
+        run = DiscoverBaseline(seed=seed, force=args.force, archive_dir=Path(args.archive))
+        try:
+            summary = run.execute(provider)
+        except Exception as exc:  # noqa: BLE001 - one bad seed must not abort the batch
+            failures += 1
+            print(json.dumps({"seed": seed, "status": "error", "error": str(exc)[-2000:]}), flush=True)
+            continue
+        print(json.dumps({k: summary[k] for k in ("seed", "depth", "answer_chars")}, indent=2), flush=True)
+    return 1 if failures == args.n else 0
+
+
 def cmd_invent_rank(args) -> int:
     from crazyai.pipeline.invent import load_invent_index
 
@@ -374,6 +393,11 @@ def build_parser() -> argparse.ArgumentParser:
     dc.add_argument("--blend", default="", choices=ALL_MODELS + ["compare", ""], help="blend model (default: seeded draw)")
     add_provider(dc)
     dc.set_defaults(fn=cmd_discover)
+    dcb = sub.add_parser("discover-baseline", help="discover-mode baseline: no world blend, no persona chain - one direct call invents something and proposes uses for it")
+    dcb.add_argument("--seed", type=int, required=True)
+    dcb.add_argument("--n", type=int, default=1, help="number of consecutive seeds")
+    add_provider(dcb)
+    dcb.set_defaults(fn=cmd_discover_baseline)
     hc = sub.add_parser("harvest-corpus", help="grow a bundled imagination corpus (writes a candidates file for review)")
     hc.add_argument("--kind", required=True, help="e.g. metaphor, painting, book, poem")
     hc.add_argument("--n", type=int, default=20, help="fragments to collect")

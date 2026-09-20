@@ -1,0 +1,12 @@
+{
+  "seed": 9004,
+  "depth": 3,
+  "provider": "claudecode",
+  "model": "",
+  "answer_chars": 4514,
+  "timing_s": {
+    "seed": 0.016,
+    "direct": 46.665
+  },
+  "total_s": 46.681
+}

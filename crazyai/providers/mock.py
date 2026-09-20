@@ -175,4 +175,12 @@ class MockProvider(Provider):
         if "scanning for structures that might be useful outside the context" in system:
             return ("1. Event scheduling with heterogeneous periods: this is a direct model for a multi-rate "
                    "timer wheel - check by comparing against a naive per-tick scan on a real workload.")
+        if "You invent things because they interest you" in system:
+            return (
+                "STRUCTURE\nA set of counters, each with its own period, is advanced together by one shared step; "
+                "on each step, exactly the counters that have completed a full cycle since their last firing are "
+                "read out, in increasing order of period, and reset.\n\n"
+                "PROPOSALS\n1. Event scheduling with heterogeneous periods: this is a direct model for a "
+                "multi-rate timer wheel - check by comparing against a naive per-tick scan on a real workload."
+            )
         return None

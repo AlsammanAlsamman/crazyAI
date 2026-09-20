@@ -250,3 +250,26 @@ def propose_prompt(formal: str) -> str:
         "honestly applies to a real problem, say that plainly instead of inventing a forced connection - a null "
         "result is a legitimate answer."
     )
+
+
+DISCOVER_DIRECT_SYSTEM = (
+    "You are a creative scientist and engineer. You invent things because they interest you, then you look for "
+    "where they might be useful - not the other way around. You do not force a connection that isn't there."
+)
+
+
+def discover_direct_prompt(depth: int) -> str:
+    """The discover-mode baseline: no blended world, no alien-maker persona, no formalize/propose handoff - one
+    direct call asked to invent something and propose uses for it. Isolates whatever the world-blend + 3-persona
+    chain in `Discover` adds, the same way `direct_prompt` isolates what narrative adds for the problem-first
+    pipelines."""
+    return (
+        "Invent an abstract structure, mechanism, or pattern - mathematical, mechanical, logical, or otherwise - "
+        f"purely because it interests you. Describe it in {120 + 60 * depth}-{200 + 80 * depth} words under a "
+        "'STRUCTURE' heading.\n\n"
+        "Then, under a 'PROPOSALS' heading, propose 0-3 concrete real problems - in mathematics, computer "
+        "science, physics, biology, or elsewhere - that this structure might solve, improve, or illuminate. For "
+        "each: name the problem plainly, say exactly how the structure applies, and say how someone could check "
+        "whether it actually works. If nothing honestly applies to a real problem, say that plainly instead of "
+        "inventing a forced connection - a null result is a legitimate answer."
+    )

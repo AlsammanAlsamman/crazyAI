@@ -1,0 +1,17 @@
+# STRUCTURE
+
+Consider a finite line of cells, indices 0 through n−1, each holding an integer value. Time advances in discrete steps. At each step, any cell whose value exceeds a threshold T sheds the excess as a "packet" of magnitude (value − T), resets to T, and passes the packet rightward to its neighbor, which absorbs it by addition. This is ordinary chip-firing — except at the last cell, n−1.
+
+When a packet would fall off the right edge, it does not vanish and does not wrap around. Instead it reflects: it travels back leftward, but its sign inverts. So a packet of magnitude k arriving at cell n−1 from the left doesn't just accumulate there — once it exceeds threshold there too, the *overflow* departs going left as −k, subtracting from cell n−2 rather than adding to it. The same rule applies symmetrically at the left boundary (cell 0), with its own sign flip.
+
+The interesting property isn't the reflection itself — reflecting/anti-symmetric boundaries are old news in wave simulations. It's that here the "wave" is discrete, additive, and *transactional*: each bounce permanently alters the cells it passes through (since propagation is implemented as literal addition/subtraction into cell state, not a value riding on top of an unchanged medium). So a packet's second pass through a region encounters a landscape it itself reshaped on the first pass. Two packets launched identically but at different times diverge quickly, because each has left different scar tissue behind.
+
+Because total state space is finite (bounded values, bounded n), the system must eventually cycle. But the reflection-with-inversion mechanism seems to lengthen transients dramatically compared to plain chip-firing or plain wrap-around, since the sign flip prevents the system from settling into the monotone "everything drains right" fixed points that ordinary chip-firing collapses to.
+
+# PROPOSALS
+
+**1. Termination-time gap in chip-firing / abelian sandpile theory.** Ordinary chip-firing on a path graph is known to stabilize quickly and its final configuration is independent of firing order (abelian property). This reflect-and-invert variant likely breaks the abelian property (order of firing now matters, since sign flips make operations non-commutative) and may stabilize far more slowly, or not at all under naive thresholds. Check: implement both versions, measure stabilization time and configuration-dependence on firing order across many random initial states; if the abelian property provably fails, that's a clean, checkable divergence from the sandpile literature worth writing up.
+
+**2. Lightweight deterministic PRNG.** The scar-tissue effect (self-modifying medium) is exactly what's wanted for a generator: extract, say, the low bit of cell 0's value after each step as an output bit stream. Check: run standard randomness batteries (NIST STS, or even simpler autocorrelation/chi-square tests) on the output and compare cycle length against state-space size (n·T) to see how close it gets to the theoretical maximum period — a necessary (not sufficient) sign the mixing is genuinely strong rather than superficially chaotic.
+
+No third connection here felt honest rather than decorative — I won't force one.

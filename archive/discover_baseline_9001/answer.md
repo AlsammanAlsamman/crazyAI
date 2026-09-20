@@ -1,0 +1,13 @@
+STRUCTURE
+
+Define a **Leaky Rotor Ledger** on a directed multigraph G. Each vertex v keeps an ordered rotor pointer cycling through its outgoing edges, as in standard rotor-router walks. Each edge e additionally carries a real-valued charge c(e), initialized to zero. When a token arrives at v: (1) the rotor advances to the next edge e* in v's fixed cyclic order, (2) the token departs along e*, (3) c(e*) increases by 1, and (4) every other outgoing edge e≠e* at v has its charge multiplied by a decay factor λ∈(0,1) — "leaking" into an implicit local reservoir rather than being destroyed, the reservoir redistributed uniformly back to all outgoing edges at v, weighted by (1−λ), at the vertex's next visit.
+
+Two invariants follow. (a) Total charge grows by exactly 1 per step plus a bounded leak-recovery term, so each edge's long-run charge density converges to a value fixed by the vertex's visit frequency and λ, independent of visit order. (b) As λ→1 the ledger reduces to the ordinary deterministic rotor-router; as λ→0 it reduces to a memoryless proportional-flow system equivalent to a Markov chain's stationary distribution. λ is therefore a continuous dial between two models usually treated as categorically distinct: deterministic order-dependent routing and stochastic equilibrium flow.
+
+PROPOSALS
+
+1. **Discharging arguments in structural graph theory** (e.g., planarity/coloring proofs). The redistribution rule is structurally the discharging method with an explicit decay/retention parameter. Apply it by re-running a known discharging proof (e.g., a small planar coloring case) with the ledger dynamics and checking whether the λ-parametrized charge bound reproduces the original discharging constants at some λ, and whether other λ values yield tighter or looser bounds.
+
+2. **Cover-time estimation for rotor-router vs. random walks** (Holroyd–Propp correspondence). The prediction is that cover time as a function of λ interpolates monotonically between rotor-router cover time (λ→1) and true random-walk cover time (λ→0). Check by simulating on tori, expanders, and trees, measuring cover time across λ∈(0,1), and testing monotonicity/interpolation against both known limits.
+
+3. Honest null: I don't see a genuine fit to a real open problem in rate-limiting/scheduling — the resemblance to leaky-bucket/WFQ schedulers is superficial (different objective functions), so I won't force that one.

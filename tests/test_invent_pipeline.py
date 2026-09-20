@@ -329,3 +329,29 @@ def test_baseline_pipeline_with_mock(tmp_path):
     assert len(load_baseline_index(tmp_path)) == 1
     # never touches the narrative pipeline's own index
     assert not (tmp_path / "invent_index.jsonl").exists()
+
+
+def test_discover_direct_prompt_has_no_world_or_persona_scaffolding():
+    # the whole point of the discover-mode baseline is that it removes the blended world text and the
+    # alien-maker/observer/scientist persona handoff - assert that vocabulary is actually gone from the prompt.
+    from crazyai.pipeline.invent_prompts import DISCOVER_DIRECT_SYSTEM, discover_direct_prompt
+    p = discover_direct_prompt(2)
+    assert "STRUCTURE" in p and "PROPOSALS" in p
+    for forbidden in ("YOUR WORLD", "not on Earth", "native of"):
+        assert forbidden not in p
+        assert forbidden not in DISCOVER_DIRECT_SYSTEM
+
+
+def test_discover_baseline_pipeline_with_mock(tmp_path):
+    from crazyai.pipeline.discover_baseline import DiscoverBaseline, load_discover_baseline_index
+    run = DiscoverBaseline(seed=1, archive_dir=tmp_path)
+    s = run.execute(get_provider("mock"))
+    for f in ("seed.json", "answer.md", "run.json"):
+        assert (run.dir / f).exists(), f
+    assert s["seed"] == 1 and s["depth"]
+    text = (run.dir / "answer.md").read_text(encoding="utf-8")
+    assert "STRUCTURE" in text and "PROPOSALS" in text
+    assert len(load_discover_baseline_index(tmp_path)) == 1
+    # never touches the narrative discover pipeline's own index, or the measured-run index
+    assert not (tmp_path / "discover_index.jsonl").exists()
+    assert not (tmp_path / "invent_index.jsonl").exists()

@@ -1,0 +1,32 @@
+[crazyai discover-baseline seed=9002] seed: depth=2
+[crazyai discover-baseline seed=9002] direct: 3224 chars
+[crazyai discover-baseline seed=9002] archived -> C:\Users\AlsammanA\Documents\mygithub\crazyAI\archive\discover_baseline_9002
+{
+  "seed": 9002,
+  "depth": 2,
+  "answer_chars": 3224
+}
+[crazyai discover-baseline seed=9003] seed: depth=3
+[crazyai discover-baseline seed=9003] direct: 3454 chars
+[crazyai discover-baseline seed=9003] archived -> C:\Users\AlsammanA\Documents\mygithub\crazyAI\archive\discover_baseline_9003
+{
+  "seed": 9003,
+  "depth": 3,
+  "answer_chars": 3454
+}
+[crazyai discover-baseline seed=9004] seed: depth=3
+[crazyai discover-baseline seed=9004] direct: 4514 chars
+[crazyai discover-baseline seed=9004] archived -> C:\Users\AlsammanA\Documents\mygithub\crazyAI\archive\discover_baseline_9004
+{
+  "seed": 9004,
+  "depth": 3,
+  "answer_chars": 4514
+}
+[crazyai discover-baseline seed=9005] seed: depth=2
+[crazyai discover-baseline seed=9005] direct: 4041 chars
+[crazyai discover-baseline seed=9005] archived -> C:\Users\AlsammanA\Documents\mygithub\crazyAI\archive\discover_baseline_9005
+{
+  "seed": 9005,
+  "depth": 2,
+  "answer_chars": 4041
+}

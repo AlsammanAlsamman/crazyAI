@@ -1,0 +1,17 @@
+STRUCTURE
+
+Call it an Ordinal Diffusion Network. Take a connected graph G whose nodes each hold a real-valued quantity (charge, temperature, priority — anything). Standard diffusion processes (heat equations, gossip algorithms) move charge between neighbors in proportion to the *magnitude* of their difference: a steep gradient produces fast flow. Ordinal diffusion strips out magnitude entirely and keeps only order.
+
+At each discrete step, every node u looks at its own charge and its neighbors' charges and constructs the local rank order among {u} ∪ N(u) — who is highest, who is lowest, purely by comparison, never by how much. Node u then transfers one fixed unit of charge (not a magnitude-scaled amount) to whichever neighbor sits immediately below it in that local order, and receives one unit from whichever sits immediately above, provided such neighbors exist. Ties break by node ID, keeping the rule deterministic. Because the flow quantum is fixed rather than gradient-scaled, the entire dynamics is a function only of the ordinal structure of the distribution at each step — never of the numbers themselves.
+
+Two consequences follow. First, the process is invariant under any strictly monotonic relabeling of charges: rescale, take logs, apply any order-preserving transform, and the trajectory of orderings is unchanged, even though real numbers are what's actually being moved. Second, because ranks can cross mid-step, the set of "neighbors above/below" a node compares against can change identity between steps even though the graph's edges never move — so the system lives not in a metric space but on the permutation group of local orderings, driven by a rule sensitive only to graph topology, never to distance in value-space.
+
+The open question the structure raises: for which topologies does repeated ordinal diffusion provably converge to a fixed global ordering (or a canonical rotation of one), versus cycling forever, versus chaos — and how does that answer depend purely on structural properties (degree, girth, connectivity) once magnitude has been engineered out of the problem entirely.
+
+PROPOSALS
+
+1. **Comparison-only distributed sorting on uncalibrated sensor networks.** Model each node as a sensor with an unknown but monotonic response curve (a miscalibrated ADC). Ordinal diffusion never needs to trust a reading's magnitude, only local comparisons, which stay valid despite per-node distortion. Check: simulate on rings/grids/expanders with each true value passed through a random monotone distortion per node; measure whether the converged local order matches the true global order, and compare convergence speed against standard gossip-based rank-estimation baselines.
+
+2. **Rank-only alternative to opinion-dynamics models (DeGroot averaging).** Classic models require agents to average neighbors' cardinal values; ordinal diffusion needs only "I'm more extreme than my neighbor," closer to how status/opinion intensity is often actually perceived. Check: run both models on the same empirical network topology using rank-only survey data (rather than Likert magnitudes), and see which better predicts observed clustering/polarization.
+
+3. **Null result, honestly:** no real physics application. Physical diffusion (Fick's law, heat flow) is fundamentally magnitude-driven — it's tied to actual gradient forces — so this is a combinatorial analogy borrowing the name, not a model of any known physical process.
