@@ -1,0 +1,95 @@
+{
+  "model": "markov",
+  "text": "Positions are defended, claims are attacked, weak points are targeted, and body thinning into the water with one small suitcase before the breath runs out. Huge sheets of pink and orange carry spirals, snail shells, letters, and body thinning into the water with one small, precise sound. Four wire birds stand on a field, and then drains away leaving mud. A curling boundary of one color slowly closes around a patch of empty board, quiet as a tide line drawn in sand. When one organ sickens the others compensate until they cannot.",
+  "score": {
+    "score": 0.4836,
+    "imagination": 0.4836,
+    "readable": 1.0,
+    "surprise": 0.2,
+    "mixing": 0.9785,
+    "originality": 0.5778,
+    "readability": 1.0,
+    "coherence": 1.0,
+    "flesch": 66.8,
+    "words": 56,
+    "sentences": 5
+  },
+  "fragments": [
+    {
+      "id": "met.money_water",
+      "kind": "metaphor",
+      "source": "money is water"
+    },
+    {
+      "id": "art.klee_twittering",
+      "kind": "painting",
+      "source": "Paul Klee, Twittering Machine"
+    },
+    {
+      "id": "book.arabian_nights",
+      "kind": "book",
+      "source": "One Thousand and One Nights"
+    },
+    {
+      "id": "poem.basho_pond",
+      "kind": "poem",
+      "source": "Matsuo Bashō, the old pond haiku"
+    },
+    {
+      "id": "game.go_stones_click",
+      "kind": "game",
+      "source": "Go / Weiqi (board of stones, East Asia)"
+    },
+    {
+      "id": "met.society_body",
+      "kind": "metaphor",
+      "source": "society is a body"
+    },
+    {
+      "id": "art.klint_ten_largest",
+      "kind": "painting",
+      "source": "Hilma af Klint, The Ten Largest"
+    },
+    {
+      "id": "harvest.6.3",
+      "kind": "book",
+      "source": "Michael Ende, The Neverending Story"
+    },
+    {
+      "id": "poem.okigbo_heavensgate",
+      "kind": "poem",
+      "source": "Christopher Okigbo, \"Heavensgate\""
+    },
+    {
+      "id": "game.jacks_knucklebones",
+      "kind": "game",
+      "source": "Jacks / Knucklebones (scatter-and-catch game)"
+    },
+    {
+      "id": "met.argument_war",
+      "kind": "metaphor",
+      "source": "argument is war"
+    },
+    {
+      "id": "harvest.3.4",
+      "kind": "painting",
+      "source": "Yves Tanguy, Indefinite Divisibility"
+    },
+    {
+      "id": "book.discworld",
+      "kind": "book",
+      "source": "Terry Pratchett, Discworld"
+    },
+    {
+      "id": "poem.amichai_hotel",
+      "kind": "poem",
+      "source": "Yehuda Amichai, metaphor of the hotel room"
+    },
+    {
+      "id": "game.kabaddi_breath",
+      "kind": "game",
+      "source": "Kabaddi (South Asian breath-and-tag game)"
+    }
+  ],
+  "order": 2
+}

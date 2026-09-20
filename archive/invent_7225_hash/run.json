@@ -1,0 +1,46 @@
+{
+  "seed": 7225,
+  "target": "hash",
+  "blend_model": "graft",
+  "depth": 1,
+  "assumption_focus": "more mixing rounds always means better mixing",
+  "provider": "claudecode",
+  "model": "",
+  "imagination_score": 0.7345,
+  "status": "exact",
+  "value": 0.988,
+  "prediction": 1.1,
+  "calibration": 0.91,
+  "discovery": 0.8568,
+  "fragments": [
+    "met.society_body",
+    "art.tanning_birthday",
+    "book.neverending_story",
+    "poem.hafez_tavern",
+    "game.kabaddi_breath",
+    "met.problem_knot"
+  ],
+  "rng_log": [
+    {
+      "label": "invent.blend_model",
+      "value": "graft"
+    },
+    {
+      "label": "invent.depth",
+      "value": 1
+    },
+    {
+      "label": "child:invent.world",
+      "value": 287982298
+    }
+  ],
+  "timing_s": {
+    "seed": 0.0,
+    "harvest": 0.0,
+    "world": 0.066,
+    "immerse": 21.497,
+    "bend": 225.658,
+    "measure": 0.49
+  },
+  "total_s": 247.712
+}

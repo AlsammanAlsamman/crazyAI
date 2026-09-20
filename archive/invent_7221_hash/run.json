@@ -1,0 +1,42 @@
+{
+  "seed": 7221,
+  "target": "hash",
+  "blend_model": "markov",
+  "depth": 1,
+  "assumption_focus": "each byte must be mixed into the running state before the next byte is read",
+  "provider": "claudecode",
+  "model": "",
+  "imagination_score": 0.4836,
+  "status": "exact",
+  "value": 15.9918,
+  "prediction": 6.0,
+  "calibration": 0.375,
+  "discovery": 11.8627,
+  "fragments": [
+    "met.money_water",
+    "art.klee_twittering",
+    "book.arabian_nights",
+    "poem.basho_pond",
+    "game.go_stones_click",
+    "met.society_body",
+    "art.klint_ten_largest",
+    "harvest.6.3",
+    "poem.okigbo_heavensgate",
+    "game.jacks_knucklebones",
+    "met.argument_war",
+    "harvest.3.4",
+    "book.discworld",
+    "poem.amichai_hotel",
+    "game.kabaddi_breath"
+  ],
+  "rng_log": [],
+  "timing_s": {
+    "seed": 0.0,
+    "harvest": 0.0,
+    "world": 0.0,
+    "immerse": 21.624,
+    "bend": 188.407,
+    "measure": 0.531
+  },
+  "total_s": 210.563
+}

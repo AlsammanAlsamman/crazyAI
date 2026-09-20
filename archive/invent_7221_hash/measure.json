@@ -1,0 +1,60 @@
+{
+  "target": "hash",
+  "artifact": "kernel",
+  "imagination": {
+    "score": 0.4836,
+    "imagination": 0.4836,
+    "readable": 1.0,
+    "surprise": 0.2,
+    "mixing": 0.9785,
+    "originality": 0.5778,
+    "readability": 1.0,
+    "coherence": 1.0,
+    "flesch": 66.8,
+    "words": 56,
+    "sentences": 5
+  },
+  "measurement": {
+    "results": [
+      {
+        "n": 16,
+        "time": 3.00949992e-09,
+        "ref_time": 4.38499992e-09,
+        "avg_avalanche_frac": 0.4967,
+        "avalanche_score": 0.9934,
+        "speedup_vs_dp": 1.457,
+        "status": "exact"
+      },
+      {
+        "n": 256,
+        "time": 1.376e-08,
+        "ref_time": 1.58185e-07,
+        "avg_avalanche_frac": 0.4982,
+        "avalanche_score": 0.9964,
+        "speedup_vs_dp": 11.496,
+        "status": "exact"
+      },
+      {
+        "n": 4096,
+        "time": 1.82499993e-07,
+        "ref_time": 2.9235e-06,
+        "avg_avalanche_frac": 0.5009,
+        "avalanche_score": 0.9983,
+        "speedup_vs_dp": 16.019,
+        "status": "exact"
+      }
+    ],
+    "largest_n": 4096,
+    "status": "exact",
+    "avalanche_score": 0.9983,
+    "speedup_vs_dp": 16.019,
+    "value": 15.9918,
+    "prediction_target": 16.019,
+    "reading": "value = speedup vs. FNV-1a x avalanche_score (1.0 = ideal ~50% output-bit flip rate per input-bit flip). 'status' here means mixing quality, not correctness - there is no reference hash to match exactly."
+  },
+  "value": 15.9918,
+  "status": "exact",
+  "calibration": 0.375,
+  "prediction": 6.0,
+  "discovery": 11.8627
+}

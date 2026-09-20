@@ -1,0 +1,13 @@
+{
+  "seed": 7223,
+  "target": "hash",
+  "blend_model": "anneal",
+  "depth": 1,
+  "assumption_focus": "mixing one byte requires a multiplication",
+  "bias": {
+    "enabled": false,
+    "min_samples": 20,
+    "samples_seen": 0,
+    "active": false
+  }
+}

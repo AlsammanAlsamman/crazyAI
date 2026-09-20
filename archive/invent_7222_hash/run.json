@@ -1,0 +1,35 @@
+{
+  "seed": 7222,
+  "target": "hash",
+  "blend_model": "evolve",
+  "depth": 2,
+  "assumption_focus": "the state is a single accumulator updated in place, one value",
+  "provider": "claudecode",
+  "model": "",
+  "imagination_score": 0.9888,
+  "status": "exact",
+  "value": 0.7864,
+  "prediction": 0.75,
+  "calibration": 0.943,
+  "discovery": 0.782,
+  "fragments": [
+    "harvest.5.0",
+    "harvest.7.4",
+    "harvest.10.3",
+    "poem.basho_pond",
+    "game.hopscotch_pavement",
+    "met.time_money",
+    "harvest.3.4",
+    "harvest.7.0"
+  ],
+  "rng_log": [],
+  "timing_s": {
+    "seed": 0.0,
+    "harvest": 0.0,
+    "world": 0.0,
+    "immerse": 21.222,
+    "bend": 176.936,
+    "measure": 0.502
+  },
+  "total_s": 198.66
+}

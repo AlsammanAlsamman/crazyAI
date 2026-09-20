@@ -1,0 +1,13 @@
+{
+  "seed": 7221,
+  "target": "hash",
+  "blend_model": "markov",
+  "depth": 1,
+  "assumption_focus": "each byte must be mixed into the running state before the next byte is read",
+  "bias": {
+    "enabled": false,
+    "min_samples": 20,
+    "samples_seen": 0,
+    "active": false
+  }
+}

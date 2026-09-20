@@ -1,0 +1,13 @@
+{
+  "seed": 7222,
+  "target": "hash",
+  "blend_model": "evolve",
+  "depth": 2,
+  "assumption_focus": "the state is a single accumulator updated in place, one value",
+  "bias": {
+    "enabled": false,
+    "min_samples": 20,
+    "samples_seen": 0,
+    "active": false
+  }
+}

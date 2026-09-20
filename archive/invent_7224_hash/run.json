@@ -1,0 +1,46 @@
+{
+  "seed": 7224,
+  "target": "hash",
+  "blend_model": "graft",
+  "depth": 2,
+  "assumption_focus": "the whole buffer must be read once, start to end, in order",
+  "provider": "claudecode",
+  "model": "",
+  "imagination_score": 0.6444,
+  "status": "exact",
+  "value": 15.6352,
+  "prediction": 4.0,
+  "calibration": 0.255,
+  "discovery": 12.8553,
+  "fragments": [
+    "met.theory_building",
+    "art.goya_sleep",
+    "harvest.3.2",
+    "poem.kabir_guest",
+    "game.knight_bends_air",
+    "harvest.9.4"
+  ],
+  "rng_log": [
+    {
+      "label": "invent.blend_model",
+      "value": "graft"
+    },
+    {
+      "label": "invent.depth",
+      "value": 2
+    },
+    {
+      "label": "child:invent.world",
+      "value": 1792335215
+    }
+  ],
+  "timing_s": {
+    "seed": 0.0,
+    "harvest": 0.0,
+    "world": 0.069,
+    "immerse": 46.114,
+    "bend": 227.847,
+    "measure": 0.539
+  },
+  "total_s": 274.568
+}

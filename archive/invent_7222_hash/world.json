@@ -1,0 +1,74 @@
+{
+  "model": "evolve",
+  "text": "By the hard the future held part is outweigh, every way different is spent, yet the crew still centuries it the same straight. A desk, ship cycle the color of numbered starlight shapes to a second with no landmarks. The physicist's built to be new, as if one flat had just invested lasting into three and might outweigh again. Afterward the stone looks equally as still as before, but the child inside has simultaneously bone-colored. A wooden of numbered keeps is fathered onto mind in bank chalk past.",
+  "score": {
+    "score": 0.9888,
+    "imagination": 0.9888,
+    "readable": 1.0,
+    "surprise": 0.9767,
+    "mixing": 0.9897,
+    "originality": 1.0,
+    "readability": 1.0,
+    "coherence": 1.0,
+    "flesch": 64.2,
+    "words": 44,
+    "sentences": 5
+  },
+  "fragments": [
+    {
+      "id": "harvest.5.0",
+      "kind": "metaphor",
+      "source": "The Ship of Theseus"
+    },
+    {
+      "id": "harvest.7.4",
+      "kind": "painting",
+      "source": "Remedios Varo, Creation of the Birds"
+    },
+    {
+      "id": "harvest.10.3",
+      "kind": "book",
+      "source": "Ursula K. Le Guin, The Left Hand of Darkness"
+    },
+    {
+      "id": "poem.basho_pond",
+      "kind": "poem",
+      "source": "Matsuo Bashō, the old pond haiku"
+    },
+    {
+      "id": "game.hopscotch_pavement",
+      "kind": "game",
+      "source": "Hopscotch, chalk pavement game (global)"
+    },
+    {
+      "id": "met.time_money",
+      "kind": "metaphor",
+      "source": "time is money"
+    },
+    {
+      "id": "harvest.3.4",
+      "kind": "painting",
+      "source": "Yves Tanguy, Indefinite Divisibility"
+    },
+    {
+      "id": "harvest.7.0",
+      "kind": "book",
+      "source": "Ted Chiang, Story of Your Life"
+    }
+  ],
+  "generations": 12,
+  "history": [
+    0.9229,
+    0.9229,
+    0.9229,
+    0.9405,
+    0.9443,
+    0.9587,
+    0.9624,
+    0.9742,
+    0.9742,
+    0.9809,
+    0.9809,
+    0.9809
+  ]
+}
