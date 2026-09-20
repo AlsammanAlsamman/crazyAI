@@ -1,0 +1,48 @@
+{
+  "seed": 7521,
+  "target": "dijkstra",
+  "blend_model": "evolve",
+  "depth": 3,
+  "assumption_focus": "each place's distance must be finalized before its neighbors are explored",
+  "provider": "claudecode",
+  "model": "",
+  "imagination_score": 0.9884,
+  "status": "exact",
+  "value": 0.982,
+  "prediction": 3.0,
+  "calibration": 0.327,
+  "discovery": 0.9763,
+  "fragments": [
+    "met.time_money",
+    "harvest.3.4",
+    "harvest.9.1",
+    "poem.hafez_tavern",
+    "game.blind_mans_buff",
+    "harvest.4.1",
+    "art.klint_ten_largest",
+    "book.peter_pan"
+  ],
+  "rng_log": [
+    {
+      "label": "invent.blend_model",
+      "value": "evolve"
+    },
+    {
+      "label": "invent.depth",
+      "value": 3
+    },
+    {
+      "label": "child:invent.world",
+      "value": 1390676844
+    }
+  ],
+  "timing_s": {
+    "seed": 0.0,
+    "harvest": 0.0,
+    "world": 0.108,
+    "immerse": 36.024,
+    "bend": 220.342,
+    "measure": 0.795
+  },
+  "total_s": 257.269
+}

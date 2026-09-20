@@ -1,0 +1,13 @@
+{
+  "seed": 7521,
+  "target": "dijkstra",
+  "blend_model": "evolve",
+  "depth": 3,
+  "assumption_focus": "each place's distance must be finalized before its neighbors are explored",
+  "bias": {
+    "enabled": false,
+    "min_samples": 20,
+    "samples_seen": 0,
+    "active": false
+  }
+}

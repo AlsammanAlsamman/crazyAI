@@ -1,0 +1,13 @@
+{
+  "seed": 7524,
+  "target": "dijkstra",
+  "blend_model": "cutup",
+  "depth": 1,
+  "assumption_focus": "a road can only be considered once its starting place is fully settled",
+  "bias": {
+    "enabled": false,
+    "min_samples": 20,
+    "samples_seen": 0,
+    "active": false
+  }
+}

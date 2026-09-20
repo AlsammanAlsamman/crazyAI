@@ -1,0 +1,74 @@
+{
+  "model": "evolve",
+  "text": "The thieves directional to be paid, as if one sprinkle had just turned trading into horizon and might believe again. An island where pure never mid-division up, reached by casting with a house pure and a garden of nightingale. Not one geometry, habit, or close against from the casting tower remains, but the two who split up now describe they are the same couple who once brush the vows. The garden letters on, permanently rebuilt, still stolen. A three can be detached and call back on.",
+  "score": {
+    "score": 0.9884,
+    "imagination": 0.9884,
+    "readable": 1.0,
+    "surprise": 0.9744,
+    "mixing": 0.991,
+    "originality": 1.0,
+    "readability": 1.0,
+    "coherence": 1.0,
+    "flesch": 65.7,
+    "words": 40,
+    "sentences": 5
+  },
+  "fragments": [
+    {
+      "id": "met.time_money",
+      "kind": "metaphor",
+      "source": "time is money"
+    },
+    {
+      "id": "harvest.3.4",
+      "kind": "painting",
+      "source": "Yves Tanguy, Indefinite Divisibility"
+    },
+    {
+      "id": "harvest.9.1",
+      "kind": "book",
+      "source": "Gene Wolfe, The Book of the New Sun"
+    },
+    {
+      "id": "poem.hafez_tavern",
+      "kind": "poem",
+      "source": "Hafez, ghazal from the Divan"
+    },
+    {
+      "id": "game.blind_mans_buff",
+      "kind": "game",
+      "source": "Blind man's buff (Colin-maillard, European and global tradition)"
+    },
+    {
+      "id": "harvest.4.1",
+      "kind": "metaphor",
+      "source": "the Ship of Theseus as a marriage"
+    },
+    {
+      "id": "art.klint_ten_largest",
+      "kind": "painting",
+      "source": "Hilma af Klint, The Ten Largest"
+    },
+    {
+      "id": "book.peter_pan",
+      "kind": "book",
+      "source": "J. M. Barrie, Peter Pan"
+    }
+  ],
+  "generations": 12,
+  "history": [
+    0.8881,
+    0.908,
+    0.9177,
+    0.9395,
+    0.9504,
+    0.9567,
+    0.9577,
+    0.9649,
+    0.9769,
+    0.9769,
+    0.9884,
+    0.9884
+  ]
+}

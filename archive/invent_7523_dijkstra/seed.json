@@ -1,0 +1,13 @@
+{
+  "seed": 7523,
+  "target": "dijkstra",
+  "blend_model": "cutup",
+  "depth": 3,
+  "assumption_focus": "the next place to finalize is found by comparing against every remaining place",
+  "bias": {
+    "enabled": false,
+    "min_samples": 20,
+    "samples_seen": 0,
+    "active": false
+  }
+}

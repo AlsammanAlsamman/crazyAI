@@ -1,0 +1,95 @@
+{
+  "model": "markov",
+  "text": "Reason knocks at the town's edge reads 'God exists, ' 'this is the tree' — and eventually a sign at the town's edge reads 'God exists, ' 'this is the tree' — and eventually a sign at the door of this house and is gently, permanently turned away. Inside the cow's head a woman milks a smaller cow. People say old memories work the same rigid lattice. A nightingale sings itself to death for love of a cross-marked board, ringed close by a handful of his own pale guard. A flat pink-brown desert stretches to a horizon with no landmark, lit by a handful of his own house the entire time.",
+  "score": {
+    "score": 0.4017,
+    "imagination": 0.5579,
+    "readable": 0.6,
+    "surprise": 0.2,
+    "mixing": 0.9666,
+    "originality": 0.8983,
+    "readability": 1.0,
+    "coherence": 0.6,
+    "flesch": 70.7,
+    "words": 61,
+    "sentences": 5
+  },
+  "fragments": [
+    {
+      "id": "met.rat_treasure_maze",
+      "kind": "metaphor",
+      "source": "devised for crazyAI's alignment target (rat-in-maze framing), 2026"
+    },
+    {
+      "id": "art.escher_relativity",
+      "kind": "painting",
+      "source": "Escher, Relativity"
+    },
+    {
+      "id": "harvest.7.3",
+      "kind": "book",
+      "source": "Jorge Amado, by way of Gabriel García Márquez, One Hundred Years of Solitude"
+    },
+    {
+      "id": "poem.attar_birds",
+      "kind": "poem",
+      "source": "Attar of Nishapur, \"The Conference of the Birds\""
+    },
+    {
+      "id": "game.gilli_danda",
+      "kind": "game",
+      "source": "Gilli-Danda (Indian street stick game)"
+    },
+    {
+      "id": "harvest.4.4",
+      "kind": "metaphor",
+      "source": "the tightrope walker's pole as memory"
+    },
+    {
+      "id": "harvest.5.1",
+      "kind": "painting",
+      "source": "Yves Tanguy, Mama, Papa Is Wounded!"
+    },
+    {
+      "id": "harvest.3.3",
+      "kind": "book",
+      "source": "Kurt Vonnegut, Cat's Cradle"
+    },
+    {
+      "id": "poem.hafez_tavern",
+      "kind": "poem",
+      "source": "Hafez, ghazal from the Divan"
+    },
+    {
+      "id": "game.cats_cradle",
+      "kind": "game",
+      "source": "Cat's Cradle (string figure game, global tradition)"
+    },
+    {
+      "id": "met.pyramid_of_crossing_sticks",
+      "kind": "metaphor",
+      "source": "devised for crazyAI's Nim target (crossing-sticks framing), 2026"
+    },
+    {
+      "id": "art.chagall_village",
+      "kind": "painting",
+      "source": "Chagall, I and the Village"
+    },
+    {
+      "id": "book.le_guin_lathe",
+      "kind": "book",
+      "source": "Ursula K. Le Guin, The Lathe of Heaven"
+    },
+    {
+      "id": "poem.kabir_guest",
+      "kind": "poem",
+      "source": "Kabir, mystic doha"
+    },
+    {
+      "id": "game.hnefatafl_king",
+      "kind": "game",
+      "source": "Hnefatafl (Viking king's-table board game)"
+    }
+  ],
+  "order": 2
+}

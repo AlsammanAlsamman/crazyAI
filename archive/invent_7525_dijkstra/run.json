@@ -1,0 +1,55 @@
+{
+  "seed": 7525,
+  "target": "dijkstra",
+  "blend_model": "markov",
+  "depth": 1,
+  "assumption_focus": "the whole graph must be explored to know any single distance",
+  "provider": "claudecode",
+  "model": "",
+  "imagination_score": 0.4017,
+  "status": "exact",
+  "value": 0.987,
+  "prediction": 1.3,
+  "calibration": 0.759,
+  "discovery": 0.6917,
+  "fragments": [
+    "met.rat_treasure_maze",
+    "art.escher_relativity",
+    "harvest.7.3",
+    "poem.attar_birds",
+    "game.gilli_danda",
+    "harvest.4.4",
+    "harvest.5.1",
+    "harvest.3.3",
+    "poem.hafez_tavern",
+    "game.cats_cradle",
+    "met.pyramid_of_crossing_sticks",
+    "art.chagall_village",
+    "book.le_guin_lathe",
+    "poem.kabir_guest",
+    "game.hnefatafl_king"
+  ],
+  "rng_log": [
+    {
+      "label": "invent.blend_model",
+      "value": "markov"
+    },
+    {
+      "label": "invent.depth",
+      "value": 1
+    },
+    {
+      "label": "child:invent.world",
+      "value": 1628844058
+    }
+  ],
+  "timing_s": {
+    "seed": 0.014,
+    "harvest": 0.0,
+    "world": 0.065,
+    "immerse": 35.911,
+    "bend": 142.502,
+    "measure": 0.647
+  },
+  "total_s": 179.139
+}
