@@ -1,0 +1,33 @@
+{
+  "seed": 8003,
+  "blend_model": "markov",
+  "depth": 3,
+  "provider": "claudecode",
+  "model": "",
+  "imagination_score": 0.4566,
+  "fragments": [
+    "met.atom_solar",
+    "harvest.4.2",
+    "book.hitchhiker",
+    "poem.libai_moon",
+    "game.kabaddi_breath",
+    "harvest.4.4",
+    "harvest.2.1",
+    "book.peter_pan",
+    "poem.sappho_31",
+    "game.oware_ayo",
+    "harvest.4.1",
+    "art.miro_carnival",
+    "book.flatland",
+    "poem.libai_moon",
+    "game.nine_mens_morris"
+  ],
+  "timing_s": {
+    "seed": 0.002,
+    "world": 0.018,
+    "create": 25.991,
+    "formalize": 60.399,
+    "propose": 93.889
+  },
+  "total_s": 180.298
+}

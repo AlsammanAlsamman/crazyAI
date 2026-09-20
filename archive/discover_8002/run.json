@@ -1,0 +1,24 @@
+{
+  "seed": 8002,
+  "blend_model": "cutup",
+  "depth": 1,
+  "provider": "claudecode",
+  "model": "",
+  "imagination_score": 0.3761,
+  "fragments": [
+    "harvest.9.3",
+    "art.debuffet_hourloupe",
+    "harvest.10.0",
+    "poem.basho_pond",
+    "game.senet_sticks",
+    "met.time_money"
+  ],
+  "timing_s": {
+    "seed": 0.0,
+    "world": 0.015,
+    "create": 33.181,
+    "formalize": 40.512,
+    "propose": 97.97
+  },
+  "total_s": 171.678
+}

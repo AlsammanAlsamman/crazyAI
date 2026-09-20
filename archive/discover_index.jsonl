@@ -1,0 +1,5 @@
+{"seed": 8001, "blend_model": "markov", "depth": 2, "imagination_score": 0.3983, "model": ""}
+{"seed": 8002, "blend_model": "cutup", "depth": 1, "imagination_score": 0.3761, "model": ""}
+{"seed": 8003, "blend_model": "markov", "depth": 3, "imagination_score": 0.4566, "model": ""}
+{"seed": 8005, "blend_model": "graft", "depth": 3, "imagination_score": 0.7418, "model": ""}
+{"seed": 8004, "blend_model": "graft", "depth": 1, "imagination_score": 0.6808, "model": ""}

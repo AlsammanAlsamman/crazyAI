@@ -1,0 +1,33 @@
+{
+  "seed": 8001,
+  "blend_model": "markov",
+  "depth": 2,
+  "provider": "claudecode",
+  "model": "",
+  "imagination_score": 0.3983,
+  "fragments": [
+    "met.mind_machine",
+    "art.bosch_delights",
+    "book.moomins",
+    "poem.neruda_walking",
+    "game.kabaddi_breath",
+    "met.pyramid_of_crossing_sticks",
+    "harvest.7.1",
+    "book.gormenghast",
+    "poem.darwish_identity",
+    "game.blind_mans_buff",
+    "met.theory_building",
+    "art.dali_memory",
+    "harvest.6.0",
+    "poem.kabir_guest",
+    "game.marbles_ringer"
+  ],
+  "timing_s": {
+    "seed": 0.0,
+    "world": 0.068,
+    "create": 18.68,
+    "formalize": 28.167,
+    "propose": 69.828
+  },
+  "total_s": 116.744
+}

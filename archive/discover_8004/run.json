@@ -1,0 +1,24 @@
+{
+  "seed": 8004,
+  "blend_model": "graft",
+  "depth": 1,
+  "provider": "claudecode",
+  "model": "",
+  "imagination_score": 0.6808,
+  "fragments": [
+    "harvest.2.0",
+    "art.debuffet_hourloupe",
+    "harvest.6.0",
+    "poem.yoruba_oriki",
+    "game.hopscotch_pavement",
+    "met.unpaired_hand_passed_on"
+  ],
+  "timing_s": {
+    "seed": 0.0,
+    "world": 0.0,
+    "create": 0.0,
+    "formalize": 0.0,
+    "propose": 78.504
+  },
+  "total_s": 78.504
+}

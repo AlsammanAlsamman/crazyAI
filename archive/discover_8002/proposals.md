@@ -1,0 +1,18 @@
+Setting the game aside and treating the four ingredients as an abstract kit, here's where they land on real problems — and where they don't.
+
+**1. Seasonally-forced Wright–Fisher drift with mutation (population genetics)**
+*Uses ingredients 1, 2, 3 — not 4.*
+The classic Wright–Fisher model's per-generation allele count *is* exactly a Binomial(N, p) draw — ingredient 1 isn't an analogy here, it's the same object. Ingredient 2 maps onto models of **periodically fluctuating selection/environment** (e.g. seasonal host–parasite cycling, cyclic dominance): which allele is favored in a given generation is set by the phase of an external season-clock, decoupled from the population's current frequency. Ingredient 3 maps onto **Feller boundary classification** in the diffusion limit: with two-way mutation present, fixation (p=0 or p=1) becomes an *entrance* boundary — not merely rare, but structurally unreachable from the interior in finite time, which is precisely the "no terminal object, not a hard-to-reach one" distinction being drawn. (Without mutation, 0 and 1 are absorbing — the same discrete step rule gives a *different* boundary type, which is itself informative.)
+*Check:* Simulate discrete Wright–Fisher with two-way mutation rate θ under periodic selection, track boundary-hitting frequency as N→∞. If hitting probability →0 while θ is held fixed (entrance-boundary scaling) rather than merely shrinking like a rare event with fixed hazard, the mapping is real; compare against the known Kimura diffusion boundary classification for a numeric cross-check.
+
+**2. Clock-domain-crossing synchronizer failure (digital design)**
+*Uses ingredient 2 in isolation.*
+A synchronizer samples an asynchronous, effectively random event stream against an independent periodic clock; metastability/failure probability depends entirely on where the two uncoordinated periods happen to align, exactly ingredient 2's "same draw, different outcome depending on phase coincidence." This isn't a new insight for EEs — the MTBF formula (∝ 1/(f_clk·f_data·t_w)) already exists — so the honest framing is *illustration*, not discovery: the abstract structure is a correct, minimal toy model for teaching/deriving that formula from scratch.
+*Check:* Build the toy discrete simulation (Bernoulli event train vs. periodic sampler, sweep relative phase), fit the empirical hit/miss rate, and confirm it reproduces the known linear MTBF scaling law before trusting it for anything beyond pedagogy.
+
+**3. Preemptive-resume scheduling with bursty interrupts (queueing theory / OS scheduling)**
+*Uses ingredients 1 and 4 — not 2 or 3.*
+A LIFO/covering-relation "capture" that preserves cardinality and defers rather than deletes is the exact algebra of a **preemptive-resume (LCFS-PR) stack**: a suspended task keeps its state and its right to run again, total task count is invariant, only the "on top" relation changes. Pairing this with binomial-arrival bursts (ingredient 1) gives a batch-arrival LCFS-PR queue — a studied but non-trivial model.
+*Check:* Simulate an M^[Binomial(n,p)]/M/1 queue under LCFS-PR discipline; compare simulated mean stack depth and sojourn-time distribution against the known busy-period generating-function results for batch-arrival preemptive-resume queues. Convergence to the analytic transform is the pass/fail test.
+
+**What I'm not claiming:** no single one of these uses all four ingredients at once — item 4 doesn't fit the population-genetics or synchronizer stories, and items 2/3 don't fit the scheduling story. That's consistent with the write-up's own conclusion that the four pieces are three different *kinds* of formal claim; forcing a single unified target across all four would be the forced move the prompt asked me to avoid.

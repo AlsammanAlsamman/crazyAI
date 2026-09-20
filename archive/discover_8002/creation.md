@@ -1,0 +1,7 @@
+I have made a board: thirty squares, painted limestone, laid in three rows of ten, the color of a wall lit only by fire. It is not for the free. I made it for the ones chained facing that wall, so that the shapes they already trace with their eyes might have a rule instead of only a shadow.
+
+Four throwing-sticks, flat, painted white on one face and left dark on the other. You cast them together; they tumble end over end and land showing some light faces, some dark. The count of light faces is how far your piece may travel that turn — but only along the row the fire's flicker is presently crossing, because the fire never stops moving and the board must be read differently each time it is lit.
+
+A piece enters at the wall's near corner and crosses toward the far one, where the thirty-first square would be if the wall had an edge, which it doesn't. No piece has ever finished. This is the rule I am proudest of: not that it is hard, but that completion was never withheld cruelly — it simply was not designed into the object. The board measures the crossing, not the arrival.
+
+What I noticed, watching it played for years by hands that never once looked down at it: a piece captured by another does not leave the board. It sits beneath the piece that took it, still counted, still owed its turn eventually. Nothing is lost here. Only reordered, and kept.

@@ -1,0 +1,95 @@
+{
+  "model": "markov",
+  "text": "The pole itself does nothing but hang there, yet without it the walker falls within three steps. Two small dark figures stand motionless in the universe at once turns missiles into a stone step or a tabletop, joined by straight connecting lines like a fold in the sky. A ladder with an ear, a musical note with legs. Not one cell, habit, or held belief from the wedding day survives, but the two who wake up now insist they are the same storm. In that instant she feels closer to the grass underfoot, and to dying, than to anything she recognizes as herself.",
+  "score": {
+    "score": 0.4566,
+    "imagination": 0.4566,
+    "readable": 1.0,
+    "surprise": 0.16,
+    "mixing": 0.9917,
+    "originality": 0.6,
+    "readability": 1.0,
+    "coherence": 1.0,
+    "flesch": 68.5,
+    "words": 51,
+    "sentences": 5
+  },
+  "fragments": [
+    {
+      "id": "met.atom_solar",
+      "kind": "metaphor",
+      "source": "the atom is a solar system"
+    },
+    {
+      "id": "harvest.4.2",
+      "kind": "painting",
+      "source": "Yves Tanguy, Indefinite Divisibility"
+    },
+    {
+      "id": "book.hitchhiker",
+      "kind": "book",
+      "source": "Douglas Adams, The Hitchhiker's Guide to the Galaxy"
+    },
+    {
+      "id": "poem.libai_moon",
+      "kind": "poem",
+      "source": "Li Bai, \"Drinking Alone Under the Moon\""
+    },
+    {
+      "id": "game.kabaddi_breath",
+      "kind": "game",
+      "source": "Kabaddi (South Asian breath-and-tag game)"
+    },
+    {
+      "id": "harvest.4.4",
+      "kind": "metaphor",
+      "source": "the tightrope walker's pole as memory"
+    },
+    {
+      "id": "harvest.2.1",
+      "kind": "painting",
+      "source": "Giorgio de Chirico, The Nostalgia of the Infinite"
+    },
+    {
+      "id": "book.peter_pan",
+      "kind": "book",
+      "source": "J. M. Barrie, Peter Pan"
+    },
+    {
+      "id": "poem.sappho_31",
+      "kind": "poem",
+      "source": "Sappho, Fragment 31"
+    },
+    {
+      "id": "game.oware_ayo",
+      "kind": "game",
+      "source": "Oware / Ayo, West African mancala"
+    },
+    {
+      "id": "harvest.4.1",
+      "kind": "metaphor",
+      "source": "the Ship of Theseus as a marriage"
+    },
+    {
+      "id": "art.miro_carnival",
+      "kind": "painting",
+      "source": "Miró, Carnival of Harlequin"
+    },
+    {
+      "id": "book.flatland",
+      "kind": "book",
+      "source": "Edwin Abbott, Flatland"
+    },
+    {
+      "id": "poem.libai_moon",
+      "kind": "poem",
+      "source": "Li Bai, \"Drinking Alone Under the Moon\""
+    },
+    {
+      "id": "game.nine_mens_morris",
+      "kind": "game",
+      "source": "Nine Men's Morris, medieval board game"
+    }
+  ],
+  "order": 2
+}
