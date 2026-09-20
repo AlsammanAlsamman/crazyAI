@@ -281,6 +281,18 @@ def test_direct_prompt_contract_matches_the_target_and_has_no_narrative_scaffold
     assert "SEED" not in p and "MAPPING" not in p and "WHAT THE NATIVE SAID" not in p
 
 
+def test_discover_pipeline_with_mock(tmp_path):
+    from crazyai.pipeline.discover import Discover
+    run = Discover(seed=1, archive_dir=tmp_path)
+    s = run.execute(get_provider("mock"))
+    for f in ("seed.json", "world.md", "world.json", "creation.md", "formal.md", "proposals.md", "run.json"):
+        assert (run.dir / f).exists(), f
+    assert s["seed"] == 1 and s["blend_model"]
+    idx = (tmp_path / "discover_index.jsonl").read_text(encoding="utf-8")
+    assert '"seed": 1' in idx
+    assert not (tmp_path / "invent_index.jsonl").exists()  # never touches the measured-run index
+
+
 def test_continuous_prompt_has_no_decomposition_scaffolding():
     # the whole point of the continuous condition is that it removes the persona-swap/decompose-then-
     # translate step - assert the scaffolding that step requires is actually gone from the prompt.

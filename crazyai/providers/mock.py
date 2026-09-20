@@ -164,4 +164,15 @@ class MockProvider(Provider):
                 "PREDICTION: speedup_vs_blocked = 1.5\n\nMEASUREMENT\nSee measure.json (the pipeline measures the final kernel itself).\n\n"
                 "VERDICT\nExact; the block keeps 8 rows of B hot while a row of C streams through.\n"
             )
+        if "you are making something because it is beautiful" in system:
+            return ("A ring of seven bells hangs at seven different heights along one rope; when the rope is "
+                   "pulled, every bell that has fallen silent since the last pull rings once, in order from "
+                   "lowest to highest, and the others stay quiet no matter how many times they were struck before.")
+        if "your only task is to describe its shape" in system:
+            return ("A set of counters, each with its own period, is advanced together by one shared step; on "
+                   "each step, exactly the counters that have completed a full cycle since their last firing are "
+                   "read out, in increasing order of period, and reset.")
+        if "scanning for structures that might be useful outside the context" in system:
+            return ("1. Event scheduling with heterogeneous periods: this is a direct model for a multi-rate "
+                   "timer wheel - check by comparing against a naive per-tick scan on a real workload.")
         return None

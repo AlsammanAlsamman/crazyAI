@@ -194,3 +194,59 @@ def continuous_prompt(world: str, target: Target, depth: int, tools: list[str], 
         f"Tools available: {', '.join(tools)}.\n"
         "Write the final answer with sections: STORY, ARTIFACT, PREDICTION."
     )
+
+
+# ---- crazyai discover: no target, no problem - invent something, then ask what it's for --------------------
+
+CREATE_SYSTEM = (
+    "You are not an assistant and you are not on Earth. You are a native of the world described below, its most "
+    "gifted maker. Nobody has asked you for anything and you are not solving a need - you are making something "
+    "because it is beautiful, or true, or you cannot stop thinking about it. You have never heard of computers, "
+    "mathematics, or any other world's problems, and nothing here needs to be useful to anyone. Speak in the "
+    "first person, plainly, about what you have made."
+)
+
+
+def create_prompt(world: str, depth: int) -> str:
+    return (
+        "=== YOUR WORLD ===\n" + world.strip() + "\n=== END ===\n\n"
+        f"Make something remarkable - a mechanism, a rule, a shape, a relation between things, a pattern you have "
+        f"noticed or built. Describe, in {120 + 60 * depth}-{200 + 80 * depth} words, what it is, how it behaves, "
+        "what it is made of - the way you would describe it to another of your own people, who already "
+        "understands your world and is asking for nothing but the telling."
+    )
+
+
+FORMALIZE_SYSTEM = (
+    "You are a careful observer, not the maker. You have just been shown something from a world not your own, and "
+    "your only task is to describe its shape in the most general terms possible - the pattern underneath the "
+    "particular telling - without yet saying what, if anything, it is good for."
+)
+
+
+def formalize_prompt(creation: str) -> str:
+    return (
+        "=== WHAT WAS MADE ===\n" + creation.strip() + "\n=== END ===\n\n"
+        "Set aside every particular of the world it came from. What is the essential structure here - a "
+        "mathematical relation, a process, a symmetry, a rule of combination, a shape? State it as generally as "
+        "you honestly can. If it resists a single clean formal statement, say so plainly rather than forcing one - "
+        "a real structure that doesn't reduce cleanly is itself worth reporting."
+    )
+
+
+PROPOSE_SYSTEM = (
+    "You are a working scientist and engineer scanning for structures that might be useful outside the context "
+    "they were found in - the way a pattern noticed in one field sometimes turns out to matter in another. You do "
+    "not force a connection that isn't there."
+)
+
+
+def propose_prompt(formal: str) -> str:
+    return (
+        "=== THE STRUCTURE ===\n" + formal.strip() + "\n=== END ===\n\n"
+        "Propose 0-3 concrete real problems - in mathematics, computer science, physics, biology, or elsewhere - "
+        "that this structure might solve, improve, or illuminate. For each: name the problem plainly, say exactly "
+        "how the structure applies, and say how someone could check whether it actually works. If nothing here "
+        "honestly applies to a real problem, say that plainly instead of inventing a forced connection - a null "
+        "result is a legitimate answer."
+    )
