@@ -1,0 +1,47 @@
+{
+  "seed": 7035,
+  "target": "alignment",
+  "blend_model": "evolve",
+  "depth": 1,
+  "assumption_focus": "both strings are read start to end in the same direction",
+  "provider": "claudecode",
+  "model": "",
+  "imagination_score": 0.9759,
+  "status": "exact",
+  "value": 1.057,
+  "prediction": 4.0,
+  "calibration": 0.264,
+  "discovery": 1.0443,
+  "fragments": [
+    "met.evolution_ladder",
+    "harvest.8.1",
+    "harvest.9.0",
+    "poem.attar_birds",
+    "game.go_stones_click",
+    "met.internet_web",
+    "art.magritte_castle",
+    "harvest.2.3"
+  ],
+  "rng_log": [
+    {
+      "label": "invent.blend_model",
+      "value": "compare"
+    },
+    {
+      "label": "invent.depth",
+      "value": 1
+    },
+    {
+      "label": "child:invent.world",
+      "value": 588030402
+    }
+  ],
+  "timing_s": {
+    "seed": 0.0,
+    "harvest": 0.0,
+    "world": 0.266,
+    "continuous": 128.054,
+    "measure": 0.627
+  },
+  "total_s": 128.947
+}

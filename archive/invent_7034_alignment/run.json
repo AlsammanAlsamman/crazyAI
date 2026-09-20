@@ -1,0 +1,45 @@
+{
+  "seed": 7034,
+  "target": "alignment",
+  "blend_model": "graft",
+  "depth": 2,
+  "assumption_focus": "a slip (gap) can only be discovered by having already compared the position before it",
+  "provider": "claudecode",
+  "model": "",
+  "imagination_score": 0.766,
+  "status": "exact",
+  "value": 1.169,
+  "prediction": 4.0,
+  "calibration": 0.292,
+  "discovery": 1.0322,
+  "fragments": [
+    "met.computer_brain",
+    "art.ernst_europe",
+    "harvest.7.0",
+    "poem.paz_sunstone",
+    "game.kite_fighting_chase",
+    "met.knowledge_light"
+  ],
+  "rng_log": [
+    {
+      "label": "invent.blend_model",
+      "value": "graft"
+    },
+    {
+      "label": "invent.depth",
+      "value": 2
+    },
+    {
+      "label": "child:invent.world",
+      "value": 1952802739
+    }
+  ],
+  "timing_s": {
+    "seed": 0.0,
+    "harvest": 0.0,
+    "world": 0.064,
+    "continuous": 91.837,
+    "measure": 0.598
+  },
+  "total_s": 92.498
+}

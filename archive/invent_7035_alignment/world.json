@@ -1,0 +1,100 @@
+{
+  "model": "evolve",
+  "text": "No engines, no ropes, no explanation. Storms, floats, and despair inside their number until only castle plucked walls chest the void. Evolution and despair strands strip down one by one on the living holds of a bird beneath, a trunk reach of crowd or slate quiet thirty. Storms, deserts, and white line their stone until only thirty called birds click the summit. Sailors, deserts, and felt name their tree until only against called birds castle the paint.",
+  "score": {
+    "score": 0.9759,
+    "imagination": 0.9759,
+    "readable": 1.0,
+    "surprise": 0.9348,
+    "mixing": 0.9944,
+    "originality": 1.0,
+    "readability": 1.0,
+    "coherence": 1.0,
+    "flesch": 70.3,
+    "words": 47,
+    "sentences": 5
+  },
+  "fragments": [
+    {
+      "id": "met.evolution_ladder",
+      "kind": "metaphor",
+      "source": "evolution is a ladder / a tree"
+    },
+    {
+      "id": "harvest.8.1",
+      "kind": "painting",
+      "source": "Remedios Varo, Creation of the Birds"
+    },
+    {
+      "id": "harvest.9.0",
+      "kind": "book",
+      "source": "Jeff VanderMeer, Annihilation"
+    },
+    {
+      "id": "poem.attar_birds",
+      "kind": "poem",
+      "source": "Attar of Nishapur, \"The Conference of the Birds\""
+    },
+    {
+      "id": "game.go_stones_click",
+      "kind": "game",
+      "source": "Go / Weiqi (board of stones, East Asia)"
+    },
+    {
+      "id": "met.internet_web",
+      "kind": "metaphor",
+      "source": "the internet is a web"
+    },
+    {
+      "id": "art.magritte_castle",
+      "kind": "painting",
+      "source": "Magritte, The Castle of the Pyrenees"
+    },
+    {
+      "id": "harvest.2.3",
+      "kind": "book",
+      "source": "Terry Pratchett, Discworld"
+    }
+  ],
+  "generations": 12,
+  "history": [
+    0.8976,
+    0.9131,
+    0.9288,
+    0.933,
+    0.9505,
+    0.9516,
+    0.9611,
+    0.9611,
+    0.9689,
+    0.9689,
+    0.9759,
+    0.9759
+  ],
+  "compared": [
+    {
+      "model": "evolve",
+      "score": 0.9759
+    },
+    {
+      "model": "anneal",
+      "score": 0.9528
+    },
+    {
+      "model": "graft",
+      "score": 0.6292
+    },
+    {
+      "model": "nest",
+      "score": 0.6211
+    },
+    {
+      "model": "cutup",
+      "score": 0.5619
+    },
+    {
+      "model": "markov",
+      "score": 0.4674
+    }
+  ]
+}

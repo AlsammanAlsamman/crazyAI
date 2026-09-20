@@ -1,0 +1,100 @@
+{
+  "model": "evolve",
+  "text": "The canvas are shrinks opening on a plane. Mount itself coils breaking give and instead suns path on its own stretch like a narrator calendar. A heads high keeps flickering into rivers, into shadows, into other keeps insists, as if stretch were a single argue of returning planets. The room exists that sphere and instead are the same stretch of paint. The shadows are polygons ring on a plane.",
+  "score": {
+    "score": 0.9928,
+    "imagination": 0.9928,
+    "readable": 1.0,
+    "surprise": 1.0,
+    "mixing": 0.9785,
+    "originality": 1.0,
+    "readability": 1.0,
+    "coherence": 1.0,
+    "flesch": 73.9,
+    "words": 38,
+    "sentences": 5
+  },
+  "fragments": [
+    {
+      "id": "met.atom_solar",
+      "kind": "metaphor",
+      "source": "the atom is a solar system"
+    },
+    {
+      "id": "harvest.3.1",
+      "kind": "painting",
+      "source": "Magritte, The Human Condition"
+    },
+    {
+      "id": "book.flatland",
+      "kind": "book",
+      "source": "Edwin Abbott, Flatland"
+    },
+    {
+      "id": "poem.paz_sunstone",
+      "kind": "poem",
+      "source": "Octavio Paz, \"Sunstone\""
+    },
+    {
+      "id": "game.kite_fighting_glass",
+      "kind": "game",
+      "source": "Kite Fighting (Afghan and South Asian tradition)"
+    },
+    {
+      "id": "harvest.2.0",
+      "kind": "metaphor",
+      "source": "Plato's Cave"
+    },
+    {
+      "id": "art.hokusai_wave",
+      "kind": "painting",
+      "source": "Hokusai, The Great Wave"
+    },
+    {
+      "id": "book.gormenghast",
+      "kind": "book",
+      "source": "Mervyn Peake, Gormenghast"
+    }
+  ],
+  "generations": 12,
+  "history": [
+    0.9247,
+    0.9456,
+    0.9637,
+    0.973,
+    0.973,
+    0.9762,
+    0.9827,
+    0.9831,
+    0.9831,
+    0.984,
+    0.984,
+    0.984
+  ],
+  "compared": [
+    {
+      "model": "evolve",
+      "score": 0.9928
+    },
+    {
+      "model": "anneal",
+      "score": 0.9725
+    },
+    {
+      "model": "graft",
+      "score": 0.7457
+    },
+    {
+      "model": "nest",
+      "score": 0.7395
+    },
+    {
+      "model": "cutup",
+      "score": 0.5231
+    },
+    {
+      "model": "markov",
+      "score": 0.3922
+    }
+  ]
+}

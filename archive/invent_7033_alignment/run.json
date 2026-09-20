@@ -1,0 +1,47 @@
+{
+  "seed": 7033,
+  "target": "alignment",
+  "blend_model": "evolve",
+  "depth": 2,
+  "assumption_focus": "the whole grid of every position against every other must be filled in",
+  "provider": "claudecode",
+  "model": "",
+  "imagination_score": 0.9928,
+  "status": "exact",
+  "value": 0.428,
+  "prediction": 6.0,
+  "calibration": 0.071,
+  "discovery": 0.4265,
+  "fragments": [
+    "met.atom_solar",
+    "harvest.3.1",
+    "book.flatland",
+    "poem.paz_sunstone",
+    "game.kite_fighting_glass",
+    "harvest.2.0",
+    "art.hokusai_wave",
+    "book.gormenghast"
+  ],
+  "rng_log": [
+    {
+      "label": "invent.blend_model",
+      "value": "compare"
+    },
+    {
+      "label": "invent.depth",
+      "value": 2
+    },
+    {
+      "label": "child:invent.world",
+      "value": 3888702
+    }
+  ],
+  "timing_s": {
+    "seed": 0.002,
+    "harvest": 0.0,
+    "world": 0.268,
+    "continuous": 192.267,
+    "measure": 0.679
+  },
+  "total_s": 193.215
+}
