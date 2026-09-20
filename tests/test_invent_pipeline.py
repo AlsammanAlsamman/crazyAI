@@ -281,6 +281,30 @@ def test_direct_prompt_contract_matches_the_target_and_has_no_narrative_scaffold
     assert "SEED" not in p and "MAPPING" not in p and "WHAT THE NATIVE SAID" not in p
 
 
+def test_continuous_prompt_has_no_decomposition_scaffolding():
+    # the whole point of the continuous condition is that it removes the persona-swap/decompose-then-
+    # translate step - assert the scaffolding that step requires is actually gone from the prompt.
+    from crazyai.pipeline.invent_prompts import continuous_prompt
+    from crazyai.targets import get_target
+    p = continuous_prompt("world text", get_target("alignment"), 2, [])
+    assert "int kernel(int n, const char *a, const char *b)" in p
+    assert "const double *A" not in p  # matmul's contract must not leak in
+    for forbidden in ("MAPPING", "ASSUMPTION BROKEN", "CHOSEN SEED"):
+        assert forbidden not in p
+
+
+def test_continuous_pipeline_with_mock(tmp_path):
+    if shutil.which("gcc") is None:
+        pytest.skip("no C compiler")
+    from crazyai.pipeline.continuous import Continuous
+    run = Continuous(seed=1, target="matmul", archive_dir=tmp_path)
+    s = run.execute(get_provider("mock"))
+    for f in ("world.md", "world.json", "artifact.md", "artifact.c", "measure.json", "run.json"):
+        assert (run.dir / f).exists(), f
+    assert not (run.dir / "ideas.md").exists()  # no separate immerse call in this condition
+    assert s["status"] == "exact" and s["value"] > 1 and s["prediction"] == 1.5
+
+
 def test_baseline_pipeline_with_mock(tmp_path):
     if shutil.which("gcc") is None:
         pytest.skip("no C compiler")

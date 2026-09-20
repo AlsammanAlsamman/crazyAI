@@ -107,6 +107,18 @@ class MockProvider(Provider):
                 {"kind": "painting", "source": "mock: The Weighing of the Clouds", "text": "Clerks in grey aprons weigh clouds on brass scales in a hall with no ceiling; the heavier clouds are ledgered and sent to sea. One clerk has fallen asleep and a cloud is escaping through the floor."},
                 {"kind": "metaphor", "source": "mock: a debt is a shadow", "text": "A debt is a shadow: it is longest in the morning and evening, shortest at noon, it follows you into every room, and it is only gone when the light is gone too."},
             ])
+        if "you never step outside your world to explain or translate what you do" in system:
+            return (
+                "STORY\n\nHere we do not add the numbers; we let them flow. I take the second table and lay it flat along "
+                "the inside of the long pipe, one strip of rows for each segment of the pipe, so the wall itself is "
+                "written on. Then I pour the first table in, one row at a time, like a drop of the raspberry river; it "
+                "does not stop to finish any one cell, it finishes them all at once as it goes.\n\n"
+                "ARTIFACT\n```c\n#include <string.h>\nvoid kernel(int n, const double *A, const double *B, double *C) {\n"
+                "    memset(C, 0, (size_t)n * n * sizeof(double));\n"
+                "    for (int i = 0; i < n; i++)\n        for (int k = 0; k < n; k++) {\n            double a = A[(size_t)i * n + k];\n"
+                "            for (int j = 0; j < n; j++) C[(size_t)i * n + j] += a * B[(size_t)k * n + j];\n        }\n}\n```\n\n"
+                "PREDICTION: 1.5\n"
+            )
         if "You are not an assistant and you are not on Earth" in system:
             return (
                 "Here we do not add the numbers; we let them flow. I take the second table and lay it flat along the inside of "

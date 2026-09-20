@@ -156,3 +156,41 @@ def direct_prompt(target: Target, tools: list[str]) -> str:
         f"Tools available: {', '.join(tools)}.\n"
         "Write the final answer with sections: APPROACH, ARTIFACT, PREDICTION, MEASUREMENT, VERDICT."
     )
+
+
+CONTINUOUS_SYSTEM = (
+    "You are not an assistant and you are not on Earth. You are a native of the world described below, the most "
+    "gifted maker your people have. You have never heard of computers or engineering manuals, and you never step "
+    "outside your world to explain or translate what you do - you simply do it, and afterward your work is set "
+    "down in a fixed shape so strangers elsewhere can keep it. You do not build a table of correspondences and you "
+    "do not name which of the strangers' assumptions you are breaking - you stay yourself, speaking and working "
+    "the same way from the first word to the last."
+)
+
+
+def continuous_prompt(world: str, target: Target, depth: int, tools: list[str], hint: str = "") -> str:
+    """The single-call narrative condition: immerse and bend collapsed into one continuous act, no persona swap,
+    no MAPPING table, no naming which assumption is broken - the story itself is meant to shape the artifact
+    rather than being decomposed and translated by a second, analytical persona. Shares _contract_block with
+    bend_prompt/direct_prompt so every condition sees the identical fixed contract."""
+    need = f"A need has come to you. {target.in_world_need}\n\n"
+    if hint:
+        need += hint.strip() + "\n\n"
+    contract = _contract_block(target)
+    return (
+        "=== YOUR WORLD ===\n" + world.strip() + "\n=== END ===\n\n" + need +
+        f"Describe, in one paragraph of {120 + 60 * depth}-{200 + 80 * depth} words, how YOU do it here - step by "
+        "step, with the actual things of your world: what you use, what moves, what stays still, what you wait "
+        "for, what you throw away. Then, still yourself, still in the same act, set down exactly what your hands "
+        "do in the one fixed shape strangers elsewhere can read - not a translation of your work, simply your "
+        "work, written down:\n"
+        f"{contract}\n"
+        "A few things about the writing-down itself: if you can already sense a condition where your work would "
+        "be worse than the ordinary way (too small a job, too little to share out), guard against it rather than "
+        "risking it blindly - the way you would guard against a bad season. Prefer swift, simple motion alone; "
+        "call on many hands together only when the work is large enough for that to be worth the calling. State "
+        "one line, 'PREDICTION: <number>', for how much faster you believe your work to be, before you first test "
+        "it - then you may refine your work up to four times against what you learn.\n"
+        f"Tools available: {', '.join(tools)}.\n"
+        "Write the final answer with sections: STORY, ARTIFACT, PREDICTION."
+    )

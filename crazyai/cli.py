@@ -12,6 +12,7 @@
     crazyai blend --seed 42 [--model compare]          blend the imagination corpus, offline
     crazyai invent --seed 42 --target matmul [--blend anneal] [--harvest 5] [--provider mock]
     crazyai invent-baseline --seed 42 --target matmul [--provider mock]   direct-prompt condition, no narrative
+    crazyai invent-continuous --seed 42 --target matmul [--provider mock]   narrative, one continuous call, no persona swap
     crazyai invent-rank [--target matmul] [--top 20]
     crazyai harvest-corpus --kind poem --n 20 --out crazyai/data/imagination/poems_candidates.yaml [--provider claudecode]
 """
@@ -209,6 +210,28 @@ def cmd_invent_baseline(args) -> int:
     return 1 if failures == args.n else 0
 
 
+def cmd_invent_continuous(args) -> int:
+    from crazyai.pipeline.continuous import Continuous
+
+    provider = _provider(args)
+    failures = 0
+    for i in range(args.n):
+        seed = args.seed + i
+        run = Continuous(seed=seed, target=args.target, assumption=args.assumption, force=args.force,
+                         archive_dir=Path(args.archive))
+        try:
+            summary = run.execute(provider)
+        except Exception as exc:  # noqa: BLE001 - one bad seed must not abort the batch
+            failures += 1
+            print(json.dumps({"seed": seed, "target": args.target, "status": "error", "error": str(exc)[-2000:]}),
+                 flush=True)
+            continue
+        print(json.dumps({k: summary[k] for k in ("seed", "target", "blend_model", "imagination_score", "status",
+                                                   "value", "prediction", "calibration", "discovery")}, indent=2),
+             flush=True)
+    return 1 if failures == args.n else 0
+
+
 def cmd_invent_rank(args) -> int:
     from crazyai.pipeline.invent import load_invent_index
 
@@ -318,6 +341,13 @@ def build_parser() -> argparse.ArgumentParser:
     ivb.add_argument("--target", default="matmul", choices=TARGETS)
     add_provider(ivb)
     ivb.set_defaults(fn=cmd_invent_baseline)
+    ivc = sub.add_parser("invent-continuous", help="narrative in one continuous call: no persona swap, no MAPPING table, no naming the assumption broken")
+    ivc.add_argument("--seed", type=int, required=True)
+    ivc.add_argument("--n", type=int, default=1, help="number of consecutive seeds")
+    ivc.add_argument("--target", default="matmul", choices=TARGETS)
+    ivc.add_argument("--assumption", default="", help="pin assumption_focus (same as invent's --assumption)")
+    add_provider(ivc)
+    ivc.set_defaults(fn=cmd_invent_continuous)
     hc = sub.add_parser("harvest-corpus", help="grow a bundled imagination corpus (writes a candidates file for review)")
     hc.add_argument("--kind", required=True, help="e.g. metaphor, painting, book, poem")
     hc.add_argument("--n", type=int, default=20, help="fragments to collect")
