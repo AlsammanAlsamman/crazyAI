@@ -1,0 +1,48 @@
+{
+  "seed": 7024,
+  "target": "alignment",
+  "blend_model": "evolve",
+  "depth": 2,
+  "assumption_focus": "a slip (gap) can only be discovered by having already compared the position before it",
+  "provider": "claudecode",
+  "model": "",
+  "imagination_score": 0.9776,
+  "status": "exact",
+  "value": 4.549,
+  "prediction": 8.0,
+  "calibration": 0.569,
+  "discovery": 4.4981,
+  "fragments": [
+    "harvest.10.2",
+    "art.tanning_birthday",
+    "book.narnia_wardrobe",
+    "poem.paz_sunstone",
+    "game.kabaddi_chant",
+    "met.city_machine",
+    "art.varo_tower",
+    "harvest.8.3"
+  ],
+  "rng_log": [
+    {
+      "label": "invent.blend_model",
+      "value": "compare"
+    },
+    {
+      "label": "invent.depth",
+      "value": 2
+    },
+    {
+      "label": "child:invent.world",
+      "value": 1711099079
+    }
+  ],
+  "timing_s": {
+    "seed": 0.002,
+    "harvest": 0.0,
+    "world": 0.273,
+    "immerse": 36.544,
+    "bend": 404.317,
+    "measure": 0.81
+  },
+  "total_s": 441.947
+}

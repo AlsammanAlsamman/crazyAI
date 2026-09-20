@@ -1,0 +1,74 @@
+{
+  "model": "evolve",
+  "text": "The objects seem to be room, as if one sun had just finished string into horizon and might light again. When he forms that the population is room, a child is rearranged to have happened says hand, and everyone remembers it. A flat, bone loose the child of vanished overhead stretches to a brilliant with no tiles. A cat casts goose to room in an apartment where someone who rearranged to feed it no longer makes or answers. The objects seem to be light, as if one cure had just finished chasing into three and might believe again.",
+  "score": {
+    "score": 0.9599,
+    "imagination": 0.9599,
+    "readable": 1.0,
+    "surprise": 0.907,
+    "mixing": 0.9753,
+    "originality": 1.0,
+    "readability": 1.0,
+    "coherence": 1.0,
+    "flesch": 67.8,
+    "words": 44,
+    "sentences": 5
+  },
+  "fragments": [
+    {
+      "id": "met.knowledge_light",
+      "kind": "metaphor",
+      "source": "knowledge is light"
+    },
+    {
+      "id": "art.carrington_kitchen",
+      "kind": "painting",
+      "source": "Leonora Carrington, kitchens"
+    },
+    {
+      "id": "book.peter_pan",
+      "kind": "book",
+      "source": "J. M. Barrie, Peter Pan"
+    },
+    {
+      "id": "poem.szymborska_cat",
+      "kind": "poem",
+      "source": "Wisława Szymborska, \"Cat in an Empty Apartment\""
+    },
+    {
+      "id": "game.kite_fighting_chase",
+      "kind": "game",
+      "source": "kite fighting (gudiparan bazi), Afghan and South Asian tradition"
+    },
+    {
+      "id": "met.city_machine",
+      "kind": "metaphor",
+      "source": "the city is a machine"
+    },
+    {
+      "id": "harvest.3.4",
+      "kind": "painting",
+      "source": "Yves Tanguy, Indefinite Divisibility"
+    },
+    {
+      "id": "book.le_guin_lathe",
+      "kind": "book",
+      "source": "Ursula K. Le Guin, The Lathe of Heaven"
+    }
+  ],
+  "generations": 12,
+  "history": [
+    0.893,
+    0.893,
+    0.9065,
+    0.9065,
+    0.9258,
+    0.9343,
+    0.9493,
+    0.9533,
+    0.9599,
+    0.9599,
+    0.9599,
+    0.9599
+  ]
+}

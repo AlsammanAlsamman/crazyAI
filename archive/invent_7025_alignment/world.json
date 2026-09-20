@@ -1,0 +1,95 @@
+{
+  "model": "markov",
+  "text": "Lions, birds and an elephant look out between enormous leaves and lotus flowers while a dark figure plays a flute. Carved pawns shaped like cones and spools slide house to house, painted small on a tomb wall beside the dead. The road is made of lines and dots. The piece is carved as a small horse's head, mane frozen mid-toss, eyes blank wood. A woman watches another woman laughing softly with a red ball, fish flying, a small horse's head, mane frozen mid-toss, eyes blank wood. The piece is carved as a small horse's head, mane frozen mid-toss, eyes blank wood.",
+  "score": {
+    "score": 0.1902,
+    "imagination": 0.2927,
+    "readable": 0.5,
+    "surprise": 0.087,
+    "mixing": 0.9048,
+    "originality": 0.3186,
+    "readability": 1.0,
+    "coherence": 0.5,
+    "flesch": 79.4,
+    "words": 70,
+    "sentences": 6
+  },
+  "fragments": [
+    {
+      "id": "met.computer_brain",
+      "kind": "metaphor",
+      "source": "the computer is a brain"
+    },
+    {
+      "id": "harvest.7.4",
+      "kind": "painting",
+      "source": "Remedios Varo, Creation of the Birds"
+    },
+    {
+      "id": "book.wizard_oz",
+      "kind": "book",
+      "source": "L. Frank Baum, The Wizard of Oz"
+    },
+    {
+      "id": "poem.blake_auguries",
+      "kind": "poem",
+      "source": "William Blake, \"Auguries of Innocence\""
+    },
+    {
+      "id": "game.senet_sticks",
+      "kind": "game",
+      "source": "Senet (ancient Egyptian board game)"
+    },
+    {
+      "id": "met.argument_war",
+      "kind": "metaphor",
+      "source": "argument is war"
+    },
+    {
+      "id": "art.miro_carnival",
+      "kind": "painting",
+      "source": "Miró, Carnival of Harlequin"
+    },
+    {
+      "id": "harvest.7.3",
+      "kind": "book",
+      "source": "Jorge Amado, by way of Gabriel García Márquez, One Hundred Years of Solitude"
+    },
+    {
+      "id": "poem.sappho_31",
+      "kind": "poem",
+      "source": "Sappho, Fragment 31"
+    },
+    {
+      "id": "game.knight_foreign_landing",
+      "kind": "game",
+      "source": "chess, the knight's leap"
+    },
+    {
+      "id": "harvest.3.0",
+      "kind": "metaphor",
+      "source": "Indra's Net"
+    },
+    {
+      "id": "art.rousseau_dream",
+      "kind": "painting",
+      "source": "Henri Rousseau, The Dream"
+    },
+    {
+      "id": "harvest.8.0",
+      "kind": "book",
+      "source": "Mervyn Peake, Gormenghast"
+    },
+    {
+      "id": "poem.sappho_apple",
+      "kind": "poem",
+      "source": "Sappho, fragment on the unreached apple"
+    },
+    {
+      "id": "game.jacks_knucklebones",
+      "kind": "game",
+      "source": "Jacks / Knucklebones (scatter-and-catch game)"
+    }
+  ],
+  "order": 2
+}

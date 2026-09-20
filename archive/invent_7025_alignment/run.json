@@ -1,0 +1,55 @@
+{
+  "seed": 7025,
+  "target": "alignment",
+  "blend_model": "markov",
+  "depth": 3,
+  "assumption_focus": "both strings are read start to end in the same direction",
+  "provider": "claudecode",
+  "model": "",
+  "imagination_score": 0.1902,
+  "status": "exact",
+  "value": 3.633,
+  "prediction": 3.0,
+  "calibration": 0.826,
+  "discovery": 2.162,
+  "fragments": [
+    "met.computer_brain",
+    "harvest.7.4",
+    "book.wizard_oz",
+    "poem.blake_auguries",
+    "game.senet_sticks",
+    "met.argument_war",
+    "art.miro_carnival",
+    "harvest.7.3",
+    "poem.sappho_31",
+    "game.knight_foreign_landing",
+    "harvest.3.0",
+    "art.rousseau_dream",
+    "harvest.8.0",
+    "poem.sappho_apple",
+    "game.jacks_knucklebones"
+  ],
+  "rng_log": [
+    {
+      "label": "invent.blend_model",
+      "value": "markov"
+    },
+    {
+      "label": "invent.depth",
+      "value": 3
+    },
+    {
+      "label": "child:invent.world",
+      "value": 1218097191
+    }
+  ],
+  "timing_s": {
+    "seed": 0.0,
+    "harvest": 0.0,
+    "world": 0.064,
+    "immerse": 33.528,
+    "bend": 412.535,
+    "measure": 0.831
+  },
+  "total_s": 446.959
+}
