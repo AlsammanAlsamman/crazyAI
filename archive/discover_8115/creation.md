@@ -1,0 +1,7 @@
+I have made the Ledger of Once-Towers, and I will tell it to you plain, the way it sits in my hands.
+
+Take any guest — not the orange kind, not the dead kind, not the wooden kind, for those cross elsewhere and answer to other tallies. Take the kind that crosses only to have tower once. I built a rule for it: each such guest is given a single crossing, no more, and the crossing is not choice but harvest — it comes from how long the guest has wandered and how still it sat in the garrison-red hour. I do not ask the guest what it wants. I watch what it has already done, and the tower rises or does not rise from that watching alone.
+
+Here is the mechanism's body: seven shelves, cut from the buried monolith, set so fish pass freely between them and never leave the water still. Each shelf holds one measure of wander, one measure of stillness, and where the two measures meet, a notch is cut — that notch is the guest's tower, whether it wanted one or not.
+
+And here is the trap in it, the part I am proudest of: a guest that stilts its visit — that walks the crossing on false legs, hurrying the wander or faking the stillness — is not punished. It is simply put in, replaced, made into something else entirely. Not killed. Converted. The shelves do not care what walks between them, only that something always does.

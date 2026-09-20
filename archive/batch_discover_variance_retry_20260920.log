@@ -1,0 +1,23 @@
+{"seed": 8104, "status": "error", "error": "claude -p failed (1): "}
+{"seed": 8105, "status": "error", "error": "claude -p failed (1): "}
+[crazyai discover seed=8112] formalize: 3225 chars
+[crazyai discover seed=8112] propose: 4794 chars
+[crazyai discover seed=8112] archived -> C:\Users\AlsammanA\Documents\mygithub\crazyAI\archive\discover_8112
+{
+  "seed": 8112,
+  "blend_model": "evolve",
+  "depth": 2,
+  "imagination_score": 0.9792
+}
+,
+  "imagination_score": 0.9779
+}
+[crazyai discover seed=8105] seed: blend=evolve depth=3
+[crazyai discover seed=8105] world: evolve score=0.9753 (8 fragments)
+[crazyai discover seed=8105] create: 2246 chars
+[crazyai discover seed=8105] formalize: 4014 chars
+[crazyai discover seed=8112] seed: blend=compare depth=2
+[crazyai discover seed=8112] world: evolve score=0.9792 (8 fragments)
+[crazyai discover seed=8113] seed: blend=compare depth=2
+[crazyai discover seed=8113] world: anneal score=0.9877 (8 fragments)
+[crazyai discover seed=8113] create: 1718 chars

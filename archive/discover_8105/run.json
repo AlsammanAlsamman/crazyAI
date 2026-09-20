@@ -1,0 +1,26 @@
+{
+  "seed": 8105,
+  "blend_model": "evolve",
+  "depth": 3,
+  "provider": "claudecode",
+  "model": "",
+  "imagination_score": 0.9753,
+  "fragments": [
+    "met.internet_web",
+    "harvest.8.4",
+    "book.neverending_story",
+    "poem.antara_muallaqa",
+    "game.gilli_danda",
+    "met.theory_building",
+    "harvest.7.1",
+    "book.arabian_nights"
+  ],
+  "timing_s": {
+    "seed": 0.0,
+    "world": 0.0,
+    "create": 0.002,
+    "formalize": 0.0,
+    "propose": 54.724
+  },
+  "total_s": 54.726
+}

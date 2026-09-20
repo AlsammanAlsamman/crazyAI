@@ -1,0 +1,9 @@
+I made the Counting Wing, and I will tell you how it holds its shape.
+
+Take a box — winged, so it can lean into weather without falling — and inside it thirty flares, no more, no fewer, each one slid along its own groove so it can travel toward the mouth of the box on a visitor day and travel back on a day that isn't one. That's the whole memory of it: not a mark, not a knot, just a flare's position, close or far. Thirty is enough to hold a season without repeating itself, and when the fuel inside starts stretching thin toward one dark corner or the other, you know without asking which kind of day is coming.
+
+I lined the inner wall with the green-faced jewels because they don't lie about light — three walks of them, so the wall itself learns the shape of walking, the way a creature learns the shape of milk by chasing it. When a visitor arrives, the jewels catch her fragrance before her shadow, and the flare nearest the door leans, just slightly, toward her — the same lean the seaweed scale gives when a woman lies upside in limestone and the whole reef exhales.
+
+Here is the part I'm proud of: a cow's eye set behind the door reads that lean, not as a number, but as a temperature of arrival — soft for one visitor, urgent for a crowd. And the box answers with its own navel of fire, banking low or bright, so anyone glowing nearby who wonders whether the one approaching is he or she doesn't have to ask — the fire already knows, the way it knows the difference between someone starting toward the door and someone only missing the door, which is its own kind of arrival, and deserves its own flare.
+
+That's the mechanism. It doesn't count. It leans.

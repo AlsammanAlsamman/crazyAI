@@ -1,0 +1,24 @@
+{
+  "seed": 8106,
+  "blend_model": "cutup",
+  "depth": 2,
+  "provider": "claudecode",
+  "model": "",
+  "imagination_score": 0.5727,
+  "fragments": [
+    "met.life_journey",
+    "art.dali_memory",
+    "harvest.6.3",
+    "poem.rumi_reed",
+    "game.go_stones_click",
+    "met.mind_machine"
+  ],
+  "timing_s": {
+    "seed": 0.0,
+    "world": 0.017,
+    "create": 20.812,
+    "formalize": 42.025,
+    "propose": 102.458
+  },
+  "total_s": 165.312
+}

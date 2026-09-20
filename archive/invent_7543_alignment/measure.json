@@ -1,0 +1,62 @@
+{
+  "target": "alignment",
+  "artifact": "kernel",
+  "imagination": {
+    "score": 0.5058,
+    "imagination": 0.5058,
+    "readable": 1.0,
+    "surprise": 0.1739,
+    "mixing": 0.8927,
+    "originality": 0.8333,
+    "readability": 1.0,
+    "coherence": 1.0,
+    "flesch": 70.1,
+    "words": 47,
+    "sentences": 6
+  },
+  "measurement": {
+    "results": [
+      {
+        "n": 64,
+        "time": 1.19995093e-06,
+        "ref_time": 2.49996083e-06,
+        "ref_score": -12,
+        "cand_score": -12,
+        "correct": true,
+        "speedup_vs_dp": 2.083,
+        "status": "exact"
+      },
+      {
+        "n": 256,
+        "time": 8.79995059e-06,
+        "ref_time": 3.59999831e-05,
+        "ref_score": -48,
+        "cand_score": -48,
+        "correct": true,
+        "speedup_vs_dp": 4.091,
+        "status": "exact"
+      },
+      {
+        "n": 1024,
+        "time": 0.000120799989,
+        "ref_time": 0.000542099995,
+        "ref_score": -148,
+        "cand_score": -148,
+        "correct": true,
+        "speedup_vs_dp": 4.488,
+        "status": "exact"
+      }
+    ],
+    "largest_n": 1024,
+    "status": "exact",
+    "speedup_vs_dp": 4.488,
+    "value": 4.488,
+    "prediction_target": 4.488,
+    "reading": "value = speedup vs. the Needleman-Wunsch reference, or 0 if the score is wrong - correctness is binary here, not a tolerance."
+  },
+  "value": 4.488,
+  "status": "exact",
+  "calibration": 0.748,
+  "prediction": 6.0,
+  "discovery": 3.379
+}

@@ -1,0 +1,14 @@
+**The shape underneath, stripped of wood and grief:**
+
+A **sequential record with one annotated unit per elapsed interval**, where each unit is not a raw data point but the *output of a resolution process* applied to some prior raw state. Formally you could sketch it as:
+
+- An index set (rings, one per year — i = 1, 2, 3, …)
+- A raw input at each index (yᵢ, the "grief")
+- A transformation the input must pass through before it can be recorded (fᵢ(yᵢ) = "swallowed"), which either meets resistance or doesn't
+- A resulting recorded state per index that is a **pair**: a small discrete category (cᵢ ∈ {hard, easy}) plus a **magnitude that co-varies with that category** (depth/coldness scaling with "hardness") — so the category isn't just a label, it has an intensity gradient built into it
+- **Redundant encoding across channels** — the same categorical value is legible by two independent means (sight: color; touch: depth/temperature-of-edge), so the record doesn't depend on one sensory access route
+- A **boundary condition that deliberately fails to individuate** — at the edge, the motif used to encode the record (rings, hollows) becomes formally indistinguishable from the same motif occurring "naturally" in the substrate the object rests on. Figure and ground share a vocabulary and the object refuses to disambiguate itself from its environment at the limit
+- A stated **functional class distinction**: the object is explicitly *not* built for decoding by a reader (not a message/signal), but as a *container* whose purpose is to be occupied by something that needs a shape to sit in — form-as-receptacle rather than form-as-communication
+- And, for whoever interacts with it: what's perceived on contact is not the original raw state but **the trace left by its resolution** — a second-order object (the shape grief made leaving) distinct from the first-order object (grief itself)
+
+**Where this resists a single clean statement:** it isn't one relation — it's a bundle of at least four independent structural motifs stitched together (indexed record-with-resistance-dependent-branching; category+correlated-magnitude encoding; deliberate self-similar boundary blending with the ambient field; and a container/message functional split, with a first-order/second-order perceptual distinction riding on top of it). Each motif is simple and nameable on its own — a branching accumulator, a redundant multi-channel code, a boundary that won't individuate itself from its ground, a vessel-not-signal distinction — but nothing forces them into one formula together. They're co-present by design, not derived from each other. That conjunction, rather than any single rule, is the actual shape here.

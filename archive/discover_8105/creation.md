@@ -1,0 +1,11 @@
+I have made a thing I call the Tremble-Thread, and I want to tell you how it sits in a room.
+
+You know how the rooms beneath are never grown — they are only ever found, hollow already, waiting under the ones we raise on drinks. A drink holds weight the way a post never could; it sags before it breaks, and that sag is a warning if you know how to read it. I did not invent the drink-post. I invented the reading.
+
+I take spider strands — not spun by me, only gathered, because a spider will not work for coin or asking, only for its own reasons — and I color them at the dyer's, one strand for each drink in a room. The dye is not paint. It is a slow soak, days long, and it does not finish taking until the strand has hung against the drink it belongs to and felt what that drink feels. A strand on a steady drink dyes deep and even. A strand on a drink already tired — already leaning toward whatever tremble is coming — dyes patchy, pale in the middle, like a bruise that hasn't decided its color yet.
+
+So I hang them. One per post, run loose along the ceiling of the room beneath, and I read the room by looking up, not down. Where the strands run true and dark, the room will hold through the night. Where one goes pale, I know which drink is failing before the floor above ever feels it, and I can pour a new drink there, or shore the post, or simply not put a grown room over that spot to begin with.
+
+This is also why I will never raise cloth short in a room I've threaded. A raised cloth — even a small one, waist height, meant only to mark a boundary or shame a debt — pulls the eye of everyone in the room upward, toward the strands, and a fly that rooms anywhere will find that cloth and nest in its fold overnight, and a nested fly reads as a tremble to anyone glancing fast. That is enough, some nights, to bring the whole argument of a household down on itself, each person certain the ceiling is speaking a color it never meant.
+
+So the rule I keep, the one worth telling: dye the strand from the drink, not from a dish; hang it loose, never taut; and never raise cloth in a threaded room, because the thread was built to be believed, and belief that jumps at a fold in cloth isn't reading anymore — it's just fear wearing color.

@@ -1,0 +1,26 @@
+{
+  "seed": 8109,
+  "blend_model": "evolve",
+  "depth": 1,
+  "provider": "claudecode",
+  "model": "",
+  "imagination_score": 0.9571,
+  "fragments": [
+    "met.data_oil",
+    "art.dali_memory",
+    "book.narnia_wardrobe",
+    "poem.basho_pond",
+    "game.blind_mans_buff",
+    "harvest.4.4",
+    "art.rousseau_dream",
+    "book.phantom_tollbooth"
+  ],
+  "timing_s": {
+    "seed": 0.0,
+    "world": 0.067,
+    "create": 20.552,
+    "formalize": 38.596,
+    "propose": 100.209
+  },
+  "total_s": 159.424
+}

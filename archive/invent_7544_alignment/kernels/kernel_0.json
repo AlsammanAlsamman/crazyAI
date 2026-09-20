@@ -1,0 +1,35 @@
+{
+  "results": [
+    {
+      "n": 64,
+      "time": 0.000265799987,
+      "ref_time": 2.49996083e-06,
+      "ref_score": -12,
+      "cand_score": -12,
+      "correct": true,
+      "speedup_vs_dp": 0.009,
+      "status": "exact"
+    },
+    {
+      "n": 256,
+      "time": 0.00108640001,
+      "ref_time": 3.60999838e-05,
+      "ref_score": -48,
+      "cand_score": -48,
+      "correct": true,
+      "speedup_vs_dp": 0.033,
+      "status": "exact"
+    },
+    {
+      "n": 1024,
+      "time": 0.00484459999,
+      "ref_time": 0.000663200044,
+      "ref_score": -148,
+      "cand_score": -148,
+      "correct": true,
+      "speedup_vs_dp": 0.137,
+      "status": "exact"
+    }
+  ],
+  "value": 0.137
+}

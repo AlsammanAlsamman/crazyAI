@@ -1,0 +1,74 @@
+{
+  "model": "evolve",
+  "text": "A red child is full full branches in the darkness of a jumping until the middle owns. The sea in the middle is perfectly still and the child comes from nowhere. Rhyme it is leap and snow. Full notice drilled for no active purpose, until you notice they were the only breathing keeping you upright the whole holding. Ants brush a flute, air on table full, brush say again - the light holding touching quietly just out of ordinary.",
+  "score": {
+    "score": 0.9571,
+    "imagination": 0.9571,
+    "readable": 1.0,
+    "surprise": 0.9,
+    "mixing": 0.9741,
+    "originality": 1.0,
+    "readability": 1.0,
+    "coherence": 1.0,
+    "flesch": 73.9,
+    "words": 41,
+    "sentences": 5
+  },
+  "fragments": [
+    {
+      "id": "met.data_oil",
+      "kind": "metaphor",
+      "source": "data is oil"
+    },
+    {
+      "id": "art.dali_memory",
+      "kind": "painting",
+      "source": "Dalí, The Persistence of Memory"
+    },
+    {
+      "id": "book.narnia_wardrobe",
+      "kind": "book",
+      "source": "C. S. Lewis, The Chronicles of Narnia"
+    },
+    {
+      "id": "poem.basho_pond",
+      "kind": "poem",
+      "source": "Matsuo Bashō, the old pond haiku"
+    },
+    {
+      "id": "game.blind_mans_buff",
+      "kind": "game",
+      "source": "Blind man's buff (Colin-maillard, European and global tradition)"
+    },
+    {
+      "id": "harvest.4.4",
+      "kind": "metaphor",
+      "source": "the tightrope walker's pole as memory"
+    },
+    {
+      "id": "art.rousseau_dream",
+      "kind": "painting",
+      "source": "Henri Rousseau, The Dream"
+    },
+    {
+      "id": "book.phantom_tollbooth",
+      "kind": "book",
+      "source": "Norton Juster, The Phantom Tollbooth"
+    }
+  ],
+  "generations": 12,
+  "history": [
+    0.8441,
+    0.8662,
+    0.9084,
+    0.9087,
+    0.9172,
+    0.9232,
+    0.9374,
+    0.9374,
+    0.9571,
+    0.9571,
+    0.9571,
+    0.9571
+  ]
+}

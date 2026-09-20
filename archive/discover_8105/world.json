@@ -1,0 +1,74 @@
+{
+  "model": "evolve",
+  "text": "It has trembles and load-bearing drinks, some rooms are scattered beneath and never made grown, and a short raised cloth can bring the battle down on everyone grown. Strands color spiders, something cracked on one human tracks at the horizonless, keeps grown at the dyer's, and a fly that rooms anywhere is felt tent. Nothing pours a human. He pours his lance soaking in short beneath the clear a rooms cloth drinks color, skittering of human to prove longer inside of a spine bone-colored to another air. Where it passes there is not even ground overnight.",
+  "score": {
+    "score": 0.9753,
+    "imagination": 0.9753,
+    "readable": 1.0,
+    "surprise": 0.94,
+    "mixing": 0.9869,
+    "originality": 1.0,
+    "readability": 1.0,
+    "coherence": 1.0,
+    "flesch": 68.7,
+    "words": 51,
+    "sentences": 5
+  },
+  "fragments": [
+    {
+      "id": "met.internet_web",
+      "kind": "metaphor",
+      "source": "the internet is a web"
+    },
+    {
+      "id": "harvest.8.4",
+      "kind": "painting",
+      "source": "Yves Tanguy, Indefinite Divisibility"
+    },
+    {
+      "id": "book.neverending_story",
+      "kind": "book",
+      "source": "Michael Ende, The Neverending Story"
+    },
+    {
+      "id": "poem.antara_muallaqa",
+      "kind": "poem",
+      "source": "Antara ibn Shaddad, Mu'allaqa"
+    },
+    {
+      "id": "game.gilli_danda",
+      "kind": "game",
+      "source": "Gilli-Danda (Indian street stick game)"
+    },
+    {
+      "id": "met.theory_building",
+      "kind": "metaphor",
+      "source": "theories are buildings"
+    },
+    {
+      "id": "harvest.7.1",
+      "kind": "painting",
+      "source": "Yves Tanguy, Indefinite Divisibility"
+    },
+    {
+      "id": "book.arabian_nights",
+      "kind": "book",
+      "source": "One Thousand and One Nights"
+    }
+  ],
+  "generations": 12,
+  "history": [
+    0.8755,
+    0.8768,
+    0.9245,
+    0.9307,
+    0.946,
+    0.946,
+    0.9573,
+    0.9655,
+    0.967,
+    0.967,
+    0.9734,
+    0.9753
+  ]
+}

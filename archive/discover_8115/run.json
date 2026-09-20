@@ -1,0 +1,26 @@
+{
+  "seed": 8115,
+  "blend_model": "evolve",
+  "depth": 1,
+  "provider": "claudecode",
+  "model": "",
+  "imagination_score": 0.9645,
+  "fragments": [
+    "met.market_organism",
+    "art.klint_ten_largest",
+    "harvest.9.1",
+    "poem.kabir_guest",
+    "game.xiangqi_cannon",
+    "met.rat_treasure_maze",
+    "harvest.6.2",
+    "book.moomins"
+  ],
+  "timing_s": {
+    "seed": 0.0,
+    "world": 0.0,
+    "create": 0.0,
+    "formalize": 45.651,
+    "propose": 69.809
+  },
+  "total_s": 115.46
+}

@@ -1,0 +1,17 @@
+Looking at this cleanly rather than trying to force a single unifying answer: parts (1)–(3) describe one coherent generative process, and part (4) is a genuinely different kind of claim, as you noted yourself. I found solid real-world matches for each piece separately, but no honest single system that satisfies all four at once — so I'm giving you that split rather than papering over it.
+
+**1. Gravitational-wave chirp from a compact binary inspiral — covers (1)–(3), breaks on (4)**
+
+- *(1) Interface entity:* the radiated gravitational wave is sourced by the time-varying mass quadrupole of the *pair* — it isn't decomposable into independent contributions from body A and body B. It exists only because two fields (two masses' spacetime curvature) overlap and interact. That's a real, not metaphorical, second-order quantity.
+- *(2) Continuous → discrete:* the orbital decay is smooth, but the observable signal is a sequence of wave cycles (zero-crossings) — the natural "unit" is the cycle/transition, not the instantaneous state.
+- *(3) Non-uniform, pole-compressing spacing:* this is literally the "chirp" — cycle-to-cycle time intervals shrink monotonically as the two bodies converge, quantitatively df/dt ∝ f^(11/3) in the post-Newtonian approximation. "Approach velocity increasing as separation decreases" is exactly the chirp mechanism, not a loose analogy.
+- *How to check:* take a real or simulated inspiral waveform (e.g., a GW150944-style template), extract the timestamps of successive zero-crossings, and confirm the inter-cycle interval sequence is monotonically decreasing and matches the analytic chirp-rate formula rather than being evenly spaced.
+- *Where it honestly fails:* a single wave cycle can't be detached, carried elsewhere, and later "recognize" another detached cycle to spontaneously reproduce inspiral attraction. There's no portable relational memory here — component (4) has no home in this system.
+
+**2. Diffie–Hellman-style key exchange — covers (4) specifically, nothing else**
+
+- *(4) Extraction preserving orientation + recurrence on re-pairing:* private values a and b generate public values gᵃ, g^b — each "detached" object still carries an invariant algebraic tie back to its origin (the discrete log). Two such detached, independently-transported public values, brought into contact via the group operation, reproduce the *original* relation between a and b (the shared secret g^(ab)) — regardless of the channel or context they traveled through. That's precisely "the rule outlives its instance": the founding relation (multiplication of exponents) reactivates on contact between the derived copies alone.
+- *How to check:* this isn't even empirical, it's a one-line algebraic proof (commutativity/associativity of the exponent group) — but you can also verify it operationally by running DH key exchange over arbitrarily different transport paths/timings and confirming the shared secret is route-independent.
+- *Where it honestly fails:* there's no continuous field, no interface object, no timing compression here — components (1)–(3) simply don't apply to this system.
+
+**On a unified third candidate:** I looked for something in ecology/biology that might carry all four at once (e.g., quorum-sensing bacterial colonies, where autoinducer molecules are portable, context-independent triggers) but the fit degraded past component (2) — the "discreteness" and "pole-compression" pieces required real forcing to make work, so I'm leaving it out rather than presenting a weak third match padded to look complete.

@@ -1,0 +1,65 @@
+{
+  "model": "nest",
+  "text": "Inside the shadows, there is the vows, and in the vows sweeping up one piece. Every the tavern's in a two contains every plank of the ship is replaced one by one over thirty years until no original timber remains. Every a round in a black contains the ship sails on.",
+  "score": {
+    "score": 0.7949,
+    "imagination": 0.7949,
+    "readable": 1.0,
+    "surprise": 0.5714,
+    "mixing": 0.879,
+    "originality": 1.0,
+    "readability": 1.0,
+    "coherence": 1.0,
+    "flesch": 68.5,
+    "words": 22,
+    "sentences": 3
+  },
+  "fragments": [
+    {
+      "id": "harvest.4.1",
+      "kind": "metaphor",
+      "source": "the Ship of Theseus as a marriage"
+    },
+    {
+      "id": "art.klint_ten_largest",
+      "kind": "painting",
+      "source": "Hilma af Klint, The Ten Largest"
+    },
+    {
+      "id": "harvest.6.0",
+      "kind": "book",
+      "source": "China Miéville, The Scar"
+    },
+    {
+      "id": "poem.libai_moon",
+      "kind": "poem",
+      "source": "Li Bai, \"Drinking Alone Under the Moon\""
+    },
+    {
+      "id": "game.jacks_knucklebones",
+      "kind": "game",
+      "source": "Jacks / Knucklebones (scatter-and-catch game)"
+    },
+    {
+      "id": "harvest.9.3",
+      "kind": "metaphor",
+      "source": "Plato's Cave"
+    },
+    {
+      "id": "art.kandinsky_composition",
+      "kind": "painting",
+      "source": "Kandinsky, Composition VIII"
+    },
+    {
+      "id": "harvest.6.3",
+      "kind": "book",
+      "source": "Michael Ende, The Neverending Story"
+    },
+    {
+      "id": "poem.dickinson_carriage",
+      "kind": "poem",
+      "source": "Emily Dickinson, \"Because I could not stop for Death\""
+    }
+  ],
+  "depth": 3
+}

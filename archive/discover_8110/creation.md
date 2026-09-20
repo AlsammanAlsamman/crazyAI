@@ -1,0 +1,11 @@
+I built a rope.
+
+Not a plain rope — a *current-rope*, one of the long umbilical lines that runs from the chained sea-beasts at Armada's prow-districts back through every deck, carrying the pressure those beasts make against their chains into light and warmth for houses that have never touched dry land. The beasts pull, the hulls resist the water, and somewhere in that struggle a pressure builds in the rope-fiber itself — brined, faintly warm, alive in the way a held breath is alive. That pressure is what the barbershops call *current* when they're being polite about it, and what the old wives call *the beast's temper* when they're not.
+
+What I made is the knot.
+
+Not a knot for holding two ropes together — a knot for *slowing* what runs through one. I take the current-rope, and at the point where a district's lamps or bilge-pumps or cold-rooms need less of the beast's temper than the prow gets, I tie a resistance-knot: seven crossings, no more, no fewer, each crossing biting the fiber just enough to make the current argue with itself on its way through. A tighter knot starves a house. A looser one floods it and the lamps scream white before they die. The seven-crossing knot is the only shape that argues *just enough* — I learned this the way everyone here learns anything worth knowing, by ruining lamps until my hands remembered what my mind hadn't caught up to yet.
+
+Here is the part I didn't expect, tying it night after night on drifting decks: the knot-tiers of Armada are almost all widow-barbers' children. The barbershop trims hair for the dead before it ever touches the living — that's the custom, that's why the shops smell the way they do, why nobody who's sat in that chair forgets it. And a barber's hands, trained on cutting exactly the amount that grief allows and no more, turn out to be the same hands that know how to stop a rope's fever at exactly seven crossings. Too little grief cut away and the family drowns in it. Too much and something in the house goes hollow and white, the way an over-loosened lamp does.
+
+I didn't invent the resistance. I only noticed that the two knots — the one in the hair, the one in the rope — were tied by the same kind of patient, grieving hand, and gave the second one a shape so it could be taught.

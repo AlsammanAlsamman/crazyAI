@@ -1,0 +1,26 @@
+{
+  "seed": 8112,
+  "blend_model": "evolve",
+  "depth": 2,
+  "provider": "claudecode",
+  "model": "",
+  "imagination_score": 0.9792,
+  "fragments": [
+    "met.love_fire",
+    "art.chagall_village",
+    "book.gulliver",
+    "poem.kabir_guest",
+    "game.senet_sticks",
+    "harvest.3.0",
+    "art.tanning_birthday",
+    "harvest.5.2"
+  ],
+  "timing_s": {
+    "seed": 0.007,
+    "world": 0.0,
+    "create": 0.0,
+    "formalize": 66.198,
+    "propose": 63.251
+  },
+  "total_s": 129.456
+}

@@ -1,0 +1,26 @@
+{
+  "seed": 8104,
+  "blend_model": "anneal",
+  "depth": 1,
+  "provider": "claudecode",
+  "model": "",
+  "imagination_score": 0.9779,
+  "fragments": [
+    "met.words_weapons",
+    "art.ocampo_fields",
+    "book.peter_pan",
+    "poem.sappho_31",
+    "game.kite_fighting_glass",
+    "met.text_fabric",
+    "art.klint_ten_largest",
+    "book.little_prince"
+  ],
+  "timing_s": {
+    "seed": 0.0,
+    "world": 0.144,
+    "create": 20.357,
+    "formalize": 30.492,
+    "propose": 76.046
+  },
+  "total_s": 127.038
+}

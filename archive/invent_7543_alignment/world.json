@@ -1,0 +1,95 @@
+{
+  "model": "markov",
+  "text": "Each heap is a chessboard and crossing it promotes a pawn to a queen. An unpaired hand is trouble. The land is a child holding out as many hands as it has sticks, but every real child has exactly two hands - so a heap with an odd count always leaves one hand unpaired and alone. A boy climbs into an oak at dinner and never comes down. The heart is a port waiting for its delivery of oxygen and its removal of ash. He promises this borrowed friendship will outlast the wine itself, to be renewed each year somewhere among the stars.",
+  "score": {
+    "score": 0.5058,
+    "imagination": 0.5058,
+    "readable": 1.0,
+    "surprise": 0.1739,
+    "mixing": 0.8927,
+    "originality": 0.8333,
+    "readability": 1.0,
+    "coherence": 1.0,
+    "flesch": 70.1,
+    "words": 47,
+    "sentences": 6
+  },
+  "fragments": [
+    {
+      "id": "harvest.6.1",
+      "kind": "metaphor",
+      "source": "the sunk cost fallacy as a drowning man clutching his wallet"
+    },
+    {
+      "id": "art.debuffet_hourloupe",
+      "kind": "painting",
+      "source": "Dubuffet, Hourloupe"
+    },
+    {
+      "id": "book.alice_looking_glass",
+      "kind": "book",
+      "source": "Lewis Carroll, Through the Looking-Glass"
+    },
+    {
+      "id": "poem.tagore_gitanjali",
+      "kind": "poem",
+      "source": "Rabindranath Tagore, Gitanjali"
+    },
+    {
+      "id": "game.marbles_ringer",
+      "kind": "game",
+      "source": "Marbles, ringer game (street game, global)"
+    },
+    {
+      "id": "met.heart_engine",
+      "kind": "metaphor",
+      "source": "the heart is a pump"
+    },
+    {
+      "id": "harvest.7.4",
+      "kind": "painting",
+      "source": "Remedios Varo, Creation of the Birds"
+    },
+    {
+      "id": "book.little_prince",
+      "kind": "book",
+      "source": "Saint-Exupéry, The Little Prince"
+    },
+    {
+      "id": "poem.libai_moon",
+      "kind": "poem",
+      "source": "Li Bai, \"Drinking Alone Under the Moon\""
+    },
+    {
+      "id": "game.chinese_jump_rope",
+      "kind": "game",
+      "source": "Chinese Jump Rope (elastic rope game)"
+    },
+    {
+      "id": "met.unpaired_hand_passed_on",
+      "kind": "metaphor",
+      "source": "devised for crazyAI's Nim target (kids'-hands framing), 2026"
+    },
+    {
+      "id": "art.kahlo_two",
+      "kind": "painting",
+      "source": "Frida Kahlo, The Two Fridas"
+    },
+    {
+      "id": "book.calvino_baron",
+      "kind": "book",
+      "source": "Italo Calvino, The Baron in the Trees"
+    },
+    {
+      "id": "poem.ghalib_moth",
+      "kind": "poem",
+      "source": "Ghalib, ghazal on the moth and the candle"
+    },
+    {
+      "id": "game.go_stones_click",
+      "kind": "game",
+      "source": "Go / Weiqi (board of stones, East Asia)"
+    }
+  ],
+  "order": 2
+}

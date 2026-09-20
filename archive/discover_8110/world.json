@@ -1,0 +1,95 @@
+{
+  "model": "markov",
+  "text": "Carved pawns shaped like cones and spools slide house to house, painted small on a tomb wall beside the dead. Barbershops smell faintly of weeping, and everyone remembers it. Voltage is pressure, current is flow, resistance is a knot tied by someone cleverer than you. A city called Armada is built entirely from ships lashed hull to hull, its districts drifting slowly across open ocean pulled by chained sea-beasts. A city called Armada is built entirely from ships lashed hull to hull, its avenues rope bridges swaying between decks, its avenues rope bridges swaying between decks, its districts drifting slowly across open ocean pulled by chained sea-beasts.",
+  "score": {
+    "score": 0.2489,
+    "imagination": 0.3776,
+    "readable": 0.5131,
+    "surprise": 0.1,
+    "mixing": 0.8764,
+    "originality": 0.6145,
+    "readability": 0.8552,
+    "coherence": 0.6,
+    "flesch": 52.8,
+    "words": 71,
+    "sentences": 5
+  },
+  "fragments": [
+    {
+      "id": "met.money_water",
+      "kind": "metaphor",
+      "source": "money is water"
+    },
+    {
+      "id": "harvest.4.2",
+      "kind": "painting",
+      "source": "Yves Tanguy, Indefinite Divisibility"
+    },
+    {
+      "id": "harvest.6.0",
+      "kind": "book",
+      "source": "China Miéville, The Scar"
+    },
+    {
+      "id": "poem.neruda_walking",
+      "kind": "poem",
+      "source": "Pablo Neruda, \"Walking Around\""
+    },
+    {
+      "id": "game.hopscotch_chalk",
+      "kind": "game",
+      "source": "Hopscotch (traditional street game, many cultures)"
+    },
+    {
+      "id": "met.problem_knot",
+      "kind": "metaphor",
+      "source": "a problem is a knot"
+    },
+    {
+      "id": "harvest.9.2",
+      "kind": "painting",
+      "source": "Yves Tanguy, Mama, Papa Is Wounded!"
+    },
+    {
+      "id": "book.le_guin_lathe",
+      "kind": "book",
+      "source": "Ursula K. Le Guin, The Lathe of Heaven"
+    },
+    {
+      "id": "poem.ghalib_moth",
+      "kind": "poem",
+      "source": "Ghalib, ghazal on the moth and the candle"
+    },
+    {
+      "id": "game.senet_sticks",
+      "kind": "game",
+      "source": "Senet (ancient Egyptian board game)"
+    },
+    {
+      "id": "met.electricity_water",
+      "kind": "metaphor",
+      "source": "electricity is water"
+    },
+    {
+      "id": "art.kahlo_two",
+      "kind": "painting",
+      "source": "Frida Kahlo, The Two Fridas"
+    },
+    {
+      "id": "book.invisible_cities",
+      "kind": "book",
+      "source": "Italo Calvino, Invisible Cities"
+    },
+    {
+      "id": "poem.okigbo_heavensgate",
+      "kind": "poem",
+      "source": "Christopher Okigbo, \"Heavensgate\""
+    },
+    {
+      "id": "game.knight_bends_air",
+      "kind": "game",
+      "source": "The knight's move (chess piece, imagery only)"
+    }
+  ],
+  "order": 2
+}

@@ -1,0 +1,74 @@
+{
+  "model": "evolve",
+  "text": "The heap is a wave and crossing it illuminates a name to a war. By the name the recitation heap, the mind hair on a name and a mountain, feels like the only age he holds. Every listed head becomes a pyramid brown of kingdom against being erased from a register. The sticks Beyond and Reason have been erased and the grandfather's and letters are at challenge. A heap in a room suit lights before a three hair, and the official shows only the hill of his market, the same readable insistence, the same sky, finished from air.",
+  "score": {
+    "score": 0.9672,
+    "imagination": 0.9672,
+    "readable": 1.0,
+    "surprise": 0.9348,
+    "mixing": 0.9681,
+    "originality": 1.0,
+    "readability": 1.0,
+    "coherence": 1.0,
+    "flesch": 67.0,
+    "words": 47,
+    "sentences": 5
+  },
+  "fragments": [
+    {
+      "id": "met.knowledge_light",
+      "kind": "metaphor",
+      "source": "knowledge is light"
+    },
+    {
+      "id": "harvest.5.3",
+      "kind": "painting",
+      "source": "Magritte, Not to Be Reproduced"
+    },
+    {
+      "id": "book.phantom_tollbooth",
+      "kind": "book",
+      "source": "Norton Juster, The Phantom Tollbooth"
+    },
+    {
+      "id": "poem.darwish_identity",
+      "kind": "poem",
+      "source": "Mahmoud Darwish, \"Identity Card\""
+    },
+    {
+      "id": "game.knight_bends_air",
+      "kind": "game",
+      "source": "The knight's move (chess piece, imagery only)"
+    },
+    {
+      "id": "met.pyramid_of_crossing_sticks",
+      "kind": "metaphor",
+      "source": "devised for crazyAI's Nim target (crossing-sticks framing), 2026"
+    },
+    {
+      "id": "art.hokusai_wave",
+      "kind": "painting",
+      "source": "Hokusai, The Great Wave"
+    },
+    {
+      "id": "book.alice_looking_glass",
+      "kind": "book",
+      "source": "Lewis Carroll, Through the Looking-Glass"
+    }
+  ],
+  "generations": 12,
+  "history": [
+    0.8641,
+    0.878,
+    0.9124,
+    0.9124,
+    0.9124,
+    0.9124,
+    0.9124,
+    0.9442,
+    0.9442,
+    0.9597,
+    0.9613,
+    0.9672
+  ]
+}

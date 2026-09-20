@@ -1,0 +1,24 @@
+{
+  "seed": 8102,
+  "blend_model": "graft",
+  "depth": 3,
+  "provider": "claudecode",
+  "model": "",
+  "imagination_score": 0.8345,
+  "fragments": [
+    "harvest.3.0",
+    "art.delvaux_night",
+    "book.flatland",
+    "poem.dickinson_carriage",
+    "game.nine_mens_morris",
+    "met.heart_engine"
+  ],
+  "timing_s": {
+    "seed": 0.001,
+    "world": 0.015,
+    "create": 34.34,
+    "formalize": 33.342,
+    "propose": 62.652
+  },
+  "total_s": 130.35
+}

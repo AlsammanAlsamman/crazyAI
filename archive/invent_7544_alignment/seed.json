@@ -1,0 +1,13 @@
+{
+  "seed": 7544,
+  "target": "alignment",
+  "blend_model": "cutup",
+  "depth": 1,
+  "assumption_focus": "both strings are read start to end in the same direction",
+  "bias": {
+    "enabled": false,
+    "min_samples": 20,
+    "samples_seen": 0,
+    "active": false
+  }
+}

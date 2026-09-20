@@ -1,0 +1,17 @@
+**The shape, stripped bare:**
+
+What's described is a *closed, deterministic, bivariate binning function with mandatory absorption*. Concretely, several structural commitments are stacked together:
+
+1. **Domain partition, not universal rule.** The mapping applies to one subclass of a larger population; other subclasses are explicitly routed to other, separate rules ("cross elsewhere and answer to other tallies"). So this isn't a single global law — it's one cell in a larger partition of cases, each cell governed independently.
+
+2. **Assignment by observation, not by choice.** The output isn't selected by the object being mapped and isn't a free parameter fed in from outside — it's *computed* from the object's own prior trajectory (two accumulated, measured quantities). The object has no say; the function reads state and returns a value. This is a rule of *harvest* rather than *decision* — output as a function of history, not of intent.
+
+3. **Two independent coordinates intersected into one discrete slot.** Not one measure but two, each varying independently, and the output is located at their *intersection* — a grid/lookup-table structure (fixed number of cells, here seven) rather than a single linear scale. This is the geometric heart of it: a Cartesian product of two measure-axes, quantized down to one cell.
+
+4. **Single-use consumption.** Each object gets exactly one pass through the function — not iterated, not resampled. The mapping is a one-shot evaluation per object, which is a constraint on *when* the function may be applied, layered on top of *what* it computes.
+
+5. **Totality with no reject state, but a substitution instead.** The function never simply fails or excludes on bad input. If the two coordinates are gamed or falsified, the object doesn't get an error, a rejection, or an exemption — it gets redirected into a different output class ("converted," not "killed," not "ordinary"). This is an absorbing case built into the function's range: malformed input maps to a distinguished alternate value rather than breaking closure.
+
+6. **Porous cells, not sealed bins.** The discrete output slots aren't isolated containers; the text is explicit that flow passes between them ("never leave the water still"). So the codomain, while finite and discrete, is internally connected — occupants can move between cells after assignment, which is a constraint of *circulation* layered on top of the discrete structure, not a static partition.
+
+**Honest caveat:** this doesn't reduce to one clean formula without loss. It's really a composite of several independent structural ideas welded together — (a) domain restriction, (b) two-coordinate deterministic lookup, (c) single-use consumption, (d) totality-via-absorption for adversarial input, and (e) post-assignment connectivity between output cells. Any one of these is easy to state formally in isolation; forcing all five into a single mathematical expression would flatten distinctions the text seems to care about keeping separate (especially the sharp line between *ordinary* harvested assignment and *converted* absorption of a spoofed input — that's presented as a qualitative fork, not a continuous function). So the honest answer is: a deterministic, closed, two-coordinate binning process over a restricted domain, applied once per object, whose finite output cells stay mutually connected, and whose only response to attempted deception is transformation rather than exclusion — a real structure, but a conjunction of rules rather than one equation.

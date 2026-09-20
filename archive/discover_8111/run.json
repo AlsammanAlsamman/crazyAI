@@ -1,0 +1,27 @@
+{
+  "seed": 8111,
+  "blend_model": "nest",
+  "depth": 1,
+  "provider": "claudecode",
+  "model": "",
+  "imagination_score": 0.7134,
+  "fragments": [
+    "met.hidden_leader_duck",
+    "art.goya_sleep",
+    "harvest.8.3",
+    "poem.kabir_guest",
+    "game.kite_fighting_glass",
+    "harvest.9.4",
+    "art.rousseau_dream",
+    "book.neverending_story",
+    "poem.kabir_thread"
+  ],
+  "timing_s": {
+    "seed": 0.0,
+    "world": 0.015,
+    "create": 22.401,
+    "formalize": 33.941,
+    "propose": 68.197
+  },
+  "total_s": 124.554
+}

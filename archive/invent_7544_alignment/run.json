@@ -1,0 +1,42 @@
+{
+  "seed": 7544,
+  "target": "alignment",
+  "blend_model": "markov",
+  "depth": 1,
+  "assumption_focus": "both strings are read start to end in the same direction",
+  "provider": "claudecode",
+  "model": "",
+  "imagination_score": 0.4521,
+  "status": "exact",
+  "value": 0.118,
+  "prediction": 6.0,
+  "calibration": 0.02,
+  "discovery": 0.0857,
+  "fragments": [
+    "harvest.5.0",
+    "harvest.6.2",
+    "harvest.6.0",
+    "poem.rilke_panther",
+    "game.chinese_jump_rope",
+    "met.memory_palace",
+    "harvest.3.4",
+    "book.discworld",
+    "poem.okigbo_heavensgate",
+    "game.blind_mans_buff",
+    "met.words_weapons",
+    "art.friedrich_wanderer",
+    "book.narnia_wardrobe",
+    "poem.mutanabbi_qasida",
+    "game.senet_sticks"
+  ],
+  "rng_log": [],
+  "timing_s": {
+    "seed": 0.0,
+    "harvest": 0.0,
+    "world": 0.002,
+    "immerse": 0.0,
+    "bend": 0.0,
+    "measure": 0.863
+  },
+  "total_s": 0.865
+}

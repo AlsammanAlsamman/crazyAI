@@ -1,0 +1,27 @@
+{
+  "seed": 8101,
+  "blend_model": "nest",
+  "depth": 1,
+  "provider": "claudecode",
+  "model": "",
+  "imagination_score": 0.7949,
+  "fragments": [
+    "harvest.4.1",
+    "art.klint_ten_largest",
+    "harvest.6.0",
+    "poem.libai_moon",
+    "game.jacks_knucklebones",
+    "harvest.9.3",
+    "art.kandinsky_composition",
+    "harvest.6.3",
+    "poem.dickinson_carriage"
+  ],
+  "timing_s": {
+    "seed": 0.008,
+    "world": 0.06,
+    "create": 16.232,
+    "formalize": 42.41,
+    "propose": 96.444
+  },
+  "total_s": 155.154
+}

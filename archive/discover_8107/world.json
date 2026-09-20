@@ -1,0 +1,100 @@
+{
+  "model": "evolve",
+  "text": "Every rich it plays is a year for the breath it was severed from, grief turned into thin through its own turned passage. You straight on a four, grief a lament, and some coats are hard to swallow. Every elephants' it years is a lament for the shadow it was forced from, edge wounded into thin through its own spaced woven. The viewer click tell where wooden years and hard begins, or whether the board landscape is snow turtle the red hollows. A rich chew rows for realities.",
+  "score": {
+    "score": 0.9671,
+    "imagination": 0.9671,
+    "readable": 1.0,
+    "surprise": 0.907,
+    "mixing": 0.9972,
+    "originality": 1.0,
+    "readability": 1.0,
+    "coherence": 1.0,
+    "flesch": 75.5,
+    "words": 44,
+    "sentences": 5
+  },
+  "fragments": [
+    {
+      "id": "met.text_fabric",
+      "kind": "metaphor",
+      "source": "a text is a fabric"
+    },
+    {
+      "id": "harvest.10.1",
+      "kind": "painting",
+      "source": "Magritte, The Human Condition"
+    },
+    {
+      "id": "book.narnia_wardrobe",
+      "kind": "book",
+      "source": "C. S. Lewis, The Chronicles of Narnia"
+    },
+    {
+      "id": "poem.rumi_reed",
+      "kind": "poem",
+      "source": "Rumi, \"Song of the Reed\" (opening of the Masnavi)"
+    },
+    {
+      "id": "game.oware_ayo",
+      "kind": "game",
+      "source": "Oware / Ayo, West African mancala"
+    },
+    {
+      "id": "met.ideas_food",
+      "kind": "metaphor",
+      "source": "ideas are food"
+    },
+    {
+      "id": "art.magritte_golconda",
+      "kind": "painting",
+      "source": "Magritte, Golconda"
+    },
+    {
+      "id": "harvest.2.3",
+      "kind": "book",
+      "source": "Terry Pratchett, Discworld"
+    }
+  ],
+  "generations": 12,
+  "history": [
+    0.8419,
+    0.8736,
+    0.884,
+    0.8944,
+    0.8944,
+    0.9223,
+    0.9389,
+    0.9411,
+    0.9411,
+    0.9411,
+    0.9588,
+    0.9632
+  ],
+  "compared": [
+    {
+      "model": "evolve",
+      "score": 0.9671
+    },
+    {
+      "model": "anneal",
+      "score": 0.9662
+    },
+    {
+      "model": "nest",
+      "score": 0.6546
+    },
+    {
+      "model": "cutup",
+      "score": 0.5582
+    },
+    {
+      "model": "graft",
+      "score": 0.5051
+    },
+    {
+      "model": "markov",
+      "score": 0.3549
+    }
+  ]
+}

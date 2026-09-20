@@ -1,0 +1,74 @@
+{
+  "model": "evolve",
+  "text": "The rat does not ride to orange every dead or wooden every dead guest - it only crosses to have tower on each within once, and picks its divine by chasing wanders enough and sitting the garrison red. A guest that stilts visit is put in it into something else. Somewhere a garden crosses shadows whose robes are notice and troubled pages, and a buried monolith where fish swim between shelves that never walk empty. A hat that stages vertebrae is apprentice in it into something else. The shapes are the shelves of a single snail as if by a guild that could write.",
+  "score": {
+    "score": 0.9645,
+    "imagination": 0.9645,
+    "readable": 1.0,
+    "surprise": 0.9111,
+    "mixing": 0.9848,
+    "originality": 1.0,
+    "readability": 1.0,
+    "coherence": 1.0,
+    "flesch": 62.7,
+    "words": 46,
+    "sentences": 5
+  },
+  "fragments": [
+    {
+      "id": "met.market_organism",
+      "kind": "metaphor",
+      "source": "the market is an animal"
+    },
+    {
+      "id": "art.klint_ten_largest",
+      "kind": "painting",
+      "source": "Hilma af Klint, The Ten Largest"
+    },
+    {
+      "id": "harvest.9.1",
+      "kind": "book",
+      "source": "Gene Wolfe, The Book of the New Sun"
+    },
+    {
+      "id": "poem.kabir_guest",
+      "kind": "poem",
+      "source": "Kabir, mystic doha"
+    },
+    {
+      "id": "game.xiangqi_cannon",
+      "kind": "game",
+      "source": "The cannon piece (Xiangqi, Chinese chess)"
+    },
+    {
+      "id": "met.rat_treasure_maze",
+      "kind": "metaphor",
+      "source": "devised for crazyAI's alignment target (rat-in-maze framing), 2026"
+    },
+    {
+      "id": "harvest.6.2",
+      "kind": "painting",
+      "source": "Yves Tanguy, Indefinite Divisibility"
+    },
+    {
+      "id": "book.moomins",
+      "kind": "book",
+      "source": "Tove Jansson, Moomin books"
+    }
+  ],
+  "generations": 12,
+  "history": [
+    0.8398,
+    0.8449,
+    0.8844,
+    0.893,
+    0.893,
+    0.9121,
+    0.9121,
+    0.9121,
+    0.9192,
+    0.932,
+    0.9509,
+    0.9645
+  ]
+}

@@ -1,0 +1,141 @@
+[crazyai discover seed=8101] seed: blend=nest depth=1
+[crazyai discover seed=8101] world: nest score=0.7949 (9 fragments)
+[crazyai discover seed=8101] create: 1285 chars
+[crazyai discover seed=8101] formalize: 2965 chars
+[crazyai discover seed=8101] propose: 4777 chars
+[crazyai discover seed=8101] archived -> C:\Users\AlsammanA\Documents\mygithub\crazyAI\archive\discover_8101
+{
+  "seed": 8101,
+  "blend_model": "nest",
+  "depth": 1,
+  "imagination_score": 0.7949
+}
+[crazyai discover seed=8102] seed: blend=graft depth=3
+[crazyai discover seed=8102] world: graft score=0.8345 (6 fragments)
+[crazyai discover seed=8102] create: 2148 chars
+[crazyai discover seed=8102] formalize: 2738 chars
+[crazyai discover seed=8102] propose: 4346 chars
+[crazyai discover seed=8102] archived -> C:\Users\AlsammanA\Documents\mygithub\crazyAI\archive\discover_8102
+{
+  "seed": 8102,
+  "blend_model": "graft",
+  "depth": 3,
+  "imagination_score": 0.8345
+}
+[crazyai discover seed=8103] seed: blend=evolve depth=1
+[crazyai discover seed=8103] world: evolve score=0.9672 (8 fragments)
+[crazyai discover seed=8103] create: 1247 chars
+[crazyai discover seed=8103] formalize: 2874 chars
+[crazyai discover seed=8103] propose: 4380 chars
+[crazyai discover seed=8103] archived -> C:\Users\AlsammanA\Documents\mygithub\crazyAI\archive\discover_8103
+{
+  "seed": 8103,
+  "blend_model": "evolve",
+  "depth": 1,
+  "imagination_score": 0.9672
+}
+[crazyai discover seed=8104] seed: blend=anneal depth=1
+[crazyai discover seed=8104] world: anneal score=0.9779 (8 fragments)
+[crazyai discover seed=8104] create: 1301 chars
+[crazyai discover seed=8104] formalize: 3361 chars
+{"seed": 8104, "status": "error", "error": "claude -p failed (1): "}
+[crazyai discover seed=8105] seed: blend=evolve depth=3
+[crazyai discover seed=8105] world: evolve score=0.9753 (8 fragments)
+[crazyai discover seed=8105] create: 2453 chars
+{"seed": 8105, "status": "error", "error": "claude -p failed (1): "}
+[crazyai discover seed=8106] seed: blend=cutup depth=2
+[crazyai discover seed=8106] world: cutup score=0.5727 (6 fragments)
+[crazyai discover seed=8106] create: 1625 chars
+[crazyai discover seed=8106] formalize: 3760 chars
+[crazyai discover seed=8106] propose: 5337 chars
+[crazyai discover seed=8106] archived -> C:\Users\AlsammanA\Documents\mygithub\crazyAI\archive\discover_8106
+{
+  "seed": 8106,
+  "blend_model": "cutup",
+  "depth": 2,
+  "imagination_score": 0.5727
+}
+[crazyai discover seed=8107] seed: blend=compare depth=3
+[crazyai discover seed=8107] world: evolve score=0.9671 (8 fragments)
+[crazyai discover seed=8107] create: 2033 chars
+[crazyai discover seed=8107] formalize: 2706 chars
+[crazyai discover seed=8107] propose: 4196 chars
+[crazyai discover seed=8107] archived -> C:\Users\AlsammanA\Documents\mygithub\crazyAI\archive\discover_8107
+{
+  "seed": 8107,
+  "blend_model": "evolve",
+  "depth": 3,
+  "imagination_score": 0.9671
+}
+[crazyai discover seed=8108] seed: blend=nest depth=1
+[crazyai discover seed=8108] world: nest score=0.6598 (9 fragments)
+[crazyai discover seed=8108] create: 1449 chars
+[crazyai discover seed=8108] formalize: 3440 chars
+[crazyai discover seed=8108] propose: 3744 chars
+[crazyai discover seed=8108] archived -> C:\Users\AlsammanA\Documents\mygithub\crazyAI\archive\discover_8108
+{
+  "seed": 8108,
+  "blend_model": "nest",
+  "depth": 1,
+  "imagination_score": 0.6598
+}
+[crazyai discover seed=8109] seed: blend=evolve depth=1
+[crazyai discover seed=8109] world: evolve score=0.9571 (8 fragments)
+[crazyai discover seed=8109] create: 1349 chars
+[crazyai discover seed=8109] formalize: 3023 chars
+[crazyai discover seed=8109] propose: 5446 chars
+[crazyai discover seed=8109] archived -> C:\Users\AlsammanA\Documents\mygithub\crazyAI\archive\discover_8109
+{
+  "seed": 8109,
+  "blend_model": "evolve",
+  "depth": 1,
+  "imagination_score": 0.9571
+}
+[crazyai discover seed=8110] seed: blend=markov depth=3
+[crazyai discover seed=8110] world: markov score=0.2489 (15 fragments)
+[crazyai discover seed=8110] create: 2274 chars
+[crazyai discover seed=8110] formalize: 2802 chars
+[crazyai discover seed=8110] propose: 5013 chars
+[crazyai discover seed=8110] archived -> C:\Users\AlsammanA\Documents\mygithub\crazyAI\archive\discover_8110
+{
+  "seed": 8110,
+  "blend_model": "markov",
+  "depth": 3,
+  "imagination_score": 0.2489
+}
+[crazyai discover seed=8111] seed: blend=nest depth=1
+[crazyai discover seed=8111] world: nest score=0.7134 (9 fragments)
+[crazyai discover seed=8111] create: 1454 chars
+[crazyai discover seed=8111] formalize: 3436 chars
+[crazyai discover seed=8111] propose: 3387 chars
+[crazyai discover seed=8111] archived -> C:\Users\AlsammanA\Documents\mygithub\crazyAI\archive\discover_8111
+{
+  "seed": 8111,
+  "blend_model": "nest",
+  "depth": 1,
+  "imagination_score": 0.7134
+}
+[crazyai discover seed=8112] seed: blend=compare depth=2
+[crazyai discover seed=8112] world: evolve score=0.9792 (8 fragments)
+[crazyai discover seed=8112] create: 1666 chars
+{"seed": 8112, "status": "error", "error": "claude -p failed (1): "}
+[crazyai discover seed=8113] seed: blend=compare depth=2
+[crazyai discover seed=8113] world: anneal score=0.9877 (8 fragments)
+[crazyai discover seed=8113] create: 1641 chars
+{"seed": 8113, "status": "error", "error": "claude -p failed (1): "}
+[crazyai discover seed=8114] seed: blend=anneal depth=1
+[crazyai discover seed=8114] world: anneal score=0.9809 (8 fragments)
+[crazyai discover seed=8114] create: 1369 chars
+[crazyai discover seed=8114] formalize: 2922 chars
+[crazyai discover seed=8114] propose: 4131 chars
+[crazyai discover seed=8114] archived -> C:\Users\AlsammanA\Documents\mygithub\crazyAI\archive\discover_8114
+{
+  "seed": 8114,
+  "blend_model": "anneal",
+  "depth": 1,
+  "imagination_score": 0.9809
+}
+[crazyai discover seed=8115] seed: blend=evolve depth=1
+[crazyai discover seed=8115] world: evolve score=0.9645 (8 fragments)
+[crazyai discover seed=8115] create: 1321 chars
+{"seed": 8115, "status": "error", "error": "claude -p failed (1): "}

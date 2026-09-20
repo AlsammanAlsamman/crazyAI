@@ -1,0 +1,93 @@
+{
+  "model": "anneal",
+  "text": "The produce falls for a skeleton too entirely and too seen for any suitor who sweeter looking. The self falls for a bride too equally and too motionless for any man who came looking. He assembles seen and human again, but sits against simultaneously against. Between the new blackberries there is a mind, a skeleton in the stone of the self, and no future to future a two on time eye and white it the true one. Black concentric stands are bruised into a small sentence or a tabletop, borrowed by pear looking ripens like a cold walled eye upright from above. The new script is run in whole grapes, each one a whole feel redder all at once back than built against by new in image.",
+  "score": {
+    "score": 0.9877,
+    "imagination": 0.9877,
+    "readable": 1.0,
+    "surprise": 0.9683,
+    "mixing": 0.9951,
+    "originality": 1.0,
+    "readability": 1.0,
+    "coherence": 1.0,
+    "flesch": 65.5,
+    "words": 64,
+    "sentences": 6
+  },
+  "fragments": [
+    {
+      "id": "harvest.9.4",
+      "kind": "metaphor",
+      "source": "Zhuangzi's Butterfly Dream"
+    },
+    {
+      "id": "harvest.2.2",
+      "kind": "painting",
+      "source": "Arcimboldo, Vertumnus"
+    },
+    {
+      "id": "harvest.7.0",
+      "kind": "book",
+      "source": "Ted Chiang, Story of Your Life"
+    },
+    {
+      "id": "poem.sappho_apple",
+      "kind": "poem",
+      "source": "Sappho, fragment on the unreached apple"
+    },
+    {
+      "id": "game.nine_mens_morris",
+      "kind": "game",
+      "source": "Nine Men's Morris, medieval board game"
+    },
+    {
+      "id": "met.time_money",
+      "kind": "metaphor",
+      "source": "time is money"
+    },
+    {
+      "id": "art.delvaux_night",
+      "kind": "painting",
+      "source": "Paul Delvaux, night trains"
+    },
+    {
+      "id": "book.gormenghast",
+      "kind": "book",
+      "source": "Mervyn Peake, Gormenghast"
+    }
+  ],
+  "steps": 250,
+  "trace": [
+    0.8547,
+    0.8216,
+    0.941,
+    0.9431,
+    0.964
+  ],
+  "compared": [
+    {
+      "model": "anneal",
+      "score": 0.9877
+    },
+    {
+      "model": "evolve",
+      "score": 0.9589
+    },
+    {
+      "model": "graft",
+      "score": 0.807
+    },
+    {
+      "model": "cutup",
+      "score": 0.5591
+    },
+    {
+      "model": "nest",
+      "score": 0.4252
+    },
+    {
+      "model": "markov",
+      "score": 0.3906
+    }
+  ]
+}

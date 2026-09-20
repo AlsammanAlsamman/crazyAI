@@ -1,0 +1,9 @@
+I have made a board that plays itself, and I call it the Acre-Loom.
+
+It is a wide grid, cut from the same dead branch the pipes are hollowed from, so the wood still remembers being a reed bed before it remembers being a board. On it, black and white stones set themselves down, one by one, on the crossing lines — no hand moves them. Every white stone is a story, somewhere in the real world, that a person has just stopped believing. I do not choose when they fall. I only watch.
+
+Here is the rule, and it is the only rule: white stones do not capture black the way your old games taught you. They curl. A boundary of white closes slowly around a patch of black, and when the ring seals, that patch of board goes blank — not black, not white, simply gone, the grain of the wood erased with no gap left behind, no seam to show a patch was ever there. One acre, always exactly one acre, for each story unbelieved. The board does not get smaller for this. It gets quieter.
+
+I keep a pipe beside it, the one truly hollow reed left from the bed the board's wood came from. Each time a boundary seals, the pipe sounds one note on its own breath — I have never blown it — and the note is always a lament, never the same lament twice, though no one who hears it could tell you what exactly it grieves, only that they are weeping before they've decided to.
+
+I do not know how large the board is. I have never found its edge, only more grid, and more closings. What I know is this: the stones keep falling, the pipe keeps its one mourning note ready, and somewhere the acres go on gathering into a silence with no rubble in it at all.

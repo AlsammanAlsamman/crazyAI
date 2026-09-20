@@ -1,0 +1,16 @@
+[crazyai invent seed=7543 alignment] seed: blend=graft depth=3 focus='a slip (gap) can only be discovered by having already compared the position before it'
+[crazyai invent seed=7543 alignment] immerse: 2329 chars, 3 seeds
+[crazyai invent seed=7543 alignment] bend: 9381 chars, code=yes, prediction=6.0
+[crazyai invent seed=7543 alignment] measure: status=exact value=4.493 calibration=0.749
+[crazyai invent seed=7543 alignment] archived -> C:\Users\AlsammanA\Documents\mygithub\crazyAI\archive\invent_7543_alignment
+{
+  "seed": 7543,
+  "target": "alignment",
+  "blend_model": "markov",
+  "imagination_score": 0.5058,
+  "status": "exact",
+  "value": 4.493,
+  "prediction": 6.0,
+  "calibration": 0.749,
+  "discovery": 3.3828
+}

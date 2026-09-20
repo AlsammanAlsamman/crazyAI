@@ -1,0 +1,33 @@
+{
+  "seed": 8110,
+  "blend_model": "markov",
+  "depth": 3,
+  "provider": "claudecode",
+  "model": "",
+  "imagination_score": 0.2489,
+  "fragments": [
+    "met.money_water",
+    "harvest.4.2",
+    "harvest.6.0",
+    "poem.neruda_walking",
+    "game.hopscotch_chalk",
+    "met.problem_knot",
+    "harvest.9.2",
+    "book.le_guin_lathe",
+    "poem.ghalib_moth",
+    "game.senet_sticks",
+    "met.electricity_water",
+    "art.kahlo_two",
+    "book.invisible_cities",
+    "poem.okigbo_heavensgate",
+    "game.knight_bends_air"
+  ],
+  "timing_s": {
+    "seed": 0.0,
+    "world": 0.02,
+    "create": 24.417,
+    "formalize": 34.134,
+    "propose": 69.283
+  },
+  "total_s": 127.853
+}

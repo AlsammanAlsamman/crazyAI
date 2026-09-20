@@ -1,0 +1,19 @@
+Stripped of loom, reed, and grief, here is what's actually load-bearing:
+
+**The substrate.** An unbounded two-dimensional lattice with no discoverable boundary — not "very large," but structurally edgeless: every attempt to find its limit just yields more lattice. Size is not a fixed quantity here; it's an open question that never resolves.
+
+**The process.** A stochastic deposition of marked points onto that lattice, driven by an external event stream the system doesn't control and can't schedule — markers appear when the outside triggers them, at no predictable rate, and the one recording it has no hand in the timing.
+
+**The rule of combination.** One class of marker can, without any local capture-and-remove exchange, form a closed topological boundary around a contiguous region occupied by the other class. Closure — not proximity, not majority, specifically *closure* — is the trigger condition.
+
+**The consequence of closure, and this is the strange part.** Closure doesn't convert the enclosed region to the enclosing class, and doesn't simply empty it either. It deletes the region's prior identity outright — removing not just current state but the *evidence that a state was ever there*. No seam, no scar, no vacancy to be refilled. This is stronger than subtraction; it's a claim that the substrate itself is rewritten to look as if the distinction never existed. And crucially the lattice doesn't shrink to compensate — the erased unit is gone, but total extent is unaffected, which only coheres because the lattice was edgeless to begin with. Finite loss inside infinite (or undiscovered) capacity.
+
+**The coupling.** Each closure event corresponds one-to-one with a unit event in the external stream. Fixed quantum per trigger — always exactly one region, never partial, never doubled.
+
+**The signal.** Each closure also emits a response drawn from a fixed category but never repeating its particular form — invariant *type*, unbounded *token*. And the emission is agentless: the mechanism capable of producing the signal exists beside the system but the system triggers itself; nothing external operates it in the moment.
+
+**The observer's position.** Outside the causal chain entirely — sees deposition, sees closure, sees emission, controls none of the three, can't even locate the edges of the space in which this happens.
+
+So, as cleanly as I can compress it: *an edgeless lattice undergoes externally-triggered stochastic marking; local topological closure of one marker-class around the other triggers unit-quantized, trace-free deletion of the enclosed region, paired one-to-one with a non-repeating emission from a fixed category; the whole process runs without an operator, observed but not steered.*
+
+Where it resists that compression: the "no seam" clause is doing something a formal deletion operation can't quite carry — it's not just removing a value from a cell, it's asserting that the *history* of the cell (that it was ever occupied, ever contested, ever cut) is unrecoverable, which is a stronger and stranger condition than any lattice-automaton rule normally states, closer to a claim about memory than about board state. And the "always a lament, never the same lament twice, though no one could say what exactly it grieves" resists formalization on purpose — it's specifying a *felt* invariant (categorical certainty of the emotional register) alongside total *referential* uncertainty (no content maps to no cause), and that pairing — sure of the shape of the response, blind to what it's a response to — isn't something a rule of combination can state; it's closer to an axiom about the limits of the observer's own knowledge than a property of the system itself. I'd rather report that seam than paper over it.

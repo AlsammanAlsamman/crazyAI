@@ -1,0 +1,26 @@
+{
+  "seed": 8113,
+  "blend_model": "anneal",
+  "depth": 2,
+  "provider": "claudecode",
+  "model": "",
+  "imagination_score": 0.9877,
+  "fragments": [
+    "harvest.9.4",
+    "harvest.2.2",
+    "harvest.7.0",
+    "poem.sappho_apple",
+    "game.nine_mens_morris",
+    "met.time_money",
+    "art.delvaux_night",
+    "book.gormenghast"
+  ],
+  "timing_s": {
+    "seed": 0.0,
+    "world": 0.0,
+    "create": 0.0,
+    "formalize": 33.676,
+    "propose": 59.076
+  },
+  "total_s": 92.752
+}

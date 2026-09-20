@@ -1,0 +1,27 @@
+{
+  "seed": 8108,
+  "blend_model": "nest",
+  "depth": 1,
+  "provider": "claudecode",
+  "model": "",
+  "imagination_score": 0.6598,
+  "fragments": [
+    "met.atom_solar",
+    "art.magritte_castle",
+    "book.earthsea_names",
+    "poem.khansa_elegy",
+    "game.oware_seeds",
+    "met.data_oil",
+    "art.tanning_birthday",
+    "book.gulliver",
+    "poem.paz_sunstone"
+  ],
+  "timing_s": {
+    "seed": 0.0,
+    "world": 0.017,
+    "create": 17.191,
+    "formalize": 37.153,
+    "propose": 70.566
+  },
+  "total_s": 124.928
+}

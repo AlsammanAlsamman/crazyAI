@@ -1,0 +1,33 @@
+{
+  "seed": 7541,
+  "target": "alignment",
+  "blend_model": "cutup",
+  "depth": 3,
+  "assumption_focus": "one pair of positions is judged at a time",
+  "provider": "claudecode",
+  "model": "",
+  "imagination_score": 0.6047,
+  "status": "exact",
+  "value": 2.184,
+  "prediction": 4.0,
+  "calibration": 0.546,
+  "discovery": 1.7523,
+  "fragments": [
+    "met.computer_brain",
+    "art.rousseau_dream",
+    "book.flatland",
+    "poem.attar_birds",
+    "met.atom_solar",
+    "art.magritte_castle"
+  ],
+  "rng_log": [],
+  "timing_s": {
+    "seed": 0.0,
+    "harvest": 0.0,
+    "world": 0.0,
+    "immerse": 0.0,
+    "bend": 0.002,
+    "measure": 1.242
+  },
+  "total_s": 1.244
+}

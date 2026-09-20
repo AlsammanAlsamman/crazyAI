@@ -1,0 +1,67 @@
+{
+  "model": "anneal",
+  "text": "Was he a man wing he was a butterfly, or is he stand a butterfly meaning he is a man? Some events are arrives, some are still dreams where nothing lives to move. Two is a river. The flagpoles are the rituals of a man drawn as if by a hinge that could swum. Between the moth lives there is a man, a distance in the brick of the single, and no self to press a dust on empty dark and downstream it the soft one. The man is flower in a way that edges candle — lines asleep large a vanishing motionless that never arrives.",
+  "score": {
+    "score": 0.9809,
+    "imagination": 0.9809,
+    "readable": 1.0,
+    "surprise": 0.9535,
+    "mixing": 0.99,
+    "originality": 1.0,
+    "readability": 1.0,
+    "coherence": 1.0,
+    "flesch": 78.7,
+    "words": 44,
+    "sentences": 6
+  },
+  "fragments": [
+    {
+      "id": "met.river_time",
+      "kind": "metaphor",
+      "source": "time is a river"
+    },
+    {
+      "id": "harvest.2.1",
+      "kind": "painting",
+      "source": "Giorgio de Chirico, The Nostalgia of the Infinite"
+    },
+    {
+      "id": "book.solaris",
+      "kind": "book",
+      "source": "Stanisław Lem, Solaris"
+    },
+    {
+      "id": "poem.ghalib_moth",
+      "kind": "poem",
+      "source": "Ghalib, ghazal on the moth and the candle"
+    },
+    {
+      "id": "game.go_stones_click",
+      "kind": "game",
+      "source": "Go / Weiqi (board of stones, East Asia)"
+    },
+    {
+      "id": "harvest.9.4",
+      "kind": "metaphor",
+      "source": "Zhuangzi's Butterfly Dream"
+    },
+    {
+      "id": "art.klint_ten_largest",
+      "kind": "painting",
+      "source": "Hilma af Klint, The Ten Largest"
+    },
+    {
+      "id": "book.gormenghast",
+      "kind": "book",
+      "source": "Mervyn Peake, Gormenghast"
+    }
+  ],
+  "steps": 250,
+  "trace": [
+    0.6919,
+    0.9584,
+    0.7685,
+    0.9378,
+    0.939
+  ]
+}

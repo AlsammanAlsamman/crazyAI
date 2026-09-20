@@ -1,0 +1,65 @@
+{
+  "model": "nest",
+  "text": "Every a palmful in a box contains at her feet crouches a winged creature with the body of a lemur. Under a great, a boulder the size of a hill floats above a calm sea, and a gravity is the only way out. Inside a name, there is a hand, and in a hand hollow click of wood against wood.",
+  "score": {
+    "score": 0.6598,
+    "imagination": 0.6598,
+    "readable": 1.0,
+    "surprise": 0.3077,
+    "mixing": 0.9337,
+    "originality": 1.0,
+    "readability": 1.0,
+    "coherence": 1.0,
+    "flesch": 76.6,
+    "words": 27,
+    "sentences": 3
+  },
+  "fragments": [
+    {
+      "id": "met.atom_solar",
+      "kind": "metaphor",
+      "source": "the atom is a solar system"
+    },
+    {
+      "id": "art.magritte_castle",
+      "kind": "painting",
+      "source": "Magritte, The Castle of the Pyrenees"
+    },
+    {
+      "id": "book.earthsea_names",
+      "kind": "book",
+      "source": "Ursula K. Le Guin, Earthsea"
+    },
+    {
+      "id": "poem.khansa_elegy",
+      "kind": "poem",
+      "source": "Al-Khansa, elegy for her brother Sakhr"
+    },
+    {
+      "id": "game.oware_seeds",
+      "kind": "game",
+      "source": "Oware / Mancala (West African seed-sowing game)"
+    },
+    {
+      "id": "met.data_oil",
+      "kind": "metaphor",
+      "source": "data is oil"
+    },
+    {
+      "id": "art.tanning_birthday",
+      "kind": "painting",
+      "source": "Dorothea Tanning, Birthday"
+    },
+    {
+      "id": "book.gulliver",
+      "kind": "book",
+      "source": "Swift, Gulliver's Travels"
+    },
+    {
+      "id": "poem.paz_sunstone",
+      "kind": "poem",
+      "source": "Octavio Paz, \"Sunstone\""
+    }
+  ],
+  "depth": 3
+}

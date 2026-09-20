@@ -1,0 +1,27 @@
+# Two problems that check out, and a third I won't force
+
+## 1. Structural Health Monitoring: locating the critical crack among fatigue microcracks
+
+**The problem, plainly:** In a loaded structure (beam, pressure vessel, aircraft skin), fatigue produces many microcracks. You need to know, before failure, which *one* is actually going to propagate to fracture — not just that damage is accumulating.
+
+**How the structure maps:**
+- **(1)** Each micro-crack growth event releases a burst of elastic energy — an invariant local action (an "AE hit" in acoustic-emission terminology). These hits land on the bulk material, which shows no macroscopically visible change per event — an absorbing substrate. A separate counter (the AE hit-counting electronics) tracks cumulative hit count; when it crosses a preset threshold, it trips an alarm on the monitoring console — a system physically distinct from the material itself. This is exactly standard AE-based SHM (ASTM E1316/E2478 practice).
+- **(2)** A single crack-growth event is itself the ordered pair: *propagation* (while stress intensity K exceeds Kc) then *arrest* — and arrest isn't an independently defined new state, it's just propagation once the driving stress intensity has decayed below Kc. Term two is the relaxed limit of term one, in the technical fracture-mechanics sense.
+- **(3)** The many AE-detected microcracks look alike in the hit data — same kind of signal, same "structural" origin. Only one is load-bearing (will govern eventual failure); the rest are benign/arrested. You cannot tell which from the AE record alone. You need a *later*, separate probe: vibration-based damage detection — a swept-frequency (modal) excitation test — where a shift in natural frequency or mode shape retroactively identifies which crack is actually changing the structure's compliance.
+
+**How to check it:** Fatigue-test a plate or beam with several naturally-occurring or seeded microcracks. Run AE hit-counting throughout (confirm threshold-alarm behavior matches standard AE practice). At intervals, pause and run swept-sine/impact-hammer modal testing. Continue the fatigue test to actual failure and record which crack propagated. See whether the modal-shift method, applied to the AE-accumulated crack population, correctly flags the crack that turned out to be load-bearing, versus the ones that stayed inert. This is directly testable in a materials lab and is close to active SHM research (AE + operational modal analysis fusion), so a null or positive result is genuinely informative, not just illustrative.
+
+## 2. Silent synapses: identifying the functional synapse among quantal inputs
+
+**The problem, plainly:** During development or LTP induction, a dendrite receives many synaptic contacts that look structurally identical (same spine morphology) but only some are electrophysiologically functional at resting potential.
+
+**How the structure maps:**
+- **(1)** Each vesicle-release/EPSP event is an invariant local action. It lands on the dendritic/somatic membrane, which — subthreshold — doesn't change firing state per single input (the classic "absorbing, no visible feedback" membrane). A functionally separate mechanism (depolarization summation toward the axon-hillock threshold) tracks the cardinality of inputs; crossing threshold fires an action potential that propagates to a downstream synapse on an *entirely different* neuron — a third system structurally unconnected to the dendrite that did the accumulating.
+- **(2)** The action potential itself is depolarization followed by repolarization, where repolarization is literally the depolarizing conductance's own inactivation/decay (Hodgkin-Huxley relaxation) — not an independent second state.
+- **(3)** Among the dendritic spines that received input, some are "silent" — NMDAR-only, no AMPAR, indistinguishable from functional spines by static/structural imaging. They're revealed only by a later dynamic perturbation: voltage-clamp at depolarized holding potentials or a pairing protocol, i.e., an excitation "sweep" applied after the fact, which unmasks the NMDA current in the one spine that's actually plastic/functional. This is the literal, well-documented silent-synapse phenomenon (Isaac/Nicoll/Malenka 1995; Liao et al. 1995).
+
+**How to check it:** This is an existing, replicable electrophysiology paradigm — paired recordings with minimal stimulation, comparing AMPAR- vs NMDAR-mediated responses at different holding potentials, before and after an LTP-inducing pairing protocol. The check is whether the "hidden functional unit, revealed only by post-hoc probing, not by structure" claim holds up against the actual published unmasking data — it does, this is textbook synaptic plasticity, so the interesting question is really whether framing it this way (accumulation/threshold + relaxation + resolved-only-by-probing degeneracy, all on one dendritic input population) suggests a new *measurement*, not whether the biology is real.
+
+## Where I'm stopping
+
+A third candidate (something like "one live pixel/sensor among a nominally identical array, found by a calibration sweep") technically satisfies component 3 in isolation, but I can't honestly attach components 1 and 2 to it without inventing a specific accumulation dynamics and a specific relaxation pair that isn't actually there in any real sensor system I can name — that would be forcing it. Two is what the structure actually earns.

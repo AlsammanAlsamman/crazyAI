@@ -1,0 +1,7 @@
+I made the counting-ladder that lives under the boulder-hill — the one that keeps the sea calm by making sure no one falls without asking permission first.
+
+Here is how it goes. You take a palmful from the box — never more, the box will not give more than fills one hand — and you count what you're holding by feel alone, eyes on the boulder above you, because that is the only gravity that matters here: the boulder's, not the ground's. Each grain in your palm is worth one click. You strike your two blocks of wood together, hollow against hollow, once per grain, and with each click the boulder above permits you to fall one measured span toward the water. Fall faster than your clicking and the sea stays calm but you do not reach it whole. Click without falling and the boulder simply waits, patient as boulders are.
+
+At my feet the whole time crouches the small winged one, lemur-bodied, watching my hand and not the sky, because it already knows what the sky will do — it only needs to know whether my counting is honest. When my hand inside my own name goes still — when I stop needing to grip anything to know who is falling — it unfolds its wings and starts counting with me, click for click, and the fall becomes company instead of arithmetic.
+
+That is the whole of it: a box that will not overfill, a boulder that only trusts the sound of wood, and a creature that waits for your hand to become quiet before it agrees to fall beside you.

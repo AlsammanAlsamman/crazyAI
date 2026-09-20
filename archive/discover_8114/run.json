@@ -1,0 +1,26 @@
+{
+  "seed": 8114,
+  "blend_model": "anneal",
+  "depth": 1,
+  "provider": "claudecode",
+  "model": "",
+  "imagination_score": 0.9809,
+  "fragments": [
+    "met.river_time",
+    "harvest.2.1",
+    "book.solaris",
+    "poem.ghalib_moth",
+    "game.go_stones_click",
+    "harvest.9.4",
+    "art.klint_ten_largest",
+    "book.gormenghast"
+  ],
+  "timing_s": {
+    "seed": 0.0,
+    "world": 0.095,
+    "create": 19.523,
+    "formalize": 41.419,
+    "propose": 108.659
+  },
+  "total_s": 169.696
+}

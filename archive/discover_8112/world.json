@@ -1,0 +1,100 @@
+{
+  "model": "evolve",
+  "text": "A winged inside box of thirty flares slide in visitor days, fuel contains stretching nearby over entire to find a dark small or a country one. Touch is a direction. A seaweed scale and a woman upside limestone into each cow's eyes across a fragrance. A green-faced jewel wall of thirty walks set in three walks, creature milks chasing end over lemur to show a fire navel or a light one. A visitor from a people of green-faced borrows squares visits learning to mate glowing whether someone is he or she and start missing only when.",
+  "score": {
+    "score": 0.9792,
+    "imagination": 0.9792,
+    "readable": 1.0,
+    "surprise": 0.9444,
+    "mixing": 0.9941,
+    "originality": 1.0,
+    "readability": 1.0,
+    "coherence": 1.0,
+    "flesch": 64.4,
+    "words": 55,
+    "sentences": 5
+  },
+  "fragments": [
+    {
+      "id": "met.love_fire",
+      "kind": "metaphor",
+      "source": "love is fire"
+    },
+    {
+      "id": "art.chagall_village",
+      "kind": "painting",
+      "source": "Chagall, I and the Village"
+    },
+    {
+      "id": "book.gulliver",
+      "kind": "book",
+      "source": "Swift, Gulliver's Travels"
+    },
+    {
+      "id": "poem.kabir_guest",
+      "kind": "poem",
+      "source": "Kabir, mystic doha"
+    },
+    {
+      "id": "game.senet_sticks",
+      "kind": "game",
+      "source": "Senet (ancient Egyptian board game)"
+    },
+    {
+      "id": "harvest.3.0",
+      "kind": "metaphor",
+      "source": "Indra's Net"
+    },
+    {
+      "id": "art.tanning_birthday",
+      "kind": "painting",
+      "source": "Dorothea Tanning, Birthday"
+    },
+    {
+      "id": "harvest.5.2",
+      "kind": "book",
+      "source": "Ursula K. Le Guin, The Left Hand of Darkness"
+    }
+  ],
+  "generations": 12,
+  "history": [
+    0.9073,
+    0.9139,
+    0.9372,
+    0.9507,
+    0.9565,
+    0.9565,
+    0.9591,
+    0.9591,
+    0.9615,
+    0.9615,
+    0.9746,
+    0.9746
+  ],
+  "compared": [
+    {
+      "model": "evolve",
+      "score": 0.9792
+    },
+    {
+      "model": "anneal",
+      "score": 0.975
+    },
+    {
+      "model": "graft",
+      "score": 0.8231
+    },
+    {
+      "model": "nest",
+      "score": 0.6716
+    },
+    {
+      "model": "cutup",
+      "score": 0.5039
+    },
+    {
+      "model": "markov",
+      "score": 0.4799
+    }
+  ]
+}
