@@ -1,0 +1,48 @@
+{
+  "seed": 7563,
+  "target": "dijkstra",
+  "blend_model": "anneal",
+  "depth": 3,
+  "assumption_focus": "the next place to finalize is found by comparing against every remaining place",
+  "provider": "claudecode",
+  "model": "",
+  "imagination_score": 0.9752,
+  "status": "exact",
+  "value": 0.976,
+  "prediction": 1.3,
+  "calibration": 0.751,
+  "discovery": 0.9639,
+  "fragments": [
+    "met.society_body",
+    "art.bosch_delights",
+    "harvest.6.3",
+    "poem.khansa_elegy",
+    "game.knight_foreign_landing",
+    "met.market_organism",
+    "art.dali_memory",
+    "book.narnia_wardrobe"
+  ],
+  "rng_log": [
+    {
+      "label": "invent.blend_model",
+      "value": "anneal"
+    },
+    {
+      "label": "invent.depth",
+      "value": 3
+    },
+    {
+      "label": "child:invent.world",
+      "value": 1595890248
+    }
+  ],
+  "timing_s": {
+    "seed": 0.001,
+    "harvest": 0.0,
+    "world": 0.141,
+    "immerse": 41.186,
+    "bend": 195.858,
+    "measure": 0.644
+  },
+  "total_s": 237.83
+}

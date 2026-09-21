@@ -1,0 +1,17 @@
+[crazyai invent seed=7561 dijkstra] seed: blend=markov depth=2 focus='each place's distance must be finalized before its neighbors are explored'
+[crazyai invent seed=7561 dijkstra] world: markov score=0.5004 (15 fragments)
+[crazyai invent seed=7561 dijkstra] immerse: 2178 chars, 3 seeds
+[crazyai invent seed=7561 dijkstra] bend: 9880 chars, code=yes, prediction=1.3
+[crazyai invent seed=7561 dijkstra] measure: status=exact value=0.982 calibration=0.755
+[crazyai invent seed=7561 dijkstra] archived -> C:\Users\AlsammanA\Documents\mygithub\crazyAI\archive\invent_7561_dijkstra
+{
+  "seed": 7561,
+  "target": "dijkstra",
+  "blend_model": "markov",
+  "imagination_score": 0.5004,
+  "status": "exact",
+  "value": 0.982,
+  "prediction": 1.3,
+  "calibration": 0.755,
+  "discovery": 0.7367
+}

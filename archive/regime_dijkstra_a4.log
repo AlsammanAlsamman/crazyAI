@@ -1,0 +1,17 @@
+[crazyai invent seed=7565 dijkstra] seed: blend=graft depth=1 focus='the whole graph must be explored to know any single distance'
+[crazyai invent seed=7565 dijkstra] world: graft score=0.7419 (6 fragments)
+[crazyai invent seed=7565 dijkstra] immerse: 1777 chars, 3 seeds
+[crazyai invent seed=7565 dijkstra] bend: 10111 chars, code=yes, prediction=1.5
+[crazyai invent seed=7565 dijkstra] measure: status=exact value=0.941 calibration=0.627
+[crazyai invent seed=7565 dijkstra] archived -> C:\Users\AlsammanA\Documents\mygithub\crazyAI\archive\invent_7565_dijkstra
+{
+  "seed": 7565,
+  "target": "dijkstra",
+  "blend_model": "graft",
+  "imagination_score": 0.7419,
+  "status": "exact",
+  "value": 0.941,
+  "prediction": 1.5,
+  "calibration": 0.627,
+  "discovery": 0.8196
+}

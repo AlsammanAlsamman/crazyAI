@@ -128,6 +128,11 @@ def bend_prompt(ideas: str, target: Target, tools: list[str], assumption_focus: 
         "don't address. Default to vectorization hints (SIMD, restrict, cache layout) before thread-level "
         "parallelism; only add thread parallelism if the metaphor's own units of work are large enough at the "
         "actual benchmark sizes to be worth it, guarded by a size check with a fallback.\n"
+        "5. If the known_way or assumptions section above describes more than one regime of the problem (e.g. "
+        "sparse vs. dense, small vs. large, contiguous vs. scattered), your in-world native must also encode, "
+        "through the metaphor itself, a way to recognize which regime it's in at runtime and offer a fallback "
+        "path for the other regime - not just solve the regime it happened to think of first. A single-strategy "
+        "kernel is only acceptable if the known_way section describes only a single regime.\n"
         f"Tools available: {', '.join(tools)}.\n"
         "Write the final answer with sections: MAPPING, CHOSEN SEED, ASSUMPTION BROKEN, ARTIFACT, PREDICTION, MEASUREMENT, VERDICT."
     )

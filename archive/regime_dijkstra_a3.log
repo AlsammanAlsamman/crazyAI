@@ -1,0 +1,17 @@
+[crazyai invent seed=7564 dijkstra] seed: blend=evolve depth=3 focus='a road can only be considered once its starting place is fully settled'
+[crazyai invent seed=7564 dijkstra] world: evolve score=0.9517 (8 fragments)
+[crazyai invent seed=7564 dijkstra] immerse: 2581 chars, 3 seeds
+[crazyai invent seed=7564 dijkstra] bend: 12685 chars, code=yes, prediction=1.5
+[crazyai invent seed=7564 dijkstra] measure: status=exact value=1.037 calibration=0.691
+[crazyai invent seed=7564 dijkstra] archived -> C:\Users\AlsammanA\Documents\mygithub\crazyAI\archive\invent_7564_dijkstra
+{
+  "seed": 7564,
+  "target": "dijkstra",
+  "blend_model": "evolve",
+  "imagination_score": 0.9517,
+  "status": "exact",
+  "value": 1.037,
+  "prediction": 1.5,
+  "calibration": 0.691,
+  "discovery": 1.012
+}

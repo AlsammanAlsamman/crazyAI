@@ -1,0 +1,74 @@
+{
+  "model": "evolve",
+  "text": "A farmer glows with a pot while an upside-down inside passes look a world of cow's, shrine of which are also upside down. The other's are inscribed with rooms, vegetables hour, and the order burns cow while someone is turning into a pressure. A connect man lines twice at the smaller of a stream before a face male to a land winter, away and darkness hour laid out at her village. Memory is a palace with borders for every connect, builds that mouth a smell to a face, locked hops, a cellar nobody lines, and windows that human out onto places that no creature chair. A single leg milks through, arms flung man for balance, skirt ancestor swinging with each landing.",
+  "score": {
+    "score": 0.9517,
+    "imagination": 0.9517,
+    "readable": 1.0,
+    "surprise": 0.873,
+    "mixing": 0.9873,
+    "originality": 1.0,
+    "readability": 1.0,
+    "coherence": 1.0,
+    "flesch": 62.1,
+    "words": 64,
+    "sentences": 5
+  },
+  "fragments": [
+    {
+      "id": "met.memory_palace",
+      "kind": "metaphor",
+      "source": "memory is a palace"
+    },
+    {
+      "id": "art.carrington_kitchen",
+      "kind": "painting",
+      "source": "Leonora Carrington, kitchens"
+    },
+    {
+      "id": "book.neverending_story",
+      "kind": "book",
+      "source": "Michael Ende, The Neverending Story"
+    },
+    {
+      "id": "poem.okigbo_heavensgate",
+      "kind": "poem",
+      "source": "Christopher Okigbo, \"Heavensgate\""
+    },
+    {
+      "id": "game.hopscotch_chalk",
+      "kind": "game",
+      "source": "Hopscotch (traditional street game, many cultures)"
+    },
+    {
+      "id": "met.city_machine",
+      "kind": "metaphor",
+      "source": "the city is a machine"
+    },
+    {
+      "id": "art.chagall_village",
+      "kind": "painting",
+      "source": "Chagall, I and the Village"
+    },
+    {
+      "id": "harvest.5.2",
+      "kind": "book",
+      "source": "Ursula K. Le Guin, The Left Hand of Darkness"
+    }
+  ],
+  "generations": 12,
+  "history": [
+    0.87,
+    0.9084,
+    0.9084,
+    0.922,
+    0.9244,
+    0.935,
+    0.935,
+    0.935,
+    0.935,
+    0.9392,
+    0.9392,
+    0.9517
+  ]
+}

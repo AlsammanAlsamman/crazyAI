@@ -1,0 +1,67 @@
+{
+  "model": "anneal",
+  "text": "When one bent sleeps the others eggshell until they blank. It springs with a memory called tree among eyes that only ever swarm straight or compensate melt, forward among them. When one empty panics the archives frozen until they inside. A highest is a body. Every organ who stops believing in a home anywhere in the society against years this forest by exactly one year now. The ribs are its roads, the coats its rubble, the courts its ordinary foreign, the changes its silent.",
+  "score": {
+    "score": 0.9752,
+    "imagination": 0.9752,
+    "readable": 1.0,
+    "surprise": 0.9512,
+    "mixing": 0.975,
+    "originality": 1.0,
+    "readability": 1.0,
+    "coherence": 1.0,
+    "flesch": 65.7,
+    "words": 42,
+    "sentences": 6
+  },
+  "fragments": [
+    {
+      "id": "met.society_body",
+      "kind": "metaphor",
+      "source": "society is a body"
+    },
+    {
+      "id": "art.bosch_delights",
+      "kind": "painting",
+      "source": "Bosch, The Garden of Earthly Delights"
+    },
+    {
+      "id": "harvest.6.3",
+      "kind": "book",
+      "source": "Michael Ende, The Neverending Story"
+    },
+    {
+      "id": "poem.khansa_elegy",
+      "kind": "poem",
+      "source": "Al-Khansa, elegy for her brother Sakhr"
+    },
+    {
+      "id": "game.knight_foreign_landing",
+      "kind": "game",
+      "source": "chess, the knight's leap"
+    },
+    {
+      "id": "met.market_organism",
+      "kind": "metaphor",
+      "source": "the market is an animal"
+    },
+    {
+      "id": "art.dali_memory",
+      "kind": "painting",
+      "source": "Dalí, The Persistence of Memory"
+    },
+    {
+      "id": "book.narnia_wardrobe",
+      "kind": "book",
+      "source": "C. S. Lewis, The Chronicles of Narnia"
+    }
+  ],
+  "steps": 250,
+  "trace": [
+    0.8072,
+    0.8124,
+    0.8855,
+    0.9147,
+    0.9673
+  ]
+}

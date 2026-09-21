@@ -1,0 +1,17 @@
+[crazyai invent seed=7571 alignment] seed: blend=evolve depth=3 focus='one pair of positions is judged at a time'
+[crazyai invent seed=7571 alignment] world: evolve score=0.9769 (8 fragments)
+[crazyai invent seed=7571 alignment] immerse: 2627 chars, 3 seeds
+[crazyai invent seed=7571 alignment] bend: 8779 chars, code=yes, prediction=3.0
+[crazyai invent seed=7571 alignment] measure: status=exact value=0.919 calibration=0.306
+[crazyai invent seed=7571 alignment] archived -> C:\Users\AlsammanA\Documents\mygithub\crazyAI\archive\invent_7571_alignment
+{
+  "seed": 7571,
+  "target": "alignment",
+  "blend_model": "evolve",
+  "imagination_score": 0.9769,
+  "status": "exact",
+  "value": 0.919,
+  "prediction": 3.0,
+  "calibration": 0.306,
+  "discovery": 0.9084
+}

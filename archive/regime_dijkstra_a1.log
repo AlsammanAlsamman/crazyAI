@@ -1,0 +1,17 @@
+[crazyai invent seed=7562 dijkstra] seed: blend=anneal depth=3 focus='a priority structure must be consulted before every relaxation'
+[crazyai invent seed=7562 dijkstra] world: anneal score=0.9887 (8 fragments)
+[crazyai invent seed=7562 dijkstra] immerse: 2656 chars, 3 seeds
+[crazyai invent seed=7562 dijkstra] bend: 10935 chars, code=yes, prediction=2.5
+[crazyai invent seed=7562 dijkstra] measure: status=exact value=0.978 calibration=0.391
+[crazyai invent seed=7562 dijkstra] archived -> C:\Users\AlsammanA\Documents\mygithub\crazyAI\archive\invent_7562_dijkstra
+{
+  "seed": 7562,
+  "target": "dijkstra",
+  "blend_model": "anneal",
+  "imagination_score": 0.9887,
+  "status": "exact",
+  "value": 0.978,
+  "prediction": 2.5,
+  "calibration": 0.391,
+  "discovery": 0.9725
+}

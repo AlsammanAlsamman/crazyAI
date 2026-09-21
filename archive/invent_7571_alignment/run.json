@@ -1,0 +1,48 @@
+{
+  "seed": 7571,
+  "target": "alignment",
+  "blend_model": "evolve",
+  "depth": 3,
+  "assumption_focus": "one pair of positions is judged at a time",
+  "provider": "claudecode",
+  "model": "",
+  "imagination_score": 0.9769,
+  "status": "exact",
+  "value": 0.919,
+  "prediction": 3.0,
+  "calibration": 0.306,
+  "discovery": 0.9084,
+  "fragments": [
+    "met.city_machine",
+    "art.kahlo_two",
+    "harvest.10.0",
+    "poem.rilke_panther",
+    "game.gilli_danda",
+    "harvest.8.2",
+    "art.varo_tower",
+    "book.narnia_wardrobe"
+  ],
+  "rng_log": [
+    {
+      "label": "invent.blend_model",
+      "value": "evolve"
+    },
+    {
+      "label": "invent.depth",
+      "value": 3
+    },
+    {
+      "label": "child:invent.world",
+      "value": 2115156166
+    }
+  ],
+  "timing_s": {
+    "seed": 0.0,
+    "harvest": 0.0,
+    "world": 0.125,
+    "immerse": 34.411,
+    "bend": 230.025,
+    "measure": 0.659
+  },
+  "total_s": 265.22
+}

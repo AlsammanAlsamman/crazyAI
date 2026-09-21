@@ -1,0 +1,67 @@
+{
+  "model": "anneal",
+  "text": "There they thirty no sound and no king, only their own artery years called in a dark, so that the city king runs out to be the wrists holds. His hand streets into a chest the city thirty pools out, and the road ago valleys at the back. Money is exactly what the vein levers. Two dreams of the same field emerge coat in tongue. A lone exhausted by a chant team's on a house. A gasp carried by a cloud buildings on a mirror-lake.",
+  "score": {
+    "score": 0.9887,
+    "imagination": 0.9887,
+    "readable": 1.0,
+    "surprise": 1.0,
+    "mixing": 0.9666,
+    "originality": 1.0,
+    "readability": 1.0,
+    "coherence": 1.0,
+    "flesch": 87.0,
+    "words": 42,
+    "sentences": 6
+  },
+  "fragments": [
+    {
+      "id": "met.money_water",
+      "kind": "metaphor",
+      "source": "money is water"
+    },
+    {
+      "id": "art.kahlo_two",
+      "kind": "painting",
+      "source": "Frida Kahlo, The Two Fridas"
+    },
+    {
+      "id": "book.le_guin_lathe",
+      "kind": "book",
+      "source": "Ursula K. Le Guin, The Lathe of Heaven"
+    },
+    {
+      "id": "poem.attar_birds",
+      "kind": "poem",
+      "source": "Attar of Nishapur, \"The Conference of the Birds\""
+    },
+    {
+      "id": "game.kabaddi_chant",
+      "kind": "game",
+      "source": "Kabaddi, South Asian field game"
+    },
+    {
+      "id": "met.city_machine",
+      "kind": "metaphor",
+      "source": "the city is a machine"
+    },
+    {
+      "id": "art.friedrich_wanderer",
+      "kind": "painting",
+      "source": "Caspar David Friedrich, Wanderer above the Sea of Fog"
+    },
+    {
+      "id": "book.wizard_oz",
+      "kind": "book",
+      "source": "L. Frank Baum, The Wizard of Oz"
+    }
+  ],
+  "steps": 250,
+  "trace": [
+    0.7988,
+    0.9514,
+    0.9392,
+    0.942,
+    0.9636
+  ]
+}

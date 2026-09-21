@@ -1,0 +1,65 @@
+{
+  "target": "dijkstra",
+  "artifact": "kernel",
+  "imagination": {
+    "score": 0.9887,
+    "imagination": 0.9887,
+    "readable": 1.0,
+    "surprise": 1.0,
+    "mixing": 0.9666,
+    "originality": 1.0,
+    "readability": 1.0,
+    "coherence": 1.0,
+    "flesch": 87.0,
+    "words": 42,
+    "sentences": 6
+  },
+  "measurement": {
+    "results": [
+      {
+        "n": 200,
+        "m": 800,
+        "time": 2.3200002e-05,
+        "ref_time": 3.79997073e-06,
+        "reach_mismatch": 0,
+        "max_rel_err": 0.0,
+        "speedup_vs_heap": 0.164,
+        "exactness": 1.0,
+        "status": "exact"
+      },
+      {
+        "n": 1000,
+        "m": 4000,
+        "time": 0.000584200025,
+        "ref_time": 4.29000356e-05,
+        "reach_mismatch": 0,
+        "max_rel_err": 0.0,
+        "speedup_vs_heap": 0.073,
+        "exactness": 1.0,
+        "status": "exact"
+      },
+      {
+        "n": 5000,
+        "m": 20000,
+        "time": 0.000469100021,
+        "ref_time": 0.0004587,
+        "reach_mismatch": 0,
+        "max_rel_err": 0.0,
+        "speedup_vs_heap": 0.978,
+        "exactness": 1.0,
+        "status": "exact"
+      }
+    ],
+    "largest_n": 5000,
+    "status": "exact",
+    "speedup_vs_heap": 0.978,
+    "value": 0.978,
+    "prediction_target": 0.978,
+    "reading": "value = speedup vs. a reference binary-heap Dijkstra x exactness (1.0 = every node's reachability and distance matches to within 1e-9 relative error)."
+  },
+  "value": 0.978,
+  "status": "exact",
+  "calibration": 0.391,
+  "prediction": 2.5,
+  "discovery": 0.9725
+}

@@ -1,0 +1,50 @@
+{
+  "model": "graft",
+  "text": "A boy knots into an oak at dinner and never comes down. Cannot, moon, earth, and every living creature brush on it like beads. Flocks of scholar's locate the sky in back child wants while a hunter below ducks to take the most of them, and every duck wants only to live. The whole emerge, in his telling, is simply cloth no one has ever seen being woven. A whole balloon, stacked all over with a tight, is folded along its slanting middle - once, then again, then once more - until far formations are pressed flat against each other. A edge peaks at his sheet breathing that one invisible thread islands through everything. Arms air out into a darkness full of other people's breathing and stifled laughter.",
+  "score": {
+    "score": 0.7419,
+    "imagination": 0.8244,
+    "readable": 0.8571,
+    "surprise": 0.5614,
+    "mixing": 0.9979,
+    "originality": 1.0,
+    "readability": 1.0,
+    "coherence": 0.8571,
+    "flesch": 68.4,
+    "words": 58,
+    "sentences": 7
+  },
+  "fragments": [
+    {
+      "id": "met.hidden_leader_duck",
+      "kind": "metaphor",
+      "source": "devised for crazyAI's Nim target (hidden-leader-duck framing), 2026"
+    },
+    {
+      "id": "art.friedrich_wanderer",
+      "kind": "painting",
+      "source": "Caspar David Friedrich, Wanderer above the Sea of Fog"
+    },
+    {
+      "id": "book.calvino_baron",
+      "kind": "book",
+      "source": "Italo Calvino, The Baron in the Trees"
+    },
+    {
+      "id": "poem.kabir_thread",
+      "kind": "poem",
+      "source": "Kabir, doha on the hidden thread"
+    },
+    {
+      "id": "game.blind_mans_buff",
+      "kind": "game",
+      "source": "Blind man's buff (Colin-maillard, European and global tradition)"
+    },
+    {
+      "id": "met.folded_sheet_creases",
+      "kind": "metaphor",
+      "source": "devised for crazyAI's alignment target (paper-folding framing), 2026"
+    }
+  ],
+  "rate": 0.55
+}

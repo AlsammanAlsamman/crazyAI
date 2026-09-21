@@ -272,6 +272,17 @@ def test_bend_prompt_contract_matches_the_target_not_always_matmul():
     assert "const double *A" not in p  # matmul's contract must not leak in
 
 
+def test_bend_prompt_requires_regime_detection():
+    # protocol-v3: dijkstra's known_way explicitly names two regimes (sparse heap vs. dense
+    # array-scan) - the pipeline must now ask the native to encode regime-recognition through
+    # the metaphor, not just commit to whichever regime it thought of first.
+    from crazyai.pipeline.invent_prompts import bend_prompt
+    from crazyai.targets import get_target
+    p = bend_prompt("SEED: x", get_target("dijkstra"), [])
+    assert "recognize which regime it's in" in p
+    assert "more than one regime" in p
+
+
 def test_direct_prompt_contract_matches_the_target_and_has_no_narrative_scaffolding():
     from crazyai.pipeline.invent_prompts import direct_prompt
     from crazyai.targets import get_target

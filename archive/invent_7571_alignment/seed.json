@@ -1,0 +1,13 @@
+{
+  "seed": 7571,
+  "target": "alignment",
+  "blend_model": "evolve",
+  "depth": 3,
+  "assumption_focus": "one pair of positions is judged at a time",
+  "bias": {
+    "enabled": false,
+    "min_samples": 20,
+    "samples_seen": 0,
+    "active": false
+  }
+}

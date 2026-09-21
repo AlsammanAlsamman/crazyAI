@@ -1,0 +1,17 @@
+[crazyai invent seed=7563 dijkstra] seed: blend=anneal depth=3 focus='the next place to finalize is found by comparing against every remaining place'
+[crazyai invent seed=7563 dijkstra] world: anneal score=0.9752 (8 fragments)
+[crazyai invent seed=7563 dijkstra] immerse: 2544 chars, 3 seeds
+[crazyai invent seed=7563 dijkstra] bend: 10046 chars, code=yes, prediction=1.3
+[crazyai invent seed=7563 dijkstra] measure: status=exact value=0.976 calibration=0.751
+[crazyai invent seed=7563 dijkstra] archived -> C:\Users\AlsammanA\Documents\mygithub\crazyAI\archive\invent_7563_dijkstra
+{
+  "seed": 7563,
+  "target": "dijkstra",
+  "blend_model": "anneal",
+  "imagination_score": 0.9752,
+  "status": "exact",
+  "value": 0.976,
+  "prediction": 1.3,
+  "calibration": 0.751,
+  "discovery": 0.9639
+}

@@ -1,0 +1,46 @@
+{
+  "seed": 7565,
+  "target": "dijkstra",
+  "blend_model": "graft",
+  "depth": 1,
+  "assumption_focus": "the whole graph must be explored to know any single distance",
+  "provider": "claudecode",
+  "model": "",
+  "imagination_score": 0.7419,
+  "status": "exact",
+  "value": 0.941,
+  "prediction": 1.5,
+  "calibration": 0.627,
+  "discovery": 0.8196,
+  "fragments": [
+    "met.hidden_leader_duck",
+    "art.friedrich_wanderer",
+    "book.calvino_baron",
+    "poem.kabir_thread",
+    "game.blind_mans_buff",
+    "met.folded_sheet_creases"
+  ],
+  "rng_log": [
+    {
+      "label": "invent.blend_model",
+      "value": "graft"
+    },
+    {
+      "label": "invent.depth",
+      "value": 1
+    },
+    {
+      "label": "child:invent.world",
+      "value": 1782080205
+    }
+  ],
+  "timing_s": {
+    "seed": 0.0,
+    "harvest": 0.0,
+    "world": 0.068,
+    "immerse": 33.316,
+    "bend": 249.391,
+    "measure": 0.945
+  },
+  "total_s": 283.72
+}
