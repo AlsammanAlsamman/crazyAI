@@ -1,0 +1,48 @@
+[crazyai invent-world-only seed=7602 alignment] world: anneal score=0.9734 (8 fragments)
+[crazyai invent-world-only seed=7602 alignment] solve: 5299 chars, code=yes, prediction=6.0
+[crazyai invent-world-only seed=7602 alignment] measure: status=exact value=0.896 calibration=0.149
+[crazyai invent-world-only seed=7602 alignment] archived -> C:\Users\AlsammanA\Documents\mygithub\crazyAI\archive\world_only_7602_alignment
+{
+  "seed": 7602,
+  "target": "alignment",
+  "status": "exact",
+  "value": 0.896,
+  "prediction": 6.0,
+  "calibration": 0.149
+}
+[crazyai invent-world-only seed=7603 alignment] world: markov score=0.3796 (15 fragments)
+[crazyai invent-world-only seed=7603 alignment] solve: 5761 chars, code=yes, prediction=5.0
+[crazyai invent-world-only seed=7603 alignment] measure: status=exact value=0.481 calibration=0.096
+[crazyai invent-world-only seed=7603 alignment] archived -> C:\Users\AlsammanA\Documents\mygithub\crazyAI\archive\world_only_7603_alignment
+{
+  "seed": 7603,
+  "target": "alignment",
+  "status": "exact",
+  "value": 0.481,
+  "prediction": 5.0,
+  "calibration": 0.096
+}
+[crazyai invent-world-only seed=7604 alignment] world: evolve score=0.9816 (8 fragments)
+[crazyai invent-world-only seed=7604 alignment] solve: 5147 chars, code=yes, prediction=4.0
+[crazyai invent-world-only seed=7604 alignment] measure: status=exact value=4.648 calibration=0.861
+[crazyai invent-world-only seed=7604 alignment] archived -> C:\Users\AlsammanA\Documents\mygithub\crazyAI\archive\world_only_7604_alignment
+{
+  "seed": 7604,
+  "target": "alignment",
+  "status": "exact",
+  "value": 4.648,
+  "prediction": 4.0,
+  "calibration": 0.861
+}
+[crazyai invent-world-only seed=7605 alignment] world: anneal score=0.9711 (8 fragments)
+[crazyai invent-world-only seed=7605 alignment] solve: 4445 chars, code=yes, prediction=3.0
+[crazyai invent-world-only seed=7605 alignment] measure: status=exact value=0.539 calibration=0.18
+[crazyai invent-world-only seed=7605 alignment] archived -> C:\Users\AlsammanA\Documents\mygithub\crazyAI\archive\world_only_7605_alignment
+{
+  "seed": 7605,
+  "target": "alignment",
+  "status": "exact",
+  "value": 0.539,
+  "prediction": 3.0,
+  "calibration": 0.18
+}

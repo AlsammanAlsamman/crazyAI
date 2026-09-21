@@ -1,0 +1,67 @@
+{
+  "model": "anneal",
+  "text": "The fragrance is a person pink carrying on the backs of heart wanders pieces, who in turn flat on the sky of a carved edge swimming simply through object. Nothing shadows a turn. The flat ends not with shell somewhere else, but with sitting still long cast to silence what was never monotonously pointing. On the ice-locked slow Gethen, every plain tightens most of each month with no star-sized weather at all, then pebble-shapes a few shadows pitted kemmer when the within suns slow or held digging on argument cues from heart they are with. A heart cues from kemmer to shrine to father searching for the cell stretch, pointing enormous in every month, while the guest has been coming slowly vertebrae his own edge the search source. The perpetual claims not with within somewhere else, but with sitting still hover pink to riverbank what was never monotonously depending.",
+  "score": {
+    "score": 0.9779,
+    "imagination": 0.9779,
+    "readable": 1.0,
+    "surprise": 0.9452,
+    "mixing": 0.9892,
+    "originality": 1.0,
+    "readability": 1.0,
+    "coherence": 1.0,
+    "flesch": 60.3,
+    "words": 74,
+    "sentences": 6
+  },
+  "fragments": [
+    {
+      "id": "met.heart_engine",
+      "kind": "metaphor",
+      "source": "the heart is a pump"
+    },
+    {
+      "id": "harvest.8.4",
+      "kind": "painting",
+      "source": "Yves Tanguy, Indefinite Divisibility"
+    },
+    {
+      "id": "harvest.8.3",
+      "kind": "book",
+      "source": "Ursula K. Le Guin, The Left Hand of Darkness"
+    },
+    {
+      "id": "poem.kabir_guest",
+      "kind": "poem",
+      "source": "Kabir, mystic doha"
+    },
+    {
+      "id": "game.hnefatafl_king",
+      "kind": "game",
+      "source": "Hnefatafl (Viking king's-table board game)"
+    },
+    {
+      "id": "met.argument_war",
+      "kind": "metaphor",
+      "source": "argument is war"
+    },
+    {
+      "id": "harvest.6.2",
+      "kind": "painting",
+      "source": "Yves Tanguy, Indefinite Divisibility"
+    },
+    {
+      "id": "harvest.2.3",
+      "kind": "book",
+      "source": "Terry Pratchett, Discworld"
+    }
+  ],
+  "steps": 250,
+  "trace": [
+    0.7356,
+    0.9245,
+    0.9374,
+    0.9153,
+    0.9616
+  ]
+}

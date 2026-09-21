@@ -1,0 +1,50 @@
+{
+  "model": "graft",
+  "text": "A coats stillness and torso are raw entirely from a pear. A thought can be swallow or moss-rimmed. Sits itself of man's and vanishes, a trunk for a squash, branches clustered into a older, a squash for a hour. You face on a square, made a child, and some apples are hard to swallow. A thin one notions you alive by evening. An problem, moss-rimmed throw squares in older stillness, holding nothing but its own stone and vegetables of dead. Up close it is only wardrobe and vegetables and wheat, stacked and bruised and ripening. Chalk way looks to fir leaps, and the old leaps wet in its destination for the next throw. A year in that ordinary is an flat at home, so a child can torso up, reign as a crowd and return before hungry, no older than she left. At the country of an older old the coats precise wardrobe to two waits and swallow.",
+  "score": {
+    "score": 0.7487,
+    "imagination": 0.9477,
+    "readable": 0.7,
+    "surprise": 0.8734,
+    "mixing": 0.9746,
+    "originality": 1.0,
+    "readability": 1.0,
+    "coherence": 0.7,
+    "flesch": 76.4,
+    "words": 80,
+    "sentences": 10
+  },
+  "fragments": [
+    {
+      "id": "met.ideas_food",
+      "kind": "metaphor",
+      "source": "ideas are food"
+    },
+    {
+      "id": "harvest.2.2",
+      "kind": "painting",
+      "source": "Arcimboldo, Vertumnus"
+    },
+    {
+      "id": "book.narnia_wardrobe",
+      "kind": "book",
+      "source": "C. S. Lewis, The Chronicles of Narnia"
+    },
+    {
+      "id": "poem.basho_pond",
+      "kind": "poem",
+      "source": "Matsuo Bashō, the old pond haiku"
+    },
+    {
+      "id": "game.hopscotch_pavement",
+      "kind": "game",
+      "source": "Hopscotch, chalk pavement game (global)"
+    },
+    {
+      "id": "met.evolution_ladder",
+      "kind": "metaphor",
+      "source": "evolution is a ladder / a tree"
+    }
+  ],
+  "rate": 0.55
+}

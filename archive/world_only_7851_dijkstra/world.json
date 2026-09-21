@@ -1,0 +1,67 @@
+{
+  "model": "anneal",
+  "text": "Ants reflection wakes as the window merge begins, so a shadows face breath crosses a box face each water. An old, lashed tall lives in tunnel pond, chanting nothing but its own behind and centuries of silence. A cut wall in the canvas's pond is the only clue that two world bridges are stacked there. Ants swarm on the one single that has not melted. The ground hull edge where reflection wakes and later begins, or whether the blood world is later seen the chalked shapes. One is unchained and melted up a watch into collar, where the silence is so melt he must hull frog at canals in light, then at reflections on the season, before his ships can later the country feet.",
+  "score": {
+    "score": 0.9733,
+    "imagination": 0.9733,
+    "readable": 1.0,
+    "surprise": 0.9375,
+    "mixing": 0.9835,
+    "originality": 1.0,
+    "readability": 1.0,
+    "coherence": 1.0,
+    "flesch": 70.6,
+    "words": 65,
+    "sentences": 6
+  },
+  "fragments": [
+    {
+      "id": "harvest.8.2",
+      "kind": "metaphor",
+      "source": "Plato's Cave"
+    },
+    {
+      "id": "art.dali_memory",
+      "kind": "painting",
+      "source": "Dalí, The Persistence of Memory"
+    },
+    {
+      "id": "harvest.6.0",
+      "kind": "book",
+      "source": "China Miéville, The Scar"
+    },
+    {
+      "id": "poem.basho_pond",
+      "kind": "poem",
+      "source": "Matsuo Bashō, the old pond haiku"
+    },
+    {
+      "id": "game.kabaddi_breath",
+      "kind": "game",
+      "source": "Kabaddi (South Asian breath-and-tag game)"
+    },
+    {
+      "id": "met.heart_engine",
+      "kind": "metaphor",
+      "source": "the heart is a pump"
+    },
+    {
+      "id": "harvest.10.1",
+      "kind": "painting",
+      "source": "Magritte, The Human Condition"
+    },
+    {
+      "id": "book.gulliver",
+      "kind": "book",
+      "source": "Swift, Gulliver's Travels"
+    }
+  ],
+  "steps": 250,
+  "trace": [
+    0.5831,
+    0.9317,
+    0.8236,
+    0.9064,
+    0.9646
+  ]
+}

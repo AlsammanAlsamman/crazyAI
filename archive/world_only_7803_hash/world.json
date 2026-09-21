@@ -1,0 +1,65 @@
+{
+  "model": "nest",
+  "text": "Inside a single, there is a time, and in a time never the same twice — in order to mate with whoever else is in kemmer nearby. Beyond a palmful lies a invention; whoever enters finds that a visitor from a world of fixed genders spends years learning to stop asking whether someone is he or she and start asking only when. Inside a computer, there is a row, and in a row to one restless man's pride.",
+  "score": {
+    "score": 0.5592,
+    "imagination": 0.7293,
+    "readable": 0.6667,
+    "surprise": 0.4118,
+    "mixing": 0.9422,
+    "originality": 1.0,
+    "readability": 1.0,
+    "coherence": 0.6667,
+    "flesch": 67.6,
+    "words": 35,
+    "sentences": 3
+  },
+  "fragments": [
+    {
+      "id": "met.spinning_snake_cover",
+      "kind": "metaphor",
+      "source": "devised for crazyAI's alignment target (covering-snake framing), 2026"
+    },
+    {
+      "id": "art.klee_twittering",
+      "kind": "painting",
+      "source": "Paul Klee, Twittering Machine"
+    },
+    {
+      "id": "book.momo",
+      "kind": "book",
+      "source": "Michael Ende, Momo"
+    },
+    {
+      "id": "poem.mutanabbi_qasida",
+      "kind": "poem",
+      "source": "Al-Mutanabbi, heroic ode (qasida)"
+    },
+    {
+      "id": "game.oware_seeds",
+      "kind": "game",
+      "source": "Oware / Mancala (West African seed-sowing game)"
+    },
+    {
+      "id": "met.computer_brain",
+      "kind": "metaphor",
+      "source": "the computer is a brain"
+    },
+    {
+      "id": "harvest.8.1",
+      "kind": "painting",
+      "source": "Remedios Varo, Creation of the Birds"
+    },
+    {
+      "id": "harvest.5.2",
+      "kind": "book",
+      "source": "Ursula K. Le Guin, The Left Hand of Darkness"
+    },
+    {
+      "id": "poem.lorca_sonambulo",
+      "kind": "poem",
+      "source": "Federico García Lorca, \"Romance Sonámbulo\""
+    }
+  ],
+  "depth": 3
+}

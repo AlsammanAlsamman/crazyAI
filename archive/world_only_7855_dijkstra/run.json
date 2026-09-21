@@ -1,0 +1,17 @@
+{
+  "seed": 7855,
+  "target": "dijkstra",
+  "condition": "world_only",
+  "provider": "claudecode",
+  "model": "",
+  "status": "exact",
+  "value": 1.123,
+  "prediction": 1.6,
+  "calibration": 0.702,
+  "timing_s": {
+    "world": 0.106,
+    "solve": 104.624,
+    "measure": 0.764
+  },
+  "total_s": 105.494
+}

@@ -1,0 +1,50 @@
+{
+  "model": "cutup",
+  "text": "Reason knocks at the door of this house and is gently, A loop of string strung taut between two pairs of open hands, and the cupbearer's glance intoxicates more than the cup itself, and he loves a single rose that believes she is the only one in the universe. And a forest floor of dead words that feed the living ones, A boy lives on an asteroid so small he can watch the sunset forty-four times a day by moving his chair, A nightingale sings itself to death for love of a rose that will outlast it by many seasons, a trunk of ancient roots. Permanently turned away, one figure lifted away to reveal another underneath, An owl-headed woman sits at an easel wearing a triangular device on her chest that funnels starlight down through a tube into her paintbrush, trading beauty for complaint across a garden wall. Fingers hooking threads by feel without looking down, the wet ink lifts off the page and flies out the window. A language is a tree, a capacitor is a tank, As she draws each bird on the canvas. A diamond becomes a pair of scissors, voltage is pressure, Electricity is water in pipes. A tavern pours a wine that is not grape but pure longing, then a fish's open mouth. Resistance is a narrow pipe, He weeds out baobab seedlings before they can split the planet. Current is flow, branches that split into dialects, already feathered and alive before the outline is finished. Leaves that are words falling every autumn and new ones budding every spring, and a short circuit is a burst main flooding the basement.",
+  "score": {
+    "score": 0.4647,
+    "imagination": 0.5657,
+    "readable": 0.7448,
+    "surprise": 0.1831,
+    "mixing": 0.9889,
+    "originality": 1.0,
+    "readability": 0.931,
+    "coherence": 0.8,
+    "flesch": 56.5,
+    "words": 143,
+    "sentences": 10
+  },
+  "fragments": [
+    {
+      "id": "met.electricity_water",
+      "kind": "metaphor",
+      "source": "electricity is water"
+    },
+    {
+      "id": "harvest.6.4",
+      "kind": "painting",
+      "source": "Remedios Varo, Creation of the Birds"
+    },
+    {
+      "id": "book.little_prince",
+      "kind": "book",
+      "source": "Saint-Exupéry, The Little Prince"
+    },
+    {
+      "id": "poem.hafez_tavern",
+      "kind": "poem",
+      "source": "Hafez, ghazal from the Divan"
+    },
+    {
+      "id": "game.cats_cradle",
+      "kind": "game",
+      "source": "Cat's Cradle (string figure game, global tradition)"
+    },
+    {
+      "id": "met.language_tree",
+      "kind": "metaphor",
+      "source": "language is a tree"
+    }
+  ],
+  "grain": "clause"
+}

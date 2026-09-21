@@ -1,0 +1,60 @@
+[crazyai invent-world-only seed=7851 dijkstra] world: anneal score=0.9733 (8 fragments)
+[crazyai invent-world-only seed=7851 dijkstra] solve: 5839 chars, code=yes, prediction=1.4
+[crazyai invent-world-only seed=7851 dijkstra] measure: status=exact value=0.966 calibration=0.69
+[crazyai invent-world-only seed=7851 dijkstra] archived -> C:\Users\AlsammanA\Documents\mygithub\crazyAI\archive\world_only_7851_dijkstra
+{
+  "seed": 7851,
+  "target": "dijkstra",
+  "status": "exact",
+  "value": 0.966,
+  "prediction": 1.4,
+  "calibration": 0.69
+}
+[crazyai invent-world-only seed=7852 dijkstra] world: anneal score=0.9728 (8 fragments)
+[crazyai invent-world-only seed=7852 dijkstra] solve: 6306 chars, code=yes, prediction=1.4
+[crazyai invent-world-only seed=7852 dijkstra] measure: status=exact value=0.974 calibration=0.696
+[crazyai invent-world-only seed=7852 dijkstra] archived -> C:\Users\AlsammanA\Documents\mygithub\crazyAI\archive\world_only_7852_dijkstra
+{
+  "seed": 7852,
+  "target": "dijkstra",
+  "status": "exact",
+  "value": 0.974,
+  "prediction": 1.4,
+  "calibration": 0.696
+}
+[crazyai invent-world-only seed=7853 dijkstra] world: anneal score=0.9979 (8 fragments)
+[crazyai invent-world-only seed=7853 dijkstra] solve: 7385 chars, code=yes, prediction=2.0
+[crazyai invent-world-only seed=7853 dijkstra] measure: status=exact value=1.136 calibration=0.568
+[crazyai invent-world-only seed=7853 dijkstra] archived -> C:\Users\AlsammanA\Documents\mygithub\crazyAI\archive\world_only_7853_dijkstra
+{
+  "seed": 7853,
+  "target": "dijkstra",
+  "status": "exact",
+  "value": 1.136,
+  "prediction": 2.0,
+  "calibration": 0.568
+}
+[crazyai invent-world-only seed=7854 dijkstra] world: evolve score=0.9768 (8 fragments)
+[crazyai invent-world-only seed=7854 dijkstra] solve: 6963 chars, code=yes, prediction=1.4
+[crazyai invent-world-only seed=7854 dijkstra] measure: status=exact value=0.946 calibration=0.676
+[crazyai invent-world-only seed=7854 dijkstra] archived -> C:\Users\AlsammanA\Documents\mygithub\crazyAI\archive\world_only_7854_dijkstra
+{
+  "seed": 7854,
+  "target": "dijkstra",
+  "status": "exact",
+  "value": 0.946,
+  "prediction": 1.4,
+  "calibration": 0.676
+}
+[crazyai invent-world-only seed=7855 dijkstra] world: anneal score=0.9779 (8 fragments)
+[crazyai invent-world-only seed=7855 dijkstra] solve: 7317 chars, code=yes, prediction=1.6
+[crazyai invent-world-only seed=7855 dijkstra] measure: status=exact value=1.123 calibration=0.702
+[crazyai invent-world-only seed=7855 dijkstra] archived -> C:\Users\AlsammanA\Documents\mygithub\crazyAI\archive\world_only_7855_dijkstra
+{
+  "seed": 7855,
+  "target": "dijkstra",
+  "status": "exact",
+  "value": 1.123,
+  "prediction": 1.6,
+  "calibration": 0.702
+}

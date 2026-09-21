@@ -140,10 +140,10 @@ DIRECT_SYSTEM = (
 )
 
 
-def direct_prompt(target: Target, tools: list[str]) -> str:
-    """The baseline condition's prompt: no narrative, no world, no metaphor - just the problem, its known way,
-    and the fixed contract, so the only variable that differs from bend_prompt is the narrative scaffolding
-    itself. Shares _contract_block with bend_prompt so both conditions see the identical contract text."""
+def _direct_task_block(target: Target, tools: list[str]) -> str:
+    """The problem/contract/instructions text shared verbatim by `direct_prompt` (no material at all) and
+    `world_only_prompt` (material, no persona) - the only thing that should ever differ between those two
+    conditions is whether a blended world precedes this block, so this is factored out once."""
     contract = _contract_block(target)
     return (
         f"TARGET PROBLEM: {target.problem}\n"
@@ -155,6 +155,25 @@ def direct_prompt(target: Target, tools: list[str]) -> str:
         "not a range or prose) written BEFORE the first measurement.\n"
         f"Tools available: {', '.join(tools)}.\n"
         "Write the final answer with sections: APPROACH, ARTIFACT, PREDICTION, MEASUREMENT, VERDICT."
+    )
+
+
+def direct_prompt(target: Target, tools: list[str]) -> str:
+    """The baseline condition's prompt: no narrative, no world, no metaphor - just the problem, its known way,
+    and the fixed contract, so the only variable that differs from bend_prompt is the narrative scaffolding
+    itself. Shares _contract_block with bend_prompt so both conditions see the identical contract text."""
+    return _direct_task_block(target, tools)
+
+
+def world_only_prompt(world_text: str, target: Target, tools: list[str]) -> str:
+    """Baseline's exact task (_direct_task_block), with one addition: a blended narrative world offered as
+    optional inspiration first, no persona requirement to use or interpret it, no alien-persona framing at
+    all - still DIRECT_SYSTEM's plain engineer voice. Isolates whether exposure to rich material alone, without
+    invent's persona swap, helps - a clean ablation against direct_prompt/Baseline specifically."""
+    return (
+        "Here is a piece of imaginative writing. It may or may not turn out to be useful for what follows - "
+        "use it or ignore it entirely, as you judge best:\n\n" + world_text.strip() + "\n\n---\n\n" +
+        _direct_task_block(target, tools)
     )
 
 

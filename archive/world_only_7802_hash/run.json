@@ -1,0 +1,17 @@
+{
+  "seed": 7802,
+  "target": "hash",
+  "condition": "world_only",
+  "provider": "claudecode",
+  "model": "",
+  "status": "exact",
+  "value": 15.1592,
+  "prediction": 3.5,
+  "calibration": 0.23,
+  "timing_s": {
+    "world": 0.025,
+    "solve": 51.559,
+    "measure": 0.511
+  },
+  "total_s": 52.095
+}

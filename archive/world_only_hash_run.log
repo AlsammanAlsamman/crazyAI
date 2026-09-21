@@ -1,0 +1,60 @@
+[crazyai invent-world-only seed=7801 hash] world: cutup score=0.4647 (6 fragments)
+[crazyai invent-world-only seed=7801 hash] solve: 6399 chars, code=yes, prediction=3.5
+[crazyai invent-world-only seed=7801 hash] measure: status=exact value=15.8011 calibration=0.221
+[crazyai invent-world-only seed=7801 hash] archived -> C:\Users\AlsammanA\Documents\mygithub\crazyAI\archive\world_only_7801_hash
+{
+  "seed": 7801,
+  "target": "hash",
+  "status": "exact",
+  "value": 15.8011,
+  "prediction": 3.5,
+  "calibration": 0.221
+}
+[crazyai invent-world-only seed=7802 hash] world: markov score=0.3118 (15 fragments)
+[crazyai invent-world-only seed=7802 hash] solve: 6435 chars, code=yes, prediction=3.5
+[crazyai invent-world-only seed=7802 hash] measure: status=exact value=15.1592 calibration=0.23
+[crazyai invent-world-only seed=7802 hash] archived -> C:\Users\AlsammanA\Documents\mygithub\crazyAI\archive\world_only_7802_hash
+{
+  "seed": 7802,
+  "target": "hash",
+  "status": "exact",
+  "value": 15.1592,
+  "prediction": 3.5,
+  "calibration": 0.23
+}
+[crazyai invent-world-only seed=7803 hash] world: nest score=0.5592 (9 fragments)
+[crazyai invent-world-only seed=7803 hash] solve: 7100 chars, code=yes, prediction=6.0
+[crazyai invent-world-only seed=7803 hash] measure: status=exact value=15.6513 calibration=0.383
+[crazyai invent-world-only seed=7803 hash] archived -> C:\Users\AlsammanA\Documents\mygithub\crazyAI\archive\world_only_7803_hash
+{
+  "seed": 7803,
+  "target": "hash",
+  "status": "exact",
+  "value": 15.6513,
+  "prediction": 6.0,
+  "calibration": 0.383
+}
+[crazyai invent-world-only seed=7804 hash] world: markov score=0.3339 (15 fragments)
+[crazyai invent-world-only seed=7804 hash] solve: 7527 chars, code=yes, prediction=6.0
+[crazyai invent-world-only seed=7804 hash] measure: status=exact value=15.294 calibration=0.392
+[crazyai invent-world-only seed=7804 hash] archived -> C:\Users\AlsammanA\Documents\mygithub\crazyAI\archive\world_only_7804_hash
+{
+  "seed": 7804,
+  "target": "hash",
+  "status": "exact",
+  "value": 15.294,
+  "prediction": 6.0,
+  "calibration": 0.392
+}
+[crazyai invent-world-only seed=7805 hash] world: graft score=0.6671 (6 fragments)
+[crazyai invent-world-only seed=7805 hash] solve: 5869 chars, code=yes, prediction=6.0
+[crazyai invent-world-only seed=7805 hash] measure: status=exact value=15.4605 calibration=0.386
+[crazyai invent-world-only seed=7805 hash] archived -> C:\Users\AlsammanA\Documents\mygithub\crazyAI\archive\world_only_7805_hash
+{
+  "seed": 7805,
+  "target": "hash",
+  "status": "exact",
+  "value": 15.4605,
+  "prediction": 6.0,
+  "calibration": 0.386
+}

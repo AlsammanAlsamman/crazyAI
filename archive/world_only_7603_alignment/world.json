@@ -1,0 +1,95 @@
+{
+  "model": "markov",
+  "text": "Sun, moon, earth, and every living creature strung on it like beads. Ivy has grown through the library shelves, and owls nest in rooms whose doors were sealed a hundred years before anyone now living was born. A railway station at night, lit by cold lamps. Women in long dresses stand motionless on the platform while a skeleton sits on a bench reading. Chalk lines scratched across pavement into a ladder of numbered squares, a corridor swept — and no one alive remembers why, only that the Earl himself is bound to perform them or the stones themselves would somehow know.",
+  "score": {
+    "score": 0.3796,
+    "imagination": 0.3796,
+    "readable": 1.0,
+    "surprise": 0.0727,
+    "mixing": 0.94,
+    "originality": 0.8,
+    "readability": 1.0,
+    "coherence": 1.0,
+    "flesch": 62.2,
+    "words": 56,
+    "sentences": 5
+  },
+  "fragments": [
+    {
+      "id": "met.problem_knot",
+      "kind": "metaphor",
+      "source": "a problem is a knot"
+    },
+    {
+      "id": "harvest.5.3",
+      "kind": "painting",
+      "source": "Magritte, Not to Be Reproduced"
+    },
+    {
+      "id": "harvest.8.0",
+      "kind": "book",
+      "source": "Mervyn Peake, Gormenghast"
+    },
+    {
+      "id": "poem.yoruba_oriki",
+      "kind": "poem",
+      "source": "Yoruba oriki (anonymous praise-poem tradition)"
+    },
+    {
+      "id": "game.hopscotch_chalk",
+      "kind": "game",
+      "source": "Hopscotch (traditional street game, many cultures)"
+    },
+    {
+      "id": "met.market_organism",
+      "kind": "metaphor",
+      "source": "the market is an animal"
+    },
+    {
+      "id": "harvest.9.2",
+      "kind": "painting",
+      "source": "Yves Tanguy, Mama, Papa Is Wounded!"
+    },
+    {
+      "id": "book.neverending_story",
+      "kind": "book",
+      "source": "Michael Ende, The Neverending Story"
+    },
+    {
+      "id": "poem.basho_pond",
+      "kind": "poem",
+      "source": "Matsuo Bashō, the old pond haiku"
+    },
+    {
+      "id": "game.senet_sticks",
+      "kind": "game",
+      "source": "Senet (ancient Egyptian board game)"
+    },
+    {
+      "id": "met.ideas_food",
+      "kind": "metaphor",
+      "source": "ideas are food"
+    },
+    {
+      "id": "art.delvaux_night",
+      "kind": "painting",
+      "source": "Paul Delvaux, night trains"
+    },
+    {
+      "id": "book.earthsea_names",
+      "kind": "book",
+      "source": "Ursula K. Le Guin, Earthsea"
+    },
+    {
+      "id": "poem.kabir_thread",
+      "kind": "poem",
+      "source": "Kabir, doha on the hidden thread"
+    },
+    {
+      "id": "game.yut_nori",
+      "kind": "game",
+      "source": "Yut Nori, Korean New Year board game"
+    }
+  ],
+  "order": 2
+}

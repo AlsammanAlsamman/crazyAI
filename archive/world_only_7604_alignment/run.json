@@ -1,0 +1,17 @@
+{
+  "seed": 7604,
+  "target": "alignment",
+  "condition": "world_only",
+  "provider": "claudecode",
+  "model": "",
+  "status": "exact",
+  "value": 4.648,
+  "prediction": 4.0,
+  "calibration": 0.861,
+  "timing_s": {
+    "world": 0.071,
+    "solve": 195.797,
+    "measure": 0.574
+  },
+  "total_s": 196.442
+}

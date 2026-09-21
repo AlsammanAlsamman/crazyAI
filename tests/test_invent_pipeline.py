@@ -355,3 +355,33 @@ def test_discover_baseline_pipeline_with_mock(tmp_path):
     # never touches the narrative discover pipeline's own index, or the measured-run index
     assert not (tmp_path / "discover_index.jsonl").exists()
     assert not (tmp_path / "invent_index.jsonl").exists()
+
+
+def test_world_only_prompt_matches_direct_prompt_task_text():
+    # world_only_prompt should differ from direct_prompt ONLY by prepending the world text and a
+    # separator - the task/contract text itself must stay byte-identical, or the ablation isn't clean.
+    from crazyai.pipeline.invent_prompts import direct_prompt, world_only_prompt
+    from crazyai.targets import get_target
+    tgt = get_target("alignment")
+    tools = ["gcc_compile", "measure_kernel"]
+    direct = direct_prompt(tgt, tools)
+    world = world_only_prompt("a story about a river that forgets its own banks", tgt, tools)
+    assert world.endswith(direct)
+    assert "a river that forgets its own banks" in world
+    for forbidden in ("not on Earth", "native of", "MAPPING"):
+        assert forbidden not in world
+
+
+def test_world_only_pipeline_with_mock(tmp_path):
+    if shutil.which("gcc") is None:
+        pytest.skip("no C compiler")
+    from crazyai.pipeline.world_only import WorldOnly, load_world_only_index
+    run = WorldOnly(seed=1, target="matmul", archive_dir=tmp_path)
+    s = run.execute(get_provider("mock"))
+    for f in ("world.md", "world.json", "artifact.md", "artifact.c", "measure.json", "run.json"):
+        assert (run.dir / f).exists(), f
+    assert s["status"] in ("exact", "approx", "WRONG", "COMPILE_ERROR", "NO_ARTIFACT")
+    assert len(load_world_only_index(tmp_path)) == 1
+    # never touches the baseline or narrative pipelines' own indexes
+    assert not (tmp_path / "baseline_index.jsonl").exists()
+    assert not (tmp_path / "invent_index.jsonl").exists()

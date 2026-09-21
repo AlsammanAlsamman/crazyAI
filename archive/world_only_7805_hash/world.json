@@ -1,0 +1,50 @@
+{
+  "model": "graft",
+  "text": "A man sleeps face-down on his straight while circles and bats old from behind him in a cloud. A tensed decades head lifts off its square and does not redrawn like the ceremonies - it owls, corners the tank into an L, circuit squares one man and one single, and bats walking a direction ready of the castle pieces could ever sheet. A panther cell into the desk of earls is knocked from grid for rituals he will not perform for wings, while stride, stone, and forgotten rituals rarely faster than any behind of the place can be redrawn. A narrow so pipe that whole clans of earls are born, live, and die inside single pieces without ever seeing the single walls, every hour governed by a book of others so resistance no one remembers why a burst door must be folded on seven rituals at dawn. Lie is forgotten, current is slide, resistance is a powerful cell, a panther is a boy, and a short flat is a heart main facing the direction. Electricity is slide in pipes.",
+  "score": {
+    "score": 0.6671,
+    "imagination": 0.898,
+    "readable": 0.6327,
+    "surprise": 0.7473,
+    "mixing": 0.9691,
+    "originality": 1.0,
+    "readability": 0.949,
+    "coherence": 0.6667,
+    "flesch": 57.5,
+    "words": 92,
+    "sentences": 6
+  },
+  "fragments": [
+    {
+      "id": "met.folded_sheet_creases",
+      "kind": "metaphor",
+      "source": "devised for crazyAI's alignment target (paper-folding framing), 2026"
+    },
+    {
+      "id": "art.goya_sleep",
+      "kind": "painting",
+      "source": "Goya, The Sleep of Reason Produces Monsters"
+    },
+    {
+      "id": "harvest.5.4",
+      "kind": "book",
+      "source": "Mervyn Peake, Gormenghast"
+    },
+    {
+      "id": "poem.rilke_panther",
+      "kind": "poem",
+      "source": "Rainer Maria Rilke, \"The Panther\""
+    },
+    {
+      "id": "game.knight_bends_air",
+      "kind": "game",
+      "source": "The knight's move (chess piece, imagery only)"
+    },
+    {
+      "id": "met.electricity_water",
+      "kind": "metaphor",
+      "source": "electricity is water"
+    }
+  ],
+  "rate": 0.55
+}

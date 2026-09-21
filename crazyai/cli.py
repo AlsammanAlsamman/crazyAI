@@ -12,6 +12,7 @@
     crazyai blend --seed 42 [--model compare]          blend the imagination corpus, offline
     crazyai invent --seed 42 --target matmul [--blend anneal] [--harvest 5] [--provider mock]
     crazyai invent-baseline --seed 42 --target matmul [--provider mock]   direct-prompt condition, no narrative
+    crazyai invent-world-only --seed 42 --target matmul [--blend anneal] [--provider mock]   material, no persona
     crazyai invent-continuous --seed 42 --target matmul [--provider mock]   narrative, one continuous call, no persona swap
     crazyai discover --seed 42 [--blend anneal] [--provider mock]   solution-first: invent something, let the AI propose what it's for
     crazyai discover-baseline --seed 42 [--provider mock]   discover-mode baseline: no world blend, no persona chain
@@ -212,6 +213,26 @@ def cmd_invent_baseline(args) -> int:
     return 1 if failures == args.n else 0
 
 
+def cmd_invent_world_only(args) -> int:
+    from crazyai.pipeline.world_only import WorldOnly
+
+    provider = _provider(args)
+    failures = 0
+    for i in range(args.n):
+        seed = args.seed + i
+        run = WorldOnly(seed=seed, target=args.target, blend=args.blend, force=args.force, archive_dir=Path(args.archive))
+        try:
+            summary = run.execute(provider)
+        except Exception as exc:  # noqa: BLE001 - one bad seed must not abort the batch
+            failures += 1
+            print(json.dumps({"seed": seed, "target": args.target, "status": "error", "error": str(exc)[-2000:]}),
+                 flush=True)
+            continue
+        print(json.dumps({k: summary[k] for k in ("seed", "target", "status", "value", "prediction", "calibration")},
+                         indent=2), flush=True)
+    return 1 if failures == args.n else 0
+
+
 def cmd_invent_continuous(args) -> int:
     from crazyai.pipeline.continuous import Continuous
 
@@ -380,6 +401,13 @@ def build_parser() -> argparse.ArgumentParser:
     ivb.add_argument("--target", default="matmul", choices=TARGETS)
     add_provider(ivb)
     ivb.set_defaults(fn=cmd_invent_baseline)
+    ivw = sub.add_parser("invent-world-only", help="material, no persona: blended world + DIRECT_SYSTEM's plain engineer voice, no alien-persona framing - a clean ablation against invent-baseline")
+    ivw.add_argument("--seed", type=int, required=True)
+    ivw.add_argument("--n", type=int, default=1, help="number of consecutive seeds")
+    ivw.add_argument("--target", default="matmul", choices=TARGETS)
+    ivw.add_argument("--blend", default="", choices=ALL_MODELS + ["compare", ""], help="blend model (default: seeded draw)")
+    add_provider(ivw)
+    ivw.set_defaults(fn=cmd_invent_world_only)
     ivc = sub.add_parser("invent-continuous", help="narrative in one continuous call: no persona swap, no MAPPING table, no naming the assumption broken")
     ivc.add_argument("--seed", type=int, required=True)
     ivc.add_argument("--n", type=int, default=1, help="number of consecutive seeds")

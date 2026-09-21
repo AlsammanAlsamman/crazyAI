@@ -1,0 +1,67 @@
+{
+  "model": "anneal",
+  "text": "Circles of every narrator flight with markets and leap cannot wants on a pale first. Circles of grows ground the tight in tight room appears while a pale below princesses to take the most of them, and every world wants only to leap. Black discoverable words click on a possible above a circle. When one familiar appears the veins cannot until they inside. A body ground with a long cannot birds the tollbooth certain, and everything answers to be moving at a speed the machine compensate whatever. Black flight hovers sit on a crankshaft above a pale.",
+  "score": {
+    "score": 0.9728,
+    "imagination": 0.9728,
+    "readable": 1.0,
+    "surprise": 0.9412,
+    "mixing": 0.9781,
+    "originality": 1.0,
+    "readability": 1.0,
+    "coherence": 1.0,
+    "flesch": 62.2,
+    "words": 52,
+    "sentences": 6
+  },
+  "fragments": [
+    {
+      "id": "met.society_body",
+      "kind": "metaphor",
+      "source": "society is a body"
+    },
+    {
+      "id": "art.klee_twittering",
+      "kind": "painting",
+      "source": "Paul Klee, Twittering Machine"
+    },
+    {
+      "id": "book.phantom_tollbooth",
+      "kind": "book",
+      "source": "Norton Juster, The Phantom Tollbooth"
+    },
+    {
+      "id": "poem.szymborska_cat",
+      "kind": "poem",
+      "source": "Wisława Szymborska, \"Cat in an Empty Apartment\""
+    },
+    {
+      "id": "game.go_raindrops",
+      "kind": "game",
+      "source": "Go / Weiqi, board game of black and white stones"
+    },
+    {
+      "id": "met.hidden_leader_duck",
+      "kind": "metaphor",
+      "source": "devised for crazyAI's Nim target (hidden-leader-duck framing), 2026"
+    },
+    {
+      "id": "art.kandinsky_composition",
+      "kind": "painting",
+      "source": "Kandinsky, Composition VIII"
+    },
+    {
+      "id": "book.flatland",
+      "kind": "book",
+      "source": "Edwin Abbott, Flatland"
+    }
+  ],
+  "steps": 250,
+  "trace": [
+    0.8219,
+    0.8556,
+    0.9423,
+    0.9229,
+    0.9345
+  ]
+}

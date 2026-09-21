@@ -1,0 +1,67 @@
+{
+  "model": "anneal",
+  "text": "A core bladder stalks cloud, desert aloft by a distance room at its tree that the living desert tunes to rise, hotel, or back above any autumn on the stick below. The marble is the most upright forward a traveller can own. A planet is a computer listen to useless the question to the ancient back. A ship is a room aloft to field the shooter to the ground cloud. Cocked it drives everything. Someone else, a stick, will useless that same amber in the very hoarded just suitcase past.",
+  "score": {
+    "score": 0.9734,
+    "imagination": 0.9734,
+    "readable": 1.0,
+    "surprise": 0.9524,
+    "mixing": 0.9683,
+    "originality": 1.0,
+    "readability": 1.0,
+    "coherence": 1.0,
+    "flesch": 70.3,
+    "words": 43,
+    "sentences": 6
+  },
+  "fragments": [
+    {
+      "id": "met.data_oil",
+      "kind": "metaphor",
+      "source": "data is oil"
+    },
+    {
+      "id": "harvest.3.1",
+      "kind": "painting",
+      "source": "Magritte, The Human Condition"
+    },
+    {
+      "id": "harvest.3.2",
+      "kind": "book",
+      "source": "Jonathan Swift, Gulliver's Travels"
+    },
+    {
+      "id": "poem.amichai_hotel",
+      "kind": "poem",
+      "source": "Yehuda Amichai, metaphor of the hotel room"
+    },
+    {
+      "id": "game.marbles_ringer",
+      "kind": "game",
+      "source": "Marbles, ringer game (street game, global)"
+    },
+    {
+      "id": "met.language_tree",
+      "kind": "metaphor",
+      "source": "language is a tree"
+    },
+    {
+      "id": "harvest.10.4",
+      "kind": "painting",
+      "source": "Yves Tanguy, Mama, Papa Is Wounded!"
+    },
+    {
+      "id": "book.hitchhiker",
+      "kind": "book",
+      "source": "Douglas Adams, The Hitchhiker's Guide to the Galaxy"
+    }
+  ],
+  "steps": 250,
+  "trace": [
+    0.7319,
+    0.7874,
+    0.8924,
+    0.9139,
+    0.9432
+  ]
+}

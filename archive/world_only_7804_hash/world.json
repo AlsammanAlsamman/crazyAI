@@ -1,0 +1,95 @@
+{
+  "model": "markov",
+  "text": "And whoever owns the century. The world is one continuous puzzle in which no piece is the thing it depicts. Nothing marks a horizon. A single bone-colored form stands on an endless tan desert under a sourceless amber light, its surface pitted and stacked like something grown by accretion rather than built. Small stalks and pebble-shapes cast long thin shadows around its base, each shadow pointing a slightly different direction as though lit by several suns at once. And whoever owns the century. One sliver dropped in a glass becomes a spreading white stone within seconds.",
+  "score": {
+    "score": 0.3339,
+    "imagination": 0.3339,
+    "readable": 1.0,
+    "surprise": 0.0909,
+    "mixing": 0.852,
+    "originality": 0.4807,
+    "readability": 1.0,
+    "coherence": 1.0,
+    "flesch": 64.9,
+    "words": 56,
+    "sentences": 7
+  },
+  "fragments": [
+    {
+      "id": "met.time_money",
+      "kind": "metaphor",
+      "source": "time is money"
+    },
+    {
+      "id": "harvest.8.4",
+      "kind": "painting",
+      "source": "Yves Tanguy, Indefinite Divisibility"
+    },
+    {
+      "id": "harvest.3.3",
+      "kind": "book",
+      "source": "Kurt Vonnegut, Cat's Cradle"
+    },
+    {
+      "id": "poem.attar_birds",
+      "kind": "poem",
+      "source": "Attar of Nishapur, \"The Conference of the Birds\""
+    },
+    {
+      "id": "game.yut_nori",
+      "kind": "game",
+      "source": "Yut Nori, Korean New Year board game"
+    },
+    {
+      "id": "met.data_oil",
+      "kind": "metaphor",
+      "source": "data is oil"
+    },
+    {
+      "id": "art.rousseau_dream",
+      "kind": "painting",
+      "source": "Henri Rousseau, The Dream"
+    },
+    {
+      "id": "book.le_guin_lathe",
+      "kind": "book",
+      "source": "Ursula K. Le Guin, The Lathe of Heaven"
+    },
+    {
+      "id": "poem.lorca_sonambulo",
+      "kind": "poem",
+      "source": "Federico García Lorca, \"Romance Sonámbulo\""
+    },
+    {
+      "id": "game.marbles_ringer",
+      "kind": "game",
+      "source": "Marbles, ringer game (street game, global)"
+    },
+    {
+      "id": "met.money_water",
+      "kind": "metaphor",
+      "source": "money is water"
+    },
+    {
+      "id": "art.debuffet_hourloupe",
+      "kind": "painting",
+      "source": "Dubuffet, Hourloupe"
+    },
+    {
+      "id": "book.borges_library",
+      "kind": "book",
+      "source": "Borges, The Library of Babel"
+    },
+    {
+      "id": "poem.sappho_31",
+      "kind": "poem",
+      "source": "Sappho, Fragment 31"
+    },
+    {
+      "id": "game.hopscotch_chalk",
+      "kind": "game",
+      "source": "Hopscotch (traditional street game, many cultures)"
+    }
+  ],
+  "order": 2
+}
