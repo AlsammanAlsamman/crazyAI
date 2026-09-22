@@ -1,0 +1,1 @@
+every cell of the comparison depends on the ones above, to the left, and diagonally above-left, computed in that order

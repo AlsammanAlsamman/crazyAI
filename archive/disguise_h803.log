@@ -1,0 +1,13 @@
+[crazyai invent-disguise seed=7803 hash] disguise: 3951 chars
+[crazyai invent-disguise seed=7803 hash] translate: 6442 chars, code=yes, prediction=6.0
+[crazyai invent-disguise seed=7803 hash] measure: status=exact value=15.3818 calibration=0.389
+[crazyai invent-disguise seed=7803 hash] archived -> C:\Users\AlsammanA\Documents\mygithub\crazyAI\archive\disguise_7803_hash
+{
+  "seed": 7803,
+  "target": "hash",
+  "status": "exact",
+  "value": 15.3818,
+  "prediction": 6.0,
+  "calibration": 0.389,
+  "assumption_focus": "mixing one byte requires a multiplication"
+}

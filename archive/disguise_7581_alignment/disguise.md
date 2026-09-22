@@ -1,0 +1,21 @@
+TRANSFORMED PROBLEM
+
+Twin Lantern Lane runs two garden paths side by side, and each path has the exact same number of paper lanterns strung along it, each lantern painted one of a handful of colors. The town wants a single "how alike are these two paths" score.
+
+The rules for scoring: if you line the two paths up and the lantern in a spot on the left matches the color of the lantern in the same spot on the right, that's worth one point. If the colors differ, that costs one point. And sometimes a path-keeper is allowed to skip a lantern on one path — leave a gap there — so that the lanterns further along line up better; but a skip is expensive, costing two points, because letting the count slip out of step is worse than just having two different colors sit across from each other.
+
+Here's the catch: you can't tell whether a skip is worth taking until you already know the best score for everything that came before it. So the judges end up drawing a giant scoreboard chalked on the ground — one square for every combination of "this far along the left path" and "this far along the right path" — and every single square needs a number in it, not just the squares along the straight, no-skips line, because a skip could sensibly happen at almost any point along either path.
+
+The way it's always been done: one head judge, one piece of chalk, standing in front of exactly one square of the scoreboard at a time. To fill in that one square, the judge peeks at the square just above it, the square just to its left, and the square diagonally above-left, in that order, decides the number for this one pairing of "left lantern here, right lantern there," writes it down, and only then shuffles over to work out the next single square — one pairing, fully decided, before the next one is even glanced at. Meanwhile a whole crowd of other townsfolk stands around the edge of the market square doing nothing, because the tradition is that only one judge looks at one pairing at a time.
+
+SOLUTION 1
+
+Keep exactly one judge with one piece of chalk. They start at the corner of the scoreboard and work straight across the first row of squares, then drop down and cross the second row, and so on, always filling in a square only after peeking at the square above it, the square to its left, and the square diagonally above-left. Every square gets visited, in the same order every time, one lantern-pairing decided completely before moving to the next. This is the slow-but-sure way everyone already trusts, just done briskly and without wasted steps.
+
+SOLUTION 2
+
+Notice that a whole slanting stripe of squares — running corner to corner across the board — never needs answers from any other square on that same stripe, only from the stripe just before it. So instead of the lone judge, call together a whole team of judges. Hand every judge in the group a different square that lies on the very same stripe, and let them all peek at their three needed neighbor squares and write their numbers down at the same moment. Once the whole stripe is filled, the whole team steps together to the next stripe and does it again. Nobody is idle anymore, many lantern-pairings get judged in the same breath, and the finished scoreboard — and the final score — comes out identical to what the lone judge would have written, just reached far quicker.
+
+SOLUTION 3
+
+Before anyone starts, the judges make up a single reference card that lists, for every possible pair of lantern colors, whether that pair counts as a match or not. Then, instead of comparing one lantern on the left to one lantern on the right at a time, each judge grabs a whole handful of lanterns from the left path and lines them up against a whole handful from the right path at once, reads several match-or-not answers straight off the reference card in one glance, and fills a whole stretch of scoreboard squares in a single sweep. They only slow down and think square-by-square at the rare spot where taking a skip might actually pay off. The scoreboard gets filled in broad strokes instead of one square at a time, but the numbers that end up written down are exactly the same as the slow, one-pairing-at-a-time method would have produced.

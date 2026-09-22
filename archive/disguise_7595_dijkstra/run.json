@@ -1,0 +1,18 @@
+{
+  "seed": 7595,
+  "target": "dijkstra",
+  "condition": "disguise",
+  "provider": "claudecode",
+  "model": "",
+  "status": "WRONG",
+  "value": 0.0,
+  "prediction": 1.6,
+  "calibration": 0.734,
+  "assumption_focus": "the whole graph must be explored to know any single distance",
+  "timing_s": {
+    "disguise": 45.254,
+    "translate": 80.974,
+    "measure": 0.673
+  },
+  "total_s": 126.901
+}

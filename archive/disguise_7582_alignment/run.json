@@ -1,0 +1,18 @@
+{
+  "seed": 7582,
+  "target": "alignment",
+  "condition": "disguise",
+  "provider": "claudecode",
+  "model": "",
+  "status": "exact",
+  "value": 0.587,
+  "prediction": 8.0,
+  "calibration": 0.073,
+  "assumption_focus": "every cell of the comparison depends on the ones above, to the left, and diagonally above-left, computed in that order",
+  "timing_s": {
+    "disguise": 61.237,
+    "translate": 200.909,
+    "measure": 1.004
+  },
+  "total_s": 263.151
+}

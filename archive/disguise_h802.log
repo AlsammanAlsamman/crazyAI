@@ -1,0 +1,13 @@
+[crazyai invent-disguise seed=7802 hash] disguise: 4443 chars
+[crazyai invent-disguise seed=7802 hash] translate: 6259 chars, code=yes, prediction=3.0
+[crazyai invent-disguise seed=7802 hash] measure: status=exact value=17.3125 calibration=0.173
+[crazyai invent-disguise seed=7802 hash] archived -> C:\Users\AlsammanA\Documents\mygithub\crazyAI\archive\disguise_7802_hash
+{
+  "seed": 7802,
+  "target": "hash",
+  "status": "exact",
+  "value": 17.3125,
+  "prediction": 3.0,
+  "calibration": 0.173,
+  "assumption_focus": "the state is a single accumulator updated in place, one value"
+}

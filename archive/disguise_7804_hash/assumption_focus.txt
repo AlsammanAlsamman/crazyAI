@@ -1,0 +1,1 @@
+the whole buffer must be read once, start to end, in order

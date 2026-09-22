@@ -1,0 +1,13 @@
+[crazyai invent-disguise seed=7595 dijkstra] disguise: 4600 chars
+[crazyai invent-disguise seed=7595 dijkstra] translate: 7142 chars, code=yes, prediction=1.6
+[crazyai invent-disguise seed=7595 dijkstra] measure: status=WRONG value=0.0 calibration=0.734
+[crazyai invent-disguise seed=7595 dijkstra] archived -> C:\Users\AlsammanA\Documents\mygithub\crazyAI\archive\disguise_7595_dijkstra
+{
+  "seed": 7595,
+  "target": "dijkstra",
+  "status": "WRONG",
+  "value": 0.0,
+  "prediction": 1.6,
+  "calibration": 0.734,
+  "assumption_focus": "the whole graph must be explored to know any single distance"
+}

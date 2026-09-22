@@ -1,0 +1,18 @@
+{
+  "seed": 7593,
+  "target": "dijkstra",
+  "condition": "disguise",
+  "provider": "claudecode",
+  "model": "",
+  "status": "exact",
+  "value": 1.184,
+  "prediction": 1.4,
+  "calibration": 0.846,
+  "assumption_focus": "the next place to finalize is found by comparing against every remaining place",
+  "timing_s": {
+    "disguise": 51.016,
+    "translate": 79.921,
+    "measure": 0.623
+  },
+  "total_s": 131.561
+}

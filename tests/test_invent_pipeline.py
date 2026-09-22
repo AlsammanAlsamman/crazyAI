@@ -396,3 +396,33 @@ def test_world_only_pipeline_with_mock(tmp_path):
     # never touches the baseline or narrative pipelines' own indexes
     assert not (tmp_path / "baseline_index.jsonl").exists()
     assert not (tmp_path / "invent_index.jsonl").exists()
+
+
+def test_disguise_prompt_asymmetry():
+    # the disguise step must never see the textbook answer or the contract (mirrors immerse_prompt's
+    # own asymmetry) - only the translate step, in DIRECT_SYSTEM's voice, sees the real contract.
+    from crazyai.pipeline.invent_prompts import disguise_prompt, translate_prompt
+    from crazyai.targets import get_target
+    tgt = get_target("alignment")
+    dp = disguise_prompt(tgt)
+    assert "int kernel(int n, const char *a, const char *b)" not in dp
+    assert tgt.known_way not in dp
+    assert "math" in dp.lower() or "no math" in dp.lower()  # instructed to avoid it
+    tp = translate_prompt("TRANSFORMED PROBLEM\n...\nSOLUTION 1\n...", tgt, [])
+    assert "int kernel(int n, const char *a, const char *b)" in tp
+
+
+def test_disguise_pipeline_with_mock(tmp_path):
+    if shutil.which("gcc") is None:
+        pytest.skip("no C compiler")
+    from crazyai.pipeline.disguise import Disguise, load_disguise_index
+    run = Disguise(seed=1, target="matmul", archive_dir=tmp_path)
+    s = run.execute(get_provider("mock"))
+    for f in ("disguise.md", "artifact.md", "artifact.c", "measure.json", "run.json"):
+        assert (run.dir / f).exists(), f
+    assert s["status"] in ("exact", "approx", "WRONG", "COMPILE_ERROR", "NO_ARTIFACT")
+    assert len(load_disguise_index(tmp_path)) == 1
+    # never touches any other pipeline's own index
+    assert not (tmp_path / "baseline_index.jsonl").exists()
+    assert not (tmp_path / "invent_index.jsonl").exists()
+    assert not (tmp_path / "world_only_index.jsonl").exists()

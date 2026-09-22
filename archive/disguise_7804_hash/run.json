@@ -1,0 +1,18 @@
+{
+  "seed": 7804,
+  "target": "hash",
+  "condition": "disguise",
+  "provider": "claudecode",
+  "model": "",
+  "status": "exact",
+  "value": 15.6464,
+  "prediction": 3.5,
+  "calibration": 0.223,
+  "assumption_focus": "the whole buffer must be read once, start to end, in order",
+  "timing_s": {
+    "disguise": 64.839,
+    "translate": 109.185,
+    "measure": 0.708
+  },
+  "total_s": 174.732
+}

@@ -1,0 +1,13 @@
+[crazyai invent-disguise seed=7585 alignment] disguise: 4742 chars
+[crazyai invent-disguise seed=7585 alignment] translate: 5664 chars, code=yes, prediction=6.0
+[crazyai invent-disguise seed=7585 alignment] measure: status=exact value=0.893 calibration=0.149
+[crazyai invent-disguise seed=7585 alignment] archived -> C:\Users\AlsammanA\Documents\mygithub\crazyAI\archive\disguise_7585_alignment
+{
+  "seed": 7585,
+  "target": "alignment",
+  "status": "exact",
+  "value": 0.893,
+  "prediction": 6.0,
+  "calibration": 0.149,
+  "assumption_focus": "both strings are read start to end in the same direction"
+}

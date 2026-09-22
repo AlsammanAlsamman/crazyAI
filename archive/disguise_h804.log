@@ -1,0 +1,13 @@
+[crazyai invent-disguise seed=7804 hash] disguise: 4217 chars
+[crazyai invent-disguise seed=7804 hash] translate: 7188 chars, code=yes, prediction=3.5
+[crazyai invent-disguise seed=7804 hash] measure: status=exact value=15.6464 calibration=0.223
+[crazyai invent-disguise seed=7804 hash] archived -> C:\Users\AlsammanA\Documents\mygithub\crazyAI\archive\disguise_7804_hash
+{
+  "seed": 7804,
+  "target": "hash",
+  "status": "exact",
+  "value": 15.6464,
+  "prediction": 3.5,
+  "calibration": 0.223,
+  "assumption_focus": "the whole buffer must be read once, start to end, in order"
+}

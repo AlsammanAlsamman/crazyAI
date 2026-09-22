@@ -1,0 +1,13 @@
+[crazyai invent-disguise seed=7592 dijkstra] disguise: 1572 chars
+[crazyai invent-disguise seed=7592 dijkstra] translate: 6931 chars, code=yes, prediction=1.5
+[crazyai invent-disguise seed=7592 dijkstra] measure: status=exact value=0.967 calibration=0.645
+[crazyai invent-disguise seed=7592 dijkstra] archived -> C:\Users\AlsammanA\Documents\mygithub\crazyAI\archive\disguise_7592_dijkstra
+{
+  "seed": 7592,
+  "target": "dijkstra",
+  "status": "exact",
+  "value": 0.967,
+  "prediction": 1.5,
+  "calibration": 0.645,
+  "assumption_focus": "a priority structure must be consulted before every relaxation"
+}

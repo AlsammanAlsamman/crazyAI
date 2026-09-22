@@ -1,0 +1,13 @@
+[crazyai invent-disguise seed=7594 dijkstra] disguise: 5770 chars
+[crazyai invent-disguise seed=7594 dijkstra] translate: 6764 chars, code=yes, prediction=1.4
+[crazyai invent-disguise seed=7594 dijkstra] measure: status=exact value=0.991 calibration=0.708
+[crazyai invent-disguise seed=7594 dijkstra] archived -> C:\Users\AlsammanA\Documents\mygithub\crazyAI\archive\disguise_7594_dijkstra
+{
+  "seed": 7594,
+  "target": "dijkstra",
+  "status": "exact",
+  "value": 0.991,
+  "prediction": 1.4,
+  "calibration": 0.708,
+  "assumption_focus": "a road can only be considered once its starting place is fully settled"
+}

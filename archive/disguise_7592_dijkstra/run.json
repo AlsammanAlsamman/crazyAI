@@ -1,0 +1,18 @@
+{
+  "seed": 7592,
+  "target": "dijkstra",
+  "condition": "disguise",
+  "provider": "claudecode",
+  "model": "",
+  "status": "exact",
+  "value": 0.967,
+  "prediction": 1.5,
+  "calibration": 0.645,
+  "assumption_focus": "a priority structure must be consulted before every relaxation",
+  "timing_s": {
+    "disguise": 50.508,
+    "translate": 95.971,
+    "measure": 0.667
+  },
+  "total_s": 147.145
+}

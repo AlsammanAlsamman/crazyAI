@@ -1,0 +1,13 @@
+[crazyai invent-disguise seed=7591 dijkstra] disguise: 4597 chars
+[crazyai invent-disguise seed=7591 dijkstra] translate: 6168 chars, code=yes, prediction=1.4
+[crazyai invent-disguise seed=7591 dijkstra] measure: status=exact value=0.949 calibration=0.678
+[crazyai invent-disguise seed=7591 dijkstra] archived -> C:\Users\AlsammanA\Documents\mygithub\crazyAI\archive\disguise_7591_dijkstra
+{
+  "seed": 7591,
+  "target": "dijkstra",
+  "status": "exact",
+  "value": 0.949,
+  "prediction": 1.4,
+  "calibration": 0.678,
+  "assumption_focus": "each place's distance must be finalized before its neighbors are explored"
+}

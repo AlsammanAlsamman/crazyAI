@@ -182,6 +182,55 @@ def world_only_prompt(world_text: str, target: Target, tools: list[str]) -> str:
     )
 
 
+DISGUISE_SYSTEM = (
+    "You are a playful problem-transformer. You take real technical problems and turn them into everyday, "
+    "non-technical stories that have the exact same underlying structure - the same constraints, the same "
+    "decisions, the same trade-offs - just dressed in ordinary things: animals, objects, people, places. You "
+    "never use mathematical notation, code, or technical vocabulary in your transformed version."
+)
+
+
+def disguise_prompt(target: Target, hint: str = "") -> str:
+    """The problem itself gets the narrative treatment, not the persona: no world, no blend, no known_way, no
+    contract - deliberately mirrors immerse_prompt's asymmetry (the creative/naive side never sees the
+    textbook answer or the code shape). Asks for one concrete, structurally-isomorphic transformation of the
+    real problem into an everyday domain, plus 3 distinct candidate solutions to that transformed problem,
+    entirely in plain words - no math, no code, no jargon anywhere in the answer."""
+    ask = (
+        f"Here is a real problem:\n{target.problem}\n"
+        f"The standard solution to it silently assumes:\n- " + "\n- ".join(target.assumptions) + "\n\n"
+    )
+    if hint:
+        ask += ("When you transform it, make sure your transformed version makes this particular assumption "
+                f"feel awkward, or breakable, or beside the point: \"{hint}\"\n\n")
+    return (
+        ask +
+        "1. Transform this problem into a concrete, everyday, non-technical problem - a different domain "
+        "entirely (animals, objects, people, places, anything but computers or math) - that has the exact "
+        "same underlying structure: the same constraints, the same decisions, the same trade-offs. Write it "
+        "as a short, clear scenario a child could picture, with no mathematical notation, no code, no "
+        "technical vocabulary anywhere. Section heading: TRANSFORMED PROBLEM.\n"
+        "2. Propose exactly three distinct candidate solutions to your transformed problem, each in plain "
+        "words only - what someone would actually do, step by step, in that scenario. No math, no code, no "
+        "technical vocabulary in any of the three. Section heading: SOLUTION 1, SOLUTION 2, SOLUTION 3."
+    )
+
+
+def translate_prompt(disguise_text: str, target: Target, tools: list[str]) -> str:
+    """The second call: DIRECT_SYSTEM's plain engineer voice is given the disguised problem and its own three
+    plain-word solutions to it, then the real problem/contract via the same shared _direct_task_block every
+    other direct-voice condition already uses, and is asked to translate the most promising disguised
+    solution (or a combination) into a real, working implementation of the ORIGINAL problem."""
+    return (
+        "Here is a problem transformed into a different domain, and three candidate solutions someone "
+        "proposed for that transformed version:\n\n" + disguise_text.strip() + "\n\n---\n\n"
+        "Now here is the REAL problem those were a disguised version of. Pick whichever of the three "
+        "disguised solutions translates most directly into a real, correct, fast implementation - or combine "
+        "them - and build that.\n\n" +
+        _direct_task_block(target, tools)
+    )
+
+
 CONTINUOUS_SYSTEM = (
     "You are not an assistant and you are not on Earth. You are a native of the world described below, the most "
     "gifted maker your people have. You have never heard of computers or engineering manuals, and you never step "

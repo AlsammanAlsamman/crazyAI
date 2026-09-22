@@ -1,0 +1,13 @@
+[crazyai invent-disguise seed=7593 dijkstra] disguise: 4458 chars
+[crazyai invent-disguise seed=7593 dijkstra] translate: 6932 chars, code=yes, prediction=1.4
+[crazyai invent-disguise seed=7593 dijkstra] measure: status=exact value=1.184 calibration=0.846
+[crazyai invent-disguise seed=7593 dijkstra] archived -> C:\Users\AlsammanA\Documents\mygithub\crazyAI\archive\disguise_7593_dijkstra
+{
+  "seed": 7593,
+  "target": "dijkstra",
+  "status": "exact",
+  "value": 1.184,
+  "prediction": 1.4,
+  "calibration": 0.846,
+  "assumption_focus": "the next place to finalize is found by comparing against every remaining place"
+}

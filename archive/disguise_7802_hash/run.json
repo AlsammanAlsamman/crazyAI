@@ -1,0 +1,18 @@
+{
+  "seed": 7802,
+  "target": "hash",
+  "condition": "disguise",
+  "provider": "claudecode",
+  "model": "",
+  "status": "exact",
+  "value": 17.3125,
+  "prediction": 3.0,
+  "calibration": 0.173,
+  "assumption_focus": "the state is a single accumulator updated in place, one value",
+  "timing_s": {
+    "disguise": 55.235,
+    "translate": 76.075,
+    "measure": 0.517
+  },
+  "total_s": 131.827
+}

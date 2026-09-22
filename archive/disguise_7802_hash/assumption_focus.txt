@@ -1,0 +1,1 @@
+the state is a single accumulator updated in place, one value

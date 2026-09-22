@@ -1,0 +1,13 @@
+[crazyai invent-disguise seed=7805 hash] disguise: 4414 chars
+[crazyai invent-disguise seed=7805 hash] translate: 6343 chars, code=yes, prediction=3.5
+[crazyai invent-disguise seed=7805 hash] measure: status=exact value=15.6593 calibration=0.223
+[crazyai invent-disguise seed=7805 hash] archived -> C:\Users\AlsammanA\Documents\mygithub\crazyAI\archive\disguise_7805_hash
+{
+  "seed": 7805,
+  "target": "hash",
+  "status": "exact",
+  "value": 15.6593,
+  "prediction": 3.5,
+  "calibration": 0.223,
+  "assumption_focus": "more mixing rounds always means better mixing"
+}

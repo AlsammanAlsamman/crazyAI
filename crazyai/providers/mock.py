@@ -175,6 +175,18 @@ class MockProvider(Provider):
         if "scanning for structures that might be useful outside the context" in system:
             return ("1. Event scheduling with heterogeneous periods: this is a direct model for a multi-rate "
                    "timer wheel - check by comparing against a naive per-tick scan on a real workload.")
+        if "playful problem-transformer" in system:
+            return (
+                "TRANSFORMED PROBLEM\nTwo rows of stepping stones cross a stream, one row slightly longer than "
+                "the other, and a frog wants to know the fewest jumps needed to line up with a friend on the "
+                "far bank without ever hopping backward.\n\n"
+                "SOLUTION 1\nThe frog checks both rows one stone at a time from the near bank, keeping a tally "
+                "of the best jump-count found so far for every possible pairing.\n\n"
+                "SOLUTION 2\nThe frog starts from the far bank instead and works backward, since the last pair "
+                "of stones is always known first.\n\n"
+                "SOLUTION 3\nThe frog only compares stones that are close together in position, skipping any "
+                "pairing that's obviously too far out of line to matter.\n"
+            )
         if "You invent things because they interest you" in system:
             return (
                 "STRUCTURE\nA set of counters, each with its own period, is advanced together by one shared step; "

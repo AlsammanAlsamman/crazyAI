@@ -1,0 +1,18 @@
+{
+  "seed": 7581,
+  "target": "alignment",
+  "condition": "disguise",
+  "provider": "claudecode",
+  "model": "",
+  "status": "exact",
+  "value": 1.067,
+  "prediction": 6.0,
+  "calibration": 0.178,
+  "assumption_focus": "one pair of positions is judged at a time",
+  "timing_s": {
+    "disguise": 72.591,
+    "translate": 184.406,
+    "measure": 0.985
+  },
+  "total_s": 257.982
+}

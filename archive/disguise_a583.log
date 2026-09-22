@@ -1,0 +1,13 @@
+[crazyai invent-disguise seed=7583 alignment] disguise: 4912 chars
+[crazyai invent-disguise seed=7583 alignment] translate: 4247 chars, code=yes, prediction=8.0
+[crazyai invent-disguise seed=7583 alignment] measure: status=exact value=0.578 calibration=0.072
+[crazyai invent-disguise seed=7583 alignment] archived -> C:\Users\AlsammanA\Documents\mygithub\crazyAI\archive\disguise_7583_alignment
+{
+  "seed": 7583,
+  "target": "alignment",
+  "status": "exact",
+  "value": 0.578,
+  "prediction": 8.0,
+  "calibration": 0.072,
+  "assumption_focus": "the whole grid of every position against every other must be filled in"
+}

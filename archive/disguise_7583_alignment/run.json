@@ -1,0 +1,18 @@
+{
+  "seed": 7583,
+  "target": "alignment",
+  "condition": "disguise",
+  "provider": "claudecode",
+  "model": "",
+  "status": "exact",
+  "value": 0.578,
+  "prediction": 8.0,
+  "calibration": 0.072,
+  "assumption_focus": "the whole grid of every position against every other must be filled in",
+  "timing_s": {
+    "disguise": 57.657,
+    "translate": 88.901,
+    "measure": 0.63
+  },
+  "total_s": 147.188
+}

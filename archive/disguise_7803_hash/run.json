@@ -1,0 +1,18 @@
+{
+  "seed": 7803,
+  "target": "hash",
+  "condition": "disguise",
+  "provider": "claudecode",
+  "model": "",
+  "status": "exact",
+  "value": 15.3818,
+  "prediction": 6.0,
+  "calibration": 0.389,
+  "assumption_focus": "mixing one byte requires a multiplication",
+  "timing_s": {
+    "disguise": 62.691,
+    "translate": 73.38,
+    "measure": 0.511
+  },
+  "total_s": 136.582
+}

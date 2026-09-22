@@ -1,0 +1,18 @@
+{
+  "seed": 7584,
+  "target": "alignment",
+  "condition": "disguise",
+  "provider": "claudecode",
+  "model": "",
+  "status": "exact",
+  "value": 4.671,
+  "prediction": 4.0,
+  "calibration": 0.856,
+  "assumption_focus": "a slip (gap) can only be discovered by having already compared the position before it",
+  "timing_s": {
+    "disguise": 65.16,
+    "translate": 185.001,
+    "measure": 0.585
+  },
+  "total_s": 250.747
+}

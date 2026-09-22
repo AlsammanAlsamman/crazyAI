@@ -1,0 +1,18 @@
+{
+  "seed": 7591,
+  "target": "dijkstra",
+  "condition": "disguise",
+  "provider": "claudecode",
+  "model": "",
+  "status": "exact",
+  "value": 0.949,
+  "prediction": 1.4,
+  "calibration": 0.678,
+  "assumption_focus": "each place's distance must be finalized before its neighbors are explored",
+  "timing_s": {
+    "disguise": 45.7,
+    "translate": 78.199,
+    "measure": 0.626
+  },
+  "total_s": 124.525
+}

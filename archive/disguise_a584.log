@@ -1,0 +1,13 @@
+[crazyai invent-disguise seed=7584 alignment] disguise: 4571 chars
+[crazyai invent-disguise seed=7584 alignment] translate: 5597 chars, code=yes, prediction=4.0
+[crazyai invent-disguise seed=7584 alignment] measure: status=exact value=4.671 calibration=0.856
+[crazyai invent-disguise seed=7584 alignment] archived -> C:\Users\AlsammanA\Documents\mygithub\crazyAI\archive\disguise_7584_alignment
+{
+  "seed": 7584,
+  "target": "alignment",
+  "status": "exact",
+  "value": 4.671,
+  "prediction": 4.0,
+  "calibration": 0.856,
+  "assumption_focus": "a slip (gap) can only be discovered by having already compared the position before it"
+}

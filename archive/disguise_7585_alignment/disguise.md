@@ -1,0 +1,24 @@
+# TRANSFORMED PROBLEM
+
+Mia and Leo each have a long paper streamer with a row of stickers glued along it — animals, one after another. Both streamers are exactly the same length. They want a single number that says how alike the two streamers are.
+
+The rules of their game:
+- If the sticker in Mia's streamer and the sticker in Leo's streamer at the same spot are the *same animal*, they earn 1 point.
+- If they're *different animals*, they lose 1 point.
+- Sometimes a streamer has a little bunch or pucker in it — a "slip" — where one sticker doesn't line up with its usual partner and has to be skipped over to make things line up again. A slip costs 2 points.
+
+To find the very best possible score (the friendliest way of lining the two streamers up, slips and all), they lay the streamers along two edges of a big garden path and chalk out a giant scoreboard on the ground: every spot on Mia's streamer gets its own line, every spot on Leo's streamer gets its own line, and where the lines cross, they chalk in a box. Every single box has to be filled in — not just the boxes where the stickers obviously match. To fill in any one box, you need the box just above it, the box just to its left, and the box diagonally above-left of it, already chalked in — because a slip at this spot can only be scored once you know what the tally was one step before it. So they start at one corner and fill the boxes in order, one at a time, working their way to the far corner, where the final number is waiting.
+
+The game's unspoken house rule is that both kids start reading their streamer from the very same end and walk toward the other end together, in the same direction, step for step — as if there's no other way to do it. But there's nothing sacred about that. The streamers don't know which end is "the start." Mia and Leo are standing at opposite ends of the garden path to begin with — it would be perfectly natural for one of them to just start reading from the far end and work backward toward the middle where they meet, instead of both marching the same way from the same corner. Nothing about comparing stickers requires marching in lockstep from a shared starting line.
+
+# SOLUTION 1
+
+Chalk the entire giant scoreboard, corner to corner. Start at the top-left box. Fill in each box going left to right, then drop down to the next line and do the same, always checking the box above, the box to the left, and the box diagonally above-left before writing a number in the current box (best of: match/mismatch bonus using the diagonal box, or a slip penalty using the box above or the box to the left). Once every single box all the way to the bottom-right corner is filled, that last box holds the answer. It's slow and uses the whole garden path, but it's foolproof and always gives the true best score.
+
+# SOLUTION 2
+
+Realize you don't need to keep the whole giant scoreboard lying around forever — you only ever need the *most recent* line of boxes to figure out the next one. So instead of chalking every line and keeping it all, use just two strips of paper: one holds the numbers from the line you just finished, the other is the line you're currently filling in. Fill the new strip one box at a time using the old strip and the box just before it on the new strip, then when the strip is done, it becomes the "old" strip and you start a fresh one. Keep doing this all the way down the path. At the very end, the last strip has just one box left, and that's the answer — same exact score as Solution 1, but you were never holding more than two strips of paper at once instead of the whole path.
+
+# SOLUTION 3
+
+Skip building the whole giant scoreboard at all. Cut each streamer's job in half at its middle sticker. Have Mia read her streamer forward from her end toward the middle, tallying scores as she goes, while Leo reads his streamer *backward*, starting from his far end and working toward the middle to meet her. Do this same forward-tally / backward-tally trick from both ends for both halves, and where the two tallies meet in the middle, add them together — that split point tells you exactly where the best lineup passes through the center without ever having chalked most of the boxes. Then do the same trick again separately on the left half and the right half, splitting each in half again, meeting in their own middles, and so on, until the pieces are so small the answer is obvious. Add everything up and you get the very same final score — but you never once needed both kids marching the same direction from the same starting line; reading one half of the streamer backward turns out to be no different from reading it forward, since the boxes and their crossings don't actually care which way anyone is walking.

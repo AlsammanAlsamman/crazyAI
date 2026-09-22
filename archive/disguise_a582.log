@@ -1,0 +1,13 @@
+[crazyai invent-disguise seed=7582 alignment] disguise: 5368 chars
+[crazyai invent-disguise seed=7582 alignment] translate: 5805 chars, code=yes, prediction=8.0
+[crazyai invent-disguise seed=7582 alignment] measure: status=exact value=0.587 calibration=0.073
+[crazyai invent-disguise seed=7582 alignment] archived -> C:\Users\AlsammanA\Documents\mygithub\crazyAI\archive\disguise_7582_alignment
+{
+  "seed": 7582,
+  "target": "alignment",
+  "status": "exact",
+  "value": 0.587,
+  "prediction": 8.0,
+  "calibration": 0.073,
+  "assumption_focus": "every cell of the comparison depends on the ones above, to the left, and diagonally above-left, computed in that order"
+}

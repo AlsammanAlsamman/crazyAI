@@ -1,0 +1,49 @@
+{
+  "target": "alignment",
+  "artifact": "kernel",
+  "condition": "disguise",
+  "measurement": {
+    "results": [
+      {
+        "n": 64,
+        "time": 1.99989881e-06,
+        "ref_time": 2.49990262e-06,
+        "ref_score": -12,
+        "cand_score": -12,
+        "correct": true,
+        "speedup_vs_dp": 1.25,
+        "status": "exact"
+      },
+      {
+        "n": 256,
+        "time": 3.72999348e-05,
+        "ref_time": 3.60000413e-05,
+        "ref_score": -48,
+        "cand_score": -48,
+        "correct": true,
+        "speedup_vs_dp": 0.965,
+        "status": "exact"
+      },
+      {
+        "n": 1024,
+        "time": 0.000628300011,
+        "ref_time": 0.000560999964,
+        "ref_score": -148,
+        "cand_score": -148,
+        "correct": true,
+        "speedup_vs_dp": 0.893,
+        "status": "exact"
+      }
+    ],
+    "largest_n": 1024,
+    "status": "exact",
+    "speedup_vs_dp": 0.893,
+    "value": 0.893,
+    "prediction_target": 0.893,
+    "reading": "value = speedup vs. the Needleman-Wunsch reference, or 0 if the score is wrong - correctness is binary here, not a tolerance."
+  },
+  "value": 0.893,
+  "status": "exact",
+  "calibration": 0.149,
+  "prediction": 6.0
+}
