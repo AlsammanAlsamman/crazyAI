@@ -1,0 +1,42 @@
+{
+  "seed": 7801,
+  "target": "hash",
+  "condition": "disguise_all",
+  "provider": "claudecode",
+  "model": "",
+  "from_disguise": true,
+  "status": "exact",
+  "value": 30.9587,
+  "best": 3,
+  "solutions": [
+    {
+      "solution": 1,
+      "status": "exact",
+      "value": 5.6488,
+      "prediction": 6.0
+    },
+    {
+      "solution": 2,
+      "status": "ERROR",
+      "value": 0.0,
+      "prediction": 45.0
+    },
+    {
+      "solution": 3,
+      "status": "exact",
+      "value": 30.9587,
+      "prediction": 12.0
+    }
+  ],
+  "assumption_focus": "each byte must be mixed into the running state before the next byte is read",
+  "timing_s": {
+    "disguise": 0.0,
+    "translate_1": 0.003,
+    "measure_1": 0.0,
+    "translate_2": 0.002,
+    "measure_2": 8.335,
+    "translate_3": 0.004,
+    "measure_3": 0.0
+  },
+  "total_s": 8.346
+}

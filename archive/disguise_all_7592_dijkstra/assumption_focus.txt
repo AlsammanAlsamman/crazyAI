@@ -1,0 +1,1 @@
+a priority structure must be consulted before every relaxation

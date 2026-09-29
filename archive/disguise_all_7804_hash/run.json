@@ -1,0 +1,42 @@
+{
+  "seed": 7804,
+  "target": "hash",
+  "condition": "disguise_all",
+  "provider": "claudecode",
+  "model": "",
+  "from_disguise": true,
+  "status": "exact",
+  "value": 35.6072,
+  "best": 2,
+  "solutions": [
+    {
+      "solution": 1,
+      "status": "exact",
+      "value": 29.3031,
+      "prediction": 20.0
+    },
+    {
+      "solution": 2,
+      "status": "exact",
+      "value": 35.6072,
+      "prediction": 25.0
+    },
+    {
+      "solution": 3,
+      "status": "exact",
+      "value": 26.7436,
+      "prediction": 18.0
+    }
+  ],
+  "assumption_focus": "the whole buffer must be read once, start to end, in order",
+  "timing_s": {
+    "disguise": 0.005,
+    "translate_1": 347.927,
+    "measure_1": 0.673,
+    "translate_2": 374.61,
+    "measure_2": 0.888,
+    "translate_3": 210.23,
+    "measure_3": 0.633
+  },
+  "total_s": 934.967
+}

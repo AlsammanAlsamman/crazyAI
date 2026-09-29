@@ -1,0 +1,42 @@
+{
+  "seed": 7584,
+  "target": "alignment",
+  "condition": "disguise_all",
+  "provider": "claudecode",
+  "model": "",
+  "from_disguise": true,
+  "status": "exact",
+  "value": 11.79,
+  "best": 3,
+  "solutions": [
+    {
+      "solution": 1,
+      "status": "exact",
+      "value": 11.147,
+      "prediction": 14.0
+    },
+    {
+      "solution": 2,
+      "status": "exact",
+      "value": 10.332,
+      "prediction": 10.0
+    },
+    {
+      "solution": 3,
+      "status": "exact",
+      "value": 11.79,
+      "prediction": 20.0
+    }
+  ],
+  "assumption_focus": "a slip (gap) can only be discovered by having already compared the position before it",
+  "timing_s": {
+    "disguise": 0.0,
+    "translate_1": 461.278,
+    "measure_1": 0.916,
+    "translate_2": 324.58,
+    "measure_2": 1.043,
+    "translate_3": 618.677,
+    "measure_3": 0.996
+  },
+  "total_s": 1407.489
+}

@@ -1,0 +1,1 @@
+each place's distance must be finalized before its neighbors are explored

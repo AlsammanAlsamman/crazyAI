@@ -15,6 +15,7 @@
     crazyai invent-world-only --seed 42 --target matmul [--blend anneal] [--provider mock]   material, no persona
     crazyai invent-continuous --seed 42 --target matmul [--provider mock]   narrative, one continuous call, no persona swap
     crazyai invent-disguise --seed 42 --target matmul [--assumption 0] [--provider mock]   disguise the problem, not Claude
+    crazyai invent-disguise-all --seed 42 --target matmul [--from-disguise] [--provider mock]   let the benchmark pick among all 3 disguised solutions
     crazyai discover --seed 42 [--blend anneal] [--provider mock]   solution-first: invent something, let the AI propose what it's for
     crazyai discover-baseline --seed 42 [--provider mock]   discover-mode baseline: no world blend, no persona chain
     crazyai invent-rank [--target matmul] [--top 20]
@@ -277,6 +278,27 @@ def cmd_invent_disguise(args) -> int:
     return 1 if failures == args.n else 0
 
 
+def cmd_invent_disguise_all(args) -> int:
+    from crazyai.pipeline.disguise_all import DisguiseAll
+
+    provider = _provider(args)
+    failures = 0
+    for i in range(args.n):
+        seed = args.seed + i
+        run = DisguiseAll(seed=seed, target=args.target, assumption=args.assumption, force=args.force,
+                          archive_dir=Path(args.archive), from_disguise=args.from_disguise)
+        try:
+            summary = run.execute(provider)
+        except Exception as exc:  # noqa: BLE001 - one bad seed must not abort the batch
+            failures += 1
+            print(json.dumps({"seed": seed, "target": args.target, "status": "error", "error": str(exc)[-2000:]}),
+                 flush=True)
+            continue
+        print(json.dumps({k: summary[k] for k in ("seed", "target", "status", "value", "best", "solutions",
+                                                   "assumption_focus")}, indent=2), flush=True)
+    return 1 if failures == args.n else 0
+
+
 def cmd_discover(args) -> int:
     from crazyai.pipeline.discover import Discover
 
@@ -444,6 +466,14 @@ def build_parser() -> argparse.ArgumentParser:
     ivd.add_argument("--assumption", default="", help="pin assumption_focus (same as invent's --assumption)")
     add_provider(ivd)
     ivd.set_defaults(fn=cmd_invent_disguise)
+    iva = sub.add_parser("invent-disguise-all", help="let the benchmark choose: translate and measure all three disguised solutions, keep the fastest exact one")
+    iva.add_argument("--seed", type=int, required=True)
+    iva.add_argument("--n", type=int, default=1, help="number of consecutive seeds")
+    iva.add_argument("--target", default="matmul", choices=TARGETS)
+    iva.add_argument("--assumption", default="", help="pin assumption_focus (same as invent's --assumption)")
+    iva.add_argument("--from-disguise", action="store_true", help="reuse disguise.md from the matching invent-disguise run")
+    add_provider(iva)
+    iva.set_defaults(fn=cmd_invent_disguise_all)
     dc = sub.add_parser("discover", help="solution-first invention: no target, no problem - invent something, then let the AI propose what it's for")
     dc.add_argument("--seed", type=int, required=True)
     dc.add_argument("--n", type=int, default=1, help="number of consecutive seeds")

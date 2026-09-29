@@ -1,0 +1,1 @@
+the whole grid of every position against every other must be filled in

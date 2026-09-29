@@ -1,0 +1,35 @@
+[crazyai invent-disguise-all seed=7582 alignment] solution 1: translated, code=yes, prediction=25.0
+[crazyai invent-disguise-all seed=7582 alignment] solution 1: status=exact value=10.525
+[crazyai invent-disguise-all seed=7582 alignment] solution 2: translated, code=yes, prediction=12.0
+[crazyai invent-disguise-all seed=7582 alignment] solution 2: status=exact value=15.997
+[crazyai invent-disguise-all seed=7582 alignment] solution 3: translated, code=yes, prediction=12.0
+[crazyai invent-disguise-all seed=7582 alignment] solution 3: status=exact value=10.37
+[crazyai invent-disguise-all seed=7582 alignment] best = solution 2 (exact, 15.997) -> C:\Users\AlsammanA\Documents\mygithub\crazyAI\archive\disguise_all_7582_alignment
+{
+  "seed": 7582,
+  "target": "alignment",
+  "status": "exact",
+  "value": 15.997,
+  "best": 2,
+  "solutions": [
+    {
+      "solution": 1,
+      "status": "exact",
+      "value": 10.525,
+      "prediction": 25.0
+    },
+    {
+      "solution": 2,
+      "status": "exact",
+      "value": 15.997,
+      "prediction": 12.0
+    },
+    {
+      "solution": 3,
+      "status": "exact",
+      "value": 10.37,
+      "prediction": 12.0
+    }
+  ],
+  "assumption_focus": "every cell of the comparison depends on the ones above, to the left, and diagonally above-left, computed in that order"
+}

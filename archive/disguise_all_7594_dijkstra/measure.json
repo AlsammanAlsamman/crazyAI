@@ -1,0 +1,27 @@
+{
+  "target": "dijkstra",
+  "condition": "disguise_all",
+  "solutions": [
+    {
+      "solution": 1,
+      "status": "exact",
+      "value": 0.48,
+      "prediction": 2.5
+    },
+    {
+      "solution": 2,
+      "status": "exact",
+      "value": 1.547,
+      "prediction": 1.8
+    },
+    {
+      "solution": 3,
+      "status": "exact",
+      "value": 2.781,
+      "prediction": 3.0
+    }
+  ],
+  "best": 3,
+  "status": "exact",
+  "value": 2.781
+}

@@ -231,6 +231,22 @@ def translate_prompt(disguise_text: str, target: Target, tools: list[str]) -> st
     )
 
 
+def translate_one_prompt(problem_text: str, solution_text: str, target: Target, tools: list[str]) -> str:
+    """`invent-disguise-all`'s translate call: one disguised solution only, and no choice - the engineer must
+    build THAT solution's mechanism, so the benchmark (not the persona) decides which of the three is best.
+    Same _direct_task_block as every other direct-voice condition."""
+    return (
+        "Here is a problem transformed into a different domain, and ONE candidate solution someone proposed for "
+        "that transformed version:\n\n" + problem_text.strip() + "\n\nTHE SOLUTION TO BUILD\n\n" +
+        solution_text.strip() + "\n\n---\n\n"
+        "Now here is the REAL problem that was a disguised version of. Translate THIS solution's mechanism "
+        "faithfully into a real, correct, fast implementation. Do not switch to a different approach; if it "
+        "turns out slow, improve how you implement this mechanism rather than replacing it. Say in APPROACH "
+        "how each part of the disguised solution maps onto the real problem.\n\n" +
+        _direct_task_block(target, tools)
+    )
+
+
 CONTINUOUS_SYSTEM = (
     "You are not an assistant and you are not on Earth. You are a native of the world described below, the most "
     "gifted maker your people have. You have never heard of computers or engineering manuals, and you never step "

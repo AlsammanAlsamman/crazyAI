@@ -1,0 +1,42 @@
+{
+  "seed": 7583,
+  "target": "alignment",
+  "condition": "disguise_all",
+  "provider": "claudecode",
+  "model": "",
+  "from_disguise": true,
+  "status": "exact",
+  "value": 22.339,
+  "best": 1,
+  "solutions": [
+    {
+      "solution": 1,
+      "status": "exact",
+      "value": 22.339,
+      "prediction": 15.0
+    },
+    {
+      "solution": 2,
+      "status": "exact",
+      "value": 18.698,
+      "prediction": 12.0
+    },
+    {
+      "solution": 3,
+      "status": "exact",
+      "value": 15.34,
+      "prediction": 15.0
+    }
+  ],
+  "assumption_focus": "the whole grid of every position against every other must be filled in",
+  "timing_s": {
+    "disguise": 0.0,
+    "translate_1": 250.43,
+    "measure_1": 1.237,
+    "translate_2": 503.703,
+    "measure_2": 1.046,
+    "translate_3": 509.67,
+    "measure_3": 1.051
+  },
+  "total_s": 1267.14
+}

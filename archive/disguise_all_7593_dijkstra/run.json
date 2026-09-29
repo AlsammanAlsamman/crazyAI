@@ -1,0 +1,42 @@
+{
+  "seed": 7593,
+  "target": "dijkstra",
+  "condition": "disguise_all",
+  "provider": "claudecode",
+  "model": "",
+  "from_disguise": true,
+  "status": "exact",
+  "value": 2.039,
+  "best": 2,
+  "solutions": [
+    {
+      "solution": 1,
+      "status": "exact",
+      "value": 0.497,
+      "prediction": 2.5
+    },
+    {
+      "solution": 2,
+      "status": "exact",
+      "value": 2.039,
+      "prediction": 2.5
+    },
+    {
+      "solution": 3,
+      "status": "exact",
+      "value": 1.923,
+      "prediction": 1.8
+    }
+  ],
+  "assumption_focus": "the next place to finalize is found by comparing against every remaining place",
+  "timing_s": {
+    "disguise": 0.004,
+    "translate_1": 138.33,
+    "measure_1": 1.329,
+    "translate_2": 717.279,
+    "measure_2": 0.829,
+    "translate_3": 192.323,
+    "measure_3": 2.034
+  },
+  "total_s": 1052.13
+}

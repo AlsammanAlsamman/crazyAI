@@ -1,0 +1,27 @@
+{
+  "target": "hash",
+  "condition": "disguise_all",
+  "solutions": [
+    {
+      "solution": 1,
+      "status": "exact",
+      "value": 18.3099,
+      "prediction": 14.0
+    },
+    {
+      "solution": 2,
+      "status": "COMPILE_ERROR",
+      "value": 0.0,
+      "prediction": 12.0
+    },
+    {
+      "solution": 3,
+      "status": "exact",
+      "value": 28.0505,
+      "prediction": 12.0
+    }
+  ],
+  "best": 3,
+  "status": "exact",
+  "value": 28.0505
+}

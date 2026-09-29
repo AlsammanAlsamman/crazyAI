@@ -1,0 +1,42 @@
+{
+  "seed": 7595,
+  "target": "dijkstra",
+  "condition": "disguise_all",
+  "provider": "claudecode",
+  "model": "",
+  "from_disguise": true,
+  "status": "exact",
+  "value": 1.562,
+  "best": 2,
+  "solutions": [
+    {
+      "solution": 1,
+      "status": "exact",
+      "value": 0.503,
+      "prediction": 3.0
+    },
+    {
+      "solution": 2,
+      "status": "exact",
+      "value": 1.562,
+      "prediction": 2.3
+    },
+    {
+      "solution": 3,
+      "status": "exact",
+      "value": 1.247,
+      "prediction": 2.0
+    }
+  ],
+  "assumption_focus": "the whole graph must be explored to know any single distance",
+  "timing_s": {
+    "disguise": 0.003,
+    "translate_1": 238.344,
+    "measure_1": 1.093,
+    "translate_2": 273.095,
+    "measure_2": 0.849,
+    "translate_3": 479.746,
+    "measure_3": 1.102
+  },
+  "total_s": 994.232
+}

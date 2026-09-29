@@ -1,0 +1,42 @@
+{
+  "seed": 7802,
+  "target": "hash",
+  "condition": "disguise_all",
+  "provider": "claudecode",
+  "model": "",
+  "from_disguise": true,
+  "status": "exact",
+  "value": 37.9415,
+  "best": 2,
+  "solutions": [
+    {
+      "solution": 1,
+      "status": "exact",
+      "value": 6.6487,
+      "prediction": 6.0
+    },
+    {
+      "solution": 2,
+      "status": "exact",
+      "value": 37.9415,
+      "prediction": 20.0
+    },
+    {
+      "solution": 3,
+      "status": "exact",
+      "value": 32.4032,
+      "prediction": 20.0
+    }
+  ],
+  "assumption_focus": "the state is a single accumulator updated in place, one value",
+  "timing_s": {
+    "disguise": 0.0,
+    "translate_1": 187.174,
+    "measure_1": 0.837,
+    "translate_2": 231.237,
+    "measure_2": 0.62,
+    "translate_3": 337.069,
+    "measure_3": 0.887
+  },
+  "total_s": 757.826
+}

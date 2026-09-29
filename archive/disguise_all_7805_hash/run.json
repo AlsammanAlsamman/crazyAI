@@ -1,0 +1,42 @@
+{
+  "seed": 7805,
+  "target": "hash",
+  "condition": "disguise_all",
+  "provider": "claudecode",
+  "model": "",
+  "from_disguise": true,
+  "status": "exact",
+  "value": 28.0505,
+  "best": 3,
+  "solutions": [
+    {
+      "solution": 1,
+      "status": "exact",
+      "value": 18.3099,
+      "prediction": 14.0
+    },
+    {
+      "solution": 2,
+      "status": "COMPILE_ERROR",
+      "value": 0.0,
+      "prediction": 12.0
+    },
+    {
+      "solution": 3,
+      "status": "exact",
+      "value": 28.0505,
+      "prediction": 12.0
+    }
+  ],
+  "assumption_focus": "more mixing rounds always means better mixing",
+  "timing_s": {
+    "disguise": 0.0,
+    "translate_1": 205.831,
+    "measure_1": 0.606,
+    "translate_2": 100.182,
+    "measure_2": 0.395,
+    "translate_3": 291.772,
+    "measure_3": 0.684
+  },
+  "total_s": 599.474
+}

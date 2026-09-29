@@ -757,7 +757,7 @@ examples/  tests/  assets/  archive/
 docs/                    IMAGINATION.md  trials/ (write-ups of recent trial batches)
 ```
 
-Recent experiment write-ups (disguise-and-translate, protocol v3, world-only,
+Recent experiment write-ups (disguise-all, disguise-and-translate, protocol v3, world-only,
 swapped-world, discover mode) are in [`docs/trials/`](docs/trials/README.md).
 
 ## Intended use

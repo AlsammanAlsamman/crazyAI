@@ -1,0 +1,42 @@
+{
+  "seed": 7581,
+  "target": "alignment",
+  "condition": "disguise_all",
+  "provider": "claudecode",
+  "model": "",
+  "from_disguise": true,
+  "status": "exact",
+  "value": 14.128,
+  "best": 3,
+  "solutions": [
+    {
+      "solution": 1,
+      "status": "exact",
+      "value": 1.22,
+      "prediction": 3.5
+    },
+    {
+      "solution": 2,
+      "status": "exact",
+      "value": 10.607,
+      "prediction": 12.0
+    },
+    {
+      "solution": 3,
+      "status": "exact",
+      "value": 14.128,
+      "prediction": 15.0
+    }
+  ],
+  "assumption_focus": "one pair of positions is judged at a time",
+  "timing_s": {
+    "disguise": 0.01,
+    "translate_1": 256.923,
+    "measure_1": 0.694,
+    "translate_2": 454.592,
+    "measure_2": 1.06,
+    "translate_3": 630.26,
+    "measure_3": 1.293
+  },
+  "total_s": 1344.832
+}

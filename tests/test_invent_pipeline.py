@@ -426,3 +426,33 @@ def test_disguise_pipeline_with_mock(tmp_path):
     assert not (tmp_path / "baseline_index.jsonl").exists()
     assert not (tmp_path / "invent_index.jsonl").exists()
     assert not (tmp_path / "world_only_index.jsonl").exists()
+
+
+def test_split_disguise():
+    from crazyai.pipeline.disguise_all import split_disguise
+    problem, sols = split_disguise("TRANSFORMED PROBLEM\nfrogs\n\nSOLUTION 1\nhop\n\n**SOLUTION 2**\nswim\n\nSOLUTION 3\nfly")
+    assert problem == "TRANSFORMED PROBLEM\nfrogs"
+    assert sols == {1: "hop", 2: "swim", 3: "fly"}
+
+
+def test_disguise_all_pipeline_with_mock(tmp_path):
+    if shutil.which("gcc") is None:
+        pytest.skip("no C compiler")
+    from crazyai.pipeline.disguise import Disguise
+    from crazyai.pipeline.disguise_all import DisguiseAll, load_disguise_all_index
+    from crazyai.pipeline.invent_prompts import translate_one_prompt
+    from crazyai.targets import get_target
+    Disguise(seed=1, target="matmul", archive_dir=tmp_path).execute(get_provider("mock"))
+    run = DisguiseAll(seed=1, target="matmul", archive_dir=tmp_path, from_disguise=True)
+    s = run.execute(get_provider("mock"))
+    # the disguise is reused verbatim, not regenerated
+    assert (run.dir / "disguise.md").read_text() == (tmp_path / "disguise_1_matmul" / "disguise.md").read_text()
+    for k in (1, 2, 3):
+        assert (run.dir / f"sol_{k}" / "measure.json").exists()
+    assert len(s["solutions"]) == 3 and s["best"] in (1, 2, 3)
+    assert s["value"] == max(r["value"] for r in s["solutions"] if r["status"] == s["status"])
+    assert len(load_disguise_all_index(tmp_path)) == 1
+    assert not (tmp_path / "disguise_index.jsonl").read_text().count("\n") > 1
+    # the per-solution prompt carries exactly one solution and forbids switching
+    p = translate_one_prompt("TRANSFORMED PROBLEM\nfrogs", "hop", get_target("matmul"), [])
+    assert "hop" in p and "Do not switch" in p and "SOLUTION 2" not in p

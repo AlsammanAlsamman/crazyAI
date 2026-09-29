@@ -1,0 +1,1 @@
+one pair of positions is judged at a time

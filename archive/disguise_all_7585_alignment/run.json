@@ -1,0 +1,42 @@
+{
+  "seed": 7585,
+  "target": "alignment",
+  "condition": "disguise_all",
+  "provider": "claudecode",
+  "model": "",
+  "from_disguise": true,
+  "status": "exact",
+  "value": 10.125,
+  "best": 1,
+  "solutions": [
+    {
+      "solution": 1,
+      "status": "exact",
+      "value": 10.125,
+      "prediction": 14.0
+    },
+    {
+      "solution": 2,
+      "status": "exact",
+      "value": 9.724,
+      "prediction": 25.0
+    },
+    {
+      "solution": 3,
+      "status": "WRONG",
+      "value": 0.0,
+      "prediction": 12.0
+    }
+  ],
+  "assumption_focus": "both strings are read start to end in the same direction",
+  "timing_s": {
+    "disguise": 0.016,
+    "translate_1": 314.587,
+    "measure_1": 1.031,
+    "translate_2": 303.864,
+    "measure_2": 0.903,
+    "translate_3": 649.979,
+    "measure_3": 1.546
+  },
+  "total_s": 1271.926
+}

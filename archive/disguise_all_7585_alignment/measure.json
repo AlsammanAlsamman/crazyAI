@@ -1,0 +1,27 @@
+{
+  "target": "alignment",
+  "condition": "disguise_all",
+  "solutions": [
+    {
+      "solution": 1,
+      "status": "exact",
+      "value": 10.125,
+      "prediction": 14.0
+    },
+    {
+      "solution": 2,
+      "status": "exact",
+      "value": 9.724,
+      "prediction": 25.0
+    },
+    {
+      "solution": 3,
+      "status": "WRONG",
+      "value": 0.0,
+      "prediction": 12.0
+    }
+  ],
+  "best": 1,
+  "status": "exact",
+  "value": 10.125
+}

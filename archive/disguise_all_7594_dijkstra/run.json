@@ -1,0 +1,42 @@
+{
+  "seed": 7594,
+  "target": "dijkstra",
+  "condition": "disguise_all",
+  "provider": "claudecode",
+  "model": "",
+  "from_disguise": true,
+  "status": "exact",
+  "value": 2.781,
+  "best": 3,
+  "solutions": [
+    {
+      "solution": 1,
+      "status": "exact",
+      "value": 0.48,
+      "prediction": 2.5
+    },
+    {
+      "solution": 2,
+      "status": "exact",
+      "value": 1.547,
+      "prediction": 1.8
+    },
+    {
+      "solution": 3,
+      "status": "exact",
+      "value": 2.781,
+      "prediction": 3.0
+    }
+  ],
+  "assumption_focus": "a road can only be considered once its starting place is fully settled",
+  "timing_s": {
+    "disguise": 0.0,
+    "translate_1": 200.691,
+    "measure_1": 1.078,
+    "translate_2": 125.477,
+    "measure_2": 1.16,
+    "translate_3": 243.006,
+    "measure_3": 0.798
+  },
+  "total_s": 572.212
+}

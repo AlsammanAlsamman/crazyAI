@@ -1,0 +1,1 @@
+both strings are read start to end in the same direction

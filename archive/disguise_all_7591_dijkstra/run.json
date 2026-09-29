@@ -1,0 +1,42 @@
+{
+  "seed": 7591,
+  "target": "dijkstra",
+  "condition": "disguise_all",
+  "provider": "claudecode",
+  "model": "",
+  "from_disguise": true,
+  "status": "exact",
+  "value": 1.696,
+  "best": 3,
+  "solutions": [
+    {
+      "solution": 1,
+      "status": "exact",
+      "value": 1.044,
+      "prediction": 3.0
+    },
+    {
+      "solution": 2,
+      "status": "exact",
+      "value": 1.429,
+      "prediction": 2.2
+    },
+    {
+      "solution": 3,
+      "status": "exact",
+      "value": 1.696,
+      "prediction": 3.0
+    }
+  ],
+  "assumption_focus": "each place's distance must be finalized before its neighbors are explored",
+  "timing_s": {
+    "disguise": 0.008,
+    "translate_1": 368.858,
+    "measure_1": 1.47,
+    "translate_2": 346.535,
+    "measure_2": 0.822,
+    "translate_3": 217.926,
+    "measure_3": 0.774
+  },
+  "total_s": 936.392
+}
