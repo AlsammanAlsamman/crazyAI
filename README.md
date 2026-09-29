@@ -17,6 +17,35 @@ Two kinds of tools do the work:
 
 Randomness enters only through a seeded generator, every draw is logged, every step writes a file. Same seed + same model = same artifact. Numeric kernels (sieve, Collatz orbits, Goldbach-style counts, Monte Carlo) are in C++ with pure-Python fallbacks.
 
+## What the experiments found (as of 2026-09-29)
+
+`crazyai invent` has been run for real across 9 targets, then tested against a plain direct
+prompt and a series of one-change-at-a-time variants.
+
+- **Real, verified speedups:** 42 real wins in 85 narrative trials (Walsh–Hadamard 182x,
+  quantum simulation 141x, Reed–Solomon 21x, matmul 16x). Every one is a known, published
+  technique, not a new algorithm.
+- **Narrative isn't why the wins happen, on pooled numbers.** A plain direct prompt matched
+  or beat it (98% vs. 89% exact, 69% vs. 55% wins). Narrative won on matmul and k-mer and lost
+  on alignment, hashing and Dijkstra.
+- **The ideas were often right but chosen and built badly.** The newest variant,
+  `invent-disguise-all`, builds all three disguised solutions and lets the benchmark pick. It
+  is the first change to help all three hard targets at once:
+
+| Target | Direct prompt | Best earlier variant | `invent-disguise-all` |
+|---|---|---|---|
+| alignment | 2.35x | 4.85x (best seed) | **12.72x** mean, 5/5 wins |
+| dijkstra | 1.28x | 1.30x (best seed) | **2.00x** mean, 4/4 wins |
+| hash | 14.5x | 15.9x mean | **29.8x** mean, 5/5 wins (quality-gated) |
+
+  The model and compute (3 calls against 1) aren't controlled yet. The fastest hash winner
+  was a broken hash that passed the built-in check, so best-of-several selection needs a
+  stronger correctness gate.
+
+Write-ups: [`docs/trials/`](https://github.com/AlsammanAlsamman/crazyAI/blob/master/docs/trials/README.md). The full record, the 42-page
+documentation and a 7-page summary are in
+[crazyai-trials](https://github.com/AlsammanAlsamman/crazyai-trials).
+
 ---
 
 ## Install
@@ -129,6 +158,18 @@ crazyai invent --seed 1 --n 20 --target matmul --harvest 5          # with Claud
 crazyai invent-rank --target matmul             # ranked by discovery = value × (0.5 + 0.5 × imagination)
 crazyai harvest-corpus --kind poem --n 20 --out crazyai/data/imagination/poems_candidates.yaml --provider claudecode
 crazyai invent --seed 1 --n 10 --target matmul --bias-from-history --evolve-corpus --provider claudecode  # opt-in feedback loop
+```
+
+Variants that each change one thing, for testing *why* results happen:
+
+```bash
+crazyai invent-baseline --seed 42 --target matmul        # direct prompt, no narrative
+crazyai invent-continuous --seed 42 --target matmul      # narrative in one continuous call, no persona swap
+crazyai invent-world-only --seed 42 --target matmul      # world material, no persona
+crazyai invent-disguise --seed 42 --target matmul        # disguise the problem, not Claude; translate one solution
+crazyai invent-disguise-all --seed 42 --target matmul    # build all 3 disguised solutions, benchmark picks
+crazyai discover --seed 42                               # solution first: invent, then ask what it's for
+crazyai discover-baseline --seed 42                      # discover's direct-prompt baseline
 ```
 
 ### Providers
