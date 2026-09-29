@@ -1,6 +1,6 @@
 # Trials: recent experiments
 
-Write-ups of the most recent real trial batches (2026-09-20 to 2026-09-22).
+Write-ups of the most recent real trial batches (2026-09-20 to 2026-09-29).
 Every number is read from archived `measure.json` files under `archive/`.
 The full running record, including the older matmul/alignment/nim/... rounds,
 lives in the separate `crazyai-trials` repo (`README.md` and `AIM.md`).
@@ -11,6 +11,7 @@ that is exact and faster than the reference.
 
 | Date | Page | Question | One-line result |
 |---|---|---|---|
+| 2026-09-29 | [Retroactive immersion check](retro-immersion.md) | Does immersion in the native's text predict speedup? | No - immersion is saturated; the loss happens in the bend step |
 | 2026-09-22 | [Disguise-and-translate](disguise.md) | Does disguising the *problem* (not Claude) help? | New best on hash (15.891x), new worst on dijkstra (0.818x), alignment mid-pack |
 | 2026-09-21 | [Protocol v3: regime detection](protocol-v3.md) | Does adding regime-detection close dijkstra's gap? | No (0.983x, 1/5) - but it revealed the real gap is fallback-heap quality |
 | 2026-09-21 | [World-only](world-only.md) | Does "material over persona" transfer to real targets? | Mixed: hash up, alignment flat, dijkstra down |
