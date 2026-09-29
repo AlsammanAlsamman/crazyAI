@@ -754,7 +754,11 @@ crazyai/
   worlds/                ready-made impossible universes (partial_primes)
 cpp/kernels.cpp          sieve, collatz, even+prime counts, Monte Carlo (ctypes, C ABI)
 examples/  tests/  assets/  archive/
+docs/                    IMAGINATION.md  trials/ (write-ups of recent trial batches)
 ```
+
+Recent experiment write-ups (disguise-and-translate, protocol v3, world-only,
+swapped-world, discover mode) are in [`docs/trials/`](docs/trials/README.md).
 
 ## Intended use
 
