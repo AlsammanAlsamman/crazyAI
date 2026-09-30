@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "The die-stone never resets between marks: every fold carries the callus of all previous folds (one persistent state threaded through the whole pile).",
+    "Each mark's weight is pressed into the stone's already-turned position, not a clean face, so earlier marks bend how later marks land (order-dependent, non-commutative folding with divergence amplified each fold).",
+    "Only the stone's final seated position read against the wooden keeps leaves the desk; all intermediate turns and residue are swept away and discarded (internal state hidden, single finalized output)."
+  ],
+  "implemented_mechanism": 1,
+  "survival": "partial",
+  "fallback": true,
+  "core_technique": "xxHash64: four 64-bit lanes fed 8-byte words with the add-multiply/rotl-31/multiply round, lane merge by rotate-and-add, 8/4/1-byte tail folds, plus an xor-shift-multiply avalanche finalizer — with a small added triangular cross-lane carry (each lane XORs the rotated previous lane's round output, plus a 'callus' word persisting across iterations) as the only non-standard element.",
+  "valid": true
+}

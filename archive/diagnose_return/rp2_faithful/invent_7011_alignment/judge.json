@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "Hang the two symbol strings on crossed row/column lamp-posts, forming a lattice of lazily-lit cells whose spark colour (match / gap-in / gap-out) is chosen by the crossing symbol pair.",
+    "Fold the lattice sheet along its slanting middle so all cells with equal row+column sum press into a single crease (anti-diagonal wavefront processed as one unit).",
+    "Read the three stacked crease layers (current + two prior diagonals) at once, taking the best of straight-through vs. one-slip, and let the spent bottom layer drift off — keeping only the two most recent creases."
+  ],
+  "implemented_mechanism": 2,
+  "survival": "full",
+  "fallback": false,
+  "core_technique": "Anti-diagonal (wavefront) Needleman-Wunsch: each anti-diagonal d = i+j is computed as one vector pass from the two previous anti-diagonals held in three rotating buffers, with one sequence pre-reversed so the diagonal becomes a contiguous SIMD-friendly stride-1 span, vectorised with AVX2/AVX-512BW 16-bit lanes (32-bit variant past the 16-bit score range, scalar two-row DP only for n < 32).",
+  "valid": true
+}

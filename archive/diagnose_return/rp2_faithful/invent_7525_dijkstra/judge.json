@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "Loose a nightingale down every road out of a settled place; it sings one note per stride, grows hoarser with distance, dies at the first board, and its dying note is carved into a lattice holding one fixed slot per place (keeping only the fainter of two notes at a slot; unreached places stay blank).",
+    "At each board a cow's-head woman milks a smaller cow to re-measure the note as it would arrive via the last settled board plus the connecting stretch, and the slot is recut only when that milk is thinner than the existing carving.",
+    "Always settle next whichever unsettled lattice slot holds the quietest note, never revisit a settled board, never resend a spent bird, and stop when no note sounds and no milk is thinner — then read the lattice in slot order."
+  ],
+  "implemented_mechanism": 3,
+  "survival": "full",
+  "fallback": true,
+  "core_technique": "Dijkstra's SSSP on a CSR graph with a size/density regime switch: a blocked (32-wide) array extract-min using cached per-block minima with AVX2 argmin for dense/small graphs, and a 4-ary binary min-heap with lazy deletion otherwise.",
+  "valid": true
+}

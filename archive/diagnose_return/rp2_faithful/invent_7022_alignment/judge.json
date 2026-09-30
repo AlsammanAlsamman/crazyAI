@@ -1,0 +1,13 @@
+{
+  "native_mechanisms": [
+    "Lay the two symbol strings crosswise so their crossings form a lattice of junction points (the pairwise comparison grid).",
+    "A single one-cell-wide agent walks the grid in any of eight directions and curls back over its own trail to re-enter a junction from another face (revisiting, label-correcting traversal rather than a fixed sweep).",
+    "Each junction stores only a sand mound (its best score so far); a new arrival overwrites a lower mound and discards it, with no separate ledger, and the walk terminates only when no junction can be improved by returning to it.",
+    "A sideways crossing that spends nothing, letting one cord slip a step ahead of the other — a zero-cost gap, the single permitted stumble."
+  ],
+  "implemented_mechanism": 0,
+  "survival": "none",
+  "fallback": true,
+  "core_technique": "Standard Needleman-Wunsch global alignment computed as an AVX2 anti-diagonal (wavefront) vectorized DP over three rolling diagonals, with int16/int32 width selection by sequence length and a scalar rolling-row DP fallback.",
+  "valid": true
+}

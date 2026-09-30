@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "Coils shaped like symbols laid in two rows and walked side by side in the sun; each exact shape-match windows light through and drops a fire onto the water, and only the fires are counted (straight diagonal, position-by-position match/mismatch tally).",
+    "The boundary door between the two rows may break exactly once per crossing: one coil crouches forward past a quarrel (a single out-of-step slip/gap), tried at every quarrel position, and any crossing that slips twice is discarded unread and restarted.",
+    "Each finished crossing's fire-pile is stored in its own room, broken/twice-slipped rows sink into the underground tower, and only the single highest pile is brought back up as the answer (max over all attempted crossings)."
+  ],
+  "implemented_mechanism": 2,
+  "survival": "partial",
+  "fallback": true,
+  "core_technique": "Banded Needleman-Wunsch global alignment (two rolling rows, AVX2 max-plus prefix-scan for the left-gap dependency) with band half-width K=(n-LB)/5 derived from an O(n) lower bound — the diagonal score plus the best single-gap-pair (one-slip) score — and iterative band widening until the returned score certifies the band; the one-slip/max-of-rows native idea survives only as that cheap lower bound, not as the scoring mechanism.",
+  "valid": true
+}

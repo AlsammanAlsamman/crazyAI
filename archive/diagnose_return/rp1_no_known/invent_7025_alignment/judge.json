@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "A fixed row versus a second row that may be slipped forward at exactly one house, tried unslipped and at every possible slip position along a shared track",
+    "House-by-house lockstep comparison marking match (petal) vs mismatch (knot), paced one count per flute note (uniform, in-step scanning)",
+    "Weigh each trial as just its knot-count, keep only the lightest fist and discard all other trials"
+  ],
+  "implemented_mechanism": 1,
+  "survival": "partial",
+  "fallback": true,
+  "core_technique": "Banded anti-diagonal SIMD Needleman-Wunsch: an O(n) Hamming/one-gap (Kadane) lower-bound score seeds a score-derived band width D=(n-S)/5, refined by a trial narrow pass, then exact banded wavefront DP in int16/int32 AVX2 produces the answer.",
+  "valid": true
+}

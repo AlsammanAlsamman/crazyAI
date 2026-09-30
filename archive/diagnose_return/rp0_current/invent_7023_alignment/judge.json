@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "SIMD/simultaneous equality sweep over both sequences marks every matching position at once (the doubled shadow), giving the no-gap score without touching any DP cell",
+    "Cost of the stretch between two matches is computed arithmetically from how far each sequence must advance (index/prefix arithmetic), never by filling or walking intermediate cells",
+    "Over alignments allowing exactly one slip (one gap run), keep only the cheapest running tally at each match — spent-slip or unspent — and discard every costlier one immediately"
+  ],
+  "implemented_mechanism": 3,
+  "survival": "partial",
+  "fallback": true,
+  "core_technique": "Exact banded Needleman-Wunsch (two rows, AVX2 prefix-max/Hillis-Steele gap scan) whose band width is derived from lower bounds — SIMD Hamming score plus an O(n) one-gap probe — with a self-certifying narrow pass; the banded DP, not the native scheme, produces the returned score.",
+  "valid": true
+}

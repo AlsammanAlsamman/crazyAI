@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "The die-stone is never reset between marks: one persistent accumulator state carries the callus of every previous fold.",
+    "Each mark's weight is pressed into the stone's already-turned position, so earlier marks bend how later marks land (order-dependent chaining, differences amplified fold after fold).",
+    "Only the stone's final seated position is read off against the wooden keeps; all intermediate turns and residue are swept away and discarded."
+  ],
+  "implemented_mechanism": 1,
+  "survival": "full",
+  "fallback": false,
+  "core_technique": "A persistent 8x64-bit accumulator state (seeded with fixed constants plus the length) that absorbs input blocks by XOR into the already-permuted state and then applies BLAKE2b-style ARX quarter-round permutations with alternating column/diagonal lane pairings, followed by input-free finalization rounds folding the eight lanes down to one 64-bit word; no multiply-xor-shift (FNV/xxHash) accumulator is used.",
+  "valid": true
+}

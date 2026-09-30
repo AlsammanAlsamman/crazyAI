@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "One fold per mark, in strict order, each fold's angle set jointly by the mark and the crease left by the previous fold (state carried forward).",
+    "Every crease checked against all four wire-bird beaks simultaneously, refolded tighter until all four gauges agree, deliberately scrambling the spiral/snail markings so two piles can't line up alike.",
+    "Thin the whole folded wad at the water's edge down to one small dense coin-corner, discarding every sheet, scrap and failed gauge reading so nothing but the coin survives for comparison."
+  ],
+  "implemented_mechanism": 1,
+  "survival": "full",
+  "fallback": false,
+  "core_technique": "Multiply-xor accumulation where each round's rotation amount is data-dependent (a = ((mark ^ state) & 31) + 16), run over four xxHash-style parallel lanes with distinct odd-prime multipliers, then rotate-summed and passed through a Murmur3 fmix64 finalizer.",
+  "valid": true
+}

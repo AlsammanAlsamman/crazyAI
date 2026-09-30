@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "Two knot-cords laid crosswise over a sand-tray, their crossings marking a lattice of comparison points (one cell per symbol pair).",
+    "A single one-cell ink-worm walking the eight compass directions as one continuous traversal, curling back over its own trail to re-test a junction from another face until no junction can be improved (relaxation-until-stable, sand mounds as the only state).",
+    "A sideways furrow crossing that spends no sand, letting one cord slip a step ahead of the other (a free/zero-cost gap step)."
+  ],
+  "implemented_mechanism": 0,
+  "survival": "none",
+  "fallback": true,
+  "core_technique": "Standard Needleman-Wunsch global alignment DP computed in anti-diagonal wavefront order with three rolling O(n) diagonal buffers (b pre-reversed for unit-stride, auto-vectorizable inner loops), plus a two-row row-major DP fallback for n < 64.",
+  "valid": true
+}

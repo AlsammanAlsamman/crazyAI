@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "A glint leaves the touched jewel and crawls along every cord at a pace set by that cord's own length, so short cords flash at once and long cords keep the glint waiting en route.",
+    "The first flare to arrive at a jewel is chalked once and is final; every later flare arriving along a longer/slacker cord is thrown away unmarked.",
+    "A square that never catches any flare stays blank and is crossed out, marking an unreachable place."
+  ],
+  "implemented_mechanism": 1,
+  "survival": "partial",
+  "fallback": true,
+  "core_technique": "Delta-stepping SSSP: CSR with light/heavy edge partition and a power-of-two ring of distance buckets (a monotone bucket priority queue, i.e. Dial-style Dijkstra with in-bucket relaxation to a fixpoint), plus an explicit branch to plain O(n^2) array-scan Dijkstra (AVX-vectorised min-scan) for dense or small graphs.",
+  "valid": true
+}

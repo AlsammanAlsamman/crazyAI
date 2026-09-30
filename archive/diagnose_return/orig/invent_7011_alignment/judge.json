@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "Hang the two symbol strings on crossed rows of posts so their meeting forms a lattice of cells, each cell's spark (match/gap-out/gap-in cost) chosen by the crossing symbol pair.",
+    "Fold the lattice along its anti-diagonal so all cells with equal row+column sum lie flush in one crease, processed crease by crease.",
+    "Read three stacked crease-layers at once (current plus the two prior creases), take the cheapest of the three costs, and let the spent oldest layer drift away, keeping only two creases live as the fold advances."
+  ],
+  "implemented_mechanism": 2,
+  "survival": "full",
+  "fallback": false,
+  "core_technique": "Anti-diagonal (wavefront) Needleman-Wunsch DP over d = i+j with three rotating O(n) diagonal buffers, a reversed copy of b for unit-stride access, and `#pragma omp simd` vectorization of the independent cells within each diagonal.",
+  "valid": true
+}

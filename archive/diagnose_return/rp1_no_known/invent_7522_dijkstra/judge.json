@@ -1,0 +1,14 @@
+{
+  "native_mechanisms": [
+    "A stone on a corner finalizes that place's distance, never reconsidered (permanently settled set).",
+    "A duck carries a spooled thread whose length is the running sum of road lengths to reach it (tentative distance label built by adding edge weight to the source's settled length).",
+    "Each round, find the leader duck with the shortest carried thread among the unstoned and settle it before any other duck moves (repeated global minimum selection over unsettled labels), re-tracing every shot to its landing before trusting it.",
+    "Roads toward houses with no far side (out-degree-zero targets) are left slack, thrown away unspooled, and never measured again.",
+    "Corners no duck ever reaches stay bare — unreachable distance left as unattained/lost."
+  ],
+  "implemented_mechanism": 3,
+  "survival": "full",
+  "fallback": true,
+  "core_technique": "Dijkstra's algorithm on a CSR graph with a work-estimate switch between an O(n^2) SIMD (AVX2) two-pass linear argmin scan over tentative distances (dense case, dead-end vertices permuted out of the scanned prefix) and a lazy 4-ary binary-heap Dijkstra (sparse case).",
+  "valid": true
+}

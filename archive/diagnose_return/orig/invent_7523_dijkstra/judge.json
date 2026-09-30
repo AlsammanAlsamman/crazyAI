@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "Per-road runner relaxation: lay a stick on the far heap equal to the home heap's current ember plus that road's notched length (edge relaxation dist[u]+w).",
+    "One land-wide synchronous 'throw': all heaps resolve their pending sticks in a single global round, each heap keeping its shortest sliver as its new ember and discarding (burning) the rest.",
+    "Garrison sealing: once a heap's ember is unchanged between consecutive throws, fix its distance permanently and stop its outgoing runners (plus marking never-lit heaps as unreachable)."
+  ],
+  "implemented_mechanism": 2,
+  "survival": "full",
+  "fallback": false,
+  "core_technique": "Round-synchronous pull-based Bellman-Ford over a reverse-CSR graph with double-buffered dist arrays, per-node min-reduction each round, an active/changed frontier flag to skip unchanged sources, and OpenMP parallelism — with a guarded escape to binary-heap Dijkstra only for sparse/large (n>4000 and avg degree<8) inputs.",
+  "valid": true
+}

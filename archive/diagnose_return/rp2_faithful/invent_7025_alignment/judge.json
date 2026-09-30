@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "A fixed row of beast-pawns vs. a second row the horse's-head piece may slip forward at exactly one house, tried unslipped and slipped at every possible house along the shared road.",
+    "House-by-house comparison marking agreement with a lotus petal and disagreement with a red knot, paced strictly one count per flute note (lockstep, no house skipped or doubled).",
+    "Each trial's knots gathered into a fist and weighed, keeping only the lightest fist and flinging all the others away (min over trials of the knot count)."
+  ],
+  "implemented_mechanism": 1,
+  "survival": "full",
+  "fallback": false,
+  "core_technique": "O(n) enumeration of all single-gap-shift alignments (Hamming prefix-mismatch arrays D/F with a running-minimum scan over gap positions, both shift directions) to get the exact best one-gap score, which is then used as a lower bound to prove a band width W=(n-best)/5 — returning directly when W<=1, otherwise running banded DP (AVX2 int16 anti-diagonal or scalar int32) only as a bounded-width fallback for high-divergence inputs.",
+  "valid": true
+}

@@ -1,0 +1,45 @@
+{
+  "prediction": 12.0,
+  "measurement": {
+    "results": [
+      {
+        "n": 64,
+        "time": 8.99999577e-07,
+        "ref_time": 2.49999903e-06,
+        "ref_score": -12,
+        "cand_score": -12,
+        "correct": true,
+        "speedup_vs_dp": 2.778,
+        "status": "exact"
+      },
+      {
+        "n": 256,
+        "time": 5.69999975e-06,
+        "ref_time": 3.60999984e-05,
+        "ref_score": -48,
+        "cand_score": -48,
+        "correct": true,
+        "speedup_vs_dp": 6.333,
+        "status": "exact"
+      },
+      {
+        "n": 1024,
+        "time": 6.16999987e-05,
+        "ref_time": 0.000533099999,
+        "ref_score": -148,
+        "cand_score": -148,
+        "correct": true,
+        "speedup_vs_dp": 8.64,
+        "status": "exact"
+      }
+    ],
+    "largest_n": 1024,
+    "status": "exact",
+    "speedup_vs_dp": 8.64,
+    "value": 8.64,
+    "prediction_target": 8.64,
+    "reading": "value = speedup vs. the Needleman-Wunsch reference, or 0 if the score is wrong - correctness is binary here, not a tolerance."
+  },
+  "value": 8.64,
+  "status": "exact"
+}

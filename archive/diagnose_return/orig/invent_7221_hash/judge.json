@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "Fold one crease per mark, each crease's angle set jointly by the mark and the previous crease (strictly sequential, carry-forward state).",
+    "Test every crease against all four wire birds' beaks at once and refold until all four agree (four parallel gauges that must be reconciled/validated per crease).",
+    "Thin the whole folded wad at the water's edge down to one small dense coin, discarding every scrap and failed reading (irreversible lossy finalization to fixed-size output)."
+  ],
+  "implemented_mechanism": 2,
+  "survival": "partial",
+  "fallback": true,
+  "core_technique": "xxHash64 verbatim: four independent multiply-rotate-add accumulator lanes over 32-byte stripes, lane merge, length-mixed tail processing, and an xor-shift/multiply avalanche finalizer.",
+  "valid": true
+}

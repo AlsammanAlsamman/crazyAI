@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "Sun-strike: one simultaneous compare of both ropes marks every same-dye crossing (match) at once, without visiting cells",
+    "Sparse treasure-to-treasure DP: cost of the empty stretch between two matches is computed in closed form from index offsets, never by filling the intervening cells",
+    "Per-match dominance pruning of running tallies in two states (slip spent / slip unspent), keeping only the cheapest and dropping the rest"
+  ],
+  "implemented_mechanism": 1,
+  "survival": "partial",
+  "fallback": true,
+  "core_technique": "Exact Needleman-Wunsch computed as a score-bound banded anti-diagonal wavefront with 16-bit SSE2/AVX2 lanes (plus scalar two-row DP fallbacks), band width derived from the identity-diagonal match count",
+  "valid": true
+}

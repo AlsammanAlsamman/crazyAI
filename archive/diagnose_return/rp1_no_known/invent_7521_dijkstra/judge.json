@@ -1,0 +1,13 @@
+{
+  "native_mechanisms": [
+    "Nightingales circle all unlocked stones and always land first on the one carrying the smallest owed letter (pick global min tentative distance by scanning the unsettled set).",
+    "Threads cast from the current tower price each road by what its thief is owed, directional (per-edge relaxation with asymmetric directed weights).",
+    "A locked letter is final and never rechalked; threads reaching bramble/tide/nowhere are dropped and those stones keep their unreadable debt (settled = final because tolls are non-negative; unreachable stay at infinity).",
+    "A knot of three threads already cast at a stone can be detached and called back on with a lower number (3-ary heap with in-place decrease-key)."
+  ],
+  "implemented_mechanism": 1,
+  "survival": "full",
+  "fallback": true,
+  "core_technique": "Textbook Dijkstra with two selection strategies: an O(n²) linear argmin scan over a swap-compacted unsettled array (AVX2-vectorised) for small/dense graphs, and a 3-ary heap with decrease-key for large sparse graphs, over CSR-built directed edges.",
+  "valid": true
+}

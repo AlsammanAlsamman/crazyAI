@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "Nightingales down every road sing one note per stride, die at the first board, and carve that board's fixed lattice slot with the dying note, keeping only the fainter note per slot and abandoning dead-end roads once.",
+    "At each board a cow's-head woman milks a smaller cow to re-measure the note as it would arrive by way of the last settled board plus the connecting stretch, recutting the slot only when that milk is thinner.",
+    "Always settle next the quietest unsettled carved note, never revisit a settled board, never resend a spent bird, until no note and no thinner milk remain and unreached places stand blank."
+  ],
+  "implemented_mechanism": 3,
+  "survival": "full",
+  "fallback": true,
+  "core_technique": "Standard non-negative single-source Dijkstra over a CSR adjacency built by counting sort, with a cost-model switch between an O(n^2)-style linear (AVX2) minimum scan over a compacted frontier array and a 4-ary binary heap with lazy-deletion, plus a mid-run escape hatch from scan mode to heap mode.",
+  "valid": true
+}

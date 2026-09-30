@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "Two knot-cords laid crosswise over a sand-tray so their crossing marks a lattice of symbol-meeting points (diagonal-oriented grid of comparisons).",
+    "A single one-cell-wide ink-worm agent walking the eight compass directions, storing scores only as mounds in the sand, kicking over a beaten mound and curling back over its own trail to re-test a junction until no junction anywhere can be improved (label-correcting / iterate-to-fixpoint traversal instead of a fixed sweep).",
+    "A sideways crossing that spends no sand — a free, cost-zero shift letting one cord slip a step ahead of the other (one permitted unpenalised gap)."
+  ],
+  "implemented_mechanism": 1,
+  "survival": "partial",
+  "fallback": true,
+  "core_technique": "Exact Needleman-Wunsch computed as an anti-diagonal (wavefront) DP with three rolling diagonal buffers, one sequence pre-reversed so both reads run forward for AVX2/AVX-512 16-bit max/add vectorisation, restricted to a provably safe band W = floor(2H/5) from an O(n) Hamming-distance prepass, with a scalar rolling-row NW fallback for small n or allocation failure.",
+  "valid": true
+}

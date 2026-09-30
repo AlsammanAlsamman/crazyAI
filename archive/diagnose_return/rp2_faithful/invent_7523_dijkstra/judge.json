@@ -1,0 +1,13 @@
+{
+  "native_mechanisms": [
+    "A runner walks each outgoing road carrying its weight-notch and lays a candidate stick on the far heap equal to the home ember plus that notch (push-based edge relaxation from a frontier).",
+    "Every heap throws all its sticks at once in a single land-wide throw, and a row read straight across takes one sliver from each heap simultaneously, keeping each heap's shortest sliver as its new ember and burning the rest (pull-based, lane-parallel min-reduction over each node's incoming edges, all nodes in one synchronous pass).",
+    "A garrison seals a heap once its ember is unchanged between consecutive throws, fixing that distance permanently and stopping its runners (convergence-based per-node settling that prunes future work, plus marking never-lit heaps as unreachable).",
+    "Sticks aimed at already-garrisoned heaps are dropped by the wayside and burned as fuel for a bounded fire that must not go out (rejected relaxations into settled nodes are skipped and charged against a work/fuel budget that terminates the process)."
+  ],
+  "implemented_mechanism": 2,
+  "survival": "full",
+  "fallback": false,
+  "core_technique": "Frontier-guided pull-based Bellman-Ford: each round recomputes min over incoming edges of D[src]+w for whole 4-node chunks, via an ELL/4-lane-interleaved reverse adjacency with AVX2 gather + _mm256_min_pd (scalar 4-accumulator reverse-CSR otherwise), with a mu+wmin threshold sweep to settle nodes and a work budget that bails out to binary-heap Dijkstra.",
+  "valid": true
+}

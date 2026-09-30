@@ -1,0 +1,8 @@
+{
+  "prediction": 1.8,
+  "measurement": {
+    "error": "PermissionError: [WinError 5] Access is denied"
+  },
+  "value": 0.0,
+  "status": "ERROR"
+}

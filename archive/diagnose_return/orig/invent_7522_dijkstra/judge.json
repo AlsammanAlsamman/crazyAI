@@ -1,0 +1,14 @@
+{
+  "native_mechanisms": [
+    "A stone on a corner: a node's distance is finalized once settled and never reconsidered (permanent-label set).",
+    "A duck carries a spooled thread: each reached node holds a tentative label equal to the running sum of edge weights along the path to it (relaxation/tentative distance).",
+    "Each round, find the leader duck — the unstoned node with the shortest carried thread — and settle it before any further expansion (min-extraction over unsettled labels).",
+    "Discard threads that are not shorter than the far corner's current thread, and drop roads to already-stoned/dead-end houses unspooled (edge pruning on non-improvement).",
+    "Corners the ducks never reach stay bare — unreachable nodes keep infinite distance."
+  ],
+  "implemented_mechanism": 3,
+  "survival": "full",
+  "fallback": true,
+  "core_technique": "Textbook Dijkstra on a CSR graph: O(n^2) linear array scan for the minimum tentative distance (a value-only vectorizable reduction plus an index-recovery pass) for small or dense graphs, switching to a standard binary-heap Dijkstra for large sparse graphs.",
+  "valid": true
+}

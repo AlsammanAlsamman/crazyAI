@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "A fixed row of beast-pawns against a second row that the horse's-head piece may slip forward at exactly one house, trying the alignment unslipped and slipped at every possible position.",
+    "March both rows house by house marking agreement (lotus petal) vs disagreement (red knot) one position per flute note — a positionwise mismatch tally.",
+    "Weigh each trial's fist of knots and keep only the lightest count, flinging all other trials' counts away — take the minimum over trials as the answer."
+  ],
+  "implemented_mechanism": 1,
+  "survival": "partial",
+  "fallback": true,
+  "core_technique": "Banded anti-diagonal SIMD (AVX2) Needleman-Wunsch wavefront over int16/int32 lanes, with the band half-width W derived from a single-shift Hamming-based score lower bound (plus an exact two-row DP fallback for small n or allocation failure).",
+  "valid": true
+}

@@ -456,3 +456,23 @@ def test_disguise_all_pipeline_with_mock(tmp_path):
     # the per-solution prompt carries exactly one solution and forbids switching
     p = translate_one_prompt("TRANSFORMED PROBLEM\nfrogs", "hop", get_target("matmul"), [])
     assert "hop" in p and "Do not switch" in p and "SOLUTION 2" not in p
+
+
+def test_return_path_variants_and_mock_run(tmp_path):
+    if shutil.which("gcc") is None:
+        pytest.skip("no C compiler")
+    from crazyai.pipeline.return_path import ReturnPath
+    Invent(seed=1, target="matmul", archive_dir=tmp_path).execute(get_provider("mock"))
+    prompts = {v: ReturnPath("invent_1_matmul", v, archive_dir=tmp_path, log=None).build_prompt()
+               for v in ("rp0_current", "rp1_no_known", "rp2_faithful")}
+    # the ladder: each variant changes exactly one thing
+    assert "arrive at that technique" in prompts["rp0_current"]
+    assert "arrive at that technique" not in prompts["rp1_no_known"]
+    assert "build THAT seed's mechanism" in prompts["rp2_faithful"]
+    assert "build THAT seed's mechanism" not in prompts["rp1_no_known"]
+    for v in ("orig", "rp2_faithful"):
+        row = ReturnPath("invent_1_matmul", v, archive_dir=tmp_path, log=None).execute(get_provider("mock"))
+        assert row["variant"] == v and row["survival"] in ("full", "partial", "none")
+    log = (tmp_path / "diagnose_return" / "diagnose_log.jsonl").read_text().strip().splitlines()
+    assert len(log) == 2
+    assert (tmp_path / "diagnose_return" / "rp2_faithful" / "invent_1_matmul" / "judge.json").exists()

@@ -1,0 +1,13 @@
+{
+  "native_mechanisms": [
+    "Servant's inflated-house swats enforce silence so the marks' order is fixed/recorded before any heap is folded.",
+    "Each even-count heap races the musk deer's mountain stride (uphill twist, downhill fold, doubling-back that eats its own trail) until no heap keeps the shape it entered with, the running shape carried into the next heap.",
+    "Owl seals the final folded shape to one fixed token size while every intermediate heap is burned at the shrine, so the token cannot be walked back to its marks.",
+    "Search the result in squares: rotate the shape ninety degrees and fold its corners into its own center repeatedly, verified by flipping one starting mark and discarding the whole method if any corner of the grid survives untouched."
+  ],
+  "implemented_mechanism": 2,
+  "survival": "partial",
+  "fallback": true,
+  "core_technique": "xxHash64: four interleaved 64-bit accumulator lanes over 32-byte blocks with multiply/rotate-left-31/multiply rounds, rotate-and-add lane merge, 8-byte and 1-byte tail folding, and a MurmurHash3 fmix64 avalanche finalizer (with a single-accumulator FNV-1a-style path for len < 32).",
+  "valid": true
+}

@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "A single rolling sphere is the only carried memory across the whole ordered pile (one accumulator, streamed in order, old state discarded)",
+    "Each mark is pressed into the sphere and then tumbled a fixed count of turns down the trail, the strike on a stalk cracking it, before the next mark is taken (add the word, then rotate by a fixed pitch, then a crack/shift at the stalk — mixing by turns and strikes, never by multiplication)",
+    "Only the final hairline crack in the last stalk is handed over; the sphere itself, all intermediate cracks and dust are swept away (a strong one-shot finalisation is the output, intermediate states never emitted)"
+  ],
+  "implemented_mechanism": 2,
+  "survival": "full",
+  "fallback": false,
+  "core_technique": "Multiplication-free ARX streaming hash: each 8-byte word is added into one 64-bit accumulator which is then rotated by a fixed per-lane constant (add-rotate), with an xor-shift after each 32/8-byte group, finished by a bijective rotate/add/xor-shift + 32-bit-half ARX grind avalanche.",
+  "valid": true
+}

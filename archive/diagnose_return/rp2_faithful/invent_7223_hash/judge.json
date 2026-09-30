@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "A rolling sphere is the sole carried memory across the whole ordered pile (one accumulator, streamed in order, old face discarded).",
+    "A fixed count of tumbles down the mason trail mixes each mark into the sphere before the next mark is taken, and the crack angle left at each stalk is the rotation/weight carried forward into the next mix.",
+    "Only the final hairline crack in the last stalk is kept as the token; all intermediate cracks, dust and footprints are swept away."
+  ],
+  "implemented_mechanism": 2,
+  "survival": "full",
+  "fallback": false,
+  "core_technique": "Single 64-bit accumulator folded over the buffer with multiply-free XOR-of-rotations mixing in which one rotation amount is re-derived from the state each round (self-feeding data-dependent rotate), fixed rounds per chunk, an AVX2 4-lane variant joined by a cross-lane XOR-permutation bijection, and a 5-round rotate/xorshift finalizer keyed with the length.",
+  "valid": true
+}

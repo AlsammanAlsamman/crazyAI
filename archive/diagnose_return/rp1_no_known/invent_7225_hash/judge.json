@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "Each byte is folded into one accumulator whose updated state seeds the next byte's fold, so the whole buffer passes as a single unbroken serial chain (no byte judged alone or twice).",
+    "The accumulator's final value is pushed through seven successive bendings, each of which discards half of what it received and passes on only the bits that refuse to sit still.",
+    "Avalanche verification: flip one byte anywhere in the buffer, re-run the whole hash from the start, and discard the entire method if the new digest resembles the old."
+  ],
+  "implemented_mechanism": 2,
+  "survival": "partial",
+  "fallback": true,
+  "core_technique": "Byte-wise rotate-add accumulation (single chain under 64 bytes, seven interleaved parallel lanes above it, xxHash-style) combined at the end and run through a MurmurHash3/SplitMix-style multiply-xorshift fmix64 finalizer extended to seven rounds.",
+  "valid": true
+}

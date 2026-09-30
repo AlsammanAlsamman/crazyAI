@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "One fold per mark, each fold's angle determined jointly by the mark and the immediately preceding crease (angle is state-dependent, not fixed).",
+    "Every crease is checked against all four wire-bird beak gauges simultaneously and refolded tighter, iteratively, until all four agree — with the spiral/snail markings forced to line up 'wrong on purpose' so distinct piles cannot coincide.",
+    "The whole folded wad is thinned at the water's edge to one small dense coin-sized corner, and every sheet, trimmed scrap and failed gauge reading is discarded so nothing but the coin survives."
+  ],
+  "implemented_mechanism": 3,
+  "survival": "partial",
+  "fallback": true,
+  "core_technique": "xxHash64-style multi-accumulator streaming hash: four 64-bit lanes folded over 64-byte blocks with fixed-constant xor-rotate-add steps, then merged and finalized by a MurmurHash3-style xor-shift/multiply avalanche including the length.",
+  "valid": true
+}

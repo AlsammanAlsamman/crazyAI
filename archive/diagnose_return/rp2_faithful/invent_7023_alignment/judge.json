@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "Find every match cell (same-dye knot crossing) at once by a single broadcast 'shadow' test, never scanning the grid cell by cell",
+    "Compute the cost of the empty stretch between consecutive match cells in closed form from the two index offsets, never laying down or visiting intermediate cells",
+    "Keep at each match cell only the best running tally per slip-state (one gap-shift spent or not) and drop every dominated tally"
+  ],
+  "implemented_mechanism": 0,
+  "survival": "none",
+  "fallback": true,
+  "core_technique": "Banded Needleman-Wunsch computed as a SIMD anti-diagonal wavefront (with b reversed for contiguous diagonal access), band half-width derived from a score lower bound (diagonal identity score plus a w=8 probe), plus a rolling-row exact NW fallback for small n.",
+  "valid": true
+}

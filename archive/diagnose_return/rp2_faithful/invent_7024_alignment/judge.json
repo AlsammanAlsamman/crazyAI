@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "Lay both cords' symbol-coils side by side in the sun and count only the fires struck where opposite coils match exactly (positional match counting, no cells, no table).",
+    "Allow the boundary door between the rows to break exactly once per crossing — one coil crouches past a quarrel out of step — and never twice; try that single slip at every quarrel site, restarting any crossing that would slip twice.",
+    "Give each finished crossing its own room holding its fire-pile, sink failed/twice-broken crossings into the underground tower unread, and bring back only the highest pile as the answer."
+  ],
+  "implemented_mechanism": 2,
+  "survival": "partial",
+  "fallback": true,
+  "core_technique": "Exact Needleman-Wunsch computed as an anti-diagonal wavefront DP restricted to a certified band w=(n-L)/5 (L from a cheap O(n) match-count / single-shift lower bound), with an int16 AVX2 kernel and a plain rolling-row DP for short inputs — i.e. a banded SIMD DP (KSW2/SSW-style) rather than the native's counting scheme.",
+  "valid": true
+}

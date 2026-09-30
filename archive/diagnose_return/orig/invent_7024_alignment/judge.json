@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "Lay both sequences out as aligned rows and count only the positions where the symbols match exactly (offset-0 match count).",
+    "Allow the second row to slip forward by exactly one position at a mismatch — a single gap/shift per pass, never two.",
+    "Run every single-slip variant as a separate pass, discard passes that would need a second slip, and return the maximum score over all passes."
+  ],
+  "implemented_mechanism": 0,
+  "survival": "none",
+  "fallback": true,
+  "core_technique": "Full Needleman-Wunsch global alignment DP computed on anti-diagonal wavefronts with three rolling score vectors and an AVX2 SIMD inner loop (reversed b for contiguous loads).",
+  "valid": true
+}

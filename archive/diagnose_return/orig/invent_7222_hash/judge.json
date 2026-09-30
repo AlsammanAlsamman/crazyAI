@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "The die-stone never resets between marks: one persistent accumulator carried across the whole pile, every fold inheriting the callus of all prior folds (order-dependent, no per-mark clean slate).",
+    "Each mark's weight is pressed into the stone's already-turned position rather than a clean face, and the stone's memory of the last press bends how deep this one sinks: state-dependent feedback mixing where the accumulator's own current value drives the transformation, so a one-hair change amplifies multiplicatively fold after fold (avalanche).",
+    "Only the stone's final seated position read against the fixed wooden keeps ever leaves the desk; all intermediate turns, groove-dust and residue are swept away and discarded (single final output, intermediate state not exposed)."
+  ],
+  "implemented_mechanism": 2,
+  "survival": "full",
+  "fallback": true,
+  "core_technique": "Jenkins one-at-a-time style hash: a single 64-bit accumulator seeded with len, per byte doing h += data[i]; h += h<<20; h ^= h>>12 (shift-add-xor self-feedback), plus a three-step shift-add/xor final avalanche — i.e. the standard one-accumulator shift-xor-fold family that FNV-1a/xxHash belong to, so the native's mechanism survives only because it coincides with the known way.",
+  "valid": true
+}

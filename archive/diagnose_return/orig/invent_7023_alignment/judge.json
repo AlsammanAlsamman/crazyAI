@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "Find all match positions at once by a single parallel same-symbol test over both sequences (the 'doubled shadow'), never scanning cell by cell",
+    "Compute the cost of the gap-only stretch between consecutive match positions arithmetically from the index differences on each sequence, never evaluating the intervening cells",
+    "At each match position keep only the best-scoring incoming tally per state (single displacement/'slip' already used or not) and prune every dominated tally"
+  ],
+  "implemented_mechanism": 0,
+  "survival": "none",
+  "fallback": true,
+  "core_technique": "Full O(n^2) Needleman-Wunsch DP evaluated in anti-diagonal (wavefront) order with three rolling diagonal buffers and one sequence reversed so each diagonal is a contiguous SIMD-vectorizable loop",
+  "valid": true
+}

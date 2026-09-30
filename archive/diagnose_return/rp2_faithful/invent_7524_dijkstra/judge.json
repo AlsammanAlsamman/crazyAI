@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "A glint leaves the touched jewel and crawls down each cord at a pace set by that cord's own length, so arrivals are spread out in time (delay-ordered event propagation).",
+    "The first flare to reach a jewel is chalked once; any later flare arriving along a longer cord is discarded unmarked (settle-once / dominated-label pruning).",
+    "A jewel whose square never catches a flare is left blank and crossed out (unreachable vertices keep an 'infinite/no-value' marker)."
+  ],
+  "implemented_mechanism": 1,
+  "survival": "full",
+  "fallback": false,
+  "core_technique": "Bucketed/calendar-queue Dijkstra (Dial / delta-stepping style): relaxed vertices are parked in a power-of-two circular bucket array at index floor(dist/delta) and a monotone clock drains each bucket to fixpoint, with heap Dijkstra and an O(n^2) dense scan kept only as guarded fallbacks for small n, skewed weights, or a scan-count abort.",
+  "valid": true
+}

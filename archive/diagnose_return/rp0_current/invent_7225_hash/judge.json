@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "Serial chaining through an impure/'sickened' cup: each mark is a pull whose resulting cup-color seeds the next pull, so the whole buffer passes as one unbroken chain, each byte consumed once and never judged in isolation.",
+    "A seven-stage finalizer: the final accumulator color is bent seven times in turn, each stage discarding half of what it received and keeping only the volatile part, checked against a beauty/quality criterion.",
+    "A falsification test: flip one bit/mark anywhere in the input, re-run the entire pour, and reject the whole construction if the new token still resembles the old (avalanche as a pass/fail condemnation)."
+  ],
+  "implemented_mechanism": 1,
+  "survival": "full",
+  "fallback": false,
+  "core_technique": "Serial single-accumulator absorb built on chained CRC-32C steps (hardware _mm_crc32_u64 with a table-driven fallback), each step seeded by the running accumulator and combined with a rotate-xor side path to preserve the bits CRC truncates, followed by a splitmix64/degski-style 7-operation xor-shift/multiply finalizer.",
+  "valid": true
+}

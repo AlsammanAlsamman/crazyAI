@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "Stone on a corner: a node's distance is finalized once and never reconsidered (settled/visited set).",
+    "A duck carries a spooled thread: each reached node holds a running tentative sum of road weights along the path to it.",
+    "Each round, walk the flock and find the leader duck — the shortest carried thread among unstoned nodes — and settle it before any other duck moves (linear argmin over the live frontier, no priority structure)."
+  ],
+  "implemented_mechanism": 3,
+  "survival": "full",
+  "fallback": true,
+  "core_technique": "Dijkstra over a compacted live frontier whose minimum is found by an AVX2-vectorized linear argmin scan (with index recovery pass), plus a permanent-settled flag array, CSR edge build, out-degree-zero pruning, and a 4-ary lazy-deletion heap fallback once the frontier exceeds a density-tuned threshold — i.e. the well-known array-scan Dijkstra variant with SIMD, backed by heap Dijkstra.",
+  "valid": true
+}

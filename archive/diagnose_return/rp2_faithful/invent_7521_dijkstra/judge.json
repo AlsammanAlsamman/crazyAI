@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "Nightingales always land first on the unlocked stone bearing the smallest owed letter (select the minimum-labelled unsettled node).",
+    "Threads cast from the tower price each road by its thief's toll, one direction at a time (directed, per-edge non-negative weights relaxed outward from the current node).",
+    "A locked garden letter is never rebuilt again, and threads reaching nowhere are dropped and thrown away (settled labels are final; failed relaxations/unreachable nodes are discarded at infinity)."
+  ],
+  "implemented_mechanism": 1,
+  "survival": "partial",
+  "fallback": true,
+  "core_technique": "Standard non-negative single-source Dijkstra over a CSR adjacency, with a two-regime priority queue: SIMD (AVX2) linear argmin scan over a compact frontier array while the frontier is small (<=2048), then a one-time switch to a 3-ary indexed min-heap with true decrease-key, plus software prefetching of relaxation targets.",
+  "valid": true
+}

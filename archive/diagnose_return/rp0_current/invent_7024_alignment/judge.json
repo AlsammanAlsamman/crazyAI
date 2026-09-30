@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "Lay both cords' symbol-shaped coils in a row and walk them side by side, counting one 'fire' per exactly matching coil pair (diagonal match counting, no gaps).",
+    "Allow the boundary door between the rows to break exactly once per crossing: one shadow-row coil crouches past the quarrel, shifting the rest out of step by one — try this break at every quarrel position, never twice in a crossing.",
+    "Store each finished crossing's fire-pile in its own room, sink the failed/twice-broken crossings into the underground tower unread, and bring back only the highest pile as the final count."
+  ],
+  "implemented_mechanism": 2,
+  "survival": "partial",
+  "fallback": true,
+  "core_technique": "Exact banded anti-diagonal (wavefront) Needleman-Wunsch with AVX2 SIMD, where the band half-width is derived from a score lower bound obtained by scanning the ungapped and all single-shift alignments; plain two-row DP fallback for small n.",
+  "valid": true
+}

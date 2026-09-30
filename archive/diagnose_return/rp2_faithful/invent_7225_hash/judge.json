@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "Each mark poured into the never-pure cup, the changed colour seeding the next pour, so the whole pile passes as one unbroken sequential chain.",
+    "The final colour carried through seven organs in turn, each bending and discarding half of what it received (halving shift ladder) before passing on.",
+    "Flip one mark anywhere and re-pour the whole pile; any resemblance between new and old token condemns the method (avalanche self-test)."
+  ],
+  "implemented_mechanism": 2,
+  "survival": "partial",
+  "fallback": true,
+  "core_technique": "Multi-lane (8-way scalar / 16-way AVX2) rotate-add byte accumulation with length tempering, folded into one word and finished by a 6-step halving xor-shift + rotate ladder plus one shift-add — i.e. an xxHash-style multi-accumulator hash with a standard strong finalizer; the native's single unbroken chain survives only on the <32-byte path, and the seven-organ halving ladder survives fully but only as the final mix.",
+  "valid": true
+}

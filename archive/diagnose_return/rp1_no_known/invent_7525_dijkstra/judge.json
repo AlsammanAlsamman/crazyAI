@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "Nightingales down every road sing one note per stride and die at the first board, carving that board's fixed lattice slot with the dying note (edge relaxation writing tentative distance into a one-slot-per-node array; keep the fainter of two notes reaching the same board; dead roads never re-flown)",
+    "At each board a cow's-head woman milks a smaller cow to re-measure the note as it would arrive via the last settled board plus the connecting stretch, recutting the slot only if that milk is thinner (nested re-measurement / conditional decrease-key from the just-settled node)",
+    "Always settle next whichever unsettled lattice slot holds the quietest note, never revisiting a settled board, until no note sings and unreached places stay blank as desert (repeated global minimum-selection over the fixed lattice, no heap; unreached = INFINITY)"
+  ],
+  "implemented_mechanism": 3,
+  "survival": "partial",
+  "fallback": true,
+  "core_technique": "Dijkstra on a CSR graph with a size/density heuristic switching between a two-level blocked SIMD (AVX2) array-scan min-selection with NaN sentinels for settled nodes (the O(n·sqrt(n))-ish dense variant of the classic O(n^2) array scan) and a 4-ary binary-heap Dijkstra for sparse graphs — both standard textbook techniques, with an OpenMP parallel CSR build.",
+  "valid": true
+}

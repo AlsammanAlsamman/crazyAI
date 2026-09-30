@@ -1,0 +1,13 @@
+{
+  "native_mechanisms": [
+    "Silence-swats: the marks' order is fixed/laid down positionally before any heap is folded, so order is never lost in mixing",
+    "Each heap races the musk deer's mountain stride — uphill twist (rotate), downhill fold (xor), doubling-back that eats its own trail (feedback) — carried forward into the next heap, so no heap keeps the shape it entered with",
+    "Searching in squares: turn the shape ninety degrees and fold its corners into its own centre, repeatedly, until one changed mark smears across every square (avalanche/corner test)",
+    "The owl seals the final folded shape to one fixed small size while every intermediate heap is burned, so the token cannot be walked back to its marks (irreversible fixed-width finalisation)"
+  ],
+  "implemented_mechanism": 2,
+  "survival": "full",
+  "fallback": false,
+  "core_technique": "Sponge-style absorbing hash over a 16x64-bit (4x4) state: each 64-byte block is XOR-ed into the rate lanes, then permuted by 4 double-rounds of the BLAKE2b G function applied column-wise (add/xor/rotate-32,24,16,63) interleaved with an AES-like ShiftRows lane rotation, followed by a 12-layer finalisation permutation and an XOR-rotate fold to 64 bits — with a separate splitmix64/xxHash-class multiply-xor-shift accumulator only for buffers under 64 bytes.",
+  "valid": true
+}

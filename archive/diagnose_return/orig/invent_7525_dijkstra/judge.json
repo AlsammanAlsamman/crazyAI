@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "Nightingales released down every road, singing one note per stride and dying at the first board, carving that board's lattice slot with the dying note (per-edge distance propagation with min-kept arrival label, dead roads marked once and never re-sent)",
+    "A cow's-head woman at each board milks a smaller cow to re-measure the note via the last settled board, recutting the slot only if her milk is thinner (relaxation of the tentative label through the newly settled node, keep if smaller)",
+    "Always settle next the unsettled slot holding the quietest note, never revisit a settled board, unreached places stay blank as the desert (global minimum selection over the fixed-slot lattice, permanent settling, INFINITY for unreachable)"
+  ],
+  "implemented_mechanism": 3,
+  "survival": "full",
+  "fallback": true,
+  "core_technique": "Dijkstra's algorithm over CSR adjacency with a dense O(n^2) linear-scan minimum selection plus array relaxation, switched by a size/density heuristic to a standard binary-heap Dijkstra for large sparse graphs.",
+  "valid": true
+}

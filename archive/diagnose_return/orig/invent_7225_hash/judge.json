@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "Each mark poured into the never-pure cup, the cup's changed colour seeding the next pour — one serial, order-dependent accumulator over the whole pile, no byte judged alone or twice.",
+    "The cup's final colour carried through seven organs in turn, each bending it and discarding half of what it received, passing on only what refuses to sit still.",
+    "Flip one mark anywhere in the pile, re-pour from the first cup, and condemn the whole method if the new token still resembles the old one's shape (avalanche as a rejection test)."
+  ],
+  "implemented_mechanism": 1,
+  "survival": "partial",
+  "fallback": true,
+  "core_technique": "FNV-1a byte-wise xor-multiply accumulation (8x unrolled, serial dependency chain) followed by the MurmurHash3 fmix64 finalizer.",
+  "valid": true
+}

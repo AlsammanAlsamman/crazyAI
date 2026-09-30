@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "A runner traverses each outgoing road and lays a candidate stick on the far heap whose length is the home heap's current ember plus that road's notch (edge relaxation by push).",
+    "All heaps throw their accumulated candidate sticks at once in one land-wide synchronized throw, and a single row read straight across all heaps simultaneously picks each heap's shortest candidate as its new ember while all longer candidates are discarded (materialized per-node candidate pools resolved by a global columnar/row-wise min).",
+    "A garrison permanently seals a heap once its ember is unchanged between consecutive throws, freezing its distance and permanently halting its outgoing runners; a heap never lit across throws is declared unreachable."
+  ],
+  "implemented_mechanism": 1,
+  "survival": "partial",
+  "fallback": true,
+  "core_technique": "CSR build, then round-synchronous frontier Bellman-Ford (stamped active set) with a work budget that hands over to binary-heap Dijkstra, plus a dense/small-n branch that is plain O(n^2) array-scan Dijkstra with an AVX2 argmin.",
+  "valid": true
+}

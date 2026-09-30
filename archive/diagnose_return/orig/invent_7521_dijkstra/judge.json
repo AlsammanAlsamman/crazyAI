@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "Nightingales always land first on the unlocked stone bearing the smallest owed letter (repeated linear scan of the unfinalized set to select the minimum tentative distance, no heap).",
+    "Threads cast from the tower price each road by what its thief is owed, one direction at a time (directed, per-edge non-negative weight relaxation from the currently locked node).",
+    "A locked garden letter is never rebuilt again, and threads reaching nowhere are dropped and thrown away (settled nodes are permanently finalized; failed relaxations and unreachable nodes are simply discarded/left at infinity)."
+  ],
+  "implemented_mechanism": 1,
+  "survival": "partial",
+  "fallback": true,
+  "core_technique": "Dijkstra's single-source shortest path over a CSR graph, with a static cost-model dispatch between an O(n²+m) array-scan min-extraction variant (with an optional OpenMP min-reduction) and a standard binary-heap O((n+m)log n) variant.",
+  "valid": true
+}

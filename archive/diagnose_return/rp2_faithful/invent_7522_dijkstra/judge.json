@@ -1,0 +1,15 @@
+{
+  "native_mechanisms": [
+    "Placing a stone on a corner finalises its distance, never reconsidered afterwards (settled/permanent-label set)",
+    "A duck carries a spooled thread whose length is the running sum of road centimetres traversed to reach it (tentative distance labels, relaxed by addition)",
+    "Each round, exhaustively compare threads to find the single leader duck with the shortest carried length among unstoned corners, and settle it before any other duck moves (linear scan extract-min, full pass with no early exit)",
+    "Slack roads toward dead-end houses (no outgoing side) are discarded unspooled and never measured again (pruning edges into sink vertices)",
+    "Discard a freshly laid thread unless its sum beats the thread the far corner already wears (relaxation test / no-improvement discard)",
+    "Corners the ducks never reach stay bare — unreachable vertices keep infinite/absent distance"
+  ],
+  "implemented_mechanism": 3,
+  "survival": "full",
+  "fallback": true,
+  "core_technique": "Dijkstra's algorithm with a compacted frontier array and AVX2-vectorised linear extract-min scan (the classic O(n^2)-style array-scan variant), adaptively switching to a binary-heap Dijkstra mid-run when measured scan cost exceeds a degree/log-n threshold; CSR edge layout and a Bellman-Ford fallback on allocation failure.",
+  "valid": true
+}

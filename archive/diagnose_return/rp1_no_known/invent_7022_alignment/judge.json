@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "Lay the two symbol strings crosswise over a tray so their crossings form a lattice of junctions (the pairwise comparison grid).",
+    "Send one single cell-wide agent that walks the eight winds, re-testing junctions by doubling back over its own trail, keeping scores only in the grid itself and revisiting until no junction can be improved (ledger-free, backtracking relaxation to a fixed point).",
+    "A sideways crossing that costs nothing, letting one cord slip a step ahead of the other (a free gap/indel move)."
+  ],
+  "implemented_mechanism": 0,
+  "survival": "none",
+  "fallback": true,
+  "core_technique": "Standard Needleman-Wunsch global-alignment DP computed on anti-diagonal wavefronts with three rolling score buffers and AVX2 int16 SIMD (with scalar int32 anti-diagonal and two-row scalar fallbacks) — a textbook vectorisation, single forward pass, no revisiting and gaps cost -2, not zero.",
+  "valid": true
+}

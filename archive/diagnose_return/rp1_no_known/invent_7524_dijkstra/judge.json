@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "A glint leaves the source jewel and crawls down every cord, arriving after a delay equal to that cord's own length (time-of-arrival propagation, no chasing/ordering by hand).",
+    "Each jewel is chalked exactly once, at the instant of its first flare; any later flare arriving along a longer cord is discarded unmarked (and a jewel re-emits immediately upon being lit, never waiting to be 'settled').",
+    "Jewels whose squares never catch a flare are left blank/crossed out (unreachable = no value)."
+  ],
+  "implemented_mechanism": 1,
+  "survival": "full",
+  "fallback": false,
+  "core_technique": "Bucket/time-wheel (Dial's–delta-stepping style) label-correcting shortest paths: arrival times quantised by delta into a circular array of NB tick buckets drained in time order, with immediate re-emission on improvement, stale-entry skipping via qs[]/dist[] checks, plus a guarded dense/small-n O(n^2) array-scan Dijkstra fast path.",
+  "valid": true
+}

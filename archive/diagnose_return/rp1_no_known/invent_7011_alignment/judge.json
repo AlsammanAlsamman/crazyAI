@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "Hang the two symbol strings on crossed row/column posts to form a lattice of cells, lighting each cell on demand with a match/mismatch/gap-valued spark",
+    "Fold the lattice along its anti-diagonal so all cells with equal row+column sum form a single crease (anti-diagonal wavefront)",
+    "Read three stacked crease-layers at once (diagonal d-2 and two offsets of d-1) and discard the spent bottom layer, keeping only two creases in flight"
+  ],
+  "implemented_mechanism": 2,
+  "survival": "full",
+  "fallback": false,
+  "core_technique": "Anti-diagonal (wavefront) Needleman-Wunsch: cells of constant i+j computed as one SIMD-vectorized diagonal from the two previous diagonals in rotating O(n) buffers, with b stored reversed for unit-stride access and int16/int32 width regimes plus a scalar small-n path",
+  "valid": true
+}

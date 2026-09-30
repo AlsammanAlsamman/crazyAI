@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "Nightingales always land first on the unlocked stone carrying the smallest owed sum (repeated select-min over the candidate set).",
+    "Threads cast from the tower price each road by its thief's toll, one direction at a time (directed, non-negative per-edge relaxation).",
+    "A locked letter is never rebuilt again, and threads reaching nowhere are dropped (settle-once finality; unreachable stones keep unreadable/infinite debt)."
+  ],
+  "implemented_mechanism": 1,
+  "survival": "full",
+  "fallback": true,
+  "core_technique": "Dijkstra SSSP over directed CSR using a compacted tentative-distance frontier array with SIMD (AVX2/AVX-512) linear argmin extract-min, position back-index for decrease-key, and a lazy binary-heap Dijkstra fallback once a work budget is exceeded — i.e. the textbook array-scan/heap Dijkstra pair with generic vectorisation.",
+  "valid": true
+}

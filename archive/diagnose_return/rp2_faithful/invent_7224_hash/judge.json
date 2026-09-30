@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "Marks laid in fixed order on the flat stone before any heap is folded — the input's order is fixed by placement, never spoken/lost",
+    "Each heap races the musk deer's stride — uphill twist, downhill fold, doubling-back that eats its own trail — so no heap keeps the shape it entered with, the running shape carried forward into the next heap (plus the square-search: turning ninety degrees and folding corners into the centre until one changed mark smears across every square)",
+    "The owl seals the final folded shape to one fixed small size while every intermediate heap is burned — fixed-width, non-invertible output"
+  ],
+  "implemented_mechanism": 2,
+  "survival": "full",
+  "fallback": false,
+  "core_technique": "ChaCha-style ARX permutation (add/rotate/xor quarter-rounds, multiplication-free, plus extra xorshifts) over a 16x64-bit state absorbing 128-byte blocks by XOR with column rounds then diagonal rounds, block counter and length injected, finished by a halving tree-fold and xorshift-add finalizer to 64 bits (4x4-word small-state variant for len<128).",
+  "valid": true
+}

@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "Stone never resets between marks: one running state carries the callus of every earlier fold forward",
+    "Each mark's weight is pressed into the already-turned seated position, not a clean face, so early marks bend how later marks land (and one hair's difference is multiplied by each later fold, so no two folding paths reconverge)",
+    "Only the stone's final seated number against the wooden keeps leaves the desk; all intermediate turns and residue are swept away"
+  ],
+  "implemented_mechanism": 1,
+  "survival": "partial",
+  "fallback": true,
+  "core_technique": "Wide (256-bit, 4x64) SIMD/ARX block accumulator — XOR 32-byte block, lane add (carry), rotate, lane permute per block, overlapping last-block tail, plus a separate xor-rotate-multiply path for short inputs and an xxHash/splitmix-style multiply-xor-shift finalizer that folds in the length: i.e. standard xxHash-family accumulator hashing.",
+  "valid": true
+}

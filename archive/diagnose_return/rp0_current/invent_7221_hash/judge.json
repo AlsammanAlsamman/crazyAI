@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "One fold per mark, with each fold's angle determined jointly by the mark and the preceding crease (data-dependent, history-carrying fold angles).",
+    "Every crease checked simultaneously against all four wire-bird gauges, refolding tighter until all four agree — plus deliberately scrambling the spiral/snail markings so two different piles can never line up alike.",
+    "Thin the whole folded wad at the water's edge down to one small dense coin-sized corner, destroying every scrap, trimming and failed gauge reading so nothing but the coin survives."
+  ],
+  "implemented_mechanism": 0,
+  "survival": "none",
+  "fallback": true,
+  "core_technique": "xxHash64: four independent 64-bit lanes over 32-byte blocks using add-multiply-rotl(31)-multiply rounds, a rotate-and-sum lane merge with mergeRound steps, length injection, 8/4/1-byte tail processing, and a MurmurHash3-style xor-shift/multiply final avalanche — all rotation amounts and constants fixed, with no data-dependent fold angle and no cross-lane agreement or refold-until-consistent step.",
+  "valid": true
+}

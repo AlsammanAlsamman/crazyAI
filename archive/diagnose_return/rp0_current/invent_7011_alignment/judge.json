@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "Hang the two symbol strings as crossed rows/columns of lamp-posts, lighting each lattice cell (spark = match/gap-out/gap-in cost) only on demand rather than filling flat ground",
+    "Fold the lattice sheet along its slanting middle so all cells with equal row+column sum press flush into one crease (anti-diagonal equivalence class)",
+    "Read three stacked spark layers through each crease simultaneously and let the spent bottom layer drift off, keeping only the two most recent creases as the fold walks forward"
+  ],
+  "implemented_mechanism": 2,
+  "survival": "full",
+  "fallback": false,
+  "core_technique": "Anti-diagonal (i+j) wavefront Needleman-Wunsch with AVX2 SIMD across each diagonal, three rotating O(n) diagonal buffers, plus a score-bound-derived band clamped to be non-binding and a scalar row-DP fallback.",
+  "valid": true
+}

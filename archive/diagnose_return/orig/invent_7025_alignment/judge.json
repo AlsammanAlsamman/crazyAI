@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "Try the two rows against each other at every possible single forward slip of one row (and with no slip at all) — i.e. enumerate all placements of exactly one gap",
+    "Walk the two rows house by house marking match vs mismatch one position at a time (a per-position Hamming-style comparison, one count per beat)",
+    "Reduce each trial to a single tally of mismatches and keep only the smallest tally across all trials, discarding the rest"
+  ],
+  "implemented_mechanism": 0,
+  "survival": "none",
+  "fallback": true,
+  "core_technique": "Full O(n^2) Needleman-Wunsch DP (with a scalar fallback for n<64), computed on anti-diagonal wavefronts with three rolling buffers and AVX2 32-bit SIMD max/blend — the standard aligner plus a generic wavefront-vectorisation optimisation, with no enumeration of single-gap shifts, no per-trial mismatch tally, and no minimum-over-trials selection.",
+  "valid": true
+}

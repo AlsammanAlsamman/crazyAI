@@ -1,0 +1,48 @@
+{
+  "prediction": 1.8,
+  "measurement": {
+    "results": [
+      {
+        "n": 200,
+        "m": 800,
+        "time": 3.09999814e-06,
+        "ref_time": 3.69999907e-06,
+        "reach_mismatch": 0,
+        "max_rel_err": 0.0,
+        "speedup_vs_heap": 1.194,
+        "exactness": 1.0,
+        "status": "exact"
+      },
+      {
+        "n": 1000,
+        "m": 4000,
+        "time": 3.19000028e-05,
+        "ref_time": 6.31999974e-05,
+        "reach_mismatch": 0,
+        "max_rel_err": 0.0,
+        "speedup_vs_heap": 1.981,
+        "exactness": 1.0,
+        "status": "exact"
+      },
+      {
+        "n": 5000,
+        "m": 20000,
+        "time": 0.0002332,
+        "ref_time": 0.000514699997,
+        "reach_mismatch": 0,
+        "max_rel_err": 0.0,
+        "speedup_vs_heap": 2.207,
+        "exactness": 1.0,
+        "status": "exact"
+      }
+    ],
+    "largest_n": 5000,
+    "status": "exact",
+    "speedup_vs_heap": 2.207,
+    "value": 2.207,
+    "prediction_target": 2.207,
+    "reading": "value = speedup vs. a reference binary-heap Dijkstra x exactness (1.0 = every node's reachability and distance matches to within 1e-9 relative error)."
+  },
+  "value": 2.207,
+  "status": "exact"
+}

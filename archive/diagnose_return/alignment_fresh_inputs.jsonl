@@ -1,0 +1,19 @@
+{"kernel": "archive\\diagnose_return\\rp0_current\\invent_7011_alignment\\artifact.c", "mismatches": [], "tested": 48, "wrong": 0, "exact_everywhere": true}
+{"kernel": "archive\\diagnose_return\\rp0_current\\invent_7022_alignment\\artifact.c", "mismatches": [], "tested": 48, "wrong": 0, "exact_everywhere": true}
+{"kernel": "archive\\diagnose_return\\rp0_current\\invent_7023_alignment\\artifact.c", "mismatches": [], "tested": 48, "wrong": 0, "exact_everywhere": true}
+{"kernel": "archive\\diagnose_return\\rp0_current\\invent_7024_alignment\\artifact.c", "mismatches": [], "tested": 48, "wrong": 0, "exact_everywhere": true}
+{"kernel": "archive\\diagnose_return\\rp0_current\\invent_7025_alignment\\artifact.c", "mismatches": [], "tested": 48, "wrong": 0, "exact_everywhere": true}
+{"kernel": "archive\\diagnose_return\\rp1_no_known\\invent_7011_alignment\\artifact.c", "mismatches": [], "tested": 48, "wrong": 0, "exact_everywhere": true}
+{"kernel": "archive\\diagnose_return\\rp1_no_known\\invent_7022_alignment\\artifact.c", "mismatches": [], "tested": 48, "wrong": 0, "exact_everywhere": true}
+{"kernel": "archive\\diagnose_return\\rp1_no_known\\invent_7023_alignment\\artifact.c", "mismatches": [{"n": 64, "case": 0, "ref": -18, "got": 48}, {"n": 64, "case": 1, "ref": -13, "got": 45}, {"n": 64, "case": 2, "ref": -18, "got": 40}, {"n": 64, "case": 3, "ref": -8, "got": 39}, {"n": 64, "case": 4, "ref": 56, "got": 35}], "tested": 48, "wrong": 36, "exact_everywhere": false}
+{"kernel": "archive\\diagnose_return\\rp1_no_known\\invent_7024_alignment\\artifact.c", "mismatches": [], "tested": 48, "wrong": 0, "exact_everywhere": true}
+{"kernel": "archive\\diagnose_return\\rp2_faithful\\invent_7011_alignment\\artifact.c", "mismatches": [], "tested": 48, "wrong": 0, "exact_everywhere": true}
+{"kernel": "archive\\diagnose_return\\rp2_faithful\\invent_7022_alignment\\artifact.c", "mismatches": [], "tested": 48, "wrong": 0, "exact_everywhere": true}
+{"kernel": "archive\\diagnose_return\\rp2_faithful\\invent_7023_alignment\\artifact.c", "mismatches": [], "tested": 48, "wrong": 0, "exact_everywhere": true}
+{"kernel": "archive\\diagnose_return\\rp2_faithful\\invent_7024_alignment\\artifact.c", "mismatches": [], "tested": 48, "wrong": 0, "exact_everywhere": true}
+{"kernel": "archive\\diagnose_return\\rp2_faithful\\invent_7025_alignment\\artifact.c", "mismatches": [], "tested": 48, "wrong": 0, "exact_everywhere": true}
+{"kernel": "archive\\invent_7011_alignment\\artifact.c", "mismatches": [], "tested": 48, "wrong": 0, "exact_everywhere": true}
+{"kernel": "archive\\invent_7022_alignment\\artifact.c", "mismatches": [], "tested": 48, "wrong": 0, "exact_everywhere": true}
+{"kernel": "archive\\invent_7023_alignment\\artifact.c", "mismatches": [], "tested": 48, "wrong": 0, "exact_everywhere": true}
+{"kernel": "archive\\invent_7024_alignment\\artifact.c", "mismatches": [], "tested": 48, "wrong": 0, "exact_everywhere": true}
+{"kernel": "archive\\invent_7025_alignment\\artifact.c", "mismatches": [], "tested": 48, "wrong": 0, "exact_everywhere": true}

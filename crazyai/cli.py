@@ -16,6 +16,7 @@
     crazyai invent-continuous --seed 42 --target matmul [--provider mock]   narrative, one continuous call, no persona swap
     crazyai invent-disguise --seed 42 --target matmul [--assumption 0] [--provider mock]   disguise the problem, not Claude
     crazyai invent-disguise-all --seed 42 --target matmul [--from-disguise] [--provider mock]   let the benchmark pick among all 3 disguised solutions
+    crazyai diagnose-return [--sources invent_7022_alignment ...] [--variants rp0_current ...] [--orig] [--provider mock]   diagnosis kit: vary only the translate step
     crazyai discover --seed 42 [--blend anneal] [--provider mock]   solution-first: invent something, let the AI propose what it's for
     crazyai discover-baseline --seed 42 [--provider mock]   discover-mode baseline: no world blend, no persona chain
     crazyai invent-rank [--target matmul] [--top 20]
@@ -278,6 +279,26 @@ def cmd_invent_disguise(args) -> int:
     return 1 if failures == args.n else 0
 
 
+def cmd_diagnose_return(args) -> int:
+    from crazyai.pipeline.return_path import DEFAULT_SOURCES, VARIANTS, ReturnPath
+
+    provider = _provider(args)
+    variants = args.variants or list(VARIANTS)
+    if args.orig:
+        variants = ["orig"] + variants
+    failures = total = 0
+    for source in (args.sources or DEFAULT_SOURCES):
+        for variant in variants:
+            total += 1
+            try:
+                ReturnPath(source=source, variant=variant, archive_dir=Path(args.archive), force=args.force).execute(provider)
+            except Exception as exc:  # noqa: BLE001 - one bad source must not abort the batch
+                failures += 1
+                print(json.dumps({"source": source, "variant": variant, "status": "error", "error": str(exc)[-2000:]}),
+                      flush=True)
+    return 1 if total and failures == total else 0
+
+
 def cmd_invent_disguise_all(args) -> int:
     from crazyai.pipeline.disguise_all import DisguiseAll
 
@@ -474,6 +495,12 @@ def build_parser() -> argparse.ArgumentParser:
     iva.add_argument("--from-disguise", action="store_true", help="reuse disguise.md from the matching invent-disguise run")
     add_provider(iva)
     iva.set_defaults(fn=cmd_invent_disguise_all)
+    dr = sub.add_parser("diagnose-return", help="diagnosis kit Q3: hold archived native texts fixed, re-run only the translate step under each return-path prompt variant, measure, and blind-judge whether the idea survived")
+    dr.add_argument("--sources", nargs="*", default=None, help="archive dir names of invent runs (default: 15 hard-target runs)")
+    dr.add_argument("--variants", nargs="*", default=None, help="rp0_current rp1_no_known rp2_faithful (default: all)")
+    dr.add_argument("--orig", action="store_true", help="also judge each source's archived artifact")
+    add_provider(dr)
+    dr.set_defaults(fn=cmd_diagnose_return)
     dc = sub.add_parser("discover", help="solution-first invention: no target, no problem - invent something, then let the AI propose what it's for")
     dc.add_argument("--seed", type=int, required=True)
     dc.add_argument("--n", type=int, default=1, help="number of consecutive seeds")

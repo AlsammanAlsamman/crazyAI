@@ -1,0 +1,14 @@
+{
+  "native_mechanisms": [
+    "Silence-swats: every mark is laid on its own flat stone so the input's order/position is fixed before any heap is folded.",
+    "Each heap races the musk deer's mountain stride — uphill twist, downhill fold, doubling back — so no heap keeps the shape it entered with, with the running shape carried into the next heap.",
+    "The owl seals the final folded shape to one fixed small size and burns every intermediate heap, so the token cannot be walked back to its marks.",
+    "Searching in squares: turn the shape ninety degrees and fold its corners into its own centre, repeatedly, until one changed mark smears across every square."
+  ],
+  "implemented_mechanism": 2,
+  "survival": "full",
+  "fallback": false,
+  "core_technique": "Wide 1024-bit state as a 4x4 grid of 64-bit lanes: each 8-byte word XOR'd into its own positional lane, then per-row rotate-plus-xorshift followed by a 90-degree lane permutation and ChaCha-style add/xor/rotate corner folding (AVX2-vectorised, dual cursors reading from both ends), with a murmur3 fmix64 finalizer — multiplication-free bulk ARX permutation, not single-accumulator multiply-xor folding.",
+  "notes": "The bulk loop deliberately contains no multiply (unlike FNV-1a/xxHash); deer_stride is the rotate/xor-shift stride, sq_mix is the ninety-degree turn plus corner fold, mechanism 1 survives as positional lane placement and mechanism 3 as the fmix64 seal over a one-way 16-to-1 lane collapse — but the executed core is mechanism 2 (plus its square-fold companion, item 4).",
+  "valid": true
+}

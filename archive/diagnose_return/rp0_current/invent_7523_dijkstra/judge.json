@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "A runner per road lays a stick on the far heap equal to the home ember plus that road's notch (edge relaxation nd = dist[u] + w).",
+    "One land-wide synchronized throw: every heap independently takes its own shortest sliver as its new ember, all other slivers burned, with no heap compared to any other heap (per-node local min, no global priority order).",
+    "A garrison seals a heap once its ember stops changing between throws, fixing its distance permanently and halting its runners."
+  ],
+  "implemented_mechanism": 2,
+  "survival": "full",
+  "fallback": false,
+  "core_technique": "Frontier-based synchronized Bellman-Ford over CSR: dist held read-only for a whole round while per-node candidate minima accumulate (strict nd < dist && nd < cand test, SIMD gather-assisted), then all candidates committed at once and only changed nodes form the next frontier — hedged by an O(n^2) SIMD array-scan Dijkstra for dense/tiny graphs and a work-budget bailout to binary-heap Dijkstra.",
+  "valid": true
+}
