@@ -9,7 +9,7 @@ variants in parallel, so its own timings are noisy), then reports per variant:
   (full=2, partial=1, none=0), and an exact sign test on fallback
 - does survival predict speed? mean within-target speedup percentile by survival level
 
-    python examples/12_diagnose_report.py [archive_dir] [repeats]      (repeats=0: skip re-timing)
+    python examples/12_diagnose_report.py [archive_dir] [repeats] [variant,variant,...]      (repeats=0: skip re-timing)
 """
 
 from __future__ import annotations
@@ -24,7 +24,7 @@ from scipy.stats import binomtest, rankdata, wilcoxon
 from crazyai.targets import get_target
 from crazyai.toolkit.registry import build_toolkit
 
-ORDER = ["orig", "rp0_current", "rp1_no_known", "rp2_faithful"]
+ORDER = ["orig", "rp0_current", "rp1_no_known", "rp2_faithful", "c0_today", "i1_hidden", "i2_recipe", "i3_gate"]
 SURV = {"full": 2, "partial": 1, "none": 0}
 
 
@@ -67,7 +67,10 @@ def main() -> None:
     repeats = int(sys.argv[2]) if len(sys.argv) > 2 else 5
     root = archive / "diagnose_return"
     rows = load_rows(root)
-    cache = root / "remeasure.json"
+    if len(sys.argv) > 3:                       # optional comma list: only these variants
+        keep = set(sys.argv[3].split(","))
+        rows = {k: r for k, r in rows.items() if k[0] in keep}
+    cache = root / ("remeasure.json" if len(sys.argv) <= 3 else f"remeasure_{sys.argv[3].replace(',', '+')}.json")
     if repeats > 0:
         retime(rows, root, archive, repeats)
         cache.write_text(json.dumps([rows[k] for k in sorted(rows)], indent=1), encoding="utf-8")
@@ -98,7 +101,8 @@ def main() -> None:
 
     print("\n== paired tests over shared sources (two-sided) ==")
     pairs = [("orig", "rp0_current"), ("rp0_current", "rp1_no_known"), ("rp1_no_known", "rp2_faithful"),
-             ("rp0_current", "rp2_faithful")]
+             ("rp0_current", "rp2_faithful"), ("c0_today", "i1_hidden"), ("c0_today", "i2_recipe"),
+             ("c0_today", "i3_gate"), ("i1_hidden", "i2_recipe"), ("rp0_current", "c0_today")]
     for a, b in pairs:
         if a not in variants or b not in variants:
             continue
@@ -139,7 +143,7 @@ def main() -> None:
         g = [pct[k] for k, r in rows.items() if r["fallback"] is fb]
         if g:
             print(f"fallback={str(fb):<8} n={len(g):>2}  mean percentile {mean(g):.2f}")
-    out = root / "report.json"
+    out = root / ("report.json" if len(sys.argv) <= 3 else f"report_{sys.argv[3].replace(',', '+')}.json")
     out.write_text(json.dumps([rows[k] for k in sorted(rows)], indent=1), encoding="utf-8")
     print(f"\n-> {out}")
 

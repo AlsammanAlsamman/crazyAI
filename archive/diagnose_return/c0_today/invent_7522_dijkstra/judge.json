@@ -1,0 +1,14 @@
+{
+  "native_mechanisms": [
+    "A stone on a corner: a vertex's distance becomes final once settled and is never reconsidered.",
+    "A duck carries a spooled thread: each frontier vertex holds a tentative label equal to the running sum of edge lengths along the path that reached it.",
+    "Each round, the leader duck is found — the shortest carried thread among the unstoned — and settled before any other duck moves.",
+    "(prose only) Roads toward houses with no far side are thrown away unspooled — dead-end vertices are never queued.",
+    "(prose only) Trace every shot back to its landing before trusting the leader — stale/superseded entries are rejected."
+  ],
+  "implemented_mechanism": 3,
+  "survival": "full",
+  "fallback": true,
+  "core_technique": "Dijkstra's algorithm over a CSR adjacency, with a compact unordered array of active tentative labels scanned by an AVX2 argmin for extract-min plus O(1) positional decrease-key, falling back to a lazy-deletion 4-ary binary heap once the frontier exceeds a computed threshold; sink vertices are pruned from the frontier.",
+  "valid": true
+}

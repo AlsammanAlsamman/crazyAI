@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "A runner walks each road carrying its notched length and lays a new stick on the far heap equal to the home heap's ember plus that notch (per-edge relaxation dist[u]+w(u,v)).",
+    "Every heap throws its sticks in one land-wide simultaneous throw, and a single row read straight across picks each heap's shortest sliver as its new ember while all longer slivers are burned (global synchronous round + per-node min, one value carried forward).",
+    "A garrison seals a heap whose ember stopped changing between throws, fixing its distance permanently, refusing incoming sticks, and halting its own runners for good (per-node settle/freeze that prunes work)."
+  ],
+  "implemented_mechanism": 2,
+  "survival": "full",
+  "fallback": false,
+  "core_technique": "Synchronous (Jacobi/double-buffered) Bellman-Ford: repeated whole-graph relaxation implemented as a per-node min-reduction over incoming CSR edges, reading only pre-round distances and writing a shadow array, looping until a round changes nothing or n-1 rounds elapse, OpenMP-parallelised.",
+  "valid": true
+}

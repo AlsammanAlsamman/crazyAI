@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "A single rolling sphere is the only carried memory across the whole ordered pile (one accumulator register, no side state).",
+    "Each mark is pressed into the sphere and then tumbled a fixed, data-independent count of turns (strike stalk / crack / read angle) before the next mark is taken.",
+    "Only the final hairline crack from the last stalk is handed over as the token; all intermediate cracks, faces and dust are discarded."
+  ],
+  "implemented_mechanism": 1,
+  "survival": "full",
+  "fallback": true,
+  "core_technique": "FNV-1a/xxHash-style streaming hash: one 64-bit accumulator, per byte xor-in then a fixed number of multiply-by-odd-constant / xor-shift-32 / rotate-27 mixing rounds, plus a length-mixing finalization returning the last xor-shift value.",
+  "valid": true
+}

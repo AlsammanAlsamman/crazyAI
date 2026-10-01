@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "Lay both cords' symbol-shaped coils in parallel rows and walk them together, counting one 'fire' per exact positional match (diagonal match-count scan).",
+    "Allow the boundary between the rows to break exactly once per crossing, letting the shadow row crouch one coil past a quarrel — i.e. enumerate alignments with at most a single gap/offset slip.",
+    "Store each crossing's total in its own room, sink failed/twice-broken crossings into the unread tower, and bring back only the highest pile as the answer (max over all admissible crossings)."
+  ],
+  "implemented_mechanism": 2,
+  "survival": "partial",
+  "fallback": true,
+  "core_technique": "Banded Needleman-Wunsch with an AVX2 anti-diagonal wavefront, where an O(n) prefix-sum scan over all ≤1-gap alignments supplies a lower bound that (via score ≤ n − 5g) bounds the band width and occasionally proves the answer outright.",
+  "valid": true
+}

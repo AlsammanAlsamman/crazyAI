@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "A glint leaves the source jewel and crawls along every cord at a speed set by that cord's length, so arrival time equals accumulated cord length (delay-based wavefront propagation).",
+    "Each jewel's square is chalked at its first flare only; any later flare arriving down a longer/slacker cord is discarded unmarked (first-arrival-wins, settle once).",
+    "Any square never lit by any flare is left blank and crossed out (unreachable nodes marked as infinity)."
+  ],
+  "implemented_mechanism": 2,
+  "survival": "partial",
+  "fallback": true,
+  "core_technique": "Dijkstra's algorithm over a CSR adjacency structure with an unordered frontier array whose minimum is found by a blocked (64-entry) block-minimum cache and AVX2/SIMD linear min-and-find scans instead of a binary heap.",
+  "valid": true
+}

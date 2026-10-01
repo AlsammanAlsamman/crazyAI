@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "Lay the two symbol strings crosswise over a tray so their crossings form a lattice of scored meeting-points (the DP grid).",
+    "A single one-cell agent walks all eight directions, deposits a score-mound at each junction, overwrites any weaker standing mound, and curls back over its own trail to re-test junctions from another face until no junction anywhere can be improved — no ledger except the mounds themselves.",
+    "A sideways crossing costs nothing, letting one cord slip a step ahead of the other (a free gap / zero-cost indel)."
+  ],
+  "implemented_mechanism": 0,
+  "survival": "none",
+  "fallback": true,
+  "core_technique": "Exact Needleman-Wunsch computed by an anti-diagonal (wavefront) sweep with three rolling diagonals, SIMD-vectorized in 16-bit lanes (AVX2/AVX-512) with a reversed second sequence, plus 32-bit and scalar row-DP fallbacks — a standard diagonal-major vectorization of the textbook O(n^2) DP.",
+  "valid": true
+}

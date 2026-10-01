@@ -1,0 +1,13 @@
+{
+  "native_mechanisms": [
+    "Bone-colored die-stone (accumulator) is never reset between marks — every fold carries the callus of all prior folds",
+    "Each mark's weight is pressed into the stone's already-turned seat (add-in, quarter-turn, multiply), so earlier marks bend how later marks land — strictly order-dependent, serially chained state",
+    "Only the stone's final seated position against the wooden keeps is emitted; all intermediate turns/residue are swept away and discarded",
+    "Fold count equals mark count regardless of pile length — constant per-mark work, streaming over arbitrarily long input",
+    "Avalanche claim: a hair's-width change is multiplied by each successive fold so no two differing paths converge on the same last step"
+  ],
+  "implemented_mechanism": 2,
+  "survival": "full",
+  "fallback": true,
+  "core_technique": "xxHash64 verbatim: four parallel 64-bit accumulator lanes seeded with the golden-ratio primes, each running acc = rotl31(acc + w*P2) * P1 over 32/64-byte blocks, lane merge via rotl(1,7,12,18) + four round-and-keep steps, length add, 8/4/1-byte tail rounds, and the xor-shift/multiply avalanche finalizer — i.e. exactly the known multiply-xor-rotate accumulator fold, with multi-lane ILP as a generic textbook optimisation not derived from the single-stone image."
+}

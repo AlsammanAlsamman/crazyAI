@@ -134,3 +134,58 @@ speedup.
   the same disguises.
 - AImirror: try a Qwen model and few-shot examples, and validate both judges against a small set
   of human verdicts.
+
+---
+
+## Part 2 (2026-09-30 to 10-01): four ways to stop the fallback
+
+Same 15 native texts, all run on a pinned model (`claude-opus-5`, effort high) against a
+same-day control, then re-timed 5 times interleaved (`report_antifallback.txt`).
+
+| Arm | Idea |
+|---|---|
+| `c0_today` | today's normal translate prompt (control) |
+| `i1_hidden` | 1. hide the textbook: no known way, no assumption list, no example kernel |
+| `i2_recipe` | 2. the native writes a numbered in-world recipe; the engineer codes it step by step |
+| `i3_gate` | 3. the blind judge checks each kernel; on a fallback, feed the verdict back and retry (up to 2 times) |
+| offline | 4. reward novelty: per story, the fastest kernel that did *not* fall back |
+
+`i3_gate` completed 11 of 15: its last 4 dijkstra stories hit the usage limit. Its numbers
+below are on those 11, paired with the control on the same 11.
+
+| Arm | Mean speedup vs control (paired) | Fell back | Notes |
+|---|---|---|---|
+| control | 13.69x (18.07x on the gate's 11) | 12/15 (9/11) | |
+| 1. hidden | 7.07x, p = 0.04 | 9/15, n.s. | speed roughly halves on all targets |
+| 2. recipe | 2.84x, p = 0.002 | 11/15, n.s. | most "full" survival (10/15), but hash collapses to 0.51x |
+| 3. gate | 8.79x vs 18.07x, p = 0.014 | **5/11** (4 removed, 0 added, p = 0.125) | a retry rescued 4 of 9 fallbacks; 2 of 11 lost correctness |
+
+**Idea 4 (novelty-gated selection)** over the four arms' kernels per story: the fastest kernel
+averages 14.60x; the fastest *non-fallback* kernel averages 6.51x. Only 8 of 15 stories produced
+any exact non-fallback kernel. By target:
+- **Alignment:** only 1 of 5 stories did (18.5x).
+- **Dijkstra:** 3 of 5 did, at up to 2.09x.
+- **Hash:** 4 of 5 did. Two of them are fast *and* pass the SMHasher-style quality test:
+  - gate 7224, 29.2x: a wide 1024-bit ARX state with Speck-style rounds and BLAKE2b-style mixing;
+  - control 7225, 31.0x: chained hardware-CRC lanes with an avalanche finalizer.
+  
+  Two slower non-fallback hashes fail the quality test (i1 7223, gate 7223). One binary was
+  blocked by endpoint security.
+
+**Day-to-day noise is large.** The same prompt on the same texts gave hash 11.06x on 09-29 and
+24.40x on 09-30. Differences between arms smaller than about 2x shouldn't be trusted at n = 15.
+
+### What it means
+
+1. **Only the gate reliably cuts fallback**, and it costs about half the speed and some
+   correctness. Hiding the textbook and the recipe don't measurably reduce fallback, and both
+   cost speed; the recipe badly so.
+2. **Whether keeping the idea is viable depends on the target's design space.**
+   - **Alignment:** every fast exact kernel is a known technique, so forcing the native's idea
+     only makes it slower.
+   - **Hash:** the design space is wide. The native's mechanism can be kept and still be fast,
+     and the two good kernels show it. Even so, they are assembled from known primitives (ARX,
+     CRC, BLAKE2-style rounds), not a new hash family.
+3. **A path worth following:** gate plus selection, on wide-design-space targets. The gate keeps
+   the idea; generating several gated candidates and letting the benchmark pick recovers speed.
+   It needs a strong correctness/quality gate, since the gate arm produced two broken hashes.

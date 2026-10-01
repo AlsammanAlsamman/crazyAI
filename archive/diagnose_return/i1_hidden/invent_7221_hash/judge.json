@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "One fold per mark, each crease's angle set jointly by the mark and the crease before it (state carried forward).",
+    "Every crease gauged against all four wire birds' beaks at once, refolded tighter until all four agree, with the spiral/snail markings deliberately left misaligned so two different piles can't coincide.",
+    "Thin the whole folded wad at the water's edge (with its one small suitcase) down to a single dense coin-sized corner, discarding every sheet, scrap and failed reading."
+  ],
+  "implemented_mechanism": 1,
+  "survival": "partial",
+  "fallback": true,
+  "core_technique": "wyhash/xxHash-style block hash: four parallel 64-bit lanes of 128-bit multiply-with-hi^lo-fold over 64-byte blocks, rotate-and-merge, 16-byte and overlapping-tail folds, then a length-keyed multiply-xorshift avalanche finalizer.",
+  "valid": true
+}

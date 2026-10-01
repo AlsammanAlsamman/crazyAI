@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "Each mark is folded one-by-one into an impure ('cut') accumulator whose changed state seeds the next fold, so the whole buffer passes as one unbroken serial chain, each byte used exactly once and never judged alone.",
+    "The chain's final state is pushed through seven successive bendings (organs), each invertible and each discarding half of what it received, keeping only the volatile part.",
+    "Avalanche verification by mutation: flip one mark anywhere in the buffer, re-run the whole pour from the start, and discard the entire method if the new digest resembles the old."
+  ],
+  "implemented_mechanism": 2,
+  "survival": "partial",
+  "fallback": true,
+  "core_technique": "FNV-1a/xxHash-style serial multiply-xor accumulator folding 8/16/32-byte blocks (plus length seeding and a byte-packed tail) through one 64-bit state, closed by a stock mx3 xorshift-multiply finalizer.",
+  "notes_ignored_by_schema": null
+}

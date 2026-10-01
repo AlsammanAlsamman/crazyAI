@@ -1,0 +1,11 @@
+{
+  "native_mechanisms": [
+    "A single rolling sphere is the sole carried memory (one accumulator state) across the whole ordered pile of input marks, with old state discarded each step.",
+    "Each mark is pressed into the sphere and then rolled a fixed, invariant count of tumbles (fixed mixing rounds per input word), the 'crack angle' at each stalk (rotation) becoming the next carried weight — avalanche by whole-state reshaping, no partial-slice update.",
+    "Only the final hairline crack in the last stalk is kept as the emitted token; all intermediate cracks, dust and footprints are discarded on purpose (no per-step outputs, no history retained)."
+  ],
+  "implemented_mechanism": 2,
+  "survival": "full",
+  "fallback": true,
+  "core_technique": "Off-the-shelf SipHash-2-4 (ARX add-rotate-xor, fixed 2 rounds per 8-byte word into a 4-word keyed state, 4 finalization rounds, XOR-folded 64-bit output), with a generic textbook 8-lane AVX2 / 2-lane scalar parallel-accumulator tree variant for inputs >= 256 bytes whose lane digests are re-fed through the scalar SipHash — i.e. the standard 'fold the whole buffer through one fixed-round accumulator' construction (same family as the FNV-1a/xxHash known way, substituting rotate-add for multiply) plus conventional SIMD striping, which itself contradicts the 'sole carried sphere' seed."
+}

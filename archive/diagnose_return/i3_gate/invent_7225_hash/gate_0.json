@@ -1,0 +1,11 @@
+{
+  "native_mechanisms": [
+    "Chained sequential pour: each mark is folded into the one stained cup and the cup's new colour becomes the seed for the next mark, so the whole buffer passes through as a single unbroken chain, each byte consumed once and never alone",
+    "Seven-fold organ bending of the final colour: the accumulator is pushed through seven successive invertible bendings, each discarding about half of what it received (shift ~half the register) and keeping only the restless bits",
+    "Single-bit-flip avalanche verification: change one arbitrary byte/bit in the buffer, re-run the whole pour, and reject the entire method if the new token still resembles the old"
+  ],
+  "implemented_mechanism": 2,
+  "survival": "partial",
+  "fallback": true,
+  "core_technique": "Length-tiered hash: bulk data absorbed by 2–4 parallel hardware CRC32C lanes (or, without SSE4.2, 4 parallel xor-multiply lanes), lanes plus length combined and finished with the stock 7-step mx3 xor-shift/multiply avalanche finalizer"
+}

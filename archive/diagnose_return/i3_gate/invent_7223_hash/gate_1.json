@@ -1,0 +1,11 @@
+{
+  "native_mechanisms": [
+    "A single rolling sphere is the sole carried memory across the whole ordered pile (one accumulator, streaming, no side state)",
+    "Each mark is pressed in, then a fixed count of tumbles down the trail mixes it, where each strike cracks the sphere and the crack's angle becomes the next turn's weight (data-derived mixing amount carried forward)",
+    "Only the final hairline crack in the last stalk is handed over; all intermediate cracks, dust and footprints are discarded on purpose"
+  ],
+  "implemented_mechanism": 2,
+  "survival": "full",
+  "fallback": false,
+  "core_technique": "Single 64-bit accumulator hash: xor in each 8-byte word, then exactly two fixed mixing rounds of add-Weyl-constant + xorshift + RC5-style data-dependent rotation by the accumulator's own low 6 bits, closed by a rotate/xorshift (SHA-2 Sigma-shaped) finalizer, with no multiplication anywhere."
+}

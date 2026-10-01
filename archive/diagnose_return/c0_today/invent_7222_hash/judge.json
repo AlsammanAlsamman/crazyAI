@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "The die-stone never resets between marks: each fold carries the accumulated state (callus) of every prior fold, so the whole pile folds through one running accumulator.",
+    "Each mark's weight is pressed into the stone's already-turned position rather than a clean face, so a mark's contribution is bent by all earlier marks (rotate-then-press dependency, giving multiplicative divergence/avalanche).",
+    "Only the stone's final seated position against the fixed wooden keeps is emitted; all intermediate turns and residue are swept away and discarded."
+  ],
+  "implemented_mechanism": 1,
+  "survival": "partial",
+  "fallback": true,
+  "core_technique": "xxHash64: four parallel 64-bit accumulator lanes running the standard round (acc += in*P2; rotl 31; acc *= P1) over 32-byte stripes, merged by rotate-sum plus per-lane merge rounds, with a length-mixed tail (8/4/1-byte steps) and a splitmix-style xor-shift/multiply finalizer.",
+  "valid": true
+}

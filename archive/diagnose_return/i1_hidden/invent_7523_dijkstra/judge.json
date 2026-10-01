@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "A runner on each road lays a stick on the far heap equal to the home ember plus that road's notch (edge relaxation dist[u]+w).",
+    "One land-wide simultaneous throw per step: all heaps' sticks are cast at once and each heap keeps only its shortest sliver as its new ember, the rest burned (synchronous round, per-vertex min taken in one breath).",
+    "A garrison seals a heap whose ember did not change between throws, fixing its distance for good and permanently halting its outgoing runners."
+  ],
+  "implemented_mechanism": 2,
+  "survival": "full",
+  "fallback": false,
+  "core_technique": "Frontier-based synchronous-round Bellman-Ford/SPFA over a CSR graph, with per-vertex atomic CAS min-relaxation, an in-queue bitmask frontier, and OpenMP persistent-team barriers plus a serial small-frontier path — no priority queue or global argmin.",
+  "valid": true
+}

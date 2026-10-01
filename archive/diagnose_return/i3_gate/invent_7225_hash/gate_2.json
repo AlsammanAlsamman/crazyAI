@@ -1,0 +1,11 @@
+{
+  "native_mechanisms": [
+    "Pour each mark into the impure/'sickened' wine cup and let the cup's changed colour seed the next pour, so the whole pile passes as one unbroken serial chain — no mark judged alone or twice.",
+    "Carry the cup's final colour through seven successive organ-bendings, each invertible bending discarding half of what it received and keeping only the bits that refuse to sit still.",
+    "Flip one mark anywhere in the pile, re-pour from the first cup, and condemn the whole method if the new token still resembles the old (strict avalanche as a rejection test)."
+  ],
+  "implemented_mechanism": 1,
+  "survival": "full",
+  "fallback": false,
+  "core_technique": "Lag-2 serial CRC-32C absorption: each 8-byte word is XORed with the previous CRC state (sediment feedback) then folded into the running state via hardware _mm_crc32_u64 (or an equivalent hand-built reflected 0x82F63B78 table), with a splitmix-style xorshift/multiply finalizer applied once at the end."
+}

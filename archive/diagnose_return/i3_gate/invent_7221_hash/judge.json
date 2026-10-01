@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "Fold one crease per mark in strict order, each crease's angle set by both the mark and the crease before it (sequential chained state).",
+    "Test every crease against all four wire birds' beaks at once and refold tighter until all four agree (four coupled gauges of the same crease, no independent partial answers).",
+    "Thin the whole folded wad down to one small dense corner and destroy every scrap and failed reading (irreversible wide-state-to-single-word finalization)."
+  ],
+  "implemented_mechanism": 2,
+  "survival": "full",
+  "fallback": false,
+  "core_technique": "SipHash-style 4x64-bit coupled state: each 32-byte block XORed one word per lane, then two SipRounds of ARX cross-mixing (so every lane becomes a function of all four) with a second cross-lane re-injection of the same words, plus length-seeded IVs, 8-byte tail path, three finalization rounds, XOR-fold of all four lanes and a MurmurHash3 fmix64 tail.",
+  "valid": true
+}

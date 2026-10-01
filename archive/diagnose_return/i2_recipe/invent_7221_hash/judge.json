@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "One crease per mark, each crease's angle set jointly by the mark and the immediately preceding crease (strict in-order chained state).",
+    "Every crease tested simultaneously against all four wire-bird beaks, refolded a half-shell tighter until all four agree.",
+    "The whole folded wad thinned at the water's edge into one small dense corner, with every scrap, spare sheet and failed reading discarded so nothing but the coin survives."
+  ],
+  "implemented_mechanism": 1,
+  "survival": "partial",
+  "fallback": true,
+  "core_technique": "Single-pass byte-at-a-time chained rotate-add/xor-multiply mixer (rotation count driven by popcount of the byte) feeding four parallel accumulators, closed with a Murmur3-style fmix64 finalizer — i.e. FNV/xxHash-style multiply-xor-shift accumulation, with the four-beak agreement test inert (the all-nonzero check essentially never fails) and the 'discard' step a no-op wipe of dead locals.",
+  "valid": true
+}

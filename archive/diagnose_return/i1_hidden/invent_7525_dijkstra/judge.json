@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "Nightingales down every outgoing road sing one note per stride, die at the first board, and carve that board's fixed lattice slot with the dying note (keep the fainter of two, dead roads never re-sent)",
+    "At each board a cow's-head woman re-measures the note as it would sound via the last settled board plus the connecting stretch, recutting the slot only when that milk is thinner",
+    "Always settle next the quietest unsettled note in the lattice, never re-touching a settled board, until no bird sings and unreached places stay blank"
+  ],
+  "implemented_mechanism": 3,
+  "survival": "full",
+  "fallback": false,
+  "core_technique": "Dijkstra whose priority queue is a fixed-slot, position-is-identity lattice-of-lattices — an 8-ary hierarchical min-tree (SIMD qmin8) layered over dist[] with a settled bitmask, giving O(log_8 n) extract-min and decrease-key with no key migration or duplicate entries, plus an O(n^2) plain-scan path for n<=192.",
+  "valid": true
+}

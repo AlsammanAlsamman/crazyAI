@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "Hang the two symbol strings on crossed rows of posts so their crossings form a lattice of DP cells, each cell's value chosen by the two symbols meeting there.",
+    "Fold the lattice along its slanting middle so all cells with equal row+column sum form one crease (anti-diagonal), processed as a unit.",
+    "Read the three stacked layers (two previous creases) at once for each crease, keep only the two most recent, and discard the spent oldest layer instead of storing the sheet."
+  ],
+  "implemented_mechanism": 2,
+  "survival": "full",
+  "fallback": false,
+  "core_technique": "Anti-diagonal (wavefront) Needleman-Wunsch with three rolling diagonal buffers, one sequence pre-reversed, AVX2-vectorized across each anti-diagonal in int32 or saturating int16 lanes, computed in a min-cost gauge E=(i+j)-2H and converted back at the end.",
+  "valid": true
+}

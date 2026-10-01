@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "A glint leaves the source jewel and crawls down each cord at a pace set by that cord's own length, so arrival time equals accumulated cord length (time-delayed wavefront propagation).",
+    "Each jewel's square is chalked at the instant of its first flare, and any later flare arriving via a longer cord is discarded without re-marking (label-setting, first settle is final, no updates).",
+    "Squares never reached by any flare are left blank and crossed out (unreachable vertices reported as infinite)."
+  ],
+  "implemented_mechanism": 1,
+  "survival": "full",
+  "fallback": false,
+  "core_technique": "Dial-style bucket/monotone-clock Dijkstra: a circular array of nb distance-quantized buckets (width delta from weight statistics) with doubly-linked vertex lists, a 64-bit-word bitmap ctz scan to skip empty buckets, decrease-key by bucket re-insertion, plus a pop-budget guard that falls back to lazy binary-heap Dijkstra.",
+  "valid": true
+}

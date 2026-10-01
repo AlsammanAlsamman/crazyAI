@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "Each byte/mark is folded into an impure (non-pure, memory-bearing) accumulator whose changed state becomes the seed for the next fold, so the whole buffer passes as one unbroken chained pour, each byte consumed exactly once.",
+    "The accumulator's final state is pushed through exactly seven fixed finalization stages in turn, each stage bending (multiplying) or discarding half of its input (shift-xor) and keeping only the moving bits.",
+    "A single input bit is flipped anywhere in the buffer and the whole pipeline is re-run from the start; any resemblance between the new and old digest condemns the whole method."
+  ],
+  "implemented_mechanism": 1,
+  "survival": "full",
+  "fallback": false,
+  "core_technique": "Chained CRC accumulation over 8-byte words (hardware CRC32C/CRC32D intrinsic, else a table-driven reflected CRC-64/XZ) with non-zero init constants and 2-3 interleaved lanes, length mixed in, finished by a fixed 7-stage xor-rotate/multiply/xor-shift avalanche finalizer (nasam head + rrmxmx tail).",
+  "valid": true
+}

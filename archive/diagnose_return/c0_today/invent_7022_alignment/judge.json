@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "Lay the two symbol strings as crossed cords over a sand-tray so their crossings form a lattice of cells (the DP grid itself).",
+    "Wake a single one-cell-wide ink-worm that moves in eight directions and curls back over its own trail to re-test a junction from another face, keeping no ledger but the sand mounds (relax-and-revisit crawler with in-place best-value overwrite and no separate queue).",
+    "Let the worm cross a furrow sideways spending no sand, so one cord may slip a step ahead of the other at zero cost (free horizontal/gap transition)."
+  ],
+  "implemented_mechanism": 3,
+  "survival": "partial",
+  "fallback": true,
+  "core_technique": "Score-bound-derived banded Needleman-Wunsch two-row DP, vectorised with AVX2 using an offset coordinate (G = H + 2j) so the left-gap dependency becomes a running/log-shift prefix maximum.",
+  "valid": true
+}

@@ -1,0 +1,11 @@
+{
+  "native_mechanisms": [
+    "Low sun / doubled shadow: all match positions across the two ropes' crossings are revealed at once, without touching the grid cell by cell.",
+    "Corridor cost between consecutive treasures is computed arithmetically from how many knots each rope advances (index differences), never walked or filled in.",
+    "At each treasure keep only the cheapest arriving tally per slip-state (slip spent / slip whole) and drop every dominated tally."
+  ],
+  "implemented_mechanism": 1,
+  "survival": "partial",
+  "fallback": true,
+  "core_technique": "Banded SIMD (SSE2/SSSE3 int16) Needleman-Wunsch with a y = D + 2j coordinate transform that pre-pays the gap penalty so each row becomes a vectorized map plus log-depth prefix-maximum scan, with band width derived from a score bound obtained by a bulk popcount of main-diagonal matches."
+}

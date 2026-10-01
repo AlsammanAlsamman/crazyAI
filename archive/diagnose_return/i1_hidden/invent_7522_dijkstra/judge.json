@@ -1,0 +1,14 @@
+{
+  "native_mechanisms": [
+    "A stone on a corner marks a distance as finally settled and never reconsidered (permanent settled set).",
+    "A duck carries a spooled thread whose length is the running sum of road lengths to reach it (tentative distance label, updated only when a shorter sum arrives).",
+    "Each round, the leader duck with the shortest carried thread among the unstoned is found by hovering over the whole flock and settled before any other duck moves (exhaustive argmin over unsettled labels).",
+    "Roads to houses with no far side are left slack, thrown away unspooled and never measured (skip/never enqueue nodes with no outgoing edges).",
+    "Corners no duck ever reaches stay bare, their light lost (unreachable nodes keep infinite distance)."
+  ],
+  "implemented_mechanism": 3,
+  "survival": "full",
+  "fallback": true,
+  "core_technique": "Dijkstra with CSR adjacency and a compact swap-removal frontier array whose minimum is chosen each round by an exhaustive (AVX2/OpenMP) linear argmin with O(1) in-place label update — i.e. the classic heapless array-scan Dijkstra — plus a work-budget guard that switches to a 4-ary lazy-deletion binary heap.",
+  "valid": true
+}

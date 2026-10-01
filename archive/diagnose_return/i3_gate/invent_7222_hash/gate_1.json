@@ -1,0 +1,11 @@
+{
+  "native_mechanisms": [
+    "A single bone-colored die-stone (accumulator) is never reset between marks, so every fold carries the accumulated state of all prior folds.",
+    "Each mark's weight is pressed into the stone's already-turned position rather than a clean face, so earlier marks bend how later marks land (chained, order-dependent, amplifying dependence).",
+    "Only the stone's final seated position, read against the wooden numbered keeps (finalizer), ever leaves the desk; all intermediate turns and residue are discarded."
+  ],
+  "implemented_mechanism": 1,
+  "survival": "full",
+  "fallback": true,
+  "core_technique": "Single 64-bit accumulator polynomial/LCG fold h = (h + word) * odd_P over 8-byte words (with an invertible v^(v>>47) pre-mix, length injected last), reassociated into four strided lanes with Q = P^4 for instruction-level parallelism, then a Moremur multiply-xorshift finalizer — i.e. FNV/xxHash-style multiply-mix-through-one-accumulator plus a textbook ILP unrolling."
+}

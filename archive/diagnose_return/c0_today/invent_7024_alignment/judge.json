@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "Lay both symbol-coil rows side by side in the sun and walk them together, counting one dropped fire per exact coil-to-coil match (offset-sweep match counting, no table).",
+    "Allow the boundary door between the rows to break exactly once per crossing — one coil crouches past a quarrel, putting the shadow row out of step; a second break voids the crossing.",
+    "Store each crossing's fire-pile in its own room, sink voided/twice-broken crossings into the underground tower, and return only the highest pile as the final agreement score."
+  ],
+  "implemented_mechanism": 3,
+  "survival": "partial",
+  "fallback": true,
+  "core_technique": "Banded Needleman-Wunsch computed along anti-diagonals in int16 with AVX2 (plus an O(n)-memory exact two-row NW fallback), where the band half-width is derived from a score lower bound obtained by max-over-shift diagonal match counting.",
+  "valid": true
+}

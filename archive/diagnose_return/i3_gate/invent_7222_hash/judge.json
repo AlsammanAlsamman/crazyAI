@@ -1,0 +1,14 @@
+{
+  "native_mechanisms": [
+    "A single persistent accumulator ('die-stone') that is never reset between input elements, so every mixing step carries the state of all prior steps",
+    "Each input word's weight is combined into the accumulator's already-mixed current value (multiply-add into state, then quarter-turn/rotate), so early inputs bend how later inputs land — sequential data dependence giving avalanche/divergence of differing input paths",
+    "Only the accumulator's final value is emitted; all intermediate states, residues and the loop's internal structure are discarded and never observable",
+    "A fixed, input-independent set of constants ('starlight-colored cycle-light') used for every press",
+    "Fold count scales one turn per input element, so arbitrarily long inputs are handled by the same constant-state loop (streaming, O(n) time, O(1) state)"
+  ],
+  "implemented_mechanism": 1,
+  "survival": "full",
+  "fallback": true,
+  "core_technique": "Verbatim xxHash64: four parallel 64-bit accumulators seeded with the standard PRIME64 constants, 32/64-byte striped rounds of acc += w*P2; rotl31; acc *= P1, merged via rotl(1,7,12,18) and mergeRound, plus length, 8/4/1-byte tail rounds, and the standard xor-shift/multiply final avalanche.",
+  "valid": true
+}

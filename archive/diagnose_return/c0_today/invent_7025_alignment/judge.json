@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "Two rows of beast-pawns on a shared road: one row fixed, the second slipped forward at exactly one house by the horse's-head piece, tried at every house and at none (single-gap shift trials).",
+    "House-by-house comparison marking agreement with a lotus petal and disagreement with a red knot, paced one count per flute note (per-cell match +1 / mismatch -1 tally).",
+    "Gather each trial's knots into a fist, weigh it, and keep only the lightest fist while flinging all others away (minimise mismatch count over trials; discard the rest)."
+  ],
+  "implemented_mechanism": 1,
+  "survival": "partial",
+  "fallback": true,
+  "core_technique": "Banded Needleman–Wunsch DP (scalar rolling band, plus an AVX2 anti-diagonal wavefront in 16-bit lanes) with the band width W derived from a lower bound obtained by scoring a handful of single-shift Hamming comparisons.",
+  "valid": true
+}

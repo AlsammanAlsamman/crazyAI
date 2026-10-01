@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "Two rows on a shared track, one fixed, the other allowed exactly one forward slip — every slip position tried plus the no-slip case",
+    "Per-house comparison marking match (lotus petal) vs mismatch (red knot), one house per flute beat, no skipping or double-counting",
+    "Each trial's mismatch marks gathered and counted, all trials but the lowest-count one discarded, that count being the answer"
+  ],
+  "implemented_mechanism": 1,
+  "survival": "partial",
+  "fallback": true,
+  "core_technique": "Banded anti-diagonal (wavefront) Needleman-Wunsch with AVX2 32-bit lanes, where the band half-width comes from an O(n) prefix/suffix-scan lower bound over all zero- and one-gap alignments (plus a probe-band re-tightening), falling back to two-row NW for small/failed cases",
+  "valid": true
+}

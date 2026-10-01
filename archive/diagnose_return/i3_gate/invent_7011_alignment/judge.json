@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "Hang the two symbol strings on crossed rows/columns of posts so their meeting forms a lattice of sparse spark-cells, each cell's color (match/gap-out/gap-in) chosen by the crossing symbols.",
+    "Fold the lattice sheet along its slanting middle so all cells whose row+column sum is equal press flush into one crease (anti-diagonal) computed as a unit.",
+    "Read three stacked crease-layers (d, d-1, d-2) at once, take the cheapest of the three costs, and let the spent bottom layer drift off before folding the next crease forward."
+  ],
+  "implemented_mechanism": 2,
+  "survival": "full",
+  "fallback": false,
+  "core_technique": "Anti-diagonal (wavefront) Needleman-Wunsch: per-diagonal SIMD (AVX2/AVX-512) max of diag+score and max(left,up)+gap over three rotating int16 diagonal buffers, with sequence b reversed so both operand streams are contiguous along each anti-diagonal; a two-row scalar NW is used only as an out-of-regime/allocation-failure fallback.",
+  "valid": true
+}

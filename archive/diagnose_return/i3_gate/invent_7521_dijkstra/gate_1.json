@@ -1,0 +1,11 @@
+{
+  "native_mechanisms": [
+    "Nightingales always descend first onto the unlocked stone bearing the smallest owed letter (extract-min on tentative distance).",
+    "Threads cast from the tower price each road by its thief's toll, one direction at a time (directed, per-edge-weight relaxation from the current stone).",
+    "A locked letter is never rebuilt again, and threads reaching nowhere are dropped so those stones keep their unreadable debt (settled nodes are final; unreachable nodes stay at infinity)."
+  ],
+  "implemented_mechanism": 1,
+  "survival": "full",
+  "fallback": true,
+  "core_technique": "Exact Dijkstra via a monotone circular bucket (Dial/radix-style) queue with a bitmask of non-empty buckets, doubly-linked-list decrease-key, a zero-weight-edge settle stack, and an AVX2 O(n^2) linear-scan Dijkstra path for small/dense graphs."
+}

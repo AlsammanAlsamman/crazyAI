@@ -1,0 +1,13 @@
+{
+  "native_mechanisms": [
+    "Nightingales always land first on the stone carrying the smallest owed letter (select the minimum tentative distance among reached, unlocked nodes).",
+    "Threads cast from the tower price each road by what its thief is owed, one direction at a time (directed, per-edge non-negative weight relaxation from the current house).",
+    "A locked garden letter is never rebuilt again, and threads reaching nowhere are dropped and thrown away (settled nodes are final; invalid/self-loop edges are discarded and unreachable nodes stay at infinity).",
+    "In-place re-chalking of a stone still in the garden: a knot of three threads detached and recast with the lower number without moving the stone (O(1) decrease-key by overwriting the candidate's value in place)."
+  ],
+  "implemented_mechanism": 1,
+  "survival": "full",
+  "fallback": true,
+  "core_technique": "Dijkstra's algorithm over a CSR adjacency, selecting the minimum by a SIMD/linear scan over a compact array of reached-but-unsettled nodes (array-scan variant with O(1) in-place decrease-key), with a work-budget/regime switch to a standard binary-heap Dijkstra.",
+  "valid": true
+}

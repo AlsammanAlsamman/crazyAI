@@ -1,0 +1,28 @@
+
+== fresh speedup: mean (exact / wins / n) per target ==
+variant                        alignment                  dijkstra                      hash
+c0_today                 15.169x (5/5/5)            1.489x (5/4/5)           24.400x (5/5/5)
+i1_hidden                 9.587x (4/4/5)            1.330x (5/4/5)           10.280x (5/5/5)
+i2_recipe                 7.334x (3/3/5)            0.668x (5/1/5)            0.512x (5/0/5)
+i3_gate                   5.215x (3/3/5)            0.520x (2/2/5)           13.840x (5/5/5)
+
+== idea survival (blind judge) ==
+c0_today       full  6  partial  9  none  0   fallback 12/15
+i1_hidden      full  7  partial  6  none  2   fallback  9/15
+i2_recipe      full 10  partial  3  none  2   fallback 11/15
+i3_gate        full  7  partial  2  none  2   fallback  5/15
+
+== paired tests over shared sources (two-sided) ==
+c0_today -> i1_hidden (n=15): speedup 13.686 -> 7.066x, better on 4/15, Wilcoxon p=0.041; survival 1.40 -> 1.33, p=0.655; fallback 12 -> 9 (sign p=0.375)
+c0_today -> i2_recipe (n=15): speedup 13.686 -> 2.838x, better on 2/15, Wilcoxon p=0.002; survival 1.40 -> 1.53, p=0.480; fallback 12 -> 11 (sign p=1.000)
+c0_today -> i3_gate (n=15): speedup 13.686 -> 6.525x, better on 3/15, Wilcoxon p=0.004; survival 1.40 -> 1.07, p=0.222; fallback 12 -> 5 (sign p=0.016)
+i1_hidden -> i2_recipe (n=15): speedup 7.066 -> 2.838x, better on 1/15, Wilcoxon p=0.008; survival 1.33 -> 1.53, p=0.180; fallback 9 -> 11 (sign p=0.688)
+
+== does survival predict speed? mean within-target speedup percentile ==
+survival=full     n=30  mean percentile 0.49
+survival=partial  n=20  mean percentile 0.64
+survival=none     n= 6  mean percentile 0.31
+fallback=True     n=37  mean percentile 0.53
+fallback=False    n=17  mean percentile 0.54
+
+-> archive\diagnose_return\report_c0_today+i1_hidden+i2_recipe+i3_gate.json

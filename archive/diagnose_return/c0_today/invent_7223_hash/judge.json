@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "A single rolling sphere is the sole carried memory across the whole ordered pile (one accumulator, no side state, old state discarded each step).",
+    "A fixed count of tumbles/stalks per mark mixes each mark into the sphere before the next mark is taken.",
+    "Only the final hairline crack in the last stalk is kept as the token; all intermediate cracks and dust are discarded."
+  ],
+  "implemented_mechanism": 2,
+  "survival": "partial",
+  "fallback": true,
+  "core_technique": "xxHash-style block hash: four parallel 64-bit lanes absorbing 32-byte stripes through a fixed number of ARX (add-rotate-xor) rounds with cross-lane pairing, then cross-fold merge, byte-tail loop, and a SplitMix64 multiply-xor-shift finalizer.",
+  "valid": true
+}

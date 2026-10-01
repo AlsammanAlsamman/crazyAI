@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "A single rolling sphere is the sole carried memory across the whole ordered pile of marks (one streaming accumulator, marks taken strictly in order, old face discarded).",
+    "Each mark is pressed into the sphere and then mixed by a fixed count of tumbles down the mason trail — the crack angle read at the stalk is the weight carried forward (fixed rotation-style mixing per byte, no multiplication).",
+    "Only the final hairline crack in the last stalk is kept as the token; the sphere, intermediate cracks and dust are swept away (a terminal finalisation step on the accumulator, intermediate state discarded)."
+  ],
+  "implemented_mechanism": 2,
+  "survival": "full",
+  "fallback": false,
+  "core_technique": "Multiply-free rotating hash: per byte, add into a single 64-bit accumulator then rotate left by a fixed odd constant (11), 8x-unrolled, followed by Thomas Wang's shift/add/xor 64-bit finalizer on the final state.",
+  "valid": true
+}

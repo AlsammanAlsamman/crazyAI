@@ -476,3 +476,24 @@ def test_return_path_variants_and_mock_run(tmp_path):
     log = (tmp_path / "diagnose_return" / "diagnose_log.jsonl").read_text().strip().splitlines()
     assert len(log) == 2
     assert (tmp_path / "diagnose_return" / "rp2_faithful" / "invent_1_matmul" / "judge.json").exists()
+
+
+def test_return_path_gate_retries_on_fallback(tmp_path):
+    if shutil.which("gcc") is None:
+        pytest.skip("no C compiler")
+    from crazyai.pipeline.return_path import ReturnPath
+    Invent(seed=1, target="matmul", archive_dir=tmp_path).execute(get_provider("mock"))
+    mock = get_provider("mock")
+    verdicts = iter([{"fallback": True, "core_technique": "textbook triple loop", "native_mechanisms": ["fold the sheet"]},
+                     {"fallback": False, "survival": "full", "native_mechanisms": ["fold the sheet"]}])
+    mock.structured = lambda system, user, schema: next(verdicts, {"survival": "full", "fallback": False})
+    prompts = []
+    agent = mock.agent
+    mock.agent = lambda system, user, *a, **k: (prompts.append(user), agent(system, user, *a, **k))[1]
+    ReturnPath("invent_1_matmul", "i3_gate", archive_dir=tmp_path, log=None).execute(mock)
+    gate = json.loads((tmp_path / "diagnose_return" / "i3_gate" / "invent_1_matmul" / "gate.json").read_text())
+    assert gate == {"attempts": 2, "chosen": 1, "fallback_per_attempt": [True, False]}
+    assert "REVIEW OF YOUR PREVIOUS ATTEMPT" in prompts[1] and "textbook triple loop" in prompts[1]
+    # the hidden variant never shows the known way or the example kernel
+    hidden = ReturnPath("invent_1_matmul", "i1_hidden", archive_dir=tmp_path, log=None).build_prompt()
+    assert "Known way" not in hidden and "Minimal correct example" not in hidden

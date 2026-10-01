@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "Nightingales down every road sing one note per stride and die at the first board, carving that board's lattice slot with the dying note (edge relaxation writing a tentative distance into a fixed per-node slot; keep the fainter of two notes, discard the louder / prune dead roads)",
+    "At each board a cow's-head woman re-measures the note via the last settled board plus the connecting stretch, recutting the slot only when that milk is thinner (relaxation through the just-settled vertex, update only on strict improvement)",
+    "Always settle next the quietest unsettled slot in the flat one-slot-per-place lattice, never revisit a settled board, unreached places stay blank (repeated global minimum extraction over a dense array until only INFINITY remains)"
+  ],
+  "implemented_mechanism": 3,
+  "survival": "full",
+  "fallback": true,
+  "core_technique": "Dijkstra's algorithm with a cost-model-selected backend: a lazy-deletion 4-ary binary heap for sparse graphs, or a dense O(n^2) linear array scan (AVX2-vectorised min-find with swap-with-last compaction) for dense/small graphs.",
+  "valid": true
+}

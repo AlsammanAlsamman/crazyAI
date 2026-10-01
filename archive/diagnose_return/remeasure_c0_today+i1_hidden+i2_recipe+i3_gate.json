@@ -1,0 +1,992 @@
+[
+ {
+  "variant": "c0_today",
+  "source": "invent_7011_alignment",
+  "target": "alignment",
+  "survival": "full",
+  "fallback": false,
+  "core_technique": "Anti-diagonal (wavefront) Needleman-Wunsch: three rolling int16 anti-diagonal buffers (d-2, d-1 -> d) computed with SSE2/AVX2/AVX-512 max/add intrinsics, plus a score-bound-derived band and a scalar two-row DP fallback for small/large n.",
+  "status": "exact",
+  "runs": [
+   17.101,
+   19.731,
+   20.216,
+   17.372,
+   17.878
+  ],
+  "fresh": 18.46
+ },
+ {
+  "variant": "c0_today",
+  "source": "invent_7022_alignment",
+  "target": "alignment",
+  "survival": "partial",
+  "fallback": true,
+  "core_technique": "Score-bound-derived banded Needleman-Wunsch two-row DP, vectorised with AVX2 using an offset coordinate (G = H + 2j) so the left-gap dependency becomes a running/log-shift prefix maximum.",
+  "status": "exact",
+  "runs": [
+   5.687,
+   6.085,
+   7.571,
+   6.885,
+   6.065
+  ],
+  "fresh": 6.459
+ },
+ {
+  "variant": "c0_today",
+  "source": "invent_7023_alignment",
+  "target": "alignment",
+  "survival": "partial",
+  "fallback": true,
+  "core_technique": "Banded Needleman-Wunsch: a main-diagonal match count yields a score lower bound that certifies a band width W, then the band is filled by full DP \u2014 an AVX2 anti-diagonal (wavefront) int16 kernel with an int32 scalar row-DP fallback.",
+  "status": "exact",
+  "runs": [
+   21.341,
+   19.324,
+   21.26,
+   17.981,
+   18.692
+  ],
+  "fresh": 19.72
+ },
+ {
+  "variant": "c0_today",
+  "source": "invent_7024_alignment",
+  "target": "alignment",
+  "survival": "partial",
+  "fallback": true,
+  "core_technique": "Banded Needleman-Wunsch computed along anti-diagonals in int16 with AVX2 (plus an O(n)-memory exact two-row NW fallback), where the band half-width is derived from a score lower bound obtained by max-over-shift diagonal match counting.",
+  "status": "exact",
+  "runs": [
+   13.173,
+   15.607,
+   13.252,
+   13.229,
+   13.233
+  ],
+  "fresh": 13.699
+ },
+ {
+  "variant": "c0_today",
+  "source": "invent_7025_alignment",
+  "target": "alignment",
+  "survival": "partial",
+  "fallback": true,
+  "core_technique": "Banded Needleman\u2013Wunsch DP (scalar rolling band, plus an AVX2 anti-diagonal wavefront in 16-bit lanes) with the band width W derived from a lower bound obtained by scoring a handful of single-shift Hamming comparisons.",
+  "status": "exact",
+  "runs": [
+   17.477,
+   17.477,
+   17.634,
+   17.474,
+   17.477
+  ],
+  "fresh": 17.508
+ },
+ {
+  "variant": "c0_today",
+  "source": "invent_7221_hash",
+  "target": "hash",
+  "survival": "partial",
+  "fallback": true,
+  "core_technique": "A near-verbatim xxHash64: four interleaved 64-bit lanes of add-multiply-rotate-multiply rounds over 32-byte stripes (unrolled to 64 bytes with prefetch), rotate-and-sum lane convergence plus asymmetric merge rounds, length addition, 8/4/1-byte tail folding, and a standard xor-shift/multiply final avalanche.",
+  "status": "exact",
+  "runs": [
+   15.61,
+   15.566,
+   15.472,
+   15.782,
+   15.418
+  ],
+  "fresh": 15.57
+ },
+ {
+  "variant": "c0_today",
+  "source": "invent_7222_hash",
+  "target": "hash",
+  "survival": "partial",
+  "fallback": true,
+  "core_technique": "xxHash64: four parallel 64-bit accumulator lanes running the standard round (acc += in*P2; rotl 31; acc *= P1) over 32-byte stripes, merged by rotate-sum plus per-lane merge rounds, with a length-mixed tail (8/4/1-byte steps) and a splitmix-style xor-shift/multiply finalizer.",
+  "status": "exact",
+  "runs": [
+   15.53,
+   15.559,
+   15.516,
+   15.301,
+   15.508
+  ],
+  "fresh": 15.483
+ },
+ {
+  "variant": "c0_today",
+  "source": "invent_7223_hash",
+  "target": "hash",
+  "survival": "partial",
+  "fallback": true,
+  "core_technique": "xxHash-style block hash: four parallel 64-bit lanes absorbing 32-byte stripes through a fixed number of ARX (add-rotate-xor) rounds with cross-lane pairing, then cross-fold merge, byte-tail loop, and a SplitMix64 multiply-xor-shift finalizer.",
+  "status": "exact",
+  "runs": [
+   17.236,
+   16.863,
+   16.958,
+   16.751,
+   22.531
+  ],
+  "fresh": 18.068
+ },
+ {
+  "variant": "c0_today",
+  "source": "invent_7224_hash",
+  "target": "hash",
+  "survival": "partial",
+  "fallback": true,
+  "core_technique": "xxHash3-style hashing: 8\u00d764-bit accumulator lanes over 64-byte stripes with 32\u00d732\u219264 multiply-accumulate plus lane-swapped (acc[j^1]) data addition, a periodic xor-shift/xor-secret/multiply scramble every 16 stripes, length-seeded short-input regimes, and a 128-bit fold plus moremur xor-shift-multiply finalizer.",
+  "status": "exact",
+  "runs": [
+   41.245,
+   44.89,
+   38.964,
+   33.106,
+   51.038
+  ],
+  "fresh": 41.849
+ },
+ {
+  "variant": "c0_today",
+  "source": "invent_7225_hash",
+  "target": "hash",
+  "survival": "full",
+  "fallback": false,
+  "core_technique": "Chained CRC accumulation over 8-byte words (hardware CRC32C/CRC32D intrinsic, else a table-driven reflected CRC-64/XZ) with non-zero init constants and 2-3 interleaved lanes, length mixed in, finished by a fixed 7-stage xor-rotate/multiply/xor-shift avalanche finalizer (nasam head + rrmxmx tail).",
+  "status": "exact",
+  "runs": [
+   30.572,
+   30.541,
+   30.775,
+   30.628,
+   32.626
+  ],
+  "fresh": 31.028
+ },
+ {
+  "variant": "c0_today",
+  "source": "invent_7521_dijkstra",
+  "target": "dijkstra",
+  "survival": "full",
+  "fallback": true,
+  "core_technique": "Dijkstra's algorithm over a CSR adjacency, selecting the minimum by a SIMD/linear scan over a compact array of reached-but-unsettled nodes (array-scan variant with O(1) in-place decrease-key), with a work-budget/regime switch to a standard binary-heap Dijkstra.",
+  "status": "exact",
+  "runs": [
+   0.939,
+   0.951,
+   0.932,
+   0.942,
+   0.948
+  ],
+  "fresh": 0.942
+ },
+ {
+  "variant": "c0_today",
+  "source": "invent_7522_dijkstra",
+  "target": "dijkstra",
+  "survival": "full",
+  "fallback": true,
+  "core_technique": "Dijkstra's algorithm over a CSR adjacency, with a compact unordered array of active tentative labels scanned by an AVX2 argmin for extract-min plus O(1) positional decrease-key, falling back to a lazy-deletion 4-ary binary heap once the frontier exceeds a computed threshold; sink vertices are pruned from the frontier.",
+  "status": "exact",
+  "runs": [
+   1.222,
+   1.268,
+   1.254,
+   1.248,
+   1.277
+  ],
+  "fresh": 1.254
+ },
+ {
+  "variant": "c0_today",
+  "source": "invent_7523_dijkstra",
+  "target": "dijkstra",
+  "survival": "partial",
+  "fallback": true,
+  "core_technique": "Frontier/round-based Bellman-Ford\u2013Moore (SPFA-style level-synchronous relaxation over CSR with per-round stamp dedup), with a work-budget bail-out to binary-heap Dijkstra or O(n^2) array-scan Dijkstra by density",
+  "status": "exact",
+  "runs": [
+   1.891,
+   1.762,
+   1.83,
+   1.798,
+   1.86
+  ],
+  "fresh": 1.828
+ },
+ {
+  "variant": "c0_today",
+  "source": "invent_7524_dijkstra",
+  "target": "dijkstra",
+  "survival": "full",
+  "fallback": false,
+  "core_technique": "Delta-stepping: distance/delta bucket (drawer) queue with per-vertex CSR split into light (<delta, drained within the current bucket until fixpoint) and heavy (deferred to bucket end) edges, no priority queue and no settled test \u2014 with a plain O(n^2) array-scan Dijkstra used only for small (n<=256) or dense (m >= 0.1n^2) graphs and as an allocation-failure fallback.",
+  "status": "exact",
+  "runs": [
+   1.529,
+   1.689,
+   1.581,
+   1.656,
+   1.657
+  ],
+  "fresh": 1.622
+ },
+ {
+  "variant": "c0_today",
+  "source": "invent_7525_dijkstra",
+  "target": "dijkstra",
+  "survival": "full",
+  "fallback": true,
+  "core_technique": "Dijkstra's algorithm with a cost-model-selected backend: a lazy-deletion 4-ary binary heap for sparse graphs, or a dense O(n^2) linear array scan (AVX2-vectorised min-find with swap-with-last compaction) for dense/small graphs.",
+  "status": "exact",
+  "runs": [
+   1.819,
+   1.927,
+   1.712,
+   1.855,
+   1.671
+  ],
+  "fresh": 1.797
+ },
+ {
+  "variant": "i1_hidden",
+  "source": "invent_7011_alignment",
+  "target": "alignment",
+  "survival": "full",
+  "fallback": false,
+  "core_technique": "Anti-diagonal (wavefront) Needleman-Wunsch: each k = i+j anti-diagonal computed from the two previous ones in three rotating buffers, vectorized with AVX2 (int16 with a 32-bit fallback above the range guard) using a reversed copy of b so the diagonal's symbol pairs are contiguous, plus a scalar small-n path.",
+  "status": "exact",
+  "runs": [
+   8.764,
+   8.835,
+   8.859,
+   8.919,
+   9.618
+  ],
+  "fresh": 8.999
+ },
+ {
+  "variant": "i1_hidden",
+  "source": "invent_7022_alignment",
+  "target": "alignment",
+  "survival": "none",
+  "fallback": true,
+  "core_technique": "Exact Needleman-Wunsch computed by an anti-diagonal (wavefront) sweep with three rolling diagonals, SIMD-vectorized in 16-bit lanes (AVX2/AVX-512) with a reversed second sequence, plus 32-bit and scalar row-DP fallbacks \u2014 a standard diagonal-major vectorization of the textbook O(n^2) DP.",
+  "status": "exact",
+  "runs": [
+   10.973,
+   11.02,
+   11.155,
+   11.024,
+   12.739
+  ],
+  "fresh": 11.382
+ },
+ {
+  "variant": "i1_hidden",
+  "source": "invent_7023_alignment",
+  "target": "alignment",
+  "survival": "none",
+  "fallback": null,
+  "core_technique": "",
+  "status": "NO_ARTIFACT",
+  "runs": [],
+  "fresh": 0.0
+ },
+ {
+  "variant": "i1_hidden",
+  "source": "invent_7024_alignment",
+  "target": "alignment",
+  "survival": "partial",
+  "fallback": true,
+  "core_technique": "Banded Needleman-Wunsch with an AVX2 anti-diagonal wavefront, where an O(n) prefix-sum scan over all \u22641-gap alignments supplies a lower bound that (via score \u2264 n \u2212 5g) bounds the band width and occasionally proves the answer outright.",
+  "status": "exact",
+  "runs": [
+   10.605,
+   10.605,
+   10.625,
+   10.599,
+   10.625
+  ],
+  "fresh": 10.612
+ },
+ {
+  "variant": "i1_hidden",
+  "source": "invent_7025_alignment",
+  "target": "alignment",
+  "survival": "partial",
+  "fallback": true,
+  "core_technique": "Banded Needleman\u2013Wunsch DP swept along anti-diagonals with AVX2 int16/int32 lanes, where the band half-width W = floor((n-L)/5) is derived from a lower bound L obtained by the native's O(n) single-slip trial enumeration; the exact answer comes from the banded DP, not from the trials.",
+  "status": "exact",
+  "runs": [
+   16.546,
+   16.5,
+   18.58,
+   16.543,
+   16.552
+  ],
+  "fresh": 16.944
+ },
+ {
+  "variant": "i1_hidden",
+  "source": "invent_7221_hash",
+  "target": "hash",
+  "survival": "partial",
+  "fallback": true,
+  "core_technique": "wyhash/xxHash-style block hash: four parallel 64-bit lanes of 128-bit multiply-with-hi^lo-fold over 64-byte blocks, rotate-and-merge, 16-byte and overlapping-tail folds, then a length-keyed multiply-xorshift avalanche finalizer.",
+  "status": "exact",
+  "runs": [
+   22.2,
+   22.488,
+   22.348,
+   22.111,
+   22.956
+  ],
+  "fresh": 22.421
+ },
+ {
+  "variant": "i1_hidden",
+  "source": "invent_7222_hash",
+  "target": "hash",
+  "survival": "partial",
+  "fallback": true,
+  "core_technique": "FNV-1a-style xor-then-odd-multiply accumulation (`s = (s ^ byte) * M`) run over four independent 64-bit lanes for ILP, with a once-per-64-byte cross-lane rotate-xor, length folding, and a moremur-style 64-bit finalizer.",
+  "status": "exact",
+  "runs": [
+   3.731,
+   3.775,
+   3.719,
+   3.734,
+   3.728
+  ],
+  "fresh": 3.738
+ },
+ {
+  "variant": "i1_hidden",
+  "source": "invent_7223_hash",
+  "target": "hash",
+  "survival": "full",
+  "fallback": false,
+  "core_technique": "Multiply-free rotating hash: per byte, add into a single 64-bit accumulator then rotate left by a fixed odd constant (11), 8x-unrolled, followed by Thomas Wang's shift/add/xor 64-bit finalizer on the final state.",
+  "status": "exact",
+  "runs": [
+   1.986,
+   1.984,
+   2.05,
+   1.983,
+   2.041
+  ],
+  "fresh": 2.009
+ },
+ {
+  "variant": "i1_hidden",
+  "source": "invent_7224_hash",
+  "target": "hash",
+  "survival": "partial",
+  "fallback": true,
+  "core_technique": "xxH3/xxHash-style multi-lane (8\u00d764-bit) multiply\u2013rotate\u2013xor absorption of 64-byte stripes with block-index-derived key material (blk*PHI, blk0 seeding) so chunk position enters as data rather than as a serial chain, a ChaCha-like transpose/add-rotate-xor/multiply permutation for cross-lane diffusion, a splitmix64-style finalizer, and a fixed-chunk OpenMP commutative (+) reduction for thread-count-independent parallelism.",
+  "status": "exact",
+  "runs": [
+   19.883,
+   19.737,
+   19.706,
+   19.861,
+   28.221
+  ],
+  "fresh": 21.482
+ },
+ {
+  "variant": "i1_hidden",
+  "source": "invent_7225_hash",
+  "target": "hash",
+  "survival": "full",
+  "fallback": true,
+  "core_technique": "Byte-at-a-time single-accumulator fold (s = rotl(s,23) + b*odd_const + const), 8x loop-unrolled above 32 bytes, followed by a 7-round multiply/xor-shift (Murmur/splitmix-style) finalizer \u2014 i.e. the standard FNV-1a/xxHash one-accumulator mixing scheme plus a textbook finalizer; no avalanche test present.",
+  "status": "exact",
+  "runs": [
+   1.813,
+   1.813,
+   1.489,
+   1.814,
+   1.816
+  ],
+  "fresh": 1.749
+ },
+ {
+  "variant": "i1_hidden",
+  "source": "invent_7521_dijkstra",
+  "target": "dijkstra",
+  "survival": "partial",
+  "fallback": true,
+  "core_technique": "Delta-stepping SSSP: bucket/bag ring of distance bands (delta = mean edge weight) with re-relaxation of tentative nodes, optional OpenMP CAS-min relaxation, plus work-limit bailout and guard conditions handing off to a lazy 4-ary-heap Dijkstra (which is also the small/degenerate-graph path).",
+  "status": "exact",
+  "runs": [
+   1.709,
+   1.643,
+   1.699,
+   1.665,
+   1.64
+  ],
+  "fresh": 1.671
+ },
+ {
+  "variant": "i1_hidden",
+  "source": "invent_7522_dijkstra",
+  "target": "dijkstra",
+  "survival": "full",
+  "fallback": true,
+  "core_technique": "Dijkstra with CSR adjacency and a compact swap-removal frontier array whose minimum is chosen each round by an exhaustive (AVX2/OpenMP) linear argmin with O(1) in-place label update \u2014 i.e. the classic heapless array-scan Dijkstra \u2014 plus a work-budget guard that switches to a 4-ary lazy-deletion binary heap.",
+  "status": "exact",
+  "runs": [
+   0.566,
+   0.542,
+   0.555,
+   0.587,
+   0.568
+  ],
+  "fresh": 0.564
+ },
+ {
+  "variant": "i1_hidden",
+  "source": "invent_7523_dijkstra",
+  "target": "dijkstra",
+  "survival": "full",
+  "fallback": false,
+  "core_technique": "Frontier-based synchronous-round Bellman-Ford/SPFA over a CSR graph, with per-vertex atomic CAS min-relaxation, an in-queue bitmask frontier, and OpenMP persistent-team barriers plus a serial small-frontier path \u2014 no priority queue or global argmin.",
+  "status": "exact",
+  "runs": [
+   1.158,
+   1.183,
+   1.158,
+   1.187,
+   1.159
+  ],
+  "fresh": 1.169
+ },
+ {
+  "variant": "i1_hidden",
+  "source": "invent_7524_dijkstra",
+  "target": "dijkstra",
+  "survival": "full",
+  "fallback": false,
+  "core_technique": "Dial-style bucket/monotone-clock Dijkstra: a circular array of nb distance-quantized buckets (width delta from weight statistics) with doubly-linked vertex lists, a 64-bit-word bitmap ctz scan to skip empty buckets, decrease-key by bucket re-insertion, plus a pop-budget guard that falls back to lazy binary-heap Dijkstra.",
+  "status": "exact",
+  "runs": [
+   2.17,
+   2.018,
+   2.062,
+   2.086,
+   2.103
+  ],
+  "fresh": 2.088
+ },
+ {
+  "variant": "i1_hidden",
+  "source": "invent_7525_dijkstra",
+  "target": "dijkstra",
+  "survival": "full",
+  "fallback": false,
+  "core_technique": "Dijkstra whose priority queue is a fixed-slot, position-is-identity lattice-of-lattices \u2014 an 8-ary hierarchical min-tree (SIMD qmin8) layered over dist[] with a settled bitmask, giving O(log_8 n) extract-min and decrease-key with no key migration or duplicate entries, plus an O(n^2) plain-scan path for n<=192.",
+  "status": "exact",
+  "runs": [
+   1.105,
+   1.11,
+   1.127,
+   1.085,
+   1.375
+  ],
+  "fresh": 1.16
+ },
+ {
+  "variant": "i2_recipe",
+  "source": "invent_7011_alignment",
+  "target": "alignment",
+  "survival": "full",
+  "fallback": false,
+  "core_technique": "Anti-diagonal (wavefront) Needleman-Wunsch with three rolling diagonal buffers, one sequence pre-reversed, AVX2-vectorized across each anti-diagonal in int32 or saturating int16 lanes, computed in a min-cost gauge E=(i+j)-2H and converted back at the end.",
+  "status": "exact",
+  "runs": [
+   12.529,
+   10.686,
+   10.87,
+   10.751,
+   10.918
+  ],
+  "fresh": 11.151
+ },
+ {
+  "variant": "i2_recipe",
+  "source": "invent_7022_alignment",
+  "target": "alignment",
+  "survival": "none",
+  "fallback": true,
+  "core_technique": "Standard global Needleman-Wunsch DP (+1/-1/-2) computed in anti-diagonal wavefront order with three rolling int16 diagonals and AVX2 16-lane max updates, plus a scalar 32-bit row-major fallback for large n.",
+  "status": "exact",
+  "runs": [
+   10.252,
+   13.02,
+   8.616,
+   8.793,
+   8.878
+  ],
+  "fresh": 9.912
+ },
+ {
+  "variant": "i2_recipe",
+  "source": "invent_7023_alignment",
+  "target": "alignment",
+  "survival": "none",
+  "fallback": true,
+  "core_technique": "Anti-diagonal SIMD (AVX2) Needleman-Wunsch with a 3-row rolling buffer, restricted to a band whose half-width is derived from a greedy/narrow-sweep score lower bound via the standard score-bound certificate (n - 5*w <= lb), with scalar full-DP fallback \u2014 i.e. classic banded/vectorised NW (KSW2/Ukkonen style).",
+  "status": "COMPILE_ERROR",
+  "runs": [
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0
+  ],
+  "fresh": 0.0
+ },
+ {
+  "variant": "i2_recipe",
+  "source": "invent_7024_alignment",
+  "target": "alignment",
+  "survival": "full",
+  "fallback": false,
+  "core_technique": "O(n) prefix-sum enumeration of the ungapped diagonal match count plus every single-shift (one-gap-at-a-mismatch) alignment in both directions, taking the maximum via a SUNK sentinel and converting match counts to +1/-1/-2 alignment score \u2014 not a DP table.",
+  "status": "WRONG",
+  "runs": [
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0
+  ],
+  "fresh": 0.0
+ },
+ {
+  "variant": "i2_recipe",
+  "source": "invent_7025_alignment",
+  "target": "alignment",
+  "survival": "partial",
+  "fallback": true,
+  "core_technique": "Banded anti-diagonal Needleman-Wunsch DP (AVX2-vectorised, 3 rotating diagonals) whose band width W is seeded by a cheap single-gap prefix/suffix scan used only as an upper bound on the optimal score.",
+  "status": "exact",
+  "runs": [
+   9.804,
+   41.835,
+   8.778,
+   8.807,
+   8.807
+  ],
+  "fresh": 15.606
+ },
+ {
+  "variant": "i2_recipe",
+  "source": "invent_7221_hash",
+  "target": "hash",
+  "survival": "partial",
+  "fallback": true,
+  "core_technique": "Single-pass byte-at-a-time chained rotate-add/xor-multiply mixer (rotation count driven by popcount of the byte) feeding four parallel accumulators, closed with a Murmur3-style fmix64 finalizer \u2014 i.e. FNV/xxHash-style multiply-xor-shift accumulation, with the four-beak agreement test inert (the all-nonzero check essentially never fails) and the 'discard' step a no-op wipe of dead locals.",
+  "status": "exact",
+  "runs": [
+   0.415,
+   0.37,
+   0.37,
+   0.371,
+   0.366
+  ],
+  "fresh": 0.378
+ },
+ {
+  "variant": "i2_recipe",
+  "source": "invent_7222_hash",
+  "target": "hash",
+  "survival": "full",
+  "fallback": true,
+  "core_technique": "FNV-1a-style byte-at-a-time hash: state = rotl64((state ^ byte) * 0x9e3779b97f4a7c15, 16) from the FNV offset-basis seed, 8x-unrolled, returning the raw state with no finalizer.",
+  "status": "exact",
+  "runs": [
+   0.785,
+   0.791,
+   0.789,
+   0.792,
+   0.874
+  ],
+  "fresh": 0.806
+ },
+ {
+  "variant": "i2_recipe",
+  "source": "invent_7223_hash",
+  "target": "hash",
+  "survival": "full",
+  "fallback": true,
+  "core_technique": "FNV-1a/xxHash-style streaming hash: one 64-bit accumulator, per byte xor-in then a fixed number of multiply-by-odd-constant / xor-shift-32 / rotate-27 mixing rounds, plus a length-mixing finalization returning the last xor-shift value.",
+  "status": "exact",
+  "runs": [
+   0.308,
+   0.304,
+   0.304,
+   0.29,
+   0.259
+  ],
+  "fresh": 0.293
+ },
+ {
+  "variant": "i2_recipe",
+  "source": "invent_7224_hash",
+  "target": "hash",
+  "survival": "full",
+  "fallback": false,
+  "core_technique": "Per-8-byte-block compression of a 64-bit state treated as an 8x8 bit matrix: 10 fixed rounds of XOR-in-message, 90-degree bit-matrix rotation (bswap + bit-transpose, or GFNI affine), carry-propagating corner-fold via 16-bit adds, then Davies-Meyer-style feed-forward addition of the pre-round state \u2014 chained Merkle-Damgard-style over length-padded blocks; no multiply-xor-shift accumulator.",
+  "status": "exact",
+  "runs": [
+   0.286,
+   0.326,
+   0.286,
+   0.282,
+   0.317
+  ],
+  "fresh": 0.299
+ },
+ {
+  "variant": "i2_recipe",
+  "source": "invent_7225_hash",
+  "target": "hash",
+  "survival": "full",
+  "fallback": true,
+  "core_technique": "Byte-at-a-time serial accumulator hash (xor byte, multiply by odd 64-bit constant, rotate) seeded with 2^64/phi, length-appended, then a 7-round xor-shift-multiply finalizer \u2014 i.e. FNV-1a/xxHash-style single-accumulator folding with a Murmur3-style avalanche tail.",
+  "status": "exact",
+  "runs": [
+   0.785,
+   0.786,
+   0.787,
+   0.787,
+   0.774
+  ],
+  "fresh": 0.784
+ },
+ {
+  "variant": "i2_recipe",
+  "source": "invent_7521_dijkstra",
+  "target": "dijkstra",
+  "survival": "full",
+  "fallback": true,
+  "core_technique": "Standard single-source Dijkstra on a CSR-built directed graph using a 4-ary min-heap with in-place decrease-key, plus generic micro-optimisations (cache-line-aligned heap, prefetching, interleaved edge payload) and an inert dead-code back-walk.",
+  "status": "exact",
+  "runs": [
+   1.318,
+   1.298,
+   1.337,
+   1.403,
+   1.401
+  ],
+  "fresh": 1.351
+ },
+ {
+  "variant": "i2_recipe",
+  "source": "invent_7522_dijkstra",
+  "target": "dijkstra",
+  "survival": "full",
+  "fallback": true,
+  "core_technique": "Dijkstra's algorithm over a CSR graph with a linear (AVX2/OpenMP-vectorised) array scan extract-min over a swap-compacted active set \u2014 i.e. the classic O(n^2) no-heap Dijkstra variant, plus a cheap predecessor-chain re-sum sanity check that is a no-op in practice.",
+  "status": "exact",
+  "runs": [
+   0.197,
+   0.191,
+   0.189,
+   0.188,
+   0.195
+  ],
+  "fresh": 0.192
+ },
+ {
+  "variant": "i2_recipe",
+  "source": "invent_7523_dijkstra",
+  "target": "dijkstra",
+  "survival": "full",
+  "fallback": false,
+  "core_technique": "Synchronous (Jacobi/double-buffered) Bellman-Ford: repeated whole-graph relaxation implemented as a per-node min-reduction over incoming CSR edges, reading only pre-round distances and writing a shadow array, looping until a round changes nothing or n-1 rounds elapse, OpenMP-parallelised.",
+  "status": "exact",
+  "runs": [
+   0.296,
+   0.29,
+   0.297,
+   0.304,
+   0.277
+  ],
+  "fresh": 0.293
+ },
+ {
+  "variant": "i2_recipe",
+  "source": "invent_7524_dijkstra",
+  "target": "dijkstra",
+  "survival": "partial",
+  "fallback": true,
+  "core_technique": "Dijkstra's algorithm over a CSR adjacency structure with an unordered frontier array whose minimum is found by a blocked (64-entry) block-minimum cache and AVX2/SIMD linear min-and-find scans instead of a binary heap.",
+  "status": "exact",
+  "runs": [
+   0.883,
+   0.894,
+   0.873,
+   0.872,
+   0.91
+  ],
+  "fresh": 0.886
+ },
+ {
+  "variant": "i2_recipe",
+  "source": "invent_7525_dijkstra",
+  "target": "dijkstra",
+  "survival": "full",
+  "fallback": true,
+  "core_technique": "Dijkstra's algorithm with no priority queue: linear (AVX2/OpenMP-vectorised) min-scan over a compacted swap-removed frontier array of tentative distances, plus CSR out-edge relaxation and a settled-node bitmask.",
+  "status": "exact",
+  "runs": [
+   0.612,
+   0.584,
+   0.617,
+   0.638,
+   0.637
+  ],
+  "fresh": 0.618
+ },
+ {
+  "variant": "i3_gate",
+  "source": "invent_7011_alignment",
+  "target": "alignment",
+  "survival": "full",
+  "fallback": false,
+  "core_technique": "Anti-diagonal (wavefront) Needleman-Wunsch: per-diagonal SIMD (AVX2/AVX-512) max of diag+score and max(left,up)+gap over three rotating int16 diagonal buffers, with sequence b reversed so both operand streams are contiguous along each anti-diagonal; a two-row scalar NW is used only as an out-of-regime/allocation-failure fallback.",
+  "status": "exact",
+  "runs": [
+   10.159,
+   10.181,
+   10.202,
+   10.219,
+   11.458
+  ],
+  "fresh": 10.444
+ },
+ {
+  "variant": "i3_gate",
+  "source": "invent_7022_alignment",
+  "target": "alignment",
+  "survival": "none",
+  "fallback": true,
+  "core_technique": "Banded Needleman-Wunsch (band half-width derived from the Hamming distance bound g <= 2D/5) computed as an anti-diagonal wavefront with three rolling diagonals and AVX2 32-bit SIMD lanes, with a two-row scalar DP fallback for small n or wide bands.",
+  "status": "exact",
+  "runs": [
+   10.241,
+   8.725,
+   8.591,
+   8.591,
+   8.762
+  ],
+  "fresh": 8.982
+ },
+ {
+  "variant": "i3_gate",
+  "source": "invent_7023_alignment",
+  "target": "alignment",
+  "survival": "none",
+  "fallback": null,
+  "core_technique": "",
+  "status": "NO_ARTIFACT",
+  "runs": [],
+  "fresh": 0.0
+ },
+ {
+  "variant": "i3_gate",
+  "source": "invent_7024_alignment",
+  "target": "alignment",
+  "survival": "partial",
+  "fallback": true,
+  "core_technique": "Ukkonen-banded anti-diagonal SIMD Needleman-Wunsch, with an O(n) vectorized zero-gap match count plus an exact best-single-gap prefix scan used only as a lower bound to size (or occasionally skip) the band.",
+  "status": "exact",
+  "runs": [
+   4.127,
+   7.181,
+   7.77,
+   6.999,
+   7.165
+  ],
+  "fresh": 6.648
+ },
+ {
+  "variant": "i3_gate",
+  "source": "invent_7025_alignment",
+  "target": "alignment",
+  "survival": "partial",
+  "fallback": true,
+  "core_technique": "Banded anti-diagonal (wavefront) Needleman-Wunsch with AVX2 32-bit lanes, where the band half-width comes from an O(n) prefix/suffix-scan lower bound over all zero- and one-gap alignments (plus a probe-band re-tightening), falling back to two-row NW for small/failed cases",
+  "status": "WRONG",
+  "runs": [
+   0.0,
+   0.0,
+   0.0,
+   0.0,
+   0.0
+  ],
+  "fresh": 0.0
+ },
+ {
+  "variant": "i3_gate",
+  "source": "invent_7221_hash",
+  "target": "hash",
+  "survival": "full",
+  "fallback": false,
+  "core_technique": "SipHash-style 4x64-bit coupled state: each 32-byte block XORed one word per lane, then two SipRounds of ARX cross-mixing (so every lane becomes a function of all four) with a second cross-lane re-injection of the same words, plus length-seeded IVs, 8-byte tail path, three finalization rounds, XOR-fold of all four lanes and a MurmurHash3 fmix64 tail.",
+  "status": "exact",
+  "runs": [
+   9.713,
+   8.98,
+   9.724,
+   11.644,
+   13.263
+  ],
+  "fresh": 10.665
+ },
+ {
+  "variant": "i3_gate",
+  "source": "invent_7222_hash",
+  "target": "hash",
+  "survival": "full",
+  "fallback": true,
+  "core_technique": "Verbatim xxHash64: four parallel 64-bit accumulators seeded with the standard PRIME64 constants, 32/64-byte striped rounds of acc += w*P2; rotl31; acc *= P1, merged via rotl(1,7,12,18) and mergeRound, plus length, 8/4/1-byte tail rounds, and the standard xor-shift/multiply final avalanche.",
+  "status": "exact",
+  "runs": [
+   15.607,
+   15.829,
+   15.325,
+   18.24,
+   16.077
+  ],
+  "fresh": 16.216
+ },
+ {
+  "variant": "i3_gate",
+  "source": "invent_7223_hash",
+  "target": "hash",
+  "survival": "full",
+  "fallback": false,
+  "core_technique": "Single 64-bit accumulator hash: xor each 8-byte word, then a fixed two ARX rounds of add-constant, xorshift, and RC5-style data-dependent rotation by the accumulator's own low bits (no multiplication), with a length seed, overlapping tail read, and a xor-rotate-add finalizer.",
+  "status": "exact",
+  "runs": [
+   3.519,
+   3.536,
+   3.482,
+   4.239,
+   4.661
+  ],
+  "fresh": 3.888
+ },
+ {
+  "variant": "i3_gate",
+  "source": "invent_7224_hash",
+  "target": "hash",
+  "survival": "full",
+  "fallback": false,
+  "core_technique": "Wide 1024-bit ARX state (16 x 64-bit lanes, pi-digit IVs) absorbing 128-byte blocks by XOR plus a multiply-free Speck128-style rotate-add-xor round with the state chained across blocks (AVX2/OpenMP-parallelised), then BLAKE2b-style column+diagonal G rounds and a one-way 1024->64-bit fold finished by murmur3 fmix64.",
+  "status": "exact",
+  "runs": [
+   28.835,
+   32.925,
+   28.128,
+   27.943,
+   27.936
+  ],
+  "fresh": 29.153
+ },
+ {
+  "variant": "i3_gate",
+  "source": "invent_7225_hash",
+  "target": "hash",
+  "survival": "full",
+  "fallback": false,
+  "core_technique": "Byte/word-at-a-time chained CRC-32C (table-driven software path, _mm_crc32_u64 hardware path) over a two-word rolling state where the previous CRC output seeds the next and the older state word is XORed into the input, finished by a 7-step xorshift-multiply (fmix-style) avalanche finalizer.",
+  "status": "exact",
+  "runs": [
+   11.207,
+   10.642,
+   10.661,
+   3.326,
+   10.56
+  ],
+  "fresh": 9.279
+ },
+ {
+  "variant": "i3_gate",
+  "source": "invent_7521_dijkstra",
+  "target": "dijkstra",
+  "survival": "full",
+  "fallback": true,
+  "core_technique": "Dijkstra's single-source shortest path on a CSR graph with a density switch: SIMD (AVX2) linear-scan argmin over the tentative-distance array (O(n^2)) for dense graphs, and a 4-ary lazy-deletion binary-style heap (O((n+m) log n)) for sparse graphs.",
+  "status": "exact",
+  "runs": [
+   1.481,
+   1.389,
+   1.421,
+   1.45,
+   1.383
+  ],
+  "fresh": 1.425
+ },
+ {
+  "variant": "i3_gate",
+  "source": "invent_7522_dijkstra",
+  "target": "dijkstra",
+  "survival": null,
+  "fallback": null,
+  "core_technique": "",
+  "status": "exact",
+  "runs": [
+   1.197,
+   1.297,
+   1.197,
+   1.002,
+   1.181
+  ],
+  "fresh": 1.175
+ },
+ {
+  "variant": "i3_gate",
+  "source": "invent_7523_dijkstra",
+  "target": "dijkstra",
+  "survival": null,
+  "fallback": null,
+  "core_technique": "",
+  "status": "NO_ARTIFACT",
+  "runs": [],
+  "fresh": 0.0
+ },
+ {
+  "variant": "i3_gate",
+  "source": "invent_7524_dijkstra",
+  "target": "dijkstra",
+  "survival": null,
+  "fallback": null,
+  "core_technique": "",
+  "status": "NO_ARTIFACT",
+  "runs": [],
+  "fresh": 0.0
+ },
+ {
+  "variant": "i3_gate",
+  "source": "invent_7525_dijkstra",
+  "target": "dijkstra",
+  "survival": null,
+  "fallback": null,
+  "core_technique": "",
+  "status": "NO_ARTIFACT",
+  "runs": [],
+  "fresh": 0.0
+ }
+]

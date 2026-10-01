@@ -1,0 +1,11 @@
+{
+  "native_mechanisms": [
+    "Lay the two symbol-strings crosswise over a tray so every pair-crossing is a marked junction (a full lattice of comparison points).",
+    "A single one-cell agent walks the lattice in eight directions, curling back over ground it already crossed to re-test junctions from another face, keeping only the taller score, holding no ledger apart from the board itself, and halting only when no junction anywhere can still be improved.",
+    "A sideways crossing that costs nothing, letting one string slip a step ahead of the other for free (the one permitted stumble being the only paid step)."
+  ],
+  "implemented_mechanism": 2,
+  "survival": "partial",
+  "fallback": true,
+  "core_technique": "Farrar-style striped AVX2 SIMD Needleman-Wunsch (16x int16 lanes, segment length L = ceil(n/W), query profile, lazy-F correction loop with early exit) over a re-origined score H' = H + 2j, with a scalar two-row DP fallback for small n or overflow-risk n."
+}

@@ -283,7 +283,10 @@ def cmd_diagnose_return(args) -> int:
     from crazyai.pipeline.return_path import DEFAULT_SOURCES, VARIANTS, ReturnPath
 
     provider = _provider(args)
-    variants = args.variants or list(VARIANTS)
+    if args.pin_model and args.provider == "claudecode":
+        from crazyai.providers import get_provider
+        provider = get_provider("claudecode", model=args.model, effort=args.effort, timeout=args.timeout)
+    variants = args.variants or ["rp0_current", "rp1_no_known", "rp2_faithful"]
     if args.orig:
         variants = ["orig"] + variants
     failures = total = 0
@@ -497,8 +500,9 @@ def build_parser() -> argparse.ArgumentParser:
     iva.set_defaults(fn=cmd_invent_disguise_all)
     dr = sub.add_parser("diagnose-return", help="diagnosis kit Q3: hold archived native texts fixed, re-run only the translate step under each return-path prompt variant, measure, and blind-judge whether the idea survived")
     dr.add_argument("--sources", nargs="*", default=None, help="archive dir names of invent runs (default: 15 hard-target runs)")
-    dr.add_argument("--variants", nargs="*", default=None, help="rp0_current rp1_no_known rp2_faithful (default: all)")
+    dr.add_argument("--variants", nargs="*", default=None, help="rp0_current rp1_no_known rp2_faithful, or the anti-fallback set c0_today i1_hidden i2_recipe i3_gate (default: the rp ladder)")
     dr.add_argument("--orig", action="store_true", help="also judge each source's archived artifact")
+    dr.add_argument("--pin-model", action="store_true", help="claudecode: always pass --model explicitly (even the default), so the model is fixed")
     add_provider(dr)
     dr.set_defaults(fn=cmd_diagnose_return)
     dc = sub.add_parser("discover", help="solution-first invention: no target, no problem - invent something, then let the AI propose what it's for")

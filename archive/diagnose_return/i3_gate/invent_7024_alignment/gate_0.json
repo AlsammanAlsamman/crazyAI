@@ -1,0 +1,11 @@
+{
+  "native_mechanisms": [
+    "Lay both symbol-shaped coil rows side by side in the sun and count only the fires (matches) that flash through where shapes coincide — a pure diagonal match count as the score.",
+    "Allow the boundary door between rows to break exactly once per crossing: one coil crouches past a quarrel out of step, so each crossing is the straight diagonal with at most one single-position slip, tried at every possible slip point (and abandoned if a second slip is needed).",
+    "Store each crossing's fire-pile in its own room, sink failed/twice-broken crossings unread into the underground tower, and return only the highest pile — max over surviving candidates, with pruning of the disqualified."
+  ],
+  "implemented_mechanism": 2,
+  "survival": "partial",
+  "fallback": true,
+  "core_technique": "Banded (k-band) Needleman–Wunsch two-row DP with AVX2 vectorised max(diag,up) plus a decay-2 prefix-max scan for left gaps, where the band width is seeded/doubled from a cheap O(n) lower bound (diagonal score and all one-gap-pair slip scores via prefix/suffix arrays) and certified by the n−5k score bound, falling back to full DP for small n."
+}

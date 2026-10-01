@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "A single rolling sphere (one accumulator) is the sole carried memory across the whole ordered pile.",
+    "Each mark is pressed in, then a fixed count of tumbles down the mason trail mixes it, with the crack angle read off the sphere becoming the next carried rotation.",
+    "Only the final hairline crack in the last stalk is handed over; the sphere, intermediate cracks and dust are swept away."
+  ],
+  "implemented_mechanism": 2,
+  "survival": "full",
+  "fallback": false,
+  "core_technique": "Single 64-bit accumulator hash: xor each 8-byte word, then a fixed two ARX rounds of add-constant, xorshift, and RC5-style data-dependent rotation by the accumulator's own low bits (no multiplication), with a length seed, overlapping tail read, and a xor-rotate-add finalizer.",
+  "valid": true
+}

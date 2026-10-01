@@ -1,0 +1,11 @@
+{
+  "native_mechanisms": [
+    "Nightingales always land first on the stone with the smallest owed letter (repeatedly settle the minimum tentative distance among unlocked nodes).",
+    "Threads cast from a tower price each road by its thief's toll, one direction at a time (relax each outgoing directed edge, weight applied per direction).",
+    "A locked letter is never rebuilt again, and threads reaching nowhere are dropped and thrown away (settled nodes are final; superseded/unreachable entries are discarded)."
+  ],
+  "implemented_mechanism": 1,
+  "survival": "partial",
+  "fallback": true,
+  "core_technique": "Dijkstra's algorithm over a CSR graph with a density switch: 4-ary lazy-deletion binary-heap Dijkstra for sparse graphs (the default path) and a textbook O(n^2) SIMD/AVX2 linear argmin scan over unsettled nodes for dense graphs."
+}

@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "A stone on a corner marks a distance as finally known and never reconsidered (permanently settled set).",
+    "A duck carries a spooled thread whose length is the running sum of road lengths to reach it (tentative distance label updated by edge relaxation).",
+    "Each round, the unstoned duck carrying the shortest thread is located and settled before any other duck moves (repeated global minimum extraction over tentative labels).",
+    "Roads into houses with no far side hang slack and are thrown away unspooled, never measured again (out-degree-0 vertices excluded from the selection structure)."
+  ],
+  "implemented_mechanism": 3,
+  "survival": "full",
+  "fallback": true,
+  "core_technique": "Standard Dijkstra with non-decreasing settle order, where extract-min is a two-level sqrt-decomposition (block-summary) SIMD linear scan over tentative keys instead of a heap, with a binary-heap Dijkstra fallback chosen by an n/m cost heuristic."
+}

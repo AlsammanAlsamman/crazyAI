@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "Fix the marks' order before any folding — hold silence and lay them in given order, padded/counted, so order and count are locked in (the servant's inflated-house swats).",
+    "Race each fixed-size heap through the musk deer's mountain stride — uphill twist, downhill fold (ninety-degree turn plus corners folded into the centre), and a doubling-back that eats its own trail, repeated so no heap keeps the shape it entered with, with only the running shape carried forward.",
+    "Seal the final folded shape to one fixed small size (the owl in the dreamer) and burn every intermediate heap so the token cannot be walked back to its marks."
+  ],
+  "implemented_mechanism": 2,
+  "survival": "full",
+  "fallback": false,
+  "core_technique": "Per-8-byte-block compression of a 64-bit state treated as an 8x8 bit matrix: 10 fixed rounds of XOR-in-message, 90-degree bit-matrix rotation (bswap + bit-transpose, or GFNI affine), carry-propagating corner-fold via 16-bit adds, then Davies-Meyer-style feed-forward addition of the pre-round state — chained Merkle-Damgard-style over length-padded blocks; no multiply-xor-shift accumulator.",
+  "valid": true
+}

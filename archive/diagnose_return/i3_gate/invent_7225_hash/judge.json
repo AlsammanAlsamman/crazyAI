@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "Pour each mark into the impure ('sickened') cup one at a time, letting the cup's changed colour become the seed for the next mark, so the whole pile passes as one unbroken chained pour, each mark used once.",
+    "Carry the cup's final colour through seven successive organ-bendings, each invertible and each discarding half of what it received (keeping only the bits that refuse to sit still).",
+    "Flip one mark anywhere in the pile, repeat the whole pour, and discard the entire method if the new token resembles the old one (strict avalanche acceptance test)."
+  ],
+  "implemented_mechanism": 1,
+  "survival": "full",
+  "fallback": false,
+  "core_technique": "Byte/word-at-a-time chained CRC-32C (table-driven software path, _mm_crc32_u64 hardware path) over a two-word rolling state where the previous CRC output seeds the next and the older state word is XORed into the input, finished by a 7-step xorshift-multiply (fmix-style) avalanche finalizer.",
+  "valid": true
+}

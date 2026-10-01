@@ -1,0 +1,13 @@
+{
+  "native_mechanisms": [
+    "Servant's silencing swats: the marks' order is fixed and laid on the stone as data before any heap is folded, so order is never 'spoken' (never carried as a serial dependency) and never lost.",
+    "Each heap races the musk deer's mountain stride — uphill twist, downhill fold, doubling back to eat its own trail — until no heap keeps the shape it entered with, with one running shape carried forward into the next heap.",
+    "The drifting man's square search: turn the shape ninety degrees and fold its corners into its own centre, repeatedly, until one changed mark smears across every square (tested by flipping one mark and rejecting the method if any corner survives).",
+    "The owl's seal: the final folded shape is fixed to one unchanging token size regardless of input length, and every intermediate heap is burned so the token cannot be walked back to its marks."
+  ],
+  "implemented_mechanism": 1,
+  "survival": "partial",
+  "fallback": true,
+  "core_technique": "xxH3/xxHash-style multi-lane (8×64-bit) multiply–rotate–xor absorption of 64-byte stripes with block-index-derived key material (blk*PHI, blk0 seeding) so chunk position enters as data rather than as a serial chain, a ChaCha-like transpose/add-rotate-xor/multiply permutation for cross-lane diffusion, a splitmix64-style finalizer, and a fixed-chunk OpenMP commutative (+) reduction for thread-count-independent parallelism.",
+  "valid": true
+}

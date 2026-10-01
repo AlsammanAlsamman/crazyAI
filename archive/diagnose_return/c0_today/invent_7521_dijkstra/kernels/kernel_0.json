@@ -1,0 +1,38 @@
+{
+  "results": [
+    {
+      "n": 200,
+      "m": 800,
+      "time": 6.40000508e-06,
+      "ref_time": 3.79999983e-06,
+      "reach_mismatch": 0,
+      "max_rel_err": 0.0,
+      "speedup_vs_heap": 0.594,
+      "exactness": 1.0,
+      "status": "exact"
+    },
+    {
+      "n": 1000,
+      "m": 4000,
+      "time": 6.46000117e-05,
+      "ref_time": 5.70999982e-05,
+      "reach_mismatch": 0,
+      "max_rel_err": 0.0,
+      "speedup_vs_heap": 0.884,
+      "exactness": 1.0,
+      "status": "exact"
+    },
+    {
+      "n": 5000,
+      "m": 20000,
+      "time": 0.000529600002,
+      "ref_time": 0.000503899995,
+      "reach_mismatch": 0,
+      "max_rel_err": 0.0,
+      "speedup_vs_heap": 0.951,
+      "exactness": 1.0,
+      "status": "exact"
+    }
+  ],
+  "value": 0.951
+}

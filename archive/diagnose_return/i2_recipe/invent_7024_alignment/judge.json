@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "Walk both symbol-coil rows in lockstep on the diagonal and count one 'fire' at every position where the facing symbols match — the count of matches is the only thing kept.",
+    "Allow the boundary 'door' between the rows to break exactly once per crossing: at a mismatch, one row's coil crouches forward past the quarrel, holding a one-step offset to the end; a second break voids that crossing entirely.",
+    "Give every attempted crossing its own room holding its fire-pile, sink voided/twice-broken attempts into an unread underground tower, and return only the single highest pile."
+  ],
+  "implemented_mechanism": 2,
+  "survival": "full",
+  "fallback": false,
+  "core_technique": "O(n) prefix-sum enumeration of the ungapped diagonal match count plus every single-shift (one-gap-at-a-mismatch) alignment in both directions, taking the maximum via a SUNK sentinel and converting match counts to +1/-1/-2 alignment score — not a DP table.",
+  "valid": true
+}

@@ -1,0 +1,8 @@
+{
+  "prediction": null,
+  "measurement": {
+    "error": "no ```c block in the artifact"
+  },
+  "value": 0.0,
+  "status": "NO_ARTIFACT"
+}

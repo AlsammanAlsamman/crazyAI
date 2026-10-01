@@ -1,0 +1,11 @@
+{
+  "native_mechanisms": [
+    "Two rows on a shared track, one fixed, the other slipped forward one house at exactly one position (and once not at all) — n+1 single-gap offset trials instead of a grid",
+    "House-by-house petal/knot marking: +1 where beasts agree, -1 where they disagree, each house independent of every other (pure elementwise, one count per beat)",
+    "Each trial collapses to a single weight (knot count); all trials but the lightest are discarded — a max-reduction over trials, keeping only the score"
+  ],
+  "implemented_mechanism": 1,
+  "survival": "partial",
+  "fallback": true,
+  "core_technique": "Banded Needleman-Wunsch (two-row int32 DP, band half-width w=(n-LB)/5+1 with full-DP fallback), where the native's single-slip SIMD/prefix-sum scan only supplies the lower bound LB that sizes the band."
+}

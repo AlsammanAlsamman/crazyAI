@@ -1,0 +1,11 @@
+{
+  "native_mechanisms": [
+    "Walk both symbol-coil rows side by side in lockstep on the sunlit table and count only the fires (positions where the two shapes coincide) — a pure diagonal match tally, no grid built.",
+    "Allow the boundary door between the rows to break exactly once per crossing: one coil crouches past a quarrel (a single out-of-step slip), tried at every quarrel point, never twice, and the crossing still ends at the last coil.",
+    "Store each crossing's fire-pile in its own room, sink failed/twice-broken crossings into the underground tower (restart from the first coil), and return only the highest pile as the answer."
+  ],
+  "implemented_mechanism": 2,
+  "survival": "full",
+  "fallback": false,
+  "core_technique": "Closed-form diagonal (gap-free) match score plus an O(n) prefix-max scan giving the best single insert/delete-pair offset correction in both directions, combined by max with a provable optimality bound; a k-bounded Ukkonen band anti-diagonal SIMD Needleman-Wunsch is invoked only as a guarded fallback when that bound fails."
+}

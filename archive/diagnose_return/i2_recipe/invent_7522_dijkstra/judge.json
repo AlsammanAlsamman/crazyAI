@@ -1,0 +1,14 @@
+{
+  "native_mechanisms": [
+    "A stone on a corner = a distance declared final and never reconsidered (permanently settled set).",
+    "A duck carries a spool whose length is the running sum of all road lengths crossed to reach it (tentative additive distance labels, relaxed by predecessor sum + edge weight).",
+    "Each round, sweep all unstoned corners to find the single leader duck with the shortest carried thread and settle it before any other duck moves (linear-scan extract-min of the frontier).",
+    "Threads toward dead-end houses (no outgoing/useful far side) hang slack and are thrown away unspooled, never measured again (prune edges into already-final or useless vertices).",
+    "Before trusting the leader, trace its thread back shuttle-by-shuttle to the source, re-adding each road's centimetres, and only stone it if the traced total matches the written one (predecessor-chain re-verification of the min label)."
+  ],
+  "implemented_mechanism": 3,
+  "survival": "full",
+  "fallback": true,
+  "core_technique": "Dijkstra's algorithm over a CSR graph with a linear (AVX2/OpenMP-vectorised) array scan extract-min over a swap-compacted active set — i.e. the classic O(n^2) no-heap Dijkstra variant, plus a cheap predecessor-chain re-sum sanity check that is a no-op in practice.",
+  "valid": true
+}

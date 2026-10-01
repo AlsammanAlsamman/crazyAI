@@ -1,0 +1,11 @@
+{
+  "native_mechanisms": [
+    "One fold per mark, each fold's angle set jointly by the mark and the preceding crease (state-dependent chaining, strictly in order, no lookahead)",
+    "Every crease checked against all four wire-bird beaks simultaneously, refolded iteratively until all four gauges agree, with spiral/snail markings deliberately forced out of alignment so distinct piles cannot converge",
+    "Thinning the whole folded wad at the water's edge down to one small dense coin-sized corner, destroying every leftover sheet, scrap and failed gauge reading so only the token survives"
+  ],
+  "implemented_mechanism": 1,
+  "survival": "partial",
+  "fallback": true,
+  "core_technique": "Verbatim xxHash64: four parallel 64-bit accumulators over 32-byte stripes (acc += word*PRIME64_2; rotl31; *PRIME64_1), merged via rotl 1/7/12/18 plus mergeRound, length added, 8/4/1-byte tail rounds, then a Murmur-style xor-shift/multiply final avalanche — the native's chained-crease idea is present only because it is identical to the known accumulator round, and the distinctive four-gauge-consensus/refold-until-agree mechanism is absent (four lanes are independent, never cross-checked or re-folded)."
+}

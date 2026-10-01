@@ -1,0 +1,11 @@
+{
+  "native_mechanisms": [
+    "Two rows of beast-pawns compared house-by-house along a shared road, with one row allowed to slip forward at exactly one house — every slip position (and no slip at all) tried in turn",
+    "Per-house symbol comparison marked as lotus (match) or red knot (mismatch), paced one house per flute note in strict data-independent lockstep",
+    "Each trial's knots gathered into a fist and weighed, all fists but the lightest discarded — only the minimum knot count survives as the answer"
+  ],
+  "implemented_mechanism": 1,
+  "survival": "partial",
+  "fallback": true,
+  "core_technique": "Banded anti-diagonal AVX2-vectorised Needleman-Wunsch, with an O(n) single-gap (0- and 1-slip) Hamming-style score lower bound used to derive the band width and to short-circuit when a <=1-gap alignment is provably optimal."
+}

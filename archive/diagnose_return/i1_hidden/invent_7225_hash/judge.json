@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "Each mark is poured into the sickened-wine cup and the cup's changed colour seeds the next pour, so the whole pile passes as one unbroken chained pour (single sequential accumulator, no mark judged alone or twice).",
+    "The cup's final colour is carried through seven organs in turn, each bending it and discarding half of what it received, passing on only what refuses to sit still (a fixed seven-stage multiply + xor-high-shift finalizer, size-independent).",
+    "One mark anywhere is changed and the whole pour repeated from the first cup; any resemblance between new and old token condemns the method (a one-bit-flip avalanche differential test as the acceptance criterion)."
+  ],
+  "implemented_mechanism": 1,
+  "survival": "full",
+  "fallback": true,
+  "core_technique": "Byte-at-a-time single-accumulator fold (s = rotl(s,23) + b*odd_const + const), 8x loop-unrolled above 32 bytes, followed by a 7-round multiply/xor-shift (Murmur/splitmix-style) finalizer — i.e. the standard FNV-1a/xxHash one-accumulator mixing scheme plus a textbook finalizer; no avalanche test present.",
+  "valid": true
+}

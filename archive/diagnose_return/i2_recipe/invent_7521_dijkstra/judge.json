@@ -1,0 +1,14 @@
+{
+  "native_mechanisms": [
+    "Nightingales always land first on the unlocked stone bearing the smallest owed letter (extract-min over a frontier of tentative distances).",
+    "Threads cast from the tower price each road by its thief's toll, one direction at a time (directed, per-arc non-negative edge weights, never mirrored).",
+    "A landed stone's letter is locked permanently and never rebuilt; threads reaching nowhere are dropped and those stones keep their unreadable debt (settled nodes are final, unreachable stay at infinity).",
+    "A cast thread can be detached and recast toward the same stone with a lower number so the bird changes its mind (decrease-key in place on the existing frontier entry).",
+    "Chalking the far stone's letter over with the smaller sum plus a back-mark naming the stone the thread came from (relaxation with predecessor tracking)."
+  ],
+  "implemented_mechanism": 1,
+  "survival": "full",
+  "fallback": true,
+  "core_technique": "Standard single-source Dijkstra on a CSR-built directed graph using a 4-ary min-heap with in-place decrease-key, plus generic micro-optimisations (cache-line-aligned heap, prefetching, interleaved edge payload) and an inert dead-code back-walk.",
+  "valid": true
+}

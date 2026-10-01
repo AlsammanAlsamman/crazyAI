@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "One fold per mark, each fold's angle determined jointly by the mark and the crease left by the previous fold (state-carrying sequential accumulation).",
+    "Every crease checked against all four wire birds' beaks simultaneously, refolding tighter until all four gauges agree and the spiral/shell markings deliberately misalign (multi-gauge consensus with corrective re-folding and enforced asymmetry).",
+    "Thin the whole folded wad at the water's edge into one small dense coin, carrying only the suitcase, and destroy every scrap, trimming and failed gauge reading (irreversible compression to a fixed-size digest plus discard of all intermediate state)."
+  ],
+  "implemented_mechanism": 1,
+  "survival": "partial",
+  "fallback": true,
+  "core_technique": "A near-verbatim xxHash64: four interleaved 64-bit lanes of add-multiply-rotate-multiply rounds over 32-byte stripes (unrolled to 64 bytes with prefetch), rotate-and-sum lane convergence plus asymmetric merge rounds, length addition, 8/4/1-byte tail folding, and a standard xor-shift/multiply final avalanche.",
+  "valid": true
+}

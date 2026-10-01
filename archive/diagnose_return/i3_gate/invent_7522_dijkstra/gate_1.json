@@ -1,0 +1,13 @@
+{
+  "native_mechanisms": [
+    "A stone on a corner = a distance declared final and never reconsidered (permanent settled label).",
+    "A duck carries a spooled thread whose length is the running sum of road centimetres traversed (tentative distance label).",
+    "Each round, find the leader duck — the shortest carried thread among unstoned corners — and settle it before any other duck moves (global min-extraction per round), with stale/duplicate long-cousin threads traced and discarded.",
+    "Roads out of houses with no far side are left slack, thrown away unspooled, never measured (skip zero-out-degree vertices).",
+    "Corners no duck ever reaches stay bare forever (unreachable = infinite)."
+  ],
+  "implemented_mechanism": 3,
+  "survival": "partial",
+  "fallback": true,
+  "core_technique": "Delta-stepping SSSP: cyclic power-of-two bucket ring over dist/delta bands with light/heavy edge split in CSR and repeated relax-until-band-empty phases, with a regime switch to plain O(n^2) array-scan Dijkstra for small/dense inputs and a binary-heap Dijkstra escape hatch when the bucket sweep budget is exceeded."
+}

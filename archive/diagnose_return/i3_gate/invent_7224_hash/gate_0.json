@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "Servant's inflated-house swats hold silence: input order/position is fixed and consumed in given order before any block is folded, never re-spoken.",
+    "Each heap races the musk deer's mountain stride — uphill twist, downhill fold, doubling back that eats its own trail — so no block keeps the shape it entered with, and the running shape is carried into the next heap's race.",
+    "The owl calls the final shape inside the dreamer inside: seal to one fixed token size, burning intermediate heaps so the token cannot be walked back to its marks.",
+    "Search the result in squares like the drifting man: turn the grid ninety degrees and fold its corners into its own centre, repeatedly, until one changed mark is smeared across every square."
+  ],
+  "implemented_mechanism": 2,
+  "survival": "full",
+  "core_technique": "Wide-state (16x64-bit) XOR-absorbing compression of 128-byte blocks through Speck128-style ARX rounds (rotate-add / rotate-xor, no multiplies, AVX2-vectorised and OpenMP-chunked), finalised by two BLAKE2b column+diagonal G rounds and a murmur3 fmix64 fold to 64 bits.",
+  "fallback": false
+}

@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "Doubled shadow: one simultaneous illumination of both ropes reveals every same-dye crossing (every match cell) at once, without visiting the floor cell by cell.",
+    "Bare-floor cost between consecutive treasures is computed in closed form from how many knots each rope advances (index arithmetic), never by laying markers on intervening cells.",
+    "At each treasure keep only the cheapest arriving tally in each of two states (the single allowed 'slip' still whole, or already spent) and drop every dominated tally."
+  ],
+  "implemented_mechanism": 1,
+  "survival": "partial",
+  "fallback": true,
+  "core_technique": "Banded Needleman-Wunsch: a main-diagonal match count yields a score lower bound that certifies a band width W, then the band is filled by full DP — an AVX2 anti-diagonal (wavefront) int16 kernel with an int32 scalar row-DP fallback.",
+  "valid": true
+}

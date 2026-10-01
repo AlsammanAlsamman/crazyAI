@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "A stone on a corner = a node's distance is finalized and never reconsidered (permanently settled set).",
+    "A duck carries a spooled thread = a tentative label equal to the running sum of edge weights along the path reaching it (edge relaxation).",
+    "Each round, scan for the 'leader duck' — the shortest carried thread among unstoned corners — verify it by re-tracing, settle it, and only then loose fresh ducks from it.",
+    "Roads into houses with no far side (no outgoing edges) are left slack and never spooled/measured."
+  ],
+  "implemented_mechanism": 3,
+  "survival": "full",
+  "fallback": true,
+  "core_technique": "Dijkstra's algorithm with array-scan min-extraction accelerated by sqrt-sized bucket minima and AVX2 SIMD min-index reduction, plus a cost-model-gated binary-heap Dijkstra fallback — i.e. the known O(n^2)-scan/heap Dijkstra pair with generic textbook blocking and vectorization."
+}

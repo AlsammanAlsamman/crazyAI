@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "Single accumulator (the die-stone) is never reset or re-seeded between marks, so each fold carries the accumulated state of all prior folds",
+    "Each byte's value is pressed (XOR'd) into the accumulator's already-transformed current state rather than a clean face, making early bytes bend how later bytes land, with per-step amplification of differences",
+    "Only the accumulator's final value is returned; all intermediate states/residue are discarded (no scratch buffer, no side channel)"
+  ],
+  "implemented_mechanism": 2,
+  "survival": "full",
+  "fallback": true,
+  "core_technique": "FNV-1a-style byte-at-a-time hash: state = rotl64((state ^ byte) * 0x9e3779b97f4a7c15, 16) from the FNV offset-basis seed, 8x-unrolled, returning the raw state with no finalizer.",
+  "valid": true
+}

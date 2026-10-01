@@ -15,6 +15,16 @@ Variants form a ladder, each adding one change to the one before:
     rp1_no_known   rp0 minus step 4's "let your mechanism arrive at the known technique" sentence
     rp2_faithful   rp1 plus disguise-all's faithful-translation instruction
 
+Anti-fallback strategies (2026-09-30), each compared against a same-day control:
+
+    c0_today       rp0's prompt again, run alongside the strategies below (the control)
+    i1_hidden      the textbook is hidden: no known way, no list of silent assumptions, and the
+                   contract's example kernel (itself the textbook method) is replaced by the bare signature
+    i2_recipe      i1, plus the native first writes its chosen mechanism as a numbered in-world recipe
+                   (a second native call) and the engineer implements that recipe step by step
+    i3_gate        rp0's prompt, then the blind judge checks the kernel; if it is a fallback the engineer
+                   is told what it built and asked to rebuild the native's mechanism, up to 2 retries
+
     archive/diagnose_return/<variant>/<source>/
         artifact.md, artifact.c, measure.json, judge.json, bend_calls.json
     archive/diagnose_return/orig/<source>/judge.json     the archived artifact, judged the same way
@@ -70,7 +80,11 @@ def _rp2(prompt: str) -> str:
     return p.replace(anchor, _FAITHFUL + anchor, 1)
 
 
-VARIANTS: dict[str, Callable[[str], str]] = {"rp0_current": _rp0, "rp1_no_known": _rp1, "rp2_faithful": _rp2}
+VARIANTS: dict[str, Callable[[str], str]] = {"rp0_current": _rp0, "rp1_no_known": _rp1, "rp2_faithful": _rp2,
+                                             "c0_today": _rp0, "i3_gate": _rp0}
+STRATEGIES = ("i1_hidden", "i2_recipe")
+ANTI_FALLBACK = ("c0_today", "i1_hidden", "i2_recipe", "i3_gate")
+GATE_RETRIES = 2
 
 JUDGE_SYSTEM = (
     "You are a careful, skeptical code reviewer. You compare a plain-language description of ideas with a piece of "
@@ -109,6 +123,73 @@ def judge_prompt(ideas: str, target: Target, code: str) -> str:
     )
 
 
+def _contract_signature(target: Target) -> str:
+    """The contract without its example kernel: the example is the textbook method itself."""
+    import importlib
+    mod = importlib.import_module(f"crazyai.toolkit.measure.{target.measure_families[0]}")
+    return ("\nTHE FIXED CONTRACT (do not guess it, do not change the argument order):\n    " + mod.CONTRACT +
+            "\nCompiled with: gcc -O3 -march=native -fopenmp -lm. You may use OpenMP, immintrin.h and scratch memory.\n")
+
+
+def bend_prompt_hidden(ideas: str, target: Target, tools: list[str], focus: str = "") -> str:
+    """bend_prompt with the textbook hidden: no known way, no assumption list, no example kernel."""
+    step2 = ("2. Pick the seed whose mapping is most literal" +
+             (f", preferring one that breaks this assumption if any of the three do: \"{focus}\"" if focus else "") + ".\n")
+    return (
+        "=== WHAT THE NATIVE SAID ===\n" + ideas.strip() + "\n=== END ===\n\n"
+        f"TARGET PROBLEM: {target.problem}\n" + _contract_signature(target) + "\n"
+        "Steps:\n"
+        "1. For each SEED, write the mapping world-object -> problem-object as a table.\n" + step2 +
+        f"3. {target.bend_instructions}\n"
+        "4. If your own VERDICT names a specific condition where your mechanism could be slow, guard it with a size or "
+        "condition check, or drop the risky part - never ship a mechanism whose own stated risk you don't address.\n"
+        f"Tools available: {', '.join(tools)}.\n"
+        "Write the final answer with sections: MAPPING, CHOSEN SEED, ASSUMPTION BROKEN, ARTIFACT, PREDICTION, MEASUREMENT, VERDICT."
+    )
+
+
+RECIPE_ASK = (
+    "Look again at what you told us above. Choose the ONE of your SEED practices that best meets the need, and write it "
+    "as a numbered recipe of 5 to 12 steps, precise enough that a stranger could follow it exactly without you: what is "
+    "laid out first, what is compared or combined with what, in what order, what is kept, what is thrown away, what is "
+    "done many times over, and how you know you are finished. Use only the things of your world. Begin with the line "
+    "'CHOSEN SEED: <the seed>' and then the steps, nothing else."
+)
+
+
+def recipe_native_prompt(world: str, ideas: str, target: Target) -> str:
+    return ("=== YOUR WORLD ===\n" + world.strip() + "\n=== END ===\n\n"
+            f"A need came to you: {target.in_world_need}\n\n=== WHAT YOU SAID ===\n" + ideas.strip() +
+            "\n=== END ===\n\n" + RECIPE_ASK)
+
+
+def recipe_engineer_prompt(recipe: str, target: Target, tools: list[str]) -> str:
+    return (
+        "=== A RECIPE FROM A NATIVE OF ANOTHER WORLD ===\n" + recipe.strip() + "\n=== END ===\n\n"
+        f"TARGET PROBLEM: {target.problem}\n" + _contract_signature(target) + "\n"
+        "Implement THIS recipe, step by step, as the kernel:\n"
+        "1. DICTIONARY: a table mapping every thing in the recipe onto a concrete computational thing.\n"
+        "2. Write the kernel so that each numbered recipe step becomes one commented block `/* step k: ... */`, in the "
+        "recipe's order. Do not add a step the recipe doesn't have, and do not replace any step with a different method. "
+        "You choose only data layout and how each step is carried out at the machine level.\n"
+        "3. If a step is ambiguous, pick the most literal reading and say so. If following the recipe exactly would give "
+        "a wrong answer, say which step, and make the smallest change to that step that makes it correct.\n"
+        f"4. {target.bend_instructions}\n"
+        f"Tools available: {', '.join(tools)}.\n"
+        "Write the final answer with sections: DICTIONARY, ARTIFACT, PREDICTION, MEASUREMENT, VERDICT."
+    )
+
+
+def gate_feedback(judge: dict) -> str:
+    mechs = judge.get("native_mechanisms") or []
+    listing = "\n".join(f"  {i + 1}. {m}" for i, m in enumerate(mechs))
+    return ("\n\n=== REVIEW OF YOUR PREVIOUS ATTEMPT ===\n"
+            f"A reviewer read your previous kernel and found that its core is: {judge.get('core_technique', 'a textbook method')}. "
+            "That is a standard textbook approach, not the native's mechanism. The native's mechanisms were:\n" + listing +
+            "\nBuild the kernel again so that its core IS one of these mechanisms, translated literally. Keep it correct; "
+            "make it fast by improving how you implement that mechanism, not by replacing it.\n=== END REVIEW ===")
+
+
 def prompt_hash(text: str) -> str:
     return hashlib.sha1(text.encode("utf-8")).hexdigest()[:10]
 
@@ -122,8 +203,8 @@ class ReturnPath:
     log: Any = lambda msg: print(msg, flush=True)
 
     def __post_init__(self) -> None:
-        if self.variant != "orig" and self.variant not in VARIANTS:
-            raise ValueError(f"unknown variant {self.variant!r}; choose from {', '.join(VARIANTS)} or orig")
+        if self.variant != "orig" and self.variant not in VARIANTS and self.variant not in STRATEGIES:
+            raise ValueError(f"unknown variant {self.variant!r}; choose from {', '.join([*VARIANTS, *STRATEGIES])} or orig")
         self.archive_dir = Path(self.archive_dir)
         self.src = self.archive_dir / self.source
         if not (self.src / "ideas.md").exists():
@@ -148,10 +229,56 @@ class ReturnPath:
         run = self.src / "run.json"
         return _load(run).get("assumption_focus", "") if run.exists() else ""
 
+    def tool_names(self) -> list[str]:
+        return self.toolkit.names(families=self.tgt.measure_families + ["unconventional", "symbolic"])
+
     def build_prompt(self) -> str:
-        names = self.toolkit.names(families=self.tgt.measure_families + ["unconventional", "symbolic"])
+        names = self.tool_names()
+        if self.variant in ("i1_hidden", "i2_recipe"):
+            return bend_prompt_hidden(self.ideas(), self.tgt, names, self.focus())
         base = P.bend_prompt(self.ideas(), self.tgt, names, self.focus())
         return VARIANTS[self.variant](base)
+
+    def _recipe_bend(self, provider: Provider) -> tuple[str, str]:
+        if self._have("recipe.md"):
+            recipe = (self.dir / "recipe.md").read_text(encoding="utf-8")
+        else:
+            world = (self.src / "world.md").read_text(encoding="utf-8")
+            recipe = provider.agent(P.IMMERSE_SYSTEM, recipe_native_prompt(world, self.ideas(), self.tgt), self.toolkit, []).text
+            (self.dir / "recipe.md").write_text(recipe, encoding="utf-8")
+        prompt = recipe_engineer_prompt(recipe, self.tgt, self.tool_names())
+        return provider.agent(P.BEND_SYSTEM, prompt, self.toolkit, self.tool_names()).text, prompt
+
+    def _gated_bend(self, provider: Provider) -> tuple[str, str]:
+        """rp0's prompt; judge each attempt; on a fallback, feed the verdict back and retry. Keeps the first
+        non-fallback attempt, else the first attempt (so a gate that never succeeds equals the plain prompt)."""
+        prompt = self.build_prompt()
+        attempts = []
+        for k in range(GATE_RETRIES + 1):
+            path = self.dir / f"attempt_{k}.md"
+            if self._have(path.name):
+                art = path.read_text(encoding="utf-8")
+            else:
+                ask = prompt + (gate_feedback(attempts[-1][1]) if attempts else "")
+                art = provider.agent(P.BEND_SYSTEM, ask, self.toolkit, self.tool_names()).text
+                path.write_text(art, encoding="utf-8")
+            code = _CODE.findall(art)
+            gpath = self.dir / f"gate_{k}.json"
+            if self._have(gpath.name):
+                verdict = _load(gpath)
+            elif code:
+                verdict = provider.structured(JUDGE_SYSTEM, judge_prompt(self.ideas(), self.tgt, code[-1]), JUDGE_SCHEMA)
+                _dump(gpath, verdict)
+            else:
+                verdict = {"fallback": True, "core_technique": "no code was produced", "native_mechanisms": []}
+                _dump(gpath, verdict)
+            attempts.append((art, verdict))
+            if verdict.get("fallback") is False:
+                break
+        chosen = next((i for i, (_, v) in enumerate(attempts) if v.get("fallback") is False), 0)
+        _dump(self.dir / "gate.json", {"attempts": len(attempts), "chosen": chosen,
+                                       "fallback_per_attempt": [v.get("fallback") for _, v in attempts]})
+        return attempts[chosen][0], prompt
 
     def step_bend(self, provider: Provider) -> dict[str, Any]:
         if self.variant == "orig":
@@ -159,12 +286,15 @@ class ReturnPath:
         elif self._have("artifact.md"):
             art = (self.dir / "artifact.md").read_text(encoding="utf-8")
         else:
-            prompt = self.build_prompt()
-            names = self.toolkit.names(families=self.tgt.measure_families + ["unconventional", "symbolic"])
-            res = provider.agent(P.BEND_SYSTEM, prompt, self.toolkit, names)
-            art = res.text
+            if self.variant == "i2_recipe":
+                art, prompt = self._recipe_bend(provider)
+            elif self.variant == "i3_gate":
+                art, prompt = self._gated_bend(provider)
+            else:
+                prompt = self.build_prompt()
+                art = provider.agent(P.BEND_SYSTEM, prompt, self.toolkit, self.tool_names()).text
             (self.dir / "artifact.md").write_text(art, encoding="utf-8")
-            _dump(self.dir / "bend_calls.json", {"turns": res.turns, "model": res.model, "prompt_hash": prompt_hash(prompt)})
+            _dump(self.dir / "bend_calls.json", {"model": getattr(provider, "model", ""), "prompt_hash": prompt_hash(prompt)})
         code = _CODE.findall(art)
         pred = _PRED.search(art)
         out = {"code": code[-1] if code else None, "prediction": float(pred.group(1)) if pred else None}

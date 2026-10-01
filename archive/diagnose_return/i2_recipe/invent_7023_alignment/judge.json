@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "Doubled shadow: all equal-letter crossings (match cells) are revealed at once by a single simultaneous pass over both ropes, without visiting cells one by one",
+    "Bare-floor pricing by arithmetic: the cost between consecutive treasures is computed from the index gaps on each rope, never by filling or walking the intervening cells",
+    "Per-treasure dominance pruning with a one-slip budget: at each match keep only the best tally in each of two states (slip spent / slip unspent) and drop costlier arrivals"
+  ],
+  "implemented_mechanism": 0,
+  "survival": "none",
+  "fallback": true,
+  "core_technique": "Anti-diagonal SIMD (AVX2) Needleman-Wunsch with a 3-row rolling buffer, restricted to a band whose half-width is derived from a greedy/narrow-sweep score lower bound via the standard score-bound certificate (n - 5*w <= lb), with scalar full-DP fallback — i.e. classic banded/vectorised NW (KSW2/Ukkonen style).",
+  "valid": true
+}

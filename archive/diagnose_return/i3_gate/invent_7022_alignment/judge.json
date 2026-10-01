@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "Two symbol-strings laid crosswise over a tray so their crossings mark a lattice of junctions to be scored.",
+    "A single one-cell-wide agent walking the eight compass directions, depositing/comparing scores in place, curling back over its own trail to re-test a junction from another face, keeping no ledger but the board, and halting only when no junction anywhere can be improved.",
+    "A sideways furrow-crossing that costs nothing, letting one cord slip a step ahead of the other (a free gap/stumble step)."
+  ],
+  "implemented_mechanism": 0,
+  "survival": "none",
+  "fallback": true,
+  "core_technique": "Banded Needleman-Wunsch (band half-width derived from the Hamming distance bound g <= 2D/5) computed as an anti-diagonal wavefront with three rolling diagonals and AVX2 32-bit SIMD lanes, with a two-row scalar DP fallback for small n or wide bands.",
+  "valid": true
+}

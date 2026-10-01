@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "Each byte is folded into one never-empty cup and the cup's new colour seeds the next byte, so the whole buffer passes as one unbroken serial chain",
+    "The final accumulator colour is carried through seven successive organs, each bending it against a shifted view of itself and discarding half of what it received",
+    "Flip one bit anywhere in the buffer, re-run the whole pour from the start, and condemn the method if the new token resembles the old"
+  ],
+  "implemented_mechanism": 1,
+  "survival": "full",
+  "fallback": true,
+  "core_technique": "Byte-at-a-time serial accumulator hash (xor byte, multiply by odd 64-bit constant, rotate) seeded with 2^64/phi, length-appended, then a 7-round xor-shift-multiply finalizer — i.e. FNV-1a/xxHash-style single-accumulator folding with a Murmur3-style avalanche tail.",
+  "valid": true
+}

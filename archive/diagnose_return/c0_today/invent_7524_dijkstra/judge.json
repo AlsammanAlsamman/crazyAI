@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "A glint leaves the source jewel and crawls down each cord at a pace set by that cord's own length, so arrival time equals accumulated cord length (short cords flash at once, long cords keep the glint waiting).",
+    "Each jewel's square is chalked once at its first flare; any later flare arriving along a longer, slacker cord is thrown away unmarked.",
+    "A square that no flare ever reaches is left blank and crossed out (unreachable = no distance)."
+  ],
+  "implemented_mechanism": 1,
+  "survival": "full",
+  "fallback": false,
+  "core_technique": "Delta-stepping: distance/delta bucket (drawer) queue with per-vertex CSR split into light (<delta, drained within the current bucket until fixpoint) and heavy (deferred to bucket end) edges, no priority queue and no settled test — with a plain O(n^2) array-scan Dijkstra used only for small (n<=256) or dense (m >= 0.1n^2) graphs and as an allocation-failure fallback.",
+  "valid": true
+}

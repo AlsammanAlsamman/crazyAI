@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "Servant's inflated-house swats enforce silence so the marks' given order is fixed/committed before any heap is folded",
+    "Each heap races the musk deer's mountain stride — uphill twist, downhill fold, a doubling-back that eats its own trail — so no heap keeps the shape it entered with, the running shape carried into the next heap",
+    "The owl seals the final folded shape to one fixed token size while every intermediate heap is burned, making the token one-way and unwalkable back to its marks"
+  ],
+  "implemented_mechanism": 2,
+  "survival": "partial",
+  "fallback": true,
+  "core_technique": "xxHash3-style hashing: 8×64-bit accumulator lanes over 64-byte stripes with 32×32→64 multiply-accumulate plus lane-swapped (acc[j^1]) data addition, a periodic xor-shift/xor-secret/multiply scramble every 16 stripes, length-seeded short-input regimes, and a 128-bit fold plus moremur xor-shift-multiply finalizer.",
+  "valid": true
+}

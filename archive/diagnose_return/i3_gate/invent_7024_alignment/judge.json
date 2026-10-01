@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "Lay both symbol-coil rows side by side in the sun and count only the fires where opposite coils match exactly (parallel position-wise match counting, no grid).",
+    "Allow the boundary door between the rows to break exactly once per crossing: one coil crouches past a quarrel out of step, tried at every quarrel point, never twice.",
+    "Store each crossing's fire-pile in its own room, sink failed/twice-broken crossings into the underground tower, and bring back only the highest pile as the answer."
+  ],
+  "implemented_mechanism": 2,
+  "survival": "partial",
+  "fallback": true,
+  "core_technique": "Ukkonen-banded anti-diagonal SIMD Needleman-Wunsch, with an O(n) vectorized zero-gap match count plus an exact best-single-gap prefix scan used only as a lower bound to size (or occasionally skip) the band.",
+  "valid": true
+}

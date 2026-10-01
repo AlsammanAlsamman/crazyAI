@@ -20,7 +20,7 @@ from pathlib import Path
 from crazyai.pipeline.return_path import JUDGE_SCHEMA, JUDGE_SYSTEM, judge_prompt
 from crazyai.targets import get_target
 
-ORDER = ["orig", "rp0_current", "rp1_no_known", "rp2_faithful"]
+ORDER = ["orig", "rp0_current", "rp1_no_known", "rp2_faithful", "c0_today", "i1_hidden", "i2_recipe", "i3_gate"]
 
 
 def ask(model: str, system: str, user: str) -> dict:

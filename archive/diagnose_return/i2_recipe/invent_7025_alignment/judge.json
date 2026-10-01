@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "A fixed upper row of beast-pawns and a second row the horse's-head piece may slip forward at exactly one house, tried unslipped and slipped at every possible house",
+    "House-by-house comparison marking a lotus petal for matching beasts and a red knot for disagreeing ones, paced one count per flute note (per-column match/mismatch tally)",
+    "Each trial's knots gathered into a fist and weighed, all fists but the lightest flung away (take the minimum total over the enumerated trials)"
+  ],
+  "implemented_mechanism": 1,
+  "survival": "partial",
+  "fallback": true,
+  "core_technique": "Banded anti-diagonal Needleman-Wunsch DP (AVX2-vectorised, 3 rotating diagonals) whose band width W is seeded by a cheap single-gap prefix/suffix scan used only as an upper bound on the optimal score.",
+  "valid": true
+}

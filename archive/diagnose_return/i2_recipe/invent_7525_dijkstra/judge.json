@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "Nightingales sent down every road from a place sing one note per stride and die at the first board, carving that board's fixed lattice slot with their dying note (out-edge scan writing a tentative distance per neighbour, keeping the fainter of colliding notes and never re-flying a spent road).",
+    "At each board a cow's-head woman milks a smaller cow to re-measure the note as it would arrive via the last settled board plus the connecting stretch, recutting the slot only when that milk is thinner (relaxation/improvement test against the stored value).",
+    "The quietest unsettled note in the lattice is always chosen next to settle, settled slots never revisited, until no note remains and unreached places stand blank as the desert (minimum-key extraction over the unsettled frontier, termination with INFINITY for unreachable)."
+  ],
+  "implemented_mechanism": 3,
+  "survival": "full",
+  "fallback": true,
+  "core_technique": "Dijkstra's algorithm with no priority queue: linear (AVX2/OpenMP-vectorised) min-scan over a compacted swap-removed frontier array of tentative distances, plus CSR out-edge relaxation and a settled-node bitmask.",
+  "valid": true
+}

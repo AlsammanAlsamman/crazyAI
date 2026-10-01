@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "Two knot-cords laid crosswise over a sand-tray mark every place their symbols meet (a lattice of crossing points, each a facing pair of symbols).",
+    "A single one-cell ink-worm walks the eight winds, drops/reads mounds in the sand as its only memory, and curls back across its own trail to re-test a junction from another face until no mound anywhere can be improved (agent-driven relaxation to a fixpoint, beaten mounds discarded).",
+    "The worm crosses a furrow sideways spending no sand, letting one cord slip a step ahead of the other (free/zero-cost gap, one permitted stumble)."
+  ],
+  "implemented_mechanism": 0,
+  "survival": "none",
+  "fallback": true,
+  "core_technique": "Standard global Needleman-Wunsch DP (+1/-1/-2) computed in anti-diagonal wavefront order with three rolling int16 diagonals and AVX2 16-lane max updates, plus a scalar 32-bit row-major fallback for large n.",
+  "valid": true
+}

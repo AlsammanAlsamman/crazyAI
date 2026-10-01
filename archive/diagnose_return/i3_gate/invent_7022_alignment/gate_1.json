@@ -1,0 +1,11 @@
+{
+  "native_mechanisms": [
+    "Two knot-cords laid crosswise over a sand-tray mark every place their symbols meet (a lattice of symbol-pair crossings).",
+    "A single one-cell ink-worm walks the eight winds and curls back over its own trail to re-test a junction from another face, keeping no ledger but the sand mounds, finishing only when no junction anywhere can still be improved.",
+    "The worm crosses a furrow sideways spending no sand, letting one cord slip a step ahead of the other (a free lateral move as the one permitted stumble)."
+  ],
+  "implemented_mechanism": 3,
+  "survival": "partial",
+  "fallback": true,
+  "core_technique": "Banded Needleman-Wunsch with a heuristic lower-bound-derived bandwidth, two rolling rows, and an AVX2 diagonal-band kernel whose horizontal-gap pass is a tilted-coordinate prefix-maximum (scan) with scalar block-carry threading."
+}

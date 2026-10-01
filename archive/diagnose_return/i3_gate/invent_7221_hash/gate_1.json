@@ -1,0 +1,11 @@
+{
+  "native_mechanisms": [
+    "One fold per mark, each fold's angle determined jointly by the mark and the preceding crease (state-chained, order-dependent absorption).",
+    "Every crease is gauged against all four wire birds' beaks at once and refolded tighter until all four agree — four coupled views of one crease, never four independent partial folds.",
+    "Thin the whole folded wad down to one small dense coin at the water's edge and discard every scrap, offcut, and failed reading so only the coin survives."
+  ],
+  "implemented_mechanism": 2,
+  "survival": "full",
+  "fallback": false,
+  "core_technique": "SipHash-style 4-word ARX permutation (SipRound) used as an all-to-all coupling of a 256-bit state, absorbing 32-byte blocks with pre- and post-XOR of the message words, then 3 finalization rounds, lane XOR-fold, and MurmurHash3 fmix64."
+}

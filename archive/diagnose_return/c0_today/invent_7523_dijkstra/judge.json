@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "Runner-per-road relaxation: lay a new stick on the far heap equal to the home ember plus that road's notch",
+    "One land-wide simultaneous throw per round: every heap materialises all its candidate slivers, a single row is read across the whole land, each heap's shortest sliver becomes its new ember and the rest are discarded",
+    "Garrison sealing: a heap whose ember did not change between throws is permanently fixed and its runners stop going out (and a heap never lit is marked unreachable)"
+  ],
+  "implemented_mechanism": 2,
+  "survival": "partial",
+  "fallback": true,
+  "core_technique": "Frontier/round-based Bellman-Ford–Moore (SPFA-style level-synchronous relaxation over CSR with per-round stamp dedup), with a work-budget bail-out to binary-heap Dijkstra or O(n^2) array-scan Dijkstra by density",
+  "valid": true
+}

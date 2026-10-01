@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "The die-stone never resets between marks — one accumulator carried across the whole pile, nothing washed clean.",
+    "Each mark's weight is pressed into the stone's already-turned position, not a clean face, so early marks bend how later marks land (and differences multiply fold over fold).",
+    "Only the stone's final seated position against the wooden keeps leaves the desk; all intermediate turns and residue are swept away."
+  ],
+  "implemented_mechanism": 2,
+  "survival": "partial",
+  "fallback": true,
+  "core_technique": "FNV-1a-style xor-then-odd-multiply accumulation (`s = (s ^ byte) * M`) run over four independent 64-bit lanes for ILP, with a once-per-64-byte cross-lane rotate-xor, length folding, and a moremur-style 64-bit finalizer.",
+  "valid": true
+}

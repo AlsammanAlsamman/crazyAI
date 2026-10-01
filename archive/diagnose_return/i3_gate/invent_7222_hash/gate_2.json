@@ -1,0 +1,11 @@
+{
+  "native_mechanisms": [
+    "Never-reset stone: the accumulator state is carried across every mark, so each fold inherits the 'callus' of all previous folds (no per-mark reinitialisation).",
+    "Press-into-seated-position: each mark's weight is added into the state's already-turned value rather than onto a clean face, making early marks bend how later marks land (strict order dependence, amplified per fold).",
+    "Only the final seated reading leaves the desk: all intermediate turns, groove-dust and residue are swept away; a single final number is the output."
+  ],
+  "implemented_mechanism": 1,
+  "survival": "partial",
+  "fallback": true,
+  "core_technique": "Off-the-shelf ARX hashing: verbatim SipHash-1-3 (fixed key) for len<128 and a 4x64-bit AVX2 (or 8x64 scalar) add-rotate-xor/lane-rotate sponge with length injection, ten blind finalisation rounds, and an xor-of-rotates lane fold — i.e. a standard streaming accumulator construction, not a mechanism unique to the native's account."
+}

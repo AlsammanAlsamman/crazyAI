@@ -1,0 +1,14 @@
+CHOSEN SEED: A fixed row of beast-pawns and a second row that the horse's-head piece may slip forward at exactly one house along the shared road of lines and dots.
+
+1. Scratch one road of lines and dots along the floor, long enough to hold as many houses as the longer of the two strings, and cut two furrows beside it — an upper and a lower — sharing the same houses.
+2. Read the first string symbol by symbol, and for each symbol set a pawn in the upper furrow whose carved crown-beast is that symbol's beast — lion for lion, bird for bird, elephant, lotus-bud — one pawn per house, starting at the road's first mark. Press these pawns into the mud until they hold. This row never moves again.
+3. Do the same with the second string in the lower furrow, nose to nose with the upper row, first house against first house. Leave these pawns loose enough to shove.
+4. Set the horse's head aside, standing nowhere. This is the first trial: the rows unslipped.
+5. Walk the trial. Put your finger on the first house and let the flute-player give one low note per house, no faster. At each note, look at the two beasts facing each other in that house: if they are the same beast, lay a lotus petal in the house; if they differ, or if one furrow has a pawn and the other has an empty house, tie a knot in a length of red thread and drop the knot in the house. One note, one house, one mark — never two houses on a breath, never a house skipped.
+6. At the road's end, gather every red knot from the houses into your fist, weigh the fist, and speak the count aloud. Lay that knotted thread on the floor beside the road with a pebble marking which trial it came from. Sweep the lotus petals away.
+7. Now move the horse. Set it down in the lower furrow's first house; every lower pawn from that house onward shuffles exactly one house forward, opening one empty house where the horse stands. The upper row does not stir.
+8. Repeat step 5 and step 6 exactly as before with the rows in this new arrangement.
+9. Lift the horse, close the gap by sliding the lower pawns back, and set the horse down in the next house along. Repeat steps 7 and 8. Keep doing this — horse one house further each time, gap opened, walked, knots gathered and set aside — until the horse has stood in every house of the lower furrow, once each.
+10. You are finished walking when the horse has no unvisited doorway left; then you hold one knotted thread for each house, plus the first one from when the horse stood nowhere at all.
+11. Weigh all the kept threads against one another. Keep the single lightest fist — fewest knots. If two weigh the same, keep either; they say the same thing.
+12. Fling every other thread out past the eaves to the flying fish, and carry back the number of knots in the one kept fist. That number is the answer: how far the two strings disagree with the one permitted slip set where it costs least.

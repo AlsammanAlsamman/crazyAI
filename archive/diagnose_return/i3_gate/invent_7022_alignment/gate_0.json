@@ -1,0 +1,11 @@
+{
+  "native_mechanisms": [
+    "Two knot-cords laid crosswise over a sand-tray mark every place their symbols meet (a full lattice of symbol-pair crossings).",
+    "A single one-cell-wide ink-worm walks the eight directions and curls back over its own trail, re-testing a junction from another face, keeping no ledger but the sand itself, stopping only when no junction anywhere can still be improved (single-walker label-correcting relaxation with backtracking).",
+    "The worm crosses a furrow sideways spending no sand at all, letting one cord slip a step ahead of the other (a zero-cost gap move, one permitted stumble)."
+  ],
+  "implemented_mechanism": 0,
+  "survival": "none",
+  "fallback": true,
+  "core_technique": "Banded anti-diagonal (wavefront) Needleman-Wunsch with three rolling diagonals, one sequence reversed for stride-1 access, AVX2 8-lane int32 vectorisation, and band half-width bounded by 2·(Hamming distance)/5, with a two-row scalar DP fallback."
+}

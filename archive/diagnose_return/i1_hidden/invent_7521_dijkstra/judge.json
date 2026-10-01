@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "Nightingales always land first on the stone carrying the smallest owed letter (strict min-selection of the closest tentative node).",
+    "Threads cast from the tower price each road by its thief's toll, one direction at a time (directed, non-negative per-edge relaxation from the current node).",
+    "A locked letter is never rebuilt again, and threads reaching nowhere are dropped and thrown away (permanent settling of finalized nodes; stale/lazy entries discarded)."
+  ],
+  "implemented_mechanism": 1,
+  "survival": "partial",
+  "fallback": true,
+  "core_technique": "Delta-stepping SSSP: bucket/bag ring of distance bands (delta = mean edge weight) with re-relaxation of tentative nodes, optional OpenMP CAS-min relaxation, plus work-limit bailout and guard conditions handing off to a lazy 4-ary-heap Dijkstra (which is also the small/degenerate-graph path).",
+  "valid": true
+}

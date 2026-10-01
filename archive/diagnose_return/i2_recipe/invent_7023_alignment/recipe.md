@@ -1,0 +1,21 @@
+CHOSEN SEED: The cost of the bare floor between two treasures is read straight off how many knots forward each rope must go, never walked or marked knot by knot.
+
+1. Lay the first grass-rope along the east wall of the empty room, doorway end at the doorway, and count its knots aloud from the door outward, calling them one, two, three, on to its end. Lay the second rope from the same doorway across the floor at a slant and count its knots the same way. Write nothing on the floor; the two counts and the four berry-dyes are all you hold.
+
+2. Walk the wall-rope knot by knot from the door, and for each wall-knot walk the floor-rope from the door to its end, and where the two knots you hold share a dye — root-red on root-red, ash-grey on ash-grey, sky-blue on sky-blue, bone-white on bone-white — name that pair a treasure by its two counts: this many knots along the wall, that many knots along the floor. Keep the treasures in the order the ropes give them, which is: the smaller wall-count first, and where wall-counts tie, the smaller floor-count first. Throw away every crossing where the dyes differ; it is bare floor and never needs naming.
+
+3. Set the doorway itself down as the first treasure, at wall-count nothing and floor-count nothing, and hang on it two tallies: one that says nothing spent, slip still whole, and one that says the slip is spent already and cost nothing yet. Keep both.
+
+4. Take the treasures in that order, one at a time, and for each one in turn do steps 5 through 8. This is the work done many times over — once for every treasure the dyes gave you, and no more.
+
+5. For the treasure in hand, look back at every treasure already settled that lies behind it on both ropes — its wall-count smaller and its floor-count smaller than the one in hand. Those are the only places a tally can have come from.
+
+6. From each such settled treasure, read the cost of the bare floor between the two without setting foot on it: take how many knots forward the wall-rope must go, and how many knots forward the floor-rope must go. Where both go forward by the same number, the ropes stayed in step and the floor between costs the smaller of the two — that is, that same number. Where they go forward by different numbers, the ropes slipped: the floor costs the larger number, and the slip is the difference between them, which is one knot waiting idle for each knot of difference. Read this off the counts; do not pace it.
+
+7. Add that floor-cost to the tally hanging on the settled treasure, and then subtract one, because arriving on a shared dye is worth one knot of agreement and the treasure pays you that back. If the step you just read was in step, hang the new tally under whichever head it came from — slip whole stays whole, slip spent stays spent. If the step slipped, the slip is now spent: hang the new tally under the slip-spent head only, and if it came from a tally whose slip was already spent, let it fall — a rope may slip past itself once, not twice.
+
+8. Under each of the two heads on the treasure in hand — slip still whole, slip already spent — keep only the cheapest tally that arrived. The moment a second arrives worse than the one standing, drop it like a bad thread-end and do not pick it up. If no tally at all can reach a head, leave that head empty.
+
+9. When the last treasure has been settled, take each treasure in turn one final time and add to its cheaper standing tally the cost of the bare floor from it to the far ends of both ropes — how many knots remain forward on the wall-rope and how many remain forward on the floor-rope, the larger of the two if they differ, and if they differ the slip is spent, so drop that closing from any tally whose slip was already gone.
+
+10. Of all the closings that survive, keep the smallest; that is the single number, and it says how well the two ropes agree, one slip allowed. Announce it and coil both ropes. You are finished when every treasure has been settled once and closed once, and the floor is as bare and unmarked as when you walked in.

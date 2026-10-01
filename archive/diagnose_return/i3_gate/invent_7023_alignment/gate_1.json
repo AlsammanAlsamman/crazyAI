@@ -1,0 +1,11 @@
+{
+  "native_mechanisms": [
+    "Low sun / doubled shadow: detect every same-dye knot crossing (match) in one sweep, without visiting cells one by one.",
+    "Corridor cost read off rope lengths: the cost between consecutive treasures is computed arithmetically from how many knots each rope advances, never by laying markers on the bare floor between matches.",
+    "At each treasure keep only the cheapest arriving tally in each of two states (slip already spent / slip still whole) and drop every dominated tally — a single bounded slip between the two ropes."
+  ],
+  "implemented_mechanism": 1,
+  "survival": "partial",
+  "fallback": true,
+  "core_technique": "Banded Needleman-Wunsch DP (scalar rows plus an AVX2 anti-diagonal wavefront) with the band width iteratively widened from a score lower bound; the main-diagonal SIMD match count only supplies that initial bound."
+}

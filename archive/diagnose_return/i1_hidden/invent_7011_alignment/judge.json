@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "Hang the two symbol strings on crossed rows of posts so their crossings form a lattice of cells, each cell's value chosen by the two symbols meeting there (match / slip-out / slip-in).",
+    "Fold the lattice along its slanting diagonal so all cells whose row+column sum is equal press into a single crease, processed crease by crease instead of row by row.",
+    "Read three stacked crease-layers at once (diagonal, up, left) and release the spent bottom layer, keeping only the two most recent creases as the fold advances."
+  ],
+  "implemented_mechanism": 2,
+  "survival": "full",
+  "fallback": false,
+  "core_technique": "Anti-diagonal (wavefront) Needleman-Wunsch: each k = i+j anti-diagonal computed from the two previous ones in three rotating buffers, vectorized with AVX2 (int16 with a 32-bit fallback above the range guard) using a reversed copy of b so the diagonal's symbol pairs are contiguous, plus a scalar small-n path.",
+  "valid": true
+}

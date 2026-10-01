@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "Hang the two symbol strings on crossed row/column posts to form a lattice of cells, each cell's spark coloured match/mismatch/gap by the two symbols crossing there",
+    "Fold the lattice along its anti-diagonal so all cells with equal row+column sum press into one crease (process the DP by anti-diagonal wavefronts)",
+    "Read three stacked crease layers at once (diagonal, up, left) and discard the spent bottom layer, keeping only the two most recent creases as you advance"
+  ],
+  "implemented_mechanism": 2,
+  "survival": "full",
+  "fallback": false,
+  "core_technique": "Anti-diagonal (wavefront) Needleman-Wunsch: three rolling int16 anti-diagonal buffers (d-2, d-1 -> d) computed with SSE2/AVX2/AVX-512 max/add intrinsics, plus a score-bound-derived band and a scalar two-row DP fallback for small/large n.",
+  "valid": true
+}

@@ -1,0 +1,11 @@
+{
+  "native_mechanisms": [
+    "A fixed first row and a second row that one designated piece may slip forward at exactly one house, tried unslipped and slipped at every possible house along the shared road",
+    "House-by-house comparison of the two rows, petal for agreement and red knot for disagreement, paced strictly one house per flute note",
+    "Each trial's knots gathered into a fist and weighed, all fists but the lightest discarded, the lightest count being the answer"
+  ],
+  "implemented_mechanism": 1,
+  "survival": "partial",
+  "fallback": true,
+  "core_technique": "Hamming-distance and best-single-gap O(n) scans give an upper bound Pub on total penalty, which selects between a WFA-style wavefront (diagonals + LCP 'lotus_run' extension) and an int16 AVX2 banded anti-diagonal Needleman-Wunsch, with plain two-row NW as fallback."
+}

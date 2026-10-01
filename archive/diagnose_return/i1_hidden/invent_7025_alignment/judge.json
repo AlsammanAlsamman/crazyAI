@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "Two rows of beast-pawns on a shared road: one row fixed, the second slipped forward at exactly one house by the horse's-head piece, trying the pair unslipped and slipped at every possible house (single-gap alignment trials enumerated over all offsets).",
+    "House-by-house comparison of facing beasts, marking match (lotus petal) vs mismatch (red knot), paced strictly one comparison per flute note (independent per-position scoring, one fixed-cost step each).",
+    "Each trial's knots gathered into a fist and weighed — the mismatch count is the trial's whole verdict — and all fists but the lightest discarded (argmin over trial scores, no other trial state retained)."
+  ],
+  "implemented_mechanism": 1,
+  "survival": "partial",
+  "fallback": true,
+  "core_technique": "Banded Needleman–Wunsch DP swept along anti-diagonals with AVX2 int16/int32 lanes, where the band half-width W = floor((n-L)/5) is derived from a lower bound L obtained by the native's O(n) single-slip trial enumeration; the exact answer comes from the banded DP, not from the trials.",
+  "valid": true
+}

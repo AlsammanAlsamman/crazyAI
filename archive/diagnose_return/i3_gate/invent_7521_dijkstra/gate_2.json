@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "Nightingales always land first on the unlocked stone carrying the smallest owed letter (greedy min-key selection over the frontier, with a landing justified by 'nothing cheaper can reach it now').",
+    "Threads cast from a tower price each road by its thief's directional toll (per-direction outgoing-edge relaxation: dist(u) + w(u,v) rebuilds the far stone's letter in place).",
+    "A locked letter is never rebuilt again, and threads reaching nowhere are dropped so their stones keep an unreadable debt forever (settled nodes are final; unreachable nodes stay at infinity).",
+    "A knot of three threads already cast at a stone can be detached and recast with a lower number, changing which stone the bird visits next (decrease-key on an already-queued node, in place)."
+  ],
+  "implemented_mechanism": 1,
+  "survival": "full",
+  "fallback": true,
+  "core_technique": "Dijkstra on a CSR graph with a linear-scanned (SIMD/AVX2) frontier array instead of a heap, batch-settling every frontier node whose tentative distance is <= max(min key, min over frontier of key + node's cheapest outgoing weight) — i.e. Crauser's OUT-criterion lookahead — with in-place decrease-key, and a binary-heap Dijkstra kept as a work-budget bail-out fallback."
+}
