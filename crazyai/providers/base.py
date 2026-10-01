@@ -19,6 +19,14 @@ class AgentResult:
     model: str = ""
 
 
+class UsageLimitError(RuntimeError):
+    """The provider refused because the account's usage limit is reached; batches should stop, not keep retrying."""
+
+
+class BudgetExhausted(RuntimeError):
+    """A batch's own call budget (--max-calls) is used up."""
+
+
 class Provider(ABC):
     name: str = "base"
 

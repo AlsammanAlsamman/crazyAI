@@ -203,7 +203,9 @@ class ReturnPath:
     log: Any = lambda msg: print(msg, flush=True)
 
     def __post_init__(self) -> None:
-        if self.variant != "orig" and self.variant not in VARIANTS and self.variant not in STRATEGIES:
+        # "<variant>__k<n>" is the n-th independent candidate of a variant (for best-of-k selection)
+        self.base = self.variant.split("__k")[0]
+        if self.base != "orig" and self.base not in VARIANTS and self.base not in STRATEGIES:
             raise ValueError(f"unknown variant {self.variant!r}; choose from {', '.join([*VARIANTS, *STRATEGIES])} or orig")
         self.archive_dir = Path(self.archive_dir)
         self.src = self.archive_dir / self.source
@@ -234,10 +236,10 @@ class ReturnPath:
 
     def build_prompt(self) -> str:
         names = self.tool_names()
-        if self.variant in ("i1_hidden", "i2_recipe"):
+        if self.base in ("i1_hidden", "i2_recipe"):
             return bend_prompt_hidden(self.ideas(), self.tgt, names, self.focus())
         base = P.bend_prompt(self.ideas(), self.tgt, names, self.focus())
-        return VARIANTS[self.variant](base)
+        return VARIANTS[self.base](base)
 
     def _recipe_bend(self, provider: Provider) -> tuple[str, str]:
         if self._have("recipe.md"):
@@ -281,14 +283,14 @@ class ReturnPath:
         return attempts[chosen][0], prompt
 
     def step_bend(self, provider: Provider) -> dict[str, Any]:
-        if self.variant == "orig":
+        if self.base == "orig":
             art = (self.src / "artifact.md").read_text(encoding="utf-8")
         elif self._have("artifact.md"):
             art = (self.dir / "artifact.md").read_text(encoding="utf-8")
         else:
-            if self.variant == "i2_recipe":
+            if self.base == "i2_recipe":
                 art, prompt = self._recipe_bend(provider)
-            elif self.variant == "i3_gate":
+            elif self.base == "i3_gate":
                 art, prompt = self._gated_bend(provider)
             else:
                 prompt = self.build_prompt()
@@ -298,12 +300,12 @@ class ReturnPath:
         code = _CODE.findall(art)
         pred = _PRED.search(art)
         out = {"code": code[-1] if code else None, "prediction": float(pred.group(1)) if pred else None}
-        if out["code"] and self.variant != "orig":
+        if out["code"] and self.base != "orig":
             (self.dir / "artifact.c").write_text(out["code"], encoding="utf-8")
         return out
 
     def step_measure(self, bent: dict[str, Any]) -> dict[str, Any]:
-        if self.variant == "orig":
+        if self.base == "orig":
             m = _load(self.src / "measure.json")
             return {"status": m.get("status"), "value": m.get("value"), "archived": True}
         if self._have("measure.json"):
@@ -320,8 +322,12 @@ class ReturnPath:
     def step_judge(self, provider: Provider, bent: dict[str, Any]) -> dict[str, Any]:
         if self._have("judge.json"):
             return _load(self.dir / "judge.json")
+        gate = self.dir / "gate.json"
         if not bent["code"]:
             j: dict[str, Any] = {"survival": "none", "fallback": None, "note": "no code"}
+        elif self.base == "i3_gate" and gate.exists() and (self.dir / f"gate_{_load(gate)['chosen']}.json").exists():
+            # the gate already judged the chosen attempt with this exact judge prompt; reuse it, don't pay twice
+            j = dict(_load(self.dir / f"gate_{_load(gate)['chosen']}.json"), reused_from_gate=True)
         else:
             j = provider.structured(JUDGE_SYSTEM, judge_prompt(self.ideas(), self.tgt, bent["code"]), JUDGE_SCHEMA)
             j["valid"] = j.get("survival") in ("full", "partial", "none")
@@ -334,7 +340,7 @@ class ReturnPath:
         m = self.step_measure(bent)
         j = self.step_judge(provider, bent)
         row = {"variant": self.variant, "source": self.source, "target": self.target,
-               "prompt_hash": prompt_hash(self.build_prompt()) if self.variant != "orig" else None,
+               "prompt_hash": prompt_hash(self.build_prompt()) if self.base != "orig" else None,
                "status": m.get("status"), "value": m.get("value"), "survival": j.get("survival"),
                "fallback": j.get("fallback"), "core_technique": j.get("core_technique"),
                "provider": provider.name, "ts": time.strftime("%Y-%m-%dT%H:%M:%S"), "total_s": round(time.time() - t0, 1)}

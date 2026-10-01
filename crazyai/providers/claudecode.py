@@ -18,7 +18,7 @@ import subprocess
 import sys
 from typing import Any
 
-from crazyai.providers.base import AgentResult, Provider
+from crazyai.providers.base import AgentResult, Provider, UsageLimitError
 from crazyai.toolkit.registry import Toolkit
 
 
@@ -67,7 +67,10 @@ class ClaudeCodeProvider(Provider):
         res = subprocess.run(cmd, input=user, capture_output=True, text=True, timeout=self.timeout,
                              encoding="utf-8", errors="replace")
         if res.returncode != 0:
-            raise RuntimeError(f"claude -p failed ({res.returncode}): {res.stderr.strip()[-2000:]}")
+            detail = (res.stderr.strip() + " " + res.stdout.strip()).strip()[-2000:]
+            if re.search(r"(usage|session|weekly|rate) limit|limit (reached|resets)|out of (extra )?usage|quota", detail, re.I):
+                raise UsageLimitError(f"claude -p hit the usage limit: {detail}")
+            raise RuntimeError(f"claude -p failed ({res.returncode}): {detail}")
         return res.stdout.strip()
 
     def agent(self, system: str, user: str, toolkit: Toolkit, tool_names: list[str],

@@ -286,20 +286,57 @@ def cmd_diagnose_return(args) -> int:
     if args.pin_model and args.provider == "claudecode":
         from crazyai.providers import get_provider
         provider = get_provider("claudecode", model=args.model, effort=args.effort, timeout=args.timeout)
+    from crazyai.providers.base import BudgetExhausted, UsageLimitError
+
+    if args.max_calls:
+        provider = _CallBudget(provider, args.max_calls)
     variants = args.variants or ["rp0_current", "rp1_no_known", "rp2_faithful"]
     if args.orig:
         variants = ["orig"] + variants
-    failures = total = 0
+    failures = total = in_a_row = 0
     for source in (args.sources or DEFAULT_SOURCES):
         for variant in variants:
             total += 1
             try:
                 ReturnPath(source=source, variant=variant, archive_dir=Path(args.archive), force=args.force).execute(provider)
+                in_a_row = 0
+            except (UsageLimitError, BudgetExhausted) as exc:
+                print(json.dumps({"source": source, "variant": variant, "status": "stopped", "reason": str(exc)[-500:]}),
+                      flush=True)
+                return 2
             except Exception as exc:  # noqa: BLE001 - one bad source must not abort the batch
                 failures += 1
+                in_a_row += 1
                 print(json.dumps({"source": source, "variant": variant, "status": "error", "error": str(exc)[-2000:]}),
                       flush=True)
+                if in_a_row >= 2:       # two failures in a row: almost always the account limit, so stop cleanly
+                    print(json.dumps({"status": "stopped", "reason": "2 consecutive failures"}), flush=True)
+                    return 2
+    if args.max_calls:
+        print(json.dumps({"calls_used": provider.used, "max_calls": args.max_calls}), flush=True)
     return 1 if total and failures == total else 0
+
+
+class _CallBudget:
+    """Wraps a provider and refuses calls past a fixed budget, so a batch stops cleanly instead of draining the limit."""
+
+    def __init__(self, inner, max_calls: int):
+        self.inner, self.max_calls, self.used = inner, max_calls, 0
+        self.name, self.model = inner.name, getattr(inner, "model", "")
+
+    def _spend(self) -> None:
+        from crazyai.providers.base import BudgetExhausted
+        if self.used >= self.max_calls:
+            raise BudgetExhausted(f"call budget of {self.max_calls} used up")
+        self.used += 1
+
+    def agent(self, *a, **k):
+        self._spend()
+        return self.inner.agent(*a, **k)
+
+    def structured(self, *a, **k):
+        self._spend()
+        return self.inner.structured(*a, **k)
 
 
 def cmd_invent_disguise_all(args) -> int:
@@ -502,6 +539,7 @@ def build_parser() -> argparse.ArgumentParser:
     dr.add_argument("--sources", nargs="*", default=None, help="archive dir names of invent runs (default: 15 hard-target runs)")
     dr.add_argument("--variants", nargs="*", default=None, help="rp0_current rp1_no_known rp2_faithful, or the anti-fallback set c0_today i1_hidden i2_recipe i3_gate (default: the rp ladder)")
     dr.add_argument("--orig", action="store_true", help="also judge each source's archived artifact")
+    dr.add_argument("--max-calls", type=int, default=0, help="stop cleanly after this many Claude calls (0 = no cap)")
     dr.add_argument("--pin-model", action="store_true", help="claudecode: always pass --model explicitly (even the default), so the model is fixed")
     add_provider(dr)
     dr.set_defaults(fn=cmd_diagnose_return)

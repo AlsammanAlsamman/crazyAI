@@ -497,3 +497,40 @@ def test_return_path_gate_retries_on_fallback(tmp_path):
     # the hidden variant never shows the known way or the example kernel
     hidden = ReturnPath("invent_1_matmul", "i1_hidden", archive_dir=tmp_path, log=None).build_prompt()
     assert "Known way" not in hidden and "Minimal correct example" not in hidden
+
+
+def test_return_path_candidates_budget_and_stop(tmp_path):
+    if shutil.which("gcc") is None:
+        pytest.skip("no C compiler")
+    import argparse
+    from crazyai import cli
+    from crazyai.pipeline.return_path import ReturnPath
+    from crazyai.providers.base import BudgetExhausted
+    Invent(seed=1, target="matmul", archive_dir=tmp_path).execute(get_provider("mock"))
+    # "<variant>__k<n>" is its own candidate directory, run with the base variant's logic
+    row = ReturnPath("invent_1_matmul", "i3_gate__k2", archive_dir=tmp_path, log=None).execute(get_provider("mock"))
+    assert row["variant"] == "i3_gate__k2"
+    assert (tmp_path / "diagnose_return" / "i3_gate__k2" / "invent_1_matmul" / "gate.json").exists()
+    # the call budget refuses the call after the cap
+    b = cli._CallBudget(get_provider("mock"), 1)
+    b.structured("s", "u", {"properties": {}})
+    with pytest.raises(BudgetExhausted):
+        b.structured("s", "u", {"properties": {}})
+
+    # two failures in a row stop the batch with exit code 2
+    class Broken:
+        name, model = "broken", ""
+
+        def agent(self, *a, **k):
+            raise RuntimeError("claude -p failed (1): ")
+
+        structured = agent
+    args = argparse.Namespace(provider="mock", mock_detect=False, pin_model=False, max_calls=0, variants=["c0_today"],
+                              orig=False, sources=["invent_1_matmul", "invent_1_matmul", "invent_1_matmul"],
+                              archive=str(tmp_path), force=True)
+    orig = cli._provider
+    cli._provider = lambda a: Broken()
+    try:
+        assert cli.cmd_diagnose_return(args) == 2
+    finally:
+        cli._provider = orig
