@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "Counting-bars plus eight violin strings bound under one bridge: one pluck shivers every string, so the whole wide state is the mixing engine",
+    "A fresh, never-repeated ink-weight (feather) per mark, folded into a running count so strict order is fixed and no two marks share a weight",
+    "The storm's single hands-off pass over the final tremor collapses it into a small fixed token, after which the pickers irreversibly destroy every discarded feather and drop"
+  ],
+  "implemented_mechanism": 1,
+  "survival": "full",
+  "fallback": false,
+  "core_technique": "Wide 8x64-bit ARX state absorbing 64-byte blocks: add message words plus per-block-incrementing lane constants, then a cross-lane permute/rotate/xor-add butterfly so each lane diffuses into all others; blank-input finalization rounds, then an irreversible 512->64 fold through MurmurHash3 fmix64 (the only multiplies).",
+  "valid": true
+}

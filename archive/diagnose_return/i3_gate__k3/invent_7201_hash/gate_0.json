@@ -1,0 +1,11 @@
+{
+  "native_mechanisms": [
+    "Grey wax trough: each mark's impression is pressed atop all prior impressions before any can cool, so no single mark stays legible — only the churned sum of every collision.",
+    "Seven bell-jars of differently-tuned swarms bite a dipped wire in fixed counts, carried to a forward-only slate wheel so no bite can ever be cancelled/walked off.",
+    "A single brine plunge freezes the accumulated bite-pattern into a six-flower frost lattice, held until the lace stops spreading, and only that lattice sketch survives as the token."
+  ],
+  "implemented_mechanism": 2,
+  "survival": "partial",
+  "fallback": true,
+  "core_technique": "XXH3/wyhash-style buffer hash: parallel keyed lanes (7 at ≥112B, 2 at ≥32B) each updated by a 64×64→128 multiply folded hi^lo plus rotate-and-add, depth-2 multiply tree merge, overlapping-read tail, then a Murmur3/SplitMix-style multiply-xor-shift finalizer seeded with the length."
+}

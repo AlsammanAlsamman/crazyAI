@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "A chained line of prisoners grinds a blank pillar mark by mark: nothing of the mark is kept, only the stroke's angle, which carries forward from every prior stroke (and the top stage carries backward into the line).",
+    "A flood that never recedes until all marks have passed bends eight wires anchored in the riverbed, each by the angle ground into the pillar on that pass; nothing is read back out mid-flood.",
+    "The token is the single fixed silhouette the wires throw against the sun after the flood drains and the shapes stop shivering — one projection (lean / stand / cross), read once and kept alone."
+  ],
+  "implemented_mechanism": 1,
+  "survival": "full",
+  "fallback": false,
+  "core_technique": "Multiplication-free LFSR/CRC-style state grinding (hardware _mm_crc32_u64, else a bidirectional xorshift round) folding 64-bit words into eight parallel anchored 32-bit accumulators, followed by a cross-lane carry chain and a wide-multiply + murmur3-style avalanche finalizer.",
+  "reused_from_gate": true
+}

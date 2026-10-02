@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "Each byte is folded into an impure (pre-seeded) accumulator whose updated state becomes the seed for the next byte, so the whole buffer passes through one unbroken chained pour.",
+    "The final accumulator state is pushed through seven distinct finalizing bends, each shifting away half the word and keeping only the high-entropy remainder.",
+    "Flip one input bit anywhere and re-run the whole pour; any resemblance between old and new output condemns the method (avalanche acceptance test)."
+  ],
+  "implemented_mechanism": 1,
+  "survival": "full",
+  "fallback": false,
+  "core_technique": "Chained CRC-32C accumulation (SSE4.2 _mm_crc32_u64 / ARM __crc32cd, with a reflected 0x82F63B78 table fallback) over 8/32-byte blocks, cross-fed with a parallel rotate-add 64-bit accumulator and length-seeded init, closed by a MurmurHash3-style xor-shift/multiply fmix finalizer.",
+  "valid": true
+}

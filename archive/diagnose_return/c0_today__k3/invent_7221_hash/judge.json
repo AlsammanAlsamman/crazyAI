@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "Fold one crease per mark, each crease's angle determined jointly by the mark and the previous crease (strict sequential, order-dependent chaining).",
+    "Press every crease against all four distinct wire-bird beaks at once and refold tighter until all four agree, keeping the spiral/shell markings deliberately misaligned so no two mark-piles collapse alike.",
+    "Thin the whole folded wad at the water's edge down to one small dense coin-sized corner, discarding every scrap, spare sheet and failed gauge reading so only the token survives."
+  ],
+  "implemented_mechanism": 2,
+  "survival": "partial",
+  "fallback": true,
+  "core_technique": "xxHash64: four 64-bit accumulator lanes consuming 32-byte stripes with add-multiply/rotate/multiply rounds, rotate-and-sum lane merge plus per-lane mergeAccumulator, length injection, 8/4/1-byte tail folding, and an xor-shift/multiply final avalanche.",
+  "valid": true
+}

@@ -1,0 +1,11 @@
+{
+  "native_mechanisms": [
+    "Fold each mark into one impure accumulator, the changed state seeding the next mark, so the whole buffer passes as a single unbroken sequential pour",
+    "Carry the accumulator's final state through seven successive bends, each shifting away half the word and keeping only the disagreeing bits (shift-xor / shift-add finalizer)",
+    "Validate by flipping one input mark anywhere and re-running the whole pour, discarding the method if the new digest resembles the old (avalanche rejection test)"
+  ],
+  "implemented_mechanism": 1,
+  "survival": "partial",
+  "fallback": true,
+  "core_technique": "Jenkins one-at-a-time style shift-add/xor accumulator folding the buffer (8 bytes per step) through a single state, with a generic 16-lane SIMD/unrolled parallel-accumulator path for len>=256 that breaks the single-chain property, plus a 7-step shift-xor/add avalanche finalizer; the bit-flip rejection test is absent."
+}

@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "Fold the whole pile as one unbroken chained pour: each byte is poured into an impure (non-XOR, carry-bearing) accumulator and the accumulator's changed state seeds the next byte, no byte judged alone or twice.",
+    "Finalize the accumulator's last state through seven successive organ-bendings, each shifting away half of the bits and xoring back only what differs, then compensating.",
+    "Validate by flipping one byte anywhere in the pile, re-pouring from the start, and discarding the whole method if the new token resembles the old (avalanche test)."
+  ],
+  "implemented_mechanism": 1,
+  "survival": "full",
+  "fallback": false,
+  "core_technique": "Per-byte sequential accumulator fold — acc = rotl23(acc + (byte ^ odd_const)) with a length-seeded initial state — followed by a 7-stage xor-shift/odd-multiply (SplitMix/Murmur-style) finalizer; no multiply in the hot chain, and the flip-one-bit avalanche check is described but not implemented in code.",
+  "reused_from_gate": true
+}

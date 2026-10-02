@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "One fold per mark, each fold's angle set jointly by the mark and the crease left by the previous fold (state carried forward into the angle).",
+    "Press every crease against all four wire-bird beaks at once and refold tighter until the four readings agree, with the sheet's spiral/snail markings deliberately mis-aligned so two different piles cannot look the same.",
+    "Thin the whole folded wad at the water's edge — together with the one small suitcase (the length) — down to one small dense coin, discarding every sheet, scrap and failed gauge reading so nothing survives to be compared next time."
+  ],
+  "implemented_mechanism": 1,
+  "survival": "full",
+  "fallback": false,
+  "core_technique": "Multi-lane (4- or 8-way) streaming absorption where each 8-byte word is mixed by add-then-data-dependent-variable-rotate (rotate amount = low 6 bits of state XOR word), followed by two fixed-rotate cross-lane XOR diffusion rounds and a Murmur3-style multiply-shift finalizer.",
+  "reused_from_gate": true
+}

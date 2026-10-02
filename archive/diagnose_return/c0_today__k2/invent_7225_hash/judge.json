@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "Pour each mark one at a time into a never-pure (impure, nonzero) cup, letting the cup's changed state seed the next pull, so the whole pile passes as one unbroken chained pour with no mark judged alone or twice.",
+    "Carry the cup's final state through seven successive 'organ' bendings, each discarding half of what it received and passing on only the bits that disagree/refuse to sit still.",
+    "Validate by flipping one mark anywhere in the pile, re-pouring from the first cup, and discarding the entire method if the new token resembles the old one (strict avalanche rejection test)."
+  ],
+  "implemented_mechanism": 1,
+  "survival": "partial",
+  "fallback": true,
+  "core_technique": "wyhash/xxHash-style buffer folding: 128-bit widening multiply folded by hi^lo (mum) over four parallel accumulator lanes for >=64-byte blocks, a 16-byte single-accumulator chained loop, overlapping-read tail, length injection, and a Murmur3 fmix64 finalizer extended by two extra multiply-xorshift steps.",
+  "valid": true
+}

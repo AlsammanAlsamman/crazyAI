@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "Eight violin strings bound under one bridge on the counting-bars: one pluck shivers into every other string, so all lanes co-mix — the mixing engine of the fold, with tremor carried across plucks so nothing settles between marks.",
+    "A fresh never-repeated inked feather per mark that records only the mark's weight (not its shape), binding strict position/order into the running count.",
+    "A single hands-off storm pass over the final tremor collapsing it into one small fixed token, after which the pickers destroy every discarded feather and ink drop (irreversibility, no intermediate state survives)."
+  ],
+  "implemented_mechanism": 2,
+  "survival": "partial",
+  "fallback": true,
+  "core_technique": "xxHash3-style wide 8x64 striped accumulate (data ^= key; acc[i^1] += data; acc[i] += lo32*hi32) with AVX2 vectorization, a counter-stepped key sequence instead of a fixed secret, overlapping-read short-input paths, and an rrmxmx 64-bit finalizer.",
+  "valid": true
+}

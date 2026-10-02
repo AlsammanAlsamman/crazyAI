@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "Silence-swats: the whole pile of marks is laid down in given order first, order held by position alone, before any folding/mixing begins",
+    "Each heap races the musk deer's mountain stride — uphill twist (rotate), downhill fold (xor), doubling-back (add) — repeated with ninety-degree square turns and corner-folding until no heap keeps its entering shape, with the running shape carried forward into the next heap",
+    "The owl seals the final folded shape to one fixed small size while every intermediate heap is burned (512 bits collapsed to 64, state destroyed) so the token cannot be walked back to its marks"
+  ],
+  "implemented_mechanism": 2,
+  "survival": "full",
+  "fallback": false,
+  "core_technique": "ChaCha-style ARX block permutation (add/xor/rotl-16,12,8,7 quarter-rounds over 8 parallel 4-word lanes with diagonal lane re-spins) absorbing 128-byte blocks into a non-commutative 64-bit chaining accumulator, finished with a murmur3 fmix64 avalanche; multiplication-free in the hot loop rather than xxHash/FNV multiply-xor-shift.",
+  "valid": true
+}

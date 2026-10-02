@@ -1,0 +1,16 @@
+source                                    plain winner                       gate winner
+invent_7201_hash            15.55x k3  fallback (1 ok)        21.27x k3 KEPT IDEA (1 ok)
+invent_7202_hash            16.74x k3  fallback (2 ok)        13.21x k1 KEPT IDEA (1 ok)
+invent_7203_hash            12.27x k2 KEPT IDEA (1 ok)        30.94x k3 KEPT IDEA (2 ok)
+invent_7204_hash            37.05x k2  fallback (1 ok)        32.65x k3 KEPT IDEA (2 ok)
+invent_7221_hash            16.98x k1  fallback (2 ok)        21.62x k3 KEPT IDEA (2 ok)
+invent_7222_hash            37.04x k1 KEPT IDEA (2 ok)        19.45x k1 KEPT IDEA (2 ok)
+invent_7223_hash             8.33x k3  fallback (2 ok)        24.61x k2 KEPT IDEA (3 ok)
+invent_7224_hash            12.17x k3 KEPT IDEA (2 ok)        33.99x k1 KEPT IDEA (2 ok)
+invent_7225_hash            36.75x k2  fallback (3 ok)                       none passed
+
+plain  winners 9/9  mean winner speed 21.43x  winner kept the idea 3/9  |  candidates: 27, exact+quality 16, non-fallback 10, blocked 4
+gate   winners 8/9  mean winner speed 21.97x  winner kept the idea 8/9  |  candidates: 27, exact+quality 15, non-fallback 26, blocked 1
+winner speed plain -> gate: 21.43 -> 21.97x, gate faster on 5/9, Wilcoxon p=0.652
+winner kept the idea plain -> gate: 3 -> 8 (gate gains 5, loses 0, sign p=0.062)
+-> archive\diagnose_return\gate_select.json

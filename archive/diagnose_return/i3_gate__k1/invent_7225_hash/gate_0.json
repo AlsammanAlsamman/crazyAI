@@ -1,0 +1,11 @@
+{
+  "native_mechanisms": [
+    "Each mark is poured into the never-pure (odd, cut) wine cup and the cup's changed colour seeds the next pour, so the whole pile passes as one unbroken serial chain, each mark used exactly once.",
+    "The cup's final colour is carried through seven successive organs, each bending it and discarding at least half of what it received, passing on only the bits that refuse to sit still.",
+    "Validation by differential test: flip one mark anywhere in the pile, re-pour from the first cup, and discard the whole method if the new token still resembles the old one's shape."
+  ],
+  "implemented_mechanism": 1,
+  "survival": "partial",
+  "fallback": true,
+  "core_technique": "xxHash64-style keyed accumulator hash: four parallel 64-bit lanes absorbing 8-byte words via multiply/rotate-31/multiply, merged with rotate-and-add plus per-lane fold-in rounds, tail handled serially, finished with a seven-step xor-shift/multiply avalanche finalizer."
+}

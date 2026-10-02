@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "A single rolling sphere (one accumulator state) is the sole carried memory across the whole ordered pile of marks",
+    "Each mark is pressed into the sphere's face, then a fixed count of tumbles down the mason trail (fixed rounds of strike = add, turn = rotate, crack = xor) mixes it in before the next mark is taken; no footprint/history is kept and one wrong mark reshapes the whole sphere",
+    "Only the final hairline crack of the last stalk is handed over as the token; all intermediate cracks, dust and eggshells (carries) are swept away on purpose"
+  ],
+  "implemented_mechanism": 2,
+  "survival": "full",
+  "fallback": false,
+  "core_technique": "SipHash-style ARX (add-rotate-xor) sponge-like compression: 256-bit four-word state, little-endian 8-byte blocks xored in with exactly one SipRound per block plus length byte and three finalisation rounds, folded by xor into a 64-bit output — multiplication-free, i.e. not the FNV/xxHash multiply-xor-shift route.",
+  "reused_from_gate": true
+}

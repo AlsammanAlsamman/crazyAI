@@ -1,0 +1,11 @@
+{
+  "native_mechanisms": [
+    "The stone never resets between marks: one running state carried across the whole pile, no re-initialisation per mark.",
+    "Each mark's weight is pressed into the already-turned state rather than onto a clean face, so earlier marks bend how later marks land (strictly order-dependent, serial dependency chain with amplifying differences).",
+    "Only the final seated reading leaves the desk: all intermediate turns and residue are discarded, the wide state collapsed to one output number."
+  ],
+  "implemented_mechanism": 2,
+  "survival": "full",
+  "fallback": false,
+  "core_technique": "Sponge-style absorb of 32-byte blocks XORed into a single 256-bit ARX state (add + cross-lane permute/shuffle + rotate, deliberately one serial chain rather than independent lanes), four blind permutation rounds, then truncation to 64 bits through a Murmur-style fmix finaliser."
+}

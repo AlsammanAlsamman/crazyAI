@@ -1,0 +1,11 @@
+{
+  "native_mechanisms": [
+    "The die-stone is never reset between marks — every fold carries the callus of all previous folds (one running accumulator, no per-mark clean slate).",
+    "Each mark's weight is seated into the stone's already-turned position rather than onto a clean face, so earlier marks bend how later marks land and differences amplify fold over fold until no two differing fold-paths ever re-converge (order-dependent, non-converging/injective folding).",
+    "Only the stone's final seated number read against the wooden keeps leaves the desk; all intermediate turns and residue are swept away (wide internal state, narrow discarded-remainder output)."
+  ],
+  "implemented_mechanism": 2,
+  "survival": "full",
+  "fallback": false,
+  "core_technique": "Bijective ARX block round over a 256-bit four-lane accumulator — data words added into the already-rotated lane state (ROTL(v+w,16)), then pairwise add/rotate-xor plus cross-lane feedback, with no multiplication on data, giving invertible, order-dependent, non-converging diffusion; xxHash64's lane merge, tail and final avalanche are reused only as the output stage."
+}

@@ -1,0 +1,32 @@
+{
+  "results": [
+    {
+      "n": 16,
+      "time": 2.0065e-09,
+      "ref_time": 4.48199993e-09,
+      "avg_avalanche_frac": 0.5047,
+      "avalanche_score": 0.9906,
+      "speedup_vs_dp": 2.234,
+      "status": "exact"
+    },
+    {
+      "n": 256,
+      "time": 6.65999978e-09,
+      "ref_time": 1.60429999e-07,
+      "avg_avalanche_frac": 0.5066,
+      "avalanche_score": 0.9867,
+      "speedup_vs_dp": 24.089,
+      "status": "exact"
+    },
+    {
+      "n": 4096,
+      "time": 1.07350003e-07,
+      "ref_time": 2.91904999e-06,
+      "avg_avalanche_frac": 0.5053,
+      "avalanche_score": 0.9894,
+      "speedup_vs_dp": 27.192,
+      "status": "exact"
+    }
+  ],
+  "value": 26.9038
+}

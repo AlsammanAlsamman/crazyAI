@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "A single rolling sphere is the sole carried state across the whole ordered input (one accumulator, no side state, old state discarded each step).",
+    "A fixed number of tumbles down the trail (rotation/crack steps) mixes each mark into the sphere before the next mark is taken.",
+    "Only the final hairline crack in the last stalk is kept as the output token; all intermediate cracks, dust and eggshells (tail/length debris) are swept away."
+  ],
+  "implemented_mechanism": 2,
+  "survival": "full",
+  "fallback": false,
+  "core_technique": "Multiply-free ARX streaming hash: each 8-byte word is added into a lane accumulator then passed through a fixed count (two) of compile-time rotate-xor bijections x ^= rotl(x,a) ^ rotl(x,b), over 4 scalar (or 8 AVX2) independent lanes, finished with 4 SipRounds and an XOR fold.",
+  "reused_from_gate": true
+}

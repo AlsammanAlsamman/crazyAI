@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "Grey wax trough where each mark's impression is pressed atop all prior still-warm impressions, so the medium holds only the churned sum, never a clean single picture",
+    "Seven bell-jars of differently-hungry insect swarms each bite a dipped wire in their own count and rhythm, fixed forever by a forward-only spinning slate wheel that can never be walked back",
+    "A brine basin freezes the wire's bite-pattern, after waiting for frost-lace to stop spreading, into a unique six-flower lattice sketched to tin as the only surviving token"
+  ],
+  "implemented_mechanism": 2,
+  "survival": "partial",
+  "fallback": true,
+  "core_technique": "xxHash-style striped hashing: seven parallel accumulator lanes with distinct odd multipliers and per-lane rotate-multiply over 56-byte blocks, folded into one accumulator, 8/4/1-byte tail, then Murmur3 fmix64 avalanche finalizer.",
+  "valid": true
+}

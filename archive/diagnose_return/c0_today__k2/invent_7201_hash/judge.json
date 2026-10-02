@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "A grey wax trough where each mark's impression is pressed atop prior, still-warm impressions, so only the churned sum of collisions is ever held.",
+    "Seven differently-tuned insect swarms bite a dipped wire, each in its own count and rhythm, carried to a forward-only spinning slate wheel so no bite can be undone.",
+    "A brine basin that freezes the wire's bite-pattern into a unique six-flower frost lattice, sketched to tin as the surviving token."
+  ],
+  "implemented_mechanism": 2,
+  "survival": "full",
+  "fallback": false,
+  "core_technique": "Seven parallel 64-bit lanes absorbing 56-byte stripes by add-then-rotate with distinct fixed per-lane rotation amounts (no multiply/xor in the absorb loop), then a six-node rotate-add tree fold and a length-salted moremur multiply-xor-shift finalizer.",
+  "valid": true
+}

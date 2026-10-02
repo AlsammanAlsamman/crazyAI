@@ -1,0 +1,14 @@
+{
+  "native_mechanisms": [
+    "A single rolling sphere is the sole carried memory across the whole ordered pile (one accumulator, old state discarded).",
+    "Each mark is pressed into the sphere and tumbled a fixed count of turns down a pre-laid mason trail, the struck stalk's crack angle becoming the next carried weight (fixed per-byte rotation + lookup in a precomputed, read-only trail table).",
+    "Any single wrong mark reshapes the whole sphere, not a sliver — full-state avalanche propagating to every downstream stalk.",
+    "Only the final hairline crack left in the last stalk is handed over; the sphere itself, intermediate cracks and dust are swept away (output is a final table-derived token, not the accumulator).",
+    "Footprints at stalks are never revisited — the trail is never written back to, only read."
+  ],
+  "implemented_mechanism": 2,
+  "survival": "full",
+  "fallback": false,
+  "core_technique": "Simple tabulation (Zobrist) hashing: 8x256 precomputed 64-bit tables XOR-folded into one accumulator with a fixed rotation per step (the per-byte ARC=29 rotation algebraically folded into the tables so a full 8-byte turn is one ROTL 40), multiply-free, with a table-driven rotate-xor finalizer over the accumulator's own bytes.",
+  "valid": true
+}

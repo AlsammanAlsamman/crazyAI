@@ -1,0 +1,11 @@
+{
+  "native_mechanisms": [
+    "One crease per mark, each crease's angle set jointly by the mark and the preceding crease (sequential state-carrying chain).",
+    "Press every crease against all four wire birds' beaks at once and refold tighter until all four gauges agree, deliberately misaligning the spiral/snail markings so two different piles can't coincide.",
+    "Thin the whole folded wad at the water's edge down to one small dense coin and destroy every scrap, trimming and failed reading so nothing but the coin survives."
+  ],
+  "implemented_mechanism": 1,
+  "survival": "partial",
+  "fallback": true,
+  "core_technique": "xxHash64 verbatim — four 64-bit lanes over 32-byte blocks with the round (acc += m*PRIME2; rotl31; *PRIME1), rotl(1,7,12,18) lane merge plus mergeRound, length added, 8/4/1-byte tail, and the standard xor-shift/multiply avalanche finalizer; the native's four-beak agreement test is absent (the lanes never check or re-fold toward consensus) and the 'coin' is just the textbook finalizer."
+}

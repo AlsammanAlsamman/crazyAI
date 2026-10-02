@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "A growing sailor-chain hung between fire and wall: every shadow depends on the whole row of knots so far, not just the newest one (each output depends on the entire prefix).",
+    "A mark's own pebble-count (its stroke count) sets the incense-swing, bending the firelight before it lands (the byte's own popcount chooses how far the state is rotated).",
+    "Only the wet-clay print of the settled shadow, hardened in the stream and read by its ridges, is kept as the token (final state washed once and emitted; intermediates discarded)."
+  ],
+  "implemented_mechanism": 2,
+  "survival": "full",
+  "fallback": false,
+  "core_technique": "Per-byte data-dependent rotation: state ^= byte then rotate-left by (popcount(byte)+1), across six cross-fed accumulator lanes, with length folded in and a standard MurmurHash3 fmix64 xor-shift-multiply finalizer.",
+  "reused_from_gate": true
+}

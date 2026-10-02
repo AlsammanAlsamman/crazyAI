@@ -1,0 +1,11 @@
+{
+  "native_mechanisms": [
+    "The die-stone never resets between marks: one running state carries the callus of every prior fold.",
+    "Each mark's weight is pressed into the stone's already-turned position, so early marks bend how later marks land (order-dependent, path-dependent, differences amplified so differing paths never re-merge).",
+    "Only the stone's final seated reading against the fixed keeps leaves the desk; all intermediate turns and residue are swept away."
+  ],
+  "implemented_mechanism": 1,
+  "survival": "partial",
+  "fallback": true,
+  "core_technique": "xxHash64-style construction: 8-byte little-endian loads folded into never-reset 64-bit accumulators via rotate(add)-multiply rounds — four interleaved lanes over 64-byte stripes for len>=64 (single accumulator with an extra per-word multiply for short inputs), then lane merge plus a standard xor-shift/multiply avalanche finalizer — i.e. the known multiply-xor-shift accumulator approach plus generic ILP striping, not a mechanism derived from the native's imagery."
+}

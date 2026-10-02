@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "Eight strings bound under one bridge: plucking one string shivers all the others, so a single mark's effect bends every part of the state (coupled multi-lane mixing engine).",
+    "Each mark gets a fresh, never-reused ink-dipped feather recording only its 'weight', binding strict position/order into the running count (unique per-position secret material folded into the accumulation).",
+    "One single storm pass at the very end collapses the final tremor into eight small notes as the token, after which every intermediate feather/drop/tremor count is destroyed (single finalization/avalanche pass, intermediate state discarded)."
+  ],
+  "implemented_mechanism": 1,
+  "survival": "partial",
+  "fallback": true,
+  "core_technique": "A near-verbatim xxHash3 (XXH3_64) clone: 8-lane accumulator absorbing 64-byte stripes with secret-XORed 32x32->64 multiply-add plus xxh3's own adjacent-lane `acc[j^1] += v` swap-add, periodic bijective scramble (xor-shift 47, secret xor, PRIME32_1 multiply) here extended with a 3-lane rotation so the pair-coupling graph becomes a connected 8-cycle, then 128-bit multiply-folds of the lanes into a length-seeded xor-shift-multiply finalizer, with a separate short-input multiply-fold path.",
+  "valid": true
+}

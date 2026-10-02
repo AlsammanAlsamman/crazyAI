@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "Eight violin strings bound under one bridge on the counting-bars: a single pluck shivers into every other string — cross-lane coupled mixing engine.",
+    "A fresh, never-reused feather per mark records only the mark's ink-weight (not its shape), fixing strict order into the running count — per-position table lookup of each byte.",
+    "A single storm pass over the final tremor collapses it into one small fixed token, after which all feathers and drops are destroyed — one-shot finalizer plus discard of intermediate state."
+  ],
+  "implemented_mechanism": 2,
+  "survival": "full",
+  "fallback": false,
+  "core_technique": "8-lane simple tabulation (Zobrist) hashing: each byte indexes a position-rotated 256-entry random table and is accumulated by addition into one of 8 independent lanes with per-lane rotations, then lanes are combined and run through a Murmur3 fmix64 finalizer (bytes are never multiplied in the kernel, unlike FNV-1a/xxHash).",
+  "reused_from_gate": true
+}

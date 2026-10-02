@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "A chained line of prisoners sharpens a blank pillar mark by mark, each stroke's angle carrying forward from every stroke before it (state-carrying, multiply-free, mark discarded after use).",
+    "A flood that only recedes once every mark has passed bends a fixed number of anchored wire shapes, each bent by the angle ground into the pillar on that pass.",
+    "The token is the single fixed silhouette the wires throw once the flood drains and shadows stop chittering — read once, kept alone, nothing else retained."
+  ],
+  "implemented_mechanism": 1,
+  "survival": "full",
+  "fallback": false,
+  "core_technique": "Multiply-free ARX streaming hash: eight fixed parallel 64-bit lanes each updated by acc = rotl(acc ^ word, 29) + word over 64-byte blocks (AVX2-vectorised), then a one-shot length-seeded multiply-xor tree fold plus murmur3-style fmix64 finalizer.",
+  "reused_from_gate": true
+}

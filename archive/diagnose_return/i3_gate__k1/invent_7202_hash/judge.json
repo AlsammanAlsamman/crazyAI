@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "A growing chain hung between fire and wall: every new shadow depends on the whole accumulated row, not just the newest knot (state-wide feedback into each step)",
+    "Each mark's own pebble-count (its stroke tally) sets how far the incense swings, bending the light before it lands (data-dependent rotation amount derived from the word's own bit-count)",
+    "Only the clay print of the settled shadow, hardened in the stream and read by its ridges, is kept as the token (final mixing/finalization, all intermediate state discarded)"
+  ],
+  "implemented_mechanism": 2,
+  "survival": "full",
+  "fallback": false,
+  "core_technique": "Multiplication-free six-lane ARX hash: each 8-byte word is added to its lane together with a cross-lane feedback word, then rotated left by (2*popcount(word) + per-lane constant), with lanes folded and passed through a Wang-style shift-add/xor finalizer.",
+  "reused_from_gate": true
+}

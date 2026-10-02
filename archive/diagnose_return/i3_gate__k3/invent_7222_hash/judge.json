@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "The die-stone never resets between marks: one running state carries the callus of every prior fold (no re-initialisation, fully sequential chaining).",
+    "Each mark's weight is pressed into the stone's already-turned position rather than a clean face, so earlier marks bend how later marks land (input combined additively into the mutated state, then permuted again).",
+    "Only the stone's final seated number against the wooden keeps leaves the desk; all intermediate turns and residue (the faces marks never seat on) are swept away and discarded (wide state, narrow truncated output with a non-absorbing capacity)."
+  ],
+  "implemented_mechanism": 3,
+  "survival": "full",
+  "fallback": false,
+  "core_technique": "A sponge-style ARX hash: 384-bit state split into a 256-bit rate (a0..a3, the only words message blocks are added into) and a 128-bit capacity (c0,c1, never touched by input, mixed only by TIP), absorbed block-by-block through SipRound permutations with constant IVs plus length, finalised by extra TIP/TURN rounds and truncated to a single 64-bit XOR of the state — not FNV/xxHash multiply-xor-shift accumulation.",
+  "reused_from_gate": true
+}

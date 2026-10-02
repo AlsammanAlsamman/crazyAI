@@ -1,0 +1,11 @@
+{
+  "native_mechanisms": [
+    "The bone-colored die-stone never resets between marks: state is carried forward so every fold inherits the accumulated effect of all prior folds (single sequentially-dependent accumulator).",
+    "Each mark's weight is pressed into the stone's already-turned position, not a clean face, so early marks bend how later marks land, and a one-bit difference is multiplied forward each fold until no two paths converge (order-dependent, avalanching mixing step).",
+    "Only the stone's final seated position read against the fixed wooden keeps ever leaves the desk; all intermediate turns and residue are discarded (final-state-only output with fixed constants, no intermediate emission)."
+  ],
+  "implemented_mechanism": 1,
+  "survival": "partial",
+  "fallback": true,
+  "core_technique": "Verbatim xxHash64 (4-lane add/multiply/rotate/multiply accumulator with length-tagged tail and xor-shift-multiply avalanche finalizer) plus an AVX2 XXH3 long-input path (8 accumulator lanes, secret-keyed mul_epu32 accumulate, periodic scramble, mul128-fold merge) — i.e. the known multiply-xor-shift accumulator approach, with the native's \"never resets\" and \"final seat only\" amounting to restatements of what any such accumulator already does, and the parallel 4/8 lanes actually contradicting the single-stone sequential chain."
+}

@@ -1,0 +1,11 @@
+{
+  "native_mechanisms": [
+    "Each mark is poured into the already-soured cup and the cup's changed colour seeds the next pour, so the whole pile passes as one unbroken chained pour (streaming single-accumulator fold).",
+    "The cup's final colour is carried through seven organs in turn, each bending it and discarding half of what it received, keeping only what refuses to sit still (seven-stage finalizer alternating shift-discard and bend).",
+    "Change one mark anywhere in the pile, re-pour from the first cup, and condemn the method if the new token resembles the old (avalanche/differential self-test as an acceptance gate)."
+  ],
+  "implemented_mechanism": 2,
+  "survival": "partial",
+  "fallback": true,
+  "core_technique": "MurmurHash3-x64-style hash: 8-byte words multiplied/rotated/multiplied and XOR-folded into one rotating accumulator (h = rotl(h)*5 + C) with a byte-wise rotate-add tail and length injection, closed by a 7-step xor-shift/multiply fmix-style finalizer; no avalanche test exists in the code."
+}

@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "A shared grey-wax trough where every mark's impression is pressed atop all prior impressions before any can cool clean (one running shared state, never a clean picture of a single mark).",
+    "Seven differently-tuned insect-swarms biting a dipped wire in counts locked by a forward-only spinning slate wheel (seven parallel lanes, each with its own fixed, irreversible rotation rhythm).",
+    "A single final brine plunge that freezes the bite-pattern into a unique six-flower frost lattice, sketched to tin as the token (one-shot six-step finalisation to a fixed output, inputs discarded)."
+  ],
+  "implemented_mechanism": 1,
+  "survival": "full",
+  "fallback": false,
+  "core_technique": "Rotate-xor-add streaming hash whose main loop chains every 8-byte word into one shared additive accumulator W and feeds W (not the raw word) into seven rotation-distinct lane accumulators, then folds lanes + W and applies a splitmix64/Stafford-mix13 finaliser with a length tweak.",
+  "reused_from_gate": true
+}

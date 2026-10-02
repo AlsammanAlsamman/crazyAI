@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "Silence-swats: the whole ordered pile/heap is laid on the stone (absorbed) before any folding begins, so input order is fixed first.",
+    "Each heap races the musk deer's mountain stride — uphill twist (rotate), downhill fold (xor), doubling-back that eats its own trail (state <- f(state)) — until no heap keeps its entering shape; carried forward into the next heap, plus square-searching (90-degree turns folding corners into the centre) until one changed mark smears across every square.",
+    "The owl's seal: the final folded shape is fixed to one small invariant size, and intermediate heaps are burned so the token cannot be walked back to its marks (one-wayness)."
+  ],
+  "implemented_mechanism": 2,
+  "survival": "full",
+  "core_technique": "ChaCha-style ARX permutation (add-rotate-xor quarter-rounds, column then diagonal rounds) over a 16x64-bit state absorbing XOR-ed 128-byte blocks with a block counter, plus splitmix64 finalization and overlapping-tail/short-input regimes, AVX2-vectorized.",
+  "fallback": false,
+  "valid": true
+}

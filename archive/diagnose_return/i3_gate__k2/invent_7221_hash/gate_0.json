@@ -1,0 +1,11 @@
+{
+  "native_mechanisms": [
+    "Strictly serial folding: one crease per mark, each crease's angle determined by both the mark and the immediately preceding crease, never skipping or looking ahead.",
+    "Per-crease four-gauge consensus: press each crease against all four wire birds' beaks at once and refold tighter until all four agree, with the markings deliberately scrambled so distinct piles can't coincide.",
+    "Final thinning at the water's edge: compress the whole folded wad (plus the small suitcase = length) into one dense coin-sized corner and discard every sheet, scrap and failed reading."
+  ],
+  "implemented_mechanism": 3,
+  "survival": "partial",
+  "fallback": true,
+  "core_technique": "A near-verbatim xxHash64: four interleaved 64-bit lanes of add-multiply-rotate-multiply over 32-byte blocks, asymmetric rotate-and-add lane merge, length added, 8/4/1-byte tail rounds, then a standard multiply-xorshift (Murmur-style) avalanche finalizer."
+}

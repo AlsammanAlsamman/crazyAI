@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "A growing sailor-chain hung between fire and wall: every shadow depends on the whole accumulated row, not only the newest knot (whole-state, order-dependent chaining that only ever lengthens and is never broken/invertible).",
+    "A mark's own pebble-count (popcount of the data word) sets how far the incense swings, bending the firelight before it lands — i.e. the data's own bit-count chooses the mixing displacement.",
+    "Only the print taken from the settled shadow, hardened in the stream and read by its ridges, is kept as the token — a one-way compression of the shadow-reading down to a fist-sized mark, with smoke, pebble-cup and old print discarded."
+  ],
+  "implemented_mechanism": 2,
+  "survival": "partial",
+  "fallback": true,
+  "core_technique": "A 6-lane SipHash-style ARX sponge (per-lane add-rotate, fixed cross-lane XOR diffusion, length-padded 48-byte blocks, 3–4 finalization rounds, 384→64 fold), where the only native-derived twist is that each round's rotation amounts are offset by a running popcount accumulator (`cup`) of the input words.",
+  "valid": true
+}

@@ -1,0 +1,13 @@
+{
+  "native_mechanisms": [
+    "Servant's inflated-house swats hold silence so the marks' order/position is fixed before any heap is folded (order committed, never spoken/lost).",
+    "Each heap races the musk deer's mountain stride — uphill twist (rotate), downhill fold (xor), doubling-back that eats its own trail (carry/add) — so no heap keeps the shape it entered with, with the running shape carried into the next heap and nothing allowed to ossify (no fixed point).",
+    "The drifting man's search in squares: turn the shape ninety degrees and fold its corners into its own center, repeatedly, until one changed mark smears across every square (avalanche across lanes, tested by one-bit flip).",
+    "The owl calls the final shape inside the dreamer inside — sealed to one fixed token size regardless of input length — while intermediate heaps are burned so the token cannot be walked back to its marks (one-way, fixed-width finalisation)."
+  ],
+  "implemented_mechanism": 2,
+  "survival": "full",
+  "fallback": false,
+  "core_technique": "Multiply-free 8-lane ARX absorption of 64-byte blocks (v[i] = rotl(v[i]^w, per-lane odd rotation) + (w ^ pi-derived key), scalar and AVX2-identical), then O(1) cross-lane ARX 'square' diffusion rounds, length injection, binary tree fold, and a splitmix/Murmur3 64-bit finalizer.",
+  "reused_from_gate": true
+}

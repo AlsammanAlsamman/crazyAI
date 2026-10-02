@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "Fold one crease per mark in strict order, each crease's angle determined by both the mark and the immediately preceding crease (sequential state carry-forward).",
+    "Gauge every single crease against all four wire birds' beaks simultaneously, refolding tighter until all four agree before the crease counts as set (per-step four-way consensus, with deliberate anti-alignment scrambling).",
+    "Thin the whole folded wad at the water's edge into one small dense corner and destroy every sheet, trimming and failed reading, keeping only the coin."
+  ],
+  "implemented_mechanism": 2,
+  "survival": "partial",
+  "fallback": true,
+  "core_technique": "xxHash/XXH3-style multi-lane block hashing: four parallel 64-bit accumulators absorbing 32-byte blocks via (word^counter-advanced key) 32x32->64 multiply plus lane-rotated adds (AVX2 or scalar), then xxHash64 mergeRound combination and MurmurHash3 fmix64 finalization, with a widened FNV-1a path for short inputs.",
+  "valid": true
+}

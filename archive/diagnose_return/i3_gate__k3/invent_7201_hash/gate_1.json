@@ -1,0 +1,11 @@
+{
+  "native_mechanisms": [
+    "A grey wax trough accumulates each mark's impression on top of all prior impressions before any can cool clean (wide shared state, deliberately under-diffused between absorptions).",
+    "Seven tuned insect-swarms bite a dipped wire in counts locked by a forward-only slate wheel (irreversible, additive-only, never-subtractable per-mark contributions).",
+    "A brine plunge, held until the lace stops spreading, freezes the pattern into a unique six-flower lattice sketched to tin as the final token (deferred terminal diffusion, then a fixed six-part extraction)."
+  ],
+  "implemented_mechanism": 1,
+  "survival": "full",
+  "fallback": false,
+  "core_technique": "Wide 1024-bit (16x64) ARX state hash: each 128-byte block is added into all 16 lanes followed by exactly one invertible add-rotate shear round (intentionally incomplete per-block diffusion), with length prefix and 0x01 padding, then 12 held finishing rounds, a six-term rotate-add fold to 64 bits, and Murmur3 fmix64 as the final avalanche; AVX2 and scalar paths plus a 4-lane short-input variant."
+}

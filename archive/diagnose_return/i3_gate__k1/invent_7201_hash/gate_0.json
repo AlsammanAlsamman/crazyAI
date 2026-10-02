@@ -1,0 +1,11 @@
+{
+  "native_mechanisms": [
+    "Grey wax trough where each mark's impression is pressed atop still-warm prior impressions, so no mark is ever read clean — only as a smear of overlapping presses.",
+    "Seven tuned insect-swarms biting a dipped wire, each in its own fixed count and rhythm, driven by a forward-only spinning slate wheel so a bite can never be walked off.",
+    "A single final plunge into chilling brine that freezes the accumulated bite-pattern into a unique six-flower frost lattice, sketched to tin as the only surviving token."
+  ],
+  "implemented_mechanism": 2,
+  "survival": "full",
+  "fallback": false,
+  "core_technique": "Seven parallel 64-bit accumulators, each fed deliberately overlapping unaligned 8-byte loads (7-byte offsets, 49-byte stride over 50 read bytes) through a per-lane xor-rotate-add-constant ARX round, round-robined over the tail, folded by rotated addition with the length, and finished with the stock splitmix64/Stafford Mix13 avalanche finalizer."
+}

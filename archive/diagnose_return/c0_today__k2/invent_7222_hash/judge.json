@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "Carry-forward with no reset: one accumulator state persists across all marks, so every fold bears the residue of all prior folds.",
+    "Each mark's weight is injected into the already-rotated/accumulated state rather than onto a clean value, so earlier marks bend how later marks land (avalanche by compounding multiplication).",
+    "Only the final accumulator value is emitted; all intermediate states and residue are discarded."
+  ],
+  "implemented_mechanism": 1,
+  "survival": "partial",
+  "fallback": true,
+  "core_technique": "xxHash64-style hashing: four parallel 64-bit accumulator lanes fed by rotate-xor-input-times-odd-constant rounds over 32-byte blocks, lane merge by rotl(1/7/12/18)+add, tail folding, length injection, and MurmurHash3 fmix64 finalisation.",
+  "valid": true
+}

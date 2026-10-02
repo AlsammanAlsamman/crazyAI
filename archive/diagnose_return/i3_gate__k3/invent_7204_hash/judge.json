@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "Eight violin strings bound under one bridge on the counting-bars: each pluck shivers into every other string — a coupled multi-lane state that is the mixing engine, with the tremor never allowed to settle between marks (state carried forward across all marks).",
+    "A fresh, never-repeated ink-weight feather per mark: a per-position unique weight/key folded into each mark so strict order is fixed into the running count.",
+    "The storm's single final pass across the settled tremor, collapsing it into eight small notes (one fixed-size token), after which the pickers destroy every discarded feather and drop (no intermediate state survives)."
+  ],
+  "implemented_mechanism": 1,
+  "survival": "full",
+  "fallback": false,
+  "core_technique": "Multiply-free 8-lane absorb loop (xor with a counter-derived per-block key, rotate-xor-add) with explicit cross-lane coupling each block — scalar `v[(j+1)&7] += rotl(v[j],13)`, AVX2 `A+=B; B^=A; permute4x64` — over persistent state, finalized once by a 128-bit multiply fold (mum) chain plus splitmix64.",
+  "reused_from_gate": true
+}

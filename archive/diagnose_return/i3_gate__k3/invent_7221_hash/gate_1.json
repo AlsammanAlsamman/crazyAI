@@ -1,0 +1,11 @@
+{
+  "native_mechanisms": [
+    "Sequential one-crease-per-mark folding where each fold's angle depends on both the current mark and the previous crease (serial chained state).",
+    "Testing each crease against all four wire-bird beaks simultaneously and refolding tighter by exactly how much they disagree (agreement = no further folding), with position markings deliberately scrambled.",
+    "Carrying the whole folded wad to the water's edge to thin it down to one small dense coin, discarding every scrap, trim and failed reading so nothing but the final token survives."
+  ],
+  "implemented_mechanism": 2,
+  "survival": "full",
+  "fallback": false,
+  "core_technique": "Four-lane (AVX2 / scalar) NH-style 32x32→64 multiply-accumulate over 32-byte blocks, augmented with a cross-lane XOR-difference (lane j vs lane j+1) that drives a variable-rotation companion state, with lanes cross-combined and avalanche-finalized."
+}

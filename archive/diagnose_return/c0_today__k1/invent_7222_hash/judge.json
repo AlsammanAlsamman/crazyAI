@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "The die-stone never resets between marks: every fold carries the callus of all folds before it (one unbroken carried state, no re-seating).",
+    "Each mark's weight is pressed into the stone's already-turned position rather than onto a clean face, so earlier marks bend how later marks land — and each fold re-multiplies any difference, so differing paths never reconverge.",
+    "Only the stone's final seated position read against the wooden keeps leaves the desk; all intermediate turns and chalk residue are swept away and discarded."
+  ],
+  "implemented_mechanism": 2,
+  "survival": "partial",
+  "fallback": false,
+  "core_technique": "xxHash3-style 4-lane SIMD/scalar accumulator (lo32×hi32 widening products plus lane-swapped data adds) in which each input word is first XORed with a lagged, cross-lane-rotated copy of the accumulator ('callus') before multiplication, finished by mul128 xor-folding of the lanes plus length and a Murmur3 fmix64 finalizer, with a separate serial multiply-fold path for len<64.",
+  "valid": true
+}

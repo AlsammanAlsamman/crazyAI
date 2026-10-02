@@ -1,0 +1,1293 @@
+[
+ {
+  "source": "invent_7201_hash",
+  "arm": "plain",
+  "k": 1,
+  "dir": "archive\\diagnose_return\\c0_today__k1\\invent_7201_hash",
+  "fallback": true,
+  "survival": "partial",
+  "core": "Multi-lane (7x64-bit) striped multiply-rotate accumulation over 56-byte blocks with an overlapping final block, length folding, and an xxHash/murmur-style xor-shift-multiply finalizer \u2014 i.e. the known xxHash design.",
+  "runs": [
+   30.0364,
+   29.959,
+   30.0176,
+   30.0653,
+   29.9391
+  ],
+  "status": "exact",
+  "fresh": 30.003,
+  "quality": {
+   "pass": false,
+   "worst_bias": 0.061,
+   "twobit_coll64": 16
+  },
+  "ok": false
+ },
+ {
+  "source": "invent_7201_hash",
+  "arm": "plain",
+  "k": 2,
+  "dir": "archive\\diagnose_return\\c0_today__k2\\invent_7201_hash",
+  "fallback": false,
+  "survival": "full",
+  "core": "Seven parallel 64-bit lanes absorbing 56-byte stripes by add-then-rotate with distinct fixed per-lane rotation amounts (no multiply/xor in the absorb loop), then a six-node rotate-add tree fold and a length-salted moremur multiply-xor-shift finalizer.",
+  "runs": [
+   52.2858,
+   52.2304,
+   52.1651,
+   52.2581,
+   52.1305
+  ],
+  "status": "exact",
+  "fresh": 52.214,
+  "quality": {
+   "pass": false,
+   "worst_bias": 0.064,
+   "twobit_coll64": 5860
+  },
+  "ok": false
+ },
+ {
+  "source": "invent_7201_hash",
+  "arm": "plain",
+  "k": 3,
+  "dir": "archive\\diagnose_return\\c0_today__k3\\invent_7201_hash",
+  "fallback": true,
+  "survival": "partial",
+  "core": "xxHash-style striped hashing: seven parallel accumulator lanes with distinct odd multipliers and per-lane rotate-multiply over 56-byte blocks, folded into one accumulator, 8/4/1-byte tail, then Murmur3 fmix64 avalanche finalizer.",
+  "runs": [
+   15.5729,
+   15.5809,
+   15.3329,
+   15.6929,
+   15.5659
+  ],
+  "status": "exact",
+  "fresh": 15.549,
+  "quality": {
+   "pass": true,
+   "worst_bias": 0.069,
+   "twobit_coll64": 0
+  },
+  "ok": true
+ },
+ {
+  "source": "invent_7201_hash",
+  "arm": "gate",
+  "k": 1,
+  "dir": "archive\\diagnose_return\\i3_gate__k1\\invent_7201_hash",
+  "fallback": false,
+  "survival": "full",
+  "core": "Seven parallel 64-bit accumulators, each fed deliberately overlapping unaligned 8-byte loads (7-byte offsets, 49-byte stride over 50 read bytes) through a per-lane xor-rotate-add-constant ARX round, round-robined over the tail, folded by rotated addition with the length, and finished with the stock splitmix64/Stafford Mix13 avalanche finalizer.",
+  "runs": [
+   32.0195,
+   31.3991,
+   31.3515,
+   31.9451,
+   31.2155
+  ],
+  "status": "exact",
+  "fresh": 31.586,
+  "quality": {
+   "pass": false,
+   "worst_bias": 0.062,
+   "twobit_coll64": 4721
+  },
+  "ok": false
+ },
+ {
+  "source": "invent_7201_hash",
+  "arm": "gate",
+  "k": 2,
+  "dir": "archive\\diagnose_return\\i3_gate__k2\\invent_7201_hash",
+  "fallback": false,
+  "survival": "full",
+  "core": "Rotate-xor-add streaming hash whose main loop chains every 8-byte word into one shared additive accumulator W and feeds W (not the raw word) into seven rotation-distinct lane accumulators, then folds lanes + W and applies a splitmix64/Stafford-mix13 finaliser with a length tweak.",
+  "runs": [
+   19.1475,
+   19.1148,
+   19.2782,
+   18.9009,
+   19.1297
+  ],
+  "status": "exact",
+  "fresh": 19.114,
+  "quality": {
+   "pass": false,
+   "worst_bias": 0.066,
+   "twobit_coll64": 5818
+  },
+  "ok": false
+ },
+ {
+  "source": "invent_7201_hash",
+  "arm": "gate",
+  "k": 3,
+  "dir": "archive\\diagnose_return\\i3_gate__k3\\invent_7201_hash",
+  "fallback": false,
+  "survival": "full",
+  "core": "Wide 1024-bit (16x64) ARX state hash: each 128-byte block is added into all 16 lanes followed by exactly one invertible add-rotate shear round (intentionally incomplete per-block diffusion), with length prefix and 0x01 padding, then 12 held finishing rounds, a six-term rotate-add fold to 64 bits, and Murmur3 fmix64 as the final avalanche; AVX2 and scalar paths plus a 4-lane short-input variant.",
+  "runs": [
+   21.5423,
+   21.262,
+   21.1582,
+   21.277,
+   21.1213
+  ],
+  "status": "exact",
+  "fresh": 21.272,
+  "quality": {
+   "pass": true,
+   "worst_bias": 0.063,
+   "twobit_coll64": 0
+  },
+  "ok": true
+ },
+ {
+  "source": "invent_7202_hash",
+  "arm": "plain",
+  "k": 1,
+  "dir": "archive\\diagnose_return\\c0_today__k1\\invent_7202_hash",
+  "fallback": true,
+  "survival": "partial",
+  "core": "Six-lane rotate/xor ring accumulator fed by a 256-entry byte table whose entries are (b|0x100) shifted left by 6*popcount(b), then a linear/nonlinear lane fold and a standard SplitMix64/Murmur3 fmix64 multiply-xor-shift finalizer.",
+  "runs": [
+   4.3103,
+   4.2645,
+   4.2724,
+   4.2595,
+   4.2684
+  ],
+  "status": "exact",
+  "fresh": 4.275,
+  "quality": {
+   "pass": false,
+   "worst_bias": 0.065,
+   "twobit_coll64": 31
+  },
+  "ok": false
+ },
+ {
+  "source": "invent_7202_hash",
+  "arm": "plain",
+  "k": 2,
+  "dir": "archive\\diagnose_return\\c0_today__k2\\invent_7202_hash",
+  "fallback": true,
+  "survival": "partial",
+  "core": "A 6-lane SipHash-style ARX sponge (per-lane add-rotate, fixed cross-lane XOR diffusion, length-padded 48-byte blocks, 3\u20134 finalization rounds, 384\u219264 fold), where the only native-derived twist is that each round's rotation amounts are offset by a running popcount accumulator (`cup`) of the input words.",
+  "runs": [
+   14.6184,
+   14.7114,
+   14.5285,
+   14.1825,
+   13.3906
+  ],
+  "status": "exact",
+  "fresh": 14.286,
+  "quality": {
+   "pass": true,
+   "worst_bias": 0.065,
+   "twobit_coll64": 0
+  },
+  "ok": true
+ },
+ {
+  "source": "invent_7202_hash",
+  "arm": "plain",
+  "k": 3,
+  "dir": "archive\\diagnose_return\\c0_today__k3\\invent_7202_hash",
+  "fallback": true,
+  "survival": "partial",
+  "core": "SipHash-style ARX (add-rotate-xor) permutation over a four-word state with four interleaved lanes for long inputs and fixed finalization rounds, decorated by a data-dependent rotate-by-popcount on each absorbed 64-bit word; no multiplication.",
+  "runs": [
+   16.7091,
+   16.8275,
+   16.725,
+   16.6733,
+   16.7768
+  ],
+  "status": "exact",
+  "fresh": 16.742,
+  "quality": {
+   "pass": true,
+   "worst_bias": 0.0593,
+   "twobit_coll64": 0
+  },
+  "ok": true
+ },
+ {
+  "source": "invent_7202_hash",
+  "arm": "gate",
+  "k": 1,
+  "dir": "archive\\diagnose_return\\i3_gate__k1\\invent_7202_hash",
+  "fallback": false,
+  "survival": "full",
+  "core": "Multiplication-free six-lane ARX hash: each 8-byte word is added to its lane together with a cross-lane feedback word, then rotated left by (2*popcount(word) + per-lane constant), with lanes folded and passed through a Wang-style shift-add/xor finalizer.",
+  "runs": [
+   13.2441,
+   13.1569,
+   13.3343,
+   13.2153,
+   13.1123
+  ],
+  "status": "exact",
+  "fresh": 13.213,
+  "quality": {
+   "pass": true,
+   "worst_bias": 0.065,
+   "twobit_coll64": 0
+  },
+  "ok": true
+ },
+ {
+  "source": "invent_7202_hash",
+  "arm": "gate",
+  "k": 2,
+  "dir": "archive\\diagnose_return\\i3_gate__k2\\invent_7202_hash",
+  "fallback": false,
+  "survival": "full",
+  "core": "Multiply-free absorption loop: XOR each byte/32-byte block into the state, then rotate by a data-derived distance (the mark's own low bits + a fixed offset, per-lane via AVX2 variable shifts) with a second data-selected rotation and cross-lane permute coupling, closed by an O(1) splitmix64 finalizer.",
+  "runs": [
+   8.975,
+   9.0218,
+   9.0003,
+   9.05,
+   9.0237
+  ],
+  "status": "exact",
+  "fresh": 9.014,
+  "quality": {
+   "pass": false,
+   "worst_bias": 0.068,
+   "twobit_coll64": 48
+  },
+  "ok": false
+ },
+ {
+  "source": "invent_7202_hash",
+  "arm": "gate",
+  "k": 3,
+  "dir": "archive\\diagnose_return\\i3_gate__k3\\invent_7202_hash",
+  "fallback": false,
+  "survival": "full",
+  "core": "Per-byte data-dependent rotation: state ^= byte then rotate-left by (popcount(byte)+1), across six cross-fed accumulator lanes, with length folded in and a standard MurmurHash3 fmix64 xor-shift-multiply finalizer.",
+  "runs": [
+   2.317,
+   2.4966,
+   2.3518,
+   2.3498,
+   2.3458
+  ],
+  "status": "exact",
+  "fresh": 2.372,
+  "quality": {
+   "pass": false,
+   "worst_bias": 0.065,
+   "twobit_coll64": 34
+  },
+  "ok": false
+ },
+ {
+  "source": "invent_7203_hash",
+  "arm": "plain",
+  "k": 1,
+  "dir": "archive\\diagnose_return\\c0_today__k1\\invent_7203_hash",
+  "fallback": true,
+  "survival": "partial",
+  "core": "xxHash3-style striped SIMD multiply-accumulate (64-byte stripes into 8 secret-anchored lanes, lo32*hi32 products plus cross-lane data adds), with a small 4-word serial rolling state broadcast as a per-stripe modulation of the lane keys, finished by pairwise 64x64->128 folds and a two-round multiply-xor-shift avalanche.",
+  "runs": [
+   33.1899,
+   28.0825,
+   34.5615,
+   37.9447,
+   30.2837
+  ],
+  "status": "exact",
+  "fresh": 32.812,
+  "quality": {
+   "pass": null,
+   "error": "[WinError 5] Access is denied"
+  },
+  "ok": false
+ },
+ {
+  "source": "invent_7203_hash",
+  "arm": "plain",
+  "k": 2,
+  "dir": "archive\\diagnose_return\\c0_today__k2\\invent_7203_hash",
+  "fallback": false,
+  "survival": "full",
+  "core": "Three ring-chained lane accumulators (CRC32 shift-register or ARX fallback) whose per-pass combined 'angle' drives data-dependent-rotate/add/xor updates of three separate constant-seeded secondary accumulators, with a single wymix-style 128-bit multiply-fold finalizer over the combined wires, lanes and length.",
+  "runs": [
+   12.4443,
+   12.3403,
+   12.2703,
+   12.0274,
+   12.2793
+  ],
+  "status": "exact",
+  "fresh": 12.272,
+  "quality": {
+   "pass": true,
+   "worst_bias": 0.066,
+   "twobit_coll64": 0
+  },
+  "ok": true
+ },
+ {
+  "source": "invent_7203_hash",
+  "arm": "plain",
+  "k": 3,
+  "dir": "archive\\diagnose_return\\c0_today__k3\\invent_7203_hash",
+  "fallback": false,
+  "survival": "full",
+  "core": "Multiply-free ARX core loop over 64-byte stripes: 8 keyed lanes each doing xor-with-data, rotate by a lane-specific constant, then add the previous pass's neighbouring lane (circulant lane-to-lane carry), with the only multiplications in a one-shot mul128-fold merge plus fmix64 finalizer (xxh3-style framing: keyed secret, overlapping last stripe, short-input path).",
+  "runs": [
+   24.5087,
+   23.5672,
+   23.7899,
+   24.0564,
+   34.6065
+  ],
+  "status": "exact",
+  "fresh": 26.106,
+  "quality": {
+   "pass": null,
+   "error": "[WinError 5] Access is denied"
+  },
+  "ok": false
+ },
+ {
+  "source": "invent_7203_hash",
+  "arm": "gate",
+  "k": 1,
+  "dir": "archive\\diagnose_return\\i3_gate__k1\\invent_7203_hash",
+  "fallback": false,
+  "survival": "full",
+  "core": "Multiply-free ARX streaming hash: eight fixed parallel 64-bit lanes each updated by acc = rotl(acc ^ word, 29) + word over 64-byte blocks (AVX2-vectorised), then a one-shot length-seeded multiply-xor tree fold plus murmur3-style fmix64 finalizer.",
+  "runs": [
+   41.2671,
+   42.5209,
+   43.6015,
+   48.0681,
+   42.5946
+  ],
+  "status": "exact",
+  "fresh": 43.61,
+  "quality": {
+   "pass": false,
+   "worst_bias": 0.068,
+   "twobit_coll64": 5622
+  },
+  "ok": false
+ },
+ {
+  "source": "invent_7203_hash",
+  "arm": "gate",
+  "k": 2,
+  "dir": "archive\\diagnose_return\\i3_gate__k2\\invent_7203_hash",
+  "fallback": false,
+  "survival": "full",
+  "core": "Multiplication-free 4-stage systolic rotate-XOR pipeline absorbing 64-bit words (each stage XORs its upstream neighbour's previous-pass state into its own rotation), with the last stage's state added into four rotation-offset accumulators (SIMD-vectorised) every pass, then six fixed-constant drain passes and a single splitmix64 fmix64 finalisation of the four accumulators plus length.",
+  "runs": [
+   7.9445,
+   7.9544,
+   7.8972,
+   7.2586,
+   7.9593
+  ],
+  "status": "exact",
+  "fresh": 7.803,
+  "quality": {
+   "pass": true,
+   "worst_bias": 0.068,
+   "twobit_coll64": 0
+  },
+  "ok": true
+ },
+ {
+  "source": "invent_7203_hash",
+  "arm": "gate",
+  "k": 3,
+  "dir": "archive\\diagnose_return\\i3_gate__k3\\invent_7203_hash",
+  "fallback": false,
+  "survival": "full",
+  "core": "Multiplication-free LFSR/CRC-style state grinding (hardware _mm_crc32_u64, else a bidirectional xorshift round) folding 64-bit words into eight parallel anchored 32-bit accumulators, followed by a cross-lane carry chain and a wide-multiply + murmur3-style avalanche finalizer.",
+  "runs": [
+   31.0603,
+   30.8165,
+   30.8722,
+   31.0484,
+   30.917
+  ],
+  "status": "exact",
+  "fresh": 30.943,
+  "quality": {
+   "pass": true,
+   "worst_bias": 0.066,
+   "twobit_coll64": 0
+  },
+  "ok": true
+ },
+ {
+  "source": "invent_7204_hash",
+  "arm": "plain",
+  "k": 1,
+  "dir": "archive\\diagnose_return\\c0_today__k1\\invent_7204_hash",
+  "fallback": true,
+  "survival": "partial",
+  "core": "xxHash3-style wide 8x64 striped accumulate (data ^= key; acc[i^1] += data; acc[i] += lo32*hi32) with AVX2 vectorization, a counter-stepped key sequence instead of a fixed secret, overlapping-read short-input paths, and an rrmxmx 64-bit finalizer.",
+  "runs": [
+   40.3805,
+   39.7966,
+   43.4147,
+   51.786,
+   52.1605
+  ],
+  "status": "exact",
+  "fresh": 45.508,
+  "quality": {
+   "pass": null,
+   "error": "[WinError 5] Access is denied"
+  },
+  "ok": false
+ },
+ {
+  "source": "invent_7204_hash",
+  "arm": "plain",
+  "k": 2,
+  "dir": "archive\\diagnose_return\\c0_today__k2\\invent_7204_hash",
+  "fallback": true,
+  "survival": "partial",
+  "core": "A near-verbatim xxHash3 (XXH3_64) clone: 8-lane accumulator absorbing 64-byte stripes with secret-XORed 32x32->64 multiply-add plus xxh3's own adjacent-lane `acc[j^1] += v` swap-add, periodic bijective scramble (xor-shift 47, secret xor, PRIME32_1 multiply) here extended with a 3-lane rotation so the pair-coupling graph becomes a connected 8-cycle, then 128-bit multiply-folds of the lanes into a length-seeded xor-shift-multiply finalizer, with a separate short-input multiply-fold path.",
+  "runs": [
+   42.3631,
+   28.5907,
+   38.0711,
+   34.6033,
+   41.629
+  ],
+  "status": "exact",
+  "fresh": 37.051,
+  "quality": {
+   "pass": true,
+   "worst_bias": 0.061,
+   "twobit_coll64": 0
+  },
+  "ok": true
+ },
+ {
+  "source": "invent_7204_hash",
+  "arm": "plain",
+  "k": 3,
+  "dir": "archive\\diagnose_return\\c0_today__k3\\invent_7204_hash",
+  "fallback": false,
+  "survival": "full",
+  "core": "Wide 8x64-bit ARX state absorbing 64-byte blocks: add message words plus per-block-incrementing lane constants, then a cross-lane permute/rotate/xor-add butterfly so each lane diffuses into all others; blank-input finalization rounds, then an irreversible 512->64 fold through MurmurHash3 fmix64 (the only multiplies).",
+  "runs": [
+   28.2001,
+   28.0743,
+   27.8554,
+   28.5509,
+   28.0674
+  ],
+  "status": "exact",
+  "fresh": 28.15,
+  "quality": {
+   "pass": null,
+   "error": "[WinError 5] Access is denied"
+  },
+  "ok": false
+ },
+ {
+  "source": "invent_7204_hash",
+  "arm": "gate",
+  "k": 1,
+  "dir": "archive\\diagnose_return\\i3_gate__k1\\invent_7204_hash",
+  "fallback": false,
+  "survival": "full",
+  "core": "Sponge-style absorption of 64-byte blocks into a 512-bit eight-lane state via one cross-coupled ARX (Feistel-like add/rotate/xor + lane re-pairing) round per block with a per-block counter, then 16 fixed finalization rounds and a per-lane bit-fold to one byte each for the 64-bit output; only the len<64 path falls back to FNV/xxHash-style multiply-xor-shift on a single accumulator.",
+  "runs": [
+   17.5102,
+   17.3659,
+   17.1764,
+   17.7508,
+   16.871
+  ],
+  "status": "exact",
+  "fresh": 17.335,
+  "quality": {
+   "pass": false,
+   "worst_bias": 0.063,
+   "twobit_coll64": 4
+  },
+  "ok": false
+ },
+ {
+  "source": "invent_7204_hash",
+  "arm": "gate",
+  "k": 2,
+  "dir": "archive\\diagnose_return\\i3_gate__k2\\invent_7204_hash",
+  "fallback": false,
+  "survival": "full",
+  "core": "8-lane simple tabulation (Zobrist) hashing: each byte indexes a position-rotated 256-entry random table and is accumulated by addition into one of 8 independent lanes with per-lane rotations, then lanes are combined and run through a Murmur3 fmix64 finalizer (bytes are never multiplied in the kernel, unlike FNV-1a/xxHash).",
+  "runs": [
+   5.7739,
+   5.8144,
+   5.9032,
+   5.8065,
+   5.8578
+  ],
+  "status": "exact",
+  "fresh": 5.831,
+  "quality": {
+   "pass": true,
+   "worst_bias": 0.069,
+   "twobit_coll64": 0
+  },
+  "ok": true
+ },
+ {
+  "source": "invent_7204_hash",
+  "arm": "gate",
+  "k": 3,
+  "dir": "archive\\diagnose_return\\i3_gate__k3\\invent_7204_hash",
+  "fallback": false,
+  "survival": "full",
+  "core": "Multiply-free 8-lane absorb loop (xor with a counter-derived per-block key, rotate-xor-add) with explicit cross-lane coupling each block \u2014 scalar `v[(j+1)&7] += rotl(v[j],13)`, AVX2 `A+=B; B^=A; permute4x64` \u2014 over persistent state, finalized once by a 128-bit multiply fold (mum) chain plus splitmix64.",
+  "runs": [
+   29.3834,
+   28.8677,
+   28.6662,
+   29.2337,
+   47.1119
+  ],
+  "status": "exact",
+  "fresh": 32.653,
+  "quality": {
+   "pass": true,
+   "worst_bias": 0.061,
+   "twobit_coll64": 0
+  },
+  "ok": true
+ },
+ {
+  "source": "invent_7221_hash",
+  "arm": "plain",
+  "k": 1,
+  "dir": "archive\\diagnose_return\\c0_today__k1\\invent_7221_hash",
+  "fallback": true,
+  "survival": "partial",
+  "core": "xxHash64 verbatim: four independent 64-bit striped accumulator lanes running the standard add-multiply-rotl-multiply round over 32-byte blocks, merged by rotl(1,7,12,18) plus mergeRound, length added, 8/4/1-byte tail folds, then a murmur-style xor-shift/multiply avalanche finalizer \u2014 i.e. the known multiply-xor-rotate accumulator fold, with the four 'birds' reduced to lane seeds/constants and no consensus test or refold-until-agreement anywhere.",
+  "runs": [
+   15.7272,
+   15.6593,
+   15.6703,
+   15.5605,
+   22.2821
+  ],
+  "status": "exact",
+  "fresh": 16.98,
+  "quality": {
+   "pass": true,
+   "worst_bias": 0.063,
+   "twobit_coll64": 0
+  },
+  "ok": true
+ },
+ {
+  "source": "invent_7221_hash",
+  "arm": "plain",
+  "k": 2,
+  "dir": "archive\\diagnose_return\\c0_today__k2\\invent_7221_hash",
+  "fallback": true,
+  "survival": "partial",
+  "core": "xxHash/XXH3-style multi-lane block hashing: four parallel 64-bit accumulators absorbing 32-byte blocks via (word^counter-advanced key) 32x32->64 multiply plus lane-rotated adds (AVX2 or scalar), then xxHash64 mergeRound combination and MurmurHash3 fmix64 finalization, with a widened FNV-1a path for short inputs.",
+  "runs": [
+   36.8746,
+   39.3278,
+   41.2825,
+   30.976,
+   41.4054
+  ],
+  "status": "exact",
+  "fresh": 37.973,
+  "quality": {
+   "pass": false,
+   "worst_bias": 0.065,
+   "twobit_coll64": 263
+  },
+  "ok": false
+ },
+ {
+  "source": "invent_7221_hash",
+  "arm": "plain",
+  "k": 3,
+  "dir": "archive\\diagnose_return\\c0_today__k3\\invent_7221_hash",
+  "fallback": true,
+  "survival": "partial",
+  "core": "xxHash64: four 64-bit accumulator lanes consuming 32-byte stripes with add-multiply/rotate/multiply rounds, rotate-and-sum lane merge plus per-lane mergeAccumulator, length injection, 8/4/1-byte tail folding, and an xor-shift/multiply final avalanche.",
+  "runs": [
+   16.3302,
+   15.6494,
+   15.5096,
+   15.9019,
+   18.0053
+  ],
+  "status": "exact",
+  "fresh": 16.279,
+  "quality": {
+   "pass": true,
+   "worst_bias": 0.063,
+   "twobit_coll64": 0
+  },
+  "ok": true
+ },
+ {
+  "source": "invent_7221_hash",
+  "arm": "gate",
+  "k": 1,
+  "dir": "archive\\diagnose_return\\i3_gate__k1\\invent_7221_hash",
+  "fallback": false,
+  "survival": "full",
+  "core": "Multi-lane (4- or 8-way) streaming absorption where each 8-byte word is mixed by add-then-data-dependent-variable-rotate (rotate amount = low 6 bits of state XOR word), followed by two fixed-rotate cross-lane XOR diffusion rounds and a Murmur3-style multiply-shift finalizer.",
+  "runs": [
+   11.7694,
+   3.7305,
+   11.7517,
+   11.7428,
+   11.7546
+  ],
+  "status": "exact",
+  "fresh": 10.15,
+  "quality": {
+   "pass": false,
+   "worst_bias": 0.075,
+   "twobit_coll64": 167
+  },
+  "ok": false
+ },
+ {
+  "source": "invent_7221_hash",
+  "arm": "gate",
+  "k": 2,
+  "dir": "archive\\diagnose_return\\i3_gate__k2\\invent_7221_hash",
+  "fallback": false,
+  "survival": "full",
+  "core": "SipHash-2-4: four-word 64-bit ARX (add-rotate-xor) state with each message word xored in, carried through two SipRounds, xored out, then length-tagged and finalized by four rounds into one xor-folded word \u2014 with an AVX2 4-lane parallel SipHash tree (one lane per 32-byte-dealt stripe) for inputs >=256 bytes whose four lane results plus tail are re-hashed by the same serial function.",
+  "runs": [
+   11.1192,
+   11.1153,
+   11.1351,
+   10.1365,
+   11.0825
+  ],
+  "status": "exact",
+  "fresh": 10.918,
+  "quality": {
+   "pass": true,
+   "worst_bias": 0.066,
+   "twobit_coll64": 0
+  },
+  "ok": true
+ },
+ {
+  "source": "invent_7221_hash",
+  "arm": "gate",
+  "k": 3,
+  "dir": "archive\\diagnose_return\\i3_gate__k3\\invent_7221_hash",
+  "fallback": false,
+  "survival": "full",
+  "core": "Four-lane (AVX2 / scalar) NH-style 32x32\u219264 multiply-accumulate over 32-byte blocks, augmented with a cross-lane XOR-difference (lane j vs lane j+1) that drives a variable-rotation companion state, with lanes cross-combined and avalanche-finalized.",
+  "runs": [
+   22.711,
+   21.8739,
+   22.1153,
+   20.8794,
+   20.5113
+  ],
+  "status": "exact",
+  "fresh": 21.618,
+  "quality": {
+   "pass": true,
+   "worst_bias": 0.067,
+   "twobit_coll64": 0
+  },
+  "ok": true
+ },
+ {
+  "source": "invent_7222_hash",
+  "arm": "plain",
+  "k": 1,
+  "dir": "archive\\diagnose_return\\c0_today__k1\\invent_7222_hash",
+  "fallback": false,
+  "survival": "partial",
+  "core": "xxHash3-style 4-lane SIMD/scalar accumulator (lo32\u00d7hi32 widening products plus lane-swapped data adds) in which each input word is first XORed with a lagged, cross-lane-rotated copy of the accumulator ('callus') before multiplication, finished by mul128 xor-folding of the lanes plus length and a Murmur3 fmix64 finalizer, with a separate serial multiply-fold path for len<64.",
+  "runs": [
+   34.1169,
+   35.4363,
+   43.3113,
+   34.2799,
+   38.036
+  ],
+  "status": "exact",
+  "fresh": 37.036,
+  "quality": {
+   "pass": true,
+   "worst_bias": 0.069,
+   "twobit_coll64": 0
+  },
+  "ok": true
+ },
+ {
+  "source": "invent_7222_hash",
+  "arm": "plain",
+  "k": 2,
+  "dir": "archive\\diagnose_return\\c0_today__k2\\invent_7222_hash",
+  "fallback": true,
+  "survival": "partial",
+  "core": "xxHash64-style hashing: four parallel 64-bit accumulator lanes fed by rotate-xor-input-times-odd-constant rounds over 32-byte blocks, lane merge by rotl(1/7/12/18)+add, tail folding, length injection, and MurmurHash3 fmix64 finalisation.",
+  "runs": [
+   24.5031,
+   24.5111,
+   24.4733,
+   24.4654,
+   28.7844
+  ],
+  "status": "exact",
+  "fresh": 25.347,
+  "quality": {
+   "pass": false,
+   "worst_bias": 0.066,
+   "twobit_coll64": 322
+  },
+  "ok": false
+ },
+ {
+  "source": "invent_7222_hash",
+  "arm": "plain",
+  "k": 3,
+  "dir": "archive\\diagnose_return\\c0_today__k3\\invent_7222_hash",
+  "fallback": true,
+  "survival": "partial",
+  "core": "xxHash64: 8-lane (4-lane-style) striped multiply-rotate-add accumulators over 64-byte blocks, merge-round collapse, length injection, 8/4/1-byte tail folding, and an xor-shift/multiply final avalanche \u2014 i.e. the known multiply-xor-shift accumulator approach plus generic loop-unrolling/ILP striping, which actually breaks the native's single serial never-lifted chain into eight independent ones.",
+  "runs": [
+   15.3504,
+   15.3285,
+   15.3783,
+   15.3206,
+   15.47
+  ],
+  "status": "exact",
+  "fresh": 15.37,
+  "quality": {
+   "pass": true,
+   "worst_bias": 0.061,
+   "twobit_coll64": 0
+  },
+  "ok": true
+ },
+ {
+  "source": "invent_7222_hash",
+  "arm": "gate",
+  "k": 1,
+  "dir": "archive\\diagnose_return\\i3_gate__k1\\invent_7222_hash",
+  "fallback": false,
+  "survival": "full",
+  "core": "Bijective ARX block round over a 256-bit four-lane accumulator \u2014 data words added into the already-rotated lane state (ROTL(v+w,16)), then pairwise add/rotate-xor plus cross-lane feedback, with no multiplication on data, giving invertible, order-dependent, non-converging diffusion; xxHash64's lane merge, tail and final avalanche are reused only as the output stage.",
+  "runs": [
+   19.1341,
+   19.5564,
+   19.5425,
+   19.5128,
+   19.5088
+  ],
+  "status": "exact",
+  "fresh": 19.451,
+  "quality": {
+   "pass": true,
+   "worst_bias": 0.067,
+   "twobit_coll64": 0
+  },
+  "ok": true
+ },
+ {
+  "source": "invent_7222_hash",
+  "arm": "gate",
+  "k": 2,
+  "dir": "archive\\diagnose_return\\i3_gate__k2\\invent_7222_hash",
+  "fallback": false,
+  "survival": "full",
+  "core": "Sponge-style absorb of 32-byte blocks XORed into a single 256-bit ARX state (add + cross-lane permute/shuffle + rotate, deliberately one serial chain rather than independent lanes), four blind permutation rounds, then truncation to 64 bits through a Murmur-style fmix finaliser.",
+  "runs": [
+   21.3526,
+   21.257,
+   21.5297,
+   21.4899,
+   21.4568
+  ],
+  "status": "exact",
+  "fresh": 21.417,
+  "quality": {
+   "pass": null,
+   "error": "[WinError 5] Access is denied"
+  },
+  "ok": false
+ },
+ {
+  "source": "invent_7222_hash",
+  "arm": "gate",
+  "k": 3,
+  "dir": "archive\\diagnose_return\\i3_gate__k3\\invent_7222_hash",
+  "fallback": false,
+  "survival": "full",
+  "core": "A sponge-style ARX hash: 384-bit state split into a 256-bit rate (a0..a3, the only words message blocks are added into) and a 128-bit capacity (c0,c1, never touched by input, mixed only by TIP), absorbed block-by-block through SipRound permutations with constant IVs plus length, finalised by extra TIP/TURN rounds and truncated to a single 64-bit XOR of the state \u2014 not FNV/xxHash multiply-xor-shift accumulation.",
+  "runs": [
+   15.4094,
+   15.4644,
+   15.2614,
+   15.2964,
+   17.8806
+  ],
+  "status": "exact",
+  "fresh": 15.862,
+  "quality": {
+   "pass": true,
+   "worst_bias": 0.065,
+   "twobit_coll64": 0
+  },
+  "ok": true
+ },
+ {
+  "source": "invent_7223_hash",
+  "arm": "plain",
+  "k": 1,
+  "dir": "archive\\diagnose_return\\c0_today__k1\\invent_7223_hash",
+  "fallback": true,
+  "survival": "partial",
+  "core": "Streaming multi-lane (4x64) ARX accumulator hash: XOR 32-byte blocks into one carried state, apply a fixed invertible shift-add/xorshift/rotate-add round per block (plus AVX2 wide variant and overlapping tail read), then SipRound-style finalization and a multiply-free xorshift/rotate avalanche \u2014 i.e., xxHash/SipHash-shaped single-accumulator folding with shift-add substituted for the multiply.",
+  "runs": [
+   21.0842,
+   21.0522,
+   20.8687,
+   20.0966,
+   24.8826
+  ],
+  "status": "exact",
+  "fresh": 21.597,
+  "quality": {
+   "pass": false,
+   "worst_bias": 0.07,
+   "twobit_coll64": 6048
+  },
+  "ok": false
+ },
+ {
+  "source": "invent_7223_hash",
+  "arm": "plain",
+  "k": 2,
+  "dir": "archive\\diagnose_return\\c0_today__k2\\invent_7223_hash",
+  "fallback": false,
+  "survival": "full",
+  "core": "Simple tabulation (Zobrist) hashing: 8x256 precomputed 64-bit tables XOR-folded into one accumulator with a fixed rotation per step (the per-byte ARC=29 rotation algebraically folded into the tables so a full 8-byte turn is one ROTL 40), multiply-free, with a table-driven rotate-xor finalizer over the accumulator's own bytes.",
+  "runs": [
+   5.7944,
+   5.8024,
+   5.8183,
+   5.7445,
+   5.7505
+  ],
+  "status": "exact",
+  "fresh": 5.782,
+  "quality": {
+   "pass": true,
+   "worst_bias": 0.067,
+   "twobit_coll64": 0
+  },
+  "ok": true
+ },
+ {
+  "source": "invent_7223_hash",
+  "arm": "plain",
+  "k": 3,
+  "dir": "archive\\diagnose_return\\c0_today__k3\\invent_7223_hash",
+  "fallback": true,
+  "survival": "partial",
+  "core": "Off-the-shelf SipHash-1-3-style ARX accumulator (4x64-bit state, fixed rounds per 8-byte word, length-padded tail, 4 finalisation rounds, XOR-folded output) with a generic AVX2 4-lane shift/or/add block path as a speed optimisation.",
+  "runs": [
+   8.3958,
+   8.3889,
+   8.376,
+   8.086,
+   8.4246
+  ],
+  "status": "exact",
+  "fresh": 8.334,
+  "quality": {
+   "pass": true,
+   "worst_bias": 0.061,
+   "twobit_coll64": 0
+  },
+  "ok": true
+ },
+ {
+  "source": "invent_7223_hash",
+  "arm": "gate",
+  "k": 1,
+  "dir": "archive\\diagnose_return\\i3_gate__k1\\invent_7223_hash",
+  "fallback": false,
+  "survival": "full",
+  "core": "Multiply-free ARX streaming hash: each 8-byte word is added into a lane accumulator then passed through a fixed count (two) of compile-time rotate-xor bijections x ^= rotl(x,a) ^ rotl(x,b), over 4 scalar (or 8 AVX2) independent lanes, finished with 4 SipRounds and an XOR fold.",
+  "runs": [
+   15.1395,
+   15.0453,
+   14.7942,
+   14.821,
+   14.8627
+  ],
+  "status": "exact",
+  "fresh": 14.933,
+  "quality": {
+   "pass": true,
+   "worst_bias": 0.067,
+   "twobit_coll64": 0
+  },
+  "ok": true
+ },
+ {
+  "source": "invent_7223_hash",
+  "arm": "gate",
+  "k": 2,
+  "dir": "archive\\diagnose_return\\i3_gate__k2\\invent_7223_hash",
+  "fallback": false,
+  "survival": "partial",
+  "core": "Multi-lane ARX streaming hash: per-8-byte-lane xor + add-rotl(29) + xor-rotl(47) over 32-byte (or AVX2 64-byte) blocks with an overlapping tail block, folded into four seeded words and finalised by SpookyHash's 12-step ShortEnd rotate/xor/add chain, returning one state word.",
+  "runs": [
+   24.7339,
+   24.5352,
+   24.5562,
+   24.64,
+   24.5722
+  ],
+  "status": "exact",
+  "fresh": 24.607,
+  "quality": {
+   "pass": true,
+   "worst_bias": 0.06,
+   "twobit_coll64": 0
+  },
+  "ok": true
+ },
+ {
+  "source": "invent_7223_hash",
+  "arm": "gate",
+  "k": 3,
+  "dir": "archive\\diagnose_return\\i3_gate__k3\\invent_7223_hash",
+  "fallback": false,
+  "survival": "full",
+  "core": "SipHash-style ARX (add-rotate-xor) sponge-like compression: 256-bit four-word state, little-endian 8-byte blocks xored in with exactly one SipRound per block plus length byte and three finalisation rounds, folded by xor into a 64-bit output \u2014 multiplication-free, i.e. not the FNV/xxHash multiply-xor-shift route.",
+  "runs": [
+   5.1229,
+   5.2038,
+   5.1199,
+   5.1229,
+   5.1988
+  ],
+  "status": "exact",
+  "fresh": 5.154,
+  "quality": {
+   "pass": true,
+   "worst_bias": 0.063,
+   "twobit_coll64": 0
+  },
+  "ok": true
+ },
+ {
+  "source": "invent_7224_hash",
+  "arm": "plain",
+  "k": 1,
+  "dir": "archive\\diagnose_return\\c0_today__k1\\invent_7224_hash",
+  "fallback": false,
+  "survival": "full",
+  "core": "ChaCha-style ARX block permutation (add/xor/rotl-16,12,8,7 quarter-rounds over 8 parallel 4-word lanes with diagonal lane re-spins) absorbing 128-byte blocks into a non-commutative 64-bit chaining accumulator, finished with a murmur3 fmix64 avalanche; multiplication-free in the hot loop rather than xxHash/FNV multiply-xor-shift.",
+  "runs": [
+   3.7155,
+   3.6637,
+   3.7314,
+   3.7403,
+   3.7294
+  ],
+  "status": "exact",
+  "fresh": 3.716,
+  "quality": {
+   "pass": true,
+   "worst_bias": 0.065,
+   "twobit_coll64": 0
+  },
+  "ok": true
+ },
+ {
+  "source": "invent_7224_hash",
+  "arm": "plain",
+  "k": 2,
+  "dir": "archive\\diagnose_return\\c0_today__k2\\invent_7224_hash",
+  "fallback": false,
+  "survival": "full",
+  "core": "16\u00d764-bit state held as 4 parallel lanes absorbing 32-byte stripes with a SipRound-style ARX permutation (add/rotate/xor) per lane plus a per-stripe cross-lane rotational shuffle for diffusion, then 3 blank rounds, a 4\u00d74 diagonal XOR fold with length injection, and a double murmur3 fmix64 finalizer (with an XXH3-style overlapping-read path for len<32 and the tail).",
+  "runs": [
+   8.81,
+   8.7231,
+   8.8485,
+   8.8545,
+   8.8683
+  ],
+  "status": "exact",
+  "fresh": 8.821,
+  "quality": {
+   "pass": false,
+   "worst_bias": 0.065,
+   "twobit_coll64": 422
+  },
+  "ok": false
+ },
+ {
+  "source": "invent_7224_hash",
+  "arm": "plain",
+  "k": 3,
+  "dir": "archive\\diagnose_return\\c0_today__k3\\invent_7224_hash",
+  "fallback": false,
+  "survival": "full",
+  "core": "ChaCha-style ARX permutation (add-rotate-xor quarter-rounds, column then diagonal rounds) over a 16x64-bit state absorbing XOR-ed 128-byte blocks with a block counter, plus splitmix64 finalization and overlapping-tail/short-input regimes, AVX2-vectorized.",
+  "runs": [
+   12.2405,
+   12.1035,
+   12.2326,
+   12.1135,
+   12.1611
+  ],
+  "status": "exact",
+  "fresh": 12.17,
+  "quality": {
+   "pass": true,
+   "worst_bias": 0.068,
+   "twobit_coll64": 0
+  },
+  "ok": true
+ },
+ {
+  "source": "invent_7224_hash",
+  "arm": "gate",
+  "k": 1,
+  "dir": "archive\\diagnose_return\\i3_gate__k1\\invent_7224_hash",
+  "fallback": false,
+  "survival": "full",
+  "core": "Multiply-free 8-lane ARX absorption of 64-byte blocks (v[i] = rotl(v[i]^w, per-lane odd rotation) + (w ^ pi-derived key), scalar and AVX2-identical), then O(1) cross-lane ARX 'square' diffusion rounds, length injection, binary tree fold, and a splitmix/Murmur3 64-bit finalizer.",
+  "runs": [
+   31.591,
+   36.1394,
+   36.0691,
+   31.9327,
+   34.2109
+  ],
+  "status": "exact",
+  "fresh": 33.989,
+  "quality": {
+   "pass": true,
+   "worst_bias": 0.063,
+   "twobit_coll64": 0
+  },
+  "ok": true
+ },
+ {
+  "source": "invent_7224_hash",
+  "arm": "gate",
+  "k": 2,
+  "dir": "archive\\diagnose_return\\i3_gate__k2\\invent_7224_hash",
+  "fallback": false,
+  "survival": "full",
+  "core": "Wide ARX permutation sponge: input blocks XOR-absorbed into a 4x4 (twin 4x4 under AVX2) 64-bit state, mixed by BLAKE2b-G add/xor/rotate rounds applied to columns then lane-rotated (diagonal) orientations, with extra finalization rounds and a Murmur3 fmix64 fold to 64 bits.",
+  "runs": [
+   15.3978,
+   15.3948,
+   15.37,
+   15.3769,
+   15.3422
+  ],
+  "status": "exact",
+  "fresh": 15.376,
+  "quality": {
+   "pass": true,
+   "worst_bias": 0.067,
+   "twobit_coll64": 0
+  },
+  "ok": true
+ },
+ {
+  "source": "invent_7224_hash",
+  "arm": "gate",
+  "k": 3,
+  "dir": "archive\\diagnose_return\\i3_gate__k3\\invent_7224_hash",
+  "fallback": false,
+  "survival": "full",
+  "core": "Eight-lane (512-bit) ARX sponge: per-lane xor-rotate-add absorption of 64-byte blocks with distinct per-lane rotation constants, odd lane keys and a block counter, interleaved with hypercube-butterfly quarter-rounds (d=1,2,4) for cross-lane diffusion, finished by a lossy 8-lane collapse plus MurmurHash3 fmix64 \u2014 multiplies appear only in the finalizer, not in the mixing core (inputs under 128 bytes take a separate single-accumulator rotate-xor-add path).",
+  "runs": [
+   17.953,
+   17.8662,
+   17.7735,
+   17.8323,
+   17.7735
+  ],
+  "status": "exact",
+  "fresh": 17.84,
+  "quality": {
+   "pass": false,
+   "worst_bias": 0.062,
+   "twobit_coll64": 1558
+  },
+  "ok": false
+ },
+ {
+  "source": "invent_7225_hash",
+  "arm": "plain",
+  "k": 1,
+  "dir": "archive\\diagnose_return\\c0_today__k1\\invent_7225_hash",
+  "fallback": true,
+  "survival": "partial",
+  "core": "Verbatim xxHash64: four parallel 64-bit lanes of rotate-multiply accumulation over 32-byte stripes, lane merge, length injection and 8/4/1-byte tail folding, closed by a Murmur3/SplitMix-style xor-shift-multiply finaliser extended to seven stages (length-gated to three for short inputs).",
+  "runs": [
+   15.3671,
+   15.1573,
+   15.3721,
+   15.3391,
+   21.79
+  ],
+  "status": "exact",
+  "fresh": 16.605,
+  "quality": {
+   "pass": true,
+   "worst_bias": 0.065,
+   "twobit_coll64": 0
+  },
+  "ok": true
+ },
+ {
+  "source": "invent_7225_hash",
+  "arm": "plain",
+  "k": 2,
+  "dir": "archive\\diagnose_return\\c0_today__k2\\invent_7225_hash",
+  "fallback": true,
+  "survival": "partial",
+  "core": "wyhash/xxHash-style buffer folding: 128-bit widening multiply folded by hi^lo (mum) over four parallel accumulator lanes for >=64-byte blocks, a 16-byte single-accumulator chained loop, overlapping-read tail, length injection, and a Murmur3 fmix64 finalizer extended by two extra multiply-xorshift steps.",
+  "runs": [
+   36.7865,
+   36.1972,
+   37.0528,
+   36.7378,
+   36.9733
+  ],
+  "status": "exact",
+  "fresh": 36.75,
+  "quality": {
+   "pass": true,
+   "worst_bias": 0.065,
+   "twobit_coll64": 0
+  },
+  "ok": true
+ },
+ {
+  "source": "invent_7225_hash",
+  "arm": "plain",
+  "k": 3,
+  "dir": "archive\\diagnose_return\\c0_today__k3\\invent_7225_hash",
+  "fallback": false,
+  "survival": "full",
+  "core": "Chained CRC-32C accumulation (SSE4.2 _mm_crc32_u64 / ARM __crc32cd, with a reflected 0x82F63B78 table fallback) over 8/32-byte blocks, cross-fed with a parallel rotate-add 64-bit accumulator and length-seeded init, closed by a MurmurHash3-style xor-shift/multiply fmix finalizer.",
+  "runs": [
+   11.1122,
+   11.0545,
+   11.0545,
+   11.0505,
+   10.974
+  ],
+  "status": "exact",
+  "fresh": 11.049,
+  "quality": {
+   "pass": true,
+   "worst_bias": 0.064,
+   "twobit_coll64": 0
+  },
+  "ok": true
+ },
+ {
+  "source": "invent_7225_hash",
+  "arm": "gate",
+  "k": 1,
+  "dir": "archive\\diagnose_return\\i3_gate__k1\\invent_7225_hash",
+  "fallback": false,
+  "survival": "full",
+  "core": "Per-byte sequential accumulator fold \u2014 acc = rotl23(acc + (byte ^ odd_const)) with a length-seeded initial state \u2014 followed by a 7-stage xor-shift/odd-multiply (SplitMix/Murmur-style) finalizer; no multiply in the hot chain, and the flip-one-bit avalanche check is described but not implemented in code.",
+  "runs": [
+   1.9681,
+   1.98,
+   2.0078,
+   1.9929,
+   2.9557
+  ],
+  "status": "exact",
+  "fresh": 2.181,
+  "quality": {
+   "pass": false,
+   "worst_bias": 0.064,
+   "twobit_coll64": 3432
+  },
+  "ok": false
+ },
+ {
+  "source": "invent_7225_hash",
+  "arm": "gate",
+  "k": 2,
+  "dir": "archive\\diagnose_return\\i3_gate__k2\\invent_7225_hash",
+  "fallback": false,
+  "survival": "full",
+  "core": "Multiply-free serial 64-bit accumulator over 8-byte words where each step is rot(cup^word, cup&63) + odd constant (data/state-dependent rotation chaining), finished by a 7-round rotate / shift-add / xor-shift avalanche finalizer keyed with the length, with a constructor-time bit-flip avalanche self-test that falls back to FNV-1a only if the self-test fails.",
+  "runs": [
+   10.6413,
+   10.4651,
+   10.4423,
+   10.5641,
+   12.1703
+  ],
+  "status": "exact",
+  "fresh": 10.857,
+  "quality": {
+   "pass": false,
+   "worst_bias": 0.069,
+   "twobit_coll64": 3316
+  },
+  "ok": false
+ },
+ {
+  "source": "invent_7225_hash",
+  "arm": "gate",
+  "k": 3,
+  "dir": "archive\\diagnose_return\\i3_gate__k3\\invent_7225_hash",
+  "fallback": true,
+  "survival": "partial",
+  "core": "xxHash-style hashing: eight parallel rotate-xor-multiply accumulator lanes over 64-byte blocks, position-weighted lane merge plus length injection, finalized by a splitmix64 xor-shift/multiply finalizer extended to seven steps.",
+  "runs": [
+   30.5228,
+   30.4405,
+   30.88,
+   30.5238,
+   30.506
+  ],
+  "status": "exact",
+  "fresh": 30.575,
+  "quality": {
+   "pass": false,
+   "worst_bias": 0.057,
+   "twobit_coll64": 258
+  },
+  "ok": false
+ }
+]

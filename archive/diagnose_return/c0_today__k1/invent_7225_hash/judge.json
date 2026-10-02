@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "Each mark is folded into an impure (non-pure-prime) accumulator and the accumulator's new state becomes the seed for the next mark, so the whole buffer passes through as one unbroken sequential chain, no byte judged alone or twice.",
+    "The chain's final state is carried through seven successive bending stages, each discarding half of what it received (a shift) and keeping only the volatile part, before passing it on.",
+    "Avalanche falsification test: flip one bit anywhere in the input, rerun the whole pour from the start, and discard the entire method if the new digest resembles the old."
+  ],
+  "implemented_mechanism": 2,
+  "survival": "partial",
+  "fallback": true,
+  "core_technique": "Verbatim xxHash64: four parallel 64-bit lanes of rotate-multiply accumulation over 32-byte stripes, lane merge, length injection and 8/4/1-byte tail folding, closed by a Murmur3/SplitMix-style xor-shift-multiply finaliser extended to seven stages (length-gated to three for short inputs).",
+  "valid": true
+}

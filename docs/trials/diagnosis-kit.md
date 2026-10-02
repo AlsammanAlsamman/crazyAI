@@ -189,3 +189,60 @@ any exact non-fallback kernel. By target:
 3. **A path worth following:** gate plus selection, on wide-design-space targets. The gate keeps
    the idea; generating several gated candidates and letting the benchmark pick recovers speed.
    It needs a strong correctness/quality gate, since the gate arm produced two broken hashes.
+
+---
+
+## Part 3 (2026-10-01): gate + selection on hash, the first positive result
+
+All 9 archived hash native texts (7201–7204, 7221–7225). Each arm made 3 candidates per story,
+54 in total, on `claude-opus-5`:
+- **plain:** `c0_today__k1..3`, today's normal prompt;
+- **gate:** `i3_gate__k1..3`, the same prompt, judged, and retried on a fallback up to 2 times.
+
+Every candidate was re-timed 5 times interleaved and run through the SMHasher-style quality test.
+Per story and arm, the winner is the fastest candidate that is exact *and* passes the quality
+test (`examples/15_gate_select.py`, `gate_select_report.txt`).
+
+| Story | plain winner | gate winner |
+|---|---|---|
+| 7201 | 15.55x, fallback | 21.27x, kept idea |
+| 7202 | 16.74x, fallback | 13.21x, kept idea |
+| 7203 | 12.27x, kept idea | 30.94x, kept idea |
+| 7204 | 37.05x, fallback | 32.65x, kept idea |
+| 7221 | 16.98x, fallback | 21.62x, kept idea |
+| 7222 | 37.04x, kept idea | 19.45x, kept idea |
+| 7223 | 8.33x, fallback | 24.61x, kept idea |
+| 7224 | 12.17x, kept idea | 33.99x, kept idea |
+| 7225 | 36.75x, fallback | none passed quality |
+
+| | plain | gate |
+|---|---|---|
+| mean winner speed | 21.43x | 21.97x (paired p = 0.65) |
+| winners that kept the native's idea | 3/9 | **8/9** (gate gains 5, loses 0, sign p = 0.06) |
+
+Five candidates couldn't be quality-tested: 4 plain and 1 gate binary were quarantined by
+endpoint security. Counting all of them as passing, the best case for the plain arm, gives speed
+24.65x vs 22.19x (p = 1.0) and kept-idea winners 2/9 vs 8/9 (p = 0.03). Either way, **the gate
+keeps the idea without a measurable speed cost.**
+
+Gate internals: of 27 gate candidates, 17 kept the idea on the first try, 9 were rescued by a
+retry and 1 never was (1.41 attempts on average). The first attempt uses the same prompt as the
+plain arm, yet 17/27 vs 10/27 kept the idea. Generation and judge noise at this n is large, so
+read the 3/9 vs 8/9 as strong but not definitive.
+
+### Why this differs from Part 2
+
+In Part 2, the gate alone (one candidate per story) halved the speed. Here, selection among
+three gated candidates recovers it: the gate makes the idea survive, and the benchmark picks the
+fastest surviving version. Two conditions made this work. First, the target has a wide design
+space: hash can be fast in many ways, unlike alignment. Second, a strong quality gate: the plain
+arm's raw fastest candidates included hashes that fail the SMHasher-style test.
+
+### Caveats
+
+- One target only, n = 9 stories.
+- The judge that drives the gate is also the judge that scores "kept the idea", so the gate is
+  optimised against its own metric. The next step is to have the winners re-judged independently,
+  by a different model or by hand.
+- The kept-idea winners are assembled from known primitives (ARX rounds, CRC, multiply-xorshift).
+  They're the native's mechanism, not a new hash family.

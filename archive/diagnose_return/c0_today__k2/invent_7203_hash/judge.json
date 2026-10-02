@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "A ring-chained line of prisoners sharpens one blank pillar mark by mark, each prisoner passing forward the accumulated angle (its prior state) rather than the mark itself, so the last hand still trembles from the first mark.",
+    "A flood that rises on every pass and never recedes until all marks are consumed bends riverbed-anchored wire shapes — state never seeded by data — by exactly the angle ground into the pillar on that pass.",
+    "The token is the single fixed silhouette the wires cast against the sun, read exactly once after the flood drains and the shapes stop shivering, and nothing else is kept."
+  ],
+  "implemented_mechanism": 2,
+  "survival": "full",
+  "fallback": false,
+  "core_technique": "Three ring-chained lane accumulators (CRC32 shift-register or ARX fallback) whose per-pass combined 'angle' drives data-dependent-rotate/add/xor updates of three separate constant-seeded secondary accumulators, with a single wymix-style 128-bit multiply-fold finalizer over the combined wires, lanes and length.",
+  "valid": true
+}

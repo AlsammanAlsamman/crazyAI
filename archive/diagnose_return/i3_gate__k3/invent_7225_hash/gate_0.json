@@ -1,0 +1,11 @@
+{
+  "native_mechanisms": [
+    "Chain every mark through one impure accumulator, each result seeding the next pull, so the whole buffer passes as a single unbroken pour with no mark judged alone or twice.",
+    "Carry the accumulator's final value through seven successive bendings, each discarding half of what it received and passing on only the differing bits.",
+    "Validate by flipping one arbitrary input mark, re-running the whole pour, and discarding the entire method if the new output resembles the old."
+  ],
+  "implemented_mechanism": 2,
+  "survival": "partial",
+  "fallback": true,
+  "core_technique": "xxHash-style hashing: eight parallel rotate-xor-multiply accumulator lanes over 64-byte blocks, position-weighted lane merge plus length injection, finalized by a splitmix64 xor-shift/multiply finalizer extended to seven steps."
+}

@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "One fold per mark, each fold's angle determined jointly by the mark and the immediately preceding crease, so state carries forward.",
+    "Gauge every crease against all four wire birds' beaks simultaneously and refold tighter until all four agree, deliberately mis-aligning the spiral/snail markings so distinct piles can't coincide.",
+    "Thin the whole folded wad at the water's edge into one tiny dense corner (the token) and destroy every scrap, trimmed sheet and failed gauge reading."
+  ],
+  "implemented_mechanism": 1,
+  "survival": "partial",
+  "fallback": true,
+  "core_technique": "xxHash64 verbatim: four independent 64-bit striped accumulator lanes running the standard add-multiply-rotl-multiply round over 32-byte blocks, merged by rotl(1,7,12,18) plus mergeRound, length added, 8/4/1-byte tail folds, then a murmur-style xor-shift/multiply avalanche finalizer — i.e. the known multiply-xor-rotate accumulator fold, with the four 'birds' reduced to lane seeds/constants and no consensus test or refold-until-agreement anywhere.",
+  "valid": true
+}

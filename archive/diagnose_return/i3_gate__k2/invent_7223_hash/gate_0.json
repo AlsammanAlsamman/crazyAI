@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "A single rolling sphere (one accumulator) is the sole carried memory across the whole ordered input, with no table, history, or backward reference to prior positions.",
+    "Each mark is pressed into the sphere and then mixed by a fixed count of tumbles/strikes down the trail — rotation-and-crack mixing (add/rotate/xor, no multiply) applied a fixed number of times before the next mark is taken.",
+    "Only the final hairline crack in the last stalk is kept as the output token; all intermediate cracks, dust and footprints are discarded on purpose.",
+    "One disagreeing mark reshapes the whole sphere, not a sliver — every downstream stalk cracks differently (full-state avalanche from any single input difference)."
+  ],
+  "implemented_mechanism": 2,
+  "survival": "partial",
+  "fallback": false,
+  "core_technique": "Multi-lane ARX streaming hash: per-8-byte-lane xor + add-rotl(29) + xor-rotl(47) over 32-byte (or AVX2 64-byte) blocks with an overlapping tail block, folded into four seeded words and finalised by SpookyHash's 12-step ShortEnd rotate/xor/add chain, returning one state word."
+}

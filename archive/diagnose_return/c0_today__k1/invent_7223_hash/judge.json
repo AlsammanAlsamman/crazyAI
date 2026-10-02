@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "A single rolling sphere is the sole carried memory across the whole ordered pile (no lookback at consumed marks).",
+    "A fixed count of tumbles down the mason trail mixes each mark into the sphere before the next mark is taken, and one wrong mark reshapes the whole sphere, not a sliver.",
+    "Only the final hairline crack in the last stalk is kept as the token; all intermediate cracks and dust are discarded."
+  ],
+  "implemented_mechanism": 1,
+  "survival": "partial",
+  "fallback": true,
+  "core_technique": "Streaming multi-lane (4x64) ARX accumulator hash: XOR 32-byte blocks into one carried state, apply a fixed invertible shift-add/xorshift/rotate-add round per block (plus AVX2 wide variant and overlapping tail read), then SipRound-style finalization and a multiply-free xorshift/rotate avalanche — i.e., xxHash/SipHash-shaped single-accumulator folding with shift-add substituted for the multiply.",
+  "valid": true
+}

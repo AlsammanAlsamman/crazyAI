@@ -1,0 +1,13 @@
+{
+  "native_mechanisms": [
+    "Marks laid on the flat stone in given order, silence held so the order itself is fixed by position before any heap is folded.",
+    "Each heap of even count races the musk deer's mountain stride — uphill twist, downhill fold, doubling back — so no heap keeps the shape it entered with, and the running shape is carried forward into the next heap.",
+    "The result is searched in squares: the shape turned ninety degrees and its corners folded into its own centre, repeatedly, until one changed mark smears across every square.",
+    "The owl seals the final shape to one fixed small size while every intermediate heap is burned, so the token cannot be walked back to its marks."
+  ],
+  "implemented_mechanism": 2,
+  "survival": "full",
+  "fallback": false,
+  "core_technique": "Eight-lane (512-bit) ARX sponge: per-lane xor-rotate-add absorption of 64-byte blocks with distinct per-lane rotation constants, odd lane keys and a block counter, interleaved with hypercube-butterfly quarter-rounds (d=1,2,4) for cross-lane diffusion, finished by a lossy 8-lane collapse plus MurmurHash3 fmix64 — multiplies appear only in the finalizer, not in the mixing core (inputs under 128 bytes take a separate single-accumulator rotate-xor-add path).",
+  "reused_from_gate": true
+}

@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "A chained line of prisoners sharpens a blank pillar mark by mark, each stroke's angle carrying forward from every stroke before it (serial carried state, one mark at a time, no mark retained).",
+    "A flood that never recedes until all marks have passed bends fixed, riverbed-anchored wire shapes by exactly the angle ground into the pillar on that pass (parallel anchored accumulators modulated per pass by the chain's current angle; nothing emitted mid-stream).",
+    "The token is the fixed silhouette the wires throw against the sun once the flood drains and the shadows stop chittering — read once, kept alone (single post-stream finalization over the wires' final states plus the pillar's last angle)."
+  ],
+  "implemented_mechanism": 2,
+  "survival": "partial",
+  "fallback": true,
+  "core_technique": "xxHash3-style striped SIMD multiply-accumulate (64-byte stripes into 8 secret-anchored lanes, lo32*hi32 products plus cross-lane data adds), with a small 4-word serial rolling state broadcast as a per-stripe modulation of the lane keys, finished by pairwise 64x64->128 folds and a two-round multiply-xor-shift avalanche.",
+  "valid": true
+}

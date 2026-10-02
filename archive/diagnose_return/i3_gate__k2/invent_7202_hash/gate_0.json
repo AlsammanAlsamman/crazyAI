@@ -1,0 +1,11 @@
+{
+  "native_mechanisms": [
+    "A growing sailor-chain hung between fire and wall makes every shadow depend on the whole row, not just the newest knot.",
+    "A mark's own pebble-count sets the incense-smoke's swing, bending the firelight before it lands.",
+    "The wet-clay print taken from the settled shadow, hardened in the stream and read by its ridges, is the only thing kept as the token."
+  ],
+  "implemented_mechanism": 2,
+  "survival": "full",
+  "fallback": false,
+  "core_technique": "Multiply-free absorption loop: XOR each byte/32-byte block into the state, then rotate by a data-derived distance (the mark's own low bits + a fixed offset, per-lane via AVX2 variable shifts) with a second data-selected rotation and cross-lane permute coupling, closed by an O(1) splitmix64 finalizer."
+}

@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "A grey wax trough where each mark's impression is pressed atop all prior impressions before any can cool clean (unresolved accumulating superposition of marks).",
+    "Seven tuned insect-swarms bite a dipped wire in counts fixed forever by a forward-only spinning slate wheel (seven distinct hungers, irreversible forward-only ratchet).",
+    "A brine basin freezes the wire's bite-pattern into a unique frost-flower lattice, sketched to tin as the final token (a slow final crystallisation step producing the output)."
+  ],
+  "implemented_mechanism": 2,
+  "survival": "partial",
+  "fallback": true,
+  "core_technique": "Multi-lane (7x64-bit) striped multiply-rotate accumulation over 56-byte blocks with an overlapping final block, length folding, and an xxHash/murmur-style xor-shift-multiply finalizer — i.e. the known xxHash design.",
+  "valid": true
+}

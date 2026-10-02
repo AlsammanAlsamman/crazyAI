@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "Servant's silence-swats: the marks' order is fixed and absorbed unspoken onto the flat stone before any folding (ordered, chain-free intake plus padding).",
+    "Each heap races the musk deer's mountain stride — uphill twist, downhill fold, doubling-back that eats its own trail — and is re-searched in squares turned ninety degrees, so no heap keeps the shape it entered with and one changed mark smears across every square.",
+    "The owl seals the final folded shape to one fixed small size, one-way, while every intermediate heap is burned so the token cannot be walked back to its marks."
+  ],
+  "implemented_mechanism": 2,
+  "survival": "full",
+  "fallback": false,
+  "core_technique": "Wide ARX permutation sponge: input blocks XOR-absorbed into a 4x4 (twin 4x4 under AVX2) 64-bit state, mixed by BLAKE2b-G add/xor/rotate rounds applied to columns then lane-rotated (diagonal) orientations, with extra finalization rounds and a Murmur3 fmix64 fold to 64 bits.",
+  "reused_from_gate": true
+}

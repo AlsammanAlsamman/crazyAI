@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "One fold per mark in strict order, each fold's angle set by both the mark and the crease left by the previous fold (serial state-carrying chain, never skipping or looking ahead).",
+    "Press each crease against all four wire birds' beaks at once and refold until all four agree, with the spiral/snail markings deliberately scrambled so two different piles can't line up.",
+    "At the water's edge thin the whole folded wad (plus the one small suitcase) down to one small dense corner, discarding every sheet, trimmed scrap and non-holding reading."
+  ],
+  "implemented_mechanism": 2,
+  "survival": "full",
+  "fallback": false,
+  "core_technique": "SipHash-2-4: four-word 64-bit ARX (add-rotate-xor) state with each message word xored in, carried through two SipRounds, xored out, then length-tagged and finalized by four rounds into one xor-folded word — with an AVX2 4-lane parallel SipHash tree (one lane per 32-byte-dealt stripe) for inputs >=256 bytes whose four lane results plus tail are re-hashed by the same serial function.",
+  "reused_from_gate": true
+}

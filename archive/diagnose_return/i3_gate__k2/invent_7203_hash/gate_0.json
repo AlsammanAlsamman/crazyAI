@@ -1,0 +1,11 @@
+{
+  "native_mechanisms": [
+    "A chained line of prisoners sharpens a blank pillar mark by mark, each stage's stroke-angle carrying forward from the upstream stage's previous stroke (systolic, non-collapsing chain of angles).",
+    "A flood that never recedes until all marks have passed bends anchored wire shapes, each wire bent by the angle the last prisoner ground on that pass (per-pass accumulators displaced by fixed, differing leans).",
+    "The token is the single fixed silhouette the wires cast once the flood drains and the shadows stop chittering — extra quiet passes to drain, then one read, keeping nothing else."
+  ],
+  "implemented_mechanism": 1,
+  "survival": "full",
+  "fallback": false,
+  "core_technique": "Multiplication-free 4-stage systolic rotate-XOR pipeline absorbing 64-bit words (each stage XORs its upstream neighbour's previous-pass state into its own rotation), with the last stage's state added into four rotation-offset accumulators (SIMD-vectorised) every pass, then six fixed-constant drain passes and a single splitmix64 fmix64 finalisation of the four accumulators plus length."
+}

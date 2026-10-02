@@ -1,0 +1,43 @@
+{
+  "prediction": 10.0,
+  "measurement": {
+    "results": [
+      {
+        "n": 16,
+        "time": 8.2175e-09,
+        "ref_time": 4.49550003e-09,
+        "avg_avalanche_frac": 0.5045,
+        "avalanche_score": 0.9909,
+        "speedup_vs_dp": 0.547,
+        "status": "exact"
+      },
+      {
+        "n": 256,
+        "time": 1.28795e-07,
+        "ref_time": 1.67035e-07,
+        "avg_avalanche_frac": 0.4973,
+        "avalanche_score": 0.9947,
+        "speedup_vs_dp": 1.297,
+        "status": "exact"
+      },
+      {
+        "n": 4096,
+        "time": 1.94450011e-07,
+        "ref_time": 2.85924999e-06,
+        "avg_avalanche_frac": 0.4943,
+        "avalanche_score": 0.9886,
+        "speedup_vs_dp": 14.704,
+        "status": "exact"
+      }
+    ],
+    "largest_n": 4096,
+    "status": "exact",
+    "avalanche_score": 0.9886,
+    "speedup_vs_dp": 14.704,
+    "value": 14.5364,
+    "prediction_target": 14.704,
+    "reading": "value = speedup vs. FNV-1a x avalanche_score (1.0 = ideal ~50% output-bit flip rate per input-bit flip). 'status' here means mixing quality, not correctness - there is no reference hash to match exactly."
+  },
+  "value": 14.5364,
+  "status": "exact"
+}

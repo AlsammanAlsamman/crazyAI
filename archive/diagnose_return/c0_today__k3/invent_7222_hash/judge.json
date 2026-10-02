@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "A single never-reset accumulator: every fold carries the accumulated callus of all previous folds (one serial chain over the whole pile).",
+    "Each new mark's weight is injected into the accumulator's already-transformed state, so earlier marks bend how later marks land (order-dependent, avalanching state dependence).",
+    "Only the accumulator's final state is emitted as the token; all intermediate states and residue are discarded."
+  ],
+  "implemented_mechanism": 1,
+  "survival": "partial",
+  "fallback": true,
+  "core_technique": "xxHash64: 8-lane (4-lane-style) striped multiply-rotate-add accumulators over 64-byte blocks, merge-round collapse, length injection, 8/4/1-byte tail folding, and an xor-shift/multiply final avalanche — i.e. the known multiply-xor-shift accumulator approach plus generic loop-unrolling/ILP striping, which actually breaks the native's single serial never-lifted chain into eight independent ones.",
+  "valid": true
+}

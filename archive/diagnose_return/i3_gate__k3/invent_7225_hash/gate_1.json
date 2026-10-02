@@ -1,0 +1,11 @@
+{
+  "native_mechanisms": [
+    "Fold each mark into the impure cup one at a time, the cup's new colour seeding the next pull, so the whole pile passes as one unbroken chained pour (never judged alone or twice).",
+    "Carry the cup's final colour through seven successive organ-bendings, each discarding half of what it received (shift away half the bits) and keeping only what refuses to sit still (xor).",
+    "Avalanche audit: flip one mark anywhere in the pile, re-pour from the first cup, and discard the whole method if the new token resembles the old."
+  ],
+  "implemented_mechanism": 1,
+  "survival": "full",
+  "fallback": true,
+  "core_technique": "Table-driven reflected CRC-64/Jones accumulator (slicing-by-8 over the body, byte-at-a-time tail, bit-identical) finished by a MurmurHash3/SplitMix64-style xor-shift/multiply avalanche finalizer."
+}

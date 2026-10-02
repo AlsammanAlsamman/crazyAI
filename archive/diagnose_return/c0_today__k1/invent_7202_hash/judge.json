@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "A growing append-only chain hung between fire and wall, so each new shadow depends on the entire accumulated row, not just the newest knot",
+    "Each mark's own pebble-count (popcount of its strokes) sets how far the incense swings, bending/displacing where the firelight lands before it hits the wall",
+    "Only the wet-clay print of the settled shadow, hardened in the stream and read by its ridges, is kept as the token; smoke, pebble-cup and prior print are discarded"
+  ],
+  "implemented_mechanism": 2,
+  "survival": "partial",
+  "fallback": true,
+  "core_technique": "Six-lane rotate/xor ring accumulator fed by a 256-entry byte table whose entries are (b|0x100) shifted left by 6*popcount(b), then a linear/nonlinear lane fold and a standard SplitMix64/Murmur3 fmix64 multiply-xor-shift finalizer.",
+  "valid": true
+}

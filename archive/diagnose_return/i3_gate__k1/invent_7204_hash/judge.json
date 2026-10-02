@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "Eight strings bound under one bridge over the counting-bars: a pluck on any one string shivers into all the others — a wide coupled multi-lane mixing engine applied to every mark.",
+    "A fresh, never-repeated ink-weight (feather) per mark, folded in by weight not shape — a per-block unique running counter that fixes strict ordering into the state.",
+    "The storm's single hands-off pass over the final tremor, collapsing it to eight small notes, with the pickers destroying every discarded feather and drop — an O(1) finalization plus truncation/discard of the rest of the state."
+  ],
+  "implemented_mechanism": 1,
+  "survival": "full",
+  "fallback": false,
+  "core_technique": "Sponge-style absorption of 64-byte blocks into a 512-bit eight-lane state via one cross-coupled ARX (Feistel-like add/rotate/xor + lane re-pairing) round per block with a per-block counter, then 16 fixed finalization rounds and a per-lane bit-fold to one byte each for the 64-bit output; only the len<64 path falls back to FNV/xxHash-style multiply-xor-shift on a single accumulator.",
+  "reused_from_gate": true
+}

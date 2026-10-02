@@ -1,0 +1,11 @@
+{
+  "native_mechanisms": [
+    "Fold one crease per mark, each crease angle set by both the mark and the preceding crease (feedback-chained accumulation, no look-ahead).",
+    "Test every crease against all four wire birds' beaks at once and refold tighter until all four agree (four parallel gauges plus a reject-and-refold agreement loop, deliberately scrambling positional alignment).",
+    "Thin the whole folded wad at the water's edge to one small dense coin and discard every scrap, offcut, and failed reading (irreversible terminal compression with no retained state)."
+  ],
+  "implemented_mechanism": 2,
+  "survival": "partial",
+  "fallback": true,
+  "core_technique": "Verbatim xxHash64 (seed 0): four 64-bit lanes each running acc = rotl(acc + word*P2, 31) * P1 over 32-byte blocks, lane merge by rotate-add plus four mix rounds, length added, 8/4/1-byte tail folds, and a final xor-shift/multiply avalanche."
+}

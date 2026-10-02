@@ -1,0 +1,7 @@
+{
+  "attempts": 1,
+  "chosen": 0,
+  "fallback_per_attempt": [
+    false
+  ]
+}

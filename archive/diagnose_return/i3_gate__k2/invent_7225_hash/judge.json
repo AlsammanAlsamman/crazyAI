@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "Each word is folded into one impure (nonzero-seeded) accumulator and the accumulator's resulting value sets the mixing turn for the next word, so the whole buffer passes as one unbroken serial chain with no word judged alone or twice.",
+    "The chain's final value is pushed through seven successive bending rounds, each discarding part of what it received (shift-off) and keeping only the restless bits, before emerging as the short token.",
+    "Self-condemnation gate: flip one bit anywhere in the input, re-run the whole pour, and if the new token still resembles the old one's shape, discard the method entirely."
+  ],
+  "implemented_mechanism": 1,
+  "survival": "full",
+  "fallback": false,
+  "core_technique": "Multiply-free serial 64-bit accumulator over 8-byte words where each step is rot(cup^word, cup&63) + odd constant (data/state-dependent rotation chaining), finished by a 7-round rotate / shift-add / xor-shift avalanche finalizer keyed with the length, with a constructor-time bit-flip avalanche self-test that falls back to FNV-1a only if the self-test fails.",
+  "reused_from_gate": true
+}

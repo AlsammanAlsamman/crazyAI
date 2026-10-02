@@ -1,0 +1,12 @@
+{
+  "native_mechanisms": [
+    "A chained line of prisoners grinds a blank pillar mark by mark, each stroke's angle (rotate-then-add, never a multiply, never a look at the mark) carried forward from every stroke before it through the closed chain.",
+    "One in-order flood that does not recede until every mark has passed bends anchored wire shapes, each wire taking the same per-pass angle but with its own rotation/key so each leans differently.",
+    "The token is the single fixed silhouette the wires cast once the flood drains and shivering stops — one read, one shape kept, inputs/pillar/water all discarded and unrecoverable."
+  ],
+  "implemented_mechanism": 1,
+  "survival": "full",
+  "fallback": false,
+  "core_technique": "Multiply-free ARX core loop over 64-byte stripes: 8 keyed lanes each doing xor-with-data, rotate by a lane-specific constant, then add the previous pass's neighbouring lane (circulant lane-to-lane carry), with the only multiplications in a one-shot mul128-fold merge plus fmix64 finalizer (xxh3-style framing: keyed secret, overlapping last stripe, short-input path).",
+  "valid": true
+}
