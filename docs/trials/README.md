@@ -11,7 +11,7 @@ that is exact and faster than the reference.
 
 | Date | Page | Question | One-line result |
 |---|---|---|---|
-| 2026-09-29 | [Diagnosis kit: return-path probe](diagnosis-kit.md) | Where is the idea lost, and can the translate prompt stop the fallback? | At translation, in about 2 of 3 kernels; prompt tweaks don't measurably stop it, and the fallback doesn't cost speed. The model's date matters more |
+| 2026-09-29 | [Diagnosis kit: return-path probe](diagnosis-kit.md) | Where is the idea lost, and can the translate prompt stop the fallback? | At translation, in about 2 of 3 kernels; prompt tweaks don't stop it, and model drift is the biggest effect. Part 3: on hash, a judge-and-retry gate plus selection keeps the idea in 8/9 winners (vs 3/9) at the same speed |
 | 2026-09-29 | [Disguise-all: benchmark chooses](disguise-all.md) | Does measuring all 3 disguised solutions beat the engineer's pick? | Yes, the largest effect yet: alignment 12.72x, dijkstra 1.996x, hash 29.8x quality-gated; the fastest hash winner was a broken hash |
 | 2026-09-29 | [Retroactive immersion check](retro-immersion.md) | Does immersion in the native's text predict speedup? | No - immersion is saturated; the loss happens in the bend step |
 | 2026-09-22 | [Disguise-and-translate](disguise.md) | Does disguising the *problem* (not Claude) help? | New best on hash (15.891x), new worst on dijkstra (0.818x), alignment mid-pack |

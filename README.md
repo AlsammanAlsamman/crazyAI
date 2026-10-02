@@ -40,7 +40,12 @@ prompt and a series of one-change-at-a-time variants.
 
   The model and compute (3 calls against 1) aren't controlled yet. The fastest hash winner
   was a broken hash that passed the built-in check, so best-of-several selection needs a
-  stronger correctness gate.
+  stronger correctness gate. A later same-day check showed the alignment gain was mostly the
+  model changing between runs.
+- **Where the idea is lost, and how to keep it.** `crazyai diagnose-return` re-runs only the
+  translate step with a blind judge. About 2 in 3 kernels fall back to the textbook method, and
+  simple prompt fixes don't stop it. On hash, a judge-and-retry gate plus benchmark selection
+  kept the native's idea in 8 of 9 winners (vs 3 of 9) at the same speed (22.0x vs 21.4x).
 
 Write-ups: [`docs/trials/`](https://github.com/AlsammanAlsamman/crazyAI/blob/master/docs/trials/README.md). The full record, the 42-page
 documentation and a 7-page summary are in
